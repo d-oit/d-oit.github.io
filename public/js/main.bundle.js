@@ -6495,6 +6495,84 @@ function initIndex() {
       {
         id: 0,
         tag: "en",
+        href: "/de/about/",
+        title: "About",
+        description: "d.o.it - Try something out.",
+        
+        
+        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - en"
+      })
+      .add(
+      
+      
+      {
+        id: 1,
+        tag: "de",
+        href: "/de/about/",
+        title: "About",
+        description: "d.o.it - Try something out.",
+        
+        
+        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - en"
+      })
+      .add(
+      
+      
+      {
+        id: 2,
+        tag: "en",
+        href: "/about/",
+        title: "About",
+        description: "d.o.it - Try something out.",
+        
+        
+        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - en"
+      })
+      .add(
+      
+      
+      {
+        id: 3,
+        tag: "en",
+        href: "/en/about/",
+        title: "About",
+        description: "d.o.it - Try something out.",
+        
+        
+        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - en"
+      })
+      .add(
+      
+      
+      {
+        id: 4,
+        tag: "de",
+        href: "/de/categories/",
+        title: "Categories",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 5,
+        tag: "nl",
+        href: "/nl/categories/",
+        title: "Categories",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 6,
+        tag: "en",
         href: "/categories/",
         title: "Categories",
         description: "",
@@ -6506,7 +6584,59 @@ function initIndex() {
       
       
       {
-        id: 1,
+        id: 7,
+        tag: "en",
+        href: "/en/",
+        title: "Ens",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 8,
+        tag: "nl",
+        href: "/nl/",
+        title: "My New Hugo Site",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 9,
+        tag: "de",
+        href: "/de/tags/",
+        title: "Tags",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 10,
+        tag: "nl",
+        href: "/nl/tags/",
+        title: "Tags",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 11,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -6519,11 +6649,37 @@ function initIndex() {
       
       
       {
-        id: 2,
+        id: 12,
         tag: "en",
         href: "/",
-        title: "Welcome to Hinode!",
-        description: "A clean documentation and blog theme for your Hugo site based on Bootstrap 5.",
+        title: "Welcome to d.o.it!",
+        description: "d.o.it - Try something out.",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 13,
+        tag: "en",
+        href: "/de/",
+        title: "Willkomen zu d.o.it",
+        description: "d.o.it - Probier etwas aus.",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 14,
+        tag: "de",
+        href: "/de/",
+        title: "Willkomen zu d.o.it",
+        description: "d.o.it - Probier etwas aus.",
         
         
         content: ""

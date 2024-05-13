@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to d.o.it! on My New Hugo Site</title>
+    <link>http://localhost:1313/en/</link>
+    <description>Recent content in Welcome to d.o.it! on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/en/about/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/about/</guid>
+      <description>&amp;nbsp; Bootstrap framework&#xA;Build fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. &amp;nbsp; Full text search&#xA;Search your site with FlexSearch, a full-text search library with zero dependencies. &amp;nbsp; Development tools&#xA;Use Node Package Manager to automate the build process and to keep track of dependencies. XXX - en</description>
+    </item>
+  </channel>
+</rss>

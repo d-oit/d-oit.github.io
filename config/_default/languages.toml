@@ -1,0 +1,32 @@
+# toml-docs-start lang-main
+[en]
+languageName = "English"
+contentDir = "content/en"
+weight = 1
+# toml-docs-end lang-main
+# toml-docs-start lang-param
+[en.params.head]
+tagline = "d.o.it"
+[en.params.social]
+title = "Follow me"
+caption = "d.o.it - Try something out"
+[en.params.footer]
+# license = "Licensed under Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
+# toml-docs-end lang-param
+[en.params.sections.blog]
+reference = "More Posts"
+
+
+[de]
+languageName = "Deutsch"
+contentDir = "content/de"
+weight = 2
+[nl.params.head]
+tagline = "d.o.it"
+[nl.params.social]
+title = "Folgen"
+caption = "d.o.it - Probier etwas aus"
+[nl.params.footer]
+# license = "Gelicenseerd onder Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
+[nl.params.sections.blog]
+reference = "Weitere Posts"
