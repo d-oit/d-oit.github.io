@@ -6617,7 +6617,7 @@ function initIndex() {
         description: "d.o.it - Probier etwas aus",
         
         
-        content: "\u0026lt; image src=\u0026quot;/img/logo_var.svg#logo\u0026quot; class=\u0026ldquo;img-fluid w-50\u0026rdquo; wrapper=\u0026ldquo;text-center\u0026rdquo; \u0026gt;\nIch schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.\nBeruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe die Natur, Wald, Flüsse, Berge und das Meer.\nd.o. = Dominik Oswald"
+        content: "Ich schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.\nBeruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe die Natur, Wald, Flüsse, Berge und das Meer.\nd.o. = Dominik Oswald"
       })
       .add(
       
