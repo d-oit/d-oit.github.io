@@ -8,3 +8,4 @@ tags: ["2024"]
 Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 
 - Smartphone Display austauschen
+- YouTube Kanal
