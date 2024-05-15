@@ -1,0 +1,64 @@
+[navigation]
+    anchor = true
+    logo = "/img/logo_icon.svg"
+    color = "body"
+    fixed = true
+    overlay = false
+    overlayMode = "dark"
+    horizontal = false
+    offset = "5.5rem"
+    offsetXS = "5.5rem"
+    search = true
+    searchModal = false
+    breadcrumb = true
+    toc = true
+    sidebar = true
+    size = "md"
+
+[messages]
+    placement = "bottom-right"
+
+[sharing]
+    enabled = false
+    sort = "weight"
+    reverse = false
+    webshare = true
+
+    [sections]
+    [sections.blog]
+        title = "Blog"
+        sort = "date"
+        reverse = true
+        cols = 3
+        color = ""
+        padding = "0"
+        header = "full"
+        footer = "none"
+        orientation = "stacked"
+        style = "border-0 card-zoom card-body-margin"
+        homepage = 3
+        separator = true
+
+[favicon]
+    logo = "img/favicon.png"
+    sizes = [16, 32, 48]
+
+    # toml-docs-start theme-colors
+[style]
+    primary = "#d43900"
+    secondary = "#6c757d"
+    success = "#198754"
+    info = "#0dcaf0"
+    warning = "#ffc107"
+    danger = "#dc3545"
+    light = "#f8f9fa"
+    dark = "#212529"
+    themeOpacity = "10"
+    darkModeShade = "20%"
+    darkModeTint = "40%"
+    themeFont = "Inter"
+    # themeFontPath = "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600&display=swap" # external path
+    themeFontPath = "/fonts" # local path
+    themeFontPreload = "/fonts/inter-v12-latin-regular.woff2"
+    purge = false # TODO: fix purge setting of example site
+# toml-docs-end theme-colors
