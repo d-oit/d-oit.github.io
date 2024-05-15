@@ -51,7 +51,20 @@
   "frontMatter.preview.host": "http://localhost:1313",
   "frontMatter.content.pageFolders": [
     {
-      "path": "[[workspace]]/content/en"
+      "path": "[[workspace]]/content/en",
+      "title": "en"
+    },
+    {
+      "path": "[[workspace]]/content/de/blog",
+      "title": "blog"
+    },
+    {
+      "title": "blog_en",
+      "path": "[[workspace]]/content/en/blog"
+    },
+    {
+      "title": "blog_de",
+      "path": "[[workspace]]/content/de/blog"
     }
   ],
   "frontMatter.git.enabled": true

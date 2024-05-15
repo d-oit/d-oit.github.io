@@ -15,9 +15,6 @@
                 href="http://localhost:1313/blog/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/blog/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/powershell/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -30,22 +27,11 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="nl"
-                href="http://localhost:1313/nl/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/tags/"
                 />
   </url><url>
     <loc>http://localhost:1313/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
@@ -57,11 +43,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="nl"
-                href="http://localhost:1313/nl/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/"
                 />
@@ -69,15 +50,12 @@
     <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/de/about/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2022-04-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="http://localhost:1313/de/about/"
+                href="http://localhost:1313/de/ueber/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -85,24 +63,11 @@
                 href="http://localhost:1313/about/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/about/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/about/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/de/blog/</loc>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
                 href="http://localhost:1313/de/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="nl"
-                href="http://localhost:1313/nl/categories/"
                 />
     <xhtml:link
                 rel="alternate"

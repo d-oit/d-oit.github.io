@@ -2,38 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/de/about/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/about/"
-                />
+    <loc>http://localhost:1313/de/tags/2024/</loc>
+    <lastmod>2024-05-15T13:39:49+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/de/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="nl"
-                href="http://localhost:1313/nl/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/"
-                />
+    <loc>http://localhost:1313/de/blog/2024-05-15-ausprobieren---jahr-2024/</loc>
+    <lastmod>2024-05-15T13:39:49+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/blog/</loc>
+    <lastmod>2024-05-15T13:39:49+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -45,6 +21,45 @@
                 href="http://localhost:1313/de/blog/"
                 />
   </url><url>
+    <loc>http://localhost:1313/de/tags/</loc>
+    <lastmod>2024-05-15T13:39:49+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/de/</loc>
+    <lastmod>2024-05-15T13:39:49+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/de/ueber/</loc>
+    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/ueber/"
+                />
+  </url><url>
     <loc>http://localhost:1313/de/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -53,30 +68,8 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="nl"
-                href="http://localhost:1313/nl/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="de"
                 href="http://localhost:1313/de/categories/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/de/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="nl"
-                href="http://localhost:1313/nl/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/tags/"
                 />
   </url>
 </urlset>

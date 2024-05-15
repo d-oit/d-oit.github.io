@@ -6495,32 +6495,6 @@ function initIndex() {
       {
         id: 0,
         tag: "en",
-        href: "/de/about/",
-        title: "About",
-        description: "d.o.it - Try something out.",
-        
-        
-        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - de"
-      })
-      .add(
-      
-      
-      {
-        id: 1,
-        tag: "de",
-        href: "/de/about/",
-        title: "About",
-        description: "d.o.it - Try something out.",
-        
-        
-        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - de"
-      })
-      .add(
-      
-      
-      {
-        id: 2,
-        tag: "en",
         href: "/about/",
         title: "About",
         description: "d.o.it - Try something out.",
@@ -6532,20 +6506,33 @@ function initIndex() {
       
       
       {
-        id: 3,
-        tag: "en",
-        href: "/en/about/",
-        title: "About",
-        description: "d.o.it - Try something out.",
+        id: 1,
+        tag: "de",
+        href: "/de/blog/2024-05-15-ausprobieren---jahr-2024/",
+        title: "Ausprobieren - Jahr 2024",
+        description: "Dinge die ich im Jahr 2024 ausprobieren möchte",
         
         
-        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - en"
+        content: "Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:\nSmartphone Display austauschen"
       })
       .add(
       
       
       {
-        id: 4,
+        id: 2,
+        tag: "de",
+        href: "/de/blog/",
+        title: "Blog",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 3,
         tag: "en",
         href: "/blog/",
         title: "Blog",
@@ -6558,46 +6545,7 @@ function initIndex() {
       
       
       {
-        id: 5,
-        tag: "en",
-        href: "/en/blog/",
-        title: "Blog",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 6,
-        tag: "en",
-        href: "/de/blog/",
-        title: "Blog",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 7,
-        tag: "de",
-        href: "/de/blog/",
-        title: "Blog",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 8,
+        id: 4,
         tag: "de",
         href: "/de/categories/",
         title: "Categories",
@@ -6610,20 +6558,7 @@ function initIndex() {
       
       
       {
-        id: 9,
-        tag: "nl",
-        href: "/nl/categories/",
-        title: "Categories",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 10,
+        id: 5,
         tag: "en",
         href: "/categories/",
         title: "Categories",
@@ -6636,20 +6571,7 @@ function initIndex() {
       
       
       {
-        id: 11,
-        tag: "nl",
-        href: "/nl/",
-        title: "d.o.it",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 12,
+        id: 6,
         tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
@@ -6662,20 +6584,7 @@ function initIndex() {
       
       
       {
-        id: 13,
-        tag: "en",
-        href: "/tags/",
-        title: "Tags",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 14,
+        id: 7,
         tag: "de",
         href: "/de/tags/",
         title: "Tags",
@@ -6688,9 +6597,9 @@ function initIndex() {
       
       
       {
-        id: 15,
-        tag: "nl",
-        href: "/nl/tags/",
+        id: 8,
+        tag: "en",
+        href: "/tags/",
         title: "Tags",
         description: "",
         
@@ -6701,72 +6610,33 @@ function initIndex() {
       
       
       {
-        id: 16,
-        tag: "en",
-        href: "/about/",
-        title: "Über",
-        description: "d.o.it - Probier etwas aus.",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 17,
+        id: 9,
         tag: "de",
-        href: "/de/",
+        href: "/de/ueber/",
         title: "Über",
-        description: "d.o.it - Probier etwas aus.",
+        description: "d.o.it - Probier etwas aus",
         
         
-        content: ""
+        content: "\u0026lt; image src=\u0026quot;/img/logo_var.svg#logo\u0026quot; class=\u0026ldquo;img-fluid w-50\u0026rdquo; wrapper=\u0026ldquo;text-center\u0026rdquo; \u0026gt;\nIch schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.\nBeruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe die Natur, Wald, Flüsse, Berge und das Meer.\nd.o. = Dominik Oswald"
       })
       .add(
       
       
       {
-        id: 18,
+        id: 10,
         tag: "en",
         href: "/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/",
         title: "Unblock all files in folder with PowerShell",
         description: "Unblocks files that were downloaded from the Internet with PowerShell",
         
         
-        content: "Unblocks files that were downloaded from the internet with PowerShell in Windows:\ndir C:\\Users\\USERNAME\\Downloads | Unblock-FileUnblock-File PowerShell API Referenz"
+        content: "Unblocks files that were downloaded from the internet with PowerShell in Windows:\ndir \u0026#34;C:\\Users\\$Env:UserName\\Downloads\u0026#34; | Unblock-FileUnblock-File PowerShell API Referenz"
       })
       .add(
       
       
       {
-        id: 19,
-        tag: "en",
-        href: "/en/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/",
-        title: "Unblock all files in folder with PowerShell",
-        description: "Unblocks files that were downloaded from the Internet with PowerShell",
-        
-        
-        content: "Unblocks files that were downloaded from the internet with PowerShell in Windows:\ndir C:\\Users\\USERNAME\\Downloads | Unblock-FileUnblock-File PowerShell API Referenz"
-      })
-      .add(
-      
-      
-      {
-        id: 20,
-        tag: "en",
-        href: "/en/",
-        title: "Welcome to d.o.it!",
-        description: "d.o.it - Try something out.",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 21,
+        id: 11,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -6779,10 +6649,36 @@ function initIndex() {
       
       
       {
-        id: 22,
+        id: 12,
+        tag: "de",
+        href: "/de/",
+        title: "Willkomen zu d.o.it",
+        description: "d.o.it - Probier etwas aus.",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 13,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 14,
+        tag: "de",
+        href: "/de/tags/2024/",
+        title: "2024",
         description: "",
         
         

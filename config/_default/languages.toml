@@ -21,12 +21,12 @@ reference = "More Posts"
 languageName = "Deutsch"
 contentDir = "content/de"
 weight = 2
-[nl.params.head]
+[de.params.head]
 tagline = "d.o.it"
-[nl.params.social]
+[de.params.social]
 title = "Folgen"
 caption = "d.o.it - Probier etwas aus"
-[nl.params.footer]
+[de.params.footer]
 # license = "Gelicenseerd onder Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
-[nl.params.sections.blog]
+[de.params.sections.blog]
 reference = "Weitere Posts"

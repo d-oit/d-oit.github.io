@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Über on d.o.it</title>
+    <title>Willkomen zu d.o.it on d.o.it</title>
     <link>http://localhost:1313/de/</link>
-    <description>Recent content in Über on d.o.it</description>
+    <description>Recent content in Willkomen zu d.o.it on d.o.it</description>
     <generator>Hugo</generator>
     <language>de</language>
-    <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 May 2024 13:39:49 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/de/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>http://localhost:1313/de/about/</link>
+      <title>Ausprobieren - Jahr 2024</title>
+      <link>http://localhost:1313/de/blog/2024-05-15-ausprobieren---jahr-2024/</link>
+      <pubDate>Wed, 15 May 2024 13:39:49 +0000</pubDate>
+      <guid>http://localhost:1313/de/blog/2024-05-15-ausprobieren---jahr-2024/</guid>
+      <description>Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:&#xA;Smartphone Display austauschen </description>
+    </item>
+    <item>
+      <title>Über</title>
+      <link>http://localhost:1313/de/ueber/</link>
       <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/de/about/</guid>
-      <description>&amp;nbsp; Bootstrap framework&#xA;Build fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. &amp;nbsp; Full text search&#xA;Search your site with FlexSearch, a full-text search library with zero dependencies. &amp;nbsp; Development tools&#xA;Use Node Package Manager to automate the build process and to keep track of dependencies. XXX - de</description>
+      <guid>http://localhost:1313/de/ueber/</guid>
+      <description>{{&amp;lt; image src=&amp;quot;/img/logo_var.svg#logo&amp;quot; class=&amp;ldquo;img-fluid w-50&amp;rdquo; wrapper=&amp;ldquo;text-center&amp;rdquo; &amp;gt;}}&#xA;Ich schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.&#xA;Beruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe die Natur, Wald, Flüsse, Berge und das Meer.&#xA;d.o. = Dominik Oswald</description>
     </item>
   </channel>
 </rss>

@@ -9913,6 +9913,9 @@ a.btn {
   background-repeat: no-repeat !important;
   background-size: 1em !important; }
 
+.btn-link {
+  --bs-btn-padding-x: 0; }
+
 .card-img-bg {
   background-color: var(--bs-secondary-bg); }
 
