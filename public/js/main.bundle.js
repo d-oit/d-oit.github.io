@@ -6500,7 +6500,7 @@ function initIndex() {
         description: "d.o.it - Try something out.",
         
         
-        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - en"
+        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - de"
       })
       .add(
       
@@ -6513,7 +6513,7 @@ function initIndex() {
         description: "d.o.it - Try something out.",
         
         
-        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - en"
+        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - de"
       })
       .add(
       
@@ -6546,6 +6546,58 @@ function initIndex() {
       
       {
         id: 4,
+        tag: "en",
+        href: "/blog/",
+        title: "Blog",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 5,
+        tag: "en",
+        href: "/en/blog/",
+        title: "Blog",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 6,
+        tag: "en",
+        href: "/de/blog/",
+        title: "Blog",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 7,
+        tag: "de",
+        href: "/de/blog/",
+        title: "Blog",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 8,
         tag: "de",
         href: "/de/categories/",
         title: "Categories",
@@ -6558,7 +6610,7 @@ function initIndex() {
       
       
       {
-        id: 5,
+        id: 9,
         tag: "nl",
         href: "/nl/categories/",
         title: "Categories",
@@ -6571,7 +6623,7 @@ function initIndex() {
       
       
       {
-        id: 6,
+        id: 10,
         tag: "en",
         href: "/categories/",
         title: "Categories",
@@ -6584,20 +6636,7 @@ function initIndex() {
       
       
       {
-        id: 7,
-        tag: "en",
-        href: "/en/",
-        title: "Ens",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 8,
+        id: 11,
         tag: "nl",
         href: "/nl/",
         title: "My New Hugo Site",
@@ -6610,10 +6649,10 @@ function initIndex() {
       
       
       {
-        id: 9,
-        tag: "de",
-        href: "/de/tags/",
-        title: "Tags",
+        id: 12,
+        tag: "en",
+        href: "/tags/powershell/",
+        title: "PowerShell",
         description: "",
         
         
@@ -6623,20 +6662,7 @@ function initIndex() {
       
       
       {
-        id: 10,
-        tag: "nl",
-        href: "/nl/tags/",
-        title: "Tags",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 11,
+        id: 13,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -6649,7 +6675,72 @@ function initIndex() {
       
       
       {
-        id: 12,
+        id: 14,
+        tag: "de",
+        href: "/de/tags/",
+        title: "Tags",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 15,
+        tag: "nl",
+        href: "/nl/tags/",
+        title: "Tags",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 16,
+        tag: "en",
+        href: "/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/",
+        title: "Unblock all files in folder with PowerShell",
+        description: "Unblocks files that were downloaded from the Internet with PowerShell",
+        
+        
+        content: "Unblocks files that were downloaded from the internet with PowerShell in Windows:\ndir C:\\Users\\USERNAME\\Downloads | Unblock-FileUnblock-File PowerShell API Referenz"
+      })
+      .add(
+      
+      
+      {
+        id: 17,
+        tag: "en",
+        href: "/en/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/",
+        title: "Unblock all files in folder with PowerShell",
+        description: "Unblocks files that were downloaded from the Internet with PowerShell",
+        
+        
+        content: "Unblocks files that were downloaded from the internet with PowerShell in Windows:\ndir C:\\Users\\USERNAME\\Downloads | Unblock-FileUnblock-File PowerShell API Referenz"
+      })
+      .add(
+      
+      
+      {
+        id: 18,
+        tag: "en",
+        href: "/en/",
+        title: "Welcome to d.o.it!",
+        description: "d.o.it - Try something out.",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 19,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -6662,7 +6753,7 @@ function initIndex() {
       
       
       {
-        id: 13,
+        id: 20,
         tag: "en",
         href: "/de/",
         title: "Willkomen zu d.o.it",
@@ -6675,11 +6766,24 @@ function initIndex() {
       
       
       {
-        id: 14,
+        id: 21,
         tag: "de",
         href: "/de/",
         title: "Willkomen zu d.o.it",
         description: "d.o.it - Probier etwas aus.",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 22,
+        tag: "en",
+        href: "/tags/windows/",
+        title: "Windows",
+        description: "",
         
         
         content: ""

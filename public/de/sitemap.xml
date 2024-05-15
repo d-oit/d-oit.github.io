@@ -33,6 +33,18 @@
                 href="http://localhost:1313/de/"
                 />
   </url><url>
+    <loc>http://localhost:1313/de/blog/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/blog/"
+                />
+  </url><url>
     <loc>http://localhost:1313/de/categories/</loc>
     <xhtml:link
                 rel="alternate"
