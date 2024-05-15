@@ -1,0 +1,26 @@
+[[main]]
+  name = "Über"
+  pageRef = "/about/"
+  weight = 10
+
+[[main]]
+  name = "Blog"
+  pageRef = "/blog/"
+  weight = 20
+
+[[main]]
+  name = "Tags"
+  pageRef = "/tags/"
+  weight = 30
+
+[[social]]
+  name = "LinkedIn"
+  pre = "fab linkedin"
+  url = "https://www.linkedin.com/in/d-oit"
+  weight = 10
+
+[[social]]
+  name = "GitHub"
+  pre = "fab fa-github"
+  url = "https://github.com/d-oit"
+  weight = 20

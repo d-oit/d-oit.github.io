@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on My New Hugo Site</title>
+    <title>Blog on d.o.it</title>
     <link>http://localhost:1313/de/blog/</link>
-    <description>Recent content in Blog on My New Hugo Site</description>
+    <description>Recent content in Blog on d.o.it</description>
     <generator>Hugo</generator>
     <language>de</language>
     <atom:link href="http://localhost:1313/de/blog/index.xml" rel="self" type="application/rss+xml" />

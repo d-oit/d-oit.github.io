@@ -6639,7 +6639,7 @@ function initIndex() {
         id: 11,
         tag: "nl",
         href: "/nl/",
-        title: "My New Hugo Site",
+        title: "d.o.it",
         description: "",
         
         
@@ -6703,6 +6703,32 @@ function initIndex() {
       {
         id: 16,
         tag: "en",
+        href: "/about/",
+        title: "Über",
+        description: "d.o.it - Probier etwas aus.",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 17,
+        tag: "de",
+        href: "/de/",
+        title: "Über",
+        description: "d.o.it - Probier etwas aus.",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 18,
+        tag: "en",
         href: "/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/",
         title: "Unblock all files in folder with PowerShell",
         description: "Unblocks files that were downloaded from the Internet with PowerShell",
@@ -6714,7 +6740,7 @@ function initIndex() {
       
       
       {
-        id: 17,
+        id: 19,
         tag: "en",
         href: "/en/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/",
         title: "Unblock all files in folder with PowerShell",
@@ -6727,7 +6753,7 @@ function initIndex() {
       
       
       {
-        id: 18,
+        id: 20,
         tag: "en",
         href: "/en/",
         title: "Welcome to d.o.it!",
@@ -6740,37 +6766,11 @@ function initIndex() {
       
       
       {
-        id: 19,
+        id: 21,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
         description: "d.o.it - Try something out.",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 20,
-        tag: "en",
-        href: "/de/",
-        title: "Willkomen zu d.o.it",
-        description: "d.o.it - Probier etwas aus.",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 21,
-        tag: "de",
-        href: "/de/",
-        title: "Willkomen zu d.o.it",
-        description: "d.o.it - Probier etwas aus.",
         
         
         content: ""
