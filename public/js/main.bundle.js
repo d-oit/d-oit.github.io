@@ -6500,7 +6500,7 @@ function initIndex() {
         description: "d.o.it - Try something out.",
         
         
-        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies. XXX - en"
+        content: "\u0026nbsp; Bootstrap framework\nBuild fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files. \u0026nbsp; Full text search\nSearch your site with FlexSearch, a full-text search library with zero dependencies. \u0026nbsp; Development tools\nUse Node Package Manager to automate the build process and to keep track of dependencies."
       })
       .add(
       

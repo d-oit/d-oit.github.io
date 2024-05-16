@@ -1,6 +1,6 @@
 [navigation]
     anchor = true
-    logo = "/img/logo_icon.svg"
+    logo = "/img/logo/doit.svg"
     color = "body"
     fixed = true
     overlay = false
