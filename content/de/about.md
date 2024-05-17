@@ -7,7 +7,7 @@ updated: 2023-08-02
 showComments: false
 ---
 
-{{< image src="/img/logo/_doit.svg" class="img-fluid w-50" wrapper="text-center" >}}
+{{< image src="/img/logo/doit.svg" class="img-fluid w-50" wrapper="text-center" >}}
 
 Ich schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.
 
