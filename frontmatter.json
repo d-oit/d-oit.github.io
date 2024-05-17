@@ -63,8 +63,8 @@
       "path": "[[workspace]]/content/en/blog"
     },
     {
-      "title": "blog_de",
-      "path": "[[workspace]]/content/de/blog"
+      "title": "projects_en",
+      "path": "[[workspace]]/content/en/projects"
     }
   ],
   "frontMatter.git.enabled": true

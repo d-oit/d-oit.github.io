@@ -6,8 +6,50 @@
     <description>Recent content in Tags on d.o.it</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2024 16:53:22 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.NET</title>
+      <link>http://localhost:1313/tags/.net/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/.net/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>License</title>
+      <link>http://localhost:1313/tags/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/license/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Development</title>
+      <link>http://localhost:1313/tags/software-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/software-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Licence</title>
+      <link>http://localhost:1313/tags/licence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/licence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Visual Studio</title>
+      <link>http://localhost:1313/tags/visual-studio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/visual-studio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
     <item>
       <title>PowerShell</title>
       <link>http://localhost:1313/tags/powershell/</link>

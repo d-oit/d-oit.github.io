@@ -1,6 +1,6 @@
 [navigation]
     anchor = true
-    logo = "/img/logo/doit.svg"
+    logo = "/img/logo/doitLogo.svg"
     color = "body"
     fixed = true
     overlay = false
@@ -24,7 +24,7 @@
     reverse = false
     webshare = true
 
-    [sections]
+[sections]
     [sections.blog]
         title = "Blog"
         sort = "date"

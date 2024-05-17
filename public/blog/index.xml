@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Get licenses from used NuGet packages for your .NET Core Solution</title>
-      <link>http://localhost:1313/blog/2024-05-17-get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</link>
+      <link>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</link>
       <pubDate>Fri, 17 May 2024 11:06:48 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024-05-17-get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</guid>
+      <guid>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</guid>
       <description>ToDo: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a licence text file or Excel file with all found license and save all licence as a separate Text File.&#xA;Let’s try…&#xA;Best solution so far: jump to Solution 5 or Solution 6&#xA;Solution 1: Get-Package &amp;nbsp; Open Visual Studio .NET Core Solution Open Package Manager Console and execute: Get-Package | Select-Object Id,LicenseUrlOutput Result (Nuget Package Name, License Url):</description>
     </item>
     <item>
@@ -24,9 +24,9 @@
     </item>
     <item>
       <title>Unblock all files in folder with PowerShell</title>
-      <link>http://localhost:1313/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/</link>
+      <link>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</link>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/</guid>
+      <guid>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</guid>
       <description>Unblocks files that were downloaded from the internet with PowerShell in Windows:&#xA;dir &amp;#34;C:\Users\$Env:UserName\Downloads&amp;#34; | Unblock-FileUnblock-File PowerShell API Referenz</description>
     </item>
   </channel>

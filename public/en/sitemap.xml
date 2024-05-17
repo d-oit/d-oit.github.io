@@ -2,24 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/blog/"
-                />
+    <loc>http://localhost:1313/tags/.net/</loc>
+    <lastmod>2024-05-17T16:53:22+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/powershell/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/projects/d.o.it.packages.licenses/</loc>
+    <lastmod>2024-05-17T16:53:22+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/license/</loc>
+    <lastmod>2024-05-17T16:53:22+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2024-05-17T16:53:22+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/software-development/</loc>
+    <lastmod>2024-05-17T16:53:22+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-05-17T16:53:22+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -31,11 +30,8 @@
                 href="http://localhost:1313/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-05-17T16:53:22+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -46,6 +42,40 @@
                 hreflang="en"
                 href="http://localhost:1313/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2024-05-17T11:06:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</loc>
+    <lastmod>2024-05-17T11:06:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/licence/</loc>
+    <lastmod>2024-05-17T11:06:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/visual-studio/</loc>
+    <lastmod>2024-05-17T11:06:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/2024-05-17-ms-sql-date-format/</loc>
+    <lastmod>2024-05-17T10:54:33+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2024-05-17T10:54:33+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/powershell/</loc>
+    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</loc>
+    <lastmod>2024-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>

@@ -6495,6 +6495,19 @@ function initIndex() {
       {
         id: 0,
         tag: "en",
+        href: "/tags/.net/",
+        title: ".NET",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 1,
+        tag: "en",
         href: "/about/",
         title: "About",
         description: "d.o.it - Try something out.",
@@ -6506,7 +6519,7 @@ function initIndex() {
       
       
       {
-        id: 1,
+        id: 2,
         tag: "de",
         href: "/de/blog/2024-05-15-ausprobieren---jahr-2024/",
         title: "Ausprobieren - Jahr 2024",
@@ -6514,19 +6527,6 @@ function initIndex() {
         
         
         content: "Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:\nSmartphone Display austauschen YouTube Kanal"
-      })
-      .add(
-      
-      
-      {
-        id: 2,
-        tag: "de",
-        href: "/de/blog/",
-        title: "Blog",
-        description: "",
-        
-        
-        content: ""
       })
       .add(
       
@@ -6547,8 +6547,8 @@ function initIndex() {
       {
         id: 4,
         tag: "de",
-        href: "/de/categories/",
-        title: "Categories",
+        href: "/de/blog/",
+        title: "Blog",
         description: "",
         
         
@@ -6559,8 +6559,8 @@ function initIndex() {
       
       {
         id: 5,
-        tag: "en",
-        href: "/categories/",
+        tag: "de",
+        href: "/de/categories/",
         title: "Categories",
         description: "",
         
@@ -6573,6 +6573,84 @@ function initIndex() {
       {
         id: 6,
         tag: "en",
+        href: "/categories/",
+        title: "Categories",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 7,
+        tag: "en",
+        href: "/projects/d.o.it.packages.licenses/",
+        title: "Do.it NuGet Packages.Licenses for .NET",
+        description: ".NET: Create Excel or Text license file for used NuGet packages",
+        
+        
+        content: ".NET: Create Excel or Text license file for used NuGet packages \u0026nbsp; If you need to determine all license of your used NuGet packages in your Visual Studio Solution check out the following project:\nhttps://github.com/d-oit/DoitPackagesLicenses\nMore infos about:\nBlog article"
+      })
+      .add(
+      
+      
+      {
+        id: 8,
+        tag: "en",
+        href: "/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/",
+        title: "Get licenses from used NuGet packages for your .NET Core Solution",
+        description: "How to get a txt or Excel file for all licence of used Nuget package in your .NET Core Solution",
+        
+        
+        content: "ToDo: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a licence text file or Excel file with all found license and save all licence as a separate Text File.\nLet’s try…\nBest solution so far: jump to Solution 5 or Solution 6\nSolution 1: Get-Package \u0026nbsp; Open Visual Studio .NET Core Solution Open Package Manager Console and execute: Get-Package | Select-Object Id,LicenseUrlOutput Result (Nuget Package Name, License Url):\nxunit.runner.visualstudio https://raw.githubusercontent.com/xunit/xunit/master/license.txt NSubstitute https://github.com/nsubstitute/NSubstitute/raw/master/LICENSE.txt Good… but the direct reference project NuGet package. Need also the Licence of all dlls.\nSolution 2: PowerShell: Save license as text file \u0026nbsp; Try out with the PowerShell script. Save the code as DownloadNugetLicense.ps1 in the VS solution director.\nRun the PowerShell Script with ./DownloadNugetLicense.ps1 in the Visual Studio Package Manager Console.\nPowerShell Code:\nSplit-Path -parent $dte.Solution.FileName | cd; New-Item -ItemType Directory -Force -Path \u0026#34;.\\licenses\u0026#34;; @( Get-Project -All | ?  $_.ProjectName  | %  Get-Package -ProjectName $_.ProjectName | ?  $_.LicenseUrl   ) | Sort-Object Id -Unique | %  $pkg = $_; Try  if ($pkg.Id -notlike \u0026#39;microsoft*\u0026#39; -and $pkg.LicenseUrl.StartsWith(\u0026#39;http\u0026#39;))  Write-Host (\u0026#34;Download license for nuget package \u0026#34; + $pkg.Id + \u0026#34; from \u0026#34; + $pkg.LicenseUrl); #Write-Host (ConvertTo-Json ($pkg)); $licenseUrl = $pkg.LicenseUrl if ($licenseUrl.contains(\u0026#39;github.com\u0026#39;))  $licenseUrl = $licenseUrl.replace(\u0026#34;/blob/\u0026#34;, \u0026#34;/raw/\u0026#34;)  $extension = \u0026#34;.txt\u0026#34; if ($licenseUrl.EndsWith(\u0026#34;.md\u0026#34;))  $extension = \u0026#34;.md\u0026#34;  (New-Object System.Net.WebClient).DownloadFile($licenseUrl, (Join-Path (pwd) \u0026#39;licenses\\\u0026#39;) + $pkg.Id + $extension);   Catch [system.exception]  Write-Host (\u0026#34;Could not download license for \u0026#34; + $pkg.Id)   Solution 3: PowerShell: All license in package manager output \u0026nbsp; Not perfect - I also need the licencse for the used Dlls inside any NuGet Package.\nNuGet Package License \u0026nbsp; Id | LicenseUrl | License \u0026nbsp; Abp.AspNetCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.AspNetCore.SignalR; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.AutoMapper; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.Castle.Log4Net; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.HangFire; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.RedisCache; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.TestBase; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.ZeroCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.ZeroCore.EntityFrameworkCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) AspNet.Security.OpenIdConnect.Server; http://www.apache.org/licenses/LICENSE-2.0.html; Castle.Core; http://www.apache.org/licenses/LICENSE-2.0.html; PowerShell Code\nWrite-Host(\u0026#34;---------------------\u0026#34;); Write-Host(\u0026#34;NuGet Package License\u0026#34;); Write-Host(\u0026#34;---------------------\u0026#34;); Write-Host(\u0026#34;Id | LicenseUrl | License\u0026#34;); Write-Host(\u0026#34;---------------------\u0026#34;); @( Get-Project -All | ?  $_.ProjectName  | %  Get-Package -ProjectName $_.ProjectName | ?  $_.LicenseUrl   ) | Sort-Object Id -Unique | %  $pkg = $_; $file = Try  if ($pkg.Id -notlike \u0026#39;microsoft*\u0026#39; -and $pkg.LicenseUrl.StartsWith(\u0026#39;http\u0026#39;))  $licenseUrl = $pkg.LicenseUrl if ($licenseUrl.contains(\u0026#39;github.com\u0026#39;))  $licenseUrl = $licenseUrl.replace(\u0026#34;/blob/\u0026#34;, \u0026#34;/raw/\u0026#34;)  $extension = \u0026#34;.txt\u0026#34; if ($licenseUrl.EndsWith(\u0026#34;.md\u0026#34;))  $extension = \u0026#34;.md\u0026#34;  $filePath = (Join-Path (pwd) \u0026#39;licenses\\\u0026#39;) + $pkg.Id + $extension; $textLicence = Get-Content $filePath | Select-Object -First 1 Write-Host($pkg.Id + \u0026#34;; \u0026#34; + $_.LicenseUrl + \u0026#34;; \u0026#34; + $textLicence);   Catch [system.exception]  Write-Host ($error[0].Exception); Write-Host (\u0026#34;Could not read license for \u0026#34; + $pkg.Id)   Solution 4: Visual Studio Tool \u0026raquo; Package Licenses \u0026nbsp; Visual Studio 2017 Extension: List license of all NuGet packages inside the ‘packages’ folder of any Visual Studio solution. Refer license from the Nuget Project-Url / License-Url in the package metadata. Download license and license text from GitHub, spdx.org.\nVisual Studio Marketplace: Package Licenses\nPackage Folder\nPackage Folder not exist for the solution?\nNuGet.Config\nCreate Nuget.Config for the Visual Studio solution:\n\u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;utf-8\u0026#34;?\u0026gt; \u0026lt;configuration\u0026gt; \u0026lt;config\u0026gt; \u0026lt;add key=\u0026#34;globalPackagesFolder\u0026#34; value=\u0026#34;.\\packages\u0026#34; /\u0026gt; \u0026lt;/config\u0026gt; \u0026lt;/configuration\u0026gt;\nSolution 5: Custom package licenses command line \u0026nbsp; Create your own license file output (Excel or TEXT) with the following .NET Core Console Project:\nhttps://github.com/do-it-ger/DoitPackagesLicenses\nSolution 6: .NET Nuget License Utility \u0026nbsp; A .net core tool to print the licenses of a project. This tool support .NET Core and .NET Standard Projects.\nhttps://github.com/tomchavakis/nuget-license"
+      })
+      .add(
+      
+      
+      {
+        id: 9,
+        tag: "en",
+        href: "/tags/licence/",
+        title: "Licence",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 10,
+        tag: "en",
+        href: "/tags/license/",
+        title: "License",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 11,
+        tag: "en",
+        href: "/blog/2024-05-17-ms-sql-date-format/",
+        title: "MS SQL: Date Format",
+        description: "Microsoft SQL Server date Format",
+        
+        
+        content: "Date without time\nCONVERT(varchar, GETDATE(), 112)\nDate with time\nCONVERT(varchar, GETDATE(), 112) + CONVERT(varchar, GETDATE(), 108)\nor\nCONVERT(varchar, GETDATE(), 112) + CONVERT(VARCHAR, DATEPART(hh, GetDate())) + CONVERT(VARCHAR, DATEPART(mi, GetDate()))"
+      })
+      .add(
+      
+      
+      {
+        id: 12,
+        tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
         description: "",
@@ -6584,10 +6662,10 @@ function initIndex() {
       
       
       {
-        id: 7,
-        tag: "de",
-        href: "/de/tags/",
-        title: "Tags",
+        id: 13,
+        tag: "en",
+        href: "/projects/",
+        title: "Projects",
         description: "",
         
         
@@ -6597,7 +6675,33 @@ function initIndex() {
       
       
       {
-        id: 8,
+        id: 14,
+        tag: "en",
+        href: "/tags/software-development/",
+        title: "Software Development",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 15,
+        tag: "en",
+        href: "/tags/sql/",
+        title: "SQL",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 16,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -6610,7 +6714,20 @@ function initIndex() {
       
       
       {
-        id: 9,
+        id: 17,
+        tag: "de",
+        href: "/de/tags/",
+        title: "Tags",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 18,
         tag: "de",
         href: "/de/ueber/",
         title: "Über",
@@ -6623,9 +6740,9 @@ function initIndex() {
       
       
       {
-        id: 10,
+        id: 19,
         tag: "en",
-        href: "/blog/2024-05-13-unblock-all-files-in-folder-with-powershell/",
+        href: "/blog/unblock-all-files-in-folder-with-powershell/",
         title: "Unblock all files in folder with PowerShell",
         description: "Unblocks files that were downloaded from the Internet with PowerShell",
         
@@ -6636,7 +6753,20 @@ function initIndex() {
       
       
       {
-        id: 11,
+        id: 20,
+        tag: "en",
+        href: "/tags/visual-studio/",
+        title: "Visual Studio",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 21,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -6649,7 +6779,7 @@ function initIndex() {
       
       
       {
-        id: 12,
+        id: 22,
         tag: "de",
         href: "/de/",
         title: "Willkomen zu d.o.it",
@@ -6662,7 +6792,7 @@ function initIndex() {
       
       
       {
-        id: 13,
+        id: 23,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
@@ -6675,7 +6805,7 @@ function initIndex() {
       
       
       {
-        id: 14,
+        id: 24,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",
