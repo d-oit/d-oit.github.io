@@ -6,10 +6,17 @@
     <description>Recent content in Blog on d.o.it</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 May 2024 11:06:48 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2024 15:32:38 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Get licenses from used NuGet packages for your .NET Core Solution</title>
+      <title>Uninstall &#34;Mobile devices&#34; in Windows 11</title>
+      <link>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</link>
+      <pubDate>Tue, 21 May 2024 15:32:38 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</guid>
+      <description>With the Phone Link app on your Windows 11 linked to your iPhone or Android phone. If you don&amp;rsquo;t need it this is the easist way for me to unistall the app.&#xA;Run the following PowerShell code with Admin rights:&#xA;get-appxpackage -allusers *crossdevice* | remove-appxpackage</description>
+    </item>
+    <item>
+      <title>Get licenses from used NuGet packages of your .NET Core Solution</title>
       <link>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</link>
       <pubDate>Fri, 17 May 2024 11:06:48 +0000</pubDate>
       <guid>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</guid>
@@ -27,7 +34,7 @@
       <link>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</link>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</guid>
-      <description>Unblocks files that were downloaded from the internet with PowerShell in Windows:&#xA;dir &amp;#34;C:\Users\$Env:UserName\Downloads&amp;#34; | Unblock-FileUnblock-File PowerShell API Referenz</description>
+      <description>Unblocks files that were downloaded from the internet with PowerShell in Windows:&#xA;dir &amp;#34;C:\Users\$Env:UserName\Downloads&amp;#34; | Unblock-FileUnblock-File PowerShell API reference</description>
     </item>
   </channel>
 </rss>

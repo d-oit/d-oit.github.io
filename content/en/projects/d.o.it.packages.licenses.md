@@ -3,6 +3,10 @@ title: Do.it NuGet Packages.Licenses for .NET
 description: ".NET: Create Excel or Text license file for used NuGet packages"
 date: 2024-05-17T16:53:22.511Z
 tags: [".NET", "Software Development", "License"]
+thumbnail:
+  url: img/blog/NugetLicenseChecker.jpg
+  origin: Copilot Designer
+  author: d.o.
 ---
 
 ## .NET: Create Excel or Text license file for used NuGet packages

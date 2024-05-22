@@ -1,11 +1,15 @@
 ---
-title: Get licenses from used NuGet packages for your .NET Core Solution
-description: "How to get a txt or Excel file for all licence of used Nuget package in your .NET Core Solution"
+title: "Get licenses from used NuGet packages of your .NET Core Solution"
+description: "How to get a txt or Excel file for all license of used Nuget package in your .NET Core Solution"
 date: 2024-05-17T11:06:48.903Z
-tags: [".NET","licence", "Visual Studio","Software Development"]
+tags: [".NET","license", "Visual Studio","Software Development"]
+thumbnail:
+  url: img/blog/NugetLicenseChecker.jpg
+  origin: Copilot Designer
+  author: d.o.
 ---
 
-**ToDo**: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a licence text file or Excel file with all found license and save all licence as a separate Text File.
+**ToDo**: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.
 
 **Let’s try…**
 
@@ -25,7 +29,7 @@ Get-Package | Select-Object Id,LicenseUrl
 
 xunit.runner.visualstudio                               https://raw.githubusercontent.com/xunit/xunit/master/license.txt                       
 NSubstitute                                             https://github.com/nsubstitute/NSubstitute/raw/master/LICENSE.txt         
-Good… but the direct reference project NuGet package. Need also the Licence of all dlls.
+Good… but the direct reference project NuGet package. Need also the License of all dlls.
 
 ## Solution 2: PowerShell: Save license as text file ##
 
@@ -67,7 +71,7 @@ Split-Path -parent $dte.Solution.FileName | cd; New-Item -ItemType Directory -Fo
 
 ## Solution 3: PowerShell: All license in package manager output
 
-Not perfect - I also need the licencse for the used Dlls inside any NuGet Package.
+Not perfect - I also need the license for the used Dlls inside any NuGet Package.
 
 ---------------------
 NuGet Package License
@@ -113,8 +117,8 @@ Write-Host("---------------------");
 
             $filePath = (Join-Path (pwd) 'licenses\') + $pkg.Id + $extension;
 
-            $textLicence = Get-Content $filePath | Select-Object -First 1
-            Write-Host($pkg.Id + "; " + $_.LicenseUrl + "; " + $textLicence);
+            $textLicense = Get-Content $filePath | Select-Object -First 1
+            Write-Host($pkg.Id + "; " + $_.LicenseUrl + "; " + $textLicense);
         }
     }
     Catch [system.exception] {

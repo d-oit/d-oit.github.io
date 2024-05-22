@@ -6,8 +6,15 @@
     <description>Recent content in Welcome to d.o.it! on d.o.it</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 May 2024 16:53:22 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2024 15:32:38 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Uninstall &#34;Mobile devices&#34; in Windows 11</title>
+      <link>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</link>
+      <pubDate>Tue, 21 May 2024 15:32:38 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</guid>
+      <description>With the Phone Link app on your Windows 11 linked to your iPhone or Android phone. If you don&amp;rsquo;t need it this is the easist way for me to unistall the app.&#xA;Run the following PowerShell code with Admin rights:&#xA;get-appxpackage -allusers *crossdevice* | remove-appxpackage</description>
+    </item>
     <item>
       <title>Do.it NuGet Packages.Licenses for .NET</title>
       <link>http://localhost:1313/projects/d.o.it.packages.licenses/</link>
@@ -16,11 +23,11 @@
       <description>.NET: Create Excel or Text license file for used NuGet packages &amp;nbsp; If you need to determine all license of your used NuGet packages in your Visual Studio Solution check out the following project:&#xA;https://github.com/d-oit/DoitPackagesLicenses&#xA;More infos about:&#xA;Blog article</description>
     </item>
     <item>
-      <title>Get licenses from used NuGet packages for your .NET Core Solution</title>
+      <title>Get licenses from used NuGet packages of your .NET Core Solution</title>
       <link>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</link>
       <pubDate>Fri, 17 May 2024 11:06:48 +0000</pubDate>
       <guid>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</guid>
-      <description>ToDo: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a licence text file or Excel file with all found license and save all licence as a separate Text File.&#xA;Let’s try…&#xA;Best solution so far: jump to Solution 5 or Solution 6&#xA;Solution 1: Get-Package &amp;nbsp; Open Visual Studio .NET Core Solution Open Package Manager Console and execute: Get-Package | Select-Object Id,LicenseUrlOutput Result (Nuget Package Name, License Url):</description>
+      <description>ToDo: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.&#xA;Let’s try…&#xA;Best solution so far: jump to Solution 5 or Solution 6&#xA;Solution 1: Get-Package &amp;nbsp; Open Visual Studio .NET Core Solution Open Package Manager Console and execute: Get-Package | Select-Object Id,LicenseUrlOutput Result (Nuget Package Name, License Url):</description>
     </item>
     <item>
       <title>MS SQL: Date Format</title>
@@ -34,7 +41,7 @@
       <link>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</link>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</guid>
-      <description>Unblocks files that were downloaded from the internet with PowerShell in Windows:&#xA;dir &amp;#34;C:\Users\$Env:UserName\Downloads&amp;#34; | Unblock-FileUnblock-File PowerShell API Referenz</description>
+      <description>Unblocks files that were downloaded from the internet with PowerShell in Windows:&#xA;dir &amp;#34;C:\Users\$Env:UserName\Downloads&amp;#34; | Unblock-FileUnblock-File PowerShell API reference</description>
     </item>
     <item>
       <title>About</title>
