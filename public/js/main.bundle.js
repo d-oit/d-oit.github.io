@@ -6600,7 +6600,7 @@ function initIndex() {
         id: 8,
         tag: "en",
         href: "/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/",
-        title: "Get licenses from used NuGet packages for your .NET Core Solution",
+        title: "Get licenses from used NuGet packages of your .NET Core Solution",
         description: "How to get a txt or Excel file for all licence of used Nuget package in your .NET Core Solution",
         
         
@@ -6611,19 +6611,6 @@ function initIndex() {
       
       {
         id: 9,
-        tag: "en",
-        href: "/tags/licence/",
-        title: "Licence",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 10,
         tag: "en",
         href: "/tags/license/",
         title: "License",
@@ -6636,7 +6623,7 @@ function initIndex() {
       
       
       {
-        id: 11,
+        id: 10,
         tag: "en",
         href: "/blog/2024-05-17-ms-sql-date-format/",
         title: "MS SQL: Date Format",
@@ -6649,7 +6636,7 @@ function initIndex() {
       
       
       {
-        id: 12,
+        id: 11,
         tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
@@ -6662,7 +6649,7 @@ function initIndex() {
       
       
       {
-        id: 13,
+        id: 12,
         tag: "en",
         href: "/projects/",
         title: "Projects",
@@ -6675,7 +6662,7 @@ function initIndex() {
       
       
       {
-        id: 14,
+        id: 13,
         tag: "en",
         href: "/tags/software-development/",
         title: "Software Development",
@@ -6688,7 +6675,7 @@ function initIndex() {
       
       
       {
-        id: 15,
+        id: 14,
         tag: "en",
         href: "/tags/sql/",
         title: "SQL",
@@ -6701,7 +6688,7 @@ function initIndex() {
       
       
       {
-        id: 16,
+        id: 15,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -6714,7 +6701,7 @@ function initIndex() {
       
       
       {
-        id: 17,
+        id: 16,
         tag: "de",
         href: "/de/tags/",
         title: "Tags",
@@ -6727,7 +6714,7 @@ function initIndex() {
       
       
       {
-        id: 18,
+        id: 17,
         tag: "de",
         href: "/de/ueber/",
         title: "Über",
@@ -6740,14 +6727,27 @@ function initIndex() {
       
       
       {
-        id: 19,
+        id: 18,
         tag: "en",
         href: "/blog/unblock-all-files-in-folder-with-powershell/",
         title: "Unblock all files in folder with PowerShell",
         description: "Unblocks files that were downloaded from the Internet with PowerShell",
         
         
-        content: "Unblocks files that were downloaded from the internet with PowerShell in Windows:\ndir \u0026#34;C:\\Users\\$Env:UserName\\Downloads\u0026#34; | Unblock-FileUnblock-File PowerShell API Referenz"
+        content: "Unblocks files that were downloaded from the internet with PowerShell in Windows:\ndir \u0026#34;C:\\Users\\$Env:UserName\\Downloads\u0026#34; | Unblock-FileUnblock-File PowerShell API reference"
+      })
+      .add(
+      
+      
+      {
+        id: 19,
+        tag: "en",
+        href: "/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/",
+        title: "Uninstall \"Mobile devices\" in Windows 11",
+        description: "If you don't need Phone Link in Windows 11 this is the easiest way to uninstall the app.",
+        
+        
+        content: "With the Phone Link app on your Windows 11 linked to your iPhone or Android phone. If you don\u0026rsquo;t need it this is the easist way for me to unistall the app.\nRun the following PowerShell code with Admin rights:\nget-appxpackage -allusers *crossdevice* | remove-appxpackage"
       })
       .add(
       
@@ -6806,6 +6806,19 @@ function initIndex() {
       
       {
         id: 24,
+        tag: "en",
+        href: "/tags/windows-11/",
+        title: "Windows 11",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 25,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",
