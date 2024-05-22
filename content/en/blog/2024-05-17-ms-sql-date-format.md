@@ -2,6 +2,9 @@
 title: "MS SQL: Date Format"
 description: "Microsoft SQL Server date Format"
 date: 2024-05-17T10:54:33.643Z
+thumbnail:
+  url: img\blog\SQLDateTime.jpg
+  origin: Copilot Designer
 tags: ["SQL","Software Development"]
 ---
 
