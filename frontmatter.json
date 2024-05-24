@@ -65,6 +65,9 @@
     {
       "title": "projects_en",
       "path": "[[workspace]]/content/en/projects"
+    },
+    {
+      "path": "[[workspace]]/content/en"
     }
   ],
   "frontMatter.git.enabled": true

@@ -34,7 +34,7 @@
       <link>http://localhost:1313/blog/2024-05-17-ms-sql-date-format/</link>
       <pubDate>Fri, 17 May 2024 10:54:33 +0000</pubDate>
       <guid>http://localhost:1313/blog/2024-05-17-ms-sql-date-format/</guid>
-      <description>Date without time&#xA;CONVERT(varchar, GETDATE(), 112)&#xA;Date with time&#xA;CONVERT(varchar, GETDATE(), 112) + CONVERT(varchar, GETDATE(), 108)&#xA;or&#xA;CONVERT(varchar, GETDATE(), 112) + CONVERT(VARCHAR, DATEPART(hh, GetDate())) + CONVERT(VARCHAR, DATEPART(mi, GetDate()))</description>
+      <description>Date without time&#xA;CONVERT(varchar, GETDATE(), 112)&#xA;Date with time&#xA;CONVERT(varchar, GETDATE(), 112) + CONVERT(varchar, GETDATE(), 108)&#xA;or&#xA;CONVERT(varchar, GETDATE(), 112) + CONVERT(VARCHAR, DATEPART(hh, GetDate())) + CONVERT(VARCHAR, DATEPART(mi, GetDate()))&#xA;More information about DateTime: https://learn.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-ver16</description>
     </item>
     <item>
       <title>Unblock all files in folder with PowerShell</title>
