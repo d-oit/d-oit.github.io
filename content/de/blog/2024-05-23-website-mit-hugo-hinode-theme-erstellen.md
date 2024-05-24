@@ -3,18 +3,17 @@ title: Statische Website erstellen
 description: Website mit Hugo Hinode Theme erstellen
 slug: statische-website-erstellen
 date: 2024-05-23T14:21:58.426Z
-preview: ""
 draft: true
 tags:
   - Hugo
   - Website
   - Hinode
 thumbnail:
-  url: /img/logo_var.svg#logo
-  author: Mark Dumay
-  authorURL: https://gethinode.com/docs/about/credits/?menu=about
-  origin: null
-  originURL: null
+  url: /img/blog/VisualStudioCodeWorkspace.png
+  author: 
+  authorURL: 
+  origin: Mark Dumay
+  originURL: https://gethinode.com/docs/about/credits/?menu=about
 keywords:
   - website
 ---
@@ -52,7 +51,9 @@ Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich b
 
     *Voraussetzung*: Command Line Interface (CLI) >> https://code.visualstudio.com/docs/editor/command-line
 
-    {{< image src="img/blog/VisualStudioCodeWorkspace.png" >}}
+
+
+
 
 
 

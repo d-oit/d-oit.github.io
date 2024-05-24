@@ -6526,7 +6526,7 @@ function initIndex() {
         description: "Dinge die ich im Jahr 2024 ausprobieren möchte",
         
         
-        content: "Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:\nSmartphone Display austauschen YouTube Kanal"
+        content: "Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:\nWebsite / Blog wieder starten Smartphone Display austauschen YouTube Kanal"
       })
       .add(
       
