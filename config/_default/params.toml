@@ -22,7 +22,7 @@
     enabled = false
     sort = "weight"
     reverse = false
-    webshare = true
+  
 
 [sections]
     [sections.blog]

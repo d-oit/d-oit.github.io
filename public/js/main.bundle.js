@@ -6526,15 +6526,15 @@ function initIndex() {
         description: "Dinge die ich im Jahr 2024 ausprobieren möchte",
         
         
-        content: "Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:\nSmartphone Display austauschen YouTube Kanal"
+        content: "Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:\nWebsite / Blog wieder starten Smartphone Display austauschen YouTube Kanal"
       })
       .add(
       
       
       {
         id: 3,
-        tag: "en",
-        href: "/blog/",
+        tag: "de",
+        href: "/de/blog/",
         title: "Blog",
         description: "",
         
@@ -6546,8 +6546,8 @@ function initIndex() {
       
       {
         id: 4,
-        tag: "de",
-        href: "/de/blog/",
+        tag: "en",
+        href: "/blog/",
         title: "Blog",
         description: "",
         
@@ -6630,7 +6630,7 @@ function initIndex() {
         description: "Microsoft SQL Server date Format",
         
         
-        content: "Date without time\nCONVERT(varchar, GETDATE(), 112)\nDate with time\nCONVERT(varchar, GETDATE(), 112) + CONVERT(varchar, GETDATE(), 108)\nor\nCONVERT(varchar, GETDATE(), 112) + CONVERT(VARCHAR, DATEPART(hh, GetDate())) + CONVERT(VARCHAR, DATEPART(mi, GetDate()))"
+        content: "Date without time\nCONVERT(varchar, GETDATE(), 112)\nDate with time\nCONVERT(varchar, GETDATE(), 112) + CONVERT(varchar, GETDATE(), 108)\nor\nCONVERT(varchar, GETDATE(), 112) + CONVERT(VARCHAR, DATEPART(hh, GetDate())) + CONVERT(VARCHAR, DATEPART(mi, GetDate()))\nMore information about DateTime: https://learn.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-ver16"
       })
       .add(
       
