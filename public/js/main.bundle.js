@@ -6521,6 +6521,19 @@ function initIndex() {
       {
         id: 2,
         tag: "de",
+        href: "/de/tags/apps/tools-2024/",
+        title: "Apps/Tools 2024",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 3,
+        tag: "de",
         href: "/de/blog/2024-05-15-ausprobieren---jahr-2024/",
         title: "Ausprobieren - Jahr 2024",
         description: "Dinge die ich im Jahr 2024 ausprobieren möchte",
@@ -6532,7 +6545,7 @@ function initIndex() {
       
       
       {
-        id: 3,
+        id: 4,
         tag: "de",
         href: "/de/blog/",
         title: "Blog",
@@ -6545,7 +6558,7 @@ function initIndex() {
       
       
       {
-        id: 4,
+        id: 5,
         tag: "en",
         href: "/blog/",
         title: "Blog",
@@ -6558,7 +6571,7 @@ function initIndex() {
       
       
       {
-        id: 5,
+        id: 6,
         tag: "de",
         href: "/de/categories/",
         title: "Categories",
@@ -6571,7 +6584,7 @@ function initIndex() {
       
       
       {
-        id: 6,
+        id: 7,
         tag: "en",
         href: "/categories/",
         title: "Categories",
@@ -6584,7 +6597,7 @@ function initIndex() {
       
       
       {
-        id: 7,
+        id: 8,
         tag: "en",
         href: "/projects/d.o.it.packages.licenses/",
         title: "Do.it NuGet Packages.Licenses for .NET",
@@ -6597,7 +6610,7 @@ function initIndex() {
       
       
       {
-        id: 8,
+        id: 9,
         tag: "en",
         href: "/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/",
         title: "Get licenses from used NuGet packages of your .NET Core Solution",
@@ -6610,7 +6623,33 @@ function initIndex() {
       
       
       {
-        id: 9,
+        id: 10,
+        tag: "de",
+        href: "/de/tags/hinode/",
+        title: "Hinode",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 11,
+        tag: "de",
+        href: "/de/tags/hugo/",
+        title: "Hugo",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 12,
         tag: "en",
         href: "/tags/license/",
         title: "License",
@@ -6623,7 +6662,20 @@ function initIndex() {
       
       
       {
-        id: 10,
+        id: 13,
+        tag: "de",
+        href: "/de/blog/productivity-apps-tools-list-2024/",
+        title: "Meine produktive Apps / Tools Liste 2024",
+        description: "Here are my current productivity apps list to get more done.",
+        
+        
+        content: "Windows apps / tools \u0026nbsp; Übersicht über meine aktuellen produktiven Apps/Tools\nKeePass TPFan (für Lenovo Notebooks Lüftersteuerung) WhatsApp for Windows (Zwangsweise für private Nachrichten) Grafik \u0026nbsp; **Paint.Net ** PNG to SVG Büro / Organisationstool \u0026nbsp; draw.io Desktop \u0026raquo; https://app.diagrams.net MultiCommander (Windows Explorer alternative zum Kopieren zwischen Laufwerken) Wiso Steuer / Tax (deutsche Steuererklärung) Entwicklungstool / Editors \u0026nbsp; Visual Studio Code Video / Audio \u0026nbsp; OBS Studio Audacity Web \u0026nbsp; Canva ist ein kostenloses Online-Tool für Grafikdesign Github (Softwareentwicklung und Versionsverwaltung) GoFullPage (Screenshot einer kompletten Website) Aixploria \u0026raquo; https://www.aixploria.com/en/ultimate-list-ai/"
+      })
+      .add(
+      
+      
+      {
+        id: 14,
         tag: "en",
         href: "/blog/2024-05-17-ms-sql-date-format/",
         title: "MS SQL: Date Format",
@@ -6636,7 +6688,7 @@ function initIndex() {
       
       
       {
-        id: 11,
+        id: 15,
         tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
@@ -6649,7 +6701,7 @@ function initIndex() {
       
       
       {
-        id: 12,
+        id: 16,
         tag: "en",
         href: "/projects/",
         title: "Projects",
@@ -6662,7 +6714,7 @@ function initIndex() {
       
       
       {
-        id: 13,
+        id: 17,
         tag: "en",
         href: "/tags/software-development/",
         title: "Software Development",
@@ -6675,7 +6727,7 @@ function initIndex() {
       
       
       {
-        id: 14,
+        id: 18,
         tag: "en",
         href: "/tags/sql/",
         title: "SQL",
@@ -6688,20 +6740,20 @@ function initIndex() {
       
       
       {
-        id: 15,
-        tag: "en",
-        href: "/tags/",
-        title: "Tags",
-        description: "",
+        id: 19,
+        tag: "de",
+        href: "/de/blog/statische-website-erstellen/",
+        title: "Statische Website erstellen",
+        description: "Website mit Hugo Hinode Theme erstellen",
         
         
-        content: ""
+        content: "Blog Wiederbelebung \u0026nbsp; Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben.\nDas ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. Und vor allem Performance :performing_arts:\nDer Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen.\nHugo \u0026nbsp; Grundlage vom Hinode Theme ist Hugo. Eines der am weitesten verbreitetsten Generatoren von statischen Website. Lokal wird dabei mit einem Editor der Inhalt erstellt. Hugo als Generator erzeugt daraufhin html Dateien welche der Browser anzeigt.\nInfos zu Hugo hier zu finden: https://gohugo.io/ oder https://de.wikipedia.org/wiki/Hugo_(Software)\nLokale Installation \u0026nbsp; Los geht es mit der lokalen Installation. In der Beschreibung wird Windows verwendet, unterstützt werden natürlich auch andere Umgebungen.\nVorgehensweise ist in der Dokumentation des Hinode Hugo Theme ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/\nHugo Installation \u0026raquo; https://gohugo.io/getting-started/quick-start/#prerequisites\nGit als Versionsverwaltung \u0026raquo; https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt)\nVisual Studio Code \u0026raquo; https://code.visualstudio.com/Download\nVisual Studio Code Erweiterungen\nFront Matter CMS German - Code Spell Checker Font Awesome Auto-complete \u0026amp; Preview Aktueller Stand als PowerShell Installation Gist \u0026raquo; https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405 Ermittlung Voraussetzung: Command Line Interface (CLI) \u0026raquo; https://code.visualstudio.com/docs/editor/command-line\nNach der Installation kann lokal per hugo server Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht.\nWebsite veröffentlichen \u0026nbsp; Der aktuelle Stand wird per git Sourceverwaltung auf github gestellt und per Actions als fertige html Seite (github pages) auf den öffentlichen Ordner gestellt.\nDas Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop\nDamit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht.\nFalls ein Interesse an einer ausführlichen Einführung in Hugo mit den Hinode Theme inklusive Blogartikelerstellung auf deutsch besteht gerne eine kurze email an d-oit@t-online.de"
       })
       .add(
       
       
       {
-        id: 16,
+        id: 20,
         tag: "de",
         href: "/de/tags/",
         title: "Tags",
@@ -6714,7 +6766,33 @@ function initIndex() {
       
       
       {
-        id: 17,
+        id: 21,
+        tag: "en",
+        href: "/tags/",
+        title: "Tags",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 22,
+        tag: "de",
+        href: "/de/tags/try-new-things/",
+        title: "Try New Things",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 23,
         tag: "de",
         href: "/de/ueber/",
         title: "Über",
@@ -6727,7 +6805,7 @@ function initIndex() {
       
       
       {
-        id: 18,
+        id: 24,
         tag: "en",
         href: "/blog/unblock-all-files-in-folder-with-powershell/",
         title: "Unblock all files in folder with PowerShell",
@@ -6740,7 +6818,7 @@ function initIndex() {
       
       
       {
-        id: 19,
+        id: 25,
         tag: "en",
         href: "/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/",
         title: "Uninstall \"Mobile devices\" in Windows 11",
@@ -6753,7 +6831,7 @@ function initIndex() {
       
       
       {
-        id: 20,
+        id: 26,
         tag: "en",
         href: "/tags/visual-studio/",
         title: "Visual Studio",
@@ -6766,7 +6844,20 @@ function initIndex() {
       
       
       {
-        id: 21,
+        id: 27,
+        tag: "de",
+        href: "/de/tags/website/",
+        title: "Website",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 28,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -6779,7 +6870,7 @@ function initIndex() {
       
       
       {
-        id: 22,
+        id: 29,
         tag: "de",
         href: "/de/",
         title: "Willkomen zu d.o.it",
@@ -6792,7 +6883,7 @@ function initIndex() {
       
       
       {
-        id: 23,
+        id: 30,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
@@ -6805,7 +6896,7 @@ function initIndex() {
       
       
       {
-        id: 24,
+        id: 31,
         tag: "en",
         href: "/tags/windows-11/",
         title: "Windows 11",
@@ -6818,7 +6909,7 @@ function initIndex() {
       
       
       {
-        id: 25,
+        id: 32,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",
