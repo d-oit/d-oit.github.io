@@ -3,7 +3,15 @@
 	"file": "main.css",
 	"sourceRoot": "C:/github/d-oit.github.io/doitBlog",
 	"sources": [
+<<<<<<< HEAD
 		"scss/bundle-1716819601814821800.scss",
+=======
+<<<<<<< HEAD
+		"scss/bundle-1716383518668645000.scss",
+=======
+		"scss/bundle-1716551491486695400.scss",
+>>>>>>> a0dd2ce774c2f719a711459f72e84d37cb1b355c
+>>>>>>> 9d96e31004009cf864322d78d0ffa93ed2517cdf
 		"hugo:vars",
 		"../../../Users/doswa/AppData/Local/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gethinode/hinode@v0.23.21/assets/scss/common/_variables.scss",
 		"../../../Users/doswa/AppData/Local/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gethinode/hinode@v0.23.21/assets/scss/theme/_variables.scss",
