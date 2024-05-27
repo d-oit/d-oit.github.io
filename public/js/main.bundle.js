@@ -6666,10 +6666,10 @@ function initIndex() {
         tag: "de",
         href: "/de/blog/productivity-apps-tools-list-2024/",
         title: "Meine produktive Apps / Tools Liste 2024",
-        description: "Here are my current productivity apps list to get more done.",
+        description: "Übersicht über meine aktuellen produktiven Apps/Tools",
         
         
-        content: "Windows apps / tools \u0026nbsp; Übersicht über meine aktuellen produktiven Apps/Tools\nKeePass TPFan (für Lenovo Notebooks Lüftersteuerung) WhatsApp for Windows (Zwangsweise für private Nachrichten) Grafik \u0026nbsp; **Paint.Net ** PNG to SVG Büro / Organisationstool \u0026nbsp; draw.io Desktop \u0026raquo; https://app.diagrams.net MultiCommander (Windows Explorer alternative zum Kopieren zwischen Laufwerken) Wiso Steuer / Tax (deutsche Steuererklärung) Entwicklungstool / Editors \u0026nbsp; Visual Studio Code Video / Audio \u0026nbsp; OBS Studio Audacity Web \u0026nbsp; Canva ist ein kostenloses Online-Tool für Grafikdesign Github (Softwareentwicklung und Versionsverwaltung) GoFullPage (Screenshot einer kompletten Website) Aixploria \u0026raquo; https://www.aixploria.com/en/ultimate-list-ai/"
+        content: "Windows apps / tools \u0026nbsp; KeePass TPFan (für Lenovo Notebooks Lüftersteuerung) WhatsApp for Windows (Zwangsweise für private Nachrichten) Grafik \u0026nbsp; **Paint.Net ** PNG to SVG Büro / Organisationstool \u0026nbsp; draw.io Desktop \u0026raquo; https://app.diagrams.net MultiCommander (Windows Explorer alternative zum Kopieren zwischen Laufwerken) Wiso Steuer / Tax (deutsche Steuererklärung) Entwicklungstool / Editors \u0026nbsp; Visual Studio Code Video / Audio \u0026nbsp; OBS Studio Audacity Web \u0026nbsp; Canva ist ein kostenloses Online-Tool für Grafikdesign Github (Softwareentwicklung und Versionsverwaltung) GoFullPage (Screenshot einer kompletten Website) Aixploria \u0026raquo; https://www.aixploria.com/en/ultimate-list-ai/"
       })
       .add(
       
