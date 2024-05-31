@@ -3,7 +3,6 @@ title: Statische Website erstellen
 description: Website mit Hugo Hinode Theme erstellen
 slug: statische-website-erstellen
 date: 2024-05-23T14:21:58.426Z
-draft: true
 tags:
   - Hugo
   - Website
@@ -50,6 +49,20 @@ Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich b
     Ermittlung 
 
     *Voraussetzung*: Command Line Interface (CLI) >> https://code.visualstudio.com/docs/editor/command-line
+
+
+Nach der Installation kann lokal per `hugo server` Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht. 
+
+## Website veröffentlichen
+
+Der aktuelle Stand wird per git Sourceverwaltung auf **github** gestellt und per **Actions** als fertige html Seite (github pages) auf den öffentlichen Ordner gestellt. 
+
+Das Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop
+
+Damit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht. 
+
+
+Falls ein Interesse an einer ausführlichen Einführung in Hugo mit den Hinode Theme inklusive Blogartikelerstellung auf deutsch besteht gerne eine kurze email an d-oit@t-online.de
 
 
 

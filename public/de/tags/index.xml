@@ -6,8 +6,36 @@
     <description>Recent content in Tags on d.o.it</description>
     <generator>Hugo</generator>
     <language>de</language>
-    <lastBuildDate>Wed, 15 May 2024 13:39:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 May 2024 13:38:36 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apps/Tools 2024</title>
+      <link>http://localhost:1313/de/tags/apps/tools-2024/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/de/tags/apps/tools-2024/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hinode</title>
+      <link>http://localhost:1313/de/tags/hinode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/de/tags/hinode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/de/tags/hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/de/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Website</title>
+      <link>http://localhost:1313/de/tags/website/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/de/tags/website/</guid>
+      <description></description>
+    </item>
     <item>
       <title>2024</title>
       <link>http://localhost:1313/de/tags/2024/</link>

@@ -6,8 +6,22 @@
     <description>Recent content in Willkomen zu d.o.it on d.o.it</description>
     <generator>Hugo</generator>
     <language>de</language>
-    <lastBuildDate>Wed, 15 May 2024 13:39:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 May 2024 13:38:36 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Meine produktive Apps / Tools Liste 2024</title>
+      <link>http://localhost:1313/de/blog/productivity-apps-tools-list-2024/</link>
+      <pubDate>Fri, 24 May 2024 13:38:36 +0000</pubDate>
+      <guid>http://localhost:1313/de/blog/productivity-apps-tools-list-2024/</guid>
+      <description>Windows apps / tools &amp;nbsp; KeePass TPFan (für Lenovo Notebooks Lüftersteuerung) WhatsApp for Windows (Zwangsweise für private Nachrichten) Grafik &amp;nbsp; **Paint.Net ** PNG to SVG Büro / Organisationstool &amp;nbsp; draw.io Desktop &amp;raquo; https://app.diagrams.net MultiCommander (Windows Explorer alternative zum Kopieren zwischen Laufwerken) Wiso Steuer / Tax (deutsche Steuererklärung) Entwicklungstool / Editors &amp;nbsp; Visual Studio Code Video / Audio &amp;nbsp; OBS Studio Audacity Web &amp;nbsp; Canva ist ein kostenloses Online-Tool für Grafikdesign Github (Softwareentwicklung und Versionsverwaltung) GoFullPage (Screenshot einer kompletten Website) Aixploria &amp;raquo; https://www.</description>
+    </item>
+    <item>
+      <title>Statische Website erstellen</title>
+      <link>http://localhost:1313/de/blog/statische-website-erstellen/</link>
+      <pubDate>Thu, 23 May 2024 14:21:58 +0000</pubDate>
+      <guid>http://localhost:1313/de/blog/statische-website-erstellen/</guid>
+      <description>Blog Wiederbelebung &amp;nbsp; Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben.&#xA;Das ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. Und vor allem Performance :performing_arts:&#xA;Der Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen.</description>
+    </item>
     <item>
       <title>Ausprobieren - Jahr 2024</title>
       <link>http://localhost:1313/de/blog/2024-05-15-ausprobieren---jahr-2024/</link>
