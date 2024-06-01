@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2024-05-21T15:32:38+00:00</lastmod>
+    <lastmod>2024-06-01T11:34:27+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -15,8 +15,30 @@
                 href="http://localhost:1313/blog/"
                 />
   </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-06-01T11:34:27+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/categories/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/developer/</loc>
+    <lastmod>2024-06-01T11:34:27+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/extensions-visual-studio-2022-solo-developer-2024/</loc>
+    <lastmod>2024-06-01T11:34:27+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/software-development/</loc>
+    <lastmod>2024-06-01T11:34:27+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-05-21T15:32:38+00:00</lastmod>
+    <lastmod>2024-06-01T11:34:27+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -28,11 +50,11 @@
                 href="http://localhost:1313/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</loc>
-    <lastmod>2024-05-21T15:32:38+00:00</lastmod>
+    <loc>http://localhost:1313/tags/visual-studio-2022/</loc>
+    <lastmod>2024-06-01T11:34:27+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-05-21T15:32:38+00:00</lastmod>
+    <lastmod>2024-06-01T11:34:27+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -43,6 +65,9 @@
                 hreflang="en"
                 href="http://localhost:1313/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</loc>
+    <lastmod>2024-05-21T15:32:38+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/windows-11/</loc>
     <lastmod>2024-05-21T15:32:38+00:00</lastmod>
@@ -94,18 +119,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/about/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/categories/"
                 />
   </url>
 </urlset>

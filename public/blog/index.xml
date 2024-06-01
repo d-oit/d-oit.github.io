@@ -6,8 +6,15 @@
     <description>Recent content in Blog on d.o.it</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 21 May 2024 15:32:38 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2024 11:34:27 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extensions for Visual Studio 2022 for solo Developer in 2024</title>
+      <link>http://localhost:1313/blog/extensions-visual-studio-2022-solo-developer-2024/</link>
+      <pubDate>Sat, 01 Jun 2024 11:34:27 +0000</pubDate>
+      <guid>http://localhost:1313/blog/extensions-visual-studio-2022-solo-developer-2024/</guid>
+      <description>List for extensions for C# &amp;nbsp; CodeRush for VS 2022: Productivity tools for code generation, refactoring, style, code coverage &amp;amp; testing https://marketplace.visualstudio.com/items?itemName=DevExpress.CodeRushforVS2022&amp;ssr=false#overview Tabnine AI Assistant EF Core Power Tools https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools&amp;ssr=false#review-details REST API Client Code Generator for VS 2022: generating a strongly typed REST API Client from an Open API / Swagger specification file https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022 Unit Test Boilerplate Generator: Generates a unit test boilerplate from a given C# class, setting up mocks for all dependencies https://marketplace.</description>
+    </item>
     <item>
       <title>Uninstall &#34;Mobile devices&#34; in Windows 11</title>
       <link>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</link>

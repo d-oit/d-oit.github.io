@@ -6546,19 +6546,6 @@ function initIndex() {
       
       {
         id: 4,
-        tag: "de",
-        href: "/de/blog/",
-        title: "Blog",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 5,
         tag: "en",
         href: "/blog/",
         title: "Blog",
@@ -6571,10 +6558,10 @@ function initIndex() {
       
       
       {
-        id: 6,
+        id: 5,
         tag: "de",
-        href: "/de/categories/",
-        title: "Categories",
+        href: "/de/blog/",
+        title: "Blog",
         description: "",
         
         
@@ -6584,7 +6571,7 @@ function initIndex() {
       
       
       {
-        id: 7,
+        id: 6,
         tag: "en",
         href: "/categories/",
         title: "Categories",
@@ -6597,7 +6584,33 @@ function initIndex() {
       
       
       {
+        id: 7,
+        tag: "de",
+        href: "/de/categories/",
+        title: "Categories",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
         id: 8,
+        tag: "en",
+        href: "/tags/developer/",
+        title: "Developer",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 9,
         tag: "en",
         href: "/projects/d.o.it.packages.licenses/",
         title: "Do.it NuGet Packages.Licenses for .NET",
@@ -6610,7 +6623,20 @@ function initIndex() {
       
       
       {
-        id: 9,
+        id: 10,
+        tag: "en",
+        href: "/blog/extensions-visual-studio-2022-solo-developer-2024/",
+        title: "Extensions for Visual Studio 2022 for solo Developer in 2024",
+        description: "List of useful free / non-paid  extensions for Microsoft Visual Studio 2022 for solo developer in 2024",
+        
+        
+        content: "List for extensions for C# \u0026nbsp; CodeRush for VS 2022: Productivity tools for code generation, refactoring, style, code coverage \u0026amp; testing https://marketplace.visualstudio.com/items?itemName=DevExpress.CodeRushforVS2022\u0026ssr=false#overview Tabnine AI Assistant EF Core Power Tools https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools\u0026ssr=false#review-details REST API Client Code Generator for VS 2022: generating a strongly typed REST API Client from an Open API / Swagger specification file https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022 Unit Test Boilerplate Generator: Generates a unit test boilerplate from a given C# class, setting up mocks for all dependencies https://marketplace.visualstudio.com/items?itemName=RandomEngy.UnitTestBoilerplateGenerator ResXManager: localize and manage all kind of applications with resx-based resources https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager or \u0026raquo; Zeta Resource Editor: FREE multilingual, parallel .NET resource file editing https://www.zeta-resource-editor.com/"
+      })
+      .add(
+      
+      
+      {
+        id: 11,
         tag: "en",
         href: "/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/",
         title: "Get licenses from used NuGet packages of your .NET Core Solution",
@@ -6623,7 +6649,7 @@ function initIndex() {
       
       
       {
-        id: 10,
+        id: 12,
         tag: "de",
         href: "/de/tags/hinode/",
         title: "Hinode",
@@ -6636,7 +6662,7 @@ function initIndex() {
       
       
       {
-        id: 11,
+        id: 13,
         tag: "de",
         href: "/de/tags/hugo/",
         title: "Hugo",
@@ -6649,7 +6675,7 @@ function initIndex() {
       
       
       {
-        id: 12,
+        id: 14,
         tag: "en",
         href: "/tags/license/",
         title: "License",
@@ -6662,7 +6688,7 @@ function initIndex() {
       
       
       {
-        id: 13,
+        id: 15,
         tag: "de",
         href: "/de/blog/productivity-apps-tools-list-2024/",
         title: "Meine produktive Apps / Tools Liste 2024",
@@ -6675,7 +6701,7 @@ function initIndex() {
       
       
       {
-        id: 14,
+        id: 16,
         tag: "en",
         href: "/blog/2024-05-17-ms-sql-date-format/",
         title: "MS SQL: Date Format",
@@ -6688,7 +6714,7 @@ function initIndex() {
       
       
       {
-        id: 15,
+        id: 17,
         tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
@@ -6701,7 +6727,7 @@ function initIndex() {
       
       
       {
-        id: 16,
+        id: 18,
         tag: "en",
         href: "/projects/",
         title: "Projects",
@@ -6714,7 +6740,20 @@ function initIndex() {
       
       
       {
-        id: 17,
+        id: 19,
+        tag: "en",
+        href: "/categories/software-development/",
+        title: "Software Development",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 20,
         tag: "en",
         href: "/tags/software-development/",
         title: "Software Development",
@@ -6727,7 +6766,7 @@ function initIndex() {
       
       
       {
-        id: 18,
+        id: 21,
         tag: "en",
         href: "/tags/sql/",
         title: "SQL",
@@ -6740,7 +6779,7 @@ function initIndex() {
       
       
       {
-        id: 19,
+        id: 22,
         tag: "de",
         href: "/de/blog/statische-website-erstellen/",
         title: "Statische Website erstellen",
@@ -6753,20 +6792,7 @@ function initIndex() {
       
       
       {
-        id: 20,
-        tag: "de",
-        href: "/de/tags/",
-        title: "Tags",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 21,
+        id: 23,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -6779,7 +6805,20 @@ function initIndex() {
       
       
       {
-        id: 22,
+        id: 24,
+        tag: "de",
+        href: "/de/tags/",
+        title: "Tags",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 25,
         tag: "de",
         href: "/de/tags/try-new-things/",
         title: "Try New Things",
@@ -6792,7 +6831,7 @@ function initIndex() {
       
       
       {
-        id: 23,
+        id: 26,
         tag: "de",
         href: "/de/ueber/",
         title: "Über",
@@ -6805,7 +6844,7 @@ function initIndex() {
       
       
       {
-        id: 24,
+        id: 27,
         tag: "en",
         href: "/blog/unblock-all-files-in-folder-with-powershell/",
         title: "Unblock all files in folder with PowerShell",
@@ -6818,7 +6857,7 @@ function initIndex() {
       
       
       {
-        id: 25,
+        id: 28,
         tag: "en",
         href: "/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/",
         title: "Uninstall \"Mobile devices\" in Windows 11",
@@ -6831,7 +6870,7 @@ function initIndex() {
       
       
       {
-        id: 26,
+        id: 29,
         tag: "en",
         href: "/tags/visual-studio/",
         title: "Visual Studio",
@@ -6844,7 +6883,20 @@ function initIndex() {
       
       
       {
-        id: 27,
+        id: 30,
+        tag: "en",
+        href: "/tags/visual-studio-2022/",
+        title: "Visual Studio 2022",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 31,
         tag: "de",
         href: "/de/tags/website/",
         title: "Website",
@@ -6857,7 +6909,7 @@ function initIndex() {
       
       
       {
-        id: 28,
+        id: 32,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -6870,7 +6922,7 @@ function initIndex() {
       
       
       {
-        id: 29,
+        id: 33,
         tag: "de",
         href: "/de/",
         title: "Willkomen zu d.o.it",
@@ -6883,7 +6935,7 @@ function initIndex() {
       
       
       {
-        id: 30,
+        id: 34,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
@@ -6896,7 +6948,7 @@ function initIndex() {
       
       
       {
-        id: 31,
+        id: 35,
         tag: "en",
         href: "/tags/windows-11/",
         title: "Windows 11",
@@ -6909,7 +6961,7 @@ function initIndex() {
       
       
       {
-        id: 32,
+        id: 36,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",
