@@ -4,3 +4,4 @@ github.com/gethinode/hinode v0.23.19 h1:61QbBRwxp+iajrCkbyw2JrvyCWq819kOYwQjkgZe
 github.com/gethinode/hinode v0.23.19/go.mod h1:ZeVZDRjvPMosmTVG3RWBvaHvWaNbjYf7/3fF/LxXOVw=
 github.com/gethinode/hinode v0.23.21 h1:tnjfA33d6WfwIXWxKZDcrg70+ftLJ+asCwYkWtyuKxo=
 github.com/gethinode/hinode v0.23.21/go.mod h1:ZeVZDRjvPMosmTVG3RWBvaHvWaNbjYf7/3fF/LxXOVw=
+github.com/gethinode/hinode v0.24.1/go.mod h1:Fck4IozLCFi6ISNFIOKu4KqS188/4fVPQwxqqRBcv44=
