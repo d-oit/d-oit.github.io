@@ -6,7 +6,7 @@
     <description>Recent content in Blog on d.o.it</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Jun 2024 11:34:27 +0000</lastBuildDate>
+    <copyright>Copyright © 2024 d.o.</copyright>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extensions for Visual Studio 2022 for solo Developer in 2024</title>
@@ -17,30 +17,30 @@
     </item>
     <item>
       <title>Uninstall &#34;Mobile devices&#34; in Windows 11</title>
-      <link>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</link>
+      <link>http://localhost:1313/blog/uninstall-mobile-devices-windows-11/</link>
       <pubDate>Tue, 21 May 2024 15:32:38 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</guid>
+      <guid>http://localhost:1313/blog/uninstall-mobile-devices-windows-11/</guid>
       <description>With the Phone Link app on your Windows 11 linked to your iPhone or Android phone. If you don&amp;rsquo;t need it this is the easist way for me to unistall the app.&#xA;Run the following PowerShell code with Admin rights:&#xA;get-appxpackage -allusers *crossdevice* | remove-appxpackage</description>
     </item>
     <item>
-      <title>Get licenses from used NuGet packages of your .NET Core Solution</title>
-      <link>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</link>
+      <title>.NET Core Solution: Get licenses from used NuGet packages</title>
+      <link>http://localhost:1313/blog/licenses-nuget-packages-net-core-solution/</link>
       <pubDate>Fri, 17 May 2024 11:06:48 +0000</pubDate>
-      <guid>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</guid>
+      <guid>http://localhost:1313/blog/licenses-nuget-packages-net-core-solution/</guid>
       <description>ToDo: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.&#xA;Let’s try…&#xA;Best solution so far: jump to Solution 5 or Solution 6&#xA;Solution 1: Get-Package &amp;nbsp; Open Visual Studio .NET Core Solution Open Package Manager Console and execute: Get-Package | Select-Object Id,LicenseUrlOutput Result (Nuget Package Name, License Url):</description>
     </item>
     <item>
       <title>MS SQL: Date Format</title>
-      <link>http://localhost:1313/blog/2024-05-17-ms-sql-date-format/</link>
+      <link>http://localhost:1313/blog/ms-sql-date-format/</link>
       <pubDate>Fri, 17 May 2024 10:54:33 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024-05-17-ms-sql-date-format/</guid>
+      <guid>http://localhost:1313/blog/ms-sql-date-format/</guid>
       <description>Date without time&#xA;CONVERT(varchar, GETDATE(), 112)&#xA;Date with time&#xA;CONVERT(varchar, GETDATE(), 112) + CONVERT(varchar, GETDATE(), 108)&#xA;or&#xA;CONVERT(varchar, GETDATE(), 112) + CONVERT(VARCHAR, DATEPART(hh, GetDate())) + CONVERT(VARCHAR, DATEPART(mi, GetDate()))&#xA;More information about DateTime: https://learn.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-ver16</description>
     </item>
     <item>
       <title>Unblock all files in folder with PowerShell</title>
-      <link>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</link>
+      <link>http://localhost:1313/blog/unblock-files-folder-powershell/</link>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</guid>
+      <guid>http://localhost:1313/blog/unblock-files-folder-powershell/</guid>
       <description>Unblocks files that were downloaded from the internet with PowerShell in Windows:&#xA;dir &amp;#34;C:\Users\$Env:UserName\Downloads&amp;#34; | Unblock-FileUnblock-File PowerShell API reference</description>
     </item>
   </channel>

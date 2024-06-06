@@ -6,8 +6,7 @@
     <description>Recent content in Welcome to d.o.it! on d.o.it</description>
     <generator>Hugo</generator>
     <language>en</language>
-<<<<<<< HEAD
-    <lastBuildDate>Sat, 01 Jun 2024 11:34:27 +0000</lastBuildDate>
+    <copyright>Copyright © 2024 d.o.</copyright>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extensions for Visual Studio 2022 for solo Developer in 2024</title>
@@ -15,50 +14,47 @@
       <pubDate>Sat, 01 Jun 2024 11:34:27 +0000</pubDate>
       <guid>http://localhost:1313/blog/extensions-visual-studio-2022-solo-developer-2024/</guid>
       <description>List for extensions for C# &amp;nbsp; CodeRush for VS 2022: Productivity tools for code generation, refactoring, style, code coverage &amp;amp; testing https://marketplace.visualstudio.com/items?itemName=DevExpress.CodeRushforVS2022&amp;ssr=false#overview Tabnine AI Assistant EF Core Power Tools https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools&amp;ssr=false#review-details REST API Client Code Generator for VS 2022: generating a strongly typed REST API Client from an Open API / Swagger specification file https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022 Unit Test Boilerplate Generator: Generates a unit test boilerplate from a given C# class, setting up mocks for all dependencies https://marketplace.</description>
-=======
-    <lastBuildDate>Fri, 31 May 2024 19:34:40 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    </item>
     <item>
       <title>Doit.Comdirect.Rest.Api</title>
-      <link>http://localhost:1313/projects/2024-05-31-doit.comdirect.api/</link>
+      <link>http://localhost:1313/projects/doit-comdirect-rest-api/</link>
       <pubDate>Fri, 31 May 2024 19:34:40 +0000</pubDate>
-      <guid>http://localhost:1313/projects/2024-05-31-doit.comdirect.api/</guid>
+      <guid>http://localhost:1313/projects/doit-comdirect-rest-api/</guid>
       <description>Comdirect.Rest.Api &amp;nbsp; https://github.com/d-oit/Doit.Comdirect.Rest.Api&#xA;Visual Studio XML documentation -&amp;gt; Markdown syntax created with: https://github.com/lijunle/Vsxmd&#xA;Contents &amp;nbsp; Account AccountDisplayId AccountId AccountType ClientId CreditLimit Currency Iban AccountBalance Account AccountId AvailableCashAmount AvailableCashAmountEUR Balance BalanceEUR AccountInformation Bic HolderName Iban AccountTransaction Amount BookingDate BookingStatus Creditor Deptor DirectDebitCreditorId DirectDebitMandateId EndToEndReference NewTransaction Reference RemittanceInfo Remitter TransactionType ValutaDate AmountValue Unit Value AuthClient #ctor(httpClient,comdirectCredentials) RequestId SessionId ActivateSessionTanAsync(accessToken,sessionUUID,challangeId) GenerateDigits(length) GetHttpRequestInfoValue() GetSessionStatusAsync(accessToken,accessToken) GetTokenAndValidateSessionAsync() GetTokenAsync() PostSecondaryFlowAsync(accessToken) PostValidateSessionStatusAsync(accessToken,sessionUUID) RevokeTokenAsync(accessToken) SetBody(sessionUUID,request) SetRequestSessionInfo(request) Balance AccountBalance CardBalance DepotAggregation FixedTermSavings InstallmentLoanBalance BusinessMessage Args Key Message Origin Severity Card CardDisplayId CardId CardImage CardLimit CardType CardValidity ClientId HolderName ParticipantId PrimaryAccountNumberSuffix SettlementAccountId Status CardBalance AvailableCashAmount Balance Card CardId ComdirectClient BankingClientsV2AccountsBalancesAsync(user,without_attr) BankingClientsV2AccountsBalancesAsync(cancellationToken,user,without_attr) BankingV1AccountsTransactionsAsync(accountId,transactionState,transactionDirection,paging_first,with_attr) BankingV1AccountsTransactionsAsync(cancellationToken,accountId,transactionState,transactionDirection,paging_first,with_attr) BankingV2AccountsBalancesAsync(accountId,without_attr) BankingV2AccountsBalancesAsync(cancellationToken,accountId,without_attr) BrokerageClientsV3DepotsAsync(userId) BrokerageClientsV3DepotsAsync(cancellationToken,userId) BrokerageDepotsV3OrdersAsync(depotId,with_attr,without_attr,instrumentId,isin,wkn,orderStatus,venueId,orderType,min_creationTimeStamp,max_creationTimeStamp,side) BrokerageDepotsV3OrdersAsync(cancellationToken,depotId,with_attr,without_attr,instrumentId,isin,wkn,orderStatus,venueId,orderType,min_creationTimeStamp,max_creationTimeStamp,side) BrokerageV1InstrumentsAsync(instrumentId,with_attr,without_attr) BrokerageV1InstrumentsAsync(cancellationToken,instrumentId,with_attr,without_attr) BrokerageV3DepotsPositionsGetAsync(depotId,instrumentId,without_attr,with_attr) BrokerageV3DepotsPositionsGetAsync(cancellationToken,depotId,instrumentId,without_attr,with_attr) BrokerageV3DepotsPositionsGetAsync(depotId,positionId,with_attr) BrokerageV3DepotsPositionsGetAsync(cancellationToken,depotId,positionId,with_attr) BrokerageV3DepotsTransactionsAsync(depotId,isin,wkn,instrumentId,min_bookingDate) BrokerageV3DepotsTransactionsAsync(cancellationToken,depotId,isin,wkn,instrumentId,min_bookingDate) BrokerageV3OrdersCostindicationexantePostAsync(order) BrokerageV3OrdersCostindicationexantePostAsync(cancellationToken,order) BrokerageV3OrdersCostindicationexantePostAsync(orderId,order) BrokerageV3OrdersCostindicationexantePostAsync(cancellationToken,orderId,order) BrokerageV3OrdersDeleteAsync(orderId) BrokerageV3OrdersDeleteAsync(cancellationToken,orderId) BrokerageV3OrdersDimensionsAsync(instrumentId,isin,wkn,custodyType,venueId,orderType,side,country,type) BrokerageV3OrdersDimensionsAsync(cancellationToken,instrumentId,isin,wkn,custodyType,venueId,orderType,side,country,type) BrokerageV3OrdersGetAsync(orderId,without_attr) BrokerageV3OrdersGetAsync(cancellationToken,orderId,without_attr) BrokerageV3OrdersPatchAsync(orderId) BrokerageV3OrdersPatchAsync(cancellationToken,orderId) BrokerageV3OrdersPostAsync() BrokerageV3OrdersPostAsync(cancellationToken) BrokerageV3OrdersPrevalidationPostAsync() BrokerageV3OrdersPrevalidationPostAsync(cancellationToken) BrokerageV3OrdersPrevalidationPostAsync(orderId) BrokerageV3OrdersPrevalidationPostAsync(cancellationToken,orderId) BrokerageV3OrdersValidationPostAsync() BrokerageV3OrdersValidationPostAsync(cancellationToken) BrokerageV3OrdersValidationPostAsync(orderId) BrokerageV3OrdersValidationPostAsync(cancellationToken,orderId) BrokerageV3QuotesAsync() BrokerageV3QuotesAsync(cancellationToken) BrokerageV3QuoteticketPatchAsync(ticketId) BrokerageV3QuoteticketPatchAsync(cancellationToken,ticketId) BrokerageV3QuoteticketPostAsync(order) BrokerageV3QuoteticketPostAsync(cancellationToken,order) MessagesClientsV2DocumentsAsync(user,paging_first,paging_count) MessagesClientsV2DocumentsAsync(cancellationToken,user,paging_first,paging_count) MessagesV2DocumentsAsync(documentId) MessagesV2DocumentsAsync(cancellationToken,documentId) MessagesV2DocumentsPredocumentAsync(documentId) MessagesV2DocumentsPredocumentAsync(cancellationToken,documentId) ReportsParticipantsV1AllbalancesAsync(user,clientConnectionType,targetClientId,without_attr,productType) ReportsParticipantsV1AllbalancesAsync(cancellationToken,user,clientConnectionType,targetClientId,without_attr,productType) SessionClientsV1SessionsGetAsync(user) SessionClientsV1SessionsGetAsync(cancellationToken,user) SessionClientsV1SessionsPatchAsync(user,session) SessionClientsV1SessionsPatchAsync(cancellationToken,user,session) SessionClientsV1SessionsValidateAsync(user,session) SessionClientsV1SessionsValidateAsync(cancellationToken,user,session) CostEntry Amount AmountReportingCurrency Inducement Label Type CostGroup Costs Label Sum SumReportingCurrency Type CostIndicationExAnte CalculationSuccessful DepotId ExpectedSettlementCosts ExpectedValue FxRate HoldingCosts HoldingPeriod Limit LinkCosts LinkKid Name PurchaseCosts Quantity ReportingCurrency SalesCosts SettlementCurrency Side TotalCostsAbs TotalCostsDetail TotalCostsRel TotalHoldingCosts TradingCurrency VenueName Wkn Depot ClientId DefaultSettlementAccountId DepotDisplayId DepotId SettlementAccountIds DepotAggregation CurrentValue DateLastUpdate Depot DepotId LendingValue PrevDayValue ProfitLossPrevDayAbs ProfitLossPrevDayRel ProfitLossPurchaseAbs ProfitLossPurchaseRel PurchaseValue DepotPosition AvailableQuantity CurrentPrice CurrentValue CustodyType DepotId Instrument PositionId PrevDayPrice PrevDayValue ProfitLossPrevDayAbs ProfitLossPrevDayRel ProfitLossPurchaseAbs ProfitLossPurchaseRel PurchasePrice PurchaseValue Quantity Version Wkn DepotTransaction BookingDate BookingStatus BusinessDate ExecutionPrice FxRate Instrument InstrumentId Quantity SettlementDate TransactionDirection TransactionId TransactionType TransactionValue DerivativeData CertificateType ExpiryDate InterestPaymentDate InterestPaymentInterval Leverage MaturityDate Multiplier NominalRate Rating RemainingTermInYears StrikePrice UnderlyingInstrument UnderlyingPrice WarrantType YieldPA Dimensions Document Advertisement DateCreation Deletable DocumentId DocumentMetaData MimeType Name DocumentMetadata AlreadyRead Archived DateRead EnumText Key Text Execution ExecutedQuantity ExecutionId ExecutionNumber ExecutionPrice ExecutionTimestamp FXRateEUR Ask Bid FixedTermSavings ContractPeriodInMonths CreationDate ExpirationDate Extendable FixedTermSavingsDisplayName FixedTermSavingsId FixedTermSavingsType InterestRate ProlongationAmount SavingsAmount FundDistribution Bonification Currency DiscountIssueSurcharge FundFlags FundStatus IndividualIssueSurcharge InvestmentCategory IsIndividualIssueSurchargeCorrected Rating ReducedIssueSurcharge RegularIssueSurcharge TotalExpenseRatio Inducement Amount Estimated InstallmentLoan ContractConclusionDate ContractPeriodInMonths CreditAmount EffectiveInterest InstallmentAmount InstallmentLoanId NetCreditAmount NominalInterest PaidOutAmount ProductDisplayId InstallmentLoanBalance Balance InstallmentLoan InstallmentLoanId Instrument DerivativeData FundsDistribution InstrumentId Isin Mnemonic Name OrderDimensions ShortName StaticData Wkn Order BestEx CancelledQuantity CreationTimestamp DepotId ExecutedQuantity Executions ExpectedValue InstrumentId LegNumber Limit LimitExtension OpenQuantity OrderId OrderStatus OrderType Quantity QuoteId QuoteTicketId SettlementAccountId Side SubOrders TradingRestriction TrailingLimitDistAbs TrailingLimitDistRel TriggerLimit Validity ValidityType VenueId Version OrderStatus OrderType LimitExtensions TradingRestrictions OrderType2 OrderType3 PercentageString DecimalPlaces PreDecimalPlaces Price Price1 PriceDateTime Quantity Type ProductBalance Balance ClientConnectionType ProductId ProductType TargetClientId Quote DepotId InstrumentId Quantity Side VenueId Rating Moodys Morningstar Session Activated2FA Identifier SessionTanActive Side Side2 StaticData Currency FundRedemptionLimited InstrumentType KidAvailable Notation PriipsRelevant ShippingWaiverRequired TimestampString Timestamp TotalCostBlock ExternalCosts ProductCosts ServiceCosts ServiceInducement TotalCostEntry Amount AverageReturnPA Label Type TotalHoldingCostBlock Sales Year1 Year2 TotalHoldingCostEntry Amount AverageReturnPA Type TransactionDirection TransactionState Type Venue VisaCardImage ImageBaseFilename ImageDescription VisaCardImageId Account type &amp;nbsp; Namespace &amp;nbsp; Comdirect.</description>
->>>>>>> e98c495ca1afc413227cc807f9a12f3af032c488
     </item>
     <item>
       <title>Uninstall &#34;Mobile devices&#34; in Windows 11</title>
-      <link>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</link>
+      <link>http://localhost:1313/blog/uninstall-mobile-devices-windows-11/</link>
       <pubDate>Tue, 21 May 2024 15:32:38 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024-05-21-uninstall-mobile-devices-task-in-windows-11/</guid>
+      <guid>http://localhost:1313/blog/uninstall-mobile-devices-windows-11/</guid>
       <description>With the Phone Link app on your Windows 11 linked to your iPhone or Android phone. If you don&amp;rsquo;t need it this is the easist way for me to unistall the app.&#xA;Run the following PowerShell code with Admin rights:&#xA;get-appxpackage -allusers *crossdevice* | remove-appxpackage</description>
     </item>
     <item>
       <title>Do.it NuGet Packages.Licenses for .NET</title>
-      <link>http://localhost:1313/projects/d.o.it.packages.licenses/</link>
+      <link>http://localhost:1313/projects/nuget-packages-licenses-net/</link>
       <pubDate>Fri, 17 May 2024 16:53:22 +0000</pubDate>
-      <guid>http://localhost:1313/projects/d.o.it.packages.licenses/</guid>
+      <guid>http://localhost:1313/projects/nuget-packages-licenses-net/</guid>
       <description>.NET: Create Excel or Text license file for used NuGet packages &amp;nbsp; If you need to determine all license of your used NuGet packages in your Visual Studio Solution check out the following project:&#xA;https://github.com/d-oit/DoitPackagesLicenses&#xA;More infos about:&#xA;Blog article</description>
     </item>
     <item>
-      <title>Get licenses from used NuGet packages of your .NET Core Solution</title>
-      <link>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</link>
+      <title>.NET Core Solution: Get licenses from used NuGet packages</title>
+      <link>http://localhost:1313/blog/licenses-nuget-packages-net-core-solution/</link>
       <pubDate>Fri, 17 May 2024 11:06:48 +0000</pubDate>
-      <guid>http://localhost:1313/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution/</guid>
+      <guid>http://localhost:1313/blog/licenses-nuget-packages-net-core-solution/</guid>
       <description>ToDo: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.&#xA;Let’s try…&#xA;Best solution so far: jump to Solution 5 or Solution 6&#xA;Solution 1: Get-Package &amp;nbsp; Open Visual Studio .NET Core Solution Open Package Manager Console and execute: Get-Package | Select-Object Id,LicenseUrlOutput Result (Nuget Package Name, License Url):</description>
     </item>
     <item>
       <title>MS SQL: Date Format</title>
-      <link>http://localhost:1313/blog/2024-05-17-ms-sql-date-format/</link>
+      <link>http://localhost:1313/blog/ms-sql-date-format/</link>
       <pubDate>Fri, 17 May 2024 10:54:33 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024-05-17-ms-sql-date-format/</guid>
+      <guid>http://localhost:1313/blog/ms-sql-date-format/</guid>
       <description>Date without time&#xA;CONVERT(varchar, GETDATE(), 112)&#xA;Date with time&#xA;CONVERT(varchar, GETDATE(), 112) + CONVERT(varchar, GETDATE(), 108)&#xA;or&#xA;CONVERT(varchar, GETDATE(), 112) + CONVERT(VARCHAR, DATEPART(hh, GetDate())) + CONVERT(VARCHAR, DATEPART(mi, GetDate()))&#xA;More information about DateTime: https://learn.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-ver16</description>
     </item>
     <item>
       <title>Unblock all files in folder with PowerShell</title>
-      <link>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</link>
+      <link>http://localhost:1313/blog/unblock-files-folder-powershell/</link>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/unblock-all-files-in-folder-with-powershell/</guid>
+      <guid>http://localhost:1313/blog/unblock-files-folder-powershell/</guid>
       <description>Unblocks files that were downloaded from the internet with PowerShell in Windows:&#xA;dir &amp;#34;C:\Users\$Env:UserName\Downloads&amp;#34; | Unblock-FileUnblock-File PowerShell API reference</description>
     </item>
     <item>
@@ -66,7 +62,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description> &amp;nbsp; Natur&#xA;Love natur. &amp;nbsp; Search&#xA;Search for new things. &amp;nbsp; Development&#xA;Develop myself. </description>
+      <description> d.o.it - Try something out &amp;nbsp; &amp;nbsp; Natur&#xA;Love natur. &amp;nbsp; Search&#xA;Search for new things. &amp;nbsp; Development&#xA;Develop myself. </description>
     </item>
   </channel>
 </rss>

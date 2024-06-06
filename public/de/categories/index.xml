@@ -6,6 +6,7 @@
     <description>Recent content in Categories on d.o.it</description>
     <generator>Hugo</generator>
     <language>de</language>
+    <copyright>Copyright © 2024 d.o.</copyright>
     <atom:link href="http://localhost:1313/de/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

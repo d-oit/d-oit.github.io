@@ -6,14 +6,14 @@
     <description>Recent content in Blog on d.o.it</description>
     <generator>Hugo</generator>
     <language>de</language>
-    <lastBuildDate>Fri, 24 May 2024 13:38:36 +0000</lastBuildDate>
+    <copyright>Copyright © 2024 d.o.</copyright>
     <atom:link href="http://localhost:1313/de/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Meine produktive Apps / Tools Liste 2024</title>
       <link>http://localhost:1313/de/blog/productivity-apps-tools-list-2024/</link>
       <pubDate>Fri, 24 May 2024 13:38:36 +0000</pubDate>
       <guid>http://localhost:1313/de/blog/productivity-apps-tools-list-2024/</guid>
-      <description>Windows apps / tools &amp;nbsp; KeePass TPFan (für Lenovo Notebooks Lüftersteuerung) WhatsApp for Windows (Zwangsweise für private Nachrichten) Grafik &amp;nbsp; **Paint.Net ** PNG to SVG Büro / Organisationstool &amp;nbsp; draw.io Desktop &amp;raquo; https://app.diagrams.net MultiCommander (Windows Explorer alternative zum Kopieren zwischen Laufwerken) Wiso Steuer / Tax (deutsche Steuererklärung) Entwicklungstool / Editors &amp;nbsp; Visual Studio Code Video / Audio &amp;nbsp; OBS Studio Audacity Web &amp;nbsp; Canva ist ein kostenloses Online-Tool für Grafikdesign Github (Softwareentwicklung und Versionsverwaltung) GoFullPage (Screenshot einer kompletten Website) Aixploria &amp;raquo; https://www.</description>
+      <description>Windows apps / tools &amp;nbsp; KeePass Seit Jahren bereits im Einsatz. Auch unter Mac / Linux und im Urlaub im Einsatz. TPFan (für Lenovo Notebooks Lüftersteuerung) WhatsApp for Windows (Zwangsweise für private Nachrichten) Grafik &amp;nbsp; **Paint.Net ** PNG to SVG Büro / Organisationstool &amp;nbsp; draw.io Desktop &amp;raquo; https://app.diagrams.net MultiCommander (Windows Explorer alternative zum Kopieren zwischen Laufwerken) Wiso Steuer / Tax (deutsche Steuererklärung) Entwicklungstool / Editors &amp;nbsp; Visual Studio Code Video / Audio &amp;nbsp; OBS Studio Audacity Web &amp;nbsp; Canva ist ein kostenloses Online-Tool für Grafikdesign Github (Softwareentwicklung und Versionsverwaltung) GoFullPage (Screenshot einer kompletten Website) Aixploria &amp;raquo; https://www.</description>
     </item>
     <item>
       <title>Statische Website erstellen</title>
@@ -24,9 +24,9 @@
     </item>
     <item>
       <title>Ausprobieren - Jahr 2024</title>
-      <link>http://localhost:1313/de/blog/2024-05-15-ausprobieren---jahr-2024/</link>
+      <link>http://localhost:1313/de/blog/ausprobieren-jahr-2024/</link>
       <pubDate>Wed, 15 May 2024 13:39:49 +0000</pubDate>
-      <guid>http://localhost:1313/de/blog/2024-05-15-ausprobieren---jahr-2024/</guid>
+      <guid>http://localhost:1313/de/blog/ausprobieren-jahr-2024/</guid>
       <description>Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:&#xA;Website / Blog wieder starten Smartphone Display austauschen YouTube Kanal </description>
     </item>
   </channel>
