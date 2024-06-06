@@ -1,5 +1,5 @@
 ---
-title: Get licenses from used NuGet packages of your .NET Core Solution
+title: ".NET Core Solution: Get licenses from used NuGet packages"
 description: How to get a txt or Excel file for all license of used Nuget package in your .NET Core Solution
 date: 2024-05-17T11:06:48.903Z
 tags:
