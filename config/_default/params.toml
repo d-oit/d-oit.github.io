@@ -6,8 +6,8 @@
     overlay = false
     overlayMode = "dark"
     horizontal = false
-    offset = "5.5rem"
-    offsetXS = "5.5rem"
+    offset = "5.1rem"
+    offsetXS = "5.1rem"
     search = true
     searchModal = false
     breadcrumb = true
@@ -53,9 +53,9 @@
     danger = "#dc3545"
     light = "#f8f9fa"
     dark = "#212529"
-    themeOpacity = "10"
-    darkModeShade = "20%"
-    darkModeTint = "40%"
+    themeOpacity = "20"
+    darkModeShade = "24%"
+    darkModeTint = "43%"
     themeFont = "Inter"
     # themeFontPath = "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600&display=swap" # external path
     themeFontPath = "/fonts" # local path
