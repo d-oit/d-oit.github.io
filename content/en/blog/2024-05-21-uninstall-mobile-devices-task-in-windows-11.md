@@ -1,11 +1,13 @@
 ---
 title: Uninstall "Mobile devices" in Windows 11
-description: "If you don't need Phone Link in Windows 11 this is the easiest way to uninstall the app."
+description: If you don't need Phone Link in Windows 11 this is the easiest way to uninstall the app.
 date: 2024-05-21T15:32:38.601Z
-tags: ["Windows 11"]
+tags:
+  - Windows 11
 thumbnail:
   url: img/blog/mobiledevicesWindows11.jpg
   author: d.o.
+slug: uninstall-mobile-devices-windows-11
 ---
 
 With the **Phone Link** app on your Windows 11 linked to your iPhone or Android phone. 

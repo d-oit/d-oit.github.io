@@ -2,10 +2,13 @@
 title: Unblock all files in folder with PowerShell
 description: Unblocks files that were downloaded from the Internet with PowerShell
 date: 2024-05-13
-tags: ["PowerShell", "Windows"]
+tags:
+  - PowerShell
+  - Windows
 thumbnail:
   url: img/blog/mobiledevicesWindows11.jpg
   author: d.o.
+slug: unblock-files-folder-powershell
 ---
 
 Unblocks files that were downloaded from the internet with PowerShell in Windows:

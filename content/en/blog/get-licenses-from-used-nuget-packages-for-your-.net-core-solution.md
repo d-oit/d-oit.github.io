@@ -1,12 +1,17 @@
 ---
-title: "Get licenses from used NuGet packages of your .NET Core Solution"
-description: "How to get a txt or Excel file for all license of used Nuget package in your .NET Core Solution"
+title: Get licenses from used NuGet packages of your .NET Core Solution
+description: How to get a txt or Excel file for all license of used Nuget package in your .NET Core Solution
 date: 2024-05-17T11:06:48.903Z
-tags: [".NET","license", "Visual Studio","Software Development"]
+tags:
+    - .NET
+    - license
+    - Visual Studio
+    - Software Development
 thumbnail:
-  url: img/blog/NugetLicenseChecker.jpg
-  origin: Copilot Designer
-  author: d.o.
+    url: img/blog/NugetLicenseChecker.jpg
+    origin: Copilot Designer
+    author: d.o.
+slug: licenses-nuget-packages-net-core-solution
 ---
 
 **ToDo**: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.
