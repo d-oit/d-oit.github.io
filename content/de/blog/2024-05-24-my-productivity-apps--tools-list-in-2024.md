@@ -7,11 +7,13 @@ tags:
     - Apps/Tools 2024
 thumbnail:
   url: /img/blog/productivity-apps-tools-list.png
+  author: d.o.
+  origin: Copilot Designer
 ---
 
 ## Windows apps / tools
 
-- **KeePass** 
+- **KeePass** Seit Jahren bereits im Einsatz. Auch unter Mac / Linux und im Urlaub im Einsatz.
 - **TPFan** (für Lenovo Notebooks Lüftersteuerung)
 - **WhatsApp** for Windows (Zwangsweise für private Nachrichten)
 
