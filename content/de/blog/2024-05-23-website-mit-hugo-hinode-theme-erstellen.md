@@ -39,9 +39,10 @@ Los geht es mit der lokalen Installation. In der Beschreibung wird Windows verwe
 Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/
 
 1. Hugo Installation >> https://gohugo.io/getting-started/quick-start/#prerequisites
-1.1. Meine Installation / Update führe ich per winget durch:
+- Meine Installation / Update führe ich per winget durch:
  `winget install Hugo.Hugo.Extended`
 2. Git als Versionsverwaltung >> https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt)
+- Git unter Windows kann per Terminal / Command line mit Admin Rechten per `git update-git-for-windows` aktualisiert werden
 3. Visual Studio Code >> https://code.visualstudio.com/Download
 4. Visual Studio Code Erweiterungen
     - Front Matter CMS 
@@ -59,7 +60,7 @@ Nach der Installation kann lokal per `hugo server` Terminal Befehl der lokale Hu
 
 Hugo verwendet die Datei **go.mod**, um zu ermitteln, welche Version von Hugo Blox Builder eine Website verwendet.
 
-Alle module aktualisieren:
+Alle Module aktualisieren per Terminal / Command Line:
 
 `hugo mod get -u`
 

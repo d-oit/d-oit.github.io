@@ -13,5 +13,6 @@
         "sprachigen",
         "Wiso"
     ],
-    "cSpell.language": "en,de"
+    "cSpell.language": "en,de",
+    "git.enableSmartCommit": true
 }
