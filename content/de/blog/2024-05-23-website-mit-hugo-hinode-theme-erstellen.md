@@ -39,6 +39,8 @@ Los geht es mit der lokalen Installation. In der Beschreibung wird Windows verwe
 Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/
 
 1. Hugo Installation >> https://gohugo.io/getting-started/quick-start/#prerequisites
+1.1. Meine Installation / Update führe ich per winget durch:
+ `winget install Hugo.Hugo.Extended`
 2. Git als Versionsverwaltung >> https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt)
 3. Visual Studio Code >> https://code.visualstudio.com/Download
 4. Visual Studio Code Erweiterungen
@@ -52,6 +54,14 @@ Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich b
 
 
 Nach der Installation kann lokal per `hugo server` Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht. 
+
+### Hugo Module aktualiseren
+
+Hugo verwendet die Datei **go.mod**, um zu ermitteln, welche Version von Hugo Blox Builder eine Website verwendet.
+
+Alle module aktualisieren:
+
+`hugo mod get -u`
 
 ## Website veröffentlichen
 
