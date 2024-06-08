@@ -1,3 +1,9 @@
+[main]
+    separator = "-"
+    enableDarkMode = true
+    modes = ["dark", "light"]
+
+
 [navigation]
     anchor = true
     logo = "/img/logo/doitLogo.svg"
