@@ -7,8 +7,7 @@ tags:
     - Apps/Tools 2024
 thumbnail:
   url: /img/blog/productivity-apps-tools-list.png
-  author: d.o.
-  origin: Copilot Designer
+  author: d.o. (Copilot Designer)
 ---
 
 ## Windows apps / tools

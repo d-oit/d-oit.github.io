@@ -9,7 +9,7 @@ tags:
   - Hinode
 thumbnail:
   url: /img/blog/VisualStudioCodeWorkspace.png
-  author: 
+  author: Dominik Oswald
   authorURL: 
   origin: Mark Dumay
   originURL: https://gethinode.com/docs/about/credits/?menu=about
@@ -21,7 +21,7 @@ keywords:
 
 Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben. 
 
-Das ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. 
+Das ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Online Bearbeitung durch [GitHub Codespaces](https://github.com/features/codespaces) (gleiche Erweiterungen verwendbar wie offline / auf dem Desktop),  Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. 
 Und vor allem Performance :performing_arts:
 
 Der Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen. 
