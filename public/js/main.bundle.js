@@ -6690,12 +6690,12 @@ function initIndex() {
       {
         id: 15,
         tag: "en",
-        href: "/projects/2024-06-14-doit.finance.monetaryfinancialinstitution/",
+        href: "/projects/csharp-monetary-financial-institutions-list/",
         title: "Doit.Finance.MonetaryFinancialInstitution",
-        description: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/mfi_userguide.en.html General download information website https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/elegass.en.html\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nSupport:\nDeutsche Bundesbank \u0026nbsp; var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);(Code documentation)n](https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions/blob/main/Doit.Finance.MonetaryFinancialInstitutions/docs/doc.md)",
+        description: "C#: Get the latest monetary financial institutions",
         
         
-        content: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/mfi_userguide.en.html General download information website https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/elegass.en.html\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nSupport:\nDeutsche Bundesbank \u0026nbsp; var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);(Code documentation)n](https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions/blob/main/Doit.Finance.MonetaryFinancialInstitutions/docs/doc.md)"
+        content: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide General download information on the ECB website\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nDeutsche Bundesbank \u0026nbsp; var germanySortCodeHelper = new GermanyBankSortCodeHelper(); var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);\u0026lt; button icon=\u0026ldquo;fab github\u0026rdquo; cue=false order=\u0026ldquo;first\u0026rdquo; href=\u0026quot;https://linkedin.com\u0026quot; \u0026gt;Code documentation\u0026lt; /button \u0026gt;"
       })
       .add(
       

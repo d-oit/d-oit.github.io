@@ -10,10 +10,10 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Doit.Finance.MonetaryFinancialInstitution</title>
-      <link>http://localhost:1313/projects/2024-06-14-doit.finance.monetaryfinancialinstitution/</link>
+      <link>http://localhost:1313/projects/csharp-monetary-financial-institutions-list/</link>
       <pubDate>Fri, 14 Jun 2024 12:05:24 +0000</pubDate>
-      <guid>http://localhost:1313/projects/2024-06-14-doit.finance.monetaryfinancialinstitution/</guid>
-      <description>https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions&#xA;Get the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu&#xA;Additional support of national bank sort code ECB User guide https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/mfi_userguide.en.html General download information website https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/elegass.en.html&#xA;National Bank sort code support &amp;nbsp; Additional support of national bank sort code&#xA;Support:&#xA;Deutsche Bundesbank &amp;nbsp; var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);(Code documentation)n](https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions/blob/main/Doit.Finance.MonetaryFinancialInstitutions/docs/doc.md)</description>
+      <guid>http://localhost:1313/projects/csharp-monetary-financial-institutions-list/</guid>
+      <description>https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions&#xA;Get the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu&#xA;Additional support of national bank sort code ECB User guide General download information on the ECB website&#xA;National Bank sort code support &amp;nbsp; Additional support of national bank sort code&#xA;Deutsche Bundesbank &amp;nbsp; var germanySortCodeHelper = new GermanyBankSortCodeHelper(); var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true); Code documentation &amp;nbsp; </description>
     </item>
     <item>
       <title>Extensions for Visual Studio 2022 for solo Developer in 2024</title>
