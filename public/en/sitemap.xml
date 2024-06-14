@@ -2,6 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/banking/</loc>
+    <lastmod>2024-06-14T12:05:24+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/c%23/</loc>
+    <lastmod>2024-06-14T12:05:24+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/2024-06-14-doit.finance.monetaryfinancialinstitution/</loc>
+    <lastmod>2024-06-14T12:05:24+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/monetary-financial-institutions/</loc>
+    <lastmod>2024-06-14T12:05:24+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-06-14T12:05:24+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
+                />
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-06-01T14:03:46+02:00</lastmod>
     <xhtml:link
@@ -24,29 +49,10 @@
     <loc>http://localhost:1313/categories/software-development/</loc>
     <lastmod>2024-06-01T14:03:46+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-06-06T16:59:29+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/"
-                />
-  </url><url>
     <loc>http://localhost:1313/tags/visual-studio-2022/</loc>
     <lastmod>2024-06-01T14:03:46+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/api/</loc>
-    <lastmod>2024-06-06T16:58:25+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/banking/</loc>
-    <lastmod>2024-06-06T16:58:25+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/c%23/</loc>
     <lastmod>2024-06-06T16:58:25+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/doit-comdirect-rest-api/</loc>

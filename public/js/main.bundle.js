@@ -6690,6 +6690,19 @@ function initIndex() {
       {
         id: 15,
         tag: "en",
+        href: "/projects/2024-06-14-doit.finance.monetaryfinancialinstitution/",
+        title: "Doit.Finance.MonetaryFinancialInstitution",
+        description: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/mfi_userguide.en.html General download information website https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/elegass.en.html\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nSupport:\nDeutsche Bundesbank \u0026nbsp; var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);(Code documentation)n](https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions/blob/main/Doit.Finance.MonetaryFinancialInstitutions/docs/doc.md)",
+        
+        
+        content: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/mfi_userguide.en.html General download information website https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/elegass.en.html\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nSupport:\nDeutsche Bundesbank \u0026nbsp; var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);(Code documentation)n](https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions/blob/main/Doit.Finance.MonetaryFinancialInstitutions/docs/doc.md)"
+      })
+      .add(
+      
+      
+      {
+        id: 16,
+        tag: "en",
         href: "/blog/extensions-visual-studio-2022-solo-developer-2024/",
         title: "Extensions for Visual Studio 2022 for solo Developer in 2024",
         description: "List of useful free / non-paid  extensions for Microsoft Visual Studio 2022 for solo developer in 2024",
@@ -6701,7 +6714,7 @@ function initIndex() {
       
       
       {
-        id: 16,
+        id: 17,
         tag: "de",
         href: "/de/tags/hinode/",
         title: "Hinode",
@@ -6714,7 +6727,7 @@ function initIndex() {
       
       
       {
-        id: 17,
+        id: 18,
         tag: "de",
         href: "/de/tags/hugo/",
         title: "Hugo",
@@ -6727,7 +6740,7 @@ function initIndex() {
       
       
       {
-        id: 18,
+        id: 19,
         tag: "en",
         href: "/tags/license/",
         title: "License",
@@ -6740,7 +6753,7 @@ function initIndex() {
       
       
       {
-        id: 19,
+        id: 20,
         tag: "de",
         href: "/de/blog/productivity-apps-tools-list-2024/",
         title: "Meine produktive Apps / Tools Liste 2024",
@@ -6753,7 +6766,20 @@ function initIndex() {
       
       
       {
-        id: 20,
+        id: 21,
+        tag: "en",
+        href: "/tags/monetary-financial-institutions/",
+        title: "Monetary Financial Institutions",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 22,
         tag: "en",
         href: "/blog/ms-sql-date-format/",
         title: "MS SQL: Date Format",
@@ -6766,7 +6792,7 @@ function initIndex() {
       
       
       {
-        id: 21,
+        id: 23,
         tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
@@ -6779,7 +6805,7 @@ function initIndex() {
       
       
       {
-        id: 22,
+        id: 24,
         tag: "en",
         href: "/projects/",
         title: "Projects",
@@ -6792,7 +6818,7 @@ function initIndex() {
       
       
       {
-        id: 23,
+        id: 25,
         tag: "en",
         href: "/tags/rest/",
         title: "Rest",
@@ -6805,7 +6831,7 @@ function initIndex() {
       
       
       {
-        id: 24,
+        id: 26,
         tag: "en",
         href: "/categories/software-development/",
         title: "Software Development",
@@ -6818,7 +6844,7 @@ function initIndex() {
       
       
       {
-        id: 25,
+        id: 27,
         tag: "en",
         href: "/tags/software-development/",
         title: "Software Development",
@@ -6831,7 +6857,7 @@ function initIndex() {
       
       
       {
-        id: 26,
+        id: 28,
         tag: "en",
         href: "/tags/sql/",
         title: "SQL",
@@ -6844,20 +6870,20 @@ function initIndex() {
       
       
       {
-        id: 27,
+        id: 29,
         tag: "de",
         href: "/de/blog/statische-website-erstellen/",
         title: "Statische Website erstellen",
         description: "Website mit Hugo Hinode Theme erstellen",
         
         
-        content: "Blog Wiederbelebung \u0026nbsp; Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben.\nDas ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. Und vor allem Performance :performing_arts:\nDer Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen.\nHugo \u0026nbsp; Grundlage vom Hinode Theme ist Hugo. Eines der am weitesten verbreitetsten Generatoren von statischen Website. Lokal wird dabei mit einem Editor der Inhalt erstellt. Hugo als Generator erzeugt daraufhin html Dateien welche der Browser anzeigt.\nInfos zu Hugo hier zu finden: https://gohugo.io/ oder https://de.wikipedia.org/wiki/Hugo_(Software)\nLokale Installation \u0026nbsp; Los geht es mit der lokalen Installation. In der Beschreibung wird Windows verwendet, unterstützt werden natürlich auch andere Umgebungen.\nVorgehensweise ist in der Dokumentation des Hinode Hugo Theme ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/\nHugo Installation \u0026raquo; https://gohugo.io/getting-started/quick-start/#prerequisites Meine Installation / Update führe ich per winget durch: winget install Hugo.Hugo.Extended Git als Versionsverwaltung \u0026raquo; https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt) Git unter Windows kann per Terminal / Command line mit Admin Rechten per git update-git-for-windows aktualisiert werden Visual Studio Code \u0026raquo; https://code.visualstudio.com/Download\nVisual Studio Code Erweiterungen\nFront Matter CMS German - Code Spell Checker Font Awesome Auto-complete \u0026amp; Preview Aktueller Stand als PowerShell Installation Gist \u0026raquo; https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405 Ermittlung Voraussetzung: Command Line Interface (CLI) \u0026raquo; https://code.visualstudio.com/docs/editor/command-line\nNach der Installation kann lokal per hugo server Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht.\nHugo Module aktualiseren \u0026nbsp; Hugo verwendet die Datei go.mod, um zu ermitteln, welche Version von Hugo Blox Builder eine Website verwendet.\nAlle Module aktualisieren per Terminal / Command Line:\nhugo mod get -u\nWebsite veröffentlichen \u0026nbsp; Der aktuelle Stand wird per git Sourceverwaltung auf github gestellt und per Actions als fertige html Seite (github pages) auf den öffentlichen Ordner gestellt.\nDas Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop\nDamit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht.\nFalls ein Interesse an einer ausführlichen Einführung in Hugo mit den Hinode Theme inklusive Blogartikelerstellung auf deutsch besteht gerne eine kurze email an d-oit@t-online.de"
+        content: "Blog Wiederbelebung \u0026nbsp; Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben.\nDas ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Online Bearbeitung durch GitHub Codespaces (gleiche Erweiterungen verwendbar wie offline / auf dem Desktop), Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. Und vor allem Performance :performing_arts:\nDer Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen.\nHugo \u0026nbsp; Grundlage vom Hinode Theme ist Hugo. Eines der am weitesten verbreitetsten Generatoren von statischen Website. Lokal wird dabei mit einem Editor der Inhalt erstellt. Hugo als Generator erzeugt daraufhin html Dateien welche der Browser anzeigt.\nInfos zu Hugo hier zu finden: https://gohugo.io/ oder https://de.wikipedia.org/wiki/Hugo_(Software)\nLokale Installation \u0026nbsp; Los geht es mit der lokalen Installation. In der Beschreibung wird Windows verwendet, unterstützt werden natürlich auch andere Umgebungen.\nVorgehensweise ist in der Dokumentation des Hinode Hugo Theme ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/\nHugo Installation \u0026raquo; https://gohugo.io/getting-started/quick-start/#prerequisites Meine Installation / Update führe ich per winget durch: winget install Hugo.Hugo.Extended Git als Versionsverwaltung \u0026raquo; https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt) Git unter Windows kann per Terminal / Command line mit Admin Rechten per git update-git-for-windows aktualisiert werden Optional: Git Graph extension for Visual Studio Code für eine zusätzliche Anzeige \u0026raquo; https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph Visual Studio Code \u0026raquo; https://code.visualstudio.com/Download\nVisual Studio Code Erweiterungen\nFront Matter CMS German - Code Spell Checker Font Awesome Auto-complete \u0026amp; Preview Aktueller Stand als PowerShell Installation Gist \u0026raquo; https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405 Ermittlung Voraussetzung: Command Line Interface (CLI) \u0026raquo; https://code.visualstudio.com/docs/editor/command-line\nNach der Installation kann lokal per hugo server Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht.\nHugo Module aktualiseren \u0026nbsp; Hugo verwendet die Datei go.mod, um zu ermitteln, welche Version von Hugo Blox Builder eine Website verwendet.\nAlle Module aktualisieren per Terminal / Command Line:\nhugo mod get -u\nWebsite veröffentlichen \u0026nbsp; Der aktuelle Stand wird per git Sourceverwaltung auf github gestellt und per Actions als fertige html Seite (github pages) auf den öffentlichen Ordner gestellt.\nDas Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop\nDamit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht.\nFalls ein Interesse an einer ausführlichen Einführung in Hugo mit den Hinode Theme inklusive Blogartikelerstellung auf deutsch besteht gerne eine kurze email an d-oit AT t-online.de"
       })
       .add(
       
       
       {
-        id: 28,
+        id: 30,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -6870,7 +6896,7 @@ function initIndex() {
       
       
       {
-        id: 29,
+        id: 31,
         tag: "de",
         href: "/de/tags/",
         title: "Tags",
@@ -6883,7 +6909,7 @@ function initIndex() {
       
       
       {
-        id: 30,
+        id: 32,
         tag: "de",
         href: "/de/tags/try-new-things/",
         title: "Try New Things",
@@ -6896,7 +6922,7 @@ function initIndex() {
       
       
       {
-        id: 31,
+        id: 33,
         tag: "de",
         href: "/de/ueber/",
         title: "Über",
@@ -6909,7 +6935,7 @@ function initIndex() {
       
       
       {
-        id: 32,
+        id: 34,
         tag: "en",
         href: "/blog/unblock-files-folder-powershell/",
         title: "Unblock all files in folder with PowerShell",
@@ -6922,7 +6948,7 @@ function initIndex() {
       
       
       {
-        id: 33,
+        id: 35,
         tag: "en",
         href: "/blog/uninstall-mobile-devices-windows-11/",
         title: "Uninstall \"Mobile devices\" in Windows 11",
@@ -6935,7 +6961,7 @@ function initIndex() {
       
       
       {
-        id: 34,
+        id: 36,
         tag: "en",
         href: "/tags/visual-studio/",
         title: "Visual Studio",
@@ -6948,7 +6974,7 @@ function initIndex() {
       
       
       {
-        id: 35,
+        id: 37,
         tag: "en",
         href: "/tags/visual-studio-2022/",
         title: "Visual Studio 2022",
@@ -6961,7 +6987,7 @@ function initIndex() {
       
       
       {
-        id: 36,
+        id: 38,
         tag: "de",
         href: "/de/tags/website/",
         title: "Website",
@@ -6974,7 +7000,7 @@ function initIndex() {
       
       
       {
-        id: 37,
+        id: 39,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -6987,7 +7013,7 @@ function initIndex() {
       
       
       {
-        id: 38,
+        id: 40,
         tag: "de",
         href: "/de/",
         title: "Willkomen zu d.o.it",
@@ -7000,7 +7026,7 @@ function initIndex() {
       
       
       {
-        id: 39,
+        id: 41,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
@@ -7013,7 +7039,7 @@ function initIndex() {
       
       
       {
-        id: 40,
+        id: 42,
         tag: "en",
         href: "/tags/windows-11/",
         title: "Windows 11",
@@ -7026,7 +7052,7 @@ function initIndex() {
       
       
       {
-        id: 41,
+        id: 43,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",

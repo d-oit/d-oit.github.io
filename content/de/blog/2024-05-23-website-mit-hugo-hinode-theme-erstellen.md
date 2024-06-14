@@ -43,6 +43,7 @@ Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich b
  `winget install Hugo.Hugo.Extended`
 2. Git als Versionsverwaltung >> https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt)
 - Git unter Windows kann per Terminal / Command line mit Admin Rechten per `git update-git-for-windows` aktualisiert werden
+- Optional: Git Graph extension for Visual Studio Code für eine zusätzliche Anzeige >> https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
 3. Visual Studio Code >> https://code.visualstudio.com/Download
 4. Visual Studio Code Erweiterungen
     - Front Matter CMS 
@@ -73,7 +74,7 @@ Das Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://
 Damit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht. 
 
 
-Falls ein Interesse an einer ausführlichen Einführung in Hugo mit den Hinode Theme inklusive Blogartikelerstellung auf deutsch besteht gerne eine kurze email an d-oit@t-online.de
+Falls ein Interesse an einer ausführlichen Einführung in Hugo mit den Hinode Theme inklusive Blogartikelerstellung auf deutsch besteht gerne eine kurze email an d-oit AT t-online.de
 
 
 
