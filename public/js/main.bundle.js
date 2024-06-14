@@ -6695,7 +6695,7 @@ function initIndex() {
         description: "C#: Get the latest monetary financial institutions",
         
         
-        content: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide General download information on the ECB website\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nDeutsche Bundesbank \u0026nbsp; var germanySortCodeHelper = new GermanyBankSortCodeHelper(); var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);\u0026lt; button icon=\u0026ldquo;fab github\u0026rdquo; cue=false order=\u0026ldquo;first\u0026rdquo; href=\u0026quot;https://linkedin.com\u0026quot; \u0026gt;Code documentation\u0026lt; /button \u0026gt;"
+        content: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide General download information on the ECB website\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nDeutsche Bundesbank \u0026nbsp; var germanySortCodeHelper = new GermanyBankSortCodeHelper(); var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true); Code documentation \u0026nbsp;"
       })
       .add(
       
