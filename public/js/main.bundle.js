@@ -6690,12 +6690,16 @@ function initIndex() {
       {
         id: 15,
         tag: "en",
-        href: "/projects/2024-06-14-doit.finance.monetaryfinancialinstitution/",
+        href: "/projects/csharp-monetary-financial-institutions-list/",
         title: "Doit.Finance.MonetaryFinancialInstitution",
         description: "C#: Get the latest monetary financial institutions",
         
         
+<<<<<<< HEAD
         content: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide General download information on the ECB website\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nDeutsche Bundesbank \u0026nbsp; var germanySortCodeHelper = new GermanyBankSortCodeHelper(); var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);Code documenation"
+=======
+        content: "https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions\nGet the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu\nAdditional support of national bank sort code ECB User guide General download information on the ECB website\nNational Bank sort code support \u0026nbsp; Additional support of national bank sort code\nDeutsche Bundesbank \u0026nbsp; var germanySortCodeHelper = new GermanyBankSortCodeHelper(); var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true); Code documentation \u0026nbsp;"
+>>>>>>> aaee5607e8052894500abeb8072d9969857aeb8b
       })
       .add(
       

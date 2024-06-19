@@ -10,10 +10,15 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Doit.Finance.MonetaryFinancialInstitution</title>
-      <link>http://localhost:1313/projects/2024-06-14-doit.finance.monetaryfinancialinstitution/</link>
+      <link>http://localhost:1313/projects/csharp-monetary-financial-institutions-list/</link>
       <pubDate>Fri, 14 Jun 2024 12:05:24 +0000</pubDate>
+<<<<<<< HEAD
       <guid>http://localhost:1313/projects/2024-06-14-doit.finance.monetaryfinancialinstitution/</guid>
       <description>https://github.com/d-oit/Doit.Finance.MonetaryFinancialInstitutions&#xA;Get the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu&#xA;Additional support of national bank sort code ECB User guide General download information on the ECB website&#xA;National Bank sort code support &amp;nbsp; Additional support of national bank sort code&#xA;Deutsche Bundesbank &amp;nbsp; var germanySortCodeHelper = new GermanyBankSortCodeHelper(); var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true);Code documenation</description>
+=======
+      <guid>http://localhost:1313/projects/csharp-monetary-financial-institutions-list/</guid>
+      <description>Get the latest Monetary Financial Institutions (MFIs) from https://www.ecb.europa.eu&#xA;Additional support of national bank sort code (Deutsche Bank) ECB User guide General download information on the ECB website&#xA;Source Code &amp;nbsp; National Bank sort code support &amp;nbsp; Additional support of national bank sort code&#xA;Deutsche Bundesbank &amp;nbsp; var germanySortCodeHelper = new GermanyBankSortCodeHelper(); var result = await germanySortCodeHelper.GetCurrentBankSortList(download: true); Code documentation &amp;nbsp; </description>
+>>>>>>> aaee5607e8052894500abeb8072d9969857aeb8b
     </item>
     <item>
       <title>Extensions for Visual Studio 2022 for solo Developer in 2024</title>
