@@ -38,3 +38,10 @@ thumbnail:
 - **Github** (Softwareentwicklung und Versionsverwaltung)
 - **GoFullPage** (Screenshot einer kompletten Website)
 - **Aixploria** >> https://www.aixploria.com/en/ultimate-list-ai/
+
+### Windows 11 Developer Powershell 
+
+Windows 11 Powershell script für die Installation eines english-US Sprachpaket inklusive notwendiger Tools für die Webentwicklung.
+
+https://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb
+
