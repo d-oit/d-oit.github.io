@@ -55,7 +55,7 @@
     <loc>http://localhost:1313/tags/api/</loc>
     <lastmod>2024-06-06T16:58:25+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/doit-comdirect-rest-api/</loc>
+    <loc>http://localhost:1313/projects/csharp-comdirect-rest-api/</loc>
     <lastmod>2024-06-06T16:58:25+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/rest/</loc>
@@ -70,11 +70,11 @@
     <loc>http://localhost:1313/tags/.net/</loc>
     <lastmod>2024-06-06T16:59:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/nuget-packages-licenses-net/</loc>
-    <lastmod>2024-06-06T16:58:25+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/license/</loc>
     <lastmod>2024-06-06T16:59:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/nuget-packages-licenses-dotnet/</loc>
+    <lastmod>2024-06-06T16:58:25+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/software-development/</loc>
     <lastmod>2024-06-06T16:59:29+02:00</lastmod>
