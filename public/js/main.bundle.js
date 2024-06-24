@@ -6565,7 +6565,7 @@ function initIndex() {
         description: "Dinge die ich im Jahr 2024 ausprobieren möchte",
         
         
-        content: "Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:\nWebsite / Blog wieder starten Smartphone Display austauschen YouTube Kanal"
+        content: "Dinge die ich im Jahr 2024 ausprobieren (wieder neu beginnen) möchte:\nWebsite / Blog wieder starten \u0026raquo; done \u0026nbsp; Smartphone Display austauschen\nLenovo Notebook Speicher aufrüsten ohne clips abzubrechen \u0026raquo; done \u0026nbsp; na ja, fast. Wurde aber bereits vom Vorgänger geöffnet \u0026nbsp; Reminder: Leicht von unten nach oben drücken, nicht wie auf den Videos / Beschreibungen seitlich ziehen.\nLenovo T490 Rückseite mit Schrauben Speicher Werkzeuge Previous Next YouTube Kanal"
       })
       .add(
       

@@ -67,7 +67,7 @@
       "path": "[[workspace]]/content/en/projects"
     },
     {
-      "path": "[[workspace]]/content/en/blog"
+      "path": "[[workspace]]/assets/img/blog"
     }
   ],
   "frontMatter.git.enabled": true
