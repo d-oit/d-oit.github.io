@@ -14,7 +14,7 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 
 - Website / Blog wieder starten {{< fas fa-check-to-slot >}}
 - Smartphone Display austauschen
-- Lenovo Notebook () Speicher aufrüsten ohne clips abzubrechen {{< fas fa-check-to-slot>}}
+- Lenovo Notebook Speicher aufrüsten ohne clips abzubrechen {{< fas fa-check-to-slot>}}
    >> na ja, fast. Wurde aber bereits vom Vorgänger geöffnet {{< fas fa-laptop-medical >}}
 
    >> **Reminder**: Leicht von unten nach oben drücken, nicht wie auf den Videos / Beschreibungen seitlich ziehen.
