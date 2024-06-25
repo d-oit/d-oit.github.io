@@ -46,9 +46,11 @@ Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich b
 - Optional: Git Graph extension for Visual Studio Code für eine zusätzliche Anzeige >> https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
 3. Visual Studio Code >> https://code.visualstudio.com/Download
 4. Visual Studio Code Erweiterungen
+
     - Front Matter CMS 
     - German - Code Spell Checker
-    - Font Awesome Auto-complete & Preview
+    - Font Awesome Gallery
+
     Aktueller Stand als PowerShell Installation Gist >> https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405
     Ermittlung 
 
@@ -56,6 +58,13 @@ Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich b
 
 
 Nach der Installation kann lokal per `hugo server` Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht. 
+
+### Windows 11 Developer Powershell 
+
+Windows 11 Powershell script für die Installation eines english-US Sprachpaket inklusive notwendiger Tools für die Webentwicklung.
+
+https://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb
+
 
 ### Hugo Module aktualisieren
 
@@ -72,7 +81,6 @@ Der aktuelle Stand wird per git Versionsverwaltung auf **github** gestellt und p
 Das Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop
 
 Damit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht. 
-
 
 
 
