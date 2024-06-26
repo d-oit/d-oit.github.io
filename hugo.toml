@@ -5,3 +5,4 @@ title = 'd.o.it'
 path = 'github.com/gethinode/hinode'
 copyright = "Copyright © d.o."
 enableGitInfo = true
+enableRobotsTXT = true
