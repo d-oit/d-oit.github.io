@@ -1,1 +1,1 @@
-##Read.mde
+Blog: https://d-oit.github.io/
