@@ -17,7 +17,7 @@ keywords:
   - website
 ---
 
-## Blog Wiederbelebung 
+## Blog Wiederbelebung
 
 Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben. 
 
@@ -26,7 +26,7 @@ Und vor allem Performance :performing_arts:
 
 Der Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen. 
 
-### Hugo 
+### Hugo
 
 Grundlage vom *Hinode* Theme ist **Hugo**. Eines der am weitesten verbreitetsten Generatoren von statischen Website. Lokal wird dabei mit einem Editor der Inhalt erstellt. Hugo als Generator erzeugt daraufhin html Dateien welche der Browser anzeigt. 
 
@@ -40,31 +40,34 @@ Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich b
 
 1. Hugo Installation >> https://gohugo.io/getting-started/quick-start/#prerequisites
 - Meine Installation / Update führe ich per winget durch:
- `winget install Hugo.Hugo.Extended`
+  `winget install Hugo.Hugo.Extended`
 2. Git als Versionsverwaltung >> https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt)
 - Git unter Windows kann per Terminal / Command line mit Admin Rechten per `git update-git-for-windows` aktualisiert werden
 - Optional: Git Graph extension for Visual Studio Code für eine zusätzliche Anzeige >> https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
 3. Visual Studio Code >> https://code.visualstudio.com/Download
-4. Visual Studio Code Erweiterungen
+   
+   3.1. Visual Studio Code Erweiterungen
+   
+   - Front Matter CMS 
+   
+   - German - Code Spell Checker
+   
+   - Font Awesome Gallery
+     
+     Aktueller Stand als PowerShell Installation Gist >> https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405
+     Ermittlung 
+     
+     *Voraussetzung*: Command Line Interface (CLI) >> https://code.visualstudio.com/docs/editor/command-line
 
-    - Front Matter CMS 
-    - German - Code Spell Checker
-    - Font Awesome Gallery
-
-    Aktueller Stand als PowerShell Installation Gist >> https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405
-    Ermittlung 
-
-    *Voraussetzung*: Command Line Interface (CLI) >> https://code.visualstudio.com/docs/editor/command-line
-
+4. Alternativer open source Markdown Editor ist für mich **Marktext ** https://www.marktext.cc/
 
 Nach der Installation kann lokal per `hugo server` Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht. 
 
-### Windows 11 Developer Powershell 
+### Windows 11 Developer Powershell
 
 Windows 11 Powershell script für die Installation eines english-US Sprachpaket inklusive notwendiger Tools für die Webentwicklung.
 
 https://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb
-
 
 ### Hugo Module aktualisieren
 
@@ -81,9 +84,5 @@ Der aktuelle Stand wird per git Versionsverwaltung auf **github** gestellt und p
 Das Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop
 
 Damit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht. 
-
-
-
-
 
 
