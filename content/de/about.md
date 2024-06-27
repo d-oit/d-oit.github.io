@@ -1,5 +1,5 @@
 ---
-slug: abo
+slug: about
 title: Über
 description: d.o.it - Probier etwas aus
 date: 2022-04-11
