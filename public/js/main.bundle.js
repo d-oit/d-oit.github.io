@@ -6526,7 +6526,7 @@ function initIndex() {
         description: "d.o.it - Try something out.",
         
         
-        content: "d.o.it - Try something out \u0026nbsp; \u0026nbsp; Natur\nLove natur. \u0026nbsp; Search\nSearch for new things. \u0026nbsp; Development\nDevelop myself."
+        content: "d.o.it - Try something out \u0026nbsp; \u0026nbsp; Natur\nLove natur. \u0026nbsp; Search\nSearch for new things. \u0026nbsp; Development\nDevelop myself. Collage Collage"
       })
       .add(
       

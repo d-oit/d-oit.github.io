@@ -22,3 +22,5 @@ showComments: false
     {{< /card >}}
 {{< /card-group >}}
 
+
+{{< image src="img/CollageAbout.png" caption="Collage" >}}
