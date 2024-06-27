@@ -7,6 +7,6 @@ thumbnail:
     author: Dominik Oswald     
 actions:  
     about:  
-        url: "ueber"  
+        url: "about"  
         title: "Über"
 ---

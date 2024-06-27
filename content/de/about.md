@@ -6,7 +6,7 @@ date: 2022-04-11
 updated: 2023-08-02
 showComments: false
 ---
-## Probier etwas aus
+# Probier etwas aus
 
 {{< persona thumbnail="/img/favicon.png" title="Autor" color="primary" >}}
  Ich schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.

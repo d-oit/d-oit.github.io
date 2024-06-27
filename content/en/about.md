@@ -8,7 +8,7 @@ showComments: false
 
 {{< image src="/img/logo/doitLogo.svg" class="img-fluid w-50" wrapper="text-center" >}}
 
-## d.o.it - Try something out
+# d.o.it - Try something out
 
 {{< card-group align="center" class="border-0" padding="3" >}}
     {{< card title="Natur" icon="fas tree" >}}
