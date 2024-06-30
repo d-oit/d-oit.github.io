@@ -14,7 +14,7 @@ showComments: false
 {{< persona thumbnail="/img/favicon.png" title="Autor" color="primary" >}}
  Ich schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.
 
-Beruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe die Natur, Wald, Flüsse, Berge und das Meer.
+Beruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe es zu kochen, Sport, die Natur, Wald, Flüsse, Berge und das Meer.
 
 **d.o.** = Dominik Oswald
 {{< /persona >}}
