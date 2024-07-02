@@ -59,10 +59,10 @@
       <description></description>
     </item>
     <item>
-      <title>Windows 11</title>
-      <link>http://localhost:1313/tags/windows-11/</link>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows-11/</guid>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -105,13 +105,6 @@
       <link>http://localhost:1313/tags/powershell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/powershell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
   </channel>

@@ -6533,6 +6533,19 @@ function initIndex() {
       
       {
         id: 3,
+        tag: "de",
+        href: "/de/tags/ai-prompt/",
+        title: "AI Prompt",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 4,
         tag: "en",
         href: "/tags/api/",
         title: "API",
@@ -6545,7 +6558,7 @@ function initIndex() {
       
       
       {
-        id: 4,
+        id: 5,
         tag: "de",
         href: "/de/tags/apps/tools-2024/",
         title: "Apps/Tools 2024",
@@ -6558,7 +6571,7 @@ function initIndex() {
       
       
       {
-        id: 5,
+        id: 6,
         tag: "de",
         href: "/de/blog/dinge-ausprobieren-jahr-2024/",
         title: "Ausprobieren - Jahr 2024",
@@ -6571,7 +6584,7 @@ function initIndex() {
       
       
       {
-        id: 6,
+        id: 7,
         tag: "en",
         href: "/tags/banking/",
         title: "Banking",
@@ -6584,7 +6597,7 @@ function initIndex() {
       
       
       {
-        id: 7,
+        id: 8,
         tag: "de",
         href: "/de/tags/basketball/",
         title: "Basketball",
@@ -6597,7 +6610,7 @@ function initIndex() {
       
       
       {
-        id: 8,
+        id: 9,
         tag: "de",
         href: "/de/blog/",
         title: "Blog",
@@ -6610,7 +6623,7 @@ function initIndex() {
       
       
       {
-        id: 9,
+        id: 10,
         tag: "en",
         href: "/blog/",
         title: "Blog",
@@ -6623,7 +6636,7 @@ function initIndex() {
       
       
       {
-        id: 10,
+        id: 11,
         tag: "en",
         href: "/tags/c%23/",
         title: "C#",
@@ -6636,7 +6649,7 @@ function initIndex() {
       
       
       {
-        id: 11,
+        id: 12,
         tag: "en",
         href: "/projects/csharp-comdirect-rest-api/",
         title: "C# .NET Rest API for comdirect",
@@ -6649,7 +6662,7 @@ function initIndex() {
       
       
       {
-        id: 12,
+        id: 13,
         tag: "de",
         href: "/de/categories/",
         title: "Categories",
@@ -6662,7 +6675,7 @@ function initIndex() {
       
       
       {
-        id: 13,
+        id: 14,
         tag: "en",
         href: "/categories/",
         title: "Categories",
@@ -6675,7 +6688,7 @@ function initIndex() {
       
       
       {
-        id: 14,
+        id: 15,
         tag: "en",
         href: "/tags/developer/",
         title: "Developer",
@@ -6688,7 +6701,7 @@ function initIndex() {
       
       
       {
-        id: 15,
+        id: 16,
         tag: "en",
         href: "/blog/extensions-visual-studio-2022-solo-developer-2024/",
         title: "Extensions for Visual Studio 2022 for solo Developer in 2024",
@@ -6701,7 +6714,7 @@ function initIndex() {
       
       
       {
-        id: 16,
+        id: 17,
         tag: "en",
         href: "/projects/csharp-monetary-financial-institutions-list/",
         title: "Get the latest monetary financial institutions with C#",
@@ -6714,7 +6727,20 @@ function initIndex() {
       
       
       {
-        id: 17,
+        id: 18,
+        tag: "de",
+        href: "/de/blog/2024-07-01-ai-google-kalendar-eintr%C3%A4ge-f%C3%BCr-basketball-livestreams-erstellen/",
+        title: "Google Kalender Einträge aus AI Prompt",
+        description: "Basketball Livestreams Google Kalender Einträge erstellen und auf Website darstellen.",
+        
+        
+        content: "Für mich selbst habe ich meinen google calendar um einen BasketballLive Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte. Warum google calendar? Ich wollte einfach nicht nochmal einen Kalender installieren. Dieser funktioniert in jedem gängigen Browser, Android und ist einfach zu verwalten.\nDie Darstellung ist hier zu finden:\nKalender Live streams Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund.\nFür die Automatisierung habe ich bereits einiges getestet. Bei der Automatisierung funktionieren einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form:\nBeispiel magentasport \u0026nbsp; Aufruf magentasport im Lesemodus Live und Kostenlos in die Zwischenablage kopieren Bing Copilot Chat eine ics Datei erstellen: `\u0026ldquo;Erstelle eine ics in deutscher Zeitzone für die nachfolgenden magentasport live stream Termine mit einer Dauer von 1,5 stunden: Deutschland Frankreich Deutschland Frankreich Sa 6. Jul 15:30 | Testspiele Herren\n\u0026hellip;.\u0026quot;` 4. ics Datei in google Kalender importieren"
+      })
+      .add(
+      
+      
+      {
+        id: 19,
         tag: "de",
         href: "/de/tags/hinode/",
         title: "Hinode",
@@ -6727,7 +6753,7 @@ function initIndex() {
       
       
       {
-        id: 18,
+        id: 20,
         tag: "de",
         href: "/de/tags/hugo/",
         title: "Hugo",
@@ -6740,20 +6766,20 @@ function initIndex() {
       
       
       {
-        id: 19,
+        id: 21,
         tag: "de",
-        href: "/de/blog/2024-06-30-kostenlose-basketball-live-streams/",
+        href: "/de/blog/kostenlose-basketball-live-streams/",
         title: "Kostenlose Basketball live streams",
-        description: "Kalendar für kostenlose Basketball live stream von magentasport und anderen",
+        description: "Kalender für kostenlose Basketball live stream Übertragungen von magentasport, sportschau und anderen",
         
         
-        content: "\u0026lt; basketCalendar \u0026gt;"
+        content: ""
       })
       .add(
       
       
       {
-        id: 20,
+        id: 22,
         tag: "en",
         href: "/tags/license/",
         title: "License",
@@ -6766,7 +6792,7 @@ function initIndex() {
       
       
       {
-        id: 21,
+        id: 23,
         tag: "de",
         href: "/de/blog/productivity-apps-tools-list-2024/",
         title: "Meine produktive Apps / Tools Liste 2024",
@@ -6779,7 +6805,7 @@ function initIndex() {
       
       
       {
-        id: 22,
+        id: 24,
         tag: "en",
         href: "/tags/monetary-financial-institutions/",
         title: "Monetary Financial Institutions",
@@ -6792,7 +6818,7 @@ function initIndex() {
       
       
       {
-        id: 23,
+        id: 25,
         tag: "en",
         href: "/blog/ms-sql-date-format/",
         title: "MS SQL: Date Format",
@@ -6805,7 +6831,7 @@ function initIndex() {
       
       
       {
-        id: 24,
+        id: 26,
         tag: "en",
         href: "/projects/nuget-packages-licenses-dotnet/",
         title: "NuGet Packages.Licenses for .NET",
@@ -6818,7 +6844,7 @@ function initIndex() {
       
       
       {
-        id: 25,
+        id: 27,
         tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
@@ -6831,7 +6857,7 @@ function initIndex() {
       
       
       {
-        id: 26,
+        id: 28,
         tag: "en",
         href: "/projects/",
         title: "Projects",
@@ -6844,7 +6870,7 @@ function initIndex() {
       
       
       {
-        id: 27,
+        id: 29,
         tag: "en",
         href: "/tags/rest/",
         title: "Rest",
@@ -6857,7 +6883,20 @@ function initIndex() {
       
       
       {
-        id: 28,
+        id: 30,
+        tag: "de",
+        href: "/de/categories/software-development/",
+        title: "Software Development",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 31,
         tag: "en",
         href: "/categories/software-development/",
         title: "Software Development",
@@ -6870,7 +6909,7 @@ function initIndex() {
       
       
       {
-        id: 29,
+        id: 32,
         tag: "en",
         href: "/tags/software-development/",
         title: "Software Development",
@@ -6883,7 +6922,7 @@ function initIndex() {
       
       
       {
-        id: 30,
+        id: 33,
         tag: "de",
         href: "/de/categories/sport/",
         title: "Sport",
@@ -6896,7 +6935,7 @@ function initIndex() {
       
       
       {
-        id: 31,
+        id: 34,
         tag: "en",
         href: "/tags/sql/",
         title: "SQL",
@@ -6909,7 +6948,7 @@ function initIndex() {
       
       
       {
-        id: 32,
+        id: 35,
         tag: "de",
         href: "/de/blog/statische-website-erstellen/",
         title: "Statische Website erstellen",
@@ -6922,7 +6961,7 @@ function initIndex() {
       
       
       {
-        id: 33,
+        id: 36,
         tag: "de",
         href: "/de/tags/",
         title: "Tags",
@@ -6935,7 +6974,7 @@ function initIndex() {
       
       
       {
-        id: 34,
+        id: 37,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -6948,7 +6987,7 @@ function initIndex() {
       
       
       {
-        id: 35,
+        id: 38,
         tag: "de",
         href: "/de/tags/try-new-things/",
         title: "Try New Things",
@@ -6961,7 +7000,7 @@ function initIndex() {
       
       
       {
-        id: 36,
+        id: 39,
         tag: "de",
         href: "/de/about/",
         title: "Über",
@@ -6974,7 +7013,7 @@ function initIndex() {
       
       
       {
-        id: 37,
+        id: 40,
         tag: "en",
         href: "/blog/unblock-files-folder-powershell/",
         title: "Unblock all files in folder with PowerShell",
@@ -6987,20 +7026,20 @@ function initIndex() {
       
       
       {
-        id: 38,
+        id: 41,
         tag: "en",
-        href: "/blog/uninstall-mobile-devices-windows-11/",
-        title: "Uninstall \"Mobile devices\" in Windows 11",
-        description: "If you don't need Phone Link in Windows 11 this is the easiest way to uninstall the app.",
+        href: "/blog/uninstall-phone-link-windows/",
+        title: "Uninstall \"Mobile devices\" / Phone Link in Windows",
+        description: "If you don't need Phone Link / YourPhone in Windows this is the easiest way to uninstall the app.",
         
         
-        content: "With the Phone Link app on your Windows 11 linked to your iPhone or Android phone. If you don\u0026rsquo;t need it this is the easist way for me to unistall the app.\nRun the following PowerShell code with Admin rights:\nget-appxpackage -allusers *crossdevice* | remove-appxpackage"
+        content: "With the Phone Link app on your Windows linked to your iPhone or Android phone. If you don\u0026rsquo;t need it this is the easiest way for me to uninstall the app.\nWindows 11 Phone Link uninstall \u0026nbsp; Run the following PowerShell code with Admin rights:\nget-appxpackage -allusers *crossdevice* | remove-appxpackage Windows 10 Phone Link / YourPhone uninstall \u0026nbsp; Run the following PowerShell 5x (old version) code with Admin rights:\nGet-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage"
       })
       .add(
       
       
       {
-        id: 39,
+        id: 42,
         tag: "en",
         href: "/tags/visual-studio/",
         title: "Visual Studio",
@@ -7013,7 +7052,7 @@ function initIndex() {
       
       
       {
-        id: 40,
+        id: 43,
         tag: "en",
         href: "/tags/visual-studio-2022/",
         title: "Visual Studio 2022",
@@ -7026,7 +7065,7 @@ function initIndex() {
       
       
       {
-        id: 41,
+        id: 44,
         tag: "de",
         href: "/de/tags/website/",
         title: "Website",
@@ -7039,7 +7078,7 @@ function initIndex() {
       
       
       {
-        id: 42,
+        id: 45,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -7052,10 +7091,10 @@ function initIndex() {
       
       
       {
-        id: 43,
+        id: 46,
         tag: "de",
         href: "/de/",
-        title: "Willkomen zu d.o.it",
+        title: "Willkommen zu d.o.it",
         description: "d.o.it - Probier etwas aus.",
         
         
@@ -7065,7 +7104,7 @@ function initIndex() {
       
       
       {
-        id: 44,
+        id: 47,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
@@ -7078,20 +7117,7 @@ function initIndex() {
       
       
       {
-        id: 45,
-        tag: "en",
-        href: "/tags/windows-11/",
-        title: "Windows 11",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 46,
+        id: 48,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",

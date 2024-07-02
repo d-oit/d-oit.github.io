@@ -1,7 +1,7 @@
 ---
 title: Meine produktive Apps / Tools Liste 2024
-description: Übersicht über meine aktuellen produktiven Apps/Tools
-slug: productivity-apps-tools-list-2024
+description: "Übersicht über meine aktuellen produktiven Apps/Tools"
+slug: "productivity-apps-tools-list-2024"
 date: 2024-05-24T13:38:36.132Z
 tags:
     - Apps/Tools 2024

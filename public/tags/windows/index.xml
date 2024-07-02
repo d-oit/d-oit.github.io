@@ -10,6 +10,13 @@
     <lastBuildDate>Thu, 06 Jun 2024 16:58:25 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Uninstall &#34;Mobile devices&#34; / Phone Link in Windows</title>
+      <link>http://localhost:1313/blog/uninstall-phone-link-windows/</link>
+      <pubDate>Tue, 21 May 2024 15:32:38 +0000</pubDate>
+      <guid>http://localhost:1313/blog/uninstall-phone-link-windows/</guid>
+      <description>With the Phone Link app on your Windows linked to your iPhone or Android phone. If you don&amp;rsquo;t need it this is the easiest way for me to uninstall the app.&#xA;Windows 11 Phone Link uninstall &amp;nbsp; Run the following PowerShell code with Admin rights:&#xA;get-appxpackage -allusers *crossdevice* | remove-appxpackage Windows 10 Phone Link / YourPhone uninstall &amp;nbsp; Run the following PowerShell 5x (old version) code with Admin rights:&#xA;Get-AppxPackage Microsoft.</description>
+    </item>
+    <item>
       <title>Unblock all files in folder with PowerShell</title>
       <link>http://localhost:1313/blog/unblock-files-folder-powershell/</link>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>

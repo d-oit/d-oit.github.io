@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/de/tags/ai-prompt/</loc>
+    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/de/tags/basketball/</loc>
-    <lastmod>2024-06-30T13:04:20+00:00</lastmod>
+    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/categories/</loc>
-    <lastmod>2024-06-30T13:04:20+00:00</lastmod>
+    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -18,14 +21,24 @@
                 href="http://localhost:1313/de/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/de/blog/2024-06-30-kostenlose-basketball-live-streams/</loc>
-    <lastmod>2024-06-30T13:04:20+00:00</lastmod>
+    <loc>http://localhost:1313/de/blog/2024-07-01-ai-google-kalendar-eintr%C3%A4ge-f%C3%BCr-basketball-livestreams-erstellen/</loc>
+    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/de/categories/sport/</loc>
-    <lastmod>2024-06-30T13:04:20+00:00</lastmod>
+    <loc>http://localhost:1313/de/categories/software-development/</loc>
+    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/categories/software-development/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/categories/software-development/"
+                />
   </url><url>
     <loc>http://localhost:1313/de/tags/</loc>
-    <lastmod>2024-06-30T13:04:20+00:00</lastmod>
+    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -36,6 +49,12 @@
                 hreflang="de"
                 href="http://localhost:1313/de/tags/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/de/blog/kostenlose-basketball-live-streams/</loc>
+    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/de/categories/sport/</loc>
+    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/apps/tools-2024/</loc>
     <lastmod>2024-06-26T10:39:52+02:00</lastmod>
@@ -65,7 +84,7 @@
     <lastmod>2024-06-25T11:12:52+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/about/</loc>
-    <lastmod>2024-06-27T20:13:01+02:00</lastmod>
+    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
