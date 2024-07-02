@@ -6747,7 +6747,7 @@ function initIndex() {
         description: "Kalendar für kostenlose Basketball live stream von magentasport und anderen",
         
         
-        content: "\u0026lt; basketCalendar \u0026gt;"
+        content: ""
       })
       .add(
       
