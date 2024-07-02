@@ -1,6 +1,7 @@
 ---
-title: Kostenlose Basketball live streams
-description: Kalendar für kostenlose Basketball live stream von magentasport und anderen
+title: Kostenlose Basketball live streams 
+description: Kalender für kostenlose Basketball live stream Übertragungen von magentasport, sportschau und anderen
+slug: kostenlose-basketball-live-streams
 date: 2024-06-30T13:04:20.335Z
 thumbnail:
     url: /img/blog/BasketLivestreams.jpg
@@ -12,3 +13,4 @@ categories:
 ---
 
 {{< basketCalendar >}}
+

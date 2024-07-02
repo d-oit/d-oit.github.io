@@ -7,12 +7,21 @@
     "cSpell.words": [
         "Aixploria",
         "Canva",
+        "Dominik",
+        "GETDATE",
+        "hugo",
         "lastig",
+        "Livestreams",
         "Lüftersteuerung",
+        "magentasport",
         "mobiledevices",
         "sprachigen",
+        "trynewthings",
+        "varchar",
+        "winget",
         "Wiso"
     ],
     "cSpell.language": "en,de",
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "ltex.additionalRules.motherTongue": "de"
 }
