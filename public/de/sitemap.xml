@@ -6,17 +6,10 @@
     <lastmod>2024-07-01T12:21:11+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/basketball/</loc>
-<<<<<<< HEAD
-    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/categories/</loc>
-    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
-=======
-    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/de/categories/</loc>
-    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
->>>>>>> 30a9aed3ec5272e715b15bce62fc18417d53fcbd
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,17 +21,7 @@
                 href="http://localhost:1313/de/categories/"
                 />
   </url><url>
-<<<<<<< HEAD
-    <loc>http://localhost:1313/de/blog/2024-06-30-kostenlose-basketball-live-streams/</loc>
-    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/de/categories/sport/</loc>
-    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/de/tags/</loc>
-    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
-=======
-    <loc>http://localhost:1313/de/blog/2024-07-01-ai-google-kalendar-eintr%C3%A4ge-f%C3%BCr-basketball-livestreams-erstellen/</loc>
+    <loc>http://localhost:1313/de/blog/google-kalender-eintrage-aus-ai-prompt/</loc>
     <lastmod>2024-07-01T12:21:11+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/categories/software-development/</loc>
@@ -55,8 +38,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/de/tags/</loc>
-    <lastmod>2024-07-01T12:21:11+00:00</lastmod>
->>>>>>> 30a9aed3ec5272e715b15bce62fc18417d53fcbd
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -69,28 +51,38 @@
                 />
   </url><url>
     <loc>http://localhost:1313/de/blog/kostenlose-basketball-live-streams/</loc>
-    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/categories/sport/</loc>
-    <lastmod>2024-06-30T15:37:48+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/apps/tools-2024/</loc>
-    <lastmod>2024-06-26T10:39:52+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/blog/productivity-apps-tools-list-2024/</loc>
-    <lastmod>2024-06-26T10:39:52+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/hinode/</loc>
-    <lastmod>2024-06-27T09:42:42+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/hugo/</loc>
-    <lastmod>2024-06-27T09:42:42+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/blog/statische-website-erstellen/</loc>
-    <lastmod>2024-06-27T09:42:42+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/website/</loc>
-    <lastmod>2024-06-27T09:42:42+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/website/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/tags/website/"
+                />
   </url><url>
     <loc>http://localhost:1313/de/tags/2024/</loc>
     <lastmod>2024-06-25T11:12:52+02:00</lastmod>
@@ -128,7 +120,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/de/</loc>
-    <lastmod>2024-06-27T19:34:58+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

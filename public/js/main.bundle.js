@@ -6663,8 +6663,8 @@ function initIndex() {
       
       {
         id: 13,
-        tag: "de",
-        href: "/de/categories/",
+        tag: "en",
+        href: "/categories/",
         title: "Categories",
         description: "",
         
@@ -6676,8 +6676,8 @@ function initIndex() {
       
       {
         id: 14,
-        tag: "en",
-        href: "/categories/",
+        tag: "de",
+        href: "/de/categories/",
         title: "Categories",
         description: "",
         
@@ -6703,6 +6703,19 @@ function initIndex() {
       {
         id: 16,
         tag: "en",
+        href: "/blog/embed-google-calendar-responsive/",
+        title: "Embed Google Calendar responsive",
+        description: "How to embed Google Calendar on your website",
+        
+        
+        content: "Why embed Google Calendar on my website? \u0026nbsp; I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar.\nEmbed Google Calendar \u0026nbsp; For an easy way to embed Google Calendar responsive i found the following way better than like ChatGPT \u0026amp; Co. on the Stack Overflow website. The only way that i found to make it nice is to invert the iframe to make it darker.\n/* CSS for responsive iFrame for calendar*/\r@media (min-width: 550px) \r.responsive-iframe-container padding-bottom: 75%;\r\r@media (max-width: 550px) \r.responsive-iframe-container padding-bottom: 150%;\r\r.responsive-iframe-container \rposition: relative;\rpadding-top: 0;\rheight: 0;\roverflow: hidden;\r\r.responsive-iframe-container iframe \rposition: absolute;\rtop: 0;\rleft: 0;\rwidth: 100%;\rheight: 100%;\r\riframe\rfilter: invert(.9) saturate(0.5) hue-rotate(145deg);\r\r\u0026lt;/style\u0026gt;\r\u0026lt;div class=\u0026#34;responsive-iframe-container\u0026#34;\u0026gt;\r\u0026lt;iframe title=\u0026#34;BasketCalendar\u0026#34; src=\u0026#34;https://calendar.google.com/calendar/embed?height=600\u0026amp;wkst=2\u0026amp;ctz=Europe%2FBerlin\u0026amp;bgcolor=%23ffffff\u0026amp;title=Kostenlose%20Livestreams%20-%20Basketball%20-\u0026amp;mode=AGENDA\u0026amp;src=ZjhhMTRjNDAzN2Q5YWI0MTFmOTNmMTllZTM2OTIxOGYwZWQ1NGJlN2MyZDg4ZGVhZjA5ZDZiNzZmYmU3MmU3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t\u0026amp;color=%23D81B60\u0026#34; style=\u0026#34;border-width:0\u0026#34; width=\u0026#34;800\u0026#34; height=\u0026#34;600\u0026#34; frameborder=\u0026#34;0\u0026#34; scrolling=\u0026#34;no\u0026#34;\u0026gt;\u0026lt;/iframe\u0026gt;\r\u0026lt;/div\u0026gt;```\r[Responsive]: https://stackoverflow.com/questions/39006765/how-do-you-properly-wrap-google-calendar-inside-div-and-make-it-responsive\r[Style nicer]:https://stackoverflow.com/questions/49306347/how-to-customize-google-calendar-with-css"
+      })
+      .add(
+      
+      
+      {
+        id: 17,
+        tag: "en",
         href: "/blog/extensions-visual-studio-2022-solo-developer-2024/",
         title: "Extensions for Visual Studio 2022 for solo Developer in 2024",
         description: "List of useful free / non-paid  extensions for Microsoft Visual Studio 2022 for solo developer in 2024",
@@ -6714,7 +6727,7 @@ function initIndex() {
       
       
       {
-        id: 17,
+        id: 18,
         tag: "en",
         href: "/projects/csharp-monetary-financial-institutions-list/",
         title: "Get the latest monetary financial institutions with C#",
@@ -6727,20 +6740,33 @@ function initIndex() {
       
       
       {
-        id: 18,
-        tag: "de",
-        href: "/de/blog/2024-07-01-ai-google-kalendar-eintr%C3%A4ge-f%C3%BCr-basketball-livestreams-erstellen/",
-        title: "Google Kalender Einträge aus AI Prompt",
-        description: "Basketball Livestreams Google Kalender Einträge erstellen und auf Website darstellen.",
+        id: 19,
+        tag: "en",
+        href: "/tags/google-calendar/",
+        title: "Google Calendar",
+        description: "",
         
         
-        content: "Für mich selbst habe ich meinen google calendar um einen BasketballLive Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte. Warum google calendar? Ich wollte einfach nicht nochmal einen Kalender installieren. Dieser funktioniert in jedem gängigen Browser, Android und ist einfach zu verwalten.\nDie Darstellung ist hier zu finden:\nKalender Live streams Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund.\nFür die Automatisierung habe ich bereits einiges getestet. Bei der Automatisierung funktionieren einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form:\nBeispiel magentasport \u0026nbsp; Aufruf magentasport im Lesemodus Live und Kostenlos in die Zwischenablage kopieren Bing Copilot Chat eine ics Datei erstellen: `\u0026ldquo;Erstelle eine ics in deutscher Zeitzone für die nachfolgenden magentasport live stream Termine mit einer Dauer von 1,5 stunden: Deutschland Frankreich Deutschland Frankreich Sa 6. Jul 15:30 | Testspiele Herren\n\u0026hellip;.\u0026quot;` 4. ics Datei in google Kalender importieren"
+        content: ""
       })
       .add(
       
       
       {
-        id: 19,
+        id: 20,
+        tag: "de",
+        href: "/de/blog/google-kalender-eintrage-aus-ai-prompt/",
+        title: "Google Kalender Einträge aus AI Prompt",
+        description: "Basketball Livestreams Google Kalender Einträge erstellen und auf Website darstellen.",
+        
+        
+        content: "Für mich selbst habe ich meinen google calendar um einen BasketballLive Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte.\nWarum google calendar?\nIch wollte einfach nicht nochmal einen Kalender installieren. Dieser funktioniert in jedem gängigen Browser, Android und ist einfach zu verwalten.\nDie Seite ist hier zu finden:\nKalender Live streams Kalender \u0026nbsp; Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund.\nNormalerweise trage ich diese einfach manuell ein, falls eine Übertragung finde die mich interessiert.\nFür die Automatisierung habe ich bereits einiges getestet und probiert. Aktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form:\nBeispiel magentasport \u0026nbsp; Aufruf magentasport im Lesemodus Übertragungen raus suchen und in die Zwischenablage kopieren Bing Copilot Chat eine ics Datei erstellen: `\u0026ldquo;Erstelle eine ics in deutscher Zeitzone für die nachfolgenden magentasport live stream Termine mit einer Dauer von 1,5 stunden: Deutschland Frankreich Deutschland Frankreich Sa 6. Jul 15:30 | Testspiele Herren\n\u0026hellip;.\u0026quot;`\nErgebnis ist ein ics Datei.\nWunsch: Klasse wäre wenn Google Gemini direkt mit Google Calendar verknüpft werden könnte. Ist ja der gleiche Google Account. Dies ist aber nicht möglich. Ebenso werden in Gemini keine korrekte Zeitzone erstellt. 4. ics Datei in google Kalender importieren\nAlternative ist Anbindung an den google calendar per API für jeden einzelnen Termin oder einen alternativen Kalender. Machbar ist einiges falls hier Bedarf bestehen würde \u0026nbsp; \u0026nbsp;"
+      })
+      .add(
+      
+      
+      {
+        id: 21,
         tag: "de",
         href: "/de/tags/hinode/",
         title: "Hinode",
@@ -6753,7 +6779,7 @@ function initIndex() {
       
       
       {
-        id: 20,
+        id: 22,
         tag: "de",
         href: "/de/tags/hugo/",
         title: "Hugo",
@@ -6766,20 +6792,20 @@ function initIndex() {
       
       
       {
-        id: 21,
+        id: 23,
         tag: "de",
         href: "/de/blog/kostenlose-basketball-live-streams/",
         title: "Kostenlose Basketball live streams",
         description: "Kalender für kostenlose Basketball live stream Übertragungen von magentasport, sportschau und anderen",
         
         
-        content: ""
+        content: "\u0026lt;\u0026lt;\u0026lt;\u0026lt;\u0026lt;\u0026lt;\u0026lt; HEAD\r=======\r\u003e\u003e\u003e\u003e\u003e\u003e\u003e 30a9aed3ec5272e715b15bce62fc18417d53fcbd"
       })
       .add(
       
       
       {
-        id: 22,
+        id: 24,
         tag: "en",
         href: "/tags/license/",
         title: "License",
@@ -6792,7 +6818,7 @@ function initIndex() {
       
       
       {
-        id: 23,
+        id: 25,
         tag: "de",
         href: "/de/blog/productivity-apps-tools-list-2024/",
         title: "Meine produktive Apps / Tools Liste 2024",
@@ -6805,7 +6831,7 @@ function initIndex() {
       
       
       {
-        id: 24,
+        id: 26,
         tag: "en",
         href: "/tags/monetary-financial-institutions/",
         title: "Monetary Financial Institutions",
@@ -6818,7 +6844,7 @@ function initIndex() {
       
       
       {
-        id: 25,
+        id: 27,
         tag: "en",
         href: "/blog/ms-sql-date-format/",
         title: "MS SQL: Date Format",
@@ -6831,7 +6857,7 @@ function initIndex() {
       
       
       {
-        id: 26,
+        id: 28,
         tag: "en",
         href: "/projects/nuget-packages-licenses-dotnet/",
         title: "NuGet Packages.Licenses for .NET",
@@ -6844,7 +6870,7 @@ function initIndex() {
       
       
       {
-        id: 27,
+        id: 29,
         tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
@@ -6857,7 +6883,7 @@ function initIndex() {
       
       
       {
-        id: 28,
+        id: 30,
         tag: "en",
         href: "/projects/",
         title: "Projects",
@@ -6870,7 +6896,7 @@ function initIndex() {
       
       
       {
-        id: 29,
+        id: 31,
         tag: "en",
         href: "/tags/rest/",
         title: "Rest",
@@ -6883,20 +6909,7 @@ function initIndex() {
       
       
       {
-        id: 30,
-        tag: "de",
-        href: "/de/categories/software-development/",
-        title: "Software Development",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 31,
+        id: 32,
         tag: "en",
         href: "/categories/software-development/",
         title: "Software Development",
@@ -6909,7 +6922,20 @@ function initIndex() {
       
       
       {
-        id: 32,
+        id: 33,
+        tag: "de",
+        href: "/de/categories/software-development/",
+        title: "Software Development",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 34,
         tag: "en",
         href: "/tags/software-development/",
         title: "Software Development",
@@ -6922,7 +6948,7 @@ function initIndex() {
       
       
       {
-        id: 33,
+        id: 35,
         tag: "de",
         href: "/de/categories/sport/",
         title: "Sport",
@@ -6935,7 +6961,7 @@ function initIndex() {
       
       
       {
-        id: 34,
+        id: 36,
         tag: "en",
         href: "/tags/sql/",
         title: "SQL",
@@ -6948,7 +6974,7 @@ function initIndex() {
       
       
       {
-        id: 35,
+        id: 37,
         tag: "de",
         href: "/de/blog/statische-website-erstellen/",
         title: "Statische Website erstellen",
@@ -6961,20 +6987,7 @@ function initIndex() {
       
       
       {
-        id: 36,
-        tag: "de",
-        href: "/de/tags/",
-        title: "Tags",
-        description: "",
-        
-        
-        content: ""
-      })
-      .add(
-      
-      
-      {
-        id: 37,
+        id: 38,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -6987,7 +7000,20 @@ function initIndex() {
       
       
       {
-        id: 38,
+        id: 39,
+        tag: "de",
+        href: "/de/tags/",
+        title: "Tags",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 40,
         tag: "de",
         href: "/de/tags/try-new-things/",
         title: "Try New Things",
@@ -7000,7 +7026,7 @@ function initIndex() {
       
       
       {
-        id: 39,
+        id: 41,
         tag: "de",
         href: "/de/about/",
         title: "Über",
@@ -7013,7 +7039,7 @@ function initIndex() {
       
       
       {
-        id: 40,
+        id: 42,
         tag: "en",
         href: "/blog/unblock-files-folder-powershell/",
         title: "Unblock all files in folder with PowerShell",
@@ -7026,7 +7052,7 @@ function initIndex() {
       
       
       {
-        id: 41,
+        id: 43,
         tag: "en",
         href: "/blog/uninstall-phone-link-windows/",
         title: "Uninstall \"Mobile devices\" / Phone Link in Windows",
@@ -7039,7 +7065,7 @@ function initIndex() {
       
       
       {
-        id: 42,
+        id: 44,
         tag: "en",
         href: "/tags/visual-studio/",
         title: "Visual Studio",
@@ -7052,7 +7078,7 @@ function initIndex() {
       
       
       {
-        id: 43,
+        id: 45,
         tag: "en",
         href: "/tags/visual-studio-2022/",
         title: "Visual Studio 2022",
@@ -7065,7 +7091,20 @@ function initIndex() {
       
       
       {
-        id: 44,
+        id: 46,
+        tag: "en",
+        href: "/tags/website/",
+        title: "Website",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 47,
         tag: "de",
         href: "/de/tags/website/",
         title: "Website",
@@ -7078,7 +7117,7 @@ function initIndex() {
       
       
       {
-        id: 45,
+        id: 48,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -7091,7 +7130,7 @@ function initIndex() {
       
       
       {
-        id: 46,
+        id: 49,
         tag: "de",
         href: "/de/",
         title: "Willkommen zu d.o.it",
@@ -7104,7 +7143,7 @@ function initIndex() {
       
       
       {
-        id: 47,
+        id: 50,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
@@ -7117,7 +7156,7 @@ function initIndex() {
       
       
       {
-        id: 48,
+        id: 51,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",
