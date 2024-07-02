@@ -7,6 +7,7 @@ tags:
   - Try new things
 thumbnail:
   url: /img/blog/2024_trynewthings.png
+  author: Dominik Oswald
 slug: dinge-ausprobieren-jahr-2024
 ---
 

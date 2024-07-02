@@ -8,6 +8,9 @@ tags:
 categories:
     - Software Development
 slug: embed-google-calendar-responsive
+thumbnail:
+  url: /img/blog/BasketGoogleCalendar.png
+  author: Dominik Oswald
 ---
 ## Why embed Google Calendar on my website?
 I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar. 
