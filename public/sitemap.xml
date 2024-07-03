@@ -4,18 +4,14 @@
   <sitemap>
     <loc>http://localhost:1313/en/sitemap.xml</loc>
     
-<<<<<<< HEAD
-      <lastmod>2024-07-02T15:51:23+02:00</lastmod>
-=======
-      <lastmod>2024-07-02T20:16:52+02:00</lastmod>
->>>>>>> a76ce1289a7a553991c1b5beb2554109a7b133b4
+      <lastmod>2024-07-02T20:26:37+02:00</lastmod>
     
   </sitemap>
   
   <sitemap>
     <loc>http://localhost:1313/de/sitemap.xml</loc>
     
-      <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+      <lastmod>2024-07-02T20:26:37+02:00</lastmod>
     
   </sitemap>
   
