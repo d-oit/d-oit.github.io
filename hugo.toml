@@ -1,6 +1,5 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'd.o.it'
 [[module.imports]]
 path = 'github.com/gethinode/hinode'
 copyright = "Copyright © d.o."
