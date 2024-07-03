@@ -8,6 +8,9 @@ tags:
 categories:
     - Software Development
 slug: embed-google-calendar-responsive
+thumbnail:
+  url: /img/blog/BasketGoogleCalendar.png
+  author: Dominik Oswald
 ---
 ## Why embed Google Calendar on my website?
 I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar. 
@@ -50,3 +53,5 @@ iframe{
 
 [Responsive]: https://stackoverflow.com/questions/39006765/how-do-you-properly-wrap-google-calendar-inside-div-and-make-it-responsive
 [Style nicer]:https://stackoverflow.com/questions/49306347/how-to-customize-google-calendar-with-css
+
+{{< link "/de/blog/kostenlose-basketball-live-streams/" >}}Google Calender Live streams (mostly german streams){{< /link >}}

@@ -3,7 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/categories/</loc>
+<<<<<<< HEAD
     <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+=======
+    <lastmod>2024-07-02T20:16:52+02:00</lastmod>
+>>>>>>> a76ce1289a7a553991c1b5beb2554109a7b133b4
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -16,6 +20,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/blog/embed-google-calendar-responsive/</loc>
+<<<<<<< HEAD
     <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/google-calendar/</loc>
@@ -23,6 +28,15 @@
   </url><url>
     <loc>http://localhost:1313/categories/software-development/</loc>
     <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+=======
+    <lastmod>2024-07-02T20:16:52+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/google-calendar/</loc>
+    <lastmod>2024-07-02T20:16:52+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/software-development/</loc>
+    <lastmod>2024-07-02T20:16:52+02:00</lastmod>
+>>>>>>> a76ce1289a7a553991c1b5beb2554109a7b133b4
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -35,7 +49,11 @@
                 />
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+<<<<<<< HEAD
     <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+=======
+    <lastmod>2024-07-02T20:16:52+02:00</lastmod>
+>>>>>>> a76ce1289a7a553991c1b5beb2554109a7b133b4
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -48,7 +66,11 @@
                 />
   </url><url>
     <loc>http://localhost:1313/tags/website/</loc>
+<<<<<<< HEAD
     <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+=======
+    <lastmod>2024-07-02T20:16:52+02:00</lastmod>
+>>>>>>> a76ce1289a7a553991c1b5beb2554109a7b133b4
     <xhtml:link
                 rel="alternate"
                 hreflang="de"

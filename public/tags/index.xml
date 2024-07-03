@@ -7,7 +7,11 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 d.o.</copyright>
+<<<<<<< HEAD
     <lastBuildDate>Tue, 02 Jul 2024 15:51:23 +0200</lastBuildDate>
+=======
+    <lastBuildDate>Tue, 02 Jul 2024 20:16:52 +0200</lastBuildDate>
+>>>>>>> a76ce1289a7a553991c1b5beb2554109a7b133b4
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google Calendar</title>
