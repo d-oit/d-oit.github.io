@@ -2,6 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/categories/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/embed-google-calendar-responsive/</loc>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/google-calendar/</loc>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/software-development/</loc>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/categories/software-development/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/categories/software-development/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/website/</loc>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/tags/website/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/website/"
+                />
+  </url><url>
     <loc>http://localhost:1313/tags/banking/</loc>
     <lastmod>2024-06-22T14:11:25+02:00</lastmod>
   </url><url>
@@ -14,50 +72,11 @@
     <loc>http://localhost:1313/tags/monetary-financial-institutions/</loc>
     <lastmod>2024-06-22T14:11:25+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-06-22T14:11:25+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-06-01T14:03:46+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/categories/"
-                />
-  </url><url>
     <loc>http://localhost:1313/tags/developer/</loc>
     <lastmod>2024-06-01T14:03:46+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/extensions-visual-studio-2022-solo-developer-2024/</loc>
     <lastmod>2024-06-01T14:03:46+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/software-development/</loc>
-    <lastmod>2024-06-01T14:03:46+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="http://localhost:1313/de/categories/software-development/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/categories/software-development/"
-                />
   </url><url>
     <loc>http://localhost:1313/tags/visual-studio-2022/</loc>
     <lastmod>2024-06-01T14:03:46+02:00</lastmod>
@@ -72,10 +91,10 @@
     <lastmod>2024-06-22T14:11:17+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/uninstall-phone-link-windows/</loc>
-    <lastmod>2024-06-06T16:58:25+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2024-06-06T16:58:25+02:00</lastmod>
+    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/.net/</loc>
     <lastmod>2024-06-22T14:11:17+02:00</lastmod>

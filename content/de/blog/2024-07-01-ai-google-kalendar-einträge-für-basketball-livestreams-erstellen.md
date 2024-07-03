@@ -38,20 +38,23 @@ Aktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, d
 2. Übertragungen raus suchen und in die Zwischenablage kopieren
 3. Bing Copilot Chat eine ics Datei erstellen:
 
-`"Erstelle eine ics in deutscher Zeitzone für die nachfolgenden magentasport live stream Termine mit einer Dauer von 1,5 stunden:
+```"Erstelle eine ics in deutscher Zeitzone für die nachfolgenden magentasport.de Livestreams Termine mit einer Dauer von 1,5 stunden:
 Deutschland
 Frankreich
 Deutschland
 Frankreich
 Sa 6. Jul 15:30  | 
 Testspiele Herren
+....
+...."
+```
 
-...."`
+Das Ergebnis ist ein ics Datei. 
 
-Ergebnis ist ein ics Datei. 
-
-Wunsch: Klasse wäre wenn Google Gemini direkt mit Google Calendar verknüpft werden könnte. Ist ja der gleiche Google Account. Dies ist aber nicht möglich. Ebenso werden in Gemini keine korrekte Zeitzone erstellt. 
+*Wunsch*: Klasse wäre wenn Google Gemini direkt mit Google Calendar verknüpft werden könnte. Ist ja der gleiche Google Account. Dies ist aber nicht möglich. Ebenso werden in Gemini keine korrekte Zeitzone erstellt. 
 4. ics Datei in google Kalender importieren 
 
+### Erweiterungen
+
 Alternative ist Anbindung an den google calendar per API für jeden einzelnen Termin oder einen alternativen Kalender. 
-Machbar ist einiges falls hier Bedarf bestehen würde {{< fas fa-tv>}} {{< fas fa-basketball>}} 
+Machbar ist einiges... mal sehen was draus wird {{< fas fa-tv>}} {{< fas fa-basketball>}} 

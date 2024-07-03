@@ -9,6 +9,13 @@
     <copyright>Copyright © 2024 d.o.</copyright>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Embed Google Calendar responsive</title>
+      <link>http://localhost:1313/blog/embed-google-calendar-responsive/</link>
+      <pubDate>Tue, 02 Jul 2024 08:59:06 +0000</pubDate>
+      <guid>http://localhost:1313/blog/embed-google-calendar-responsive/</guid>
+      <description>Why embed Google Calendar on my website? &amp;nbsp; I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar.&#xA;Embed Google Calendar &amp;nbsp; For an easy way to embed Google Calendar responsive i found the following way better than like ChatGPT &amp;amp; Co. on the Stack Overflow website. The only way that i found to make it nice is to invert the iframe to make it darker.</description>
+    </item>
+    <item>
       <title>Get the latest monetary financial institutions with C#</title>
       <link>http://localhost:1313/projects/csharp-monetary-financial-institutions-list/</link>
       <pubDate>Fri, 14 Jun 2024 12:05:24 +0000</pubDate>
