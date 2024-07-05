@@ -1,4 +1,5 @@
 [main]
+    enableLanguageSelectionStorage = true 
     separator = "-"
     enableDarkMode = true
     modes = ["dark", "light"]
