@@ -132,7 +132,6 @@
           }
         })
       }
-
       
       // Update the language when the user selects a new one
       languageItems.forEach(item => {
@@ -141,10 +140,9 @@
           const selectedLanguage =
             item.getAttribute("href") === "/"
               ? defaultContentLanguage
-              : item
-                .getAttribute("href")
-                ?.replace("/", "")
-                .replace("/", "")
+              :  item.getAttribute("href").split("/")[1]
+          
+
           if (selectedLanguage) {
             setLanguage(selectedLanguage)
             applyLanguage(selectedLanguage)
