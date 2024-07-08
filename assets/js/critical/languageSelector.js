@@ -33,21 +33,20 @@
       // Apply the stored language on page load
       const storedLanguage = getLanguage()
       if (storedLanguage) {
-        applyLanguage(storedLanguage)
-
         languageItems.forEach(item => {
           if (
             item.getAttribute("href") === `/${storedLanguage}/` ||
             (storedLanguage === defaultContentLanguage && item.getAttribute("href") === "/")
           ) {
             item.classList.add("active")
+            applyLanguage(storedLanguage)
           }
           else {
             item.classList.remove("active")
           }
         })
       }
-      
+
       // Update the language when the user selects a new one
       languageItems.forEach(item => {
         item.addEventListener("click", event => {
@@ -69,7 +68,6 @@
       })
     }
   })
-
 })()
 
 {{- end -}}
