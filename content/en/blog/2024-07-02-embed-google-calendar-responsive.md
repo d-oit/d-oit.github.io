@@ -21,7 +21,8 @@ For an easy way to embed Google Calendar responsive i found the following way be
 The only way that i found to make it nice is to invert the iframe to make it darker. 
 
 
-```<style>
+```css
+<style>
 /* CSS for responsive iFrame for calendar*/
 @media (min-width: 550px) {
   .responsive-iframe-container {padding-bottom: 75%;}
@@ -46,7 +47,9 @@ iframe{
    filter: invert(.9) saturate(0.5) hue-rotate(145deg);
 }
 </style>
+```
 
+```html
 <div class="responsive-iframe-container">
   <iframe title="BasketCalendar" src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBerlin&bgcolor=%23ffffff&title=Kostenlose%20Livestreams%20-%20Basketball%20-&mode=AGENDA&src=ZjhhMTRjNDAzN2Q5YWI0MTFmOTNmMTllZTM2OTIxOGYwZWQ1NGJlN2MyZDg4ZGVhZjA5ZDZiNzZmYmU3MmU3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D81B60" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
