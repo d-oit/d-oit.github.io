@@ -49,9 +49,15 @@ iframe{
 
 <div class="responsive-iframe-container">
   <iframe title="BasketCalendar" src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBerlin&bgcolor=%23ffffff&title=Kostenlose%20Livestreams%20-%20Basketball%20-&mode=AGENDA&src=ZjhhMTRjNDAzN2Q5YWI0MTFmOTNmMTllZTM2OTIxOGYwZWQ1NGJlN2MyZDg4ZGVhZjA5ZDZiNzZmYmU3MmU3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D81B60" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</div>```
+</div>
+```
+## References
 
-[Responsive]: https://stackoverflow.com/questions/39006765/how-do-you-properly-wrap-google-calendar-inside-div-and-make-it-responsive
-[Style nicer]:https://stackoverflow.com/questions/49306347/how-to-customize-google-calendar-with-css
+Responsive: https://stackoverflow.com/questions/39006765/how-do-you-properly-wrap-google-calendar-inside-div-and-make-it-responsive
+Style nicer: https://stackoverflow.com/questions/49306347/how-to-customize-google-calendar-with-css
 
-{{< link "/de/blog/kostenlose-basketball-live-streams/" >}}Google Calender Live streams (mostly german streams){{< /link >}}
+### Link to sample calendar
+  
+{{< removeDefaultLanguage >}}
+
+{{< link url="/de/blog/kostenlose-basketball-live-streams" >}}Google Calender Live streams - deutsch - (mostly german streams){{< /link >}}

@@ -100,6 +100,10 @@
     return localStorage.getItem("selectedLanguage")
   }
 
+  function removeDefaultLanguage() {
+    localStorage.removeItem("selectedLanguage")
+  }
+
   // Function to apply the selected language to the website
   function applyLanguage(language, href ) {
     if (document.documentElement.lang != language) {
