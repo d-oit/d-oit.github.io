@@ -6513,7 +6513,7 @@ function initIndex() {
         description: "How to get a txt or Excel file for all license of used Nuget package in your .NET Core Solution",
         
         
-        content: "ToDo: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.\nLet’s try…\nBest solution so far: jump to Solution 5 or Solution 6\nSolution 1: Get-Package \u0026nbsp; Open Visual Studio .NET Core Solution Open Package Manager Console and execute: Get-Package | Select-Object Id,LicenseUrlOutput Result (Nuget Package Name, License Url):\nxunit.runner.visualstudio https://raw.githubusercontent.com/xunit/xunit/master/license.txt NSubstitute https://github.com/nsubstitute/NSubstitute/raw/master/LICENSE.txt Good… but the direct reference project NuGet package. Need also the License of all dlls.\nSolution 2: PowerShell: Save license as text file \u0026nbsp; Try out with the PowerShell script. Save the code as DownloadNugetLicense.ps1 in the VS solution director.\nRun the PowerShell Script with ./DownloadNugetLicense.ps1 in the Visual Studio Package Manager Console.\nPowerShell Code:\nSplit-Path -parent $dte.Solution.FileName | cd; New-Item -ItemType Directory -Force -Path \u0026#34;.\\licenses\u0026#34;; @( Get-Project -All | ?  $_.ProjectName  | %  Get-Package -ProjectName $_.ProjectName | ?  $_.LicenseUrl   ) | Sort-Object Id -Unique | %  $pkg = $_; Try  if ($pkg.Id -notlike \u0026#39;microsoft*\u0026#39; -and $pkg.LicenseUrl.StartsWith(\u0026#39;http\u0026#39;))  Write-Host (\u0026#34;Download license for nuget package \u0026#34; + $pkg.Id + \u0026#34; from \u0026#34; + $pkg.LicenseUrl); #Write-Host (ConvertTo-Json ($pkg)); $licenseUrl = $pkg.LicenseUrl if ($licenseUrl.contains(\u0026#39;github.com\u0026#39;))  $licenseUrl = $licenseUrl.replace(\u0026#34;/blob/\u0026#34;, \u0026#34;/raw/\u0026#34;)  $extension = \u0026#34;.txt\u0026#34; if ($licenseUrl.EndsWith(\u0026#34;.md\u0026#34;))  $extension = \u0026#34;.md\u0026#34;  (New-Object System.Net.WebClient).DownloadFile($licenseUrl, (Join-Path (pwd) \u0026#39;licenses\\\u0026#39;) + $pkg.Id + $extension);   Catch [system.exception]  Write-Host (\u0026#34;Could not download license for \u0026#34; + $pkg.Id)   Solution 3: PowerShell: All license in package manager output \u0026nbsp; Not perfect - I also need the license for the used Dlls inside any NuGet Package.\nNuGet Package License \u0026nbsp; Id | LicenseUrl | License \u0026nbsp; Abp.AspNetCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.AspNetCore.SignalR; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.AutoMapper; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.Castle.Log4Net; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.HangFire; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.RedisCache; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.TestBase; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.ZeroCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.ZeroCore.EntityFrameworkCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) AspNet.Security.OpenIdConnect.Server; http://www.apache.org/licenses/LICENSE-2.0.html; Castle.Core; http://www.apache.org/licenses/LICENSE-2.0.html; PowerShell Code\nWrite-Host(\u0026#34;---------------------\u0026#34;); Write-Host(\u0026#34;NuGet Package License\u0026#34;); Write-Host(\u0026#34;---------------------\u0026#34;); Write-Host(\u0026#34;Id | LicenseUrl | License\u0026#34;); Write-Host(\u0026#34;---------------------\u0026#34;); @( Get-Project -All | ?  $_.ProjectName  | %  Get-Package -ProjectName $_.ProjectName | ?  $_.LicenseUrl   ) | Sort-Object Id -Unique | %  $pkg = $_; $file = Try  if ($pkg.Id -notlike \u0026#39;microsoft*\u0026#39; -and $pkg.LicenseUrl.StartsWith(\u0026#39;http\u0026#39;))  $licenseUrl = $pkg.LicenseUrl if ($licenseUrl.contains(\u0026#39;github.com\u0026#39;))  $licenseUrl = $licenseUrl.replace(\u0026#34;/blob/\u0026#34;, \u0026#34;/raw/\u0026#34;)  $extension = \u0026#34;.txt\u0026#34; if ($licenseUrl.EndsWith(\u0026#34;.md\u0026#34;))  $extension = \u0026#34;.md\u0026#34;  $filePath = (Join-Path (pwd) \u0026#39;licenses\\\u0026#39;) + $pkg.Id + $extension; $textLicense = Get-Content $filePath | Select-Object -First 1 Write-Host($pkg.Id + \u0026#34;; \u0026#34; + $_.LicenseUrl + \u0026#34;; \u0026#34; + $textLicense);   Catch [system.exception]  Write-Host ($error[0].Exception); Write-Host (\u0026#34;Could not read license for \u0026#34; + $pkg.Id)   Solution 4: Visual Studio Tool \u0026raquo; Package Licenses \u0026nbsp; Visual Studio 2017 Extension: List license of all NuGet packages inside the ‘packages’ folder of any Visual Studio solution. Refer license from the Nuget Project-Url / License-Url in the package metadata. Download license and license text from GitHub, spdx.org.\nVisual Studio Marketplace: Package Licenses\nPackage Folder\nPackage Folder not exist for the solution?\nNuGet.Config\nCreate Nuget.Config for the Visual Studio solution:\n\u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;utf-8\u0026#34;?\u0026gt; \u0026lt;configuration\u0026gt; \u0026lt;config\u0026gt; \u0026lt;add key=\u0026#34;globalPackagesFolder\u0026#34; value=\u0026#34;.\\packages\u0026#34; /\u0026gt; \u0026lt;/config\u0026gt; \u0026lt;/configuration\u0026gt;\nSolution 5: Custom package licenses command line \u0026nbsp; Create your own license file output (Excel or TEXT) with the following .NET Core Console Project:\nhttps://github.com/do-it-ger/DoitPackagesLicenses\nSolution 6: .NET Nuget License Utility \u0026nbsp; A .net core tool to print the licenses of a project. This tool support .NET Core and .NET Standard Projects.\nhttps://github.com/tomchavakis/nuget-license"
+        content: "ToDo: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.\nLet’s try…\nBest solution so far: jump to Solution 5 or Solution 6\nSolution 1: Get-Package \u0026nbsp; Open Visual Studio .NET Core Solution Open Package Manager Console and execute: Get-Package | Select-Object Id,LicenseUrlOutput Result (Nuget Package Name, License Url):\nxunit.runner.visualstudio https://raw.githubusercontent.com/xunit/xunit/master/license.txt NSubstitute https://github.com/nsubstitute/NSubstitute/raw/master/LICENSE.txt Good… but the direct reference project NuGet package. Need also the License of all dlls.\nSolution 2: PowerShell: Save license as text file \u0026nbsp; Try out with the PowerShell script. Save the code as DownloadNugetLicense.ps1 in the VS solution director.\nRun the PowerShell Script with ./DownloadNugetLicense.ps1 in the Visual Studio Package Manager Console.\nPowerShell Code:\nSplit-Path -parent $dte.Solution.FileName | cd; New-Item -ItemType Directory -Force -Path \u0026#34;.\\licenses\u0026#34;; @( Get-Project -All | ?  $_.ProjectName  | %  Get-Package -ProjectName $_.ProjectName | ?  $_.LicenseUrl   ) | Sort-Object Id -Unique | %  $pkg = $_; Try  if ($pkg.Id -notlike \u0026#39;microsoft*\u0026#39; -and $pkg.LicenseUrl.StartsWith(\u0026#39;http\u0026#39;))  Write-Host (\u0026#34;Download license for nuget package \u0026#34; + $pkg.Id + \u0026#34; from \u0026#34; + $pkg.LicenseUrl); #Write-Host (ConvertTo-Json ($pkg)); $licenseUrl = $pkg.LicenseUrl if ($licenseUrl.contains(\u0026#39;github.com\u0026#39;))  $licenseUrl = $licenseUrl.replace(\u0026#34;/blob/\u0026#34;, \u0026#34;/raw/\u0026#34;)  $extension = \u0026#34;.txt\u0026#34; if ($licenseUrl.EndsWith(\u0026#34;.md\u0026#34;))  $extension = \u0026#34;.md\u0026#34;  (New-Object System.Net.WebClient).DownloadFile($licenseUrl, (Join-Path (pwd) \u0026#39;licenses\\\u0026#39;) + $pkg.Id + $extension);   Catch [system.exception]  Write-Host (\u0026#34;Could not download license for \u0026#34; + $pkg.Id)   Solution 3: PowerShell: All license in package manager output \u0026nbsp; Not perfect - I also need the license for the used Dlls inside any NuGet Package.\nNuGet Package License \u0026nbsp; Id | LicenseUrl | License \u0026nbsp; Abp.AspNetCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.AspNetCore.SignalR; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.AutoMapper; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.Castle.Log4Net; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.HangFire; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.RedisCache; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.TestBase; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.ZeroCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) Abp.ZeroCore.EntityFrameworkCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT) AspNet.Security.OpenIdConnect.Server; http://www.apache.org/licenses/LICENSE-2.0.html; Castle.Core; http://www.apache.org/licenses/LICENSE-2.0.html; PowerShell Code\nWrite-Host(\u0026#34;---------------------\u0026#34;); Write-Host(\u0026#34;NuGet Package License\u0026#34;); Write-Host(\u0026#34;---------------------\u0026#34;); Write-Host(\u0026#34;Id | LicenseUrl | License\u0026#34;); Write-Host(\u0026#34;---------------------\u0026#34;); @( Get-Project -All | ?  $_.ProjectName  | %  Get-Package -ProjectName $_.ProjectName | ?  $_.LicenseUrl   ) | Sort-Object Id -Unique | %  $pkg = $_; $file = Try  if ($pkg.Id -notlike \u0026#39;microsoft*\u0026#39; -and $pkg.LicenseUrl.StartsWith(\u0026#39;http\u0026#39;))  $licenseUrl = $pkg.LicenseUrl if ($licenseUrl.contains(\u0026#39;github.com\u0026#39;))  $licenseUrl = $licenseUrl.replace(\u0026#34;/blob/\u0026#34;, \u0026#34;/raw/\u0026#34;)  $extension = \u0026#34;.txt\u0026#34; if ($licenseUrl.EndsWith(\u0026#34;.md\u0026#34;))  $extension = \u0026#34;.md\u0026#34;  $filePath = (Join-Path (pwd) \u0026#39;licenses\\\u0026#39;) + $pkg.Id + $extension; $textLicense = Get-Content $filePath | Select-Object -First 1 Write-Host($pkg.Id + \u0026#34;; \u0026#34; + $_.LicenseUrl + \u0026#34;; \u0026#34; + $textLicense);   Catch [system.exception]  Write-Host ($error[0].Exception); Write-Host (\u0026#34;Could not read license for \u0026#34; + $pkg.Id)   Solution 4: Visual Studio Tool \u0026raquo; Package Licenses \u0026nbsp; Visual Studio 2017 Extension: List license of all NuGet packages inside the ‘packages’ folder of any Visual Studio solution. Refer license from the Nuget ProjectUrl / LicenseUrl in the package metadata. Download license and license text from GitHub, spdx.org.\nVisual Studio Marketplace: Package Licenses\nPackage Folder\nPackage Folder not exist for the solution?\nNuGet.Config\nCreate Nuget.Config for the Visual Studio solution:\n\u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;utf-8\u0026#34;?\u0026gt; \u0026lt;configuration\u0026gt; \u0026lt;config\u0026gt; \u0026lt;add key=\u0026#34;globalPackagesFolder\u0026#34; value=\u0026#34;.\\packages\u0026#34; /\u0026gt; \u0026lt;/config\u0026gt; \u0026lt;/configuration\u0026gt;\nSolution 5: Custom package licenses command line \u0026nbsp; Create your own license file output (Excel or TEXT) with the following .NET Core Console Project:\nhttps://github.com/do-it-ger/DoitPackagesLicenses\nSolution 6: .NET Nuget License Utility \u0026nbsp; A .net core tool to print the licenses of a project. This tool support .NET Core and .NET Standard Projects.\nhttps://github.com/tomchavakis/nuget-license"
       })
       .add(
       
@@ -6689,6 +6689,19 @@ function initIndex() {
       
       {
         id: 15,
+        tag: "de",
+        href: "/de/tags/cms/",
+        title: "CMS",
+        description: "",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 16,
         tag: "en",
         href: "/tags/developer/",
         title: "Developer",
@@ -6701,20 +6714,20 @@ function initIndex() {
       
       
       {
-        id: 16,
+        id: 17,
         tag: "en",
         href: "/blog/embed-google-calendar-responsive/",
         title: "Embed Google Calendar responsive",
         description: "How to embed Google Calendar on your website",
         
         
-        content: "Why embed Google Calendar on my website? \u0026nbsp; I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar.\nEmbed Google Calendar \u0026nbsp; For an easy way to embed Google Calendar responsive i found the following way better than like ChatGPT \u0026amp; Co. on the Stack Overflow website. The only way that i found to make it nice is to invert the iframe to make it darker.\n/* CSS for responsive iFrame for calendar*/\r@media (min-width: 550px) \r.responsive-iframe-container padding-bottom: 75%;\r\r@media (max-width: 550px) \r.responsive-iframe-container padding-bottom: 150%;\r\r.responsive-iframe-container \rposition: relative;\rpadding-top: 0;\rheight: 0;\roverflow: hidden;\r\r.responsive-iframe-container iframe \rposition: absolute;\rtop: 0;\rleft: 0;\rwidth: 100%;\rheight: 100%;\r\riframe\rfilter: invert(.9) saturate(0.5) hue-rotate(145deg);\r\r\u0026lt;/style\u0026gt;\r\u0026lt;div class=\u0026#34;responsive-iframe-container\u0026#34;\u0026gt;\r\u0026lt;iframe title=\u0026#34;BasketCalendar\u0026#34; src=\u0026#34;https://calendar.google.com/calendar/embed?height=600\u0026amp;wkst=2\u0026amp;ctz=Europe%2FBerlin\u0026amp;bgcolor=%23ffffff\u0026amp;title=Kostenlose%20Livestreams%20-%20Basketball%20-\u0026amp;mode=AGENDA\u0026amp;src=ZjhhMTRjNDAzN2Q5YWI0MTFmOTNmMTllZTM2OTIxOGYwZWQ1NGJlN2MyZDg4ZGVhZjA5ZDZiNzZmYmU3MmU3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t\u0026amp;color=%23D81B60\u0026#34; style=\u0026#34;border-width:0\u0026#34; width=\u0026#34;800\u0026#34; height=\u0026#34;600\u0026#34; frameborder=\u0026#34;0\u0026#34; scrolling=\u0026#34;no\u0026#34;\u0026gt;\u0026lt;/iframe\u0026gt;\r\u0026lt;/div\u0026gt; References \u0026nbsp; Responsive: https://stackoverflow.com/questions/39006765/how-do-you-properly-wrap-google-calendar-inside-div-and-make-it-responsive Style nicer: https://stackoverflow.com/questions/49306347/how-to-customize-google-calendar-with-css\nLink to sample calendar \u0026nbsp; Google Calender Live streams - deutsch - (mostly german streams)"
+        content: "Why embed Google Calendar on my website? \u0026nbsp; I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar.\nEmbed Google Calendar \u0026nbsp; For an easy way to embed Google Calendar responsive i found the following way better than like ChatGPT \u0026amp; Co. on the Stack Overflow website. The only way that i found to make it nice is to invert the iframe to make it darker.\n\u0026lt;style\u0026gt; /* CSS for responsive iFrame for calendar*/ @media (min-width: 550px)  .responsive-iframe-container padding-bottom: 75%;  @media (max-width: 550px)  .responsive-iframe-container padding-bottom: 150%;  .responsive-iframe-container  position: relative; padding-top: 0; height: 0; overflow: hidden;  .responsive-iframe-container iframe  position: absolute; top: 0; left: 0; width: 100%; height: 100%;  iframe filter: invert(.9) saturate(0.5) hue-rotate(145deg);  \u0026lt;/style\u0026gt;\u0026lt;div class=\u0026#34;responsive-iframe-container\u0026#34;\u0026gt; \u0026lt;iframe title=\u0026#34;BasketCalendar\u0026#34; src=\u0026#34;https://calendar.google.com/calendar/embed?height=600\u0026amp;wkst=2\u0026amp;ctz=Europe%2FBerlin\u0026amp;bgcolor=%23ffffff\u0026amp;title=Kostenlose%20Livestreams%20-%20Basketball%20-\u0026amp;mode=AGENDA\u0026amp;src=ZjhhMTRjNDAzN2Q5YWI0MTFmOTNmMTllZTM2OTIxOGYwZWQ1NGJlN2MyZDg4ZGVhZjA5ZDZiNzZmYmU3MmU3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t\u0026amp;color=%23D81B60\u0026#34; style=\u0026#34;border-width:0\u0026#34; width=\u0026#34;800\u0026#34; height=\u0026#34;600\u0026#34; frameborder=\u0026#34;0\u0026#34; scrolling=\u0026#34;no\u0026#34;\u0026gt;\u0026lt;/iframe\u0026gt; \u0026lt;/div\u0026gt; References \u0026nbsp; Responsive: https://stackoverflow.com/questions/39006765/how-do-you-properly-wrap-google-calendar-inside-div-and-make-it-responsive Style nicer: https://stackoverflow.com/questions/49306347/how-to-customize-google-calendar-with-css\nLink to sample calendar \u0026nbsp; Google Calender Live streams - deutsch - (mostly german streams)"
       })
       .add(
       
       
       {
-        id: 17,
+        id: 18,
         tag: "en",
         href: "/blog/extensions-visual-studio-2022-solo-developer-2024/",
         title: "Extensions for Visual Studio 2022 for solo Developer in 2024",
@@ -6727,7 +6740,7 @@ function initIndex() {
       
       
       {
-        id: 18,
+        id: 19,
         tag: "en",
         href: "/projects/csharp-monetary-financial-institutions-list/",
         title: "Get the latest monetary financial institutions with C#",
@@ -6740,7 +6753,7 @@ function initIndex() {
       
       
       {
-        id: 19,
+        id: 20,
         tag: "en",
         href: "/tags/google-calendar/",
         title: "Google Calendar",
@@ -6753,20 +6766,20 @@ function initIndex() {
       
       
       {
-        id: 20,
+        id: 21,
         tag: "de",
         href: "/de/blog/google-kalender-eintrage-aus-ai-prompt/",
         title: "Google Kalender Einträge aus AI Prompt",
         description: "Basketball Livestreams Google Kalender Einträge erstellen und auf Website darstellen.",
         
         
-        content: "Für mich selbst habe ich meinen google calendar um einen BasketballLive Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte.\nWarum google calendar?\nIch wollte einfach nicht nochmal einen Kalender installieren. Dieser funktioniert in jedem gängigen Browser, Android und ist einfach zu verwalten.\nDie Seite ist hier zu finden:\nKalender Live streams Kalender \u0026nbsp; Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund.\nNormalerweise trage ich diese einfach manuell ein, falls eine Übertragung finde die mich interessiert.\nFür die Automatisierung habe ich bereits einiges getestet und probiert. Aktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form:\nBeispiel magentasport \u0026nbsp; Aufruf magentasport im Lesemodus Übertragungen raus suchen und in die Zwischenablage kopieren Bing Copilot Chat eine ics Datei erstellen:"
+        content: "Für mich selbst habe ich meinen google calendar um einen BasketballLive Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte.\nWarum google calendar?\nIch wollte einfach nicht nochmal einen Kalender installieren. Dieser funktioniert in jedem gängigen Browser, Android und ist einfach zu verwalten.\nDie Seite ist hier zu finden:\nKalender Live streams Kalender \u0026nbsp; Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund.\nNormalerweise trage ich diese einfach manuell ein, falls eine Übertragung finde die mich interessiert.\nFür die Automatisierung habe ich bereits einiges getestet und probiert. Der Aufwand sollte dabei gering bleiben. Wenn man es schön(er) haben möchte artet es in mehr Zeitaufwand und Test aus.\nAktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form:\nBeispiel magentasport \u0026nbsp; Aufruf magentasport im Lesemodus Übertragungen heraussuchen und in die Zwischenablage kopieren Bing Copilot Chat eine ics Datei erstellen: Beispiel magentasport - ics Datei"
       })
       .add(
       
       
       {
-        id: 21,
+        id: 22,
         tag: "de",
         href: "/de/tags/hinode/",
         title: "Hinode",
@@ -6779,7 +6792,7 @@ function initIndex() {
       
       
       {
-        id: 22,
+        id: 23,
         tag: "de",
         href: "/de/tags/hugo/",
         title: "Hugo",
@@ -6792,7 +6805,7 @@ function initIndex() {
       
       
       {
-        id: 23,
+        id: 24,
         tag: "de",
         href: "/de/blog/kostenlose-basketball-live-streams/",
         title: "Kostenlose Basketball live streams",
@@ -6805,7 +6818,7 @@ function initIndex() {
       
       
       {
-        id: 24,
+        id: 25,
         tag: "en",
         href: "/tags/license/",
         title: "License",
@@ -6818,7 +6831,7 @@ function initIndex() {
       
       
       {
-        id: 25,
+        id: 26,
         tag: "de",
         href: "/de/blog/productivity-apps-tools-list-2024/",
         title: "Meine produktive Apps / Tools Liste 2024",
@@ -6831,7 +6844,7 @@ function initIndex() {
       
       
       {
-        id: 26,
+        id: 27,
         tag: "en",
         href: "/tags/monetary-financial-institutions/",
         title: "Monetary Financial Institutions",
@@ -6844,7 +6857,7 @@ function initIndex() {
       
       
       {
-        id: 27,
+        id: 28,
         tag: "en",
         href: "/blog/ms-sql-date-format/",
         title: "MS SQL: Date Format",
@@ -6857,7 +6870,7 @@ function initIndex() {
       
       
       {
-        id: 28,
+        id: 29,
         tag: "en",
         href: "/projects/nuget-packages-licenses-dotnet/",
         title: "NuGet Packages.Licenses for .NET",
@@ -6870,7 +6883,7 @@ function initIndex() {
       
       
       {
-        id: 29,
+        id: 30,
         tag: "en",
         href: "/tags/powershell/",
         title: "PowerShell",
@@ -6883,7 +6896,7 @@ function initIndex() {
       
       
       {
-        id: 30,
+        id: 31,
         tag: "en",
         href: "/projects/",
         title: "Projects",
@@ -6896,7 +6909,7 @@ function initIndex() {
       
       
       {
-        id: 31,
+        id: 32,
         tag: "en",
         href: "/tags/rest/",
         title: "Rest",
@@ -6909,7 +6922,7 @@ function initIndex() {
       
       
       {
-        id: 32,
+        id: 33,
         tag: "en",
         href: "/categories/software-development/",
         title: "Software Development",
@@ -6922,7 +6935,7 @@ function initIndex() {
       
       
       {
-        id: 33,
+        id: 34,
         tag: "de",
         href: "/de/categories/software-development/",
         title: "Software Development",
@@ -6935,7 +6948,7 @@ function initIndex() {
       
       
       {
-        id: 34,
+        id: 35,
         tag: "en",
         href: "/tags/software-development/",
         title: "Software Development",
@@ -6948,7 +6961,7 @@ function initIndex() {
       
       
       {
-        id: 35,
+        id: 36,
         tag: "de",
         href: "/de/categories/sport/",
         title: "Sport",
@@ -6961,7 +6974,7 @@ function initIndex() {
       
       
       {
-        id: 36,
+        id: 37,
         tag: "en",
         href: "/tags/sql/",
         title: "SQL",
@@ -6974,20 +6987,20 @@ function initIndex() {
       
       
       {
-        id: 37,
+        id: 38,
         tag: "de",
         href: "/de/blog/statische-website-erstellen/",
         title: "Statische Website erstellen",
         description: "Website mit Hugo Hinode Theme erstellen",
         
         
-        content: "Blog Wiederbelebung \u0026nbsp; Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben.\nDas ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Online Bearbeitung durch GitHub Codespaces (gleiche Erweiterungen verwendbar wie offline / auf dem Desktop), Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. Und vor allem Performance \u0026#x1f3ad;\nDer Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen.\nHugo \u0026nbsp; Grundlage vom Hinode Theme ist Hugo. Eines der am weitesten verbreitetsten Generatoren von statischen Website. Lokal wird dabei mit einem Editor der Inhalt erstellt. Hugo als Generator erzeugt daraufhin html Dateien welche der Browser anzeigt.\nInfos zu Hugo hier zu finden: https://gohugo.io/ oder https://de.wikipedia.org/wiki/Hugo_(Software)\nLokale Installation \u0026nbsp; Los geht es mit der lokalen Installation. In der Beschreibung wird Windows verwendet, unterstützt werden natürlich auch andere Umgebungen.\nVorgehensweise ist in der Dokumentation des Hinode Hugo Theme ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/\nHugo Installation \u0026raquo; https://gohugo.io/getting-started/quick-start/#prerequisites Meine Installation / Update führe ich per winget durch: winget install Hugo.Hugo.Extended Git als Versionsverwaltung \u0026raquo; https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt) Git unter Windows kann per Terminal / Command line mit Admin Rechten per git update-git-for-windows aktualisiert werden Optional: Git Graph extension for Visual Studio Code für eine zusätzliche Anzeige \u0026raquo; https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph Visual Studio Code \u0026raquo; https://code.visualstudio.com/Download\n3.1. Visual Studio Code Erweiterungen\nFront Matter CMS\nGerman - Code Spell Checker\nFont Awesome Gallery\nAktueller Stand als PowerShell Installation Gist \u0026raquo; https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405 Ermittlung\nVoraussetzung: Command Line Interface (CLI) \u0026raquo; https://code.visualstudio.com/docs/editor/command-line\nAlternativer open source Markdown Editor ist für mich **Marktext ** https://www.marktext.cc/\nNach der Installation kann lokal per hugo server Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht.\nWindows 11 Developer Powershell \u0026nbsp; Windows 11 Powershell script für die Installation eines english-US Sprachpaket inklusive notwendiger Tools für die Webentwicklung.\nhttps://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb\nHugo Module aktualisieren \u0026nbsp; Hugo verwendet die Datei go.mod, um zu ermitteln, welche Version von Hugo Blox Builder eine Website verwendet.\nAlle Module aktualisieren per Terminal / Command Line:\nhugo mod get -u\nWebsite veröffentlichen \u0026nbsp; Der aktuelle Stand wird per git Versionsverwaltung auf github gestellt und per Actions als fertige html Seite (github pages) auf den öffentlichen Ordner gestellt.\nDas Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop\nDamit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht."
+        content: "Blog Wiederbelebung \u0026nbsp; Den bisherigen Blog habe ich seisdt ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben.\nDas ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Online Bearbeitung durch GitHub Codespaces (gleiche Erweiterungen verwendbar wie offline / auf dem Desktop), Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. Und vor allem Performance \u0026#x1f3ad;\nDer Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen.\nHugo \u0026nbsp; Grundlage vom Hinode Theme ist Hugo. Eines der am weitesten verbreitetsten Generatoren von statischen Website. Lokal wird dabei mit einem Editor der Inhalt erstellt. Hugo als Generator erzeugt daraufhin html Dateien welche der Browser anzeigt.\nInfos zu Hugo sind hier zu finden: https://gohugo.io/ oder https://de.wikipedia.org/wiki/Hugo_(Software)\nLokale Installation \u0026nbsp; Los geht es mit der, lokalen Installation. In der Beschreibung wird Windows verwendet, unterstützt werden natürlich auch andere Umgebungen.\nVorgehensweise ist in der Dokumentation des Hinode Hugo Theme ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/\nHugo Installation \u0026raquo; https://gohugo.io/getting-started/quick-start/#prerequisites Meine Installation / Update führe ich per winget durch: winget install Hugo.Hugo.Extended Git als Versionsverwaltung \u0026raquo; https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt) Git unter Windows kann per Terminal / Command line mit Admin Rechten per git update-git-for-windows aktualisiert werden Optional: Git Graph extension for Visual Studio Code für eine zusätzliche Anzeige \u0026raquo; https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph Visual Studio Code \u0026raquo; https://code.visualstudio.com/Download\n3.1. Visual Studio Code Erweiterungen\nFront Matter CMS\nGerman - Code Spell Checker\nFont Awesome Gallery\nLTeX – LanguageTool grammar/spell checking\nAktueller Stand als PowerShell Installation Gist \u0026raquo; https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405 Ermittlung\nVoraussetzung: Command Line Interface (CLI) \u0026raquo; https://code.visualstudio.com/docs/editor/command-line\nAlternativer open source Markdown Editor ist für mich **Marktext ** https://www.marktext.cc/ Nach der Installation kann lokal per hugo server Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht.\nWindows 11 Developer Powershell \u0026nbsp; Windows 11 Powershell script für die Installation eines english-US Sprachpaket inklusive notwendiger Tools für die Webentwicklung.\nhttps://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb\nHugo Module aktualisieren \u0026nbsp; Hugo verwendet die Datei go.mod, um zu ermitteln, welche Version von vom Hugo CMS eine Website verwendet.\nAlle Module aktualisieren per Terminal / Command Line:\nhugo mod get -u\nWebsite veröffentlichen \u0026nbsp; Der aktuelle Stand wird per git Versionsverwaltung auf github gestellt und per Actions als fertige html Seite (github pages) auf den öffentlichen Ordner gestellt.\nDas Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop\nDamit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht."
       })
       .add(
       
       
       {
-        id: 38,
+        id: 39,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -7000,7 +7013,7 @@ function initIndex() {
       
       
       {
-        id: 39,
+        id: 40,
         tag: "de",
         href: "/de/tags/",
         title: "Tags",
@@ -7013,7 +7026,7 @@ function initIndex() {
       
       
       {
-        id: 40,
+        id: 41,
         tag: "de",
         href: "/de/tags/try-new-things/",
         title: "Try New Things",
@@ -7026,7 +7039,7 @@ function initIndex() {
       
       
       {
-        id: 41,
+        id: 42,
         tag: "de",
         href: "/de/about/",
         title: "Über",
@@ -7039,7 +7052,7 @@ function initIndex() {
       
       
       {
-        id: 42,
+        id: 43,
         tag: "en",
         href: "/blog/unblock-files-folder-powershell/",
         title: "Unblock all files in folder with PowerShell",
@@ -7052,7 +7065,7 @@ function initIndex() {
       
       
       {
-        id: 43,
+        id: 44,
         tag: "en",
         href: "/blog/uninstall-phone-link-windows/",
         title: "Uninstall \"Mobile devices\" / Phone Link in Windows",
@@ -7065,7 +7078,7 @@ function initIndex() {
       
       
       {
-        id: 44,
+        id: 45,
         tag: "en",
         href: "/tags/visual-studio/",
         title: "Visual Studio",
@@ -7078,7 +7091,7 @@ function initIndex() {
       
       
       {
-        id: 45,
+        id: 46,
         tag: "en",
         href: "/tags/visual-studio-2022/",
         title: "Visual Studio 2022",
@@ -7091,7 +7104,7 @@ function initIndex() {
       
       
       {
-        id: 46,
+        id: 47,
         tag: "en",
         href: "/tags/website/",
         title: "Website",
@@ -7104,7 +7117,7 @@ function initIndex() {
       
       
       {
-        id: 47,
+        id: 48,
         tag: "de",
         href: "/de/tags/website/",
         title: "Website",
@@ -7117,7 +7130,7 @@ function initIndex() {
       
       
       {
-        id: 48,
+        id: 49,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -7130,7 +7143,7 @@ function initIndex() {
       
       
       {
-        id: 49,
+        id: 50,
         tag: "de",
         href: "/de/",
         title: "Willkommen zu d.o.it",
@@ -7143,7 +7156,7 @@ function initIndex() {
       
       
       {
-        id: 50,
+        id: 51,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
@@ -7156,7 +7169,7 @@ function initIndex() {
       
       
       {
-        id: 51,
+        id: 52,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",

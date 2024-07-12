@@ -7,13 +7,19 @@
     "cSpell.words": [
         "Aixploria",
         "Canva",
+        "Codespaces",
         "Dominik",
+        "Dumay",
         "GETDATE",
+        "gitlab",
+        "Hinode",
         "hugo",
         "lastig",
+        "Livestream",
         "Livestreams",
         "Lüftersteuerung",
         "magentasport",
+        "Marktext",
         "mobiledevices",
         "sprachigen",
         "trynewthings",
@@ -23,5 +29,19 @@
     ],
     "cSpell.language": "en,de",
     "git.enableSmartCommit": true,
-    "ltex.additionalRules.motherTongue": "de"
+    "ltex.additionalRules.motherTongue": "de",
+    "ltex.additionalRules.languageModel": "",
+    "ltex.enabled": [
+        "bibtex",
+        "context",
+        "context.tex",
+        "html",
+        "latex",
+        "markdown",
+        "org",
+        "restructuredtext",
+        "rsweave"
+    ],
+    "ltex.language": "de",
+    "ltex.additionalRules.enablePickyRules": true
 }

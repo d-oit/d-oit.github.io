@@ -1,4 +1,5 @@
 ---
+lang: en
 title: Uninstall "Mobile devices" / Phone Link in Windows 
 description: If you don't need Phone Link / YourPhone in Windows this is the easiest way to uninstall the app.
 date: 2024-05-21T15:32:38.601Z

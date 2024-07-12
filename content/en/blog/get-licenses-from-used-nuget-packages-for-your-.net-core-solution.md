@@ -136,7 +136,7 @@ Write-Host("---------------------");
 ## Solution 4: Visual Studio Tool >> Package Licenses
 
 Visual Studio **2017** Extension:
-List license of all NuGet packages inside the ‘packages’ folder of any Visual Studio solution. Refer license from the Nuget Project-Url / License-Url in the package metadata. Download license and license text from GitHub, spdx.org.
+List license of all NuGet packages inside the ‘packages’ folder of any Visual Studio solution. Refer license from the Nuget ProjectUrl / LicenseUrl in the package metadata. Download license and license text from GitHub, spdx.org.
 
 [Visual Studio Marketplace: Package Licenses](https://marketplace.visualstudio.com/items?itemName=jz5.PackageLicenses)
 

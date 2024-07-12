@@ -4,7 +4,8 @@ description: Website mit Hugo Hinode Theme erstellen
 slug: statische-website-erstellen
 date: 2024-05-23T14:21:58.426Z
 tags:
-  - Hugo
+  - CMS
+  - Hugo 
   - Website
   - Hinode
 thumbnail:
@@ -14,12 +15,13 @@ thumbnail:
   origin: Mark Dumay
   originURL: https://gethinode.com/docs/about/credits/?menu=about
 keywords:
-  - website
+  - website 
+lang: de  
 ---
 
 ## Blog Wiederbelebung
 
-Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben. 
+Den bisherigen Blog habe ich seisdt ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben. 
 
 Das ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Online Bearbeitung durch [GitHub Codespaces](https://github.com/features/codespaces) (gleiche Erweiterungen verwendbar wie offline / auf dem Desktop),  Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. 
 Und vor allem Performance :performing_arts:
@@ -30,11 +32,11 @@ Der Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Set
 
 Grundlage vom *Hinode* Theme ist **Hugo**. Eines der am weitesten verbreitetsten Generatoren von statischen Website. Lokal wird dabei mit einem Editor der Inhalt erstellt. Hugo als Generator erzeugt daraufhin html Dateien welche der Browser anzeigt. 
 
-Infos zu Hugo hier zu finden: https://gohugo.io/ oder https://de.wikipedia.org/wiki/Hugo_(Software)
+Infos zu Hugo sind hier zu finden: https://gohugo.io/ oder https://de.wikipedia.org/wiki/Hugo_(Software)
 
 ## Lokale Installation
 
-Los geht es mit der lokalen Installation. In der Beschreibung wird Windows verwendet, unterstützt werden natürlich auch andere Umgebungen.
+Los geht es mit der, lokalen Installation. In der Beschreibung wird Windows verwendet, unterstützt werden natürlich auch andere Umgebungen.
 
 Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/
 
@@ -53,11 +55,13 @@ Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich b
    - German - Code Spell Checker
    
    - Font Awesome Gallery
+
+   - LTeX – LanguageTool grammar/spell checking
      
-     Aktueller Stand als PowerShell Installation Gist >> https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405
-     Ermittlung 
-     
-     *Voraussetzung*: Command Line Interface (CLI) >> https://code.visualstudio.com/docs/editor/command-line
+  Aktueller Stand als PowerShell Installation Gist >> https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405
+  Ermittlung 
+  
+  *Voraussetzung*: Command Line Interface (CLI) >> https://code.visualstudio.com/docs/editor/command-line
 
 4. Alternativer open source Markdown Editor ist für mich **Marktext ** https://www.marktext.cc/
 
@@ -71,7 +75,7 @@ https://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb
 
 ### Hugo Module aktualisieren
 
-Hugo verwendet die Datei **go.mod**, um zu ermitteln, welche Version von Hugo Blox Builder eine Website verwendet.
+Hugo verwendet die Datei **go.mod**, um zu ermitteln, welche Version von vom Hugo CMS eine Website verwendet.
 
 Alle Module aktualisieren per Terminal / Command Line:
 
