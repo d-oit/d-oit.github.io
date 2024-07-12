@@ -38,7 +38,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/de/tags/</loc>
-    <lastmod>2024-07-10T15:21:09+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -63,19 +63,19 @@
     <lastmod>2024-07-02T15:51:23+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/cms/</loc>
-    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/hinode/</loc>
-    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/hugo/</loc>
-    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/blog/statische-website-erstellen/</loc>
-    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/website/</loc>
-    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -88,13 +88,13 @@
                 />
   </url><url>
     <loc>http://localhost:1313/de/tags/2024/</loc>
-    <lastmod>2024-07-02T20:26:37+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/blog/dinge-ausprobieren-jahr-2024/</loc>
-    <lastmod>2024-07-02T20:26:37+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/tags/try-new-things/</loc>
-    <lastmod>2024-07-02T20:26:37+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/de/about/</loc>
     <lastmod>2024-06-30T15:37:48+02:00</lastmod>
@@ -120,6 +120,18 @@
                 rel="alternate"
                 hreflang="de"
                 href="http://localhost:1313/de/blog/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/de/projects/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/projects/"
                 />
   </url><url>
     <loc>http://localhost:1313/de/</loc>

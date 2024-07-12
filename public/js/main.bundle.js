@@ -6770,10 +6770,10 @@ function initIndex() {
         tag: "de",
         href: "/de/blog/google-kalender-eintrage-aus-ai-prompt/",
         title: "Google Kalender Einträge aus AI Prompt",
-        description: "Basketball Livestreams Google Kalender Einträge erstellen und auf Website darstellen.",
+        description: "Basketball Livestreams Google Kalendereinträge erstellen und auf Website darstellen.",
         
         
-        content: "Für mich selbst habe ich meinen google calendar um einen BasketballLive Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte.\nWarum google calendar?\nIch wollte einfach nicht nochmal einen Kalender installieren. Dieser funktioniert in jedem gängigen Browser, Android und ist einfach zu verwalten.\nDie Seite ist hier zu finden:\nKalender Live streams Kalender \u0026nbsp; Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund.\nNormalerweise trage ich diese einfach manuell ein, falls eine Übertragung finde die mich interessiert.\nFür die Automatisierung habe ich bereits einiges getestet und probiert. Der Aufwand sollte dabei gering bleiben. Wenn man es schön(er) haben möchte artet es in mehr Zeitaufwand und Test aus.\nAktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form:\nBeispiel magentasport \u0026nbsp; Aufruf magentasport im Lesemodus Übertragungen heraussuchen und in die Zwischenablage kopieren Bing Copilot Chat eine ics Datei erstellen: Beispiel magentasport - ics Datei"
+        content: "Für mich selbst habe ich meinen google calendar um einen BasketballLive Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte.\nWarum google calendar?\nIch wollte einfach nicht nochmal einen Kalender installieren. Dieser funktioniert in jedem gängigen Browser, Android und ist einfach zu verwalten.\nDie Seite ist hier zu finden:\nKalender Live streams Kalender \u0026nbsp; Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund.\nNormalerweise trage ich diese einfach manuell ein, falls ich eine Übertragung finde, die mich interessiert.\nFür die Automatisierung habe ich bereits einiges getestet und probiert. Der Aufwand sollte dabei gering bleiben. Wenn man es schön(er) haben möchte; artet es in mehr Zeitaufwand und Test aus.\nAktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form:\nBeispiel magentasport \u0026nbsp; Aufruf magentasport im Lesemodus Übertragungen heraussuchen und in die Zwischenablage kopieren Bing Copilot Chat eine ics Datei erstellen: Beispiel magentasport - ics Datei"
       })
       .add(
       
@@ -6897,6 +6897,19 @@ function initIndex() {
       
       {
         id: 31,
+        tag: "de",
+        href: "/de/projects/",
+        title: "Projects",
+        description: "\r",
+        
+        
+        content: ""
+      })
+      .add(
+      
+      
+      {
+        id: 32,
         tag: "en",
         href: "/projects/",
         title: "Projects",
@@ -6909,7 +6922,7 @@ function initIndex() {
       
       
       {
-        id: 32,
+        id: 33,
         tag: "en",
         href: "/tags/rest/",
         title: "Rest",
@@ -6922,7 +6935,7 @@ function initIndex() {
       
       
       {
-        id: 33,
+        id: 34,
         tag: "en",
         href: "/categories/software-development/",
         title: "Software Development",
@@ -6935,7 +6948,7 @@ function initIndex() {
       
       
       {
-        id: 34,
+        id: 35,
         tag: "de",
         href: "/de/categories/software-development/",
         title: "Software Development",
@@ -6948,7 +6961,7 @@ function initIndex() {
       
       
       {
-        id: 35,
+        id: 36,
         tag: "en",
         href: "/tags/software-development/",
         title: "Software Development",
@@ -6961,7 +6974,7 @@ function initIndex() {
       
       
       {
-        id: 36,
+        id: 37,
         tag: "de",
         href: "/de/categories/sport/",
         title: "Sport",
@@ -6974,7 +6987,7 @@ function initIndex() {
       
       
       {
-        id: 37,
+        id: 38,
         tag: "en",
         href: "/tags/sql/",
         title: "SQL",
@@ -6987,7 +7000,7 @@ function initIndex() {
       
       
       {
-        id: 38,
+        id: 39,
         tag: "de",
         href: "/de/blog/statische-website-erstellen/",
         title: "Statische Website erstellen",
@@ -7000,7 +7013,7 @@ function initIndex() {
       
       
       {
-        id: 39,
+        id: 40,
         tag: "en",
         href: "/tags/",
         title: "Tags",
@@ -7013,7 +7026,7 @@ function initIndex() {
       
       
       {
-        id: 40,
+        id: 41,
         tag: "de",
         href: "/de/tags/",
         title: "Tags",
@@ -7026,7 +7039,7 @@ function initIndex() {
       
       
       {
-        id: 41,
+        id: 42,
         tag: "de",
         href: "/de/tags/try-new-things/",
         title: "Try New Things",
@@ -7039,20 +7052,20 @@ function initIndex() {
       
       
       {
-        id: 42,
+        id: 43,
         tag: "de",
         href: "/de/about/",
         title: "Über",
         description: "d.o.it - Probier etwas aus",
         
         
-        content: "Probier etwas aus \u0026nbsp; Autor Ich schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.\nBeruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe es zu kochen, Sport, die Natur, Wald, Flüsse, Berge und das Meer.\nd.o. = Dominik Oswald\nAutor Ich schreibe über aktuelle Themen die mich beschäftigen und ich gerne ausprobieren möchten.\nBeruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe es zu kochen, Sport, die Natur, Wald, Flüsse, Berge und das Meer.\nd.o. = Dominik Oswald\nCollage"
+        content: "Probier etwas aus \u0026nbsp; Autor Ich schreibe über aktuelle Themen, die mich beschäftigen und ich gerne ausprobieren möchten.\nBeruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe es zu kochen, Sport, die Natur, Wald, Flüsse, Berge und das Meer.\nd.o. = Dominik Oswald\nAutor Ich schreibe über aktuelle Themen, die mich beschäftigen und ich gerne ausprobieren möchten.\nBeruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe es zu kochen, Sport, die Natur, Wald, Flüsse, Berge und das Meer.\nd.o. = Dominik Oswald\nCollage"
       })
       .add(
       
       
       {
-        id: 43,
+        id: 44,
         tag: "en",
         href: "/blog/unblock-files-folder-powershell/",
         title: "Unblock all files in folder with PowerShell",
@@ -7065,7 +7078,7 @@ function initIndex() {
       
       
       {
-        id: 44,
+        id: 45,
         tag: "en",
         href: "/blog/uninstall-phone-link-windows/",
         title: "Uninstall \"Mobile devices\" / Phone Link in Windows",
@@ -7078,7 +7091,7 @@ function initIndex() {
       
       
       {
-        id: 45,
+        id: 46,
         tag: "en",
         href: "/tags/visual-studio/",
         title: "Visual Studio",
@@ -7091,7 +7104,7 @@ function initIndex() {
       
       
       {
-        id: 46,
+        id: 47,
         tag: "en",
         href: "/tags/visual-studio-2022/",
         title: "Visual Studio 2022",
@@ -7104,7 +7117,7 @@ function initIndex() {
       
       
       {
-        id: 47,
+        id: 48,
         tag: "en",
         href: "/tags/website/",
         title: "Website",
@@ -7117,7 +7130,7 @@ function initIndex() {
       
       
       {
-        id: 48,
+        id: 49,
         tag: "de",
         href: "/de/tags/website/",
         title: "Website",
@@ -7130,7 +7143,7 @@ function initIndex() {
       
       
       {
-        id: 49,
+        id: 50,
         tag: "en",
         href: "/",
         title: "Welcome to d.o.it!",
@@ -7143,7 +7156,7 @@ function initIndex() {
       
       
       {
-        id: 50,
+        id: 51,
         tag: "de",
         href: "/de/",
         title: "Willkommen zu d.o.it",
@@ -7156,7 +7169,7 @@ function initIndex() {
       
       
       {
-        id: 51,
+        id: 52,
         tag: "en",
         href: "/tags/windows/",
         title: "Windows",
@@ -7169,7 +7182,7 @@ function initIndex() {
       
       
       {
-        id: 52,
+        id: 53,
         tag: "de",
         href: "/de/tags/2024/",
         title: "2024",

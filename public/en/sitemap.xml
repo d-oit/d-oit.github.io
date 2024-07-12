@@ -35,7 +35,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-07-10T15:25:56+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -91,28 +91,28 @@
     <lastmod>2024-06-22T14:11:17+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/uninstall-phone-link-windows/</loc>
-    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2024-07-02T15:51:23+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/.net/</loc>
-    <lastmod>2024-06-22T14:11:17+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/license/</loc>
-    <lastmod>2024-06-22T14:11:17+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/nuget-packages-licenses-dotnet/</loc>
     <lastmod>2024-06-22T14:11:17+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/software-development/</loc>
-    <lastmod>2024-06-22T14:11:17+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/licenses-nuget-packages-net-core-solution/</loc>
-    <lastmod>2024-06-06T16:59:29+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/visual-studio/</loc>
-    <lastmod>2024-06-06T16:59:29+02:00</lastmod>
+    <lastmod>2024-07-12T10:03:48+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/ms-sql-date-format/</loc>
     <lastmod>2024-06-06T16:58:25+02:00</lastmod>
@@ -154,6 +154,16 @@
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2024-07-03T14:03:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/"
+                />
   </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2024-05-21T11:02:57+02:00</lastmod>
