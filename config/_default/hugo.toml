@@ -5,4 +5,3 @@ enableGitInfo = true
 enableInlineShortcodes = true
 enableEmoji = true
 enableRobotsTXT = true
-preserveTaxonomyNames = true
