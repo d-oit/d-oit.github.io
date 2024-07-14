@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm run -s mod:vendor",
-    "start": "hugo server --bind=0.0.0.0 --disableFastRender --printI18nWarnings --preserveTaxonomyNames",
-    "start:prod": "npm run -s prestart  && hugo server --bind=0.0.0.0 --disableFastRender --printI18nWarnings -e production --preserveTaxonomyNames",
+    "start": "hugo server --bind=0.0.0.0 --disableFastRender --printI18nWarnings",
+    "start:prod": "npm run -s prestart  && hugo server --bind=0.0.0.0 --disableFastRender --printI18nWarnings -e production",
     "prebuild": "npm run clean:public && npm run -s mod:vendor",
     "build": "hugo --gc --minify --preserveTaxonomyNames",
     "build:cache": "npm run -s prebuild && hugo config | grep cachedir && hugo --gc --minify -e ci",
