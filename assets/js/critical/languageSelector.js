@@ -1,4 +1,4 @@
-{{- if site.Params.main.enableLanguageSelectionStorage -}}
+{{- if site.Params.main.enableLanguageSelectionStorage -}} 
 
 (() => {
   'use strict'
@@ -57,5 +57,4 @@
     }
   })
 })()
-
-{{- end -}}
+{{- end -}} 

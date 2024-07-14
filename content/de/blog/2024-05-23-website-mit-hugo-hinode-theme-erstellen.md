@@ -21,7 +21,7 @@ lang: de
 
 ## Blog Wiederbelebung
 
-Den bisherigen Blog habe ich seisdt ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben. 
+Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben. 
 
 Das ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Online Bearbeitung durch [GitHub Codespaces](https://github.com/features/codespaces) (gleiche Erweiterungen verwendbar wie offline / auf dem Desktop),  Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen. 
 Und vor allem Performance :performing_arts:
