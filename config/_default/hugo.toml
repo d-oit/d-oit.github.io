@@ -1,6 +1,18 @@
+resourcedir = '../resources/'
+
 title = "d.o.it"
+copyright = "Copyright © d.o.it"
 paginate = 9
 enableGitInfo = true
-enableInlineShortcodes = true
+
+# additional settings
+baseURL = "https://d-oit.github.io/"
 enableEmoji = true
 enableRobotsTXT = true
+enableInlineShortcodes = true
+preserveTaxonomyNames = true
+
+[[module.imports]]
+  path = 'github.com/gethinode/hinode'
+
+

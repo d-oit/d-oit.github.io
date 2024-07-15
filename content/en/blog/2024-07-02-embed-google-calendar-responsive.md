@@ -63,4 +63,5 @@ Style nicer: https://stackoverflow.com/questions/49306347/how-to-customize-googl
   
 {{< removeDefaultLanguage >}}
 
-{{< link url="/de/blog/kostenlose-basketball-live-streams" >}}Google Calender Live streams - deutsch - (mostly german streams){{< /link >}}
+
+[Google Calender Live streams - deutsch - (mostly german streams)](/de/blog/kostenlose-basketball-live-streams)
