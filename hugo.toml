@@ -1,7 +1,8 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://d-oit.github.io/'
 languageCode = 'en-us'
-[[module.imports]]
-path = 'github.com/gethinode/hinode'
-copyright = "Copyright © d.o."
+copyright = "Copyright © d.o.it"
 enableGitInfo = true
 enableRobotsTXT = true
+[[module.imports]]
+path = 'github.com/gethinode/hinode'
+

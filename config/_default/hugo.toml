@@ -1,5 +1,4 @@
 title = "d.o.it"
-copyright = "Copyright © 2024 d.o."
 paginate = 9
 enableGitInfo = true
 enableInlineShortcodes = true
