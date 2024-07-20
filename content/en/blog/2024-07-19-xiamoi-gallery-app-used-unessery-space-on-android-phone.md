@@ -21,9 +21,11 @@ After investigation of the used storage in the settings I realized the Xiaomi Ga
 {{< /persona >}}
 
 # Solution
-After searching the with the help of Copilot I discovered the easiest way to fix was to uninstall the updates of the app inside the gallery app in the bottom.
+Important: Back up all important videos and photos first.
 
-If this is not working the next step is to imply delete the folders:
+After searching the with the help of Copilot I discovered the easiest way to fix was to uninstall the updates of the app. Therfore press the Gallery App Icon and call App-Info. 
+
+If this is not working the next step is to  delete the following folder content:
 ```
 - **internal storage/Android/data/com.miui.gallery/files/gallery_disk_cache/full_size**
 - **internal storage/Android/data/com.miui.gallery/files/gallery_disk_cache/small_size** 
