@@ -21,7 +21,7 @@ After investigation of the used storage in the settings I realized the Xiaomi Ga
 {{< /persona >}}
 
 # Solution
-After searching the with the help of Copilot I discovered the easiest way to fix was to uninstall the updates of the app after i show the button inside the gallery app in the bottom.
+After searching the with the help of Copilot I discovered the easiest way to fix was to uninstall the updates of the app inside the gallery app in the bottom.
 
 If this is not working the next step is to imply delete the folders:
 ```
