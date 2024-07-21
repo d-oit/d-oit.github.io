@@ -22,7 +22,11 @@ Ich wollte einfach nicht nochmal einen Kalender installieren. Dieser funktionier
 
 Die Seite ist hier zu finden:
 
+<<<<<<< HEAD
 {{< link "kostenlose-basketball-live-streams" >}}Kalender Live streams{{< /link >}}
+=======
+{{< link "kostenlose-basketball-live-streams/" >}}Kalender Live streams{{< /link >}}
+>>>>>>> 047bc9a01fd661f53b0b136b7d6ae65e645477da
 
 ## Kalender
 
