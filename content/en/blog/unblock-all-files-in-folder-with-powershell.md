@@ -10,6 +10,7 @@ thumbnail:
   author: d.o.
 slug: unblock-files-folder-powershell
 ---
+# Easily Unblock All Files in a Folder with PowerShell
 
 Unblocks files that were downloaded from the internet with PowerShell in Windows:
 
