@@ -7,7 +7,7 @@ tags:
     - Visual Studio 2022
     - Developer
 categories:
-    - Software development
+    - Software Development
 thumbnail:
   url: img/blog/ExtensionsVS.jpg
   origin: Copilot Designer

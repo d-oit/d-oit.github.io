@@ -23,6 +23,8 @@ contentDir = "content/de"
 weight = 2
 [de.params.head]
 tagline = "Probier etwas aus"
+[de.params.opengraph]
+locale = "de_DE"
 [de.params.social]
 title = "Folgen"
 caption = "d.o.it - Probier etwas aus"

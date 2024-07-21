@@ -17,7 +17,7 @@ thumbnail:
 - **WhatsApp** for Windows (Zwangsweise für private Nachrichten)
 
 ### Grafik
-- **Paint.Net **
+- **Paint.Net**
 - [PNG to SVG](https://www.microsoft.com/store/productId/9PFK7JFT951V?ocid=pdpshare) 
 
 ### Büro / Organisationstool
