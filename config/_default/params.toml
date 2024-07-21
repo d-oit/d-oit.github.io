@@ -1,10 +1,10 @@
 [main]
     enableLanguageSelectionStorage = true 
     separator = "-"
+    description = "d.o.it - let's try things out"
     enableDarkMode = true
     modes = ["dark", "light"]
-    description = "d.o.it - let's try things out"
-
+   
     
 [home]
     sections = ["blog", "projects"]
@@ -104,7 +104,7 @@
     locale = "en-US"
     # twitter = "https://twitter.com/gethinode"
     # linkedIn = ""
-    # github = "https://github.com/d-oit"
+    github = "https://github.com/d-oit"
     section = "blog"
     [author]
         name = "d.o.it - Dominik Oswald"

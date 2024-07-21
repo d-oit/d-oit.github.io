@@ -1,6 +1,7 @@
 resourcedir = '../resources/'
 
 title = "d.o.it"
+description = "d.o.it - let's try things out"
 copyright = "Copyright © d.o.it"
 paginate = 9
 enableGitInfo = true

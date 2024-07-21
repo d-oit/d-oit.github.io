@@ -37,7 +37,8 @@
         "trynewthings",
         "varchar",
         "winget",
-        "Wiso"
+        "Wiso",
+        "xunit"
     ],
     "cSpell.language": "en,de",
     "git.enableSmartCommit": true,

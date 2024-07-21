@@ -1,14 +1,11 @@
 ---
-
 slug: about
 title: Über
 description: d.o.it - Probier etwas aus
 date: 2022-04-11
 updated: 2023-08-02
 showComments: false
-
 ---
-
 # Probier etwas aus
 
 {{< persona thumbnail="/img/favicon.png" title="Autor" color="primary" >}}
