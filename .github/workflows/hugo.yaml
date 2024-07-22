@@ -78,6 +78,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+  # Lighthouse
   lighthouse:
       runs-on: ubuntu-latest
       steps:
