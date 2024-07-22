@@ -1,4 +1,5 @@
 ---
+lang: de
 title: Fazit zum Arbeiten mit Hugo CMS
 description: Erstes Fazit nach einen Monat arbeiten mit Hugo CMS (Hinode Theme)
 slug: fazit-zum-arbeiten-mit-hugo-cms

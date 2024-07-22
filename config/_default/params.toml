@@ -106,8 +106,8 @@
     # linkedIn = ""
     github = "https://github.com/d-oit"
     section = "blog"
-    [author]
-        name = "d.o.it - Dominik Oswald"
+    [schema.author]
+        name = "Dominik Oswald"
         # twitter = "https://twitter.com/markdumay"
         linkedin = "https://www.linkedin.com/in/d-oit"
         github = "https://github.com/d-oit"

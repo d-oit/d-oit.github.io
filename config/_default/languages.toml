@@ -24,6 +24,8 @@ weight = 2
 tagline = "Probier etwas aus"
 [de.params.opengraph]
 locale = "de_DE"
+[de.params.schema]
+locale = "de-DE"
 [de.params.social]
 title = "Folgen"
 caption = "d.o.it - Probier etwas aus"
@@ -31,5 +33,4 @@ caption = "d.o.it - Probier etwas aus"
 # license = "Lizenz - Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
 [de.params.sections.blog]
 reference = "Weitere"
-[de.params.schema]
-locale = "de-DE"
+
