@@ -94,8 +94,4 @@ jobs:
               https://d-oit.github.io/projects/
           #  budgetPath: ./LighthouseBudget.json # test performance budgets
             uploadArtifacts: true # save results as an action artifacts
-            temporaryPublicStorage: true # upload lighthouse report to the temporary storage
-  - name: Show Lighthouse outputs
-    run: |
-      # All results by URL:
-      echo '${{ steps.LHCIAction.outputs.manifest }}' | jq -r '.[] | (.summary|tostring) + " - " + .url'
+            temporaryPublicStorage: true # upload lighthouse report to the temporary storage  - name: Save results
