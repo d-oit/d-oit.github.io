@@ -11,6 +11,7 @@ thumbnail:
   origin: Copilot Designer
   author: d.o.
 slug: nuget-packages-licenses-dotnet
+layout: docs
 ---
 
 ## .NET: Create Excel or Text license file for used NuGet packages
