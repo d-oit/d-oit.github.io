@@ -1,0 +1,5 @@
+{
+    "$schema": "https://frontmatter.codes/config/media.contenttypes.schema.json",
+    "title": "Images Blog",
+    "path": "[[workspace]]/assets/images/blog"
+}
