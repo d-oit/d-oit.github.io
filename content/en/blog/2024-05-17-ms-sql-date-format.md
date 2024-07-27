@@ -10,8 +10,6 @@ tags:
   - Software Development
 slug: ms-sql-date-format
 ---
-
-
 **Date without time**
 
 `CONVERT(varchar, GETDATE(), 112)`
@@ -25,4 +23,5 @@ or
 `CONVERT(varchar, GETDATE(), 112) + CONVERT(VARCHAR, DATEPART(hh, GetDate())) + CONVERT(VARCHAR, DATEPART(mi, GetDate()))`
 
 
-More information about DateTime: https://learn.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-ver16
+More information about DateTime: 
+https://learn.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-ver16

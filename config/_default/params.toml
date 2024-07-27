@@ -1,8 +1,10 @@
 [main]
     enableLanguageSelectionStorage = true 
     separator = "-"
+    description = "d.o.it - let's try things out"
     enableDarkMode = true
     modes = ["dark", "light"]
+   
     
 [home]
     sections = ["blog", "projects"]
@@ -95,3 +97,18 @@
     themeFontPreload = "/fonts/inter-v12-latin-regular.woff2"
     purge = false # TODO: fix purge setting of example site
 # toml-docs-end theme-colors
+
+[schema]
+    type = "Organization"
+    name = "d.o.it"
+    locale = "en-US"
+    # twitter = "https://twitter.com/gethinode"
+    # linkedIn = ""
+    github = "https://github.com/d-oit"
+    section = "blog"
+    [schema.author]
+        name = "Dominik Oswald"
+        # twitter = "https://twitter.com/markdumay"
+        linkedin = "https://www.linkedin.com/in/d-oit"
+        github = "https://github.com/d-oit"
+   

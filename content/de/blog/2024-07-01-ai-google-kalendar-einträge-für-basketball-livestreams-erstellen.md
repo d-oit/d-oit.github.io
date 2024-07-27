@@ -10,7 +10,7 @@ tags:
     - AI Prompt
     - Basketball
 categories:
-    - Software development
+    - Software Development
 slug: google-kalender-eintrage-aus-ai-prompt
 ---
 

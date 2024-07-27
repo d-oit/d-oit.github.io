@@ -1,4 +1,5 @@
 ---
+lang: en
 title: Embed Google Calendar responsive
 description: How to embed Google Calendar on your website
 date: 2024-07-02T08:59:06.664Z
@@ -12,7 +13,7 @@ thumbnail:
   url: /img/blog/BasketGoogleCalendar.png
   author: Dominik Oswald
 ---
-## Why embed Google Calendar on my website?
+# Why embed Google Calendar on my website?
 I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar. 
 
 ## Embed Google Calendar

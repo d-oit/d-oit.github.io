@@ -12,17 +12,17 @@ thumbnail:
 
 ## Windows apps / tools
 
-- **KeePass** Seit Jahren bereits im Einsatz. Auch unter Mac / Linux und im Urlaub im Einsatz.
+- **KeePass** seit Jahren bereits im Einsatz. Auch unter Mac / Linux und im Urlaub im Einsatz.
 - **TPFan** (für Lenovo Notebooks Lüftersteuerung)
 - **WhatsApp** for Windows (Zwangsweise für private Nachrichten)
 
 ### Grafik
-- **Paint.Net **
+- **Paint.Net**
 - [PNG to SVG](https://www.microsoft.com/store/productId/9PFK7JFT951V?ocid=pdpshare) 
 
 ### Büro / Organisationstool
 - **draw.io** Desktop >> https://app.diagrams.net
-- **MultiCommander** (Windows Explorer alternative zum Kopieren zwischen Laufwerken)
+- **MultiCommander** (Windows Explorer Alternative zum Kopieren zwischen Laufwerken)
 - **Wiso Steuer / Tax** (deutsche Steuererklärung)
 
 ### Entwicklungstool / Editors

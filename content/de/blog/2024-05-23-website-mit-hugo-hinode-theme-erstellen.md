@@ -1,4 +1,5 @@
 ---
+lang: de
 title: Statische Website erstellen
 description: Website mit Hugo Hinode Theme erstellen
 slug: statische-website-erstellen
@@ -16,7 +17,6 @@ thumbnail:
   originURL: https://gethinode.com/docs/about/credits/?menu=about
 keywords:
   - website 
-lang: de  
 ---
 
 ## Blog Wiederbelebung
