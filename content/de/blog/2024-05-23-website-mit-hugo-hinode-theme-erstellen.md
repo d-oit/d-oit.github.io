@@ -13,8 +13,8 @@ thumbnail:
   url: /img/blog/VisualStudioCodeWorkspace.png
   author: Dominik Oswald
   authorURL: 
-  origin: Mark Dumay
-  originURL: https://gethinode.com/docs/about/credits/?menu=about
+#  origin: Hinode Hugo Theme by Mark Dumay
+#  originURL: https://gethinode.com/docs/about/credits/?menu=about
 keywords:
   - website 
 ---
