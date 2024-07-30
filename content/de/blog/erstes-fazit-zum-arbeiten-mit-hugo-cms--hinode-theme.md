@@ -7,10 +7,10 @@ tags:
   - Hinode
   - Website
 thumbnail:
-  #url: /img/blog/productivity-apps-tools-list.png
-  author: d.o. (Copilot Designer 
-  #origin: Copilot Designer
+  url: /img/blog/VisualStudioCodeWorkspace.png
+  author: d.o. (Copilot Designer)
 slug: fazit-zum-arbeiten-mit-hugo-cms
+draft: true
 ---
 
 Nachdem einige Blogartikel geschrieben wurden, gibt es ein erstes Fazit über das Arbeiten mit dem Hugo CMS (Hinode Theme)
@@ -41,4 +41,4 @@ Beim Testen des Themes ist mir aufgefallen, dass einige Konfigurationen gefehlt 
 
 Ein erster Prototype ware schnell erstellt. Nach einigen Tests und dem bisher unbekannten CMS konnte in Abstimmung mit dem Entwickler vom Theme ein funktionierendes JavaScript File erstellt werden.
 
-Soweit so gut. Es kann mit dem Blog und Hugo CMS weitergeben.
+Soweit so gut. 

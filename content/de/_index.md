@@ -1,5 +1,4 @@
 ---
-author: d.o.  
 title: Willkommen zu d.o.it  
 description: d.o.it - Probier etwas aus.  
 thumbnail:  
