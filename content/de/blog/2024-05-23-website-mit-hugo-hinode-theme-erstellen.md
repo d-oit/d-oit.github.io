@@ -1,5 +1,5 @@
 ---
-lang: de
+lang: de-DE
 title: Statische Website erstellen
 description: Website mit Hugo Hinode Theme erstellen
 slug: statische-website-erstellen
@@ -12,11 +12,11 @@ tags:
 thumbnail:
   url: /img/blog/VisualStudioCodeWorkspace.png
   author: Dominik Oswald
-  authorURL: 
 #  origin: Hinode Hugo Theme by Mark Dumay
 #  originURL: https://gethinode.com/docs/about/credits/?menu=about
 keywords:
   - website 
+draft: false
 ---
 
 ## Blog Wiederbelebung
@@ -80,6 +80,10 @@ Hugo verwendet die Datei **go.mod**, um zu ermitteln, welche Version von vom Hug
 Alle Module aktualisieren per Terminal / Command Line:
 
 `hugo mod get -u`
+
+oder per
+
+`npm run build`
 
 ## Website veröffentlichen
 
