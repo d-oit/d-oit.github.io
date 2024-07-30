@@ -13,7 +13,6 @@ thumbnail:
 slug: fazit-zum-arbeiten-mit-hugo-cms
 draft: true
 ---
-Zum nachlesen:
 {{< link "2024-05-23-website-mit-hugo-hinode-theme-erstellen" >}}Neustart mit Hugo CMS des Blogs
 {{< /link >}}
 
