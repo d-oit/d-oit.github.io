@@ -9,12 +9,9 @@ tags:
   - Website
 thumbnail:
   url: /img/blog/VisualStudioCodeWorkspace.png
-  author: Dominik Oswald
-#  origin: Hinode Hugo Theme by Mark Dumay
-#  originURL: https://gethinode.com/docs/about/credits/?menu=about
-keywords:
-  - website 
+  author: d.o. (Copilot Designer)
 slug: fazit-zum-arbeiten-mit-hugo-cms
+draft: true
 ---
 Zum nachlesen:
 {{< link "2024-05-23-website-mit-hugo-hinode-theme-erstellen" >}}Neustart mit Hugo CMS des Blogs
@@ -52,4 +49,4 @@ Beim Testen des Themes ist mir aufgefallen, dass einige Konfigurationen gefehlt 
 
 Ein erster Prototype ware schnell erstellt. Nach einigen Tests und dem bisher unbekannten CMS konnte in Abstimmung mit dem Entwickler vom Theme ein funktionierendes JavaScript File erstellt werden.
 
-Soweit so gut. Es kann mit dem Blog und Hugo CMS weitergeben.
+Soweit so gut. 
