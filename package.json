@@ -49,7 +49,7 @@
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@gethinode/netlify-plugin-dartsass": "^0.3.0",
-    "@netlify/plugin-lighthouse": "^6.0.0",
+    "@netlify/plugin-lighthouse": "^3.0.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^17.10.1",
@@ -62,7 +62,7 @@
     "prettier": "3.3.3",
     "prettier-plugin-go-template": "^0.0.15",
     "rimraf": "^6.0.1",
-    "stylelint": "^16.8.0",
+    "stylelint": "^16.8.1",
     "stylelint-config-standard-scss": "^13.1.0"
   },
   "optionalDependencies": {
