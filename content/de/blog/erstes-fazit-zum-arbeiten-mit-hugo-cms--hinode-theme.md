@@ -13,15 +13,16 @@ thumbnail:
 slug: fazit-zum-arbeiten-mit-hugo-cms
 draft: false
 ---
-{{< link "2024-05-23-website-mit-hugo-hinode-theme-erstellen" >}}Neustart mit Hugo CMS des Blogs
-{{< /link >}}
+
+{{< button icon="fab fa-blogger" href="/de/blog/statische-website-erstellen/" >}}Neustart mit Hugo CMS des Blogs{{< /button >}}
+
 
 # Hugo CMS und Hinode Theme: Erste Eindrücke
 
 Die Einrichtung und die ersten Blogartikel waren schnell erstellt. Die Markdown Syntax und Visual Studio Code zum Erstellen der Artikel waren bekannt.
 
 Im Detail ging es dann los mit verschiedenen Konfiguration und speziellen Hinode Markdown Shortcodes. Dazu ist einiges gut in den Hugo CMS und Hinode Docs erklärt. Leider auch vieles historisch oder Hinode verwendet Einrichtungen anders als Hugo CMS. Feedback gibt es aber immer schnell und im Code kann dann github eingesehen werden.
-Die Programmierung der Erweiterung ist in js in Verbindung mit GO / Hugo CMS Variablen ist ein wenig gewöhnungsbedürftig. 
+Die Programmierung der Erweiterung ist in js in Verbindung mit GO / Hugo CMS Variablen ist ein wenig gewöhnungsbedürftig.
 
 Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der ausgewählten Sprache. Dies wurde bisher noch nicht vom Hinode CMS unterstützt. 
 
@@ -29,12 +30,12 @@ Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der aus
 
 ### Erklärung (vor allem für mich selbst :smile:)
 
-**{{- if site.Params.main.enableLanguageSelectionStorage -}}** 
+**{{- if site.Params.main.enableLanguageSelectionStorage -}}**
 
 **enableLanguageSelectionStorage** = Einstellung in der **params.toml** Hugo Einstellungsdatei. 
-Der Code wird nur verwendet wenn die String Variable "true" ist. 
+Der Code wird nur verwendet wenn die String Variable "true" ist.
 
-{{**-** Minus Zeichen = string variable 
+{{**-** Minus Zeichen = string variable
 
 
 ## Frontend
