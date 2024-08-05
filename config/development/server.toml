@@ -1,7 +1,7 @@
 # toml-docs-start server-config
 [[headers]]
-for = '/**'
-[headers.values]
+for = '/**' 
+    [headers.values]
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"

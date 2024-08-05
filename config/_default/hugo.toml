@@ -5,6 +5,7 @@ description = "d.o.it - let's try things out"
 copyright = "Copyright © d.o.it"
 paginate = 9
 enableGitInfo = true
+timeout = "45s"
 
 # additional settings
 baseURL = "https://d-oit.github.io/"
