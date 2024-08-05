@@ -1,10 +1,9 @@
 [main]
-    enableLanguageSelectionStorage = true 
     separator = "-"
     description = "d.o.it - let's try things out"
+    enableLanguageSelectionStorage = true 
     enableDarkMode = true
     modes = ["dark", "light"]
-   
     
 [home]
     sections = ["blog", "projects"]

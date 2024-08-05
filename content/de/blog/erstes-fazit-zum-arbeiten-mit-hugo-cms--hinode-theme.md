@@ -11,25 +11,32 @@ thumbnail:
   url: /img/blog/VisualStudioCodeWorkspace.png
   author: d.o. (Copilot Designer)
 slug: fazit-zum-arbeiten-mit-hugo-cms
-draft: true
+draft: false
 ---
-{{< link "2024-05-23-website-mit-hugo-hinode-theme-erstellen" >}}Neustart mit Hugo CMS des Blogs
-{{< /link >}}
+
+{{< button icon="fab fa-blogger" href="/de/blog/statische-website-erstellen/" >}}Neustart mit Hugo CMS des Blogs{{< /button >}}
+
 
 # Hugo CMS und Hinode Theme: Erste Eindrücke
 
-Die Einrichtung und die ersten Blogartikel waren schnell erstellt, nachdem die Markdown Syntax und Visual Studio Code bereits bekannt waren.
+Die Einrichtung und die ersten Blogartikel waren schnell erstellt. Die Markdown Syntax und Visual Studio Code zum Erstellen der Artikel waren bekannt.
 
-Im Detail ging es dann los mit verschiedenen Konfiguration und Einrichtungen. Dazu ist einiges gut in den Hugo CMS und Hinode Docs erklärt. Leider auch vieles historisch oder Hinode verwendet Einrichtungen anders als Hugo CMS. Feedback gibt es aber immer schnell und im Code kann dann github eingesehen werden.
-Die Programmierung der Erweiterung ist in js in Verbindung mit GO / Hugo CMS Variablen ist ein wenig gewöhnungsbedürftig. 
+Im Detail ging es dann los mit verschiedenen Konfiguration und speziellen Hinode Markdown Shortcodes. Dazu ist einiges gut in den Hugo CMS und Hinode Docs erklärt. Leider auch vieles historisch oder Hinode verwendet Einrichtungen anders als Hugo CMS. Feedback gibt es aber immer schnell und im Code kann dann github eingesehen werden.
+Die Programmierung der Erweiterung ist in js in Verbindung mit GO / Hugo CMS Variablen ist ein wenig gewöhnungsbedürftig.
 
-```Golang
-{{- if site.Params.main.enableLanguageSelectionStorage -}} 
-  (() => {
-    'use strict'
-...
-...
-```
+Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der ausgewählten Sprache. Dies wurde bisher noch nicht vom Hinode CMS unterstützt. 
+
+{{< file lang="js" full=false show=false path="assets/js/critical/languageSelector.js" id="file-collapse-1" >}}
+
+### Erklärung (vor allem für mich selbst :smile:)
+
+**{{- if site.Params.main.enableLanguageSelectionStorage -}}**
+
+**enableLanguageSelectionStorage** = Einstellung in der **params.toml** Hugo Einstellungsdatei. 
+Der Code wird nur verwendet wenn die String Variable "true" ist.
+
+{{**-** Minus Zeichen = string variable
+
 
 ## Frontend
 
@@ -48,4 +55,4 @@ Beim Testen des Themes ist mir aufgefallen, dass einige Konfigurationen gefehlt 
 
 Ein erster Prototype ware schnell erstellt. Nach einigen Tests und dem bisher unbekannten CMS konnte in Abstimmung mit dem Entwickler vom Theme ein funktionierendes JavaScript File erstellt werden.
 
-Soweit so gut. 
+Das war ein erstes Fazit. Weitere folgen...
