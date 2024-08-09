@@ -8,16 +8,17 @@ tags:
   - Hinode
   - Website
 thumbnail:
-  url: /img/blog/VisualStudioCodeWorkspace.png
+  url: /img/blog/1_Fazit_Hugo_CMS_Hinode_Theme_Website.png
   author: d.o. (Copilot Designer)
 slug: fazit-zum-arbeiten-mit-hugo-cms
 draft: false
+categories:
+  - Website
 ---
 
 {{< button icon="fab fa-blogger" href="/de/blog/statische-website-erstellen/" >}}Neustart mit Hugo CMS des Blogs{{< /button >}}
 
-
-# Hugo CMS und Hinode Theme: Erste Eindrücke
+## Hugo CMS und Hinode Theme: Erste Eindrücke
 
 Die Einrichtung und die ersten Blogartikel waren schnell erstellt. Die Markdown Syntax und Visual Studio Code zum Erstellen der Artikel waren bekannt.
 
@@ -28,7 +29,9 @@ Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der aus
 
 {{< file lang="js" full=false show=false path="assets/js/critical/languageSelector.js" id="file-collapse-1" >}}
 
-### Erklärung (vor allem für mich selbst :smile:)
+### Erklärung 
+
+(vor allem für mich selbst :smile:)
 
 **{{- if site.Params.main.enableLanguageSelectionStorage -}}**
 
@@ -43,7 +46,7 @@ Der Code wird nur verwendet wenn die String Variable "true" ist.
 Ein gutes Frontend für die Bearbeitung im Browser wie bei Hexo, Wordpress oder anderen CMS ist leider nicht so einfach einzurichten oder auch zu bekommen. Was mir gefallen hat, ist CloudCannon. Das ist aber aktuell preislich nicht bezahlbar. Alle anderen Frontend von der offiziellen Liste https://gohugo.io/tools/front-ends/ waren nicht so das Gelbe vom Ei.
 Wichtig ist für mich beim Frontend das dieses ähnliche wie bei Wordpress von anderen Anwendern verwendet werden kann die, nicht so technisch versiert sind. Der Editor sollte einfach zu erweitern und zu verändern sein. Ebenso sollte ein Workflow für die Freigabe mit der entsprechenden Nachverfolgung bei Änderungen geben sein. Das Ganze wie gesagt für Nicht-technisch versierte Personen.
 
-Liste zum Durcharbeiten von aktiven Open source Projekten:
+*Liste zum Durcharbeiten von aktiven Open source Projekten:*
 
 - Publii.exe -> Offline Editor für MacOs, Windows, Linux
 - https://vrite.io -> Web: WYSIWYG editor with built-in Markdown and keyboard shortcuts
