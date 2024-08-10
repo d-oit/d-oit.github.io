@@ -5,8 +5,7 @@ description: Erstes Fazit nach einigen Blogartikel mit Hugo CMS (Hinode Theme)
 date: 2024-07-29T13:38:36.132Z
 tags:
   - Hugo CMS
-  - Hinode
-  - Website
+  - Hinode Theme  
 thumbnail:
   url: /img/blog/1_Fazit_Hugo_CMS_Hinode_Theme_Website.png
   author: d.o. (Copilot Designer)

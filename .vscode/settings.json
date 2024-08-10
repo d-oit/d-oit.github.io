@@ -51,6 +51,5 @@
     ],
     "ltex.language": "de",
     "ltex.additionalRules.enablePickyRules": true,
-    "eslint.codeActionsOnSave.rules": true,
     "eslint.format.enable": true
 }

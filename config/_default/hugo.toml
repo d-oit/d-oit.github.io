@@ -17,4 +17,3 @@ enableInlineShortcodes = true
 [[module.imports]]
   path = 'github.com/gethinode/hinode'
 
-

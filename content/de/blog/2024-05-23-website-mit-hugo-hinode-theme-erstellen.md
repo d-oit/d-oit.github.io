@@ -6,16 +6,14 @@ slug: statische-website-erstellen
 date: 2024-05-23T14:21:58.426Z
 tags:
   - CMS
-  - Hugo 
+  - Hinode Theme
+  - Hugo CMS
   - Website
-  - Hinode
 thumbnail:
   url: /img/blog/VisualStudioCodeWorkspace.png
   author: Dominik Oswald
-#  origin: Hinode Hugo Theme by Mark Dumay
-#  originURL: https://gethinode.com/docs/about/credits/?menu=about
 keywords:
-  - website 
+  - website
 draft: false
 ---
 
