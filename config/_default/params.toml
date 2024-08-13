@@ -1,5 +1,5 @@
 [main]
-    enableLanguageSelectionStorage = true 
+    enableLanguageSelectionStorage = false 
     separator = "-"
     enableDarkMode = true
     modes = ["dark", "light"]
@@ -95,3 +95,20 @@
     themeFontPreload = "/fonts/inter-v12-latin-regular.woff2"
     purge = false # TODO: fix purge setting of example site
 # toml-docs-end theme-colors
+
+
+[params.headless_cms]
+engine = "sveltia"
+site_url = "https://d-oit.github.io"
+
+  [params.headless_cms.backend]
+  name = "github"
+  repo = "d-oit/d-oit.github.io"
+
+[params.headless_cms.collections.blog]
+create = true
+
+  [[params.headless_cms.collections.blog.fields]]
+  label = "Title"
+  name = "title"
+  widget = "string"

@@ -11,8 +11,13 @@ enableEmoji = true
 enableRobotsTXT = true
 enableInlineShortcodes = true
 
-
 [[module.imports]]
   path = 'github.com/gethinode/hinode'
+
+[[module.imports]]
+  path = "github.com/privatemaker/headless-cms"
+
+[outputs]
+  home = [ "HTML", "RSS", "HeadlessCMSConfig" ]
 
 
