@@ -1,11 +1,7 @@
 [main]
-<<<<<<< HEAD
-    enableLanguageSelectionStorage = false 
-=======
->>>>>>> daf74ef883baa6175cc9da4a690284d3da429ba4
     separator = "-"
     description = "d.o.it - let's try things out"
-    enableLanguageSelectionStorage = true 
+    enableLanguageSelectionStorage = false 
     enableDarkMode = true
     modes = ["dark", "light"]
     
@@ -101,24 +97,6 @@
     purge = false # TODO: fix purge setting of example site
 # toml-docs-end theme-colors
 
-<<<<<<< HEAD
-
-[params.headless_cms]
-engine = "sveltia"
-site_url = "https://d-oit.github.io"
-
-  [params.headless_cms.backend]
-  name = "github"
-  repo = "d-oit/d-oit.github.io"
-
-[params.headless_cms.collections.blog]
-create = true
-
-  [[params.headless_cms.collections.blog.fields]]
-  label = "Title"
-  name = "title"
-  widget = "string"
-=======
 [schema]
     type = "Organization"
     name = "d.o.it"
@@ -133,4 +111,3 @@ create = true
         linkedin = "https://www.linkedin.com/in/d-oit"
         github = "https://github.com/d-oit"
    
->>>>>>> daf74ef883baa6175cc9da4a690284d3da429ba4

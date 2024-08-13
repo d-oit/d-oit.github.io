@@ -16,13 +16,8 @@ enableInlineShortcodes = true
 [[module.imports]]
   path = 'github.com/gethinode/hinode'
 
-<<<<<<< HEAD
 [[module.imports]]
   path = "github.com/privatemaker/headless-cms"
 
 [outputs]
   home = [ "HTML", "RSS", "HeadlessCMSConfig" ]
-
-
-=======
->>>>>>> daf74ef883baa6175cc9da4a690284d3da429ba4
