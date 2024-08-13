@@ -10,7 +10,7 @@ tags:
     - AI Prompt
     - Basketball
 categories:
-    - Software development
+    - Software Development
 slug: google-kalender-eintrage-aus-ai-prompt
 ---
 
@@ -22,7 +22,7 @@ Ich wollte einfach nicht nochmal einen Kalender installieren. Dieser funktionier
 
 Die Seite ist hier zu finden:
 
-{{< link "/de/blog/kostenlose-basketball-live-streams/" >}}Kalender Live streams{{< /link >}}
+{{< link "kostenlose-basketball-live-streams/" >}}Kalender Live streams{{< /link >}}
 
 ## Kalender
 

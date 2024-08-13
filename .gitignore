@@ -1,5 +1,3 @@
-/_vendor
-/public
 resources/
 node_modules/
 public/

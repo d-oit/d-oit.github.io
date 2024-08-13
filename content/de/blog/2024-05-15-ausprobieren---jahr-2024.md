@@ -16,6 +16,7 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 
 - Website / Blog wieder starten {{< fas fa-check-to-slot >}}
 - Smartphone Display austauschen
+- yahtzee Block per WebApp zusammenrechnen und Würfelwahrscheinlichkeiten ausrechnen. Aktuell spielen wir fast jeden Abend eine Runde nach dem Abendessen :smile:
 - Lenovo Notebook Speicher aufrüsten ohne clips abzubrechen {{< fas fa-check-to-slot>}}
    >> na ja, fast. Wurde aber bereits vom Vorgänger geöffnet {{< fas fa-laptop-medical >}}
 

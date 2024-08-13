@@ -1,9 +1,11 @@
 resourcedir = '../resources/'
 
 title = "d.o.it"
+description = "d.o.it - let's try things out"
 copyright = "Copyright © d.o.it"
 paginate = 9
 enableGitInfo = true
+timeout = "45s"
 
 # additional settings
 baseURL = "https://d-oit.github.io/"
@@ -14,6 +16,7 @@ enableInlineShortcodes = true
 [[module.imports]]
   path = 'github.com/gethinode/hinode'
 
+<<<<<<< HEAD
 [[module.imports]]
   path = "github.com/privatemaker/headless-cms"
 
@@ -21,3 +24,5 @@ enableInlineShortcodes = true
   home = [ "HTML", "RSS", "HeadlessCMSConfig" ]
 
 
+=======
+>>>>>>> daf74ef883baa6175cc9da4a690284d3da429ba4

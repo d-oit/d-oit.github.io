@@ -1,3 +1,4 @@
+/* eslint-disable */
 {{- if site.Params.main.enableLanguageSelectionStorage -}} 
 
 (() => {
@@ -13,6 +14,11 @@
     localStorage.setItem('selectedLanguage', language)
   }
 
+  // Function to remove the selected language from localStorage
+  function removeSelectedLanguage(){
+      localStorage.removeItem("selectedLanguage");
+  }
+  
   // Function to apply the selected language to the website
   function applyLanguage (language, href) {
     if (document.documentElement.lang !== language) {
@@ -29,8 +35,7 @@
   // Event listener for language selection
   document.addEventListener('DOMContentLoaded', () => {
     const languageItems = document.querySelectorAll(
-      '#language-selector .dropdown-item'
-    )
+      '#language-selector .dropdown-item')
 
     if (languageItems.length > 0) {
       const storedLanguage = getLanguage()
@@ -54,6 +59,9 @@
           }
         })
       })
+    }
+    else{
+      removeSelectedLanguage(); // Remove stored language if no language selection is available in the dropdown menu.
     }
   })
 })()
