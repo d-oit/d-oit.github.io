@@ -1,7 +1,7 @@
 [main]
     separator = "-"
     description = "d.o.it - let's try things out"
-    enableLanguageSelectionStorage = true 
+    enableLanguageSelectionStorage = false 
     enableDarkMode = true
     modes = ["dark", "light"]
     
