@@ -3,7 +3,7 @@
     description = "d.o.it - let's try things out"
     enableLanguageSelectionStorage = false 
     enableDarkMode = true
-    modes = ["dark", "light"]
+    modes = ["light", "dark"]
     
 [home]
     sections = ["blog", "projects"]
@@ -30,7 +30,7 @@
     searchModal = false
     breadcrumb = true
     toc = true
-    sidebar = true
+    sidebar = false
     size = "md"
 
 [messages]
@@ -72,7 +72,7 @@
         style = "border-1 card-emphasize"
         homepage = 3
         separator = false
-        wrap = true
+        wrap = false
 
 [favicon]
     logo = "img/favicon.png"

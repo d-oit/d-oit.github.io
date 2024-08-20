@@ -32,7 +32,9 @@
         {{ else }}
             <div class="row row-cols-1 row-cols-{{ $breakpoint.current }}-2">
                 <div class="col col-{{ $breakpoint.prev }}-12 col-{{ $breakpoint.current }}-9">
-                    {{ .Render "single/main" }}
+                    <div class="page-content">
+                        {{ .Render "single/main" }}
+                    </div>
                 </div>
                 <div class="col col-{{ $breakpoint.current }}-3 d-none d-{{ $breakpoint.current }}-block">
                     {{ $toc | safeHTML }}
