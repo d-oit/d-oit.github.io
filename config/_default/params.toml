@@ -30,7 +30,7 @@
     searchModal = false
     breadcrumb = true
     toc = true
-    sidebar = false
+    sidebar = true
     size = "md"
 
 [messages]
