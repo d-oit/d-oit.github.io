@@ -13,6 +13,7 @@ thumbnail:
     author: d.o.
 slug: licenses-nuget-packages-net-core-solution
 ---
+# Generating a License Report for NuGet Packages in Your .NET Core Solution
 
 **ToDo**: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.
 

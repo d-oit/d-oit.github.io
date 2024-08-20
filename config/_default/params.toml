@@ -30,7 +30,7 @@
     searchModal = false
     breadcrumb = true
     toc = true
-    sidebar = true
+    sidebar = false
     size = "md"
 
 [messages]
@@ -72,6 +72,7 @@
         style = "border-1 card-emphasize"
         homepage = 3
         separator = false
+        wrap = false
 
 [favicon]
     logo = "img/favicon.png"

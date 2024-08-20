@@ -3,3 +3,7 @@
 .bg-opacity-10 {
     background: linear-gradient(to right, rgba(255, 142, 22, 0.5), rgba(253, 160, 133, 0.5));
 }
+
+ul li a {
+    word-break: break-all;
+}

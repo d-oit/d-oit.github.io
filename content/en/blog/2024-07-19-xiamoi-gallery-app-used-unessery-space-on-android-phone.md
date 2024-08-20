@@ -8,7 +8,6 @@ tags:
     - Android
 categories:
     - Android
-type: default
 slug: xiaomi-gallery-app-unnecessary-space-android-phone
 thumbnail:
     url: /img/blog/Xiaomi_gallery_app_size.jpg
@@ -18,13 +17,13 @@ thumbnail:
 
 {{< persona thumbnail="/img/blog/Xiaomi_gallery_app_size.jpg" title="Gallery App used too much space" color="warning" >}}
 My Xiaomi smartphone showed that i had not enough space left this days. I was surprised that after a disk cleanup most of the used space was the same. 
-After investigation of the used storage in the settings I realized the Xiaomi Gallery-App had a size for ofter 40 GB. But I only had around 1 GB of videos and photos left on the phone. 
+After investigation of the used storage in the settings I realized the Xiaomi Gallery-App had a size for ofter 40 GB. But I only had around 1 GB of videos and photos left on the phone.
 {{< /persona >}}
 
 # Solution
 **Important**: Back up all important videos and photos first.
 
-After searching the with the help of Copilot I discovered the easiest way to fix was to uninstall the updates of the app. Therefore press the Gallery App Icon and call App-Info. [^1] [^2] 
+After searching the with the help of Copilot I discovered the easiest way to fix was to uninstall the updates of the app. Therefore press the Gallery App Icon and call App-Info. [^1] [^2]
 
 If this is not working the next step is to  delete the following folder content:
 
