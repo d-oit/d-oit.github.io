@@ -50,6 +50,6 @@
         "rsweave"
     ],
     "ltex.language": "de",
-    "ltex.additionalRules.enablePickyRules": true,
-    "eslint.format.enable": true
+    "ltex.additionalRules.enablePickyRules": true
+    
 }

@@ -29,7 +29,7 @@ for = '/**'
         camera=(), \
         magnetometer=(), \
         gyroscope=(), \
-        fullscreen=(), \
+        fullscreen=(self), \
         payment=() \
         """
     cache-control = """\

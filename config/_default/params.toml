@@ -70,7 +70,7 @@
         footer = "tags"
         orientation = "horizontal"
         style = "border-1 card-emphasize"
-        homepage = 3
+        homepage = 4
         separator = false
         wrap = false
 

@@ -1,0 +1,26 @@
+<div class="print-fullscreen-area float-end d-none d-md-block">
+  {{/*  <div class="btn-group" role="group" aria-label="PrintFullscreenArea">
+        <button type="button" class="btn btn-primary btn-toogle-fullscreen" onclick="toogleFullscreen()">
+            <i class="fas fa-desktop"></i> Fullscreen
+        </button>  */}}
+        <a aria-label="Source Code" href="#" onclick="window.print()" class="btn btn-info  position-relative" data-bs-toggle="tooltip" data-bs-title="Source Code on github" data-bs-placement="top" role="button">
+            <span class="d-flex justify-content-center">
+                <span class="my-auto">Print</span><span class="align-self-center ps-1">
+                    <svg class="svg-inline--fa fas fa-print " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M128 0C92.7 0 64 28.7 64 64l0 96 64 0 0-96 226.7 0L384 93.3l0 66.7 64 0 0-66.7c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0L128 0zM384 352l0 32 0 64-256 0 0-64 0-16 0-16 256 0zm64 32l32 0c17.7 0 32-14.3 32-32l0-96c0-35.3-28.7-64-64-64L64 192c-35.3 0-64 28.7-64 64l0 96c0 17.7 14.3 32 32 32l32 0 0 64c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-64zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
+                </span></span>
+            </a>
+    {{/*  </div>*/}}
+</div>  
+
+
+<script>
+    function toogleFullscreen() {
+        if (document.fullscreenElement) {
+        // If there is a fullscreen element, exit full screen.
+        document.exitFullscreen();
+        return;
+        }
+        // Make the .element div fullscreen.
+        document.querySelector(".page-content").requestFullscreen();
+    };
+  </script>
