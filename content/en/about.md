@@ -6,9 +6,9 @@ updated: 2023-08-02
 showComments: false
 ---
 
-{{< image src="/img/logo/doitLogo.svg" class="img-fluid w-50" wrapper="text-center" >}}
-
-# d.o.it - Try something out
+{{< persona thumbnail="/img/favicon.png" title="try something out" color="primary" >}}
+Hands-On, Discover
+{{< /persona >}}
 
 {{< card-group align="center" class="border-0" padding="3" >}}
     {{< card title="Natur" icon="fas tree" >}}
