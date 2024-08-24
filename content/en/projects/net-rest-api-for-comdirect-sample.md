@@ -30,12 +30,11 @@ Visual Studio XML documentation Markdown syntax created with:
 
 C# .NET Rest API for comdirect
 
-Get your oAuth client credentials before you start on the [comdirect Website]
-(https://kunde.comdirect.de/itx/oauth/privatkunden?execution=e3s1)
+Get your oAuth client credentials before you start on the [comdirect Website](https://kunde.comdirect.de/itx/oauth/privatkunden?execution=e3s1)
 
 ## Requirements
 
-1. Download the latest swagger json from https://kunde.comdirect.de/cms/media/comdirect_rest_api_swagger.json
+1. Download the latest swagger json from the [comdirect Website] (https://kunde.comdirect.de/cms/media/comdirect_rest_api_swagger.json)
 2. Change the comdirect type "cd_secondary" to  "password
     ```json
     "CdSecondary": {
@@ -43,7 +42,7 @@ Get your oAuth client credentials before you start on the [comdirect Website]
       "tokenUrl": "https://api.comdirect.de/oauth/token",
       "flow": "cd_secondary", >>  **"flow": "password"**,
       ```
-3. Install the Visual Studio extension to generate the C# Client: https://github.com/unchase/Unchase.OpenAPI.Connectedservice      
+3. Install the Visual Studio extension to generate the C# Client: [Unchase.OpenAPI.Connectedservice](https://github.com/unchase/Unchase.OpenAPI.Connectedservice) 
 4. Generate the client [![comdirect-unchase-openapi.png](https://i.postimg.cc/bvjFpBWf/comdirect-unchase-openapi.png)](https://postimg.cc/75mNNmqK)
 5. Manage user secrets for the project with your comdirect credentials. Define in the appsettings.json / secrets.json file:
 ```json
