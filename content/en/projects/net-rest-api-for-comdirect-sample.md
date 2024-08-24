@@ -84,8 +84,8 @@ The sample use **Serilog** to log messages configured in the **appsettings.json*
 
 > [!CAUTION] **Bitte beachten:**
 
-> [!CAUTION] Das Abrufen von **fünf** TAN-Challenges ohne zwischenzeitliche Entwertung einer korrekten TAN führt zur 
-> [!CAUTION] **Sperrung des Onlinebanking-Zugangs**
+Das Abrufen von **fünf** TAN-Challenges ohne zwischenzeitliche Entwertung einer korrekten TAN führt zur 
+**Sperrung des Onlinebanking-Zugangs**
 
 ## Links
 
