@@ -59,7 +59,7 @@
    [sections.projects]
         title = "Projects"
         layout = "card"
-        sort = "title"
+        sort = "date"
         reverse = true
         nested = true
         cols = 2
@@ -70,9 +70,9 @@
         footer = "tags"
         orientation = "horizontal"
         style = "border-1 card-emphasize"
-        homepage = 4
-        separator = false
-        wrap = false
+        homepage = 2
+        separator = true
+        wrap = true
 
 [favicon]
     logo = "img/favicon.png"
