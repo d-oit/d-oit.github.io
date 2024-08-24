@@ -34,7 +34,7 @@ Get your oAuth client credentials before you start on the [comdirect Website](ht
 
 ## Requirements
 
-1. Download the latest swagger json from the [comdirect Website] (https://kunde.comdirect.de/cms/media/comdirect_rest_api_swagger.json)
+1. Download the latest swagger json from the [comdirect Website](https://kunde.comdirect.de/cms/media/comdirect_rest_api_swagger.json)
 2. Change the comdirect type "cd_secondary" to  "password
     ```json
     "CdSecondary": {
