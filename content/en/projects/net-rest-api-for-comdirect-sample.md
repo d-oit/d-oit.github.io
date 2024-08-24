@@ -66,6 +66,11 @@ Get your oAuth client credentials before you start on the [comdirect Website](ht
   }
 ```
 
+### Hangfire
+
+The sample use [Hangfire.InMemory](https://github.com/HangfireIO/Hangfire.InMemory) for testing only. 
+Use a persistent storage like SQL Server or Redis for production.
+
 ### Logging
 
 The sample use **Serilog** to log messages configured in the **appsettings.json**
