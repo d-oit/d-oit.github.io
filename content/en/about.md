@@ -5,7 +5,6 @@ date: 2022-04-11
 updated: 2023-08-02
 showComments: false
 ---
-
 {{< persona thumbnail="/img/favicon.png" title="try something out" color="primary" >}}
 Hands-On, Discover
 {{< /persona >}}
@@ -21,6 +20,5 @@ Hands-On, Discover
         Develop myself.
     {{< /card >}}
 {{< /card-group >}}
-
 
 {{< image src="img/CollageAbout.png" caption="Collage" >}}
