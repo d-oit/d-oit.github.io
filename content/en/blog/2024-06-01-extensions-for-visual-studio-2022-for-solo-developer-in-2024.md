@@ -29,4 +29,4 @@ https://marketplace.visualstudio.com/items?itemName=RandomEngy.UnitTestBoilerpla
 https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager
 or >> **Zeta Resource Editor**: FREE multilingual, parallel .NET resource file editing
 https://www.zeta-resource-editor.com/
- 
+
