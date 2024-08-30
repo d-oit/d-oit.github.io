@@ -4,6 +4,7 @@
     enableLanguageSelectionStorage = false 
     enableDarkMode = true
     modes = ["light", "dark"]
+    showBackToTop = true
     
 [home]
     sections = ["blog", "projects"]
