@@ -155,3 +155,7 @@
   translation: Tipp
 - id: warning
   translation: Warnung
+
+ # Back To Top
+- id: backToTop
+  translation: Zurück nach oben
