@@ -116,17 +116,23 @@
 - id: pageNotFoundHome
   translation: "Startseite"
 
-# Footer
+  #Footer
 - id: copyright
   translation: "Copyright"
 - id: rights
   translation: "Alle Rechte vorbehalten"
 - id: poweredBy
-  translation: "Ermöglicht durch {{ . }}."
+  translation: "Powered by {{ . }}."
+ 
+  #Comments
+- id: show
+  translation: "Anzeigen"
+- id: comments
+  translation: "Kommentare"
 
 # Comments
 - id: show
-  translation: "Zeige"
+  translation: "Anzeigen"
 - id: comments
   translation: "Kommentare"
 

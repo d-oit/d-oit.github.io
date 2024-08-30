@@ -13,14 +13,15 @@ thumbnail:
   url: /img/blog/BasketGoogleCalendar.png
   author: Dominik Oswald
 ---
+
 # Why embed Google Calendar on my website?
-I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar. 
+
+I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar.
 
 ## Embed Google Calendar
 
 For an easy way to embed Google Calendar responsive i found the following way better than like ChatGPT & Co. on the Stack Overflow website. 
 The only way that i found to make it nice is to invert the iframe to make it darker. 
-
 
 ```css
 <style>
@@ -55,6 +56,7 @@ iframe{
   <iframe title="BasketCalendar" src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBerlin&bgcolor=%23ffffff&title=Kostenlose%20Livestreams%20-%20Basketball%20-&mode=AGENDA&src=ZjhhMTRjNDAzN2Q5YWI0MTFmOTNmMTllZTM2OTIxOGYwZWQ1NGJlN2MyZDg4ZGVhZjA5ZDZiNzZmYmU3MmU3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D81B60" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 ```
+
 ## References
 
 Responsive: https://stackoverflow.com/questions/39006765/how-do-you-properly-wrap-google-calendar-inside-div-and-make-it-responsive
@@ -63,6 +65,5 @@ Style nicer: https://stackoverflow.com/questions/49306347/how-to-customize-googl
 ### Link to sample calendar
   
 {{< removeDefaultLanguage >}}
-
 
 [Google Calender Live streams - deutsch - (mostly german streams)](/de/blog/kostenlose-basketball-live-streams)

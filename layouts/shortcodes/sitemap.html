@@ -1,0 +1,10 @@
+{{ $currentPage := . }}
+<ul>
+  {{ range site.AllPages }}
+    {{ if eq .Kind "page" }}
+      {{ if not (eq . $currentPage) }}
+        <li><a href="{{ .Permalink }}">{{ .Title }} ({{ .Lang }})</a></li>
+        {{ end }}
+    {{ end }}
+  {{ end }}
+</ul>

@@ -15,3 +15,5 @@ Beruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe es zu kochen,
 {{< /persona >}}
 
 {{< image src="img/CollageAbout.png" caption="Collage" >}}
+
+{{< fas fa-arrow-up-long >}}
