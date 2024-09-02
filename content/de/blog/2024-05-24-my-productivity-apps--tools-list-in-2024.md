@@ -13,20 +13,21 @@ thumbnail:
 ## Windows apps / tools
 
 - **KeePass** seit Jahren bereits im Einsatz. Auch unter Mac / Linux und im Urlaub im Einsatz.
-- **TPFan** (für Lenovo Notebooks Lüftersteuerung)
-- **WhatsApp** for Windows (Zwangsweise für private Nachrichten)
+- **TPFan** für Lenovo Notebooks Lüftersteuerung
+- **WhatsApp** for Windows ... Zwangsweise für private Nachrichten :smile:
 
 ### Grafik
 - **Paint.Net**
 - [PNG to SVG](https://www.microsoft.com/store/productId/9PFK7JFT951V?ocid=pdpshare) 
 
 ### Büro / Organisationstool
-- **draw.io** Desktop >> https://app.diagrams.net
+- **draw.io** Desktop/Web Tool diagramming flow
 - **MultiCommander** (Windows Explorer Alternative zum Kopieren zwischen Laufwerken)
 - **Wiso Steuer / Tax** (deutsche Steuererklärung)
 
 ### Entwicklungstool / Editors
 - [Visual Studio Code](https://code.visualstudio.com)
+- [requestly - get / mod HTTP Requests](https://github.com/requestly/requestly)
 
 ### Video / Audio
 - **OBS Studio**
@@ -35,16 +36,12 @@ thumbnail:
 ## Web
 
 - **Canva** ist ein kostenloses Online-Tool für Grafikdesign
-- **Github** (Softwareentwicklung und Versionsverwaltung)
-- **GoFullPage** (Screenshot einer kompletten Website)
-- **Aixploria** >> https://www.aixploria.com/en/ultimate-list-ai/
+- **Github** Softwareentwicklung und Versionsverwaltung
+- **GoFullPage** Screenshot einer kompletten Website
+- [**Aixploria**](https://www.aixploria.com/en/ultimate-list-ai/)
 
-### Windows 11 Developer Powershell 
+### Windows 11 Developer Powershell
 
 Windows 11 Powershell script für die Installation eines english-US Sprachpaket inklusive notwendiger Tools für die Webentwicklung.
 
-
-{{< gist d-oit bd3aa6854a13de8c203f9710649e18eb >}}
-
-
-https://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb
+[github gist](https://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb)
