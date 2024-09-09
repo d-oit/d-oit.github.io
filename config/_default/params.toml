@@ -2,7 +2,7 @@
     separator = "-"
     description = "d.o.it - let's try things out"
     enableLanguageSelectionStorage = false 
-    enableDarkMode = true
+    enableDarkMode = false
     modes = ["light", "dark"]
     showBackToTop = true
     
