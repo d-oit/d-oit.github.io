@@ -3,6 +3,8 @@
 languageName = "English"
 contentDir = "content/en"
 weight = 1
+[en.params]
+privacyPolicyURL = "privacy"
 # toml-docs-end lang-main
 # toml-docs-start lang-param
 [en.params.head]
@@ -20,6 +22,8 @@ reference = "More Posts"
 languageName = "Deutsch"
 contentDir = "content/de"
 weight = 2
+[de.params]
+privacyPolicyURL = "de/privacy"
 [de.params.head]
 tagline = "Probier etwas aus"
 [de.params.opengraph]

@@ -4,19 +4,13 @@ description: d.o.it - Privacy Policy
 date: 2024-09-09
 updated: 2024-09-09
 type: minimal
-url: en/privacy
-privacyPolicyURL: "en/privacy"
 ---
 
-### Cookies
+## Cookies
 
 I don't use any cookies in this website.
 
-### LocalStorage
-
-Switch the dark/light mode the settings are automatically stored and load from localStorage.
-
-### Hosting
+## Hosting
 
 This Website is hosted on Github Pages. More information: [github data collection](https://docs.github.com/de/pages/getting-started-with-github-pages/about-github-pages#data-collection)
 

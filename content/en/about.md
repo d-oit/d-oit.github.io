@@ -5,7 +5,8 @@ date: 2022-04-11
 updated: 2023-08-02
 ---
 {{< persona thumbnail="/img/favicon.png" title="try something out" color="primary" >}}
-Hands-On, Discover
+Hands-On, Discover. 
+I write about current topics that concern me privately and that I would like to try out.
 {{< /persona >}}
 
 {{< card-group align="center" class="border-0" padding="3" >}}
@@ -22,4 +23,3 @@ Hands-On, Discover
 
 
 {{< image src="img/CollageAbout.png" caption="Collage" >}}
-

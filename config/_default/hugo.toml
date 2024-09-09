@@ -12,6 +12,7 @@ baseURL = "https://d-oit.github.io/"
 enableEmoji = true
 enableRobotsTXT = true
 enableInlineShortcodes = true
+   
 
 [[module.imports]]
   path = 'github.com/gethinode/hinode'

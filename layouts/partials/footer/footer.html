@@ -1,9 +1,8 @@
 <footer class="container-fluid footer p-3">
     <div class="container-xxl">
-        <div class="row d-flex justify-content-between">
-            <div class="col-auto"></div>
+        <div class="row d-flex justify-content-end">
             <div class="col-auto" id="Copyright">
-                <p>
+                <p class="text-muted">
                     {{- $copyright := printf "%s © %s %s %s." (T "copyright") (dateFormat "2006" now) .Site.Title (T
                     "rights") }}
                     {{ cond (gt (len .Site.Copyright) 0) .Site.Copyright $copyright }}
@@ -13,19 +12,25 @@
                     "Hinode" "class" "link-bg-footer" "page" .Page) }}
                     {{ T "poweredBy" $link | safeHTML }}
                     {{ end }}
-                    {{ if .Site.Params.main.showFooterPrivacy |default true }}
+                    {{ if .Site.Params.main.showFooterPrivacy }}
                     <span id="privacy">
-                         | <a href="{{.Site.Params.main.privacyPolicyURL | default "privacy-policy" }}">{{ T "privacyPolicy" }}</a>
+                        {{- $privacyPolicyText := "" -}}
+                        {{- $privacyPolicyText = T "privacyPolicy" | safeHTML -}}
+                        {{- $privacyPolicyURL := "" -}}
+                        {{- $privacyPolicyURL = partial "assets/link.html" (dict "destination"
+                        .Site.Params.main.privacyPolicyURL "text" $privacyPolicyText "page" .Page) -}}
+                        | {{$privacyPolicyURL | safeHTML }}
+
                     </span>
                     {{ end }}
                 </p>
             </div>
-         
-            <div class="col-auto" id="backToTop">
+
+            <div class="col-auto float-right" id="backToTop">
                 {{ if .Site.Params.main.showBackToTop }}
                 <div class="d-inline-flex">
                     <button type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="{{ T "backToTop" | safeHTML }}" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        title="{{ T " backToTop" | safeHTML }}" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
