@@ -5,7 +5,7 @@
     enableDarkMode = false
     modes = ["light", "dark"]
     showBackToTop = true
-    showFooterPrivacy = true
+    showFooterPrivacy = false
    
 [home]
     sections = ["blog", "projects"]
