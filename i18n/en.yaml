@@ -1,3 +1,7 @@
-  # Back To Top
+# Back To Top
 - id: backToTop
   translation: Back to Top
+
+# Privacy Policy
+- id: privacyPolicy 
+  translation: Privacy Policy

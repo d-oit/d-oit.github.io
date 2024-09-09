@@ -11,6 +11,7 @@
         "Codespaces",
         "Dominik",
         "Dumay",
+        "gehostet",
         "GETDATE",
         "github",
         "gitlab",
@@ -51,6 +52,7 @@
     ],
     "ltex.language": "de",
     "ltex.additionalRules.enablePickyRules": true,
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "frontMatter.content.snippets": {}
     
 }

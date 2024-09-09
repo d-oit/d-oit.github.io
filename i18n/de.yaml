@@ -165,3 +165,7 @@
  # Back To Top
 - id: backToTop
   translation: Zurück nach oben
+
+# Privacy Policy
+- id: privacyPolicy 
+  translation: Datenschutz

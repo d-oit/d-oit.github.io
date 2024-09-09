@@ -3,7 +3,6 @@ title: About
 description: d.o.it - Try something out.
 date: 2022-04-11
 updated: 2023-08-02
-showComments: false
 ---
 {{< persona thumbnail="/img/favicon.png" title="try something out" color="primary" >}}
 Hands-On, Discover
@@ -21,4 +20,6 @@ Hands-On, Discover
     {{< /card >}}
 {{< /card-group >}}
 
+
 {{< image src="img/CollageAbout.png" caption="Collage" >}}
+
