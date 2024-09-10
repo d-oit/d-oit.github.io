@@ -17,7 +17,7 @@
                             {{- $privacyPolicyText := "" -}}
                             {{- $privacyPolicyText = T "privacyPolicy" | safeHTML -}}
                             {{- $privacyPolicyURL := "" -}}
-                            {{- $privacyPolicyURL = partial "assets/link.html" (dict "destination" .Site.Params.main.privacyPolicyURL "text" $privacyPolicyText "page" .Page) -}}
+                             | {{- $privacyPolicyURL = partial "assets/link.html" (dict "destination" .Site.Params.main.privacyPolicyURL "text" $privacyPolicyText "page" .Page) -}}
                             {{ $privacyPolicyURL | safeHTML }}
                         </span>
                     {{ end }}

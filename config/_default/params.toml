@@ -7,6 +7,11 @@
     showBackToTop = true
     showFooterPrivacy = false
     privacyPolicyURL = "privacy"
+    loading = "lazy"
+    breakpoint = "md"
+[main.externalLinks]
+        cue = true
+        tab = true
    
 [home]
     sections = ["blog", "projects"]
