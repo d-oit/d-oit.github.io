@@ -1,11 +1,11 @@
 ---
 title: About
-description: d.o.it - Try something out.
+description: d.o.it - let's try things out.
 date: 2022-04-11
 updated: 2023-08-02
 ---
 {{< persona thumbnail="/img/favicon.png" title="try something out" color="primary" >}}
-Hands-On, Discover. 
+Hands-On, Discover.
 I write about current topics that concern me privately and that I would like to try out.
 {{< /persona >}}
 

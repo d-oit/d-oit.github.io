@@ -6,6 +6,7 @@
     modes = ["light", "dark"]
     showBackToTop = true
     showFooterPrivacy = false
+    privacyPolicyURL = "privacy"
    
 [home]
     sections = ["blog", "projects"]

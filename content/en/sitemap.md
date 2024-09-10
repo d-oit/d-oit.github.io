@@ -4,8 +4,8 @@ date: ${1:$TM_FILENAME_BASE}
 draft: false
 type: minimal
 sitemap_exclude: true 
-metadata: "none"
 slug: sites
+robots: "noindex"
 # description: 
 # tags: 
 # icon: 

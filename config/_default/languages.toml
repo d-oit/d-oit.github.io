@@ -2,10 +2,7 @@
 [en]
 languageName = "English"
 contentDir = "content/en"
-privacyPolicyURL = "privacy"
 weight = 1
-[en.params]
-privacyPolicyURL = "privacy"
 # toml-docs-end lang-main
 # toml-docs-start lang-param
 [en.params.head]
