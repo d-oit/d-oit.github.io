@@ -74,8 +74,10 @@
     }
   ],
   "frontMatter.framework.id": "hugo",
-  "frontMatter.content.publicFolder": "static",
-  
+  "frontMatter.content.publicFolder": {
+    "path": "[[workspace]]/assets/img/blog",
+    "relative": true
+  },
   "frontMatter.preview.host": "http://localhost:1313",
   "frontMatter.content.pageFolders": [
     {
@@ -94,12 +96,7 @@
       "title": "projects_en",
       "path": "[[workspace]]/content/en/projects"
     }
-   
   ],
-      "frontMatter.content.publicFolder": {
-      "path": "[[workspace]]/assets/img/blog",
-      "relative": true
-    
-  },
-  "frontMatter.git.enabled": true
+  "frontMatter.git.enabled": true,
+  "frontMatter.content.snippets": {}
 }

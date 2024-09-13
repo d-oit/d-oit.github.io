@@ -4,10 +4,10 @@ slug: extensions-visual-studio-2022-solo-developer-2024
 description: List of useful free / non-paid  extensions for Microsoft Visual Studio 2022 for solo developer in 2024
 date: 2024-06-01T11:34:27.682Z
 tags:
-    - Visual Studio
-    - Developer
+  - Visual Studio
+  - Developer
 categories:
-    - Software Development
+  - Software Development
 thumbnail:
   url: img/blog/ExtensionsVS.jpg
   origin: Copilot Designer

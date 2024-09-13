@@ -24,11 +24,11 @@ Die Einrichtung und die ersten Blogartikel waren schnell erstellt. Die Markdown 
 Im Detail ging es dann los mit verschiedenen Konfiguration und speziellen Hinode Markdown Shortcodes. Dazu ist einiges gut in den Hugo CMS und Hinode Docs erklärt. Leider auch vieles historisch oder Hinode verwendet Einrichtungen anders als Hugo CMS. Feedback gibt es aber immer schnell und im Code kann dann github eingesehen werden.
 Die Programmierung der Erweiterung ist in js in Verbindung mit GO / Hugo CMS Variablen ist ein wenig gewöhnungsbedürftig.
 
-Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der ausgewählten Sprache. Dies wurde bisher noch nicht vom Hinode CMS unterstützt. 
+Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der ausgewählten Sprache. Dies wurde bisher noch nicht vom Hinode CMS unterstützt.
 
 {{< file lang="js" full=false show=false path="assets/js/critical/languageSelector.js" id="file-collapse-1" >}}
 
-### Erklärung 
+### Erklärung
 
 (vor allem für mich selbst :smile:)
 
@@ -38,7 +38,6 @@ Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der aus
 Der Code wird nur verwendet wenn die String Variable "true" ist.
 
 {{**-** Minus Zeichen = string variable
-
 
 ## Frontend
 
@@ -53,8 +52,35 @@ Wichtig ist für mich beim Frontend das dieses ähnliche wie bei Wordpress von a
 
 ## Erste Änderung am Theme
 
-Beim Testen des Themes ist mir aufgefallen, dass einige Konfigurationen gefehlt hatten für die jeweilige Sprache. Da die Sourcen bei github zur Einsicht vorligen konnte dies auch angepasst werden. Was nicht funktioniert hat ist die Speicherung der Auswahl der Sprache im Browser auf der Website. Beim nächsten Mal laden wird die definierte Standardsprache verwendet. Letztlich kann sich der Anwender merken und ein Bookmark mit der jeweiligen Sprache setzten. Wäre aber schön, wenn dies funktionieren würde. 
+Beim Testen des Themes ist mir aufgefallen, dass einige Konfigurationen gefehlt hatten für die jeweilige Sprache. Da die Sourcen bei github zur Einsicht vorligen konnte dies auch angepasst werden. Was nicht funktioniert hat ist die Speicherung der Auswahl der Sprache im Browser auf der Website. Beim nächsten Mal laden wird die definierte Standardsprache verwendet. Letztlich kann sich der Anwender merken und ein Bookmark mit der jeweiligen Sprache setzten. Wäre aber schön, wenn dies funktionieren würde.
 
 Ein erster Prototype ware schnell erstellt. Nach einigen Tests und dem bisher unbekannten CMS konnte in Abstimmung mit dem Entwickler vom Theme ein funktionierendes JavaScript File erstellt werden.
 
-Das war ein erstes Fazit. Weitere folgen...
+Das war ein erstes Fazit. 
+
+## Update 9 / 2024
+
+Für eine Anpassung des Footers wollte ich nur einfach mal schnell einen Link einfügen. Normalerweise wäre dies in Wordpress oder anderen System per Widget möglich. Per Html dann einfach nur ein a tag mit dem jeweiligen Link.
+
+Auf Grund der internen Logik von Hugo / Hinode für aliase wird wenn notwendig ein refresh der Seite durchgeführt. Dadurch wird ein einfacher a href link nicht 1:1 erstellt.
+
+ ```html
+ <meta http-equiv="refresh" content="0; url=https://domain.xyz/some-post/">
+ ```
+
+Erstellung des Link erfolgt durch partial "assets/link.html":
+
+{{< command >}}
+/*
+{{- $privacyPolicyURL = partial "assets/link.html" (dict "destination" .Site.Params.main.privacyPolicyURL "text" $privacyPolicyText "page" .Page) -}}
+{{ $privacyPolicyURL | safeHTML }}
+*/
+{{< /command >}}
+
+Kompletter Footer:
+
+{{< file path="./layouts/partials/footer.html" id="file-collapse-footer-1" show=false >}}
+
+### Code Verwendung
+
+Dadurch das es keinen vollständigen Frontend Editor gibt musste ich immer wieder in der Hinode Dokumentation nachschauen wie die jeweiligen Komponenten verwendet werden. Ebenso muss bei der Programmierung an einigen Stellen ein umdenken stattfinden von Serverseitigen / SPA Programmierung hin zu einer reinen statischen HTML Seite.

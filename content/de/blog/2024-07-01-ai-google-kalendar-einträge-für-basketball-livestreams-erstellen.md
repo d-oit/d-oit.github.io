@@ -16,7 +16,7 @@ slug: google-kalender-eintrage-aus-ai-prompt
 
 Für mich selbst habe ich meinen **google calendar** um einen *BasketballLive* Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte. 
 
-Warum **google calendar**? 
+Warum **google calendar**?
 
 Ich wollte einfach nicht nochmal einen Kalender installieren. Dieser funktioniert in jedem gängigen Browser, Android und ist einfach zu verwalten.
 
@@ -26,13 +26,13 @@ Die Seite ist hier zu finden:
 
 ## Kalender
 
-Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund. 
+Es gibt auf jeden Fall schönere Darstellungen / Kalender. Letztlich steht die Benachrichtigung und Einfachheit im Vordergrund.
 
-Normalerweise trage ich diese einfach manuell ein, falls ich eine Übertragung finde, die mich interessiert. 
+Normalerweise trage ich diese einfach manuell ein, falls ich eine Übertragung finde, die mich interessiert.
 
-Für die Automatisierung habe ich bereits einiges getestet und probiert. Der Aufwand sollte dabei gering bleiben. Wenn man es schön(er) haben möchte; artet es in mehr Zeitaufwand und Test aus. 
+Für die Automatisierung habe ich bereits einiges getestet und probiert. Der Aufwand sollte dabei gering bleiben. Wenn man es schön(er) haben möchte; artet es in mehr Zeitaufwand und Test aus.
 
-Aktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form: 
+Aktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, daher erst mal in der aktuellen Form:
 
 ## Beispiel magentasport
 
@@ -85,11 +85,24 @@ Als Ergebnis kommt jeweils ein Link heraus; der in einem Browser mit angemeldete
 https://www.google.com/calendar/render?action=TEMPLATE&text=Olympia+2024%3A+Deutschland+%E2%80%93+Japan&dates=20240727T113000Z/20240727T130000Z&details=DBB+Herren+-+Olympia+2024%0ALivestream%3A+https%3A%2F%2Fwww.sportschau.de%2Folympia&location=Lille
 ```
 
-***Wunsch***: Klasse wäre, wenn Google *Gemini* direkt mit Google Calendar verknüpft werden könnte. Ist ja der gleiche Google Account. Dies ist aber nicht möglich. Ebenso werden in Gemini keine korrekte Zeitzone erstellt. 
+***Wunsch***: Klasse wäre, wenn Google *Gemini* direkt mit Google Calendar verknüpft werden könnte. Ist ja der gleiche Google Account. Dies ist aber nicht möglich. Ebenso werden in Gemini keine korrekte Zeitzone erstellt.
 
-4. ics Datei in google Kalender importieren 
+4. ics Datei in google Kalender importieren
 
 ### Erweiterungen
 
-Alternative ist Anbindung an den google calendar per API für jeden einzelnen Termin oder einen alternativen Kalender. 
-Machbar ist einiges ... mal sehen was draus wird {{< fas fa-tv>}} {{< fas fa-basketball>}} 
+Alternative ist Anbindung an den google calendar per API für jeden einzelnen Termin oder einen alternativen Kalender.
+Machbar ist einiges ... mal sehen was draus wird {{< fas fa-tv>}} {{< fas fa-basketball>}}
+
+## Prompt 2 Google Calendar
+
+Mit Hilfe von **GPTengineer** war die Erstellung einer WebApp leichter. Nachdem die GPTengineer BETA aktuell in aller Mund ist hat es sich angeboten diese auszutesten.
+Die Google Gemini API verfügt aktuell über eine kostenlose Stufe. Ebenso wollte ich diese auch bei Gelegenheit testen.
+
+Das Ergebnis ist eine WebApp die google Calendar Einträge erzeugt aus einem Text der die Daten der Übertagungen enthält. Ebenso besteht die Möglichkeit den Prompt anzupassen falls notwendig. Das nervige bei solchen Projekten ist das Suchen, Erstellen, Testen der APIs. 
+Hier hilft aktuell **perplexity** für den Start der notwendigen Prompts.
+
+ {{< img src="img/doitPrompt2Cal.png" caption="d.o.it Prompt2GCal" >}}
+
+[Website](https://streams2cal.netlify.app/)
+[Github](https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt)

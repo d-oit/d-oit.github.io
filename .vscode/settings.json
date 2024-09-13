@@ -52,7 +52,6 @@
     ],
     "ltex.language": "de",
     "ltex.additionalRules.enablePickyRules": true,
-    "editor.formatOnSave": false,
-    "frontMatter.content.snippets": {}
+    "editor.formatOnSave": false
     
 }
