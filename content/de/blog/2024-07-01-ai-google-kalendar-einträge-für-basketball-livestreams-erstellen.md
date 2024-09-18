@@ -102,7 +102,7 @@ Die Google Gemini API verfügt aktuell über eine kostenlose Stufe. Ebenso wollt
 Das Ergebnis ist eine WebApp die google Calendar Einträge erzeugt aus einem Text der die Daten der Übertagungen enthält. Ebenso besteht die Möglichkeit den Prompt anzupassen falls notwendig. Das nervige bei solchen Projekten ist das Suchen, Erstellen, Testen der APIs. 
 Hier hilft aktuell **perplexity** für den Start der notwendigen Prompts.
 
- {{< img src="img/doitPrompt2Cal.png" caption="d.o.it Prompt2GCal" >}}
+ {{< image src="img/doitPrompt2Cal.png" caption="d.o.it Prompt2GCal" >}}
 
 [Website](https://streams2cal.netlify.app/)
 [Github](https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt)

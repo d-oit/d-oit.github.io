@@ -24,9 +24,7 @@ Die Einrichtung und die ersten Blogartikel waren schnell erstellt. Die Markdown 
 Im Detail ging es dann los mit verschiedenen Konfiguration und speziellen Hinode Markdown Shortcodes. Dazu ist einiges gut in den Hugo CMS und Hinode Docs erklärt. Leider auch vieles historisch oder Hinode verwendet Einrichtungen anders als Hugo CMS. Feedback gibt es aber immer schnell und im Code kann dann github eingesehen werden.
 Die Programmierung der Erweiterung ist in js in Verbindung mit GO / Hugo CMS Variablen ist ein wenig gewöhnungsbedürftig.
 
-Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der ausgewählten Sprache. Dies wurde bisher noch nicht vom Hinode CMS unterstützt.
-
-{{< file lang="js" full=false show=false path="assets/js/critical/languageSelector.js" id="file-collapse-1" >}}
+Hier ein Beispiel der erstellen [JavaScript Datei](https://github.com/gethinode/hinode/blob/main/assets/js/critical/languageSelector.js) zum Laden und Speichern der ausgewählten Sprache.
 
 ### Erklärung
 
@@ -34,7 +32,7 @@ Hier ein Beispiel der erstellen JavaScript Datei zum Laden und Speichern der aus
 
 **{{- if site.Params.main.enableLanguageSelectionStorage -}}**
 
-**enableLanguageSelectionStorage** = Einstellung in der **params.toml** Hugo Einstellungsdatei. 
+**enableLanguageSelectionStorage** = Einstellung in der **params.toml** Hugo Einstellungsdatei.
 Der Code wird nur verwendet wenn die String Variable "true" ist.
 
 {{**-** Minus Zeichen = string variable
@@ -56,7 +54,7 @@ Beim Testen des Themes ist mir aufgefallen, dass einige Konfigurationen gefehlt 
 
 Ein erster Prototype ware schnell erstellt. Nach einigen Tests und dem bisher unbekannten CMS konnte in Abstimmung mit dem Entwickler vom Theme ein funktionierendes JavaScript File erstellt werden.
 
-Das war ein erstes Fazit. 
+Das war ein erstes Fazit.
 
 ## Update 9 / 2024
 
@@ -77,9 +75,9 @@ Erstellung des Link erfolgt durch partial "assets/link.html":
 */
 {{< /command >}}
 
-Kompletter Footer:
+Angepasster Footer mit "Zurück zum Anfang" Button-Link
 
-{{< file path="./layouts/partials/footer.html" id="file-collapse-footer-1" show=false >}}
+{{< file path="./layouts/partials/footer/footer.html" id="file-collapse-footer-1" show=false >}}
 
 ### Code Verwendung
 
