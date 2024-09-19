@@ -5,3 +5,10 @@
 # Privacy Policy
 - id: privacyPolicy 
   translation: Privacy Policy
+
+# Toast color.js saved
+- id: websiteThemeMode 
+  translation: Website Theme Mode
+
+- id: websiteThemeModeText 
+  translation: Saved to local browser storage.

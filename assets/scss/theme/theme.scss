@@ -8,3 +8,46 @@
     word-wrap: break-word !important;
     word-break: break-word !important;
   }   
+
+  .theme-switcher {
+    position: relative;
+}
+.theme-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+
+    cursor: pointer;
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+}
+.theme-header svg:first-child {
+    margin-right: 5px;
+}
+.theme-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+.theme-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+
+    cursor: pointer;
+}
+.theme-option:hover {
+
+}
+.theme-option.active {
+
+}
+.save-icon {
+    cursor: pointer;
+}

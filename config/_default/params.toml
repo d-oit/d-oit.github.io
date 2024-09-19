@@ -2,16 +2,18 @@
     separator = "-"
     description = "d.o.it - let's try things out"
     enableLanguageSelectionStorage = false 
-    enableDarkMode = false
+    enableDarkMode = true
     modes = ["light", "dark"]
     showBackToTop = true
-    showFooterPrivacy = false
+    showFooterPrivacy = true
     privacyPolicyURL = "privacy"
+
     loading = "lazy"
     breakpoint = "md"
+    
 [main.externalLinks]
-        cue = true
-        tab = true
+    cue = true
+    tab = true
    
 [home]
     sections = ["blog", "projects"]

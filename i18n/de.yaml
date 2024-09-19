@@ -169,3 +169,10 @@
 # Privacy Policy
 - id: privacyPolicy 
   translation: Datenschutz
+
+  # Toast color.js saved
+- id: websiteThemeMode 
+  translation: Website Theme Mode
+
+- id: websiteThemeModeText 
+  translation: Im lokalen Browser gespeichert.
