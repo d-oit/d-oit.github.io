@@ -709,6 +709,7 @@
       "getsessionstatusasyncaccesstoken-method",
       "gettokenandvalidatesessionasync-method",
       "gettokenasync-method",
+      "github-readme",
       "grafik",
       "hangfire",
       "holdername-property",
