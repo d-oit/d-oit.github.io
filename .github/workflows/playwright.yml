@@ -3,10 +3,10 @@ name: Playwright Tests
 on:
   push:
     branches:
-      - main
+      - mainTODO
   pull_request:
     branches:
-      - main
+      - mainTODO
 
 jobs:
   test:
