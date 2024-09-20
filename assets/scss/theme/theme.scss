@@ -9,14 +9,14 @@
     word-break: break-word !important;
   }   
 
-  .theme-switcher {
+// begin theme mode switch  
+.theme-switcher {
     position: relative;
 }
 .theme-header {
     display: flex;
     align-items: center;
-    padding: 12px;
-
+    padding: 2px;
     cursor: pointer;
     border-radius: 8px;
     width: 60px;
@@ -42,12 +42,13 @@
 
     cursor: pointer;
 }
-.theme-option:hover {
 
-}
-.theme-option.active {
-
-}
 .save-icon {
     cursor: pointer;
+    margin-left:20px;
+    margin-right:5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
+// end theme mode switch
