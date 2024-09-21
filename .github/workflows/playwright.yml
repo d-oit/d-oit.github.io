@@ -18,7 +18,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: '1.16' # Replace with the version you need
+        go-version: '1.18' # Replace with the version you need
 
     - name: Verify Go installation
       run: go version
@@ -27,7 +27,7 @@ jobs:
       run: echo "$GOPATH/bin" >> $GITHUB_PATH
 
     - name: Build Hugo site
-      uses: lowply/build-hugo@v0.134.0
+      uses: lowply/build-hugo@v0.134.3
       
 # playwright
     - uses: actions/checkout@v4
