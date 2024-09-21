@@ -1,6 +1,10 @@
 name: 🧪 Playwright End To End (e2e) Tests Workflow
  
-
+on:
+  push:
+    branches:
+      - main
+      
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -8,23 +12,13 @@ jobs:
   e2e-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: 🛒 Checkout
-        uses: actions/checkout@v2
-      - name: 🧱 Hugo build
-        uses: jakejarvis/hugo-build-action@v0.134
-        with:
-          args: --gc --config ./config.toml -b http://127.0.0.1:1313
-      - name: 🕸️ Run server
-        run: |
-          cd public && python -m http.server 1313 &
-      - name: Test hugo endpoint
-        run: |
-          curl -v http://127.0.0.1:1313
-          if [ $? -ne 0 ]; then
-            echo "Curl command failed"
-            exit 1
-          fi
-      - name: 👨‍👩‍👧 Install playwright dependencies
+     - name: Check out code
+      uses: actions/checkout@v2
+        - name: Build Hugo
+      # You may pin to the exact commit or the version.
+    # uses: lowply/build-hugo@e0ce7bef4547f265fbc696d5e3a9cba808aa8166
+      uses: lowply/build-hugo@v0.134.3
+       - name: 👨‍👩‍👧 Install playwright dependencies
         working-directory: playwright/ci-test
         run: |
           npm install
