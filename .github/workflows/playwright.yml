@@ -1,10 +1,10 @@
 name: 🧪 Playwright End To End (e2e) Tests Workflow
- 
+
 on:
   push:
     branches:
       - main
-      
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -15,6 +15,7 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
+
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
@@ -23,13 +24,10 @@ jobs:
     - name: Verify Go installation
       run: go version
 
-    - name: Add Go to PATH
-      run: echo "$GOPATH/bin" >> $GITHUB_PATH
-
     - name: Build Hugo site
       uses: lowply/build-hugo@v0.134.3
-      
-# playwright
+
+    # Playwright steps
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
