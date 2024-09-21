@@ -16,7 +16,7 @@ jobs:
       - name: 🛒 Checkout
         uses: actions/checkout@v2
       - name: 🧱 Hugo build
-        uses: jakejarvis/hugo-build-action@v0.134.2 
+        uses: jakejarvis/hugo-build-action@v0.134
         with:
           args: --gc --config ./config.toml -b http://127.0.0.1:1313
       - name: 🕸️ Run server
