@@ -24,9 +24,19 @@ jobs:
     - name: Verify Go installation
       run: go version
 
-    - name: Build Hugo site
-      uses: lowply/build-hugo@v0.134.3
-
+    - name: Hugo-Site
+    # You may pin to the exact commit or the version.
+    # uses: chabad360/hugo-actions@3a5b10adf0b017f695597e22ebcb79e40fd6cb4e
+    - uses: chabad360/hugo-actions@v2
+      #with:
+        # The path to build the site to
+        #buildPath: # optional, default is ./public
+        # Arguments to pass to Hugo
+        #args: # optional, default is --gc --minify --cleanDestinationDir
+        # The version of Hugo to use
+        #hugoVersion: # optional
+         
+      
     # Playwright steps
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
