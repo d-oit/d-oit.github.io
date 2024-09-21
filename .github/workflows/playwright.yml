@@ -15,7 +15,18 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-    - name: Build Hugo
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '1.16' # Replace with the version you need
+
+    - name: Verify Go installation
+      run: go version
+
+    - name: Add Go to PATH
+      run: echo "$GOPATH/bin" >> $GITHUB_PATH
+
+    - name: Build Hugo site
       uses: lowply/build-hugo@v0.134.3
 
     - name: 👨‍👩‍👧 Install playwright dependencies
