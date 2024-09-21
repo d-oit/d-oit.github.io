@@ -9,27 +9,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  e2e-tests:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-     - name: Check out code
+    - name: Check out code
       uses: actions/checkout@v2
-        - name: Build Hugo
-      # You may pin to the exact commit or the version.
-    # uses: lowply/build-hugo@e0ce7bef4547f265fbc696d5e3a9cba808aa8166
+    - name: Build Hugo
       uses: lowply/build-hugo@v0.134.3
-       - name: 👨‍👩‍👧 Install playwright dependencies
-        working-directory: playwright/ci-test
-        run: |
+
+    - name: 👨‍👩‍👧 Install playwright dependencies
+      working-directory: playwright/ci-test
+      run: |
           npm install
           npm ci
           npx playwright install --with-deps
-      - name: ⚡️ Run Playwright tests
-        working-directory: playwright/ci-test
-        run: npx playwright test
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
+    - name: ⚡️ Run Playwright tests
+      working-directory: playwright/ci-test
+      run: npx playwright test
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
           name: playwright-report
           path: playwright/ci-test/playwright-report/
           retention-days: 30
