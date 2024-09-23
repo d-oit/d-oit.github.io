@@ -1,6 +1,3 @@
-// console.log('{{ .Page.RelPermalink   }}');
-// console.log('{{ .Page.Permalink   }}');
-
 {{ if in .Permalink "/about/" }}
 
 (() => {
@@ -20,9 +17,26 @@
           cardView.classList.remove('d-none');
         }
       });
+
+      var searchBox = document.getElementById('searchBoxInlinePage');
+      if(searchBox != null) {
+        searchBox.addEventListener('input', function() {
+          var filter = this.value.toLowerCase();
+          var listItems = document.querySelectorAll('#listView li');
+
+          listItems.forEach(function(item) {
+              var text = item.textContent.toLowerCase();
+              if (text.includes(filter)) {
+                  item.style.display = '';
+              } else {
+                  item.style.display = 'none';
+              }
+          });
+        });
+      }
     }
-  })
+  });
 
-})()  
+})();
 
-{{ end -}}
+{{ end }}
