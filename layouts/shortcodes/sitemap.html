@@ -16,7 +16,7 @@
   </ul>
 
   <div id="cardView" class="d-none">
-    <div class="row">
+    <div class="row gap-3">
       {{ range site.AllPages }}
         {{ if eq .Kind "page" }}
           {{ if not (eq . $currentPage) }}
