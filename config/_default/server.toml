@@ -40,7 +40,7 @@ for = '/**'
         """
     Access-Control-Allow-Origin = "*"
 # toml-docs-end server-config
-
+defaultContentLanguageInSubdir = true
 [[redirects]]
 	from = '/de/**'
 	to = '/de/404.html'
