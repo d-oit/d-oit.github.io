@@ -176,3 +176,12 @@
 
 - id: websiteThemeModeText 
   translation: Im lokalen Browser gespeichert.
+
+  # table
+- id: tablesSearchTitle 
+  translation: Suche...
+- id: tablesNoRows 
+  translation: Keine Zeilen vorhanden
+- id: tablesNoResults 
+  translation: Nichts gefunden
+

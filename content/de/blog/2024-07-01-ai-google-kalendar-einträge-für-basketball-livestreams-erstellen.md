@@ -12,6 +12,7 @@ tags:
 categories:
     - Software Development
 slug: google-kalender-eintrage-aus-ai-prompt
+includeToc: false
 ---
 
 Für mich selbst habe ich meinen **google calendar** um einen *BasketballLive* Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte. 
@@ -22,7 +23,7 @@ Ich wollte einfach nicht nochmal einen Kalender installieren. Dieser funktionier
 
 Die Seite ist hier zu finden:
 
-{{< link "kostenlose-basketball-live-streams/" >}}Kalender Live streams{{< /link >}}
+{{< link "übersicht-kostenlose-basketball-live-streams/" >}}Übersicht Live streams{{< /link >}}
 
 ## Kalender
 
