@@ -1,0 +1,54 @@
+{{ $data := dict }}
+{{ $icsURL := .Get "url" }}
+{{ with resources.GetRemote $icsURL }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+  {{ .Content | transform.Unmarshal }}
+
+{{ $icsContent := $icsURL }}
+{{ $events := split $icsContent "\nBEGIN:VEVENT" }}
+{{ $counter := 0 }}
+
+<table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Summary</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $index, $event := $events }}
+        {{ if gt $index 0 }}
+          {{ $date := findRE "DTSTART.*:(.*)" $event | first | replaceRE "DTSTART.*:" "" }}
+          {{ $summary := findRE "SUMMARY:(.*)" $event | first | replaceRE "SUMMARY:" "" }}
+          {{ $location := findRE "LOCATION:(.*)" $event | first | replaceRE "LOCATION:" "" }}
+          <tr data-index="{{ $counter }}">
+            <td class="text-start">{{ $date }}</td>
+            <td class="text-start">{{ $summary }}</td>
+            <td class="text-start">{{ $location }}</td>
+          </tr>
+          {{ $counter = add $counter 1 }}
+        {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource." }}
+{{ end }}
+
+{{/*  {{ range $index, $event := $events }}
+      {{ if gt $index 0 }}
+        {{ $date := findRE "DTSTART.*:(.*)" $event | first | replaceRE "DTSTART.*:" "" }}
+        {{ $summary := findRE "SUMMARY:(.*)" $event | first | replaceRE "SUMMARY:" "" }}
+        {{ $location := findRE "LOCATION:(.*)" $event | first | replaceRE "LOCATION:" "" }}
+        <tr data-index="{{ $counter }}">
+          <td class="text-start">{{ $date }}</td>
+          <td class="text-start">{{ $summary }}</td>
+          <td class="text-start">{{ $location }}</td>
+        </tr>
+        {{ $counter = add $counter 1 }}
+      {{ end }}
+    {{ end }}  */}}

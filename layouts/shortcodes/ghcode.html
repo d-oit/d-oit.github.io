@@ -3,8 +3,7 @@
   {{ with .Err }}
     {{ errorf "%s" . }}
   {{ else }}
-    {{ $lang := path.Ext $file | strings.TrimPrefix "." }}
-    {{ highlight .Content $lang }}
+  {{ .Content | markdownify }}
   {{ end }}
 {{ else }}
   {{ errorf "Unable to get remote resource." }}

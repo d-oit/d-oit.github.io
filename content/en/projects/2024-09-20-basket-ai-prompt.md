@@ -13,9 +13,10 @@ thumbnail:
 layout: docs
 lang: "en-US"
 slug: prompt2gcal
+includeToc: true
 ---
 
-React WebApp: Basketball live streams prompt google calendar events creator with google api
+## React WebApp: Basketball live streams prompt google calendar events creator with google api
 
 {{< button color="dark" cue=false order="last" icon="fab github" tooltip="Source Code on github" href="https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt" >}}
     Source Code

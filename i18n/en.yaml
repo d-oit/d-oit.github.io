@@ -12,3 +12,6 @@
 
 - id: websiteThemeModeText 
   translation: Saved to local browser storage.
+
+- id: tablePageSelectAll
+  translation: "All"

@@ -1,10 +1,43 @@
 {{ $currentPage := . }}
-<ul>
-  {{ range site.AllPages }}
-    {{ if eq .Kind "page" }}
-      {{ if not (eq . $currentPage) }}
-        <li><a href="{{ .Permalink }}">{{ .Title }} ({{ .Lang }})</a></li>
+
+<p class="text-end">
+<button id="toggleView" class="btn btn-primary">Switch View</button>
+</p>
+
+<div id="content">
+  
+  <div id="listView"> 
+    <p>
+      <input type="text" class="form-control" id="searchBoxInlinePage" placeholder="Search for title or language (en or de)...">
+    </p>
+    <ul>
+      {{ range site.AllPages }}
+        {{ if eq .Kind "page" }}
+          {{ if not (eq . $currentPage) }}
+            <li><a href="{{ .Permalink }}">{{ .Title }} ({{ .Lang }})</a></li>
+          {{ end }}
         {{ end }}
-    {{ end }}
-  {{ end }}
-</ul>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div id="cardView" class="d-none">
+    <div class="row">
+      {{ range site.AllPages }}
+        {{ if eq .Kind "page" }}
+          {{ if not (eq . $currentPage) }}
+            <div class="col-sm-6 mb-3 mb-sm-1">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">{{ .Title }}</h5>
+                  <p class="card-text">{{ .Lang }}</p>
+                  <a href="{{ .Permalink }}" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>

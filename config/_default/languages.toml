@@ -6,10 +6,10 @@ weight = 1
 # toml-docs-end lang-main
 # toml-docs-start lang-param
 [en.params.head]
-tagline = "Try something out"
+tagline = "let's try things out."
 [en.params.social]
 title = "Follow me"
-caption = "d.o.it - Try something out"
+caption = "d.o.it - let's try things out."
 [en.params.footer]
 # license = "Licensed under Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
 # toml-docs-end lang-param
