@@ -15,6 +15,11 @@ slug: google-kalender-eintrage-aus-ai-prompt
 includeToc: false
 ---
 
+> [!NOTE]  
+> Aus nicht ganz klaren Datenschutzgründen (fonts werden vom Server geladen) habe ich mich dagegen entschieden den Google Calendar auf der Website einzubetten. Als Alternative werden die Daten vom Google Calendar als Markdown Tabelle angezeigt.
+
+# Google Calendar
+
 Für mich selbst habe ich meinen **google calendar** um einen *BasketballLive* Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte. 
 
 Warum **google calendar**?
@@ -105,5 +110,7 @@ Hier hilft aktuell **perplexity** für den Start der notwendigen Prompts.
 
  {{< image src="img/doitPrompt2Cal.png" caption="d.o.it Prompt2GCal" >}}
 
-[Website](https://streams2cal.netlify.app/)
-[Github](https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt)
+
+{{< button href="https://streams2cal.netlify.app/" >}}WebApp{{< /button >}}
+
+{{< button icon="fab github" order="first" href="https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt/" >}}Source Code{{< /button >}}

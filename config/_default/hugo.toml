@@ -40,6 +40,18 @@ home = ["HTML", "RSS", "REDIR"]
 [build]
   writeStats = true
  
+[[cascade]]
+  [cascade.build]
+    list = 'never'
+    render = 'never'
+    [cascade._target]
+    path = '/errors'
+
+[[cascade]]
+  [cascade.build]
+    list = 'never'
+  [cascade._target]
+    path = '/errors/**'
 
 [outputFormats]
   [outputFormats.XML]
