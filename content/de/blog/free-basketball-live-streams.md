@@ -11,15 +11,16 @@ categories:
     - Sport
 modules: ["simple-datatables"]
 lang: "de"
-slug: tabelle-kostenlose-basketball-live-streams
+slug: free-basketball-live-streams
 excludeToc: true
 ---
 
 {{< button icon="fa calendar" order="first" href="https://calendar.google.com/calendar/embed?src=f8a14c4037d9ab411f93f19ee369218f0ed54be7c2d88deaf09d6b76fbe72e7f%40group.calendar.google.com&ctz=Europe%2FBerlin" >}}Google Kalender{{< /button >}}
 
+
 ## Übersicht
 
-{{< table sortable="true" searchable="true" paging="true" >}}
+{{< table sortable="true" paging="true" searchable="true" >}}
 | Date  | Day | Time            | Teams                                      | Channel                                                                 |
 |-------|-----|------------------|--------------------------------------------|-------------------------------------------------------------------------|
 | 4 Oct | Fri | 18:00 – 19:30    | Boston Celtics vs. Denver Nuggets          | ran.de, ran App, Joyn                                                   |

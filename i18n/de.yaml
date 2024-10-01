@@ -179,15 +179,16 @@
 
   # table
 - id: tablePlaceholder
-  translation: "Suche..."
+  translation: Suche...
 - id: tablesSearchTitle
-  translation: "Suche in der Tabelle"
+  translation: Suche in der Tabelle
 - id: tablesPerPage
-  translation: "Zeilen pro Seite"
+  translation: Zeilen pro Seite
 - id: tablesNoRows
-  translation: "Keine Zeilen vorhanden"
+  translation: Keine Zeilen vorhanden
 - id: tablesNoResults
-  translation: "Kein Ergebnis für die Suchanfrage"
+  translation: Kein Ergebnis für die Suchanfrage
 - id: tablesInfo
-  translation: "Anzeige: ({start} - {end}) von {rows} Zeilen"
-
+  translation: ({start} - {end}) von {rows} Zeilen
+- id: tablePageSelectAll
+  translation: Alle

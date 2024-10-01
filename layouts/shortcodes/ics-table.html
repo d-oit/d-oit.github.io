@@ -1,11 +1,12 @@
+{{ $data := dict }}
 {{ $icsURL := .Get "url" }}
 {{ with resources.GetRemote $icsURL }}
   {{ with .Err }}
     {{ errorf "%s" . }}
   {{ else }}
-  {{ .Content | markdownify }}
+  {{ .Content | transform.Unmarshal }}
 
-{{ $icsContent := getJSON $icsURL }}
+{{ $icsContent := $icsURL }}
 {{ $events := split $icsContent "\nBEGIN:VEVENT" }}
 {{ $counter := 0 }}
 
