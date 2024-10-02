@@ -2,36 +2,45 @@
 
 {{ $json := resources.Get $jsonURL }}
 {{ if $json }}
-  {{ $data := transform.Unmarshal $json.Content }}
-  {{ if $data }}
-    <table id="free-basket-streams-table" class="data-table"
-          data-table-sortable="true"
-          data-table-paging="true"
-          data-table-searchable="true">
-      <thead>
-        <tr>
-          <th data-sortable="false">{{ i18n "Date" }}</th>
-          <th data-sortable="false">{{ i18n "Time" }}</th>
-          <th>Teams</th>
-          <th>{{ i18n "Description" }}</th>
-          <th>Channel</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{ range $index, $item := $data }}
-          <tr>
-            <td data-text="{{ $item.begin }}">{{ time.Format ":date_short" (time.AsTime $item.begin) }}</td>
-            <td data-text="{{ $item.begin }}">{{ time.Format ":time_short" (time.AsTime $item.begin) }}</td>
-            <td>{{ $item.name }}</td>
-            <td>{{ $item.description }}</td>
-            <td>{{ $item.location }}</td>
-          </tr>
-        {{ end }}
-      </tbody>
-    </table>
-  {{ else }}
-    <p>Error: Unable to parse JSON data.</p>
-  {{ end }}
+{{ $data := transform.Unmarshal $json.Content }}
+{{ if $data }}
+
+<div class="table-responsive">
+  <table id="free-basket-streams-table-{{ site.Language.Lang }}" class="data-table table" data-table-sortable="true"
+    data-table-paging="true" data-table-searchable="true" data-table-locale="{{ site.Language.Lang }}"
+    data-table-labels='{
+      "placeholder": "{{ T "tablePlaceholder" }}",
+      "searchTitle": "{{ T "tablesSearchTitle" }}",
+      "perPage": "{{ T "tablesPerPage" }}",
+      "noRows": "{{ T "tablesNoRows" }}",
+      "noResults": "{{ T "tablesNoResults" }}",
+      "info": "{{ T "tablesInfo" }}"
+    }'>
+    <thead>
+      <tr>
+        <th data-sortable="false">{{ i18n "Date" }}</th>
+        <th data-sortable="false">{{ i18n "Time" }}</th>
+        <th>Teams</th>
+        <th>{{ i18n "Description" }}</th>
+        <th>Channel</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $index, $item := $data }}
+      <tr>
+        <td data-text="{{ $item.begin }}">{{ time.Format ":date_short" (time.AsTime $item.begin) }}</td>
+        <td data-text="{{ $item.begin }}">{{ time.Format ":time_short" (time.AsTime $item.begin) }}</td>
+        <td>{{ $item.name }}</td>
+        <td>{{ $item.description }}</td>
+        <td>{{ $item.location }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
 {{ else }}
-  <p>Error: Unable to fetch JSON data.</p>
+<p>Error: Unable to parse JSON data.</p>
+{{ end }}
+{{ else }}
+<p>Error: Unable to fetch JSON data.</p>
 {{ end }}

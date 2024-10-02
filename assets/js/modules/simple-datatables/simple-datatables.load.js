@@ -1,26 +1,24 @@
 // Adapted from https://github.com/fiduswriter/simple-datatables/blob/main/docs/demos/19-bootstrap-table/index.html
-
-
 let tableOptions = {
     perPage: 20,
     locale: "{{ site.Language.Lang | default "en" }}",
     labels: {
-      placeholder: "{{ T "tablePlaceholder" }}",
-      searchTitle: "{{ T "tablesSearchTitle" }}",
-      perPage: "{{ T "tablesPerPage" }}",
-      noRows: "{{ T "tablesNoRows" }}",
-      noResults: "{{ T "tablesNoResults" }}",
-      info: "{{ T "tablesInfo" }}"
+      "placeholder": "{{ T "tablePlaceholder" }}",
+      "searchTitle": "{{ T "tablesSearchTitle" }}",
+      "perPage": "{{ T "tablesPerPage" }}",
+      "noRows": "{{ T "tablesNoRows" }}",
+      "noResults": "{{ T "tablesNoResults" }}",
+      "info": "{{ T "tablesInfo" }}"
     },
-    perPageSelect: [10, 20, 50, ["{{ T "tablePageSelectAll" }}", -1]],
-    // classes: {
-    //     active: "active",
-    //     disabled: "disabled",
+    perPageSelect: [5, 10, 20, 50, ["{{ T "tablePageSelectAll" }}", -1]],
+     classes: {
+         active: "active",
+         disabled: "disabled",
     //     selector: "form-select",
-    //     paginationList: "pagination",
-    //     paginationListItem: "page-item",
-    //     paginationListItemLink: "page-link"
-    // },
+         paginationList: "pagination",
+         paginationListItem: "page-item",
+         paginationListItemLink: "page-link"
+     },
     // // template: options => `<div class='${options.classes.top} fixed-table-toolbar'>
     // // ${
     // // options.paging && options.perPageSelect ?
@@ -83,7 +81,9 @@ document.querySelectorAll('.data-table').forEach(tbl => {
     tableOptions.paging = paging;
     let searchable = (tbl.getAttribute('data-table-searchable') === 'true')
     tableOptions.searchable = searchable;
-
+    tableOptions.locale =  (tbl.getAttribute('data-table-locale'))
+    var labels = tbl.getAttribute('data-table-labels');
+    tableOptions.labels =  JSON.parse(labels)
     new window.simpleDatatables.DataTable(tbl, 
         tableOptions
     )

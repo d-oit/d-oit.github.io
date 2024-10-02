@@ -19,7 +19,7 @@ excludeToc: true
 
 ## Übersicht
 
-{{< basketCalendarJsonTable >}}
+{{< basketCalendarJsonTable  >}}
 
 <!-- 
 
