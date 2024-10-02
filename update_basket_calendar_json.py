@@ -36,7 +36,7 @@ for event in calendar.events:
 # Order events by their start time (begin)
 events.sort(key=lambda x: x['begin'])
 
-# Save the events to a JSON file in the /static folder
+# Save the events to a JSON file in the /assets folder
 with open('assets/free_basket_calendar.json', 'w') as json_file:
     json.dump(events, json_file, indent=4)
 
