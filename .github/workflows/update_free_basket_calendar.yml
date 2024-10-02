@@ -2,7 +2,7 @@ name: Update Google Calendar Basket Calendar as JSON
 
 on:
   schedule:
-     - cron: '12 * * * *'  # Runs every 12 hour
+     - cron: '* 18 * * *'  # Runs every 12 hour
   push:
     branches:
       - main
