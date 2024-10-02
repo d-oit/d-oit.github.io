@@ -15,3 +15,12 @@
 
 - id: tablePageSelectAll
   translation: "All"
+
+
+
+- id: Date
+  translation: Date
+- id: Time
+  translation: Time
+- id: Description
+  translation: Description

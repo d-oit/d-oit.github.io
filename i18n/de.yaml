@@ -192,3 +192,11 @@
   translation: ({start} - {end}) von {rows} Zeilen
 - id: tablePageSelectAll
   translation: Alle
+
+
+- id: Date
+  translation: Datum
+- id: Time
+  translation: Uhrzeit
+- id: Description
+  translation: Beschreibung

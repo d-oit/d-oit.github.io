@@ -13,16 +13,15 @@ modules: ["simple-datatables"]
 lang: "en"
 slug: free-basketball-live-streams
 excludeToc: true
-draft: true
+draft: false
 ---
 
 {{< button icon="fa calendar" order="first" href="https://calendar.google.com/calendar/embed?src=f8a14c4037d9ab411f93f19ee369218f0ed54be7c2d88deaf09d6b76fbe72e7f%40group.calendar.google.com&ctz=Europe%2FBerlin" >}}Google Kalender{{< /button >}}
 
-
 ## Overview
 
-TODO - table as shortcode
+> [!NOTE]
+> DateTime CET — Central European Time (UTC/GMT +2 hours)
+{.small}
 
-{{< table sortable="true" paging="true" searchable="true" >}}
- 
-{{< /table >}}
+{{< basketCalendarJsonTable >}}

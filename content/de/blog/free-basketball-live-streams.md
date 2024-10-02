@@ -17,8 +17,11 @@ excludeToc: true
 
 {{< button icon="fa calendar" order="first" href="https://calendar.google.com/calendar/embed?src=f8a14c4037d9ab411f93f19ee369218f0ed54be7c2d88deaf09d6b76fbe72e7f%40group.calendar.google.com&ctz=Europe%2FBerlin" >}}Google Kalender{{< /button >}}
 
-
 ## Übersicht
+
+{{< basketCalendarJsonTable >}}
+
+<!-- 
 
 {{< table sortable="true" paging="true" searchable="true" >}}
 | Date  | Day | Time            | Teams                                      | Channel                                                                 |
@@ -54,4 +57,4 @@ excludeToc: true
 | 4 Dec | Wed | 20:30 – 22:00    | Virtus Segafredo Bologna vs ALBA BERLIN    | magentasport.tv                                                         |
 | 6 Dec | Fri | 18:45 – 20:15    | AS Monaco vs ALBA BERLIN                   | magentasport.tv                                                         |
 | 13 Dec| Fri | 20:15 – 21:45    | FC Barcelona vs EA7 Emporio Armani Mailand | magentasport.tv                                                         |
-{{< /table >}}
+{{< /table >}} -->
