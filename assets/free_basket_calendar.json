@@ -1,94 +1,10 @@
 [
     {
-        "name": "BBC Bayreuth vs Phoenix Hagen",
-        "begin": "2024-10-05T18:45:00+02:00",
-        "end": "2024-10-05T20:15:00+02:00",
-        "description": "Basketball game between BBC Bayreuth and Phoenix Hagen",
-        "location": "https://sportdeutschland.tv/videos/basketball"
-    },
-    {
-        "name": "Fenerbahce Beko Istanbul vs Olympiakos Pir\u00e4us",
-        "begin": "2024-10-04T19:15:00+02:00",
-        "end": "2024-10-04T20:45:00+02:00",
-        "description": "Basketball game between Fenerbahce Beko Istanbul and Olympiakos Pir\u00e4us",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "FC Bayern M\u00fcnchen vs FC Barcelona",
-        "begin": "2024-11-22T20:15:00+01:00",
-        "end": "2024-11-22T21:45:00+01:00",
-        "description": "Basketball game between FC Bayern M\u00fcnchen and FC Barcelona",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "FC Bayern M\u00fcnchen vs Olympiakos Pir\u00e4us",
-        "begin": "2024-10-25T20:30:00+02:00",
-        "end": "2024-10-25T22:00:00+02:00",
-        "description": "Basketball game between FC Bayern M\u00fcnchen and Olympiakos Pir\u00e4us",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "FC Barcelona vs ALBA BERLIN",
-        "begin": "2024-10-11T20:15:00+02:00",
-        "end": "2024-10-11T21:45:00+02:00",
-        "description": "Basketball game between FC Barcelona and ALBA BERLIN",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "ART Giants D\u00fcsseldorf vs Science City Jena",
-        "begin": "2024-10-05T18:45:00+02:00",
-        "end": "2024-10-05T20:15:00+02:00",
-        "description": "Basketball game between ART Giants D\u00fcsseldorf and Science City Jena",
-        "location": "https://sportdeutschland.tv/videos/basketball"
-    },
-    {
-        "name": "Panathinaikos AKTOR Athen vs Olympiakos Pir\u00e4us",
-        "begin": "2024-11-08T20:00:00+01:00",
-        "end": "2024-11-08T21:30:00+01:00",
-        "description": "Basketball game between Panathinaikos AKTOR Athen and Olympiakos Pir\u00e4us",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "Partizan Mozzart Bet Belgrad vs EA7 Emporio Armani Mailand",
-        "begin": "2024-11-15T20:15:00+01:00",
-        "end": "2024-11-15T21:45:00+01:00",
-        "description": "Basketball game between Partizan Mozzart Bet Belgrad and EA7 Emporio Armani Mailand",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "BBC Bayreuth vs. Phoenix Hagen",
-        "begin": "2024-10-05T18:45:00+02:00",
-        "end": "2024-10-05T20:15:00+02:00",
-        "description": "ProA: BBC Bayreuth vs. Phoenix Hagen",
-        "location": "https://sportdeutschland.tv/videos/basketball"
-    },
-    {
-        "name": "Roter Stern Belgrad vs FC Bayern M\u00fcnchen",
-        "begin": "2024-11-29T19:45:00+01:00",
-        "end": "2024-11-29T21:15:00+01:00",
-        "description": "Basketball game between Roter Stern Belgrad and FC Bayern M\u00fcnchen",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "SC Rasta Vechta vs Alba Berlin",
-        "begin": "2024-11-17T14:00:00+01:00",
-        "end": "2024-11-17T15:30:00+01:00",
-        "description": "Basketball game between SC Rasta Vechta and Alba Berlin",
-        "location": "welt.tv"
-    },
-    {
-        "name": "ART Giants D\u00fcsseldorf vs. Science City Jena",
-        "begin": "2024-10-05T18:45:00+02:00",
-        "end": "2024-10-05T20:15:00+02:00",
-        "description": "ProA: ART Giants D\u00fcsseldorf vs. Science City Jena",
-        "location": "https://sportdeutschland.tv/videos/basketball"
-    },
-    {
-        "name": "Zalgiris Kaunas vs Roter Stern Belgrad",
-        "begin": "2024-10-30T18:45:00+01:00",
-        "end": "2024-10-30T20:15:00+01:00",
-        "description": "Basketball game between Zalgiris Kaunas and Roter Stern Belgrad",
-        "location": "magentasport.de"
+        "name": "ALBA BERLIN vs Panathinaikos AKTOR Athen",
+        "begin": "2024-10-03T18:30:00+02:00",
+        "end": "2024-10-03T19:30:00+02:00",
+        "description": "Basketball game between ALBA BERLIN and Panathinaikos AKTOR Athen",
+        "location": "https://www.magentasport.de/"
     },
     {
         "name": "Boston Celtics vs Denver Nuggets",
@@ -98,38 +14,10 @@
         "location": "ran.de, ran App, Joyn"
     },
     {
-        "name": "Uni Baskets M\u00fcnster vs GIESSEN 46ers",
-        "begin": "2024-10-05T19:05:00+02:00",
-        "end": "2024-10-05T20:35:00+02:00",
-        "description": "Basketball game between Uni Baskets M\u00fcnster and GIESSEN 46ers",
-        "location": "https://sportdeutschland.tv/videos/basketball"
-    },
-    {
-        "name": "Alba Berlin vs Niners Chemnitz",
-        "begin": "2024-10-20T16:30:00+02:00",
-        "end": "2024-10-20T18:00:00+02:00",
-        "description": "Basketball game between Alba Berlin and Niners Chemnitz",
-        "location": "welt.tv"
-    },
-    {
-        "name": "Bayern M\u00fcnchen vs W\u00fcrzburg Baskets",
-        "begin": "2024-10-27T15:30:00+01:00",
-        "end": "2024-10-27T17:00:00+01:00",
-        "description": "Basketball game between Bayern M\u00fcnchen and W\u00fcrzburg Baskets",
-        "location": "welt.tv"
-    },
-    {
-        "name": "Syntainics MBC vs Baskets Oldenburg",
-        "begin": "2024-11-03T15:30:00+01:00",
-        "end": "2024-11-03T17:00:00+01:00",
-        "description": "Basketball game between Syntainics MBC and Baskets Oldenburg",
-        "location": "welt.tv"
-    },
-    {
-        "name": "Deutschland vs Schweden",
-        "begin": "2024-11-25T19:00:00+01:00",
-        "end": "2024-11-25T20:30:00+01:00",
-        "description": "Basketball game between Deutschland and Schweden",
+        "name": "Fenerbahce Beko Istanbul vs Olympiakos Pir\u00e4us",
+        "begin": "2024-10-04T19:15:00+02:00",
+        "end": "2024-10-04T20:45:00+02:00",
+        "description": "Basketball game between Fenerbahce Beko Istanbul and Olympiakos Pir\u00e4us",
         "location": "magentasport.de"
     },
     {
@@ -140,6 +28,48 @@
         "location": "https://sportdeutschland.tv/videos/basketball"
     },
     {
+        "name": "BBC Bayreuth vs Phoenix Hagen",
+        "begin": "2024-10-05T18:45:00+02:00",
+        "end": "2024-10-05T20:15:00+02:00",
+        "description": "Basketball game between BBC Bayreuth and Phoenix Hagen",
+        "location": "https://sportdeutschland.tv/videos/basketball"
+    },
+    {
+        "name": "ART Giants D\u00fcsseldorf vs Science City Jena",
+        "begin": "2024-10-05T18:45:00+02:00",
+        "end": "2024-10-05T20:15:00+02:00",
+        "description": "Basketball game between ART Giants D\u00fcsseldorf and Science City Jena",
+        "location": "https://sportdeutschland.tv/videos/basketball"
+    },
+    {
+        "name": "BBC Bayreuth vs. Phoenix Hagen",
+        "begin": "2024-10-05T18:45:00+02:00",
+        "end": "2024-10-05T20:15:00+02:00",
+        "description": "ProA: BBC Bayreuth vs. Phoenix Hagen",
+        "location": "https://sportdeutschland.tv/videos/basketball"
+    },
+    {
+        "name": "ART Giants D\u00fcsseldorf vs. Science City Jena",
+        "begin": "2024-10-05T18:45:00+02:00",
+        "end": "2024-10-05T20:15:00+02:00",
+        "description": "ProA: ART Giants D\u00fcsseldorf vs. Science City Jena",
+        "location": "https://sportdeutschland.tv/videos/basketball"
+    },
+    {
+        "name": "Uni Baskets M\u00fcnster vs GIESSEN 46ers",
+        "begin": "2024-10-05T19:05:00+02:00",
+        "end": "2024-10-05T20:35:00+02:00",
+        "description": "Basketball game between Uni Baskets M\u00fcnster and GIESSEN 46ers",
+        "location": "https://sportdeutschland.tv/videos/basketball"
+    },
+    {
+        "name": "Uni Baskets M\u00fcnster vs. GIESSEN 46ers",
+        "begin": "2024-10-05T19:05:00+02:00",
+        "end": "2024-10-05T20:35:00+02:00",
+        "description": "ProA: Uni Baskets M\u00fcnster vs. GIESSEN 46ers",
+        "location": "https://sportdeutschland.tv/videos/basketball"
+    },
+    {
         "name": "Baskets Bonn vs Alba Berlin",
         "begin": "2024-10-06T16:30:00+02:00",
         "end": "2024-10-06T18:00:00+02:00",
@@ -147,24 +77,10 @@
         "location": "welt.tv"
     },
     {
-        "name": "Partizan Mozzart Bet Belgrad vs FC Barcelona",
-        "begin": "2024-11-13T17:45:00+01:00",
-        "end": "2024-11-13T19:15:00+01:00",
-        "description": "Basketball game between Partizan Mozzart Bet Belgrad and FC Barcelona",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "FC Barcelona vs AS Monaco",
-        "begin": "2024-10-16T20:15:00+02:00",
-        "end": "2024-10-16T21:45:00+02:00",
-        "description": "Basketball game between FC Barcelona and AS Monaco",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "Schweden vs Deutschland",
-        "begin": "2024-11-22T19:00:00+01:00",
-        "end": "2024-11-22T20:30:00+01:00",
-        "description": "Basketball game between Schweden and Deutschland",
+        "name": "FC Barcelona vs ALBA BERLIN",
+        "begin": "2024-10-11T20:15:00+02:00",
+        "end": "2024-10-11T21:45:00+02:00",
+        "description": "Basketball game between FC Barcelona and ALBA BERLIN",
         "location": "magentasport.de"
     },
     {
@@ -175,6 +91,48 @@
         "location": "ran.de, ran App and Joyn"
     },
     {
+        "name": "FC Barcelona vs AS Monaco",
+        "begin": "2024-10-16T20:15:00+02:00",
+        "end": "2024-10-16T21:45:00+02:00",
+        "description": "Basketball game between FC Barcelona and AS Monaco",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Roter Stern Belgrad vs FC Barcelona",
+        "begin": "2024-10-18T19:45:00+02:00",
+        "end": "2024-10-18T21:15:00+02:00",
+        "description": "Basketball game between Roter Stern Belgrad and FC Barcelona",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Alba Berlin vs Niners Chemnitz",
+        "begin": "2024-10-20T16:30:00+02:00",
+        "end": "2024-10-20T18:00:00+02:00",
+        "description": "Basketball game between Alba Berlin and Niners Chemnitz",
+        "location": "welt.tv"
+    },
+    {
+        "name": "FC Bayern M\u00fcnchen vs Olympiakos Pir\u00e4us",
+        "begin": "2024-10-25T20:30:00+02:00",
+        "end": "2024-10-25T22:00:00+02:00",
+        "description": "Basketball game between FC Bayern M\u00fcnchen and Olympiakos Pir\u00e4us",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Bayern M\u00fcnchen vs W\u00fcrzburg Baskets",
+        "begin": "2024-10-27T15:30:00+01:00",
+        "end": "2024-10-27T17:00:00+01:00",
+        "description": "Basketball game between Bayern M\u00fcnchen and W\u00fcrzburg Baskets",
+        "location": "welt.tv"
+    },
+    {
+        "name": "Zalgiris Kaunas vs Roter Stern Belgrad",
+        "begin": "2024-10-30T18:45:00+01:00",
+        "end": "2024-10-30T20:15:00+01:00",
+        "description": "Basketball game between Zalgiris Kaunas and Roter Stern Belgrad",
+        "location": "magentasport.de"
+    },
+    {
         "name": "ASVEL Villeurbanne vs FC Bayern M\u00fcnchen",
         "begin": "2024-11-01T19:45:00+01:00",
         "end": "2024-11-01T21:15:00+01:00",
@@ -182,10 +140,87 @@
         "location": "magentasport.de"
     },
     {
+        "name": "Syntainics MBC vs Baskets Oldenburg",
+        "begin": "2024-11-03T15:30:00+01:00",
+        "end": "2024-11-03T17:00:00+01:00",
+        "description": "Basketball game between Syntainics MBC and Baskets Oldenburg",
+        "location": "welt.tv"
+    },
+    {
         "name": "Deutschland vs Griechenland",
         "begin": "2024-11-07T18:45:00+01:00",
         "end": "2024-11-07T20:15:00+01:00",
         "description": "Basketball game between Deutschland and Griechenland",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Panathinaikos AKTOR Athen vs Olympiakos Pir\u00e4us",
+        "begin": "2024-11-08T20:00:00+01:00",
+        "end": "2024-11-08T21:30:00+01:00",
+        "description": "Basketball game between Panathinaikos AKTOR Athen and Olympiakos Pir\u00e4us",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Niners Chemnitz vs Baskets Oldenburg",
+        "begin": "2024-11-10T15:30:00+01:00",
+        "end": "2024-11-10T17:00:00+01:00",
+        "description": "Basketball game between Niners Chemnitz and Baskets Oldenburg",
+        "location": "welt.tv"
+    },
+    {
+        "name": "Deutschland vs Tschechien",
+        "begin": "2024-11-10T16:45:00+01:00",
+        "end": "2024-11-10T18:15:00+01:00",
+        "description": "Basketball game between Deutschland and Tschechien",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Partizan Mozzart Bet Belgrad vs FC Barcelona",
+        "begin": "2024-11-13T17:45:00+01:00",
+        "end": "2024-11-13T19:15:00+01:00",
+        "description": "Basketball game between Partizan Mozzart Bet Belgrad and FC Barcelona",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Partizan Mozzart Bet Belgrad vs EA7 Emporio Armani Mailand",
+        "begin": "2024-11-15T20:15:00+01:00",
+        "end": "2024-11-15T21:45:00+01:00",
+        "description": "Basketball game between Partizan Mozzart Bet Belgrad and EA7 Emporio Armani Mailand",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "SC Rasta Vechta vs Alba Berlin",
+        "begin": "2024-11-17T14:00:00+01:00",
+        "end": "2024-11-17T15:30:00+01:00",
+        "description": "Basketball game between SC Rasta Vechta and Alba Berlin",
+        "location": "welt.tv"
+    },
+    {
+        "name": "Schweden vs Deutschland",
+        "begin": "2024-11-22T19:00:00+01:00",
+        "end": "2024-11-22T20:30:00+01:00",
+        "description": "Basketball game between Schweden and Deutschland",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "FC Bayern M\u00fcnchen vs FC Barcelona",
+        "begin": "2024-11-22T20:15:00+01:00",
+        "end": "2024-11-22T21:45:00+01:00",
+        "description": "Basketball game between FC Bayern M\u00fcnchen and FC Barcelona",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Deutschland vs Schweden",
+        "begin": "2024-11-25T19:00:00+01:00",
+        "end": "2024-11-25T20:30:00+01:00",
+        "description": "Basketball game between Deutschland and Schweden",
+        "location": "magentasport.de"
+    },
+    {
+        "name": "Roter Stern Belgrad vs FC Bayern M\u00fcnchen",
+        "begin": "2024-11-29T19:45:00+01:00",
+        "end": "2024-11-29T21:15:00+01:00",
+        "description": "Basketball game between Roter Stern Belgrad and FC Bayern M\u00fcnchen",
         "location": "magentasport.de"
     },
     {
@@ -196,20 +231,6 @@
         "location": "magentasport.de"
     },
     {
-        "name": "Deutschland vs Tschechien",
-        "begin": "2024-11-10T16:45:00+01:00",
-        "end": "2024-11-10T18:15:00+01:00",
-        "description": "Basketball game between Deutschland and Tschechien",
-        "location": "magentasport.de"
-    },
-    {
-        "name": "FC Barcelona vs EA7 Emporio Armani Mailand",
-        "begin": "2024-12-13T20:15:00+01:00",
-        "end": "2024-12-13T21:45:00+01:00",
-        "description": "Basketball game between FC Barcelona and EA7 Emporio Armani Mailand",
-        "location": "magentasport.de"
-    },
-    {
         "name": "AS Monaco vs ALBA BERLIN",
         "begin": "2024-12-06T18:45:00+01:00",
         "end": "2024-12-06T20:15:00+01:00",
@@ -217,31 +238,10 @@
         "location": "magentasport.de"
     },
     {
-        "name": "ALBA BERLIN vs Panathinaikos AKTOR Athen",
-        "begin": "2024-10-03T18:30:00+02:00",
-        "end": "2024-10-03T19:30:00+02:00",
-        "description": "Basketball game between ALBA BERLIN and Panathinaikos AKTOR Athen",
-        "location": "https://www.magentasport.de/"
-    },
-    {
-        "name": "Niners Chemnitz vs Baskets Oldenburg",
-        "begin": "2024-11-10T15:30:00+01:00",
-        "end": "2024-11-10T17:00:00+01:00",
-        "description": "Basketball game between Niners Chemnitz and Baskets Oldenburg",
-        "location": "welt.tv"
-    },
-    {
-        "name": "Uni Baskets M\u00fcnster vs. GIESSEN 46ers",
-        "begin": "2024-10-05T19:05:00+02:00",
-        "end": "2024-10-05T20:35:00+02:00",
-        "description": "ProA: Uni Baskets M\u00fcnster vs. GIESSEN 46ers",
-        "location": "https://sportdeutschland.tv/videos/basketball"
-    },
-    {
-        "name": "Roter Stern Belgrad vs FC Barcelona",
-        "begin": "2024-10-18T19:45:00+02:00",
-        "end": "2024-10-18T21:15:00+02:00",
-        "description": "Basketball game between Roter Stern Belgrad and FC Barcelona",
+        "name": "FC Barcelona vs EA7 Emporio Armani Mailand",
+        "begin": "2024-12-13T20:15:00+01:00",
+        "end": "2024-12-13T21:45:00+01:00",
+        "description": "Basketball game between FC Barcelona and EA7 Emporio Armani Mailand",
         "location": "magentasport.de"
     }
 ]
