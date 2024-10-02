@@ -37,7 +37,7 @@ for event in calendar.events:
 events.sort(key=lambda x: x['begin'])
 
 # Save the events to a JSON file in the /static folder
-with open('assets/json/free_basket_calendar.json', 'w') as json_file:
+with open('assets/free_basket_calendar.json', 'w') as json_file:
     json.dump(events, json_file, indent=4)
 
-print('Calendar events have been saved to assets/json/free_basket_calendar.json')
+print('Calendar events have been saved to assets/free_basket_calendar.json')
