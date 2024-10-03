@@ -1,5 +1,5 @@
 ---
-title: Sitemap - All pages
+title: Sitemap - Alle Seiten
 date: 2024-01-11
 draft: false
 type: minimal
