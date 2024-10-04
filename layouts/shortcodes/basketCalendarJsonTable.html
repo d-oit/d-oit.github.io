@@ -31,7 +31,7 @@
           <div class="card-footer">
             <p class="text-center">
               {{ if $item.url }}
-                <a href="{{ $item.url }}" class="btn btn-info stretched-link">{{ $item.location }}</a>
+                <a href="{{ $item.url }}" class="btn btn-info stretched-link" rel="noopener noreferrer">{{ $item.location }}</a>
               {{ else }}
                 {{ $item.location }}
               {{ end }}
@@ -71,11 +71,13 @@
           <td data-text="{{ $item.begin }}">{{ time.Format ":time_short" (time.AsTime $item.begin) }}</td>
           <td>{{ $item.name }}</td>
           <td>{{ $item.description }}</td>
-          <td> {{ if $item.url }}
-            <a href="{{ $item.url }}">{{ $item.location }}</a>
-          {{ else }}
-            {{ $item.location }}
-          {{ end }}</td>
+          <td> 
+            {{ if $item.url }}
+                <a href="{{ $item.url }}" rel="noopener noreferrer">{{ $item.location }}</a>
+              {{ else }}
+                {{ $item.location }}
+              {{ end }}
+        </td>
         </tr>
         {{ end }}
       </tbody>
