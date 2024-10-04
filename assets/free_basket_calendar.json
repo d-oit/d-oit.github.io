@@ -292,23 +292,23 @@
         "begin": "2024-12-20T20:00:00+01:00",
         "end": "2024-12-20T21:30:00+01:00",
         "description": "EuroLeague game between Olympiakos Pir\u00e4us and ALBA BERLIN. \nleague: EuroLeague",
-        "location": null,
-        "url": null
+        "location": "magentasport.de",
+        "url": "magentasport.de"
     },
     {
         "name": "FC Bayern M\u00fcnchen vs Panathinaikos AKTOR Athen",
         "begin": "2024-12-27T20:15:00+01:00",
         "end": "2024-12-27T21:45:00+01:00",
         "description": "EuroLeague game between FC Bayern M\u00fcnchen and Panathinaikos AKTOR Athen. \nleague: EuroLeague",
-        "location": null,
-        "url": null
+        "location": "magentasport.de",
+        "url": "magentasport.de"
     },
     {
         "name": "Fenerbahce Beko Istanbul vs Anadolu Efes Istanbul",
         "begin": "2025-01-03T18:30:00+01:00",
         "end": "2025-01-03T20:00:00+01:00",
         "description": "EuroLeague game between Fenerbahce Beko Istanbul and Anadolu Efes Istanbul. \nleague: EuroLeague",
-        "location": null,
-        "url": null
+        "location": "magentasport.de",
+        "url": "magentasport.de"
     }
 ]
