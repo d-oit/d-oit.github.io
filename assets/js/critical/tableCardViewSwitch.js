@@ -28,14 +28,11 @@ if (window.location.href.includes("/free-basketball-live-streams/")) {
         });
 
         var searchBox = document.getElementById("searchBoxInlinePage");
-        if (searchBox != null) {
-          console.log("searchBox");
+        if (searchBox != null) {          
           searchBox.addEventListener("input", function () {
             var filter = this.value.toLowerCase();
-            var items = document.querySelectorAll('[data-search-content]');
-            console.log(items);
+            var items = document.querySelectorAll('[data-search-content]');           
             items.forEach(function (item) {
-
               var text = item.textContent.toLowerCase();
               if (text.includes(filter)) {
                 item.classList.remove('d-none');
