@@ -65,13 +65,23 @@ for event in calendar.events:
         url = extract_first_url(event.location)
         url = add_http_if_missing(url)  # Add https if missing
         location = get_domain_name(url) if url and url.startswith('http') else event.location
+        
+        # Check for 'league: Name' in description and remove it
+        league = None
+        if 'league:' in event.description:
+            league_match = re.search(r'league:\s*([^\n]+)', event.description)
+            if league_match:
+                league = league_match.group(1).strip()
+                event.description = event.description.replace(league_match.group(0), '').strip()
+        
         event_dict = {
             'name': event.name,
             'begin': event_begin_berlin.isoformat(),
             'end': event.end.datetime.astimezone(berlin_tz).isoformat(),
             'description': event.description,
             'location': location,
-            'url': url
+            'url': url,
+            'league': league  # Add league to the JSON
         }
         events.append(event_dict)
 

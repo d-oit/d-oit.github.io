@@ -5,7 +5,8 @@
         "end": "2024-10-03T19:30:00+02:00",
         "description": "Basketball game between ALBA BERLIN and Panathinaikos AKTOR Athen",
         "location": "www.magentasport.de",
-        "url": "https://www.magentasport.de/"
+        "url": "https://www.magentasport.de/",
+        "league": null
     },
     {
         "name": "Boston Celtics vs Denver Nuggets",
@@ -13,7 +14,8 @@
         "end": "2024-10-04T19:30:00+02:00",
         "description": "Basketball game between Boston Celtics and Denver Nuggets",
         "location": "ran.de",
-        "url": "https://ran.de"
+        "url": "https://ran.de",
+        "league": null
     },
     {
         "name": "Fenerbahce Beko Istanbul vs Olympiakos Pir\u00e4us",
@@ -21,7 +23,8 @@
         "end": "2024-10-04T20:45:00+02:00",
         "description": "Basketball game between Fenerbahce Beko Istanbul and Olympiakos Pir\u00e4us",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Eisb\u00e4ren Bremerhaven vs. HAKRO Merlins Crailsheim",
@@ -29,7 +32,8 @@
         "end": "2024-10-05T19:15:00+02:00",
         "description": "ProA: Eisb\u00e4ren Bremerhaven vs. HAKRO Merlins Crailsheim",
         "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball"
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": null
     },
     {
         "name": "BBC Bayreuth vs Phoenix Hagen",
@@ -37,7 +41,8 @@
         "end": "2024-10-05T20:15:00+02:00",
         "description": "Basketball game between BBC Bayreuth and Phoenix Hagen",
         "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball"
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": null
     },
     {
         "name": "ART Giants D\u00fcsseldorf vs Science City Jena",
@@ -45,7 +50,8 @@
         "end": "2024-10-05T20:15:00+02:00",
         "description": "Basketball game between ART Giants D\u00fcsseldorf and Science City Jena",
         "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball"
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": null
     },
     {
         "name": "BBC Bayreuth vs. Phoenix Hagen",
@@ -53,7 +59,8 @@
         "end": "2024-10-05T20:15:00+02:00",
         "description": "ProA: BBC Bayreuth vs. Phoenix Hagen",
         "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball"
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": null
     },
     {
         "name": "ART Giants D\u00fcsseldorf vs. Science City Jena",
@@ -61,7 +68,8 @@
         "end": "2024-10-05T20:15:00+02:00",
         "description": "ProA: ART Giants D\u00fcsseldorf vs. Science City Jena",
         "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball"
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": null
     },
     {
         "name": "Uni Baskets M\u00fcnster vs GIESSEN 46ers",
@@ -69,7 +77,8 @@
         "end": "2024-10-05T20:35:00+02:00",
         "description": "Basketball game between Uni Baskets M\u00fcnster and GIESSEN 46ers",
         "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball"
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": null
     },
     {
         "name": "Uni Baskets M\u00fcnster vs. GIESSEN 46ers",
@@ -77,7 +86,8 @@
         "end": "2024-10-05T20:35:00+02:00",
         "description": "ProA: Uni Baskets M\u00fcnster vs. GIESSEN 46ers",
         "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball"
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": null
     },
     {
         "name": "Baskets Bonn vs Alba Berlin",
@@ -85,7 +95,8 @@
         "end": "2024-10-06T18:00:00+02:00",
         "description": "Basketball game between Baskets Bonn and Alba Berlin",
         "location": "welt.tv",
-        "url": "https://welt.tv"
+        "url": "https://welt.tv",
+        "league": null
     },
     {
         "name": "FC Barcelona vs ALBA BERLIN",
@@ -93,7 +104,8 @@
         "end": "2024-10-11T21:45:00+02:00",
         "description": "Basketball game between FC Barcelona and ALBA BERLIN",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "New Orleans Pelicans vs Miami Heat",
@@ -101,7 +113,8 @@
         "end": "2024-10-13T22:30:00+02:00",
         "description": "Basketball game between New Orleans Pelicans and Miami Heat",
         "location": "ran.de",
-        "url": "https://ran.de"
+        "url": "https://ran.de",
+        "league": null
     },
     {
         "name": "FC Barcelona vs AS Monaco",
@@ -109,7 +122,8 @@
         "end": "2024-10-16T21:45:00+02:00",
         "description": "Basketball game between FC Barcelona and AS Monaco",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Roter Stern Belgrad vs FC Barcelona",
@@ -117,7 +131,8 @@
         "end": "2024-10-18T21:15:00+02:00",
         "description": "Basketball game between Roter Stern Belgrad and FC Barcelona",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Alba Berlin vs Niners Chemnitz",
@@ -125,7 +140,8 @@
         "end": "2024-10-20T18:00:00+02:00",
         "description": "Basketball game between Alba Berlin and Niners Chemnitz",
         "location": "welt.tv",
-        "url": "https://welt.tv"
+        "url": "https://welt.tv",
+        "league": null
     },
     {
         "name": "FC Bayern M\u00fcnchen vs Olympiakos Pir\u00e4us",
@@ -133,7 +149,8 @@
         "end": "2024-10-25T22:00:00+02:00",
         "description": "Basketball game between FC Bayern M\u00fcnchen and Olympiakos Pir\u00e4us",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Bayern M\u00fcnchen vs W\u00fcrzburg Baskets",
@@ -141,7 +158,8 @@
         "end": "2024-10-27T17:00:00+01:00",
         "description": "Basketball game between Bayern M\u00fcnchen and W\u00fcrzburg Baskets",
         "location": "welt.tv",
-        "url": "https://welt.tv"
+        "url": "https://welt.tv",
+        "league": null
     },
     {
         "name": "Zalgiris Kaunas vs Roter Stern Belgrad",
@@ -149,7 +167,8 @@
         "end": "2024-10-30T20:15:00+01:00",
         "description": "Basketball game between Zalgiris Kaunas and Roter Stern Belgrad",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "ASVEL Villeurbanne vs FC Bayern M\u00fcnchen",
@@ -157,7 +176,8 @@
         "end": "2024-11-01T21:15:00+01:00",
         "description": "Basketball game between ASVEL Villeurbanne and FC Bayern M\u00fcnchen",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Syntainics MBC vs Baskets Oldenburg",
@@ -165,7 +185,8 @@
         "end": "2024-11-03T17:00:00+01:00",
         "description": "Basketball game between Syntainics MBC and Baskets Oldenburg",
         "location": "welt.tv",
-        "url": "https://welt.tv"
+        "url": "https://welt.tv",
+        "league": null
     },
     {
         "name": "Deutschland vs Griechenland",
@@ -173,7 +194,8 @@
         "end": "2024-11-07T20:15:00+01:00",
         "description": "Basketball game between Deutschland and Griechenland",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Panathinaikos AKTOR Athen vs Olympiakos Pir\u00e4us",
@@ -181,7 +203,8 @@
         "end": "2024-11-08T21:30:00+01:00",
         "description": "Basketball game between Panathinaikos AKTOR Athen and Olympiakos Pir\u00e4us",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Niners Chemnitz vs Baskets Oldenburg",
@@ -189,7 +212,8 @@
         "end": "2024-11-10T17:00:00+01:00",
         "description": "Basketball game between Niners Chemnitz and Baskets Oldenburg",
         "location": "welt.tv",
-        "url": "https://welt.tv"
+        "url": "https://welt.tv",
+        "league": null
     },
     {
         "name": "Deutschland vs Tschechien",
@@ -197,7 +221,8 @@
         "end": "2024-11-10T18:15:00+01:00",
         "description": "Basketball game between Deutschland and Tschechien",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Partizan Mozzart Bet Belgrad vs FC Barcelona",
@@ -205,7 +230,8 @@
         "end": "2024-11-13T19:15:00+01:00",
         "description": "Basketball game between Partizan Mozzart Bet Belgrad and FC Barcelona",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Partizan Mozzart Bet Belgrad vs EA7 Emporio Armani Mailand",
@@ -213,7 +239,8 @@
         "end": "2024-11-15T21:45:00+01:00",
         "description": "Basketball game between Partizan Mozzart Bet Belgrad and EA7 Emporio Armani Mailand",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "SC Rasta Vechta vs Alba Berlin",
@@ -221,7 +248,8 @@
         "end": "2024-11-17T15:30:00+01:00",
         "description": "Basketball game between SC Rasta Vechta and Alba Berlin",
         "location": "welt.tv",
-        "url": "https://welt.tv"
+        "url": "https://welt.tv",
+        "league": null
     },
     {
         "name": "Schweden vs Deutschland",
@@ -229,7 +257,8 @@
         "end": "2024-11-22T20:30:00+01:00",
         "description": "Basketball game between Schweden and Deutschland",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "FC Bayern M\u00fcnchen vs FC Barcelona",
@@ -237,7 +266,8 @@
         "end": "2024-11-22T21:45:00+01:00",
         "description": "Basketball game between FC Bayern M\u00fcnchen and FC Barcelona",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Deutschland vs Schweden",
@@ -245,7 +275,8 @@
         "end": "2024-11-25T20:30:00+01:00",
         "description": "Basketball game between Deutschland and Schweden",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Roter Stern Belgrad vs FC Bayern M\u00fcnchen",
@@ -253,7 +284,8 @@
         "end": "2024-11-29T21:15:00+01:00",
         "description": "Basketball game between Roter Stern Belgrad and FC Bayern M\u00fcnchen",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Virtus Segafredo Bologna vs ALBA BERLIN",
@@ -261,7 +293,8 @@
         "end": "2024-12-04T22:00:00+01:00",
         "description": "Basketball game between Virtus Segafredo Bologna and ALBA BERLIN",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "AS Monaco vs ALBA BERLIN",
@@ -269,7 +302,8 @@
         "end": "2024-12-06T20:15:00+01:00",
         "description": "Basketball game between AS Monaco and ALBA BERLIN",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "FC Barcelona vs EA7 Emporio Armani Mailand",
@@ -277,38 +311,43 @@
         "end": "2024-12-13T21:45:00+01:00",
         "description": "Basketball game between FC Barcelona and EA7 Emporio Armani Mailand",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": null
     },
     {
         "name": "Anadolu Efes Istanbul vs Roter Stern Belgrad",
         "begin": "2024-12-18T18:15:00+01:00",
         "end": "2024-12-18T19:45:00+01:00",
-        "description": "EuroLeague game between Anadolu Efes Istanbul and Roter Stern Belgrad. \nleague: EuroLeague",
+        "description": "EuroLeague game between Anadolu Efes Istanbul and Roter Stern Belgrad.",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": "EuroLeague"
     },
     {
         "name": "Olympiakos Pir\u00e4us vs ALBA BERLIN",
         "begin": "2024-12-20T20:00:00+01:00",
         "end": "2024-12-20T21:30:00+01:00",
-        "description": "EuroLeague game between Olympiakos Pir\u00e4us and ALBA BERLIN. \nleague: EuroLeague",
+        "description": "EuroLeague game between Olympiakos Pir\u00e4us and ALBA BERLIN.",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": "EuroLeague"
     },
     {
         "name": "FC Bayern M\u00fcnchen vs Panathinaikos AKTOR Athen",
         "begin": "2024-12-27T20:15:00+01:00",
         "end": "2024-12-27T21:45:00+01:00",
-        "description": "EuroLeague game between FC Bayern M\u00fcnchen and Panathinaikos AKTOR Athen. \nleague: EuroLeague",
+        "description": "EuroLeague game between FC Bayern M\u00fcnchen and Panathinaikos AKTOR Athen.",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": "EuroLeague"
     },
     {
         "name": "Fenerbahce Beko Istanbul vs Anadolu Efes Istanbul",
         "begin": "2025-01-03T18:30:00+01:00",
         "end": "2025-01-03T20:00:00+01:00",
-        "description": "EuroLeague game between Fenerbahce Beko Istanbul and Anadolu Efes Istanbul. \nleague: EuroLeague",
+        "description": "EuroLeague game between Fenerbahce Beko Istanbul and Anadolu Efes Istanbul.",
         "location": "magentasport.de",
-        "url": "https://magentasport.de"
+        "url": "https://magentasport.de",
+        "league": "EuroLeague"
     }
 ]

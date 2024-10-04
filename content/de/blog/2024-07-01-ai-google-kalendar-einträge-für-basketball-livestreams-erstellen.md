@@ -20,7 +20,7 @@ includeToc: false
 
 # Google Calendar
 
-Für mich selbst habe ich meinen **google calendar** um einen *BasketballLive* Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte. 
+Für mich selbst habe ich meinen **google calendar** um einen *BasketballLive* Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte.
 
 Warum **google calendar**?
 
@@ -28,7 +28,10 @@ Ich wollte einfach nicht nochmal einen Kalender installieren. Dieser funktionier
 
 Die Seite ist hier zu finden:
 
-{{< link "free-basketball-live-streams/" >}}Übersicht Live streams{{< /link >}}
+{{< button icon="fa-solid fa-table-list" order="first" href="/de/blog/free-basketball-live-streams" >}}Übersicht Live streams{{< /button >}}
+
+{{< button icon="fa-solid fa-calendar-day" order="first" href="https://calendar.google.com/calendar/ical/f8a14c4037d9ab411f93f19ee369218f0ed54be7c2d88deaf09d6b76fbe72e7f%40group.calendar.google.com/public/basic.ics" >}}iCal public address{{< /button >}}
+
 
 ## Kalender
 
@@ -110,7 +113,30 @@ Hier hilft aktuell **perplexity** für den Start der notwendigen Prompts.
 
  {{< image src="img/doitPrompt2Cal.png" caption="d.o.it Prompt2GCal" >}}
 
-
 {{< button href="https://streams2cal.netlify.app/" >}}WebApp{{< /button >}}
 
 {{< button icon="fab github" order="first" href="https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt/" >}}Source Code{{< /button >}}
+
+## Darstellung im Blog
+
+Damit iCal Google Calendar Einträge auf der Website angezeigt werden können wird über eine GitHub Action per Python script die Google Calendar Einträge eine JSON Datei erstellt.
+
+### Python GitHub Action
+
+{{< file full="false" path="update_basket_calendar_json.py" id="file-collapse-py-script" show="false" >}}
+
+### Json
+
+{{< file full="false" path="./assets/free_basket_calendar.json" id="file-basket-json" show="false" >}}
+
+### Hugo Template Anzeige
+
+json Datei einlesen und Felder in html tags darstellen mit entsprechenden Hugo Template Parametern
+
+```
+ $jsonURL := "free_basket_calendar.json"
+ $json := resources.Get $jsonURL 
+ if $json 
+ $data := transform.Unmarshal $json.Content
+ range $index, $item := $data 
+```
