@@ -18,7 +18,7 @@ includeToc: false
 > [!NOTE]  
 > Aus nicht ganz klaren Datenschutzgründen (fonts werden vom Server geladen) habe ich mich dagegen entschieden den Google Calendar auf der Website einzubetten. Als Alternative werden die Daten vom Google Calendar als Markdown Tabelle angezeigt.
 
-# Google Calendar
+## Google Calendar
 
 Für mich selbst habe ich meinen **google calendar** um einen *BasketballLive* Kalender erweitert, um dort Livestreams zu verwalten, die ich gerne sehen möchte.
 
@@ -62,7 +62,7 @@ Testspiele Herren
 ...."
 ```
 
-Das Ergebnis ist ein ics Datei. 
+Das Ergebnis ist ein ics Datei.
 
 **Beispiel DBB Olympia 2024 - Link erzeugen**
 
@@ -108,7 +108,7 @@ Machbar ist einiges ... mal sehen was draus wird {{< fas fa-tv>}} {{< fas fa-bas
 Mit Hilfe von **GPTengineer** war die Erstellung einer WebApp leichter. Nachdem die GPTengineer BETA aktuell in aller Mund ist hat es sich angeboten diese auszutesten.
 Die Google Gemini API verfügt aktuell über eine kostenlose Stufe. Ebenso wollte ich diese auch bei Gelegenheit testen.
 
-Das Ergebnis ist eine WebApp die google Calendar Einträge erzeugt aus einem Text der die Daten der Übertagungen enthält. Ebenso besteht die Möglichkeit den Prompt anzupassen falls notwendig. Das nervige bei solchen Projekten ist das Suchen, Erstellen, Testen der APIs. 
+Das Ergebnis ist eine WebApp die google Calendar Einträge erzeugt aus einem Text, der die Daten der Übertagungen enthält. Ebenso besteht die Möglichkeit, den Prompt anzupassen falls notwendig. Das Nervige bei solchen Projekten ist das Suchen, Erstellen, Testen der APIs.
 Hier hilft aktuell **perplexity** für den Start der notwendigen Prompts.
 
  {{< image src="img/doitPrompt2Cal.png" caption="d.o.it Prompt2GCal" >}}
@@ -119,7 +119,7 @@ Hier hilft aktuell **perplexity** für den Start der notwendigen Prompts.
 
 ## Darstellung im Blog
 
-Damit iCal Google Calendar Einträge auf der Website angezeigt werden können wird über eine GitHub Action per Python script die Google Calendar Einträge eine JSON Datei erstellt.
+Damit iCal Google Calendar Einträge auf der Website angezeigt werden können, wird über eine GitHub Action per Python script die Google Calendar Einträge eine JSON Datei erstellt.
 
 ### Python GitHub Action
 
