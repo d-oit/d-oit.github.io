@@ -1,18 +1,18 @@
-if (window.location.href.includes("/sites/")) {
+if (window.location.href.includes("/free-basketball-live-streams/")) {
   (() => {
     "use strict";
 
     function changeView() {
-      var listView = document.getElementById("listView");
-      var cardView = document.getElementById("cardView");
+      var listView = document.getElementById("table-view");
+      var cardView = document.getElementById("card-view");
       if (listView.classList.contains("d-none")) {
         listView.classList.remove("d-none");
         cardView.classList.add("d-none");
-        sessionStorage.setItem("toggleViewSitemap", "list");
+        sessionStorage.setItem("toggleViewBasketStreamsView", "table");
       } else {
         listView.classList.add("d-none");
         cardView.classList.remove("d-none");
-        sessionStorage.setItem("toggleViewSitemap", "card");
+        sessionStorage.setItem("toggleViewBasketStreamsView", "card");
       }
     }
 

@@ -2,13 +2,12 @@
 title: About
 description: d.o.it - let's try things out.
 date: 2024-08-11
-updated: 2023-08-02
-
+updated: 2024-08-11
+excludeToc: true
 ---
-
-
-{{< persona  thumbnail="/img/favicon.png" title="try something out" color="primary" >}}
+{{< persona thumbnail="/img/favicon.png" title="let's try things out." color="primary" >}}
 Hands-On, Discover.
+
 I write about current topics that concern me privately and that I would like to try out.
 {{< /persona >}}
 

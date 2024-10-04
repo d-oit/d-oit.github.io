@@ -2,9 +2,9 @@
 slug: about
 title: Über
 description: d.o.it - Probier etwas aus
-date: 2022-04-11
-updated: 2023-08-02
-showComments: false
+date: 2024-08-11
+updated: 2024-08-11
+excludeToc: true
 ---
 {{< persona thumbnail="/img/favicon.png" title="Autor" color="primary" >}}
 Ich schreibe über aktuelle Themen, die mich privat beschäftigen und ich gerne ausprobieren möchten.
@@ -13,5 +13,6 @@ Beruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe es zu kochen,
 
 **d.o.** = Dominik Oswald
 {{< /persona >}}
+
 
 {{< image src="img/CollageAbout.png" caption="Collage" >}}
