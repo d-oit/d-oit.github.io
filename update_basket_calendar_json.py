@@ -32,8 +32,8 @@ except Exception as e:
     print(f"Error parsing ICS file: {e}")
     exit(1)
 
-# Current time minus two days (offset-aware)
-now_minus_two_days = datetime.now(timezone.utc) - timedelta(days=2)
+# Current time minus days (offset-aware)
+now_minus_days = datetime.now(timezone.utc) - timedelta(days=4)
 
 # Berlin time zone
 berlin_tz = pytz.timezone('Europe/Berlin')
@@ -61,7 +61,7 @@ def get_domain_name(url):
 events = []
 for event in calendar.events:
     event_begin_berlin = event.begin.datetime.astimezone(berlin_tz)
-    if event_begin_berlin > now_minus_two_days:
+    if event_begin_berlin > now_minus_days:
         url = extract_first_url(event.location)
         url = add_http_if_missing(url)  # Add https if missing
         location = get_domain_name(url) if url and url.startswith('http') else event.location
