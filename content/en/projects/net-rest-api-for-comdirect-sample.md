@@ -1,6 +1,6 @@
 ---
-lang: "en-US"
-title: "comdirect Rest API Sample"
+lang: en-US
+title: comdirect Rest API Sample
 description: "Doit.Comdirect.Rest.Api: C# .NET Rest API for comdirect BackgroundService sample"
 date: 2024-08-21T14:56:31.284Z
 layout: docs
@@ -15,6 +15,8 @@ tags:
   - Rest
   - comdirect
 slug: comdirect-rest-api-sample
+categories:
+  - Software Development
 ---
 
 {{< fullscreenAndPrintButton >}}
@@ -26,7 +28,7 @@ slug: comdirect-rest-api-sample
 Visual Studio XML documentation Markdown syntax created with:
 [Vsxmd](https://github.com/lijunle/Vsxmd)
 
-# ConsoleApp.Hangfire.Worker
+## ConsoleApp.Hangfire.Worker
 
 C# .NET Rest API for comdirect
 
@@ -42,9 +44,10 @@ Get your oAuth client credentials before you start on the [comdirect Website](ht
       "tokenUrl": "https://api.comdirect.de/oauth/token",
       "flow": "cd_secondary", >>  **"flow": "password"**,
       ```
-3. Install the Visual Studio extension to generate the C# Client: [Unchase.OpenAPI.Connectedservice](https://github.com/unchase/Unchase.OpenAPI.Connectedservice) 
+3. Install the Visual Studio extension to generate the C# Client: [Unchase.OpenAPI.Connectedservice](https://github.com/unchase/Unchase.OpenAPI.Connectedservice)
 4. Generate the client [![comdirect-unchase-openapi.png](https://i.postimg.cc/bvjFpBWf/comdirect-unchase-openapi.png)](https://postimg.cc/75mNNmqK)
-5. Manage user secrets for the project with your comdirect credentials. Define in the appsettings.json / secrets.json file:
+5. Manage user secrets for the project with your comdirect credentials.
+Define in the appsettings.json / secrets.json file:
 ```json
 {
   "ComdirectCredentials": {
@@ -56,6 +59,7 @@ Get your oAuth client credentials before you start on the [comdirect Website](ht
 }
 ```
 6. After a successful authentication the credentials saved in the **appsettings.json** file:
+
 ```json
  "ComdirectSavedSession": {
     "SessionId": null,
@@ -68,7 +72,7 @@ Get your oAuth client credentials before you start on the [comdirect Website](ht
 
 ### Hangfire
 
-The sample use [Hangfire.InMemory](https://github.com/HangfireIO/Hangfire.InMemory) for testing only. 
+The sample use [Hangfire.InMemory](https://github.com/HangfireIO/Hangfire.InMemory) for testing only.
 Use a persistent storage like SQL Server or Redis for production.
 
 ### Logging
@@ -77,7 +81,8 @@ The sample use **Serilog** to log messages configured in the **appsettings.json*
 
 ### Read this before start the application
 
-**Use api carefully!**
+> [!IMPORTANT]  
+> Use API carefully!
 
 **comdirect API doc:**
 
@@ -87,17 +92,16 @@ The sample use **Serilog** to log messages configured in the **appsettings.json*
 > angefordert.
 
 > [!CAUTION]
-
-> Das Abrufen von **fünf** TAN-Challenges ohne zwischenzeitliche Entwertung einer korrekten TAN führt zur 
+> Das Abrufen von **fünf** TAN-Challenges ohne zwischenzeitliche Entwertung einer korrekten TAN führt zur
 > **Sperrung des Onlinebanking-Zugangs**
 
-## Links
+### Links
 
 - [comdirect API](https://www.comdirect.de/cms/kontakt-zugaenge-api.html)
 - [Issues](https://github.com/d-oit/Doit.Comdirect.Rest.Api/issues)
 - [Discussion](https://github.com/d-oit/Doit.Comdirect.Rest.Api/discussions)
 
-## Asp.net core hosting Hangfire sample code documentation
+### Asp.net core hosting Hangfire sample code documentation
 
 <a name='T-ConsoleSample-ComdirectApiHostedService'></a>
 ## ComdirectApiHostedService `type`

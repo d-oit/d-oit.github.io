@@ -113,7 +113,7 @@
     name = "d.o.it"
     locale = "en-US"
     # twitter = "https://twitter.com/gethinode"
-    # linkedIn = ""
+    # linkedIn = "https://www.linkedin.com/in/d-oit"
     github = "https://github.com/d-oit"
     section = "blog"
     [schema.author]

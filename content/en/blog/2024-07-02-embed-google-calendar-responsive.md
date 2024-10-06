@@ -19,14 +19,14 @@ thumbnail:
 > The appointments are displayed as a table view.
 > The page only serves to provide information on how the Google Calendar could be used.
 
-# Why embed Google Calendar on my website?
+## Why embed Google Calendar on my website?
 
-I like to watch basketball games. Sometime I found interesting matches and insert them into my google calendar.
+I like to watch basketball games. Sometimes I found interesting matches and insert them into my Google calendar.
 
 ## Embed Google Calendar
 
-For an easy way to embed Google Calendar responsive i found the following way better than like ChatGPT & Co. on the Stack Overflow website.
-The only way that i found to make it nice is to invert the iframe to make it darker.
+For an easy way to embed Google Calendar responsive I found the following way better than like ChatGPT & Co. on the Stack Overflow website.
+The only way that I found to make it nice is to invert the iframe to make it darker.
 
 ```css
 <style>
@@ -62,7 +62,7 @@ iframe{
 </div>
 ```
 
-## References
+### References
 
 Responsive: https://stackoverflow.com/questions/39006765/how-do-you-properly-wrap-google-calendar-inside-div-and-make-it-responsive
 Style nicer: https://stackoverflow.com/questions/49306347/how-to-customize-google-calendar-with-css

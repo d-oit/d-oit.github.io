@@ -13,11 +13,11 @@ thumbnail:
     author: d.o.
 slug: licenses-nuget-packages-net-core-solution
 ---
-# Generating a License Report for NuGet Packages in Your .NET Core Solution
+## Generating a License Report for NuGet Packages in Your .NET Core Solution
 
 **ToDo**: Get all licenses from used NuGet Packages in the Visual Studio Solution. Create a license text file or Excel file with all found license and save all license as a separate Text File.
 
-**Let’s try…**
+### Let’s try …
 
 Best solution so far: jump to [Solution 5](#solution5) or [Solution 6](#solution6)
 
@@ -26,18 +26,17 @@ Best solution so far: jump to [Solution 5](#solution5) or [Solution 6](#solution
 - Open Visual Studio .NET Core Solution
 - Open Package Manager Console and execute:
 
-```ps 
+```ps
 Get-Package | Select-Object Id,LicenseUrl
 ```
 
-
-**Output Result (Nuget Package Name, License Url):**
+**Output result (Nuget Package Name, License Url):**
 
 xunit.runner.visualstudio                               https://raw.githubusercontent.com/xunit/xunit/master/license.txt                       
 NSubstitute                                             https://github.com/nsubstitute/NSubstitute/raw/master/LICENSE.txt         
 Good… but the direct reference project NuGet package. Need also the License of all dlls.
 
-## Solution 2: PowerShell: Save license as text file ##
+## Solution 2: PowerShell: Save license as text file
 
 Try out with the PowerShell script. Save the code as DownloadNugetLicense.ps1 in the VS solution director.
 
@@ -77,7 +76,7 @@ Split-Path -parent $dte.Solution.FileName | cd; New-Item -ItemType Directory -Fo
 
 ## Solution 3: PowerShell: All license in package manager output
 
-Not perfect - I also need the license for the used Dlls inside any NuGet Package.
+Not perfect – I also need the license for the used Dlls inside any NuGet Package.
 
 ---------------------
 NuGet Package License
@@ -96,7 +95,8 @@ Abp.ZeroCore.EntityFrameworkCore; https://github.com/aspnetboilerplate/aspnetboi
 AspNet.Security.OpenIdConnect.Server; http://www.apache.org/licenses/LICENSE-2.0.html; <!DOCTYPE html>
 Castle.Core; http://www.apache.org/licenses/LICENSE-2.0.html; <!DOCTYPE html>
 
-**PowerShell Code**
+### PowerShell Code NuGet Package License
+
 ```ps
 Write-Host("---------------------");
 Write-Host("NuGet Package License");
@@ -141,7 +141,6 @@ List license of all NuGet packages inside the ‘packages’ folder of any Visua
 
 [Visual Studio Marketplace: Package Licenses](https://marketplace.visualstudio.com/items?itemName=jz5.PackageLicenses)
 
-
 **Package Folder**
 
 Package Folder not exist for the solution?
@@ -149,7 +148,6 @@ Package Folder not exist for the solution?
 **NuGet.Config**
 
 Create Nuget.Config for the Visual Studio solution:
-
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -162,7 +160,6 @@ Create Nuget.Config for the Visual Studio solution:
 
 ![Visual Studio Screenshot](/img/blog/list_package_licenses.jpg)
 
-
 ## Solution 5: Custom package licenses command line {#solution5}
 
 Create your own license file output (Excel or TEXT) with the following .NET Core Console Project:
@@ -171,6 +168,6 @@ https://github.com/do-it-ger/DoitPackagesLicenses
 
 ## Solution 6: .NET Nuget License Utility {#solution6}
 
-A .net core tool to print the licenses of a project. This tool support .NET Core and .NET Standard Projects.
+A .net core tool to print the licenses of a project. This tool support .NET Core and .NET Standard projects.
 
 https://github.com/tomchavakis/nuget-license

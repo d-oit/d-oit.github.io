@@ -10,9 +10,9 @@ thumbnail:
   author: d.o.
 slug: uninstall-phone-link-windows
 ---
-# Windows Tips: Uninstalling ‘Mobile Devices’ / Phone Link
+## Windows Tips: Uninstalling ‘Mobile Devices’ / Phone Link
 
-With the **Phone Link** app on your Windows linked to your iPhone or Android phone. 
+With the **Phone Link** app on your Windows linked to your iPhone or Android phone.
 If you don't need it this is the easiest way for me to uninstall the app.
 
 ## Windows 11 Phone Link uninstall

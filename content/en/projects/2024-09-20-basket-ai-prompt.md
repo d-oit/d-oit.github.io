@@ -6,22 +6,25 @@ tags:
     - WebApp
     - AI Prompt
     - Calendar
+    - streams
 thumbnail:
     url: img/BasketLiveStreamsPrompt2GCal.jpg
     origin: Copilot Designer
     author: d.o.
 layout: docs
-lang: "en-US"
+lang: en-US
 slug: prompt2gcal
 includeToc: true
+categories:
+    - Software Development
+    - Sport
 ---
 
-## React WebApp: Basketball live streams prompt google calendar events creator with google api
+## React WebApp: Basketball live streams prompt Google calendar events creator with Google API
 
 {{< button color="dark" cue=false order="last" icon="fab github" tooltip="Source Code on github" href="https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt" >}}
     Source Code
 {{< /button >}}
-
 
 ## Github readme
 

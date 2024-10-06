@@ -14,19 +14,18 @@ thumbnail:
   author: d.o.
 ---
 
-# List for extensions for C#
+## List for extensions for C#
 
 - **CodeRush** for VS 2022: Productivity tools for code generation, refactoring, style, code coverage & testing
 https://marketplace.visualstudio.com/items?itemName=DevExpress.CodeRushforVS2022&ssr=false#overview
-- **Tabnine** AI Assistant 
+- **Tabnine** AI Assistant
 - **EF Core Power Tools**
 https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools&ssr=false#review-details
 - **REST API Client Code Generator** for VS 2022: generating a strongly typed REST API Client from an Open API / Swagger specification file
 https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022
 - **Unit Test Boilerplate Generator**: Generates a unit test boilerplate from a given C# class, setting up mocks for all dependencies
 https://marketplace.visualstudio.com/items?itemName=RandomEngy.UnitTestBoilerplateGenerator
-- **ResXManager**:  localize and manage all kind of applications with resx-based resources
+- **ResXManager**: localize and manage all kind of applications with resx-based resources
 https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager
 or >> **Zeta Resource Editor**: FREE multilingual, parallel .NET resource file editing
 https://www.zeta-resource-editor.com/
-
