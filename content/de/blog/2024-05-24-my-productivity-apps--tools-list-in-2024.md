@@ -28,6 +28,8 @@ thumbnail:
 ### Entwicklungstool / Editors
 - [Visual Studio Code](https://code.visualstudio.com)
 - [requestly - get / mod HTTP Requests](https://github.com/requestly/requestly)
+- **Cursor** – AI Editor
+- **GPTengieer** - AI Web builder for prototyping
 
 ### Video / Audio
 - **OBS Studio**
@@ -39,7 +41,7 @@ thumbnail:
 - **Github** Softwareentwicklung und Versionsverwaltung
 - **GoFullPage** Screenshot einer kompletten Website
 - [**Aixploria**](https://www.aixploria.com/en/ultimate-list-ai/)
-
+- **perplexity.ai** AI Suche
 ### Windows 11 Developer Powershell
 
 Windows 11 Powershell script für die Installation eines english-US Sprachpaket inklusive notwendiger Tools für die Webentwicklung.
