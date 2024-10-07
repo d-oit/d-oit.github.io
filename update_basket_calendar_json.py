@@ -68,7 +68,9 @@ for event in calendar.events:
         url = extract_first_url(event.location)
         url = add_http_if_missing(url)  # Add https if missing
         location = get_domain_name(url) if url and url.startswith('http') else event.location
-        
+        if not url:
+            printf(f"url is empty {event.name}")
+
         # Check for 'league: Name' in description and remove it
         league = None
         if 'league:' in event.description:
