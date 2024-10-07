@@ -39,6 +39,9 @@ now_minus_days = datetime.now(timezone.utc) - timedelta(days=4)
 berlin_tz = pytz.timezone('Europe/Berlin')
 
 def add_http_if_missing(url):
+    if not text:
+        return None
+
     if not url.startswith(('http://', 'https://')):
         print(f"add https to url %s" % url)
         return f"https://{url}"
