@@ -9,18 +9,19 @@
 # Toast color.js saved
 - id: websiteThemeMode 
   translation: Website Theme Mode
-
 - id: websiteThemeModeText 
   translation: Saved to local browser storage.
-
 - id: tablePageSelectAll
   translation: "All"
 
-
-
+  # Basketball streams table
+- id: SwitchCardTableView
+  translation: Switch view
 - id: Date
   translation: Date
 - id: Time
   translation: Time
 - id: Description
   translation: Description
+- id: League
+  translation: League

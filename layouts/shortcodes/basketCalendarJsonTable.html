@@ -5,7 +5,7 @@
 {{ $data := transform.Unmarshal $json.Content }}
 {{ if $data }}
 <p class="text-end">
-  <button id="toggleView" class="btn btn-warning">Switch View</button>
+  <button id="toggleView" class="btn btn-warning">{{ i18n "SwitchCardTableView" }}</button>
 </p>
 <div id="content">
 
@@ -20,13 +20,20 @@
       {{ range $index, $item := $data }}
       <div class="col-sm-4 mb-3 mb-sm-1" data-search-content="{{ time.Format " :date_short" (time.AsTime $item.begin) }}
         {{ time.Format ":time_short" (time.AsTime $item.begin) }} {{ $item.name }}">
-
         <div class="card h-100">
           <div class="card-body">
-            <h4 class="card-title">{{ $item.name }}</h4>
+            <h4 class="card-title">{{ with $item.league }}
+              {{ if ne . "" }}
+                {{ $item.name }} ({{ . }})
+              {{ else }}
+                {{ $item.name }}
+              {{ end }}
+            {{ else }}
+              {{ $item.name }}
+            {{ end }}</h4>
             <h5 class="card-text">{{ time.Format ":date_short" (time.AsTime $item.begin) }} {{
               time.Format ":time_short" (time.AsTime $item.begin) }}</h5>
-            <p class="card-muted">{{ $item.description }}</p>
+            <p class="card-muted"><small>{{ $item.description }}</small></p>
           </div>
           <div class="card-footer">
             <p class="text-center">
@@ -60,7 +67,8 @@
           <th data-sortable="false">{{ i18n "Date" }}</th>
           <th data-sortable="false">{{ i18n "Time" }}</th>
           <th>Teams</th>
-          <th>{{ i18n "Description" }}</th>
+          <th>{{ i18n "League" }}</th>
+          <th><small>{{ i18n "Description" }}</small></th>
           <th>Channel</th>
         </tr>
       </thead>
@@ -70,7 +78,8 @@
           <td data-text="{{ $item.begin }}">{{ time.Format ":date_short" (time.AsTime $item.begin) }}</td>
           <td data-text="{{ $item.begin }}">{{ time.Format ":time_short" (time.AsTime $item.begin) }}</td>
           <td>{{ $item.name }}</td>
-          <td>{{ $item.description }}</td>
+          <td>{{ $item.league }}</td>
+          <td><small>{{ $item.description }}</small></td>
           <td> 
             {{ if $item.url }}
                 <a href="{{ $item.url }}" rel="noopener noreferrer">{{ $item.location }}</a>
