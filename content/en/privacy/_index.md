@@ -12,7 +12,7 @@ I don't use any cookies in this website.
 
 ## Hosting
 
-This Website is hosted on Github Pages. More information: [github data collection](https://docs.github.com/de/pages/getting-started-with-github-pages/about-github-pages#data-collection)
+This Website is hosted on Github Pages. More information: [github data collection.](https://docs.github.com/de/pages/getting-started-with-github-pages/about-github-pages#data-collection)
 
 ## Contact
 

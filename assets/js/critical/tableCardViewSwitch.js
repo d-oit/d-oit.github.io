@@ -23,7 +23,7 @@ if (window.location.href.includes("/free-basketball-live-streams/")) {
           changeView();
         }
         
-        toogleView.addEventListener("change", function () {
+        toogleView.addEventListener("click", function () {
           changeView();
         });
 
@@ -31,10 +31,8 @@ if (window.location.href.includes("/free-basketball-live-streams/")) {
         if (searchBox != null) {
           searchBox.addEventListener("input", function () {
             var filter = this.value.toLowerCase();
-            var items = document.querySelectorAll('[data-search-content]');
-            console.log(items);
+            var items = document.querySelectorAll('[data-search-content]');           
             items.forEach(function (item) {
-
               var text = item.textContent.toLowerCase();
               if (text.includes(filter)) {
                 item.classList.remove('d-none');

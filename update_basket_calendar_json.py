@@ -32,13 +32,16 @@ except Exception as e:
     print(f"Error parsing ICS file: {e}")
     exit(1)
 
-# Current time minus two days (offset-aware)
-now_minus_two_days = datetime.now(timezone.utc) - timedelta(days=2)
+# Current time minus days (offset-aware)
+now_minus_days = datetime.now(timezone.utc) - timedelta(days=4)
 
 # Berlin time zone
 berlin_tz = pytz.timezone('Europe/Berlin')
 
 def add_http_if_missing(url):
+    if not url:
+        return None
+
     if not url.startswith(('http://', 'https://')):
         print(f"add https to url %s" % url)
         return f"https://{url}"
@@ -61,17 +64,29 @@ def get_domain_name(url):
 events = []
 for event in calendar.events:
     event_begin_berlin = event.begin.datetime.astimezone(berlin_tz)
-    if event_begin_berlin > now_minus_two_days:
+    if event_begin_berlin > now_minus_days:
         url = extract_first_url(event.location)
         url = add_http_if_missing(url)  # Add https if missing
         location = get_domain_name(url) if url and url.startswith('http') else event.location
+        if not url:
+            printf(f"url is empty {event.name}")
+
+        # Check for 'league: Name' in description and remove it
+        league = None
+        if 'league:' in event.description:
+            league_match = re.search(r'league:\s*([^\n]+)', event.description)
+            if league_match:
+                league = league_match.group(1).strip()
+                event.description = event.description.replace(league_match.group(0), '').strip()
+        
         event_dict = {
             'name': event.name,
             'begin': event_begin_berlin.isoformat(),
             'end': event.end.datetime.astimezone(berlin_tz).isoformat(),
             'description': event.description,
             'location': location,
-            'url': url
+            'url': url,
+            'league': league  # Add league to the JSON
         }
         events.append(event_dict)
 
