@@ -60,7 +60,9 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+            --baseURL "${{ steps.pages.outputs.base_url }}/" 
+          && cd public/en
+          && cp 404.html ../404.html           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
