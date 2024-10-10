@@ -57,12 +57,7 @@ jobs:
           HUGO_ENV: production
           TZ: America/Los_Angeles
         run: |
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" 
-          && cd public/en
-          && cp 404.html ../404.html           
+          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/" && cd public/en && cp 404.html ../404.html    
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
