@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // Adapted from https://github.com/fiduswriter/simple-datatables/blob/main/docs/demos/19-bootstrap-table/index.html
 let tableOptions = {
     perPage: 20,

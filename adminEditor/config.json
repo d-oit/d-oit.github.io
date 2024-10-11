@@ -1,0 +1,24 @@
+{
+    "shortcodes": {
+        "bold": "**bold**",
+        "italic": "_italic_",
+        "link": "[link text](url)",
+        "code": "`code`",
+        "image": "![alt text](image_url)",
+        "file": "{{< file full=\"false\" path=\"./config/_default/languages.toml\" id=\"file-collapse-1\" >}}"
+    },
+    "icons": {
+        "bold": "bold",
+        "italic": "italic",
+        "link": "link",
+        "code": "code",
+        "image": "image",
+        "file": "file"
+    },
+    "server": {
+        "port": 8081,
+        "showURLOnStart": true,
+        "germanFolder": "E:/git/d-oit/blog/d-oit.github.io/content/de/blog",
+        "englishFolder": "E:/git/d-oit/blog/d-oit.github.io/content/en/blog"
+    }
+}
