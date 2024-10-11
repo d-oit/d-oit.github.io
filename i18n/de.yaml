@@ -193,10 +193,15 @@
 - id: tablePageSelectAll
   translation: Alle
 
-
+  # Basketball streams table
+- id: SwitchCardTableView
+  translation: Ansicht wechseln
 - id: Date
   translation: Datum
 - id: Time
   translation: Uhrzeit
 - id: Description
   translation: Beschreibung
+- id: League
+  translation: Liga
+

@@ -39,6 +39,9 @@ now_minus_days = datetime.now(timezone.utc) - timedelta(days=4)
 berlin_tz = pytz.timezone('Europe/Berlin')
 
 def add_http_if_missing(url):
+    if not url:
+        return None
+
     if not url.startswith(('http://', 'https://')):
         print(f"add https to url %s" % url)
         return f"https://{url}"
@@ -65,7 +68,9 @@ for event in calendar.events:
         url = extract_first_url(event.location)
         url = add_http_if_missing(url)  # Add https if missing
         location = get_domain_name(url) if url and url.startswith('http') else event.location
-        
+        if not url:
+            printf(f"url is empty {event.name}")
+
         # Check for 'league: Name' in description and remove it
         league = None
         if 'league:' in event.description:
