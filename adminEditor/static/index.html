@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+    <style>
+        body { padding: 20px; }
+        #editor { width: 100%; height: 400px; }
+        #toolbar { margin-bottom: 10px; }
+        #file-selector { margin-bottom: 10px; }
+        .spelling-error { text-decoration: underline wavy red; }
+        .grammar-error { text-decoration: underline wavy blue; }
+    </style>
+</head>
+<body>
+    <h1>Markdown Editor</h1>
+    <div class="container">
+<div>
+        <div id="file-selector" class="row mb-3">
+            <div class="col">
+                <select id="language-select" class="form-select" onchange="updateFileList()">
+                    <option value="de">German</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <div class="col">
+                <select id="file-select" class="form-select" onchange="loadSelectedFile()"></select>
+            </div>
+        </div>
+    </div>
+        <div id="toolbar" class="btn-group mb-3" role="group"></div>
+        <div class="container">
+        <textarea id="editor"></textarea>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary" onclick="saveContent()"><i class="fas fa-save"></i> Save</button>
+            <button class="btn btn-secondary" onclick="checkSpellingAndGrammar()"><i class="fas fa-check"></i> Check Spelling & Grammar</button>
+            <button class="btn btn-info" onclick="copyToClipboard()"><i class="fas fa-copy"></i> Copy to Clipboard</button>
+            <button class="btn btn-info" onclick="pasteFromClipboard()"><i class="fas fa-paste"></i> Paste from Clipboard</button>
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/markdown/markdown.min.js"></script>
+    <script>
+        let editor;
+        let config;
+        let files;
+
+        function initEditor() {
+            editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+                mode: "markdown",
+                lineNumbers: true,
+                lineWrapping: true
+            });
+
+            loadConfig();
+            loadFileList();
+        }
+
+        function loadConfig() {
+            fetch('/api/config')
+                .then(response => response.json())
+                .then(data => {
+                    config = data;
+                    createToolbar();
+                });
+        }
+
+        function createToolbar() {
+            const toolbar = document.getElementById("toolbar");
+            for (const [key, value] of Object.entries(config.shortcodes)) {
+                const button = document.createElement("button");
+                button.className = "btn btn-outline-secondary";
+                button.innerHTML = `<i class="fas fa-${config.icons[key]}"></i>`;
+                button.onclick = () => insertShortcode(value);
+                toolbar.appendChild(button);
+            }
+        }
+
+        function insertShortcode(shortcode) {
+            const doc = editor.getDoc();
+            const cursor = doc.getCursor();
+            doc.replaceRange(shortcode, cursor);
+        }
+
+        function loadFileList() {
+            fetch('/api/list')
+                .then(response => response.json())
+                .then(data => {
+                    files = data;
+                    updateFileList();
+                });
+        }
+
+        function updateFileList() {
+            const lang = document.getElementById("language-select").value;
+            const fileSelect = document.getElementById("file-select");
+            fileSelect.innerHTML = "";
+            if (files && files[lang]) {
+                files[lang].forEach(file => {
+                    const option = document.createElement("option");
+                    option.value = file;
+                    option.textContent = file;
+                    fileSelect.appendChild(option);
+                });
+            }
+            loadSelectedFile();
+        }
+
+        function loadSelectedFile() {
+            const lang = document.getElementById("language-select").value;
+            const file = document.getElementById("file-select").value;
+            if (file) {
+                fetch(`/api/load?file=${lang}/${file}`)
+                    .then(response => response.text())
+                    .then(content => editor.setValue(content));
+            }
+        }
+
+        function saveContent() {
+            const lang = document.getElementById("language-select").value;
+            const file = document.getElementById("file-select").value;
+            if (file) {
+                const content = editor.getValue();
+                fetch(`/api/save?file=${lang}/${file}`, {
+                    method: 'POST',
+                    body: content
+                }).then(() => alert('Content saved!'));
+            } else {
+                alert('Please select a file to save.');
+            }
+        }
+
+        function checkSpellingAndGrammar() {
+            const content = editor.getValue();
+            const lang = document.getElementById("language-select").value;
+            
+            fetch(`https://api.languagetool.org/v2/check`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `text=${encodeURIComponent(content)}&language=${lang}&enabledOnly=false`
+            })
+            .then(response => response.json())
+            .then(data => {
+                const doc = editor.getDoc();
+                data.matches.forEach(match => {
+                    const from = doc.posFromIndex(match.offset);
+                    const to = doc.posFromIndex(match.offset + match.length);
+                    doc.markText(from, to, {
+                        className: match.rule.category.id === 'TYPOS' ? 'spelling-error' : 'grammar-error',
+                        title: match.message
+                    });
+                });
+            });
+        }
+
+        function copyToClipboard() {
+            const content = editor.getValue();
+            navigator.clipboard.writeText(content)
+                .then(() => {
+                    alert('Content copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Failed to copy text: ', err);
+                    alert('Failed to copy content. Please try again.');
+                });
+        }
+
+        function pasteFromClipboard() {
+            navigator.clipboard.readText()
+                .then(text => {
+                    editor.replaceSelection(text);
+                })
+                .catch(err => {
+                    console.error('Failed to read clipboard contents: ', err);
+                    alert('Failed to paste content. Please try again.');
+                });
+        }
+
+        window.onload = initEditor;
+    </script>
+</body>
+</html>
