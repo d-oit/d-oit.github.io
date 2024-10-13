@@ -76,8 +76,7 @@ module.exports = defineConfig({
      ignoreHTTPSErrors: true,
      command: 'npm run start',
      url: baseURL,
-     reuseExistingServer: !process.env.CI,
-     
+     reuseExistingServer: !process.env.CI,   
   },
   
 });

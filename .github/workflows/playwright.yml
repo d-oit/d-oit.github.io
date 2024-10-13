@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       BASE_URL_TESTING: ${{ vars.BASE_URL_TESTING }}
+      CI: true
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
