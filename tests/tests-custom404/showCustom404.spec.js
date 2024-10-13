@@ -1,0 +1,12 @@
+import { test, expect } from '@playwright/test';
+
+test('showCustom404', async ({ page }) => {
+  // Recording...
+  await page.goto('/en/fdaffa');
+  // check without toc 
+  var element = await page.$('#fa-face-frown');
+  expect(element).not.toBeNull();
+  await page.goto('/');
+  element = await page.$('#fa-face-frown');
+  expect(element).toBeNull();
+});
