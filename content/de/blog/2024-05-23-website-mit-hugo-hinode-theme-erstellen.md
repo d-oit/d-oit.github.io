@@ -85,8 +85,8 @@ oder per
 
 ## Website veröffentlichen
 
-Der aktuelle Stand wird per git Versionsverwaltung auf **github** gestellt und per **Actions** als fertige html Seite (github pages) auf den öffentlichen Ordner gestellt. 
+Der aktuelle Stand wird per git Versionsverwaltung auf **github** gestellt und per **Actions** als fertige html Seite (github pages) auf den öffentlichen Ordner gestellt.
 
 Das Ergebnis sind statische html Dateien ohne große Leistungsprobleme: https://pagespeed.web.dev/analysis/https-d-oit-github-io/tvgpcmjj5b?form_factor=desktop
 
-Damit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht. 
+Damit kann ohne großen Aufwand die Veröffentlichung erfolgen sobald eine Internetverbindung besteht.

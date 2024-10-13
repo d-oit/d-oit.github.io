@@ -50,7 +50,7 @@ Aktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, d
 2. Übertragungen heraussuchen und in die Zwischenablage kopieren
 3. Bing Copilot Chat eine ics Datei erstellen:
 
-**Beispiel magentasport – ics Datei**
+### Beispiel magentasport – ics Datei
 
 ```"Erstelle eine ics in deutscher Zeitzone für die nachfolgenden magentasport.de Livestreams Termine mit einer Dauer von 1, 5 stunden:
 Deutschland
@@ -66,7 +66,7 @@ Testspiele Herren
 
 Das Ergebnis ist ein ics Datei.
 
-**Beispiel DBB Olympia 2024 - Link erzeugen**
+### Beispiel DBB Olympia 2024 - Link erzeugen
 
 Die Termine sind aufgespielt auf der [DBB Website](https://www.basketball-bund.de/bunter-tv-sommer-fuer-dbb-olympiateams/) zu finden.
 

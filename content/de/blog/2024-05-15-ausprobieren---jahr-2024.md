@@ -19,7 +19,7 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 - Coding / Aufgaben durch AI Tools verringern, austesten {{< fas fa-check-to-slot >}}
 - Smartphone Display austauschen
 - yahtzee Block per WebApp zusammenrechnen und Würfelwahrscheinlichkeiten ausrechnen. Aktuell spielen wir fast jeden Abend eine Runde nach dem Abendessen :smile:
-- Lenovo Notebook Speicher aufrüsten ohne clips abzubrechen {{< fas fa-check-to-slot>}}
+- Lenovo Notebook Speicher aufrüsten, ohne clips abzubrechen {{< fas fa-check-to-slot>}}
    >> na ja, fast. Wurde aber bereits vom Vorgänger geöffnet {{< fas fa-laptop-medical >}}
 
    >> **Reminder**: Leicht von unten nach oben drücken, nicht wie auf den Videos / Beschreibungen seitlich ziehen.
@@ -28,7 +28,7 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 {{< carousel id="carouselLenovoRAM" class="col-sm-12 col-lg-8 mx-auto" >}}
   {{< img src="img/blog/LenovoT490Back.jpg" caption="Lenovo T490 Rückseite mit Schrauben" >}}
   {{< img src="img/blog/LenovoT490ram.jpg" caption="Speicher" >}}
-  {{< img src="img/blog/Tools4NotebookOpening.png" caption="Werkzeuge" >}} 
+  {{< img src="img/blog/Tools4NotebookOpening.png" caption="Werkzeuge" >}}
 {{< /carousel >}}
 
 - YouTube Kanal

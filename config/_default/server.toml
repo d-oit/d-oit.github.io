@@ -7,7 +7,7 @@ for = '/**'
     X-XSS-Protection = "1; mode=block"
     Content-Security-Policy = """\
         default-src 'self'; \
-        script-src 'self'  https://*.google-analytics.com https://*.googletagmanager.com; \
+        script-src 'self' 'unsafe-inline'  https://*.google-analytics.com https://*.googletagmanager.com; \
         style-src 'self' https://fonts.googleapis.com https://www.youtube.com; \
         object-src 'none'; \
         base-uri 'self'; \
@@ -44,16 +44,16 @@ for = '/**'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 [[redirects]]
-	from = '/de/**'
+	from = '/de/*'
 	to = '/de/404.html'
 	status = 404
 
 [[redirects]]
-	from = '/en/**'
+	from = '/en/*'
 	to = '/en/404.html'
 	status = 404
 
 [[redirects]]  # Default language should be last.
-	from = '/**'
+	from = '/*'
 	to = '/en/404.html'
 	status = 404

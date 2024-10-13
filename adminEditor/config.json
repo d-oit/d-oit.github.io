@@ -5,7 +5,13 @@
         "link": "[link text](url)",
         "code": "`code`",
         "image": "![alt text](image_url)",
-        "file": "{{< file full=\"false\" path=\"./config/_default/languages.toml\" id=\"file-collapse-1\" >}}"
+        "standardList": "- Item",
+        "numberedList": "1. Item",
+        "checkboxList": "- [ ] Task",
+        "coloredCode": "```language\ncode\n```",
+        "horizontalLine": "---",
+        "internalLink": "{{< link \"path/to/file\" >}}text{{< /link >}}",
+        "mediaSelect": "![alt text](/img/blog/image.jpg)"
     },
     "icons": {
         "bold": "bold",
@@ -13,12 +19,28 @@
         "link": "link",
         "code": "code",
         "image": "image",
-        "file": "file"
+        "standardList": "list",
+        "numberedList": "list-ol",
+        "checkboxList": "tasks",
+        "coloredCode": "code",
+        "horizontalLine": "minus",
+        "internalLink": "file-alt",
+        "mediaSelect": "photo-video"
     },
     "server": {
         "port": 8081,
         "showURLOnStart": true,
-        "germanFolder": "E:/git/d-oit/blog/d-oit.github.io/content/de/blog",
-        "englishFolder": "E:/git/d-oit/blog/d-oit.github.io/content/en/blog"
+        "germanFolder": "../content/de/blog",
+        "englishFolder": "../content/en/blog",
+        "mediaFolder": "../media-data",
+        "assetFolder": "../assets/img/blog",
+        "imageResize": {
+            "method": "fit",
+            "maxWidth": 2800
+        },
+        "thumbnailResize": {
+            "method": "fit",
+            "maxWidth": 640
+        }
     }
 }
