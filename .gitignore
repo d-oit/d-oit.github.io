@@ -8,3 +8,5 @@ _vendor/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+.env
+.venv

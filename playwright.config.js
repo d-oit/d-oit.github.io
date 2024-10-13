@@ -1,14 +1,13 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+import dotenv from 'dotenv';
+import path from 'path';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// require('dotenv').config({ path: path.resolve(__dirname, '.env') });
+// Read from ".env" file.
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
-const port = 1313;
-const baseURL = `http://localhost:${port}`;
+// Use the environment variable for the base URL
+const baseURL = process.env.BASE_URL_TESTING;
 
 /**
  * @see https://playwright.dev/docs/test-configuration
