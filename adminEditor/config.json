@@ -10,7 +10,8 @@
         "checkboxList": "- [ ] Task",
         "coloredCode": "```language\ncode\n```",
         "horizontalLine": "---",
-        "internalLink": "{{< link \"path/to/file\" >}}text{{< /link >}}"
+        "internalLink": "{{< link \"path/to/file\" >}}text{{< /link >}}",
+        "mediaSelect": "![alt text](/img/blog/image.jpg)"
     },
     "icons": {
         "bold": "bold",
@@ -23,12 +24,23 @@
         "checkboxList": "tasks",
         "coloredCode": "code",
         "horizontalLine": "minus",
-        "internalLink": "file-alt"
+        "internalLink": "file-alt",
+        "mediaSelect": "photo-video"
     },
     "server": {
         "port": 8081,
         "showURLOnStart": true,
         "germanFolder": "../content/de/blog",
-        "englishFolder": "../content/en/blog"
+        "englishFolder": "../content/en/blog",
+        "mediaFolder": "../media-data",
+        "assetFolder": "../assets/img/blog",
+        "imageResize": {
+            "method": "fit",
+            "maxWidth": 2800
+        },
+        "thumbnailResize": {
+            "method": "fit",
+            "maxWidth": 640
+        }
     }
 }

@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Editor</title>
+    <title>d.o.it Markdown Editor</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+
     <style>
         body { padding: 20px; }
         #editor { width: 100%; height: 400px; }
@@ -38,6 +39,27 @@
             <button class="btn btn-info" onclick="copyToClipboard()"><i class="fas fa-copy"></i> Copy to Clipboard</button>
             <button class="btn btn-info" onclick="pasteFromClipboard()"><i class="fas fa-paste"></i> Paste from Clipboard</button>
             <button class="btn btn-secondary" onclick="toggleFullscreen()"><i class="fas fa-expand"></i> Toggle Fullscreen</button>
+        </div>
+    </div>
+
+    <!-- Media Select Modal -->
+    <div class="modal fade" id="mediaSelectModal" tabindex="-1" aria-labelledby="mediaSelectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mediaSelectModalLabel">Select Media</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <select id="mediaFileSelect" class="form-select mb-3"></select>
+                    <input type="text" id="newFileName" class="form-control mb-3" placeholder="New file name (without extension)">
+                    <input type="text" id="altText" class="form-control" placeholder="Alt text for image">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="insertMediaFile()">Insert</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -127,10 +149,10 @@
             </div>
         </div>
     </div>
-
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/markdown/markdown.min.js"></script>
+
     <script>
         let editor;
         let config;
@@ -267,6 +289,89 @@
             const modalElement = document.getElementById(modalId);
             const modal = bootstrap.Modal.getInstance(modalElement);
             modal.hide();
+        }
+
+        function insertShortcode(key, value) {
+            const doc = editor.getDoc();
+            const cursor = doc.getCursor();
+            const selection = doc.getSelection();
+            
+            switch(key) {
+                case 'bold':
+                    if (selection) {
+                        doc.replaceSelection(`**${selection}**`);
+                    } else {
+                        doc.replaceRange("**bold**", cursor);
+                    }
+                    break;
+                case 'italic':
+                    if (selection) {
+                        doc.replaceSelection(`_${selection}_`);
+                    } else {
+                        doc.replaceRange("_italic_", cursor);
+                    }
+                    break;
+                case 'standardList':
+                    doc.replaceRange("- Item 1\n- Item 2\n- Item 3\n", cursor);
+                    break;
+                case 'numberedList':
+                    doc.replaceRange("1. Item 1\n2. Item 2\n3. Item 3\n", cursor);
+                    break;
+                case 'checkboxList':
+                    doc.replaceRange("- [ ] Task 1\n- [ ] Task 2\n- [ ] Task 3\n", cursor);
+                    break;
+                case 'coloredCode':
+                    showModal('coloredCodeModal');
+                    break;
+                case 'horizontalLine':
+                    doc.replaceRange("\n\n---\n\n", cursor);
+                    break;
+                case 'internalLink':
+                    showInternalLinksDialog();
+                    break;
+                case 'mediaSelect':
+                    showMediaSelectDialog();
+                    break;
+                default:
+                    doc.replaceRange(value, cursor);
+            }
+        }
+
+   
+        function showMediaSelectDialog() {
+            fetch('/api/media-list')
+                .then(response => response.json())
+                .then(data => {
+                    const select = document.getElementById('mediaFileSelect');
+                    select.innerHTML = '';
+                    data.forEach(file => {
+                        const option = document.createElement('option');
+                        option.value = file;
+                        option.textContent = file;
+                        select.appendChild(option);
+                    });
+                    showModal('mediaSelectModal');
+                });
+        }
+
+        function insertMediaFile() {
+            const file = document.getElementById('mediaFileSelect').value;
+            const newName = document.getElementById('newFileName').value;
+            const altText = document.getElementById('altText').value;
+
+            fetch('/api/process-media', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ file, newName }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const imageMarkdown = `![${altText}](/img/blog/${data.filename})`;
+                editor.getDoc().replaceSelection(imageMarkdown);
+                hideModal('mediaSelectModal');
+            });
         }
 
         function toggleFullscreen() {

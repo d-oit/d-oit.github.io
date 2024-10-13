@@ -3,12 +3,15 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"image"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/disintegration/imaging"
 )
 
 type ShortcodeConfig struct {
@@ -21,10 +24,19 @@ type ServerConfig struct {
 	ShowURLOnStart bool   `json:"showURLOnStart"`
 	GermanFolder   string `json:"germanFolder"`
 	EnglishFolder  string `json:"englishFolder"`
+	MediaFolder    string `json:"mediaFolder"`
+	AssetFolder    string `json:"assetFolder"`
+	ImageResize    struct {
+		Method   string `json:"method"`
+		MaxWidth int    `json:"maxWidth"`
+	} `json:"imageResize"`
+	ThumbnailResize struct {
+		Method   string `json:"method"`
+		MaxWidth int    `json:"maxWidth"`
+	} `json:"thumbnailResize"`
 }
 
 type Config struct {
-	// Shortcodes ShortcodeConfig `json:"shortcodes"`
 	Shortcodes map[string]string `json:"shortcodes"`
 	Icons      map[string]string `json:"icons"`
 	Server     ServerConfig      `json:"server"`
@@ -36,25 +48,17 @@ func main() {
 	// Load configuration
 	loadConfig()
 
-	port := config.Server.Port
-
 	// Serve static files from the "static" directory
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/", fs)
-
-	// Start the server on localhost with the specified port
-	address := fmt.Sprintf("http://localhost:%d", port)
-	fmt.Printf("Starting server at %s\n", address)
-	err := http.ListenAndServe(address, nil)
-	if err != nil {
-		fmt.Printf("Error starting server: %s\n", err)
-	}
 
 	// API endpoints
 	http.HandleFunc("/api/config", handleConfig)
 	http.HandleFunc("/api/save", handleSave)
 	http.HandleFunc("/api/load", handleLoad)
 	http.HandleFunc("/api/list", handleList)
+	http.HandleFunc("/api/media-list", handleMediaList)
+	http.HandleFunc("/api/process-media", handleProcessMedia)
 
 	// Determine the address to listen on
 	addr := fmt.Sprintf(":%d", config.Server.Port)
@@ -66,6 +70,7 @@ func main() {
 		log.Printf("Server starting on port %d", config.Server.Port)
 	}
 
+	// Start the server
 	log.Fatal(http.ListenAndServe(addr, nil))
 }
 
@@ -92,14 +97,17 @@ func loadConfig() {
 	}
 
 	// Convert relative paths to absolute paths
-	absPath, err := filepath.Abs(config.Server.GermanFolder)
-	if err == nil {
-		config.Server.GermanFolder = absPath
+	absGermanFolder, err := filepath.Abs(config.Server.GermanFolder)
+	if err != nil {
+		log.Fatalf("Error converting relative path to absolute path for German folder: %v", err)
 	}
-	absPath, err = filepath.Abs(config.Server.EnglishFolder)
-	if err == nil {
-		config.Server.EnglishFolder = absPath
+	config.Server.GermanFolder = absGermanFolder
+
+	absEnglishFolder, err := filepath.Abs(config.Server.EnglishFolder)
+	if err != nil {
+		log.Fatalf("Error converting relative path to absolute path for English folder: %v", err)
 	}
+	config.Server.EnglishFolder = absEnglishFolder
 }
 
 func handleConfig(w http.ResponseWriter, r *http.Request) {
@@ -181,9 +189,6 @@ func handleList(w http.ResponseWriter, r *http.Request) {
 func listFiles(dir string) ([]string, error) {
 	var files []string
 	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
 		if !info.IsDir() && strings.HasSuffix(info.Name(), ".md") {
 			relPath, err := filepath.Rel(dir, path)
 			if err != nil {
@@ -193,7 +198,10 @@ func listFiles(dir string) ([]string, error) {
 		}
 		return nil
 	})
-	return files, err
+	if err != nil {
+		return nil, err
+	}
+	return files, nil
 }
 
 func getFullPath(filename string) string {
@@ -211,4 +219,86 @@ func getFullPath(filename string) string {
 	default:
 		return filename
 	}
+}
+
+func handleMediaList(w http.ResponseWriter, r *http.Request) {
+	files, err := ioutil.ReadDir(config.Server.MediaFolder)
+	if err != nil {
+		http.Error(w, "Error reading media directory", http.StatusInternalServerError)
+		return
+	}
+
+	var mediaFiles []string
+	for _, file := range files {
+		if !file.IsDir() {
+			mediaFiles = append(mediaFiles, file.Name())
+		}
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(mediaFiles)
+}
+
+func handleProcessMedia(w http.ResponseWriter, r *http.Request) {
+	var request struct {
+		File    string `json:"file"`
+		NewName string `json:"newName"`
+	}
+
+	err := json.NewDecoder(r.Body).Decode(&request)
+	if err != nil {
+		http.Error(w, "Invalid request", http.StatusBadRequest)
+		return
+	}
+
+	sourceFile := filepath.Join(config.Server.MediaFolder, request.File)
+	ext := filepath.Ext(request.File)
+	newFileName := request.NewName + ext
+	destFile := filepath.Join(config.Server.AssetFolder, newFileName)
+
+	// Open the source image
+	src, err := imaging.Open(sourceFile)
+	if err != nil {
+		http.Error(w, "Error opening source image", http.StatusInternalServerError)
+		return
+	}
+
+	// Resize the image
+	var resized image.Image
+	if config.Server.ImageResize.Method == "fit" {
+		resized = imaging.Fit(src, config.Server.ImageResize.MaxWidth, 0, imaging.Lanczos)
+	} else {
+		resized = imaging.Fill(src, config.Server.ImageResize.MaxWidth, 0, imaging.Center, imaging.Lanczos)
+	}
+
+	// Save the resized image
+	err = imaging.Save(resized, destFile)
+	if err != nil {
+		http.Error(w, "Error saving resized image", http.StatusInternalServerError)
+		return
+	}
+
+	// Create and save thumbnail
+	var thumbnail image.Image
+	if config.Server.ThumbnailResize.Method == "fit" {
+		thumbnail = imaging.Fit(src, config.Server.ThumbnailResize.MaxWidth, 0, imaging.Lanczos)
+	} else {
+		thumbnail = imaging.Fill(src, config.Server.ThumbnailResize.MaxWidth, 0, imaging.Center, imaging.Lanczos)
+	}
+
+	thumbnailFile := filepath.Join(config.Server.AssetFolder, "thumb_"+newFileName)
+	err = imaging.Save(thumbnail, thumbnailFile)
+	if err != nil {
+		http.Error(w, "Error saving thumbnail", http.StatusInternalServerError)
+		return
+	}
+
+	response := struct {
+		Filename string `json:"filename"`
+	}{
+		Filename: newFileName,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
 }
