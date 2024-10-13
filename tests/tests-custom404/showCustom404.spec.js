@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test('showCustom404', async ({ page }) => {
-  // Recording...
   await page.goto('/en/fdaffa');
   var element = await page.$('#fa-face-frown');
   expect(element).not.toBeNull();
