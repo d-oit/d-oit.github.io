@@ -36,9 +36,19 @@ func main() {
 	// Load configuration
 	loadConfig()
 
-	// Serve static files
+	port := config.Server.Port
+
+	// Serve static files from the "static" directory
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/", fs)
+
+	// Start the server on localhost with the specified port
+	address := fmt.Sprintf("http://localhost:%d", port)
+	fmt.Printf("Starting server at %s\n", address)
+	err := http.ListenAndServe(address, nil)
+	if err != nil {
+		fmt.Printf("Error starting server: %s\n", err)
+	}
 
 	// API endpoints
 	http.HandleFunc("/api/config", handleConfig)
@@ -75,10 +85,10 @@ func loadConfig() {
 		config.Server.Port = 8080
 	}
 	if config.Server.GermanFolder == "" {
-		config.Server.GermanFolder = "/content/de/blog"
+		config.Server.GermanFolder = "../content/de/blog"
 	}
 	if config.Server.EnglishFolder == "" {
-		config.Server.EnglishFolder = "/content/en/blog"
+		config.Server.EnglishFolder = "../content/en/blog"
 	}
 
 	// Convert relative paths to absolute paths

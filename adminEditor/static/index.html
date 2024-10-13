@@ -14,12 +14,12 @@
         #file-selector { margin-bottom: 10px; }
         .spelling-error { text-decoration: underline wavy red; }
         .grammar-error { text-decoration: underline wavy blue; }
+        .fullscreen { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999; }
     </style>
 </head>
 <body>
-    <h1>Markdown Editor</h1>
-    <div class="container">
-<div>
+    <div id="toolbar" class="btn-group" role="group"></div>
+    <div class="container main-content">
         <div id="file-selector" class="row mb-3">
             <div class="col">
                 <select id="language-select" class="form-select" onchange="updateFileList()">
@@ -31,16 +31,100 @@
                 <select id="file-select" class="form-select" onchange="loadSelectedFile()"></select>
             </div>
         </div>
-    </div>
-        <div id="toolbar" class="btn-group mb-3" role="group"></div>
-        <div class="container">
         <textarea id="editor"></textarea>
-        </div>
         <div class="mt-3">
             <button class="btn btn-primary" onclick="saveContent()"><i class="fas fa-save"></i> Save</button>
             <button class="btn btn-secondary" onclick="checkSpellingAndGrammar()"><i class="fas fa-check"></i> Check Spelling & Grammar</button>
             <button class="btn btn-info" onclick="copyToClipboard()"><i class="fas fa-copy"></i> Copy to Clipboard</button>
             <button class="btn btn-info" onclick="pasteFromClipboard()"><i class="fas fa-paste"></i> Paste from Clipboard</button>
+            <button class="btn btn-secondary" onclick="toggleFullscreen()"><i class="fas fa-expand"></i> Toggle Fullscreen</button>
+        </div>
+    </div>
+
+    <!-- Colored Code Dialog -->
+   <div class="modal fade" id="coloredCodeModal" tabindex="-1" aria-labelledby="coloredCodeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="coloredCodeModalLabel">Insert Colored Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <select id="codeLanguage" class="form-select mb-3">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="csharp">C#</option>
+                        <option value="hugo">Hugo</option>
+                        <option value="java">Java</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="php">PHP</option>
+                        <option value="swift">Swift</option>
+                        <option value="kotlin">Kotlin</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="go">Go</option>
+                        <option value="rust">Rust</option>
+                        <option value="r">R</option>
+                        <option value="perl">Perl</option>
+                        <option value="scala">Scala</option>
+                        <option value="dart">Dart</option>
+                        <option value="sql">SQL</option>
+                        <option value="bash">Bash</option>
+                        <option value="powershell">PowerShell</option>
+                        <option value="matlab">MATLAB</option>
+                        <option value="objective-c">Objective-C</option>
+                        <option value="assembly">Assembly</option>
+                        <option value="fortran">Fortran</option>
+                        <option value="cobol">COBOL</option>
+                        <option value="lua">Lua</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="elixir">Elixir</option>
+                        <option value="erlang">Erlang</option>
+                        <option value="fsharp">F#</option>
+                        <option value="haskell">Haskell</option>
+                        <option value="julia">Julia</option>
+                        <option value="lisp">Lisp</option>
+                        <option value="pascal">Pascal</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="racket">Racket</option>
+                        <option value="scheme">Scheme</option>
+                        <option value="json">Json</option>
+                        <option value="xml">XML</option>
+                        <option value="yaml">YAML</option>
+                        <option value="vhdl">VHDL</option>
+                        <option value="latex">LaTeX</option>
+                        <option value="less">Less</option>
+                        <option value="scss">SCSS</option>
+                        <option value="shell">Shell</option>
+                    </select>
+                    <textarea id="codeContent" class="form-control" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="insertColoredCode()">Enter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internal Links Dialog -->
+    <div class="modal fade" id="internalLinksModal" tabindex="-1" aria-labelledby="internalLinksModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="internalLinksModalLabel">Insert Internal Link</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <select id="internalLinkSelect" class="form-select mb-3"></select>
+                    <input type="text" id="internalLinkText" class="form-control" placeholder="Link Text">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="insertInternalLink()">Insert</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -74,19 +158,142 @@
 
         function createToolbar() {
             const toolbar = document.getElementById("toolbar");
+            
+            // Add Undo and Redo buttons
+            toolbar.innerHTML = `
+                <button class="btn btn-outline-secondary" onclick="editor.undo()" data-bs-toggle="tooltip" title="Undo"><i class="fas fa-undo"></i></button>
+                <button class="btn btn-outline-secondary" onclick="editor.redo()" data-bs-toggle="tooltip" title="Redo"><i class="fas fa-redo"></i></button>
+                <div class="btn-group btn-group-sm" role="group"></div>
+            `;
+            
+            const buttonGroup = toolbar.querySelector('.btn-group');
             for (const [key, value] of Object.entries(config.shortcodes)) {
                 const button = document.createElement("button");
                 button.className = "btn btn-outline-secondary";
                 button.innerHTML = `<i class="fas fa-${config.icons[key]}"></i>`;
-                button.onclick = () => insertShortcode(value);
-                toolbar.appendChild(button);
+                button.onclick = () => insertShortcode(key, value);
+                button.setAttribute('data-bs-toggle', 'tooltip');
+                button.setAttribute('title', key.charAt(0).toUpperCase() + key.slice(1));
+                buttonGroup.appendChild(button);
+            }
+            
+            // Initialize tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        }
+
+        function insertShortcode(key, value) {
+            const doc = editor.getDoc();
+            const cursor = doc.getCursor();
+            const selection = doc.getSelection();
+            
+            switch(key) {
+                case 'bold':
+                    if (selection) {
+                        doc.replaceSelection(`**${selection}**`);
+                    } else {
+                        doc.replaceRange("**bold**", cursor);
+                    }
+                    break;
+                case 'italic':
+                    if (selection) {
+                        doc.replaceSelection(`_${selection}_`);
+                    } else {
+                        doc.replaceRange("_italic_", cursor);
+                    }
+                    break;
+                case 'standardList':
+                    doc.replaceRange("- Item 1\n- Item 2\n- Item 3\n", cursor);
+                    break;
+                case 'numberedList':
+                    doc.replaceRange("1. Item 1\n2. Item 2\n3. Item 3\n", cursor);
+                    break;
+                case 'checkboxList':
+                    doc.replaceRange("- [ ] Task 1\n- [ ] Task 2\n- [ ] Task 3\n", cursor);
+                    break;
+                case 'coloredCode':
+                    showModal('coloredCodeModal');
+                    break;
+                case 'horizontalLine':
+                    doc.replaceRange("\n\n---\n\n", cursor);
+                    break;
+                case 'internalLink':
+                    showInternalLinksDialog();
+                    break;
+                default:
+                    doc.replaceRange(value, cursor);
             }
         }
 
-        function insertShortcode(shortcode) {
-            const doc = editor.getDoc();
-            const cursor = doc.getCursor();
-            doc.replaceRange(shortcode, cursor);
+        function showModal(modalId) {
+            const modal = new bootstrap.Modal(document.getElementById(modalId));
+            modal.show();
+        }
+
+        function insertColoredCode() {
+            const language = document.getElementById('codeLanguage').value;
+            const code = document.getElementById('codeContent').value;
+            const formattedCode = "```" + language + "\n" + code + "\n```";
+            editor.getDoc().replaceSelection(formattedCode);
+            hideModal('coloredCodeModal');
+        }
+
+        function showInternalLinksDialog() {
+            const select = document.getElementById('internalLinkSelect');
+            select.innerHTML = '';
+            for (const lang in files) {
+                for (const file of files[lang]) {
+                    const option = document.createElement('option');
+                    option.value = `./blog/${file}`;
+                    option.textContent = `./blog/${file}`;
+                    select.appendChild(option);
+                }
+            }
+            showModal('internalLinksModal');
+        }
+
+        
+        function insertInternalLink() {
+            const path = document.getElementById('internalLinkSelect').value;
+            const text = document.getElementById('internalLinkText').value || path.split('/').pop();
+            const link = `{{< button href="${path}" >}}${text}{{< /button >}}`;
+            editor.getDoc().replaceSelection(link);
+            hideModal('internalLinksModal');
+        }
+
+        function hideModal(modalId) {
+            const modalElement = document.getElementById(modalId);
+            const modal = bootstrap.Modal.getInstance(modalElement);
+            modal.hide();
+        }
+
+        function toggleFullscreen() {
+            const editorWrapper = editor.getWrapperElement();
+            if (!document.fullscreenElement) {
+                if (editorWrapper.requestFullscreen) {
+                    editorWrapper.requestFullscreen();
+                } else if (editorWrapper.mozRequestFullScreen) { // Firefox
+                    editorWrapper.mozRequestFullScreen();
+                } else if (editorWrapper.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    editorWrapper.webkitRequestFullscreen();
+                } else if (editorWrapper.msRequestFullscreen) { // IE/Edge
+                    editorWrapper.msRequestFullscreen();
+                }
+                editorWrapper.classList.add('fullscreen');
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+                editorWrapper.classList.remove('fullscreen');
+            }
         }
 
         function loadFileList() {
@@ -140,7 +347,7 @@
         function checkSpellingAndGrammar() {
             const content = editor.getValue();
             const lang = document.getElementById("language-select").value;
-            
+
             fetch(`https://api.languagetool.org/v2/check`, {
                 method: 'POST',
                 headers: {
@@ -148,18 +355,18 @@
                 },
                 body: `text=${encodeURIComponent(content)}&language=${lang}&enabledOnly=false`
             })
-            .then(response => response.json())
-            .then(data => {
-                const doc = editor.getDoc();
-                data.matches.forEach(match => {
-                    const from = doc.posFromIndex(match.offset);
-                    const to = doc.posFromIndex(match.offset + match.length);
-                    doc.markText(from, to, {
-                        className: match.rule.category.id === 'TYPOS' ? 'spelling-error' : 'grammar-error',
-                        title: match.message
+                .then(response => response.json())
+                .then(data => {
+                    const doc = editor.getDoc();
+                    data.matches.forEach(match => {
+                        const from = doc.posFromIndex(match.offset);
+                        const to = doc.posFromIndex(match.offset + match.length);
+                        doc.markText(from, to, {
+                            className: match.rule.category.id === 'TYPOS' ? 'spelling-error' : 'grammar-error',
+                            title: match.message
+                        });
                     });
                 });
-            });
         }
 
         function copyToClipboard() {
@@ -188,4 +395,5 @@
         window.onload = initEditor;
     </script>
 </body>
+
 </html>

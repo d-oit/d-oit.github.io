@@ -5,7 +5,12 @@
         "link": "[link text](url)",
         "code": "`code`",
         "image": "![alt text](image_url)",
-        "file": "{{< file full=\"false\" path=\"./config/_default/languages.toml\" id=\"file-collapse-1\" >}}"
+        "standardList": "- Item",
+        "numberedList": "1. Item",
+        "checkboxList": "- [ ] Task",
+        "coloredCode": "```language\ncode\n```",
+        "horizontalLine": "---",
+        "internalLink": "{{< link \"path/to/file\" >}}text{{< /link >}}"
     },
     "icons": {
         "bold": "bold",
@@ -13,12 +18,17 @@
         "link": "link",
         "code": "code",
         "image": "image",
-        "file": "file"
+        "standardList": "list",
+        "numberedList": "list-ol",
+        "checkboxList": "tasks",
+        "coloredCode": "code",
+        "horizontalLine": "minus",
+        "internalLink": "file-alt"
     },
     "server": {
         "port": 8081,
         "showURLOnStart": true,
-        "germanFolder": "E:/git/d-oit/blog/d-oit.github.io/content/de/blog",
-        "englishFolder": "E:/git/d-oit/blog/d-oit.github.io/content/en/blog"
+        "germanFolder": "../content/de/blog",
+        "englishFolder": "../content/en/blog"
     }
 }
