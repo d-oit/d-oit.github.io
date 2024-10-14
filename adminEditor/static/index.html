@@ -54,6 +54,8 @@
                 </div>
                 <div class="modal-body">
                     <select id="mediaFileSelect" class="form-select mb-3"></select>
+                    <input type="file" webkitRelativePath id="fileMediaSelect-select" class="form-control mb-3" placeholder="Select a file from the media folder">
+                    <p id="fileMediaSelect-feedback"></p>
                     <input type="text" id="newFileName" class="form-control mb-3" placeholder="New file name (without extension)">
                     <input type="text" id="altText" class="form-control" placeholder="Alt text for image">
                 </div>
@@ -64,6 +66,33 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="blockquoteModal" tabindex="-1" aria-labelledby="blockquoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blockquoteModalLabel">Insert Blockqoute Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <select id="blockquoteSelect" class="form-select mb-3">
+                        <option value="> [!NOTE]">NOTE</option>
+                        <option value="> [!TIP]">TIP</option>
+                        <option value="> [!IMPORTANT]">IMPORTANT</option>
+                        <option value="> [!WARNING]">WARNING</option>
+                        <option value="> [!CAUTION]">CAUTION</option>
+                        <option value="> ">Only Quote</option>                      
+                    </select>
+                    <textarea title="blockquoteEditor" id="blockquoteContent" class="form-control" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="insertBlockquoteCode()">Enter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Colored Code Dialog -->
    <div class="modal fade" id="coloredCodeModal" tabindex="-1" aria-labelledby="coloredCodeModalLabel" aria-hidden="true">
@@ -244,6 +273,9 @@
                 case 'internalLink':
                     showInternalLinksDialog();
                     break;
+                case 'blockquoteSelect':
+                    showModal('blockquoteModal');
+                    break;    
                 default:
                     doc.replaceRange(value, cursor);
             }
@@ -260,6 +292,22 @@
             const formattedCode = "```" + language + "\n" + code + "\n```";
             editor.getDoc().replaceSelection(formattedCode);
             hideModal('coloredCodeModal');
+        }
+
+        function insertBlockquoteCode() {
+            const blockquote = document.getElementById('blockquoteSelect').value;
+            const text = document.getElementById('blockquoteContent').value;
+            const formattedText = blockquote + "\n" + addPrefixToLines(text);
+            editor.getDoc().replaceSelection(formattedText);
+            hideModal('blockquoteModal');
+        }
+        
+        function addPrefixToLines(text) {
+            var lines = text.split('\n');
+            for (var i = 0; i < lines.length; i++) {
+                lines[i] = "> " + lines[i];
+            }
+            return lines.join('\n');
         }
 
         function showInternalLinksDialog() {
@@ -332,6 +380,9 @@
                 case 'mediaSelect':
                     showMediaSelectDialog();
                     break;
+                case 'blockquoteSelect':
+                    showModal('blockquoteModal');
+                    break;    
                 default:
                     doc.replaceRange(value, cursor);
             }
@@ -350,12 +401,23 @@
                         option.textContent = file;
                         select.appendChild(option);
                     });
+                    // TODO change, only for testing now -> create this as example for testing purposes:
+                    var fileName = document.getElementById("file-select").value;
+                    var newFileName = fileName.replace(/\.md$/, '_1'); // Replace .md with 1
+                    document.getElementById("newFileName").defaultValue = newFileName;
+                    document.getElementById("altText").defaultValue = newFileName;
                     showModal('mediaSelectModal');
                 });
         }
 
         function insertMediaFile() {
-            const file = document.getElementById('mediaFileSelect').value;
+            var file = document.getElementById('mediaFileSelect').value;
+            console.log(file)
+            const fileMediaSelect = document.getElementById('fileMediaSelect-select').files[0].name;
+            if(fileMediaSelect != null && fileMediaSelect) {
+                file = fileMediaSelect;
+                console.log(file)
+            }
             const newName = document.getElementById('newFileName').value;
             const altText = document.getElementById('altText').value;
 
@@ -373,6 +435,24 @@
                 hideModal('mediaSelectModal');
             });
         }
+
+        document.getElementById("fileMediaSelect-select").addEventListener("change", function() {
+            var fileInput = document.getElementById("fileMediaSelect-select");
+            var filePath = fileInput.value;
+           
+            var feedback = document.getElementById("fileMediaSelect-feedback");
+
+            // Check if the selected file is in the ./mediaSet folder
+            // TODO check against the media file list /api/media-list
+            if (true) {
+                feedback.textContent = "File selected: " + fileInput.files[0].name;
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Please select a file from the media folder.";
+                feedback.style.color = "red";
+                fileInput.value = ""; // Clear the input
+            }
+        });
 
         function toggleFullscreen() {
             const editorWrapper = editor.getWrapperElement();
@@ -485,6 +565,8 @@
                     alert('Failed to copy content. Please try again.');
                 });
         }
+
+        
 
         function pasteFromClipboard() {
             navigator.clipboard.readText()

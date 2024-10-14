@@ -11,7 +11,8 @@
         "coloredCode": "```language\ncode\n```",
         "horizontalLine": "---",
         "internalLink": "{{< link \"path/to/file\" >}}text{{< /link >}}",
-        "mediaSelect": "![alt text](/img/blog/image.jpg)"
+        "mediaSelect": "![alt text](/img/blog/image.jpg)",
+        "blockquoteSelect": "Github \n Blockquote content"
     },
     "icons": {
         "bold": "bold",
@@ -25,7 +26,8 @@
         "coloredCode": "code",
         "horizontalLine": "minus",
         "internalLink": "file-alt",
-        "mediaSelect": "photo-video"
+        "mediaSelect": "photo-video",
+        "blockquoteSelect": "quote-right"
     },
     "server": {
         "port": 8081,
@@ -40,7 +42,7 @@
         },
         "thumbnailResize": {
             "method": "fit",
-            "maxWidth": 640
+            "maxWidth": 1024
         }
     }
 }
