@@ -243,6 +243,15 @@
         "league": "ProA"
     },
     {
+        "name": "New York Knicks vs. Boston Celtics",
+        "begin": "2024-10-23T01:05:00+02:00",
+        "end": "2024-10-23T02:55:00+02:00",
+        "description": "NBA live stream on ProSieben MAXX, Joyn, ran.de and in the ran-App",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
         "name": "FC Bayern M\u00fcnchen vs Olympiakos Pir\u00e4us",
         "begin": "2024-10-25T20:30:00+02:00",
         "end": "2024-10-25T22:00:00+02:00",
@@ -315,6 +324,15 @@
         "league": "ProA"
     },
     {
+        "name": "Los Angeles Clippers vs. Denver Nuggets",
+        "begin": "2024-10-26T22:40:00+02:00",
+        "end": "2024-10-27T00:30:00+02:00",
+        "description": "NBA live stream on ProSieben MAXX, Joyn, ran.de and in the ran-App",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
         "name": "GIESSEN 46ers vs RASTA Vechta II",
         "begin": "2024-10-27T14:45:00+01:00",
         "end": "2024-10-27T16:15:00+01:00",
@@ -331,6 +349,15 @@
         "location": "welt.tv",
         "url": "https://welt.tv",
         "league": null
+    },
+    {
+        "name": "Philadelphia 76ers vs. Indiana Pacers",
+        "begin": "2024-10-27T20:15:00+01:00",
+        "end": "2024-10-27T21:55:00+01:00",
+        "description": "NBA live stream on ProSieben MAXX, Joyn, ran.de and in the ran-App",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
     },
     {
         "name": "Zalgiris Kaunas vs Roter Stern Belgrad",
