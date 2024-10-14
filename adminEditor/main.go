@@ -263,12 +263,19 @@ func handleProcessMedia(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Get the dimensions of the source image
+	srcWidth := src.Bounds().Dx()
+	srcHeight := src.Bounds().Dy()
+
+	// Calculate the new height to maintain the aspect ratio
+	newHeight := (config.Server.ImageResize.MaxWidth * srcHeight) / srcWidth
+
 	// Resize the image
 	var resized image.Image
 	if config.Server.ImageResize.Method == "fit" {
-		resized = imaging.Fit(src, config.Server.ImageResize.MaxWidth, 0, imaging.Lanczos)
+		resized = imaging.Fit(src, config.Server.ImageResize.MaxWidth, newHeight, imaging.Lanczos)
 	} else {
-		resized = imaging.Fill(src, config.Server.ImageResize.MaxWidth, 0, imaging.Center, imaging.Lanczos)
+		resized = imaging.Fill(src, config.Server.ImageResize.MaxWidth, newHeight, imaging.Center, imaging.Lanczos)
 	}
 
 	// Save the resized image
@@ -281,9 +288,9 @@ func handleProcessMedia(w http.ResponseWriter, r *http.Request) {
 	// Create and save thumbnail
 	var thumbnail image.Image
 	if config.Server.ThumbnailResize.Method == "fit" {
-		thumbnail = imaging.Fit(src, config.Server.ThumbnailResize.MaxWidth, 0, imaging.Lanczos)
+		thumbnail = imaging.Fit(src, config.Server.ThumbnailResize.MaxWidth, newHeight, imaging.Lanczos)
 	} else {
-		thumbnail = imaging.Fill(src, config.Server.ThumbnailResize.MaxWidth, 0, imaging.Center, imaging.Lanczos)
+		thumbnail = imaging.Fill(src, config.Server.ThumbnailResize.MaxWidth, newHeight, imaging.Center, imaging.Lanczos)
 	}
 
 	thumbnailFile := filepath.Join(config.Server.AssetFolder, "thumb_"+newFileName)
