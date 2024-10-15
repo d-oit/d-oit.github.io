@@ -1,34 +1,97 @@
 {
-    "shortcodes": {
-        "1_bold": "**bold**",
-        "2_italic": "_italic_",
-        "link": "[link text](url)",
-        "7_code": "`code`",
-        "image": "![alt text](image_url)",
-        "5_standardList": "- Item",
-        "3_numberedList": "1. Item",
-        "4_checkboxList": "- [ ] Task",
-        "coloredCode": "```language\ncode\n```",
-        "horizontalLine": "---",
-        "internalLink": "{{< link \"path/to/file\" >}}text{{< /link >}}",
-        "mediaSelect": "![alt text](/img/blog/image.jpg)",
-        "6_blockquoteSelect": "Github \n Blockquote content"
-    },
-    "icons": {
-        "1_bold": "bold",
-        "2_italic": "italic",
-        "link": "link",
-        "7_code": "code",
-        "image": "image",
-        "5_standardList": "list",
-        "3_numberedList": "list-ol",
-        "4_checkboxList": "tasks",
-        "coloredCode": "code",
-        "horizontalLine": "minus",
-        "internalLink": "file-alt",
-        "mediaSelect": "photo-video",
-        "6_blockquoteSelect": "quote-right"
-    },
+    "shortcodes": [
+        {
+            "id": "bold",
+            "code": "**bold**",
+            "icon": "bold",
+            "order": 1,
+            "tooltip": "Make text bold"
+        },
+        {
+            "id": "italic",
+            "code": "_italic_",
+            "icon": "italic",
+            "order": 2,
+            "tooltip": "Make text italic"
+        },
+        {
+            "id": "numberedList",
+            "code": "1. Item",
+            "icon": "list-ol",
+            "order": 3,
+            "tooltip": "Create a numbered list"
+        },
+        {
+            "id": "checkboxList",
+            "code": "- [ ] Task",
+            "icon": "tasks",
+            "order": 4,
+            "tooltip": "Create a checkbox list"
+        },
+        {
+            "id": "standardList",
+            "code": "- Item",
+            "icon": "list",
+            "order": 5,
+            "tooltip": "Create a bullet list"
+        },
+        {
+            "id": "blockquoteSelect",
+            "code": "Github \n Blockquote content",
+            "icon": "quote-right",
+            "order": 6,
+            "tooltip": "Insert a blockquote"
+        },
+        {
+            "id": "code",
+            "code": "`code`",
+            "icon": "code",
+            "order": 7,
+            "tooltip": "Insert inline code"
+        },
+        {
+            "id": "link",
+            "code": "[link text](url)",
+            "icon": "link",
+            "order": 8,
+            "tooltip": "Insert a link"
+        },
+        {
+            "id": "image",
+            "code": "![alt text](image_url)",
+            "icon": "image",
+            "order": 9,
+            "tooltip": "Insert an image"
+        },
+        {
+            "id": "coloredCode",
+            "code": "```language\ncode\n```",
+            "icon": "code",
+            "order": 10,
+            "tooltip": "Insert colored code block"
+        },
+        {
+            "id": "horizontalLine",
+            "code": "---",
+            "icon": "minus",
+            "order": 11,
+            "tooltip": "Insert horizontal line"
+        },
+        {
+            "id": "internalLink",
+            "code": "{{< link \"path/to/file\" >}}text{{< /link >}}",
+            "icon": "file-alt",
+            "order": 12,
+            "tooltip": "Insert internal link"
+        },
+        {
+            "id": "mediaSelect",
+            "code": "![alt text](/img/blog/image.jpg)",
+            "icon": "photo-video",
+            "order": 13,
+            "tooltip": "Select and insert media"
+        }
+    ],
     "server": {
         "port": 8081,
         "showURLOnStart": true,

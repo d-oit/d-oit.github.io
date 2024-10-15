@@ -14,9 +14,12 @@ import (
 	"github.com/disintegration/imaging"
 )
 
-type ShortcodeConfig struct {
-	Shortcodes map[string]string `json:"shortcodes"`
-	Icons      map[string]string `json:"icons"`
+type Shortcode struct {
+	ID      string `json:"id"`
+	Code    string `json:"code"`
+	Icon    string `json:"icon"`
+	Order   int    `json:"order"`
+	Tooltip string `json:"tooltip"`
 }
 
 type ServerConfig struct {
@@ -37,9 +40,8 @@ type ServerConfig struct {
 }
 
 type Config struct {
-	Shortcodes map[string]string `json:"shortcodes"`
-	Icons      map[string]string `json:"icons"`
-	Server     ServerConfig      `json:"server"`
+	Shortcodes []Shortcode  `json:"shortcodes"`
+	Server     ServerConfig `json:"server"`
 }
 
 var config Config
@@ -183,7 +185,18 @@ func handleList(w http.ResponseWriter, r *http.Request) {
 	files["en"] = englishFiles
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(files)
+	lang := r.URL.Query().Get("lang")
+	switch lang {
+	case "de":
+		json.NewEncoder(w).Encode(germanFiles)
+	case "en":
+		json.NewEncoder(w).Encode(englishFiles)
+	default:
+		json.NewEncoder(w).Encode(files)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+
 }
 
 func listFiles(dir string) ([]string, error) {
