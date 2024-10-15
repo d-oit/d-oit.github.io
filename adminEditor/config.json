@@ -1,33 +1,33 @@
 {
     "shortcodes": {
-        "bold": "**bold**",
-        "italic": "_italic_",
+        "1_bold": "**bold**",
+        "2_italic": "_italic_",
         "link": "[link text](url)",
-        "code": "`code`",
+        "7_code": "`code`",
         "image": "![alt text](image_url)",
-        "standardList": "- Item",
-        "numberedList": "1. Item",
-        "checkboxList": "- [ ] Task",
+        "5_standardList": "- Item",
+        "3_numberedList": "1. Item",
+        "4_checkboxList": "- [ ] Task",
         "coloredCode": "```language\ncode\n```",
         "horizontalLine": "---",
         "internalLink": "{{< link \"path/to/file\" >}}text{{< /link >}}",
         "mediaSelect": "![alt text](/img/blog/image.jpg)",
-        "blockquoteSelect": "Github \n Blockquote content"
+        "6_blockquoteSelect": "Github \n Blockquote content"
     },
     "icons": {
-        "bold": "bold",
-        "italic": "italic",
+        "1_bold": "bold",
+        "2_italic": "italic",
         "link": "link",
-        "code": "code",
+        "7_code": "code",
         "image": "image",
-        "standardList": "list",
-        "numberedList": "list-ol",
-        "checkboxList": "tasks",
+        "5_standardList": "list",
+        "3_numberedList": "list-ol",
+        "4_checkboxList": "tasks",
         "coloredCode": "code",
         "horizontalLine": "minus",
         "internalLink": "file-alt",
         "mediaSelect": "photo-video",
-        "blockquoteSelect": "quote-right"
+        "6_blockquoteSelect": "quote-right"
     },
     "server": {
         "port": 8081,

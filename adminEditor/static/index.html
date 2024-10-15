@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +10,46 @@
         .CodeMirror {
             border: 1px solid #eee;
             height: auto;
-          }
-        body { padding: 20px; }
-        #editor { width: 100%; height: 300px; }
-        #toolbar { margin-bottom: 10px; }
-        #file-selector { margin-bottom: 10px; }
-        .spelling-error { text-decoration: underline wavy red; }
-        .grammar-error { text-decoration: underline wavy blue; }
-        .fullscreen { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999; }
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        #editor {
+            width: 100%;
+            height: 300px;
+        }
+
+        #toolbar {
+            margin-bottom: 10px;
+        }
+
+        #file-selector {
+            margin-bottom: 10px;
+        }
+
+        .spelling-error {
+            text-decoration: underline wavy red;
+        }
+
+        .grammar-error {
+            text-decoration: underline wavy blue;
+        }
+
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+        }
     </style>
 </head>
+
 <body>
-    
+
     <div class="main-content">
         <div id="toolbar" class="btn-group" role="group"></div>
         <div id="file-selector" class="row mb-3">
@@ -31,21 +60,27 @@
                 </select>
             </div>
             <div class="col">
-                <select title="select markdown" id="file-select" class="form-select" onchange="loadSelectedFile()"></select>
+                <select title="select markdown" id="file-select" class="form-select"
+                    onchange="loadSelectedFile()"></select>
             </div>
         </div>
         <textarea title="editor" id="editor"></textarea>
         <div class="mt-3">
             <button class="btn btn-primary" onclick="saveContent()"><i class="fas fa-save"></i> Save</button>
-            <button class="btn btn-secondary" onclick="checkSpellingAndGrammar()"><i class="fas fa-check"></i> Check Spelling & Grammar</button>
-            <button class="btn btn-info" onclick="copyToClipboard()"><i class="fas fa-copy"></i> Copy to Clipboard</button>
-            <button class="btn btn-info" onclick="pasteFromClipboard()"><i class="fas fa-paste"></i> Paste from Clipboard</button>
-            <button class="btn btn-secondary" onclick="toggleFullscreen()"><i class="fas fa-expand"></i> Toggle Fullscreen</button>
+            <button class="btn btn-secondary" onclick="checkSpellingAndGrammar()"><i class="fas fa-check"></i> Check
+                Spelling & Grammar</button>
+            <button class="btn btn-info" onclick="copyToClipboard()"><i class="fas fa-copy"></i> Copy to
+                Clipboard</button>
+            <button class="btn btn-info" onclick="pasteFromClipboard()"><i class="fas fa-paste"></i> Paste from
+                Clipboard</button>
+            <button class="btn btn-secondary" onclick="toggleFullscreen()"><i class="fas fa-expand"></i> Toggle
+                Fullscreen</button>
         </div>
     </div>
 
     <!-- Media Select Modal -->
-    <div class="modal fade" id="mediaSelectModal" tabindex="-1" aria-labelledby="mediaSelectModalLabel" aria-hidden="true">
+    <div class="modal fade" id="mediaSelectModal" tabindex="-1" aria-labelledby="mediaSelectModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -54,9 +89,11 @@
                 </div>
                 <div class="modal-body">
                     <select id="mediaFileSelect" class="form-select mb-3"></select>
-                    <input type="file" webkitRelativePath id="fileMediaSelect-select" class="form-control mb-3" placeholder="Select a file from the media folder">
+                    <input type="file" webkitRelativePath id="fileMediaSelect-select" class="form-control mb-3"
+                        placeholder="Select a file from the media folder">
                     <p id="fileMediaSelect-feedback"></p>
-                    <input type="text" id="newFileName" class="form-control mb-3" placeholder="New file name (without extension)">
+                    <input type="text" id="newFileName" class="form-control mb-3"
+                        placeholder="New file name (without extension)">
                     <input type="text" id="altText" class="form-control" placeholder="Alt text for image">
                 </div>
                 <div class="modal-footer">
@@ -67,7 +104,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="blockquoteModal" tabindex="-1" aria-labelledby="blockquoteModalLabel" aria-hidden="true">
+    <div class="modal fade" id="blockquoteModal" tabindex="-1" aria-labelledby="blockquoteModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -81,7 +119,7 @@
                         <option value="> [!IMPORTANT]">IMPORTANT</option>
                         <option value="> [!WARNING]">WARNING</option>
                         <option value="> [!CAUTION]">CAUTION</option>
-                        <option value="> ">Only Quote</option>                      
+                        <option value="> ">Only Quote</option>
                     </select>
                     <textarea title="blockquoteEditor" id="blockquoteContent" class="form-control" rows="10"></textarea>
                 </div>
@@ -95,7 +133,8 @@
 
 
     <!-- Colored Code Dialog -->
-   <div class="modal fade" id="coloredCodeModal" tabindex="-1" aria-labelledby="coloredCodeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="coloredCodeModal" tabindex="-1" aria-labelledby="coloredCodeModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -162,7 +201,8 @@
     </div>
 
     <!-- Internal Links Dialog -->
-    <div class="modal fade" id="internalLinksModal" tabindex="-1" aria-labelledby="internalLinksModalLabel" aria-hidden="true">
+    <div class="modal fade" id="internalLinksModal" tabindex="-1" aria-labelledby="internalLinksModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -209,14 +249,14 @@
 
         function createToolbar() {
             const toolbar = document.getElementById("toolbar");
-            
+
             // Add Undo and Redo buttons
             toolbar.innerHTML = `
                 <button class="btn btn-outline-secondary" onclick="editor.undo()" data-bs-toggle="tooltip" title="Undo"><i class="fas fa-undo"></i></button>
                 <button class="btn btn-outline-secondary" onclick="editor.redo()" data-bs-toggle="tooltip" title="Redo"><i class="fas fa-redo"></i></button>
                 <div class="btn-group btn-group-sm" role="group"></div>
             `;
-            
+
             const buttonGroup = toolbar.querySelector('.btn-group');
             for (const [key, value] of Object.entries(config.shortcodes)) {
                 const button = document.createElement("button");
@@ -227,7 +267,7 @@
                 button.setAttribute('title', key.charAt(0).toUpperCase() + key.slice(1));
                 buttonGroup.appendChild(button);
             }
-            
+
             // Initialize tooltips
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -239,112 +279,8 @@
             const doc = editor.getDoc();
             const cursor = doc.getCursor();
             const selection = doc.getSelection();
-            
-            switch(key) {
-                case 'bold':
-                    if (selection) {
-                        doc.replaceSelection(`**${selection}**`);
-                    } else {
-                        doc.replaceRange("**bold**", cursor);
-                    }
-                    break;
-                case 'italic':
-                    if (selection) {
-                        doc.replaceSelection(`_${selection}_`);
-                    } else {
-                        doc.replaceRange("_italic_", cursor);
-                    }
-                    break;
-                case 'standardList':
-                    doc.replaceRange("- Item 1\n- Item 2\n- Item 3\n", cursor);
-                    break;
-                case 'numberedList':
-                    doc.replaceRange("1. Item 1\n2. Item 2\n3. Item 3\n", cursor);
-                    break;
-                case 'checkboxList':
-                    doc.replaceRange("- [ ] Task 1\n- [ ] Task 2\n- [ ] Task 3\n", cursor);
-                    break;
-                case 'coloredCode':
-                    showModal('coloredCodeModal');
-                    break;
-                case 'horizontalLine':
-                    doc.replaceRange("\n\n---\n\n", cursor);
-                    break;
-                case 'internalLink':
-                    showInternalLinksDialog();
-                    break;
-                case 'blockquoteSelect':
-                    showModal('blockquoteModal');
-                    break;    
-                default:
-                    doc.replaceRange(value, cursor);
-            }
-        }
 
-        function showModal(modalId) {
-            const modal = new bootstrap.Modal(document.getElementById(modalId));
-            modal.show();
-        }
-
-        function insertColoredCode() {
-            const language = document.getElementById('codeLanguage').value;
-            const code = document.getElementById('codeContent').value;
-            const formattedCode = "```" + language + "\n" + code + "\n```";
-            editor.getDoc().replaceSelection(formattedCode);
-            hideModal('coloredCodeModal');
-        }
-
-        function insertBlockquoteCode() {
-            const blockquote = document.getElementById('blockquoteSelect').value;
-            const text = document.getElementById('blockquoteContent').value;
-            const formattedText = blockquote + "\n" + addPrefixToLines(text);
-            editor.getDoc().replaceSelection(formattedText);
-            hideModal('blockquoteModal');
-        }
-        
-        function addPrefixToLines(text) {
-            var lines = text.split('\n');
-            for (var i = 0; i < lines.length; i++) {
-                lines[i] = "> " + lines[i];
-            }
-            return lines.join('\n');
-        }
-
-        function showInternalLinksDialog() {
-            const select = document.getElementById('internalLinkSelect');
-            select.innerHTML = '';
-            for (const lang in files) {
-                for (const file of files[lang]) {
-                    const option = document.createElement('option');
-                    option.value = `./blog/${file}`;
-                    option.textContent = `./blog/${file}`;
-                    select.appendChild(option);
-                }
-            }
-            showModal('internalLinksModal');
-        }
-
-        
-        function insertInternalLink() {
-            const path = document.getElementById('internalLinkSelect').value;
-            const text = document.getElementById('internalLinkText').value || path.split('/').pop();
-            const link = `{{< button href="${path}" >}}${text}{{< /button >}}`;
-            editor.getDoc().replaceSelection(link);
-            hideModal('internalLinksModal');
-        }
-
-        function hideModal(modalId) {
-            const modalElement = document.getElementById(modalId);
-            const modal = bootstrap.Modal.getInstance(modalElement);
-            modal.hide();
-        }
-
-        function insertShortcode(key, value) {
-            const doc = editor.getDoc();
-            const cursor = doc.getCursor();
-            const selection = doc.getSelection();
-            
-            switch(key) {
+            switch (key) {
                 case 'bold':
                     if (selection) {
                         doc.replaceSelection(`**${selection}**`);
@@ -382,13 +318,71 @@
                     break;
                 case 'blockquoteSelect':
                     showModal('blockquoteModal');
-                    break;    
+                    break;
                 default:
                     doc.replaceRange(value, cursor);
             }
         }
 
-   
+
+        function showModal(modalId) {
+            const modal = new bootstrap.Modal(document.getElementById(modalId));
+            modal.show();
+        }
+
+        function insertColoredCode() {
+            const language = document.getElementById('codeLanguage').value;
+            const code = document.getElementById('codeContent').value;
+            const formattedCode = "```" + language + "\n" + code + "\n```";
+            editor.getDoc().replaceSelection(formattedCode);
+            hideModal('coloredCodeModal');
+        }
+
+        function insertBlockquoteCode() {
+            const blockquote = document.getElementById('blockquoteSelect').value;
+            const text = document.getElementById('blockquoteContent').value;
+            const formattedText = blockquote + "\n" + addPrefixToLines(text);
+            editor.getDoc().replaceSelection(formattedText);
+            hideModal('blockquoteModal');
+        }
+
+        function addPrefixToLines(text) {
+            var lines = text.split('\n');
+            for (var i = 0; i < lines.length; i++) {
+                lines[i] = "> " + lines[i];
+            }
+            return lines.join('\n');
+        }
+
+        function showInternalLinksDialog() {
+            const select = document.getElementById('internalLinkSelect');
+            select.innerHTML = '';
+            for (const lang in files) {
+                for (const file of files[lang]) {
+                    const option = document.createElement('option');
+                    option.value = `./blog/${file}`;
+                    option.textContent = `./blog/${file}`;
+                    select.appendChild(option);
+                }
+            }
+            showModal('internalLinksModal');
+        }
+
+
+        function insertInternalLink() {
+            const path = document.getElementById('internalLinkSelect').value;
+            const text = document.getElementById('internalLinkText').value || path.split('/').pop();
+            const link = `{{< button href="${path}" >}}${text}{{< /button >}}`;
+            editor.getDoc().replaceSelection(link);
+            hideModal('internalLinksModal');
+        }
+
+        function hideModal(modalId) {
+            const modalElement = document.getElementById(modalId);
+            const modal = bootstrap.Modal.getInstance(modalElement);
+            modal.hide();
+        }
+
         function showMediaSelectDialog() {
             fetch('/api/media-list')
                 .then(response => response.json())
@@ -413,9 +407,9 @@
         function insertMediaFile() {
             var file = document.getElementById('mediaFileSelect').value;
             console.log(file)
-            const fileMediaSelect = document.getElementById('fileMediaSelect-select').files[0].name;
-            if(fileMediaSelect != null && fileMediaSelect) {
-                file = fileMediaSelect;
+            const fileMediaSelect = document.getElementById('fileMediaSelect-select').value;
+            if (fileMediaSelect != null && fileMediaSelect) {
+                file = document.getElementById('fileMediaSelect-select').files[0].name;
                 console.log(file)
             }
             const newName = document.getElementById('newFileName').value;
@@ -428,18 +422,18 @@
                 },
                 body: JSON.stringify({ file, newName }),
             })
-            .then(response => response.json())
-            .then(data => {
-                const imageMarkdown = `![${altText}](/img/blog/${data.filename})`;
-                editor.getDoc().replaceSelection(imageMarkdown);
-                hideModal('mediaSelectModal');
-            });
+                .then(response => response.json())
+                .then(data => {
+                    const imageMarkdown = `![${altText}](/img/blog/${data.filename})`;
+                    editor.getDoc().replaceSelection(imageMarkdown);
+                    hideModal('mediaSelectModal');
+                });
         }
 
-        document.getElementById("fileMediaSelect-select").addEventListener("change", function() {
+        document.getElementById("fileMediaSelect-select").addEventListener("change", function () {
             var fileInput = document.getElementById("fileMediaSelect-select");
             var filePath = fileInput.value;
-           
+
             var feedback = document.getElementById("fileMediaSelect-feedback");
 
             // Check if the selected file is in the ./mediaSet folder
@@ -566,7 +560,7 @@
                 });
         }
 
-        
+
 
         function pasteFromClipboard() {
             navigator.clipboard.readText()
