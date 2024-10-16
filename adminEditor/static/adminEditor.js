@@ -1,6 +1,5 @@
 "use strict";
 
-
 var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
   mode: "markdown",
   lineNumbers: true,
@@ -16,18 +15,15 @@ editor.setSize(null, viewportHeight + 'px');
 
 var isDirty = false;
 
-// Set the flag when the content changes
 editor.on("change", function () {
   isDirty = true;
 });
 
-// Warn the user if there are unsaved changes
 window.addEventListener("beforeunload", function (e) {
   if (isDirty) {
-    var confirmationMessage =
-      "You have unsaved changes. Are you sure you want to leave?";
-    e.returnValue = confirmationMessage; // Standard for most browsers
-    return confirmationMessage; // For some older browsers
+    var confirmationMessage = "You have unsaved changes. Are you sure you want to leave?";
+    e.returnValue = confirmationMessage;
+    return confirmationMessage;
   }
 });
 
@@ -37,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const languageSelect = document.getElementById("language-select");
   const fileSelect = document.getElementById("file-select");
 
-  // Fetch configuration and initialize the editor
   fetch("/api/config")
     .then((response) => response.json())
     .then((data) => {
@@ -50,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeToolbar() {
     const toolbar = document.getElementById("toolbar");
-    // Add Undo and Redo buttons
     toolbar.innerHTML = `
         <button class="btn btn-outline-secondary" onclick="editor.undo()" data-bs-toggle="tooltip" title="Undo"><i class="fas fa-undo"></i></button>
         <button class="btn btn-outline-secondary" onclick="editor.redo()" data-bs-toggle="tooltip" title="Redo"><i class="fas fa-redo"></i></button>
@@ -83,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         fileSelect.innerHTML = "";
-        // Check if data is an object with language keys
         const files = Array.isArray(data) ? data : data[language] || [];
         files.forEach((file) => {
           const option = document.createElement("option");
@@ -107,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((response) => response.text())
         .then((content) => {
           editor.setValue(content);
+          isDirty = false;
         })
         .catch((error) => {
           console.error("Error loading file:", error);
@@ -117,18 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeButtons() {
     document.getElementById("save-btn").addEventListener("click", saveFile);
-    document
-      .getElementById("spell-check-btn")
-      .addEventListener("click", checkSpelling);
-    document
-      .getElementById("copy-btn")
-      .addEventListener("click", copyToClipboard);
-    document
-      .getElementById("paste-btn")
-      .addEventListener("click", pasteFromClipboard);
-    document
-      .getElementById("fullscreen-btn")
-      .addEventListener("click", toggleFullscreen);
+    document.getElementById("spell-check-btn").addEventListener("click", checkSpelling);
+    document.getElementById("copy-btn").addEventListener("click", copyToClipboard);
+    document.getElementById("paste-btn").addEventListener("click", pasteFromClipboard);
+    document.getElementById("fullscreen-btn").addEventListener("click", toggleFullscreen);
   }
 
   function initializeModals() {
@@ -165,13 +151,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function saveFile() {
     const language = languageSelect.value;
     const file = fileSelect.value;
-    const content = editor.value;
+    const content = editor.getValue();
     fetch(`/api/save?file=${language}/${file}`, {
       method: "POST",
       body: content,
     })
       .then(() => {
         alert("File saved successfully");
+        isDirty = false;
       })
       .catch((error) => {
         alert("Error saving file: " + error);
@@ -180,16 +167,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function checkSpelling() {
     const content = editor.getValue();
-    const lang = document.getElementById("language-select").value;
+    const lang = languageSelect.value;
 
     fetch(`https://api.languagetool.org/v2/check`, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `text=${encodeURIComponent(
-        content
-      )}&language=${lang}&enabledOnly=false`,
+      body: `text=${encodeURIComponent(content)}&language=${lang}&enabledOnly=false`,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -198,10 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const from = doc.posFromIndex(match.offset);
           const to = doc.posFromIndex(match.offset + match.length);
           doc.markText(from, to, {
-            className:
-              match.rule.category.id === "TYPOS"
-                ? "spelling-error"
-                : "grammar-error",
+            className: match.rule.category.id === "TYPOS" ? "spelling-error" : "grammar-error",
             title: match.message,
           });
         });
@@ -209,8 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function copyToClipboard() {
-    navigator.clipboard
-      .writeText(editor.getValue())
+    navigator.clipboard.writeText(editor.getValue())
       .then(() => {
         alert("Content copied to clipboard");
       })
@@ -220,10 +201,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function pasteFromClipboard() {
-    navigator.clipboard
-      .readText()
+    navigator.clipboard.readText()
       .then((text) => {
-        insertShortcode(text);
+        editor.replaceSelection(text);
       })
       .catch((err) => {
         alert("Failed to paste: " + err);
@@ -241,113 +221,64 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function initializeMediaSelectModal() {
-    const modal = new bootstrap.Modal(
-      document.getElementById("mediaSelectModal")
-    );
+    const modal = new bootstrap.Modal(document.getElementById("mediaSelectModal"));
     const modalBody = document.querySelector("#mediaSelectModal .modal-body");
     const insertBtn = document.getElementById("insert-media-btn");
-
-    // Fetch and display media list
+  
     fetch("/api/media-list")
       .then((response) => response.json())
       .then((mediaFiles) => {
         modalBody.innerHTML = "";
+        const select = document.createElement("select");
+        select.className = "form-select";
+        select.id = "mediaFileSelect";
+  
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "Select a file";
+        defaultOption.selected = true;
+        defaultOption.disabled = true;
+        select.appendChild(defaultOption);
+  
         mediaFiles.forEach((file) => {
-          const div = document.createElement("div");
-          div.className = "form-check";
-          div.innerHTML = `
-                        <input class="form-check-input" type="radio" name="mediaFile" id="${file}" value="${file}">
-                        <label class="form-check-label" for="${file}">${file}</label>
-                    `;
-          modalBody.appendChild(div);
+          const option = document.createElement("option");
+          option.value = file;
+          option.textContent = file;
+          select.appendChild(option);
         });
+  
+        modalBody.appendChild(select);
       });
-
+  
     insertBtn.addEventListener("click", () => {
-      const selectedFile = document.querySelector(
-        'input[name="mediaFile"]:checked'
-      );
+      const selectedFile = document.getElementById("mediaFileSelect").value;
       if (selectedFile) {
-        insertShortcode(
-          `![${selectedFile.value}](/img/blog/${selectedFile.value})`
-        );
+        editor.replaceSelection(`![${selectedFile}](/img/blog/${selectedFile})`);
       }
       modal.hide();
     });
   }
 
   function initializeBlockquoteModal() {
-    const modal = new bootstrap.Modal(
-      document.getElementById("blockquoteModal")
-    );
+    const modal = new bootstrap.Modal(document.getElementById("blockquoteModal"));
     const insertBtn = document.getElementById("insert-blockquote-btn");
     insertBtn.addEventListener("click", () => {
       const type = document.getElementById("blockquote-type").value;
-      insertShortcode(
-        `{{< blockquote type="${type}" >}}\nYour blockquote content here\n{{< /blockquote >}}`
-      );
+      editor.replaceSelection(`{{< blockquote type="${type}" >}}\nYour blockquote content here\n{{< /blockquote >}}`);
       modal.hide();
     });
-  }
-
-  function hideModal(modalId) {
-    const modalElement = document.getElementById(modalId);
-    const modal = bootstrap.Modal.getInstance(modalElement);
-    modal.hide();
   }
 
   function initializeColoredCodeModal() {
     const insertBtn = document.getElementById("insert-colored-code-btn");
     const languageSelect = document.getElementById("code-language");
 
-    // Populate language options
     const languages = [
-      "JavaScript",
-      "Python",
-      "HTML",
-      "CSS",
-      "C#",
-      "Hugo",
-      "Java",
-      "Ruby",
-      "PHP",
-      "Swift",
-      "Kotlin",
-      "TypeScript",
-      "Go",
-      "Rust",
-      "R",
-      "Perl",
-      "Scala",
-      "Dart",
-      "SQL",
-      "Bash",
-      "PowerShell",
-      "MATLAB",
-      "Objective-C",
-      "Assembly",
-      "Fortran",
-      "COBOL",
-      "Lua",
-      "Clojure",
-      "Elixir",
-      "Erlang",
-      "F#",
-      "Haskell",
-      "Julia",
-      "Lisp",
-      "Pascal",
-      "Prolog",
-      "Racket",
-      "Scheme",
-      "Json",
-      "XML",
-      "YAML",
-      "VHDL",
-      "LaTeX",
-      "Less",
-      "SCSS",
-      "Shell",
+      "JavaScript", "Python", "HTML", "CSS", "C#", "Hugo", "Java", "Ruby", "PHP", "Swift",
+      "Kotlin", "TypeScript", "Go", "Rust", "R", "Perl", "Scala", "Dart", "SQL", "Bash",
+      "PowerShell", "MATLAB", "Objective-C", "Assembly", "Fortran", "COBOL", "Lua", "Clojure",
+      "Elixir", "Erlang", "F#", "Haskell", "Julia", "Lisp", "Pascal", "Prolog", "Racket",
+      "Scheme", "Json", "XML", "YAML", "VHDL", "LaTeX", "Less", "SCSS", "Shell",
     ];
     languages.forEach((lang) => {
       const option = document.createElement("option");
@@ -360,79 +291,86 @@ document.addEventListener("DOMContentLoaded", function () {
       const language = document.getElementById("code-language").value;
       const code = document.getElementById("code-content").value;
       const formattedCode = "```" + language + "\n" + code + "\n```";
-      const doc = editor.getDoc();
-      const selection = doc.getSelection();
-      if (selection) {
-        editor.getDoc().replaceSelection(formattedCode);
-      } else {
-        insertTextAtLastNewLine(formattedCode);
-      }
+      editor.replaceSelection(formattedCode);
       hideModal("coloredCodeModal");
     });
   }
 
-  function insertTextAtLastNewLine(text) {
-    const doc = editor.getDoc();
-    const lastLine = doc.lastLine();
-    const lastLineLength = doc.getLine(lastLine).length;
-    const lastLinePos = { line: lastLine, ch: lastLineLength };
-
-    // Insert a newline character followed by the text
-    doc.replaceRange("\n" + text, lastLinePos);
-  }
-
   function initializeInternalLinksModal() {
-    const modal = new bootstrap.Modal(
-      document.getElementById("internalLinksModal")
-    );
     const modalBody = document.querySelector("#internalLinksModal .modal-body");
     const insertBtn = document.getElementById("insert-internal-link-btn");
-
-    // Fetch and display internal link list
+  
+    const deSelect = document.createElement('select');
+    deSelect.id = 'internalLinkSelectDE';
+    deSelect.className = 'form-select mb-3';
+    deSelect.setAttribute('data-language', 'de');
+  
+    const enSelect = document.createElement('select');
+    enSelect.id = 'internalLinkSelectEN';
+    enSelect.className = 'form-select mb-3';
+    enSelect.setAttribute('data-language', 'en');
+  
     Promise.all([
       fetch("/api/list?lang=de").then((response) => response.json()),
       fetch("/api/list?lang=en").then((response) => response.json()),
     ]).then(([deFiles, enFiles]) => {
       modalBody.innerHTML = "<h6>German Files:</h6>";
-      deFiles.forEach((file) => addLinkOption(file, "de"));
+      modalBody.appendChild(deSelect);
+      addDefaultOption(deSelect);
+      deFiles.forEach((file) => addLinkOption(deSelect, file));
+  
       modalBody.innerHTML += "<h6>English Files:</h6>";
-      enFiles.forEach((file) => addLinkOption(file, "en"));
+      modalBody.appendChild(enSelect);
+      addDefaultOption(enSelect);
+      enFiles.forEach((file) => addLinkOption(enSelect, file));
+  
+      const linkTextInput = document.createElement('input');
+      linkTextInput.type = 'text';
+      linkTextInput.id = 'internalLinkText';
+      linkTextInput.className = 'form-control mt-3';
+      linkTextInput.placeholder = 'Enter link text (optional)';
+      modalBody.appendChild(linkTextInput);
     });
-
-    function addLinkOption(file, lang) {
-      const div = document.createElement("div");
-      div.className = "form-check";
-      div.innerHTML = `
-                <input class="form-check-input" type="radio" name="internalLink" id="${lang}-${file}" value="${lang}/${file}">
-                <label class="form-check-label" for="${lang}-${file}">${file}</label>
-            `;
-      modalBody.appendChild(div);
+  
+    function addDefaultOption(select) {
+      const defaultOption = document.createElement('option');
+      defaultOption.value = '';
+      defaultOption.textContent = 'Select a file';
+      defaultOption.selected = true;
+      defaultOption.disabled = true;
+      select.appendChild(defaultOption);
     }
-
+  
+    function addLinkOption(select, file) {
+      const option = document.createElement('option');
+      option.value = `./blog/${file}`;
+      option.textContent = `./blog/${file}`;
+      select.appendChild(option);
+    }
+  
     insertBtn.addEventListener("click", () => {
-        // TODO use insertInternalLink
-      const selectedLink = document.querySelector(
-        'input[name="internalLink"]:checked'
-      );
-      if (selectedLink) {
-        const [lang, ...fileParts] = selectedLink.value.split("/");
-        const file = fileParts.join("/");
-        insertShortcode(`{{< link "${file}" >}}${file}{{< /link >}}`);
-      }
-      modal.hide();
+      insertInternalLink();
     });
   }
-});
 
-function insertInternalLink() {
-    const path = document.getElementById('internalLinkSelect').value;
+  function insertInternalLink() {
+    const deSelect = document.getElementById('internalLinkSelectDE');
+    const enSelect = document.getElementById('internalLinkSelectEN');
+    const path = deSelect.value || enSelect.value;
     const text = document.getElementById('internalLinkText').value || path.split('/').pop();
     const link = `{{< button href="${path}" >}}${text}{{< /button >}}`;
-    editor.getDoc().replaceSelection(link);
+    editor.replaceSelection(link);
     hideModal('internalLinksModal');
-}
+  }
 
-function showModal(modalId) {
-  const modal = new bootstrap.Modal(document.getElementById(modalId));
-  modal.show();
-}
+  function showModal(modalId) {
+    const modal = new bootstrap.Modal(document.getElementById(modalId));
+    modal.show();
+  }
+
+  function hideModal(modalId) {
+    const modalElement = document.getElementById(modalId);
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    modal.hide();
+  }
+});
