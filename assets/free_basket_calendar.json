@@ -1,41 +1,5 @@
 [
     {
-        "name": "HAKRO Merlins Crailsheim vs VET-CONCEPT Gladiators Trier",
-        "begin": "2024-10-13T14:45:00+02:00",
-        "end": "2024-10-13T16:15:00+02:00",
-        "description": "HAKRO Merlins Crailsheim plays against VET-CONCEPT Gladiators Trier.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "Science City Jena vs Uni Baskets M\u00fcnster",
-        "begin": "2024-10-13T15:45:00+02:00",
-        "end": "2024-10-13T17:15:00+02:00",
-        "description": "Science City Jena plays against Uni Baskets M\u00fcnster.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "TSV Oberhaching Tropics vs Dragons Rh\u00f6ndorf",
-        "begin": "2024-10-13T15:45:00+02:00",
-        "end": "2024-10-13T17:15:00+02:00",
-        "description": "TSV Oberhaching Tropics plays against Dragons Rh\u00f6ndorf.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB S\u00fcd"
-    },
-    {
-        "name": "New Orleans Pelicans at Miami Heat",
-        "begin": "2024-10-13T21:00:00+02:00",
-        "end": "2024-10-13T22:30:00+02:00",
-        "description": "Live stream of the basketball game between New Orleans Pelicans and Miami Heat.",
-        "location": "www.ran.de",
-        "url": "https://www.ran.de/",
-        "league": "NBA"
-    },
-    {
         "name": "FC Barcelona vs AS Monaco",
         "begin": "2024-10-16T20:15:00+02:00",
         "end": "2024-10-16T21:45:00+02:00",
