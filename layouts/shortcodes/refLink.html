@@ -1,18 +1,39 @@
 {{ $ref := .Get "ref" }}
 {{ $lang := .Get "lang" }}
+{{ $color := .Get "color" }}
 {{ $class := .Get "class" }}
+{{ $icon := .Get "icon" }}
 {{ $text := .Get "text" }}
+{{- $showButton := .Get "showButton" -}}
+{{ if $showButton }}  
+  {{ $showButton = partial "utilities/CastBool.html" (.Get "showButton") }}
+{{ end }}
 
 {{ with where .Site.Sites "Language.Lang" "eq" $lang }}
 {{ with index . 0 }}
 {{ with .GetPage $ref }}
+{{ $url := .RelPermalink }}
+{{ if not $text }}
+  {{ $text = .Title }}
+  {{ end }}
+{{- if $showButton -}}
+{{- partial "assets/button.html" (dict 
+            "title" $text
+            "href" $url 
+            "color" $color
+            "icon" $icon
+            "class" $class
+            )
+        -}} 
+        {{- else -}}
 <a href="{{ .RelPermalink }}" class="{{ $class }}">
   {{ with $text }}
-  {{ . }}
+    {{ . }}
   {{ else }}
-  {{ .Title }}
+    {{ .Title }}
   {{ end }}
 </a>
+{{- end -}}
 {{ end }}
 {{ end }}
 {{ end }}
