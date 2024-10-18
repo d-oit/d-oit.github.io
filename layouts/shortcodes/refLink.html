@@ -1,0 +1,18 @@
+{{ $ref := .Get "ref" }}
+{{ $lang := .Get "lang" }}
+{{ $class := .Get "class" }}
+{{ $text := .Get "text" }}
+
+{{ with where .Site.Sites "Language.Lang" "eq" $lang }}
+{{ with index . 0 }}
+{{ with .GetPage $ref }}
+<a href="{{ .RelPermalink }}" class="{{ $class }}">
+  {{ with $text }}
+  {{ . }}
+  {{ else }}
+  {{ .Title }}
+  {{ end }}
+</a>
+{{ end }}
+{{ end }}
+{{ end }}

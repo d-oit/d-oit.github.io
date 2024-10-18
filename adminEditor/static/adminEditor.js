@@ -1,6 +1,5 @@
 "use strict";
 
-
 var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
   mode: "markdown",
   lineNumbers: true,
