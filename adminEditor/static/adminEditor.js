@@ -313,9 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
     insertBtn.addEventListener("click", () => {
       const selectedFile = document.getElementById("mediaFileSelect").value;
       if (selectedFile) {
-        addEditorText(
-          `![${selectedFile}](/img/blog/${selectedFile})`
-        );
+        addEditorText(`![${selectedFile}](/img/blog/${selectedFile})`);
       }
       modal.hide();
     });
@@ -422,14 +420,16 @@ document.addEventListener("DOMContentLoaded", function () {
     modalBody.appendChild(fileSelect);
 
     langSelect.addEventListener("change", () => {
-        const selectedLang = langSelect.value;
-        fetch(`/api/list?lang=${selectedLang}`)
-            .then((response) => response.json())
-            .then((files) => {
-                fileSelect.innerHTML = "";
-                addDefaultOption(fileSelect);
-                files.forEach((file) => addLinkOption(fileSelect, file, selectedLang));
-            });
+      const selectedLang = langSelect.value;
+      fetch(`/api/list?lang=${selectedLang}`)
+        .then((response) => response.json())
+        .then((files) => {
+          fileSelect.innerHTML = "";
+          addDefaultOption(fileSelect);
+          files.forEach((file) =>
+            addLinkOption(fileSelect, file, selectedLang)
+          );
+        });
     });
 
     const linkTextInput = document.createElement("input");
@@ -444,35 +444,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-    function addDefaultOption(selectElement) {
-      const defaultOption = document.createElement("option");
-      defaultOption.value = "";
-      defaultOption.text = "Select a file";
-      selectElement.appendChild(defaultOption);
-  }
-  
-  function addLinkOption(selectElement, file, lang) {
-      const option = document.createElement("option");
-      option.value = file;
-      option.text = file;
-      option.setAttribute("data-language", lang);
-      selectElement.appendChild(option);
+  function addDefaultOption(selectElement) {
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.text = "Select a file";
+    selectElement.appendChild(defaultOption);
   }
 
-   
+  function addLinkOption(selectElement, file, lang) {
+    const option = document.createElement("option");
+    option.value = file;
+    option.text = file;
+    option.setAttribute("data-language", lang);
+    selectElement.appendChild(option);
+  }
 
   function insertInternalLink() {
     const lang = document.getElementById("languageSelect").value;
-    if(lang == "-") {
+    if (lang == "-") {
       alert("Please select a language and file");
       return;
     }
     const fileSelect = document.getElementById("internalLinkSelect");
     const path = fileSelect.value;
     const text = document.getElementById("internalLinkText").value;
-    
+
     var showButton = document.getElementById("flexSwitchUseButton").value;
-    showButton = showButton == "on" ? "true" : "false";	  
+    showButton = showButton == "on" ? "true" : "false";
     var selectButtonColorElement = document.getElementById("buttonColorSelect");
     var selectedButtonColorValue =
       selectButtonColorElement.options[selectButtonColorElement.selectedIndex]
@@ -480,7 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const link = `{{< refLink ref="${path}" lang="${lang}" text="${text}" showButton="${showButton}" color="${selectedButtonColorValue}" >}}`;
     addEditorText(link);
     hideModal("internalLinksModal");
-}
+  }
 
   function showModal(modalId) {
     const modal = new bootstrap.Modal(document.getElementById(modalId));
