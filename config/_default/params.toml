@@ -23,7 +23,7 @@
     [home.feature]
         orientation = "horizontal"
         color = "primary"
-        width = 4
+        width = 6
         align = "start"
 
 [navigation]
@@ -57,14 +57,14 @@
     title = "Blog"
         sort = "date"
         reverse = true
-        cols = 4
+        cols = 2
         color = ""
         padding = "0"
         header = "full"
         footer = "none"
         orientation = "stacked"
         style = "border-0 card-zoom card-body-margin"
-        homepage = 4
+        homepage = 2
         separator = true
    [sections.projects]
         title = "Projects"

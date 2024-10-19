@@ -11,7 +11,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
 });
 
 const viewportHeight = window.innerHeight;
-editor.setSize(null, viewportHeight + 'px');
+editor.setSize(null, viewportHeight + "px");
 
 var isDirty = false;
 
@@ -21,11 +21,28 @@ editor.on("change", function () {
 
 window.addEventListener("beforeunload", function (e) {
   if (isDirty) {
-    var confirmationMessage = "You have unsaved changes. Are you sure you want to leave?";
+    var confirmationMessage =
+      "You have unsaved changes. Are you sure you want to leave?";
     e.returnValue = confirmationMessage;
     return confirmationMessage;
   }
 });
+
+document
+  .getElementById("flexSwitchUseButton")
+  .addEventListener("change", function () {
+    var buttonColorGroup = document.getElementById("buttonColorGroup");
+    if (this.checked) {
+      buttonColorGroup.classList.remove("hidden");
+    } else {
+      buttonColorGroup.classList.add("hidden");
+    }
+  });
+
+// Initial check to set the visibility based on the initial state of the checkbox
+document
+  .getElementById("flexSwitchUseButton")
+  .dispatchEvent(new Event("change"));
 
 document.addEventListener("DOMContentLoaded", function () {
   let config;
@@ -111,10 +128,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeButtons() {
     document.getElementById("save-btn").addEventListener("click", saveFile);
-    document.getElementById("spell-check-btn").addEventListener("click", checkSpelling);
-    document.getElementById("copy-btn").addEventListener("click", copyToClipboard);
-    document.getElementById("paste-btn").addEventListener("click", pasteFromClipboard);
-    document.getElementById("fullscreen-btn").addEventListener("click", toggleFullscreen);
+    document
+      .getElementById("spell-check-btn")
+      .addEventListener("click", checkSpelling);
+    document
+      .getElementById("copy-btn")
+      .addEventListener("click", copyToClipboard);
+    document
+      .getElementById("paste-btn")
+      .addEventListener("click", pasteFromClipboard);
+    document
+      .getElementById("fullscreen-btn")
+      .addEventListener("click", toggleFullscreen);
   }
 
   function initializeModals() {
@@ -124,9 +149,19 @@ document.addEventListener("DOMContentLoaded", function () {
     initializeInternalLinksModal();
   }
 
+  function addTextToEnd(newText) {
+    var doc = editor.getDoc();
+    var lastLine = doc.lastLine();
+    var lastLineLength = doc.getLine(lastLine).length;
+    doc.replaceRange("\n" + newText, { line: lastLine, ch: lastLineLength });
+    lastLine = doc.lastLine();
+    lastLineLength = doc.getLine(lastLine).length;
+    // Scroll to the end
+    editor.scrollIntoView({ line: lastLine, ch: lastLineLength });
+  }
+
   function insertShortcode(code, key = "") {
     const doc = editor.getDoc();
-    const cursor = doc.getCursor();
     const selection = doc.getSelection();
     switch (key) {
       case "coloredCode":
@@ -140,11 +175,27 @@ document.addEventListener("DOMContentLoaded", function () {
         break;
       default:
         if (selection) {
-          doc.replaceSelection(`**${selection}**`);
+          const text = code.replace("text", selection);
+          doc.replaceSelection(`${text}`);
         } else {
-          doc.replaceRange(code, cursor);
+          addEditorText(code);
         }
         break;
+    }
+  }
+
+  function addEditorText(code) {
+    const doc = editor.getDoc();
+    const cursor = doc.getCursor();
+    const selection = doc.getSelection();
+    if (selection) {
+      doc.replaceSelection(`${code}`);
+    } else {
+      if (cursor.sticky == null) {
+        addTextToEnd(code);
+      } else {
+        doc.replaceRange(code, cursor);
+      }
     }
   }
 
@@ -174,7 +225,9 @@ document.addEventListener("DOMContentLoaded", function () {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `text=${encodeURIComponent(content)}&language=${lang}&enabledOnly=false`,
+      body: `text=${encodeURIComponent(
+        content
+      )}&language=${lang}&enabledOnly=false`,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -183,7 +236,10 @@ document.addEventListener("DOMContentLoaded", function () {
           const from = doc.posFromIndex(match.offset);
           const to = doc.posFromIndex(match.offset + match.length);
           doc.markText(from, to, {
-            className: match.rule.category.id === "TYPOS" ? "spelling-error" : "grammar-error",
+            className:
+              match.rule.category.id === "TYPOS"
+                ? "spelling-error"
+                : "grammar-error",
             title: match.message,
           });
         });
@@ -191,7 +247,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function copyToClipboard() {
-    navigator.clipboard.writeText(editor.getValue())
+    navigator.clipboard
+      .writeText(editor.getValue())
       .then(() => {
         alert("Content copied to clipboard");
       })
@@ -201,9 +258,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function pasteFromClipboard() {
-    navigator.clipboard.readText()
+    navigator.clipboard
+      .readText()
       .then((text) => {
-        editor.replaceSelection(text);
+        addEditorText(text);
       })
       .catch((err) => {
         alert("Failed to paste: " + err);
@@ -221,10 +279,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function initializeMediaSelectModal() {
-    const modal = new bootstrap.Modal(document.getElementById("mediaSelectModal"));
+    const modal = new bootstrap.Modal(
+      document.getElementById("mediaSelectModal")
+    );
     const modalBody = document.querySelector("#mediaSelectModal .modal-body");
     const insertBtn = document.getElementById("insert-media-btn");
-  
+
     fetch("/api/media-list")
       .then((response) => response.json())
       .then((mediaFiles) => {
@@ -232,39 +292,45 @@ document.addEventListener("DOMContentLoaded", function () {
         const select = document.createElement("select");
         select.className = "form-select";
         select.id = "mediaFileSelect";
-  
+
         const defaultOption = document.createElement("option");
         defaultOption.value = "";
         defaultOption.textContent = "Select a file";
         defaultOption.selected = true;
         defaultOption.disabled = true;
         select.appendChild(defaultOption);
-  
+
         mediaFiles.forEach((file) => {
           const option = document.createElement("option");
           option.value = file;
           option.textContent = file;
           select.appendChild(option);
         });
-  
+
         modalBody.appendChild(select);
       });
-  
+
     insertBtn.addEventListener("click", () => {
       const selectedFile = document.getElementById("mediaFileSelect").value;
       if (selectedFile) {
-        editor.replaceSelection(`![${selectedFile}](/img/blog/${selectedFile})`);
+        addEditorText(
+          `![${selectedFile}](/img/blog/${selectedFile})`
+        );
       }
       modal.hide();
     });
   }
 
   function initializeBlockquoteModal() {
-    const modal = new bootstrap.Modal(document.getElementById("blockquoteModal"));
+    const modal = new bootstrap.Modal(
+      document.getElementById("blockquoteModal")
+    );
     const insertBtn = document.getElementById("insert-blockquote-btn");
     insertBtn.addEventListener("click", () => {
       const type = document.getElementById("blockquote-type").value;
-      editor.replaceSelection(`{{< blockquote type="${type}" >}}\nYour blockquote content here\n{{< /blockquote >}}`);
+      addEditorText(
+        `{{< blockquote type="${type}" >}}\nYour blockquote content here\n{{< /blockquote >}}`
+      );
       modal.hide();
     });
   }
@@ -274,11 +340,52 @@ document.addEventListener("DOMContentLoaded", function () {
     const languageSelect = document.getElementById("code-language");
 
     const languages = [
-      "JavaScript", "Python", "HTML", "CSS", "C#", "Hugo", "Java", "Ruby", "PHP", "Swift",
-      "Kotlin", "TypeScript", "Go", "Rust", "R", "Perl", "Scala", "Dart", "SQL", "Bash",
-      "PowerShell", "MATLAB", "Objective-C", "Assembly", "Fortran", "COBOL", "Lua", "Clojure",
-      "Elixir", "Erlang", "F#", "Haskell", "Julia", "Lisp", "Pascal", "Prolog", "Racket",
-      "Scheme", "Json", "XML", "YAML", "VHDL", "LaTeX", "Less", "SCSS", "Shell",
+      "JavaScript",
+      "Python",
+      "HTML",
+      "CSS",
+      "C#",
+      "Hugo",
+      "Java",
+      "Ruby",
+      "PHP",
+      "Swift",
+      "Kotlin",
+      "TypeScript",
+      "Go",
+      "Rust",
+      "R",
+      "Perl",
+      "Scala",
+      "Dart",
+      "SQL",
+      "Bash",
+      "PowerShell",
+      "MATLAB",
+      "Objective-C",
+      "Assembly",
+      "Fortran",
+      "COBOL",
+      "Lua",
+      "Clojure",
+      "Elixir",
+      "Erlang",
+      "F#",
+      "Haskell",
+      "Julia",
+      "Lisp",
+      "Pascal",
+      "Prolog",
+      "Racket",
+      "Scheme",
+      "Json",
+      "XML",
+      "YAML",
+      "VHDL",
+      "LaTeX",
+      "Less",
+      "SCSS",
+      "Shell",
     ];
     languages.forEach((lang) => {
       const option = document.createElement("option");
@@ -291,25 +398,25 @@ document.addEventListener("DOMContentLoaded", function () {
       const language = document.getElementById("code-language").value;
       const code = document.getElementById("code-content").value;
       const formattedCode = "```" + language + "\n" + code + "\n```";
-      editor.replaceSelection(formattedCode);
+      addEditorText(formattedCode);
       hideModal("coloredCodeModal");
     });
   }
 
   function initializeInternalLinksModal() {
-    const modalBody = document.querySelector("#internalLinksModal .modal-body");
+    const modalBody = document.getElementById("internalLinksArea");
     const insertBtn = document.getElementById("insert-internal-link-btn");
-  
-    const deSelect = document.createElement('select');
-    deSelect.id = 'internalLinkSelectDE';
-    deSelect.className = 'form-select mb-3';
-    deSelect.setAttribute('data-language', 'de');
-  
-    const enSelect = document.createElement('select');
-    enSelect.id = 'internalLinkSelectEN';
-    enSelect.className = 'form-select mb-3';
-    enSelect.setAttribute('data-language', 'en');
-  
+
+    const deSelect = document.createElement("select");
+    deSelect.id = "internalLinkSelectDE";
+    deSelect.className = "form-select mb-3";
+    deSelect.setAttribute("data-language", "de");
+
+    const enSelect = document.createElement("select");
+    enSelect.id = "internalLinkSelectEN";
+    enSelect.className = "form-select mb-3";
+    enSelect.setAttribute("data-language", "en");
+
     Promise.all([
       fetch("/api/list?lang=de").then((response) => response.json()),
       fetch("/api/list?lang=en").then((response) => response.json()),
@@ -317,50 +424,60 @@ document.addEventListener("DOMContentLoaded", function () {
       modalBody.innerHTML = "<h6>German Files:</h6>";
       modalBody.appendChild(deSelect);
       addDefaultOption(deSelect);
-      deFiles.forEach((file) => addLinkOption(deSelect, file));
-  
+      deFiles.forEach((file) => addLinkOption(deSelect, file, "de"));
+
       modalBody.innerHTML += "<h6>English Files:</h6>";
       modalBody.appendChild(enSelect);
       addDefaultOption(enSelect);
-      enFiles.forEach((file) => addLinkOption(enSelect, file));
-  
-      const linkTextInput = document.createElement('input');
-      linkTextInput.type = 'text';
-      linkTextInput.id = 'internalLinkText';
-      linkTextInput.className = 'form-control mt-3';
-      linkTextInput.placeholder = 'Enter link text (optional)';
+      enFiles.forEach((file) => addLinkOption(enSelect, file, "en"));
+
+      const linkTextInput = document.createElement("input");
+      linkTextInput.type = "text";
+      linkTextInput.id = "internalLinkText";
+      linkTextInput.className = "form-control mt-3";
+      linkTextInput.placeholder = "Enter link text (optional)";
       modalBody.appendChild(linkTextInput);
     });
-  
+
     function addDefaultOption(select) {
-      const defaultOption = document.createElement('option');
-      defaultOption.value = '';
-      defaultOption.textContent = 'Select a file';
+      const defaultOption = document.createElement("option");
+      defaultOption.value = "";
+      defaultOption.textContent = "Select a file";
       defaultOption.selected = true;
       defaultOption.disabled = true;
       select.appendChild(defaultOption);
     }
-  
-    function addLinkOption(select, file) {
-      const option = document.createElement('option');
-      option.value = `./blog/${file}`;
-      option.textContent = `./blog/${file}`;
+
+    function addLinkOption(select, file, lang) {
+      const option = document.createElement("option");
+      option.value = `${file}`;
+      option.textContent = `${file}`;
+      enSelect.setAttribute("data-language", lang);
       select.appendChild(option);
     }
-  
+
     insertBtn.addEventListener("click", () => {
       insertInternalLink();
     });
   }
 
   function insertInternalLink() {
-    const deSelect = document.getElementById('internalLinkSelectDE');
-    const enSelect = document.getElementById('internalLinkSelectEN');
+    const deSelect = document.getElementById("internalLinkSelectDE");
+    const enSelect = document.getElementById("internalLinkSelectEN");
     const path = deSelect.value || enSelect.value;
-    const text = document.getElementById('internalLinkText').value || path.split('/').pop();
-    const link = `{{< button href="${path}" >}}${text}{{< /button >}}`;
-    editor.replaceSelection(link);
-    hideModal('internalLinksModal');
+    const text = document.getElementById("internalLinkText").value;
+    const lang =
+      deSelect.getAttribute("data-language") ||
+      enSelect.getAttribute("data-language");
+    var showButton = document.getElementById("flexSwitchUseButton").value;
+    showButton = showButton == "on" ? "true" : "false";	  
+    var selectButtonColorElement = document.getElementById("buttonColorSelect");
+    var selectedButtonColorValue =
+      selectButtonColorElement.options[selectButtonColorElement.selectedIndex]
+        .value;
+    const link = `{{< refLink ref="${path}" lang="${lang}" text="${text}" showButton="${showButton}" color="${selectedButtonColorValue}" >}}`;
+    addEditorText(link);
+    hideModal("internalLinksModal");
   }
 
   function showModal(modalId) {
