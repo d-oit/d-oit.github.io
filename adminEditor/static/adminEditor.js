@@ -407,68 +407,70 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalBody = document.getElementById("internalLinksArea");
     const insertBtn = document.getElementById("insert-internal-link-btn");
 
-    const deSelect = document.createElement("select");
-    deSelect.id = "internalLinkSelectDE";
-    deSelect.className = "form-select mb-3";
-    deSelect.setAttribute("data-language", "de");
+    const langSelect = document.createElement("select");
+    langSelect.id = "languageSelect";
+    langSelect.className = "form-select mb-3";
+    langSelect.innerHTML = `<option value="-">Select language</option>
+        <option value="de">German</option>
+        <option value="en">English</option>
+    `;
+    modalBody.appendChild(langSelect);
 
-    const enSelect = document.createElement("select");
-    enSelect.id = "internalLinkSelectEN";
-    enSelect.className = "form-select mb-3";
-    enSelect.setAttribute("data-language", "en");
+    const fileSelect = document.createElement("select");
+    fileSelect.id = "internalLinkSelect";
+    fileSelect.className = "form-select mb-3";
+    modalBody.appendChild(fileSelect);
 
-    Promise.all([
-      fetch("/api/list?lang=de").then((response) => response.json()),
-      fetch("/api/list?lang=en").then((response) => response.json()),
-    ]).then(([deFiles, enFiles]) => {
-      modalBody.innerHTML = "<h6>German Files:</h6>";
-      modalBody.appendChild(deSelect);
-      addDefaultOption(deSelect);
-      deFiles.forEach((file) => addLinkOption(deSelect, file, "de"));
-
-      modalBody.innerHTML += "<h6>English Files:</h6>";
-      modalBody.appendChild(enSelect);
-      addDefaultOption(enSelect);
-      enFiles.forEach((file) => addLinkOption(enSelect, file, "en"));
-
-      const linkTextInput = document.createElement("input");
-      linkTextInput.type = "text";
-      linkTextInput.id = "internalLinkText";
-      linkTextInput.className = "form-control mt-3";
-      linkTextInput.placeholder = "Enter link text (optional)";
-      modalBody.appendChild(linkTextInput);
+    langSelect.addEventListener("change", () => {
+        const selectedLang = langSelect.value;
+        fetch(`/api/list?lang=${selectedLang}`)
+            .then((response) => response.json())
+            .then((files) => {
+                fileSelect.innerHTML = "";
+                addDefaultOption(fileSelect);
+                files.forEach((file) => addLinkOption(fileSelect, file, selectedLang));
+            });
     });
 
-    function addDefaultOption(select) {
-      const defaultOption = document.createElement("option");
-      defaultOption.value = "";
-      defaultOption.textContent = "Select a file";
-      defaultOption.selected = true;
-      defaultOption.disabled = true;
-      select.appendChild(defaultOption);
-    }
-
-    function addLinkOption(select, file, lang) {
-      const option = document.createElement("option");
-      option.value = `${file}`;
-      option.textContent = `${file}`;
-      enSelect.setAttribute("data-language", lang);
-      select.appendChild(option);
-    }
+    const linkTextInput = document.createElement("input");
+    linkTextInput.type = "text";
+    linkTextInput.id = "internalLinkText";
+    linkTextInput.className = "form-control mt-3";
+    linkTextInput.placeholder = "Enter link text (optional)";
+    modalBody.appendChild(linkTextInput);
 
     insertBtn.addEventListener("click", () => {
       insertInternalLink();
     });
   }
 
+    function addDefaultOption(selectElement) {
+      const defaultOption = document.createElement("option");
+      defaultOption.value = "";
+      defaultOption.text = "Select a file";
+      selectElement.appendChild(defaultOption);
+  }
+  
+  function addLinkOption(selectElement, file, lang) {
+      const option = document.createElement("option");
+      option.value = file;
+      option.text = file;
+      option.setAttribute("data-language", lang);
+      selectElement.appendChild(option);
+  }
+
+   
+
   function insertInternalLink() {
-    const deSelect = document.getElementById("internalLinkSelectDE");
-    const enSelect = document.getElementById("internalLinkSelectEN");
-    const path = deSelect.value || enSelect.value;
+    const lang = document.getElementById("languageSelect").value;
+    if(lang == "-") {
+      alert("Please select a language and file");
+      return;
+    }
+    const fileSelect = document.getElementById("internalLinkSelect");
+    const path = fileSelect.value;
     const text = document.getElementById("internalLinkText").value;
-    const lang =
-      deSelect.getAttribute("data-language") ||
-      enSelect.getAttribute("data-language");
+    
     var showButton = document.getElementById("flexSwitchUseButton").value;
     showButton = showButton == "on" ? "true" : "false";	  
     var selectButtonColorElement = document.getElementById("buttonColorSelect");
@@ -478,7 +480,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const link = `{{< refLink ref="${path}" lang="${lang}" text="${text}" showButton="${showButton}" color="${selectedButtonColorValue}" >}}`;
     addEditorText(link);
     hideModal("internalLinksModal");
-  }
+}
 
   function showModal(modalId) {
     const modal = new bootstrap.Modal(document.getElementById(modalId));
