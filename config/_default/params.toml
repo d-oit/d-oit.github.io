@@ -54,7 +54,7 @@
 
 [sections]
     [sections.blog]
-        title = "Blog"
+    title = "Blog"
         sort = "date"
         reverse = true
         cols = 4
