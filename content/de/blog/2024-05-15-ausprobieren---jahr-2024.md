@@ -16,6 +16,7 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 
 - Website / Blog wieder starten {{< fas fa-check-to-slot >}}
 - Hugo / GoLong einarbeiten semi {{< fas fa-check-to-slot >}}
+- Hugo CMS Admin Editor
 - Coding / Aufgaben durch AI Tools verringern, austesten {{< fas fa-check-to-slot >}}
 - Smartphone Display austauschen
 - yahtzee Block per WebApp zusammenrechnen und Würfelwahrscheinlichkeiten ausrechnen. Aktuell spielen wir fast jeden Abend eine Runde nach dem Abendessen :smile:
@@ -23,8 +24,8 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 
    -> na ja, fast. Wurde aber bereits vom Vorgänger geöffnet {{< fas fa-laptop-medical >}}
 
-   >> **Reminder**: Leicht von unten nach oben drücken, nicht wie auf den Videos / Beschreibungen seitlich ziehen.
-   >> **Lenovo T490 Rückseite öffnen**
+   > **Reminder**: Leicht von unten nach oben drücken, nicht wie auf den Videos / Beschreibungen seitlich ziehen.
+   > **Lenovo T490 Rückseite öffnen**
 
 {{< carousel id="carouselLenovoRAM" class="col-sm-12 col-lg-8 mx-auto" >}}
   {{< img src="img/blog/LenovoT490Back.jpg" caption="Lenovo T490 Rückseite mit Schrauben" >}}
@@ -33,10 +34,3 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 {{< /carousel >}}
 
 - YouTube Kanal
-- Hugo CMS Admin Editor
-
-
-<!-- [grid_modules]({{< relref path="2024-05-17-ms-sql-date-format.md" lang="en" >}}) -->
-
-<!-- TODOO shortcode link with button {{< relref path="2024-05-17-ms-sql-date-format.md" lang="en" >}}  -->
-

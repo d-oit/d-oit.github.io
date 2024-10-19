@@ -57,14 +57,14 @@
         title = "Blog"
         sort = "date"
         reverse = true
-        cols = 3
+        cols = 4
         color = ""
         padding = "0"
         header = "full"
         footer = "none"
         orientation = "stacked"
         style = "border-0 card-zoom card-body-margin"
-        homepage = 3
+        homepage = 4
         separator = true
    [sections.projects]
         title = "Projects"
