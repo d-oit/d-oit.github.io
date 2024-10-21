@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: KoHo
+- Font Author: Copyright 2018 The KoHo Project Authors (https://github.com/cadsondemak/Koho)
+- Font Source: https://fonts.gstatic.com/s/koho/v16/K2F-fZ5fmddNBikefJbSOos.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

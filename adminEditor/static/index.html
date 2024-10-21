@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>d.o.it Markdown Editor</title>
-    <link rel="stylesheet" href="bundle.min.css">
-    <link rel="stylesheet" href="adminEditor.css">
+    <link rel="stylesheet" href="css/bundle.min.css">
+    <link rel="stylesheet" href="css/adminEditor.css">
 </head>
 
 <body>
@@ -17,13 +17,13 @@
 
             <div id="file-selector" class="row mb-3">
                 <div class="col">
-                    <select title="select language" id="language-select" class="form-select">
+                    <select title="select language" id="language-select" class="form-select caret">
                         <option value="de">German</option>
                         <option value="en">English</option>
                     </select>
                 </div>
                 <div class="col">
-                    <select title="select markdown" id="file-select" class="form-select"></select>
+                    <select title="select markdown" id="file-select" class="form-select caret"></select>
                 </div>
             </div>
             <textarea title="editor" id="editor"></textarea>
@@ -155,8 +155,13 @@
     </div>
     </div>
     </div>
-    <script src="bundle.min.js"></script>
-    <script src="adminEditor.js" defer></script>
+    <script src="js/bundle.min.js"></script>
+    <script src="js/adminEditor.js" type="module"></script>
+    <script src="js/modals.js" type="module"></script>
+    <script src="js/mediaSelectModal.js" type="module"></script>
+    <script src="js/blockquoteModal.js" type="module"></script>
+    <script src="js/coloredCodeModal.js" type="module"></script>
+    <script src="js/internalLinksModal.js" type="module"></script>
 
 </body>
 
