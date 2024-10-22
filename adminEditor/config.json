@@ -79,7 +79,7 @@
         },
         {
             "id": "internalLink",
-            "code": "{{< link \"path/to/file\" >}}text{{< /link >}}",
+            "code": "custom code with refLink",
             "icon": "file-alt",
             "order": 12,
             "tooltip": "Insert internal link"
