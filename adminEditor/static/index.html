@@ -12,9 +12,12 @@
 <body>
 
     <div class="container-fluid">
+
+        <div class="float-end" id="newPostButtons"><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#newPostModal">
+            <i class="fas fa-plus"></i> New Post
+        </button></div>
         <div id="main-content">
             <div id="toolbar" class="btn-group flex-wrap" role="group"></div>
-
             <div id="file-selector" class="row mb-3">
                 <div class="col">
                     <select title="select language" id="language-select" class="form-select caret">
@@ -152,6 +155,20 @@
         </div>
     </div>
 
+    <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newPostModalLabel">Create New Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="newPostWizard"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </div>
     </div>
     </div>
@@ -162,7 +179,7 @@
     <script src="js/blockquoteModal.js" type="module"></script>
     <script src="js/coloredCodeModal.js" type="module"></script>
     <script src="js/internalLinksModal.js" type="module"></script>
-
+    <script src="js/newPostWizard.js" type="module"></script>
 </body>
 
 </html>

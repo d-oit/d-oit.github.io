@@ -258,4 +258,5 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEditorText = addEditorText;
     window.showModal = showModal;
     window.hideModal = hideModal;
+    
 });
