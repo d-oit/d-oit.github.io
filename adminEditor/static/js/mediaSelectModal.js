@@ -1,3 +1,5 @@
+import { hideModal } from "./modals.js";
+
 // mediaSelectModal.js
 export function initializeMediaSelectModal() {
     const modal = new bootstrap.Modal(document.getElementById("mediaSelectModal"));
@@ -34,6 +36,6 @@ export function initializeMediaSelectModal() {
         if (selectedFile) {
             window.addEditorText(`![${selectedFile}](/img/blog/${selectedFile})`);
         }
-        modal.hide();
+        hideModal('mediaSelectModal');
     });
 }

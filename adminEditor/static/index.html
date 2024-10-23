@@ -19,10 +19,12 @@
             <div id="toolbar" class="btn-group flex-wrap" role="group"></div>
             <div id="file-selector" class="row mb-3">
                 <div class="col">
-                    <select title="select language" id="language-select" class="form-select caret">
+                    <div class="form-group">
+                    <select title="select language" id="language-select" class="form-select">
                         <option value="de">German</option>
                         <option value="en">English</option>
                     </select>
+                </div>
                 </div>
                 <div class="col">
                     <select title="select markdown" id="file-select" class="form-select caret"></select>
@@ -70,12 +72,12 @@
                 </div>
                 <div class="modal-body">
                     <select id="blockquote-type" class="form-select">
-                        <option value="NOTE">NOTE</option>
-                        <option value="TIP">TIP</option>
-                        <option value="IMPORTANT">IMPORTANT</option>
-                        <option value="WARNING">WARNING</option>
-                        <option value="CAUTION">CAUTION</option>
-                        <option value="QUOTE">Only Quote</option>
+                        <option value="> [!NOTE]">NOTE</option>
+                        <option value="> [!TIP]">TIP</option>
+                        <option value="> [!IMPORTANT]">IMPORTANT</option>
+                        <option value="> [!WARNING]">WARNING</option>
+                        <option value="> [!CAUTION]">CAUTION</option>
+                        <option value="> ">Quote</option>
                     </select>
                 </div>
                 <div class="modal-footer">

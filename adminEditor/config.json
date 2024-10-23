@@ -86,11 +86,19 @@
         },
         {
             "id": "mediaSelect",
-            "code": "![alt text](/img/blog/image.jpg)",
+            "code": "custom code",
             "icon": "photo-video",
             "order": 13,
             "tooltip": "Select and insert media"
+        },
+        {
+            "id": "fileContent",
+            "code": "{{< file full=\"false\" show=\"false\" path=\"./config/_default/languages.toml\" id=\"file-collapse-1\" >}}",
+            "icon": "file-lines",
+            "order": 14,
+            "tooltip": "insert file contents as Hinode markdown"
         }
+        
     ],
     "server": {
         "port": 8081,

@@ -21,13 +21,17 @@ editor.on("change", function () {
   isDirty = true;
 });
 
-window.addEventListener("beforeunload", function (e) {
+function checkSaveMessage() {
   if (isDirty) {
     var confirmationMessage =
       "You have unsaved changes. Are you sure you want to leave?";
     e.returnValue = confirmationMessage;
     return confirmationMessage;
   }
+}
+
+window.addEventListener("beforeunload", function (e) {
+  checkSaveMessage()
 });
 
 document
@@ -91,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateFileList();
   }
 
-  function updateFileList() {
+  function updateFileList() {    
     const language = languageSelect.value;
     fetch(`/api/list?lang=${language}`)
       .then((response) => response.json())
