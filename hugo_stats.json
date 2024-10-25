@@ -242,6 +242,8 @@
       "link-bg-footer",
       "link-primary",
       "link-secondary",
+      "lntable",
+      "lntd",
       "main-content",
       "main-nav-toggler",
       "mb-3",
@@ -385,10 +387,7 @@
       "visually-hidden",
       "vr",
       "w-100",
-      "w-25",
-      "w-50",
-      "w-60",
-      "w-75"
+      "w-50"
     ],
     "ids": [
       "Copyright",

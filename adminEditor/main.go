@@ -43,6 +43,7 @@ type NewPostRequest struct {
 	Categories  []string `json:"categories"`
 	Thumbnail   struct {
 		URL       string `json:"url"`
+		LocalFile string `json:"localFile,omitempty"`
 		Author    string `json:"author,omitempty"`
 		AuthorURL string `json:"authorUrl,omitempty"`
 		Origin    string `json:"origin,omitempty"`
@@ -284,63 +285,23 @@ func handleMediaList(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleProcessMedia(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
 	var request struct {
 		File    string `json:"file"`
 		NewName string `json:"newName"`
 	}
-
-	err := json.NewDecoder(r.Body).Decode(&request)
-	if err != nil {
-		http.Error(w, "Invalid request", http.StatusBadRequest)
+	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
+		http.Error(w, "Invalid request body", http.StatusBadRequest)
 		return
 	}
 
-	sourceFile := filepath.Join(config.Server.MediaFolder, request.File)
-	ext := filepath.Ext(request.File)
-	newFileName := request.NewName + ext
-	destFile := filepath.Join(config.Server.AssetFolder, newFileName)
-
-	// Open the source image
-	src, err := imaging.Open(sourceFile)
+	newFileName, err := processMediaFile(request)
 	if err != nil {
-		http.Error(w, "Error opening source image", http.StatusInternalServerError)
-		return
-	}
-
-	// Get the dimensions of the source image
-	srcWidth := src.Bounds().Dx()
-	srcHeight := src.Bounds().Dy()
-
-	// Calculate the new height to maintain the aspect ratio
-	newHeight := (config.Server.ImageResize.MaxWidth * srcHeight) / srcWidth
-
-	// Resize the image
-	var resized image.Image
-	if config.Server.ImageResize.Method == "fit" {
-		resized = imaging.Fit(src, config.Server.ImageResize.MaxWidth, newHeight, imaging.Lanczos)
-	} else {
-		resized = imaging.Fill(src, config.Server.ImageResize.MaxWidth, newHeight, imaging.Center, imaging.Lanczos)
-	}
-
-	// Save the resized image
-	err = imaging.Save(resized, destFile)
-	if err != nil {
-		http.Error(w, "Error saving resized image", http.StatusInternalServerError)
-		return
-	}
-
-	// Create and save thumbnail
-	var thumbnail image.Image
-	if config.Server.ThumbnailResize.Method == "fit" {
-		thumbnail = imaging.Fit(src, config.Server.ThumbnailResize.MaxWidth, newHeight, imaging.Lanczos)
-	} else {
-		thumbnail = imaging.Fill(src, config.Server.ThumbnailResize.MaxWidth, newHeight, imaging.Center, imaging.Lanczos)
-	}
-
-	thumbnailFile := filepath.Join(config.Server.AssetFolder, "thumb_"+newFileName)
-	err = imaging.Save(thumbnail, thumbnailFile)
-	if err != nil {
-		http.Error(w, "Error saving thumbnail", http.StatusInternalServerError)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
@@ -374,6 +335,32 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 
 	// Create filename from title
 	filename := createSlug(request.Title) + ".md"
+
+	if request.Thumbnail.LocalFile != "" && request.Thumbnail.URL == "" {
+		if request.Slug == "" {
+			request.Slug = slug.Make(request.Title)
+		}
+
+		// Create a variable of the struct type
+		var reqMediaFile struct {
+			File    string `json:"file"`
+			NewName string `json:"newName"`
+		}
+
+		// Log the processing of the media file
+		log.Printf("Processing media file: %s\n", request.Thumbnail.LocalFile)
+
+		newFileName, err := processMediaFile(reqMediaFile)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		// Log the result of the media file processing
+		log.Printf("Processed media file: %s -> %s\n", request.Thumbnail.LocalFile, newFileName)
+
+		request.Thumbnail.URL = newFileName
+	}
 
 	// Determine the target folder based on language
 	var targetFolder string
@@ -440,7 +427,9 @@ func generateMarkdownContent(post NewPostRequest) string {
 
 	sb.WriteString("---\n")
 	sb.WriteString(fmt.Sprintf("title: %s\n", post.Title))
-	post.Slug = slug.Make(post.Title)
+	if post.Slug == "" {
+		post.Slug = slug.Make(post.Title)
+	}
 	sb.WriteString(fmt.Sprintf("slug: %s\n", post.Slug))
 	if post.Description != "" {
 		sb.WriteString(fmt.Sprintf("description: %s\n", post.Description))
@@ -619,4 +608,57 @@ func updateCategories(newCategories []string) error {
 	}
 
 	return ioutil.WriteFile("data/categories.json", jsonData, 0644)
+}
+
+func processMediaFile(request struct {
+	File    string `json:"file"`
+	NewName string `json:"newName"`
+}) (string, error) {
+	sourceFile := filepath.Join(config.Server.MediaFolder, request.File)
+	ext := filepath.Ext(request.File)
+	newFileName := request.NewName + ext
+	destFile := filepath.Join(config.Server.AssetFolder, newFileName)
+
+	// Open the source image
+	src, err := imaging.Open(sourceFile)
+	if err != nil {
+		return "", fmt.Errorf("error opening source image: %w", err)
+	}
+
+	// Get the dimensions of the source image
+	srcWidth := src.Bounds().Dx()
+	srcHeight := src.Bounds().Dy()
+
+	// Calculate the new height to maintain the aspect ratio
+	newHeight := (config.Server.ImageResize.MaxWidth * srcHeight) / srcWidth
+
+	// Resize the image
+	var resized image.Image
+	if config.Server.ImageResize.Method == "fit" {
+		resized = imaging.Fit(src, config.Server.ImageResize.MaxWidth, newHeight, imaging.Lanczos)
+	} else {
+		resized = imaging.Fill(src, config.Server.ImageResize.MaxWidth, newHeight, imaging.Center, imaging.Lanczos)
+	}
+
+	// Save the resized image
+	err = imaging.Save(resized, destFile)
+	if err != nil {
+		return "", fmt.Errorf("error saving resized image: %w", err)
+	}
+
+	// Create and save thumbnail
+	var thumbnail image.Image
+	if config.Server.ThumbnailResize.Method == "fit" {
+		thumbnail = imaging.Fit(src, config.Server.ThumbnailResize.MaxWidth, newHeight, imaging.Lanczos)
+	} else {
+		thumbnail = imaging.Fill(src, config.Server.ThumbnailResize.MaxWidth, newHeight, imaging.Center, imaging.Lanczos)
+	}
+
+	thumbnailFile := filepath.Join(config.Server.AssetFolder, "thumb_"+newFileName)
+	err = imaging.Save(thumbnail, thumbnailFile)
+	if err != nil {
+		return "", fmt.Errorf("error saving thumbnail: %w", err)
+	}
+
+	return newFileName, nil
 }

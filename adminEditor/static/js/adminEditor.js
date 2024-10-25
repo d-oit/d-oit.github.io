@@ -9,7 +9,9 @@ var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
   styleActiveSelected: true,
   styleActiveLine: true,
   highlightMatches: true,
-  viewportMargin: Infinity
+  viewportMargin: Infinity,
+  codeFolding: true,
+
 });
 
 const viewportHeight = window.innerHeight;

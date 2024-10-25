@@ -7,8 +7,8 @@ defaultMarkdownHandler = "goldmark"
     hl_Lines = ""
     lineAnchors = ""
     lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = false
+    lineNos = true
+    lineNumbersInTable = true
     noClasses = false
     tabWidth = 2
     ## Update the 'create:syntax' command in package.json to modify the style
