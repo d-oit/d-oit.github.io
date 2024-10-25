@@ -19,12 +19,12 @@ draft: false
 
 ## Blog Wiederbelebung
 
-Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben. 
+Den bisherigen Blog habe ich seit ein paar Jahren vernachlässigt. Aktuell ist es wieder an der Zeit diesem neues Leben einzuverleiben.
 
 Das ist mein Setup zum Schreiben. Wichtig war mir die offline Funktionalität, Online Bearbeitung durch [GitHub Codespaces](https://github.com/features/codespaces) (gleiche Erweiterungen verwendbar wie offline / auf dem Desktop),  Mehrsprachigkeit, einfache Verwendung von github pages mit actions Funktionen.
 Und vor allem Performance :performing_arts:
 
-Der Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen. 
+Der Blog wird im english sprachigen Teil eher Entwickler/Technik lastig. Das Setup ist durch meinen Hintergrund im IT Bereich zu Stande gekommen.
 
 ### Hugo
 
@@ -39,31 +39,35 @@ Los geht es mit der, lokalen Installation. In der Beschreibung wird Windows verw
 Vorgehensweise ist in der Dokumentation des **Hinode Hugo Theme** ausführlich beschrieben: https://gethinode.com/docs/getting-started/introduction/
 
 1. Hugo Installation >> https://gohugo.io/getting-started/quick-start/#prerequisites
-- Meine Installation / Update führe ich per winget durch:
-  `winget install Hugo.Hugo.Extended`
+
+    - Meine Installation / Update führe ich per winget durch:
+      `winget install Hugo.Hugo.Extended`
+
 2. Git als Versionsverwaltung >> https://git-scm.com/downloads (Dateien werden auf github oder gitlab hochgeladen und als pages / website angezeigt)
-- Git unter Windows kann per Terminal / Command line mit Admin Rechten per `git update-git-for-windows` aktualisiert werden
-- Optional: Git Graph extension for Visual Studio Code für eine zusätzliche Anzeige >> https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
+
+    - Git unter Windows kann per Terminal / Command line mit Admin Rechten per `git update-git-for-windows` aktualisiert werden
+    - Optional: Git Graph extension for Visual Studio Code für eine zusätzliche Anzeige >> https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
+
 3. Visual Studio Code >> https://code.visualstudio.com/Download
-   
-   3.1. Visual Studio Code Erweiterungen
-   
-   - Front Matter CMS 
-   
-   - German - Code Spell Checker
-   
-   - Font Awesome Gallery
 
-   - LTeX – LanguageTool grammar/spell checking
-     
+    3.1. Visual Studio Code Erweiterungen
+
+    - Front Matter CMS
+
+    - German - Code Spell Checker
+
+    - Font Awesome Gallery
+
+    - LTeX – LanguageTool grammar/spell checking
+
   Aktueller Stand als PowerShell Installation Gist >> https://gist.github.com/d-oit/d3496a25f7de86f4c45d339a31040405
-  Ermittlung 
+  Ermittlung
   
-  *Voraussetzung*: Command Line Interface (CLI) >> https://code.visualstudio.com/docs/editor/command-line
+    *Voraussetzung*: Command Line Interface (CLI) >> https://code.visualstudio.com/docs/editor/command-line
 
-4. Alternativer open source Markdown Editor ist für mich **Marktext ** https://www.marktext.cc/
+4. Alternativer open source Markdown Editor ist für mich **Marktext** https://www.marktext.cc/
 
-Nach der Installation kann lokal per `hugo server` Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht. 
+  Nach der Installation kann lokal per `hugo server` Terminal Befehl der lokale Hugo Webserver gestartet werden. Dieser prüft auch automatisch ob z.B. eine Bilddatei fehlt für die Anzeige in der Webansicht.
 
 ### Windows 11 Developer Powershell
 

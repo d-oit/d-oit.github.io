@@ -39,16 +39,19 @@ Get your oAuth client credentials before you start on the [comdirect Website](ht
 
 1. Download the latest swagger json from the [comdirect Website](https://kunde.comdirect.de/cms/media/comdirect_rest_api_swagger.json)
 2. Change the comdirect type "cd_secondary" to  "password
+
     ```json
     "CdSecondary": {
       "type": "oauth2",
       "tokenUrl": "https://api.comdirect.de/oauth/token",
       "flow": "cd_secondary", >>  **"flow": "password"**,
       ```
+
 3. Install the Visual Studio extension to generate the C# Client: [Unchase.OpenAPI.Connectedservice](https://github.com/unchase/Unchase.OpenAPI.Connectedservice)
 4. Generate the client [![comdirect-unchase-openapi.png](https://i.postimg.cc/bvjFpBWf/comdirect-unchase-openapi.png)](https://postimg.cc/75mNNmqK)
 5. Manage user secrets for the project with your comdirect credentials.
 Define in the appsettings.json / secrets.json file:
+
 ```json
 {
   "ComdirectCredentials": {
@@ -59,6 +62,7 @@ Define in the appsettings.json / secrets.json file:
   }
 }
 ```
+
 6. After a successful authentication the credentials saved in the **appsettings.json** file:
 
 ```json
@@ -105,6 +109,7 @@ The sample use **Serilog** to log messages configured in the **appsettings.json*
 ### Asp.net core hosting Hangfire sample code documentation
 
 <a name='T-ConsoleSample-ComdirectApiHostedService'></a>
+
 ## ComdirectApiHostedService `type`
 
 ##### Namespace
@@ -112,6 +117,7 @@ The sample use **Serilog** to log messages configured in the **appsettings.json*
 ConsoleSample
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-#ctor-Hangfire-IBackgroundJobClient,Hangfire-IRecurringJobManager,Microsoft-Extensions-Logging-ILogger{ConsoleSample-ComdirectApiHostedService},Microsoft-Extensions-Configuration-IConfiguration-'></a>
+
 ### #ctor(backgroundJobs,recurringJobs,logger,configuration) `constructor`
 
 ##### Summary
@@ -136,6 +142,7 @@ This class is responsible for managing the background service that interacts wit
 | [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | Thrown when the ComdirectCredentials configuration is missing in appsettings.json. |
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-AuthFlow-Comdirect-Rest-Api-AuthClient,Comdirect-Rest-Api-ComdirectOAuthToken-'></a>
+
 ### AuthFlow(authClient,token) `method`
 
 ##### Summary
@@ -156,6 +163,7 @@ authentication API. |
 | token | [Comdirect.Rest.Api.ComdirectOAuthToken](#T-Comdirect-Rest-Api-ComdirectOAuthToken 'Comdirect.Rest.Api.ComdirectOAuthToken') | The ComdirectOAuthToken object containing the access token obtained during the initial authentication flow. |
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-CheckReuseTan-Microsoft-Extensions-Configuration-IConfiguration-'></a>
+
 ### CheckReuseTan() `method`
 
 ##### Summary
@@ -171,6 +179,7 @@ Returns true if the saved TAN can be reused, false otherwise.
 This method has no parameters.
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-ComdirectSession'></a>
+
 ### ComdirectSession() `method`
 
 ##### Summary
@@ -190,6 +199,7 @@ authenticated client.
 This method has no parameters.
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-ExecuteAsync-System-Threading-CancellationToken-'></a>
+
 ### ExecuteAsync(stoppingToken) `method`
 
 ##### Summary
@@ -209,6 +219,7 @@ An asynchronous Task that completes when the execution is stopped or an exceptio
 | stoppingToken | [System.Threading.CancellationToken](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.CancellationToken 'System.Threading.CancellationToken') | A CancellationToken that indicates when the execution should be stopped. |
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-GetComdirecAccountBalances-Comdirect-Rest-Api-AuthClient-'></a>
+
 ### GetComdirecAccountBalances(client) `method`
 
 ##### Summary
@@ -226,6 +237,7 @@ An asynchronous Task that completes when the account balances have been retrieve
 | client | [Comdirect.Rest.Api.AuthClient](#T-Comdirect-Rest-Api-AuthClient 'Comdirect.Rest.Api.AuthClient') | An instance of the AuthClient class for interacting with the Comdirect authentication API. |
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-RefreshTan-Comdirect-Rest-Api-AuthClient-'></a>
+
 ### RefreshTan(authClient) `method`
 
 ##### Summary
@@ -244,6 +256,7 @@ fails, an exception is thrown.
 | authClient | [Comdirect.Rest.Api.AuthClient](#T-Comdirect-Rest-Api-AuthClient 'Comdirect.Rest.Api.AuthClient') | An instance of the AuthClient class for interacting with the Comdirect authentication API. |
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-SaveSessionApplication-Comdirect-Rest-Api-AuthClient,Comdirect-Rest-Api-ComdirectOAuthToken-'></a>
+
 ### SaveSessionApplication(authClient,token) `method`
 
 ##### Summary
@@ -264,6 +277,7 @@ authentication API. |
 | token | [Comdirect.Rest.Api.ComdirectOAuthToken](#T-Comdirect-Rest-Api-ComdirectOAuthToken 'Comdirect.Rest.Api.ComdirectOAuthToken') | The ComdirectOAuthToken object containing the access token obtained during the initial authentication flow. |
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-StartAsync-System-Threading-CancellationToken-'></a>
+
 ### StartAsync(cancellationToken) `method`
 
 ##### Summary
@@ -284,6 +298,7 @@ initialization of the Comdirect API client, the exception is logged and rethrown
 | cancellationToken | [System.Threading.CancellationToken](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.CancellationToken 'System.Threading.CancellationToken') | A CancellationToken that indicates when the execution should be stopped. |
 
 <a name='M-ConsoleSample-ComdirectApiHostedService-StopAsync-System-Threading-CancellationToken-'></a>
+
 ### StopAsync(cancellationToken) `method`
 
 ##### Summary
@@ -302,6 +317,7 @@ An asynchronous Task that completes when the service has been stopped.
 | cancellationToken | [System.Threading.CancellationToken](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.CancellationToken 'System.Threading.CancellationToken') | A CancellationToken that indicates when the execution should be stopped. |
 
 <a name='T-ConsoleSample-SettingsHelpers'></a>
+
 ## SettingsHelpers `type`
 
 ##### Namespace
@@ -309,6 +325,7 @@ An asynchronous Task that completes when the service has been stopped.
 ConsoleSample
 
 <a name='M-ConsoleSample-SettingsHelpers-AddOrUpdateAppSetting``1-System-String,``0-'></a>
+
 ### AddOrUpdateAppSetting\`\`1(sectionPathKey,value) `method`
 
 ##### Summary
@@ -319,7 +336,7 @@ Updates or adds a new app setting in the 'appsettings.json' file.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| sectionPathKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The section path and key in the format "section1:section2:key". 
+| sectionPathKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The section path and key in the format "section1:section2:key".
 This will navigate through the JSON object to find the correct section. |
 | value | [\`\`0](#T-``0 '``0') | The new value to be set for the specified key. |
 
@@ -330,6 +347,7 @@ This will navigate through the JSON object to find the correct section. |
 | T | The type of the value to be set. |
 
 <a name='M-ConsoleSample-SettingsHelpers-SetValueRecursively``1-System-String,System-Object,``0-'></a>
+
 ### SetValueRecursively\`\`1(sectionPathKey,jsonObj,value) `method`
 
 ##### Summary
@@ -340,7 +358,7 @@ Recursively sets a value in a JSON object based on a given section path and key.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| sectionPathKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The section path and key in the format "section1:section2:key". 
+| sectionPathKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The section path and key in the format "section1:section2:key".
 This will navigate through the JSON object to find the correct section. |
 | jsonObj | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | The JSON object to be updated. |
 | value | [\`\`0](#T-``0 '``0') | The new value to be set for the specified key. |

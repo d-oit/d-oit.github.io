@@ -29,7 +29,7 @@ After searching the with the help of Copilot I discovered the easiest way to fix
 
 If this is not working the next step is to delete the following folder content:
 
-```
+```desktop
 - internal storage/Android/data/com.miui.gallery/files/gallery_disk_cache/full_size
 - internal storage/Android/data/com.miui.gallery/files/gallery_disk_cache/small_size 
 ```

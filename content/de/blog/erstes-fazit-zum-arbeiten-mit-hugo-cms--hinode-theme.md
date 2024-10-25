@@ -30,7 +30,7 @@ Hier ein Beispiel der erstellen [JavaScript Datei](https://github.com/gethinode/
 
 (vor allem für mich selbst :smile:)
 
-**{{- if site.Params.main.enableLanguageSelectionStorage -}}**
+``**{{- if site.Params.main.enableLanguageSelectionStorage -}}**``
 
 **enableLanguageSelectionStorage** = Einstellung in der **params.toml** Hugo Einstellungsdatei.
 Der Code wird nur verwendet wenn die String Variable "true" ist.

@@ -9,8 +9,6 @@ draft: true
 
 [TestMarkdown]({{% relref path="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en" %}})
 
-
-
 {{< refLink ref="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en"  >}}
 
 |

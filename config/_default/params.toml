@@ -57,7 +57,7 @@
     title = "Blog"
         sort = "date"
         reverse = true
-        cols = 4
+        cols = 2
         color = ""
         padding = "0"
         header = "full"

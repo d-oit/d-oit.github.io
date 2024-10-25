@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 {{- if site.Params.main.enableDarkMode -}} 
 
 (() => {
@@ -92,3 +94,4 @@
 
 })()
 {{- end -}} 
+/* eslint-enable */

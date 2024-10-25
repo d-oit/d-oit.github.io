@@ -11,7 +11,6 @@ Hands-On, Discover.
 I write about current topics that concern me privately and that I would like to try out.
 {{< /persona >}}
 
-
 {{< card-group align="center" class="border-0" padding="3" >}}
     {{< card title="Natur" icon="fas tree" >}}
         Love natur.
@@ -23,6 +22,5 @@ I write about current topics that concern me privately and that I would like to 
         Develop myself.
     {{< /card >}}
 {{< /card-group >}}
-
 
 {{< image src="img/CollageAbout.png" caption="Collage" >}}
