@@ -32,8 +32,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.135.0
+      HUGO_VERSION: 'latest'
     steps:
+      # lint
+      - name: Check out repository
+        uses: actions/checkout@v4
+  
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+  
+      # [24/AUG/23] Adjusted from npm ci to prevent EBADPLATFORM error due to fsevents
+      - name: Install npm
+        run: npm i
+  
+      - name: Lint the source files
+        run: npm run lint 
+      # hugo build
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
