@@ -7,6 +7,7 @@
  * @author d.o.it - Dominik Oswald
  * @version 1.0.0
  */
+{{- if site.Params.main.enableDarkMode -}}
 
 (() => {
   'use strict'
