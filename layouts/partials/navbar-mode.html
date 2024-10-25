@@ -1,13 +1,13 @@
 {{- $id := .id | default "navbar-mode" -}}
 
-<li class="nav-item dropdown me-auto">
+<li class="nav-item dropdown me-auto" aria-roledescription="menuitem">
     <div class="theme-switcher">
         <a title="theme mode dropdown-toogle" class="nav-link dropdown-toggle theme-header" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <svg id="currentThemeIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
             </svg>      
         </a>
-        <div class="dropdown-menu dropdown-menu-end theme-options" aria-labelledby="themeDropdown" id="themeOptions" data-bs-auto-close="false">
+        <div class="dropdown-menu dropdown-menu-end theme-options" aria-labelledby="theme mode dropdown" id="themeOptions" data-bs-auto-close="false">
             <a class="dropdown-item theme-option" title="light mode" href="#"  data-theme="light">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
