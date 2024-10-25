@@ -2,14 +2,14 @@
     "shortcodes": [
         {
             "id": "bold",
-            "code": "**bold**",
+            "code": "**text**",
             "icon": "bold",
             "order": 1,
             "tooltip": "Make text bold"
         },
         {
             "id": "italic",
-            "code": "_italic_",
+            "code": "_text_",
             "icon": "italic",
             "order": 2,
             "tooltip": "Make text italic"
@@ -44,7 +44,7 @@
         },
         {
             "id": "code",
-            "code": "`code`",
+            "code": "`text`",
             "icon": "code",
             "order": 7,
             "tooltip": "Insert inline code"
@@ -79,18 +79,26 @@
         },
         {
             "id": "internalLink",
-            "code": "{{< link \"path/to/file\" >}}text{{< /link >}}",
+            "code": "custom code with refLink",
             "icon": "file-alt",
             "order": 12,
             "tooltip": "Insert internal link"
         },
         {
             "id": "mediaSelect",
-            "code": "![alt text](/img/blog/image.jpg)",
+            "code": "custom code",
             "icon": "photo-video",
             "order": 13,
             "tooltip": "Select and insert media"
+        },
+        {
+            "id": "fileContent",
+            "code": "{{< file full=\"false\" show=\"false\" path=\"./config/_default/languages.toml\" id=\"file-collapse-1\" >}}",
+            "icon": "file-lines",
+            "order": 14,
+            "tooltip": "insert file contents as Hinode markdown"
         }
+        
     ],
     "server": {
         "port": 8081,
@@ -105,7 +113,7 @@
         },
         "thumbnailResize": {
             "method": "fit",
-            "maxWidth": 1024
+            "maxWidth": 1200
         }
     }
 }

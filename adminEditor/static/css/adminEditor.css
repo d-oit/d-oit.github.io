@@ -1,0 +1,61 @@
+.CodeMirror {
+    max-height: 70vh; /* Set the maximum height to the viewport height */
+   
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+#editor {
+    width: 100%;
+    height: 300px;
+}
+
+#toolbar {
+    margin-bottom: 10px;
+}
+
+#file-selector {
+    margin-bottom: 10px;
+}
+
+.spelling-error {
+    text-decoration: underline wavy red;
+}
+
+.grammar-error {
+    text-decoration: underline wavy blue;
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ic3ZnLXh0ZyIgdmlld0JveD0iMCAwIDI0IDI0IiBoZWlnaHQ9IjE2IiB3aWR0aD0iMTYiPjxwYXRoIGQ9Ik01IDkgbDcgNyA3LTciPjwvcGF0aD48L3N2Zz4=') no-repeat right center;
+    padding-right: 25px;
+}
+

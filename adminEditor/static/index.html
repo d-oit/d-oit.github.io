@@ -5,25 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>d.o.it Markdown Editor</title>
-    <link rel="stylesheet" href="bundle.min.css">
-    <link rel="stylesheet" href="adminEditor.css">
+    <link rel="stylesheet" href="css/bundle.min.css">
+    <link rel="stylesheet" href="css/adminEditor.css">
 </head>
 
 <body>
 
     <div class="container-fluid">
+        <div class="float-end" id="newPostButtons"><button id="newPostButton" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#newPostModal">
+            <i class="fas fa-plus"></i> New Post
+        </button></div>
         <div id="main-content">
             <div id="toolbar" class="btn-group flex-wrap" role="group"></div>
-
             <div id="file-selector" class="row mb-3">
                 <div class="col">
+                    <div class="form-group">
                     <select title="select language" id="language-select" class="form-select">
                         <option value="de">German</option>
                         <option value="en">English</option>
                     </select>
                 </div>
+                </div>
                 <div class="col">
-                    <select title="select markdown" id="file-select" class="form-select"></select>
+                    <select title="select markdown" id="file-select" class="form-select caret"></select>
                 </div>
             </div>
             <textarea title="editor" id="editor"></textarea>
@@ -34,8 +38,6 @@
                 <button id="paste-btn" class="btn btn-secondary">Paste from Clipboard</button>
                 <button id="fullscreen-btn" class="btn btn-secondary">Toggle Fullscreen</button>
             </div>
-
-         
         </div>
     </div>
 
@@ -50,6 +52,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- Media selection content will be dynamically inserted here -->
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -69,12 +72,12 @@
                 </div>
                 <div class="modal-body">
                     <select id="blockquote-type" class="form-select">
-                        <option value="NOTE">NOTE</option>
-                        <option value="TIP">TIP</option>
-                        <option value="IMPORTANT">IMPORTANT</option>
-                        <option value="WARNING">WARNING</option>
-                        <option value="CAUTION">CAUTION</option>
-                        <option value="QUOTE">Only Quote</option>
+                        <option value="> [!NOTE]">NOTE</option>
+                        <option value="> [!TIP]">TIP</option>
+                        <option value="> [!IMPORTANT]">IMPORTANT</option>
+                        <option value="> [!WARNING]">WARNING</option>
+                        <option value="> [!CAUTION]">CAUTION</option>
+                        <option value="> ">Quote</option>
                     </select>
                 </div>
                 <div class="modal-footer">
@@ -99,7 +102,7 @@
                     </select>
                     <textarea id="code-content" class="form-control" rows="10"></textarea>
                 </div>
-                
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-primary" id="insert-colored-code-btn">Enter</button>
@@ -116,11 +119,35 @@
                     <h5 class="modal-title" id="internalLinksModalLabel">Insert Internal Link</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <!-- Internal link selection content will be dynamically inserted here -->
-                    <select id="internalLinkSelect" class="form-select mb-3"></select>
-                    <input type="text" id="internalLinkText" class="form-control" placeholder="Link Text">
-                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div id="internalLinksArea"></div>
+                        </div>
+                        <!-- Internal link selection content will be dynamically inserted here -->
+                        <div class="form-group mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchUseButton"
+                                    checked>
+                                <label class="form-check-label" for="flexSwitchUseButton">Button Link</label>
+                            </div>
+                        </div>
+                        <div class="form-group" id="buttonColorGroup">
+                            <select id="buttonColorSelect" class="form-select mb-3" aria-label="Button color select">
+                                <option value="primary">Primary</option>
+                                <option value="secondary">Secondary</option>
+                                <option value="success">Success</option>
+                                <option value="danger">Danger</option>
+                                <option value="warning">Warning</option>
+                                <option value="info">Info</option>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </form>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-primary" id="insert-internal-link-btn">Insert</button>
@@ -128,8 +155,32 @@
             </div>
         </div>
     </div>
-    <script src="bundle.min.js"></script>
-    <script src="adminEditor.js"></script>
+
+    <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newPostModalLabel">Create New Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="newPostWizard"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <script src="js/bundle.min.js"></script>
+    <script src="js/adminEditor.js" type="module"></script>
+    <script src="js/modals.js" type="module"></script>
+    <script src="js/mediaSelectModal.js" type="module"></script>
+    <script src="js/blockquoteModal.js" type="module"></script>
+    <script src="js/coloredCodeModal.js" type="module"></script>
+    <script src="js/internalLinksModal.js" type="module"></script>
+    <script src="js/newPostWizard.js"></script>
 </body>
 
 </html>

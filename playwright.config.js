@@ -7,7 +7,7 @@ import path from 'path';
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 // Use the environment variable for the base URL
-const baseURL = process.env.BASE_URL_TESTING;
+const baseURL = process.env.BASE_URL_TESTING || 'http://localhost:1313';
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -61,10 +61,10 @@ module.exports = defineConfig({
     //  },
 
     /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
+    {
+      name: 'Microsoft Edge',
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    },
     // {
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
