@@ -17,7 +17,7 @@ After a discussion about "is the current theme mode switch GDPR compliance" with
 
 ## HTML Theme Toggle Interface
 
-Create a **navbar-mode.html** file provides the user interface for switching between light, dark and auto mode with a save icon. 
+Create a **navbar-mode.html** file provides the user interface for switching between light, dark and auto mode with a save icon.
 
 {{< file full="true" show="false" path="./layouts/partials/navbar-mode.html" id="file-collapse-1" >}}
 
@@ -30,9 +30,9 @@ Define is in the **navbar.html**:
 
 Override the existing Hinode **color.js** file with the new code.
 
- * This script handles the mode customization for the Hugo / Hinode website.
- * GDPR compliance: User click on the save button after selected a mode.
- * It provides a dark mode, light mode, and auto mode based on the user's preference.
- * The selected theme is saved with an icon in the localStorage for persistence across sessions.
+* This script handles the mode customization for the Hugo / Hinode website.
+* GDPR compliance: User click on the save button after selected a mode.
+* It provides a dark mode, light mode, and auto mode based on the user's preference.
+* The selected theme is saved with an icon in the localStorage for persistence across sessions.
 
 {{< file full="true" show="false" path="./assets/js/critical/color.js" id="file-collapse-2" >}}
