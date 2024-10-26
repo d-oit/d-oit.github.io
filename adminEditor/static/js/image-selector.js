@@ -11,31 +11,26 @@
 export function initImageSelector(containerId) {
   const container = document.getElementById(containerId);
   if (!container) {
-    console.error(`Container with id "${containerId}" not found`);
-    return;
+      console.error(`Container with id "${containerId}" not found`);
+      return;
   }
 
   container.innerHTML = `
-          <div class="container mt-5">
-            <h1 class="mb-4">Images</h1>
-            <div class="row mb-3">
+      <div class="container mt-5">
+          <div class="row mb-3">
               <div class="col">
-                <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+                  <input type="text" id="searchInput" class="form-control" placeholder="Search images...">
               </div>
               <div class="col-auto">
-                <button id="copyNameBtn" class="btn btn-secondary">Copy Name</button>
-                <button id="downloadBtn" class="btn btn-secondary">Download</button>
-                <button id="uploadBtn" class="btn btn-secondary">Upload</button>
+                  <button id="editSelectedBtn" class="btn btn-primary">Edit Selected</button>
+                  <button id="deleteSelectedBtn" class="btn btn-danger">Delete Selected</button>
               </div>
-            </div>
-            <div id="messageContainer" class="alert d-none" role="alert"></div>
-            <div id="imageContainer" class="row row-cols-1 row-cols-md-3 g-4"></div>
-            <div class="mt-3">
-              <button id="deleteSelectedBtn" class="btn btn-danger">Delete selected</button>
-              <button id="chooseSelectedBtn" class="btn btn-success">Choose selected</button>
-            </div>
           </div>
-        `;
+          <div id="messageContainer" class="alert d-none" role="alert"></div>
+          <div id="imageContainer" class="row row-cols-1 row-cols-md-3 g-4"></div>
+      </div>
+  `;
+
 
   const imageContainer = container.querySelector("#imageContainer");
   const searchInput = container.querySelector("#searchInput");
@@ -184,3 +179,6 @@ export function initImageSelector(containerId) {
     }, 3000);
   }
 }
+
+
+

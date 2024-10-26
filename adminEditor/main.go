@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"image"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -11,6 +12,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+	"time"
 
 	"github.com/disintegration/imaging"
 	"github.com/gosimple/slug"
@@ -93,6 +95,8 @@ func main() {
 	http.HandleFunc("/api/create-post", handleCreatePost)
 	http.HandleFunc("/api/tags", handleGetTags)
 	http.HandleFunc("/api/categories", handleGetCategories)
+	http.HandleFunc("/api/delete-media", handleDeleteMedia)
+	http.HandleFunc("/api/upload-media", handleUploadMediaFolder)
 
 	// Determine the address to listen on
 	addr := fmt.Sprintf(":%d", config.Server.Port)
@@ -661,4 +665,152 @@ func processMediaFile(request struct {
 	}
 
 	return newFileName, nil
+}
+
+func handleUploadMediaFolder(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	// Parse the multipart form data with a 32MB limit
+	err := r.ParseMultipartForm(32 << 20)
+	if err != nil {
+		http.Error(w, "Error parsing form data", http.StatusBadRequest)
+		return
+	}
+
+	file, header, err := r.FormFile("file")
+	if err != nil {
+		http.Error(w, "Error retrieving file", http.StatusBadRequest)
+		return
+	}
+	defer file.Close()
+
+	// Generate a unique filename
+	ext := filepath.Ext(header.Filename)
+	filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), ext)
+
+	// Create the full path for the new file
+	fullPath := filepath.Join(config.Server.MediaFolder, filename)
+
+	// Create a new file in the media folder
+	dst, err := os.Create(fullPath)
+	if err != nil {
+		http.Error(w, "Error creating file", http.StatusInternalServerError)
+		return
+	}
+	defer dst.Close()
+
+	// Copy the uploaded file to the destination
+	_, err = io.Copy(dst, file)
+	if err != nil {
+		http.Error(w, "Error saving file", http.StatusInternalServerError)
+		return
+	}
+
+	// Return the filename in the response
+	response := struct {
+		Filename string `json:"filename"`
+	}{
+		Filename: filename,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
+
+func handleUploadMedia(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	// Parse the multipart form data with a 32MB limit
+	err := r.ParseMultipartForm(32 << 20)
+	if err != nil {
+		http.Error(w, "Error parsing form data", http.StatusBadRequest)
+		return
+	}
+
+	file, header, err := r.FormFile("file")
+	if err != nil {
+		http.Error(w, "Error retrieving file", http.StatusBadRequest)
+		return
+	}
+	defer file.Close()
+
+	// Generate a unique filename
+	ext := filepath.Ext(header.Filename)
+	filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), ext)
+
+	// Create the full path for the new file
+	fullPath := filepath.Join(config.Server.MediaFolder, filename)
+
+	// Create a new file in the media folder
+	dst, err := os.Create(fullPath)
+	if err != nil {
+		http.Error(w, "Error creating file", http.StatusInternalServerError)
+		return
+	}
+	defer dst.Close()
+
+	// Copy the uploaded file to the destination
+	_, err = io.Copy(dst, file)
+	if err != nil {
+		http.Error(w, "Error saving file", http.StatusInternalServerError)
+		return
+	}
+
+	// Return the filename in the response
+	response := struct {
+		Filename string `json:"filename"`
+	}{
+		Filename: filename,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
+
+func handleDeleteMedia(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodDelete {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	filename := r.URL.Query().Get("file")
+	if filename == "" {
+		http.Error(w, "Filename is required", http.StatusBadRequest)
+		return
+	}
+
+	// Ensure the filename is safe
+	if strings.Contains(filename, "..") {
+		http.Error(w, "Invalid filename", http.StatusBadRequest)
+		return
+	}
+
+	// Create the full path for the file
+	fullPath := filepath.Join(config.Server.MediaFolder, filename)
+
+	// Check if file exists
+	if _, err := os.Stat(fullPath); os.IsNotExist(err) {
+		http.Error(w, "File not found", http.StatusNotFound)
+		return
+	}
+
+	// Delete the file
+	err := os.Remove(fullPath)
+	if err != nil {
+		http.Error(w, "Error deleting file", http.StatusInternalServerError)
+		return
+	}
+
+	// Also delete thumbnail if it exists
+	thumbPath := filepath.Join(config.Server.MediaFolder, "thumb_"+filename)
+	_ = os.Remove(thumbPath) // Ignore error as thumbnail might not exist
+
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(map[string]string{"status": "success"})
 }
