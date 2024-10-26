@@ -14,7 +14,7 @@ thumbnail:
   author: d.o.
 ---
 
-## List for extensions for C#
+## List for extensions for C #
 
 - **CodeRush** for VS 2022: Productivity tools for code generation, refactoring, style, code coverage & testing
 https://marketplace.visualstudio.com/items?itemName=DevExpress.CodeRushforVS2022&ssr=false#overview

@@ -32,8 +32,8 @@ Get-Package | Select-Object Id,LicenseUrl
 
 **Output result (Nuget Package Name, License Url):**
 
-xunit.runner.visualstudio                               https://raw.githubusercontent.com/xunit/xunit/master/license.txt                       
-NSubstitute                                             https://github.com/nsubstitute/NSubstitute/raw/master/LICENSE.txt         
+xunit.runner.visualstudio                               https://raw.githubusercontent.com/xunit/xunit/master/license.txt
+NSubstitute                                             https://github.com/nsubstitute/NSubstitute/raw/master/LICENSE.txt
 Good… but the direct reference project NuGet package. Need also the License of all dlls.
 
 ## Solution 2: PowerShell: Save license as text file
@@ -79,10 +79,13 @@ Split-Path -parent $dte.Solution.FileName | cd; New-Item -ItemType Directory -Fo
 Not perfect – I also need the license for the used Dlls inside any NuGet Package.
 
 ---------------------
+
 NuGet Package License
 ---------------------
+
 Id      |      LicenseUrl  |    License
 ---------------------
+
 Abp.AspNetCore; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT)
 Abp.AspNetCore.SignalR; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT)
 Abp.AutoMapper; https://github.com/aspnetboilerplate/aspnetboilerplate/blob/master/LICENSE; The MIT License (MIT)

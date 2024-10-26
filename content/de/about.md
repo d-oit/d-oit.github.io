@@ -14,5 +14,4 @@ Beruflich war ich die letzten Jahre in der IT unterwegs. Ich liebe es zu kochen,
 **d.o.** = Dominik Oswald
 {{< /persona >}}
 
-
 {{< image src="img/CollageAbout.png" caption="Collage" >}}

@@ -50,57 +50,57 @@ Aktuell funktionieren bei der Automatisierung einige Punkte noch nicht sauber, d
 2. Übertragungen heraussuchen und in die Zwischenablage kopieren
 3. Bing Copilot Chat eine ics Datei erstellen:
 
-### Beispiel magentasport – ics Datei
+   ### Beispiel magentasport – ics Datei
 
-```"Erstelle eine ics in deutscher Zeitzone für die nachfolgenden magentasport.de Livestreams Termine mit einer Dauer von 1, 5 stunden:
-Deutschland
-Frankreich
-Deutschland
-Frankreich
-Sa 6. Jul 15:30  | 
-Testspiele Herren
-....
-...."
+    ```"Erstelle eine ics in deutscher Zeitzone für die nachfolgenden magentasport.de Livestreams Termine mit einer Dauer von 1, 5 stunden:
+    Deutschland
+    Frankreich
+    Deutschland
+    Frankreich
+    Sa 6. Jul 15:30  | 
+    Testspiele Herren
+    ....
+    ...."
 
-```
+    ```
 
-Das Ergebnis ist ein ics Datei.
+    Das Ergebnis ist ein ics Datei.
 
-### Beispiel DBB Olympia 2024 - Link erzeugen
+   ### Beispiel DBB Olympia 2024 - Link erzeugen
 
-Die Termine sind aufgespielt auf der [DBB Website](https://www.basketball-bund.de/bunter-tv-sommer-fuer-dbb-olympiateams/) zu finden.
+    Die Termine sind aufgespielt auf der [DBB Website](https://www.basketball-bund.de/bunter-tv-sommer-fuer-dbb-olympiateams/) zu finden.
 
-Copilot Chat:
+    Copilot Chat:
 
-```
+    ```desktop
 
-Erstelle google calendar url events links (example https://github.com/InteractionDesignFoundation/add-event-to-calendar-docs/blob/main/services/google.md)  für die nachfolgenden Livestreams mit einer Dauer von 1, 5 Stunden in deutscher Zeitzone. Der Titel soll mit "Olympia 2024: " beginnen. 
-In der der Beschreibung den Livestream mit einfügen: 
-DBB Herren - Olympia 2024
-Livestream: https://www.sportschau.de/olympia
-Ort: Lille
+    Erstelle google calendar url events links (example https://github.com/InteractionDesignFoundation/add-event-to-calendar-docs/blob/main/services/google.md)  für die nachfolgenden Livestreams mit einer Dauer von 1, 5 Stunden in deutscher Zeitzone. Der Titel soll mit "Olympia 2024: " beginnen. 
+    In der der Beschreibung den Livestream mit einfügen: 
+    DBB Herren - Olympia 2024
+    Livestream: https://www.sportschau.de/olympia
+    Ort: Lille
 
-Herren (Lille)
-Samstag, 27. Juli 2024
-13.30 Uhr: Deutschland – Japan
+    Herren (Lille)
+    Samstag, 27. Juli 2024
+    13.30 Uhr: Deutschland – Japan
 
-Dienstag, 30. Juli 2024
-21.00 Uhr: Deutschland – Brasilien
+    Dienstag, 30. Juli 2024
+    21.00 Uhr: Deutschland – Brasilien
 
-Freitag, 02. August 2024
-21.00 Uhr: Deutschland – Frankreich
+    Freitag, 02. August 2024
+    21.00 Uhr: Deutschland – Frankreich
 
-```
+    ```
 
-Als Ergebnis kommt jeweils ein Link heraus; der in einem Browser mit angemeldetem google Calendar Account ausgeführt werden kann. Der Termin wird hierbei manuell angelegt:
+    Als Ergebnis kommt jeweils ein Link heraus; der in einem Browser mit angemeldetem google Calendar Account ausgeführt werden kann. Der Termin wird hierbei manuell angelegt:
 
-```
+    ```desktop
 
-https://www.google.com/calendar/render?action=TEMPLATE&text=Olympia+2024%3A+Deutschland+%E2%80%93+Japan&dates=20240727T113000Z/20240727T130000Z&details=DBB+Herren+-+Olympia+2024%0ALivestream%3A+https%3A%2F%2Fwww.sportschau.de%2Folympia&location=Lille
+    https://www.google.com/calendar/render?action=TEMPLATE&text=Olympia+2024%3A+Deutschland+%E2%80%93+Japan&dates=20240727T113000Z/20240727T130000Z&details=DBB+Herren+-+Olympia+2024%0ALivestream%3A+https%3A%2F%2Fwww.sportschau.de%2Folympia&location=Lille
 
-```
+    ```
 
-***Wunsch***: Klasse wäre, wenn Google *Gemini* direkt mit Google Calendar verknüpft werden könnte. Ist ja der gleiche Google Account. Dies ist aber nicht möglich. Ebenso werden in Gemini keine korrekte Zeitzone erstellt.
+    ***Wunsch***: Klasse wäre, wenn Google *Gemini* direkt mit Google Calendar verknüpft werden könnte. Ist ja der gleiche Google Account. Dies ist aber nicht möglich. Ebenso werden in Gemini keine korrekte Zeitzone erstellt.
 
 4. ics Datei in Google Kalender importieren
 
@@ -139,8 +139,7 @@ Damit iCal Google Calendar Einträge auf der Website angezeigt werden können, w
 
 json Datei einlesen und Felder in html tags darstellen mit entsprechenden Hugo Template Parametern
 
-```
-
+```go
  $jsonURL := "free_basket_calendar.json"
  $json := resources. Get $jsonURL 
  if $json 

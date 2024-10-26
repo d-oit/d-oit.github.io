@@ -17,21 +17,25 @@ thumbnail:
 - **WhatsApp** for Windows ... Zwangsweise für private Nachrichten :smile:
 
 ### Grafik
+
 - **Paint.Net**
-- [PNG to SVG](https://www.microsoft.com/store/productId/9PFK7JFT951V?ocid=pdpshare) 
+- [PNG to SVG](https://www.microsoft.com/store/productId/9PFK7JFT951V?ocid=pdpshare)
 
 ### Büro / Organisationstool
+
 - **draw.io** Desktop/Web Tool diagramming flow
 - **MultiCommander** (Windows Explorer Alternative zum Kopieren zwischen Laufwerken)
 - **Wiso Steuer / Tax** (deutsche Steuererklärung)
 
 ### Entwicklungstool / Editors
+
 - [Visual Studio Code](https://code.visualstudio.com)
 - [requestly - get / mod HTTP Requests](https://github.com/requestly/requestly)
 - **Cursor** – AI Editor
 - **GPTengieer** - AI Web builder for prototyping
 
 ### Video / Audio
+
 - **OBS Studio**
 - **Audacity**
 
@@ -42,6 +46,7 @@ thumbnail:
 - **GoFullPage** Screenshot einer kompletten Website
 - [**Aixploria**](https://www.aixploria.com/en/ultimate-list-ai/)
 - **perplexity.ai** AI Suche
+
 ### Windows 11 Developer Powershell
 
 Windows 11 Powershell script für die Installation eines english-US Sprachpaket inklusive notwendiger Tools für die Webentwicklung.

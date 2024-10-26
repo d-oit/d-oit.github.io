@@ -21,7 +21,4 @@ draft: true
 
 |
 
-{{< refLink ref="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en" text="test" showButton="true" color="info" >}}
-
-
-{{< file full="true" show="false" path="./layouts/partials/navbar-mode.html" id="file-collapse-1" options="linenos=table,hl_lines=8 15-17,linenostart=3" >}}
+{{< refLink ref="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en" text="test"  showButton="true" color="info" >}}

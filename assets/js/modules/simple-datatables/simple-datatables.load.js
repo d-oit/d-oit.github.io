@@ -12,7 +12,7 @@ let tableOptions = {
       "noResults": "{{ T "tablesNoResults" }}",
       "info": "{{ T "tablesInfo" }}"
     },
-    perPageSelect: [5, 10, 20, 50, ["{{ T "tablePageSelectAll" }}", -1]],
+    perPageSelect: [5, 10, 20, 50, ["{{ site.Params.dataTable.localization.pageSizeAll }}", -1]],
      classes: {
          active: "active",
          disabled: "disabled",
