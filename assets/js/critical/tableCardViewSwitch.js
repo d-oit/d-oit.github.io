@@ -16,6 +16,57 @@ if (window.location.href.includes('/free-basketball-live-streams/')) {
       }
     }
 
+    function filterItems () {
+      const filter = document
+        .getElementById('searchBoxInlinePage')
+        .value.toLowerCase()
+      // TODO const leagueFilter = document.getElementById('leagueFilter').value.toLowerCase()
+      const dateFilter = document
+        .getElementById('basketDateFilterInput')
+        .value.toLowerCase()
+
+      if (
+        window.sessionStorage.getItem('toggleViewBasketStreamsView') === 'table'
+      ) {
+        const queries = []
+
+        if (filter) {
+          queries.push({
+            terms: [filter] // Search term
+
+          })
+        }
+
+        if (dateFilter) {
+          queries.push({
+            terms: [dateFilter],
+            columns: [] // Assuming date is in first column, adjust index if needed
+          })
+        }
+
+        const simpleDataTable = document.getElementById('free-basket-streams-table')
+        if (simpleDataTable) {
+          console.log('Applying queries:', queries)
+          const table = window.dt
+          table.multiSearch(queries)
+          console.log(table)
+        }
+        return
+      }
+
+      const items = document.querySelectorAll('[data-search-content]')
+      items.forEach(function (item) {
+        const text = item.textContent.toLowerCase()
+        // TODO  const league = item.getAttribute('data-league').toLowerCase()
+        const date = item.getAttribute('data-date').toLowerCase()
+        if (text.includes(filter) && date.includes(dateFilter)) {
+          item.classList.remove('d-none')
+        } else {
+          item.classList.add('d-none')
+        }
+      })
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       const toogleView = document.getElementById('toggleView')
       if (toogleView != null) {
@@ -27,20 +78,16 @@ if (window.location.href.includes('/free-basketball-live-streams/')) {
           changeView()
         })
 
+        const dateFilter = document.getElementById('basketDateFilterInput')
         const searchBox = document.getElementById('searchBoxInlinePage')
-        if (searchBox != null) {
-          searchBox.addEventListener('input', function () {
-            const filter = this.value.toLowerCase()
-            const items = document.querySelectorAll('[data-search-content]')
-            items.forEach(function (item) {
-              const text = item.textContent.toLowerCase()
-              if (text.includes(filter)) {
-                item.classList.remove('d-none')
-              } else {
-                item.classList.add('d-none')
-              }
-            })
-          })
+        const leagueFilter = document.getElementById('leagueFilter')
+
+        if (searchBox != null || dateFilter != null || leagueFilter != null) {
+          searchBox.addEventListener('input', filterItems)
+          if (leagueFilter != null) {
+            leagueFilter.addEventListener('change', filterItems)
+          }
+          dateFilter.addEventListener('input', filterItems)
         }
       }
     })

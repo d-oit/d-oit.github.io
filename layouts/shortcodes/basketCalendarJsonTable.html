@@ -8,18 +8,26 @@
   <button id="toggleView" class="btn btn-warning">{{ i18n "SwitchCardTableView" }}</button>
 </p>
 <div id="content">
-
+  
   <div id="card-view" class="d-none">
-    <div class="row">
-      <p>
-        <input type="search" class="form-control" id="searchBoxInlinePage"
+    <div id="filterGroup">
+      <div class="form-row mb-4">
+        <div class="form-group col-md-6">
+          <label for="inputSearch">{{ T "tablePlaceholder" }}</label>
+          <input type="search" class="form-control datatable-input" name="search" id="searchBoxInlinePage"
           placeholder="Search for title or language (en or de)...">
-      </p>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputDate">{{ T "filterDate" }}</label>
+          <input title="date filter" type="date" class="form-control" id="basketDateFilterInput">
+        </div>
+      </div>
     </div>
     <div class="row">
       {{ range $index, $item := $data }}
-      <div class="col-sm-4 mb-3 mb-sm-1" data-search-content="{{ time.Format " :date_short" (time.AsTime $item.begin) }}
-        {{ time.Format ":time_short" (time.AsTime $item.begin) }} {{ $item.name }}">
+      <div class="col-sm-4 mb-3 mb-sm-1" data-search-content="{{ time.Format ":date_short" (time.AsTime $item.begin) }}
+        {{ time.Format ":time_short" (time.AsTime $item.begin) }} {{ $item.name }}"
+        data-league="{{ $item.league }}" data-date="{{ $item.begin }}">
         <div class="card h-100">
           <div class="card-body">
             <h4 class="card-title">{{ with $item.league }}
@@ -31,11 +39,11 @@
             {{ else }}
               {{ $item.name }}
             {{ end }}</h4>
-            <h5 class="card-text">{{ time.Format ":date_short" (time.AsTime $item.begin) }} {{
+            <h5 class="card-text">{{ time.Format ":date_medium" (time.AsTime $item.begin) }} {{
               time.Format ":time_short" (time.AsTime $item.begin) }}</h5>
             <p class="card-muted"><small>{{ $item.description }}</small></p>
           </div>
-          <div class="card-footer">
+          <div class="card-footer text-break">
             <p class="text-center">
               {{ if $item.url }}
                 <a href="{{ $item.url }}" class="btn btn-info stretched-link" rel="noopener noreferrer">{{ $item.location }}</a>
@@ -52,7 +60,7 @@
 
 
   <div class="table-responsive" id="table-view">
-    <table id="free-basket-streams-table-{{ site.Language.Lang }}" class="data-table table" data-table-sortable="true"
+    <table id="free-basket-streams-table" class="data-table table table-striped" data-table-sortable="true"
       data-table-paging="true" data-table-searchable="true" data-table-locale="{{ site.Language.Lang }}"
       data-table-labels='{
       "placeholder": "{{ T "tablePlaceholder" }}",
@@ -74,7 +82,10 @@
       </thead>
       <tbody>
         {{ range $index, $item := $data }}
-        <tr>
+        
+        <tr data-search-content="{{ time.Format ":date_short" (time.AsTime $item.begin) }}
+        {{ time.Format ":time_short" (time.AsTime $item.begin) }} {{ $item.name }}"
+        data-league="{{ $item.league }}" data-date="{{ $item.begin }}">
           <td data-text="{{ $item.begin }}">{{ time.Format ":date_short" (time.AsTime $item.begin) }}</td>
           <td data-text="{{ $item.begin }}">{{ time.Format ":time_short" (time.AsTime $item.begin) }}</td>
           <td>{{ $item.name }}</td>

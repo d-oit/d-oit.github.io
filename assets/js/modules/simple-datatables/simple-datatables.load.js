@@ -86,7 +86,7 @@ document.querySelectorAll('.data-table').forEach(tbl => {
     tableOptions.locale =  (tbl.getAttribute('data-table-locale'))
     var labels = tbl.getAttribute('data-table-labels');
     tableOptions.labels =  JSON.parse(labels)
-    new window.simpleDatatables.DataTable(tbl, 
+    window.dt = new window.simpleDatatables.DataTable(tbl, 
         tableOptions
     )
 })

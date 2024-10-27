@@ -25,3 +25,7 @@
   translation: Description
 - id: League
   translation: League
+- id: filterDate
+  translation: Filter date  
+- id: tablePlaceholder
+  translation: Search...
