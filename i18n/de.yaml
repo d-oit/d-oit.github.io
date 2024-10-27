@@ -207,3 +207,9 @@
 
 - id: filterDate
   translation: Datumsfilter
+- id: clearFilter
+  translation: Filter zurücksetzen
+- id: basketFilterInputSearch
+  translation: Suche nach Verein, Liga...
+- id: labelTodayDateFilter
+  translation: Heute

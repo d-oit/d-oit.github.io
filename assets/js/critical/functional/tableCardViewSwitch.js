@@ -25,9 +25,7 @@ if (window.location.href.includes('/free-basketball-live-streams/')) {
         .getElementById('basketDateFilterInput')
         .value.toLowerCase()
 
-      if (
-        window.sessionStorage.getItem('toggleViewBasketStreamsView') === 'table'
-      ) {
+      if (window.sessionStorage.getItem('toggleViewBasketStreamsView') === 'table') {
         const queries = []
 
         if (filter) {
@@ -81,7 +79,14 @@ if (window.location.href.includes('/free-basketball-live-streams/')) {
         const dateFilter = document.getElementById('basketDateFilterInput')
         const searchBox = document.getElementById('searchBoxInlinePage')
         const leagueFilter = document.getElementById('leagueFilter')
-
+        const clearFilterButton = document.getElementById('clearFilterButton')
+        if (clearFilterButton != null) {
+          clearFilterButton.addEventListener('click', function () {
+            dateFilter.value = null
+            searchBox.value = null
+            filterItems()
+          })
+        }
         if (searchBox != null || dateFilter != null || leagueFilter != null) {
           searchBox.addEventListener('input', filterItems)
           if (leagueFilter != null) {

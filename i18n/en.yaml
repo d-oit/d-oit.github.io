@@ -29,3 +29,9 @@
   translation: Filter date  
 - id: tablePlaceholder
   translation: Search...
+- id: clearFilter
+  translation: Clear Filter
+- id: basketFilterInputSearch
+  translation: Search for team, league ...
+- id: labelTodayDateFilter
+  translation: Today
