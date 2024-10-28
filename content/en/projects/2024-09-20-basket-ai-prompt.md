@@ -1,6 +1,6 @@
 ---
 title: d.o.it Prompt2GCal
-description: Basketball live streams prompt google calendar events creator
+description: Basketball live streams prompt google calendar events creator with Gemini
 date: 2024-09-20T08:39:42.419Z
 tags:
     - WebApp
@@ -13,7 +13,7 @@ thumbnail:
     author: d.o.
 layout: docs
 lang: en-US
-slug: prompt2gcal
+slug: livestream-prompt2gcal
 includeToc: true
 categories:
     - Software Development
