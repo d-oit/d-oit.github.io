@@ -28,4 +28,4 @@ categories:
 
 ## Github readme
 
-{{< ghcode "https://raw.githubusercontent.com/d-oit/basketball-streams-to-calendar-ai-prompt/386298f2314459a3c54fd4ccea0d693dc70aa2b5/README.md" >}}
+{{< ghcode "https://raw.githubusercontent.com/d-oit/basketball-streams-to-calendar-ai-prompt/refs/heads/main/README.md" >}}
