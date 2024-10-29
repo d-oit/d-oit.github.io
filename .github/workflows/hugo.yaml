@@ -32,7 +32,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 'latest'
+      HUGO_VERSION: 0.136.3
     steps:
       # lint
       - name: Check out repository

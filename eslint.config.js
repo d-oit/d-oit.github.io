@@ -7,6 +7,7 @@ module.exports = require('neostandard')({
     'assets/js/critical/color.js',
     'assets/js/analytics.js',
     'assets/js/flexsearch.js',
+    'assets/js/lightbox.js',
     'assets/js/navbar.js',
     'assets/js/sharing.js',
     'assets/js/vendor',

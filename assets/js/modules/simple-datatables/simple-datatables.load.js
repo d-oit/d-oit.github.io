@@ -2,7 +2,7 @@
 
 // Adapted from https://github.com/fiduswriter/simple-datatables/blob/main/docs/demos/19-bootstrap-table/index.html
 let tableOptions = {
-    perPage: 20,
+    perPage: 10,
     locale: "{{ site.Language.Lang | default "en" }}",
     labels: {
       "placeholder": "{{ T "tablePlaceholder" }}",
@@ -12,7 +12,7 @@ let tableOptions = {
       "noResults": "{{ T "tablesNoResults" }}",
       "info": "{{ T "tablesInfo" }}"
     },
-    perPageSelect: [5, 10, 20, 50, ["{{ site.Params.dataTable.localization.pageSizeAll }}", -1]],
+    perPageSelect: [5, 10, 20, 50, ["{{ T "tablePageSelectAll" }}", -1]],
      classes: {
          active: "active",
          disabled: "disabled",
@@ -86,7 +86,7 @@ document.querySelectorAll('.data-table').forEach(tbl => {
     tableOptions.locale =  (tbl.getAttribute('data-table-locale'))
     var labels = tbl.getAttribute('data-table-labels');
     tableOptions.labels =  JSON.parse(labels)
-    new window.simpleDatatables.DataTable(tbl, 
+    window.dt = new window.simpleDatatables.DataTable(tbl, 
         tableOptions
     )
 })
