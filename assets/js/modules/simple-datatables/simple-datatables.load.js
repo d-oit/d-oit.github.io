@@ -16,10 +16,11 @@ let tableOptions = {
      classes: {
          active: "active",
          disabled: "disabled",
-    //     selector: "form-select",
+         selector: "form-control form-select",
          paginationList: "pagination",
          paginationListItem: "page-item",
          paginationListItemLink: "page-link"
+
      },
     // // template: options => `<div class='${options.classes.top} fixed-table-toolbar'>
     // // ${

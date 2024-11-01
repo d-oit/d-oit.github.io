@@ -59,11 +59,11 @@
         reverse = true
         cols = 2
         color = ""
-        padding = "0"
+        padding = "2"
         header = "full"
         footer = "none"
         orientation = "stacked"
-        style = "border-0 card-zoom card-body-margin"
+        style = "border-1 card-zoom card-body-margin card-emphasize"
         homepage = 2
         separator = true
    [sections.projects]
