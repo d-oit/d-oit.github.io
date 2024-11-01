@@ -33,7 +33,7 @@ except Exception as e:
     exit(1)
 
 # Current time minus days (offset-aware)
-now_minus_days = datetime.now(timezone.utc) - timedelta(days=2)
+now_minus_days = datetime.now(timezone.utc) - timedelta(days=1)
 
 # Berlin time zone
 berlin_tz = pytz.timezone('Europe/Berlin')
