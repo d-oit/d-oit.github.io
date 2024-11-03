@@ -1,6 +1,8 @@
-Personal Blog: https://d-oit.github.io/
+# Personal Blog 
 
-**Status**
+https://d-oit.github.io/
+
+## Status
 
 [![🧪 Playwright End To End (e2e) Tests Workflow](https://github.com/d-oit/d-oit.github.io/actions/workflows/playwright.yml/badge.svg)](https://github.com/d-oit/d-oit.github.io/actions/workflows/playwright.yml)
 
