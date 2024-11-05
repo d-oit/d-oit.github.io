@@ -9,8 +9,8 @@ tags:
 - Hugo
 - Blog
 thumbnail:
-url: /img/blog/VisualStudioCodeWorkspace.png
-author: Dominik Oswald
+  url: /img/blog/VisualStudioCodeWorkspace.png
+  author: Dominik Oswald
 category:
 - Website
 draft: false
