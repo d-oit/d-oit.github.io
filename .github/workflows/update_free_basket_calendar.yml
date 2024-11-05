@@ -47,6 +47,6 @@ jobs:
           commit_message: Apply basket calendar json changes  
      
       - name: Hugo to github pages
-        uses: /.github/workflows/reusable-hugo-workflow.yml
+        uses: ./.github/workflows/reusable-hugo-workflow.yml@v1
 
 

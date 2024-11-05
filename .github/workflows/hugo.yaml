@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-      # Include automerge events
     paths:
       - '**' 
 
@@ -32,4 +31,4 @@ defaults:
 
 jobs:
   deploy-hugo:
-    uses: /.github/workflows/reusable-hugo-workflow.yml
+    uses: ./.github/workflows/reusable-hugo-workflow.yml@v1
