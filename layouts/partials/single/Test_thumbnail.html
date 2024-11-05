@@ -12,9 +12,8 @@
 
 
 {{- if reflect.IsMap $page.Params.Thumbnail -}}
-{{ warnf "th: %s url: %s page: %s" $page.Params.Thumbnail $page.Params.Thumbnail.url $page }}
 
-{{ if $page.Params.thumbnail }}
+{{ if $page.Params.au }}
 {{ warnf "th: %s page: %s" $page.Params.Thumbnail $page }}
     {{- if or (eq $page.Params.Thumbnail "") (eq $page.Params.Thumbnail.url "") -}}
         {{ errorf "The 'thumbnail' shortcode requires a 'url' argument. Please specify the image URL in your frontmatter: %s." .RelPermalink }}
