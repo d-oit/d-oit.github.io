@@ -11,7 +11,6 @@
        "mervin.markdown-formatter",
       "bierner.markdown-footnotes",
       "tomasvergara.vscode-fontawesome-gallery",
-      "eliostruyf.vscode-front-matter",
-      "ltex-plus.vscode-ltex-plus"
+      "eliostruyf.vscode-front-matter"
     ]
   }
