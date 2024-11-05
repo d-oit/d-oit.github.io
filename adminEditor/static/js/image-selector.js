@@ -1,18 +1,18 @@
 {
   /* <script type="module">
         import { initImageSelector } from './image-selector.js';
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             initImageSelector('imageSelectorContainer');
         });
     </script> */
 }
 
-export function initImageSelector(containerId) {
-  const container = document.getElementById(containerId);
+export function initImageSelector (containerId) {
+  const container = document.getElementById(containerId)
   if (!container) {
-      console.error(`Container with id "${containerId}" not found`);
-      return;
+    console.error(`Container with id "${containerId}" not found`)
+    return
   }
 
   container.innerHTML = `
@@ -29,42 +29,41 @@ export function initImageSelector(containerId) {
           <div id="messageContainer" class="alert d-none" role="alert"></div>
           <div id="imageContainer" class="row row-cols-1 row-cols-md-3 g-4"></div>
       </div>
-  `;
+  `
 
+  const imageContainer = container.querySelector('#imageContainer')
+  const searchInput = container.querySelector('#searchInput')
+  const messageContainer = container.querySelector('#messageContainer')
+  const copyNameBtn = container.querySelector('#copyNameBtn')
+  const downloadBtn = container.querySelector('#downloadBtn')
+  const uploadBtn = container.querySelector('#uploadBtn')
+  const deleteSelectedBtn = container.querySelector('#deleteSelectedBtn')
+  const chooseSelectedBtn = container.querySelector('#chooseSelectedBtn')
 
-  const imageContainer = container.querySelector("#imageContainer");
-  const searchInput = container.querySelector("#searchInput");
-  const messageContainer = container.querySelector("#messageContainer");
-  const copyNameBtn = container.querySelector("#copyNameBtn");
-  const downloadBtn = container.querySelector("#downloadBtn");
-  const uploadBtn = container.querySelector("#uploadBtn");
-  const deleteSelectedBtn = container.querySelector("#deleteSelectedBtn");
-  const chooseSelectedBtn = container.querySelector("#chooseSelectedBtn");
-
-  let images = [];
+  let images = []
 
   // Fetch images from API
-  fetch("/api/media-list")
+  fetch('/api/media-list')
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Failed to fetch images");
+        throw new Error('Failed to fetch images')
       }
-      return response.json();
+      return response.json()
     })
     .then((data) => {
-      images = data;
-      renderImages(images);
+      images = data
+      renderImages(images)
     })
     .catch((error) => {
-      showMessage(error.message, "danger");
-    });
+      showMessage(error.message, 'danger')
+    })
 
   // Render images
-  function renderImages(imagesToRender) {
-    imageContainer.innerHTML = "";
+  function renderImages (imagesToRender) {
+    imageContainer.innerHTML = ''
     imagesToRender.forEach((image) => {
-      const col = document.createElement("div");
-      col.className = "col";
+      const col = document.createElement('div')
+      col.className = 'col'
       col.innerHTML = `
               <div class="card h-100">
                 <img src="${image.url}" class="card-img-top" alt="${image.name}">
@@ -78,107 +77,104 @@ export function initImageSelector(containerId) {
                   </div>
                 </div>
               </div>
-            `;
-      imageContainer.appendChild(col);
-    });
+            `
+      imageContainer.appendChild(col)
+    })
   }
 
   // Search functionality
-  searchInput.addEventListener("input", function () {
-    const searchTerm = this.value.toLowerCase();
+  searchInput.addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase()
     const filteredImages = images.filter((image) =>
       image.name.toLowerCase().includes(searchTerm)
-    );
-    renderImages(filteredImages);
-  });
+    )
+    renderImages(filteredImages)
+  })
 
   // Copy Name functionality
-  copyNameBtn.addEventListener("click", function () {
-    const selectedImage = getSelectedImage();
+  copyNameBtn.addEventListener('click', function () {
+    const selectedImage = getSelectedImage()
     if (selectedImage) {
       navigator.clipboard
         .writeText(selectedImage.name)
-        .then(() => showMessage("Image name copied to clipboard", "success"))
-        .catch(() => showMessage("Failed to copy image name", "danger"));
+        .then(() => showMessage('Image name copied to clipboard', 'success'))
+        .catch(() => showMessage('Failed to copy image name', 'danger'))
     } else {
-      showMessage("Please select an image", "warning");
+      showMessage('Please select an image', 'warning')
     }
-  });
+  })
 
   // Download functionality
-  downloadBtn.addEventListener("click", function () {
-    const selectedImage = getSelectedImage();
+  downloadBtn.addEventListener('click', function () {
+    const selectedImage = getSelectedImage()
     if (selectedImage) {
-      window.open(selectedImage.url, "_blank");
+      window.open(selectedImage.url, '_blank')
     } else {
-      showMessage("Please select an image to download", "warning");
+      showMessage('Please select an image to download', 'warning')
     }
-  });
+  })
 
   // Upload functionality (placeholder)
-  uploadBtn.addEventListener("click", function () {
-    showMessage("Upload functionality not implemented", "info");
-  });
+  uploadBtn.addEventListener('click', function () {
+    showMessage('Upload functionality not implemented', 'info')
+  })
 
   // Delete selected functionality (placeholder)
-  deleteSelectedBtn.addEventListener("click", function () {
-    const selectedImages = getSelectedImages();
+  deleteSelectedBtn.addEventListener('click', function () {
+    const selectedImages = getSelectedImages()
     if (selectedImages.length > 0) {
       showMessage(
         `Deleting ${selectedImages.length} image(s) - Not actually implemented`,
-        "info"
-      );
+        'info'
+      )
     } else {
-      showMessage("Please select at least one image to delete", "warning");
+      showMessage('Please select at least one image to delete', 'warning')
     }
-  });
+  })
 
   // Choose selected functionality
-  chooseSelectedBtn.addEventListener("click", function () {
-    const selectedImages = getSelectedImages();
+  chooseSelectedBtn.addEventListener('click', function () {
+    const selectedImages = getSelectedImages()
     if (selectedImages.length > 0) {
       showMessage(
         `Selected ${selectedImages.length} image(s): ${selectedImages
           .map((img) => img.name)
-          .join(", ")}`,
-        "success"
-      );
+          .join(', ')}`,
+        'success'
+      )
     } else {
-      showMessage("Please select at least one image", "warning");
+      showMessage('Please select at least one image', 'warning')
     }
-  });
+  })
 
   // Helper function to get selected image
-  function getSelectedImage() {
+  function getSelectedImage () {
     const selectedCheckbox = container.querySelector(
-      ".form-check-input:checked"
-    );
+      '.form-check-input:checked'
+    )
     if (selectedCheckbox) {
-      return images.find((image) => image.id === selectedCheckbox.value);
+      return images.find((image) => image.id === selectedCheckbox.value)
     }
-    return null;
+    return null
   }
 
   // Helper function to get all selected images
-  function getSelectedImages() {
+  function getSelectedImages () {
     const selectedCheckboxes = container.querySelectorAll(
-      ".form-check-input:checked"
-    );
+      '.form-check-input:checked'
+    )
     return Array.from(selectedCheckboxes).map((checkbox) =>
       images.find((image) => image.id === checkbox.value)
-    );
+    )
   }
 
   // Helper function to show messages
-  function showMessage(message, type) {
-    messageContainer.textContent = message;
-    messageContainer.className = `alert alert-${type}`;
-    messageContainer.classList.remove("d-none");
+  function showMessage (message, type) {
+    messageContainer.textContent = message
+    messageContainer.className = `alert alert-${type}`
+    messageContainer.classList.remove('d-none')
     setTimeout(() => {
-      messageContainer.classList.add("d-none");
-    }, 3000);
+      messageContainer.classList.add('d-none')
+    }, 3000)
   }
 }
-
-
-

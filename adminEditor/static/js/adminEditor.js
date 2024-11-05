@@ -1,9 +1,9 @@
-"use strict";
+'use strict'
 
-import { initializeModals, showModal, hideModal } from "./modals.js";
+import { initializeModals, showModal, hideModal } from './modals.js'
 
-var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
-  mode: "markdown",
+const editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+  mode: 'markdown',
   lineNumbers: true,
   lineWrapping: true,
   styleActiveSelected: true,
@@ -11,226 +11,231 @@ var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
   highlightMatches: true,
   viewportMargin: Infinity,
   codeFolding: true,
+})
 
-});
+const viewportHeight = window.innerHeight
+editor.setSize(null, viewportHeight + 'px')
 
-const viewportHeight = window.innerHeight;
-editor.setSize(null, viewportHeight + "px");
+let isDirty = false
 
-var isDirty = false;
+editor.on('change', function () {
+  isDirty = true
+})
 
-editor.on("change", function () {
-  isDirty = true;
-});
+function openMediaGallery () {
+  window.open('./manage-media.html', '_blank')
+}
 
-function checkSaveMessage() {
+function checkSaveMessage () {
   if (isDirty) {
-    var confirmationMessage =
-      "You have unsaved changes. Are you sure you want to leave?";
-    e.returnValue = confirmationMessage;
-    return confirmationMessage;
+    const confirmationMessage =
+      'You have unsaved changes. Are you sure you want to leave?'
+    e.returnValue = confirmationMessage
+    return confirmationMessage
   }
 }
 
-window.addEventListener("beforeunload", function (e) {
+window.addEventListener('beforeunload', function (e) {
   checkSaveMessage()
-});
+})
 
 document
-  .getElementById("flexSwitchUseButton")
-  .addEventListener("change", function () {
-    var buttonColorGroup = document.getElementById("buttonColorGroup");
+  .getElementById('flexSwitchUseButton')
+  .addEventListener('change', function () {
+    const buttonColorGroup = document.getElementById('buttonColorGroup')
     if (this.checked) {
-      buttonColorGroup.classList.remove("hidden");
+      buttonColorGroup.classList.remove('hidden')
     } else {
-      buttonColorGroup.classList.add("hidden");
+      buttonColorGroup.classList.add('hidden')
     }
-  });
+  })
 
 document
-  .getElementById("flexSwitchUseButton")
-  .dispatchEvent(new Event("change"));
+  .getElementById('flexSwitchUseButton')
+  .dispatchEvent(new Event('change'))
 
-document.addEventListener("DOMContentLoaded", function () {
-  let config;
+document.addEventListener('DOMContentLoaded', function () {
+  let config
 
-  const languageSelect = document.getElementById("language-select");
-  const fileSelect = document.getElementById("file-select");
+  const languageSelect = document.getElementById('language-select')
+  const fileSelect = document.getElementById('file-select')
 
-  fetch("/api/config")
+  fetch('/api/config')
     .then((response) => response.json())
     .then((data) => {
-      config = data;
-      initializeToolbar();
-      initializeFileSelector();
-      initializeButtons();
-      initializeModals();   
-    });
+      config = data
+      initializeToolbar()
+      initializeFileSelector()
+      initializeButtons()
+      initializeModals()
+    })
 
-
-
-  function initializeToolbar() {
-    const toolbar = document.getElementById("toolbar");
+  function initializeToolbar () {
+    const toolbar = document.getElementById('toolbar')
     toolbar.innerHTML = `
             <button class="btn btn-outline-secondary" onclick="editor.undo()" data-bs-toggle="tooltip" title="Undo"><i class="fas fa-undo"></i></button>
             <button class="btn btn-outline-secondary" onclick="editor.redo()" data-bs-toggle="tooltip" title="Redo"><i class="fas fa-redo"></i></button>
             <div class="btn-group btn-group-sm" role="group"></div>
-        `;
-    const buttonGroup = toolbar.querySelector(".btn-group");
+        `
+    const buttonGroup = toolbar.querySelector('.btn-group')
     config.shortcodes
       .sort((a, b) => a.order - b.order)
       .forEach((shortcode) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "btn btn-secondary";
-        button.innerHTML = `<i class="fas fa-${shortcode.icon}"></i>`;
-        button.title = shortcode.tooltip;
-        button.id = shortcode.id;
-        button.onclick = () => insertShortcode(shortcode.code, shortcode.id);
-        buttonGroup.appendChild(button);
-      });
+        const button = document.createElement('button')
+        button.type = 'button'
+        button.className = 'btn btn-secondary'
+        button.innerHTML = `<i class="fas fa-${shortcode.icon}"></i>`
+        button.title = shortcode.tooltip
+        button.id = shortcode.id
+        button.onclick = () => insertShortcode(shortcode.code, shortcode.id)
+        buttonGroup.appendChild(button)
+      })
   }
 
-  function initializeFileSelector() {
-    languageSelect.addEventListener("change", updateFileList);
-    fileSelect.addEventListener("change", loadSelectedFile);
-    updateFileList();
+  function initializeFileSelector () {
+    languageSelect.addEventListener('change', updateFileList)
+    fileSelect.addEventListener('change', loadSelectedFile)
+    updateFileList()
   }
 
-  function updateFileList() {    
-    const language = languageSelect.value;
+  function updateFileList () {
+    const language = languageSelect.value
     fetch(`/api/list?lang=${language}`)
       .then((response) => response.json())
       .then((data) => {
-        fileSelect.innerHTML = "";
-        const files = Array.isArray(data) ? data : data[language] || [];
+        fileSelect.innerHTML = ''
+        const files = Array.isArray(data) ? data : data[language] || []
         files.forEach((file) => {
-          const option = document.createElement("option");
-          option.value = file;
-          option.textContent = file;
-          fileSelect.appendChild(option);
-        });
-        loadSelectedFile();
+          const option = document.createElement('option')
+          option.value = file
+          option.textContent = file
+          fileSelect.appendChild(option)
+        })
+        loadSelectedFile()
       })
       .catch((error) => {
-        console.error("Error fetching file list:", error);
-        fileSelect.innerHTML = "<option>Error loading files</option>";
-      });
+        console.error('Error fetching file list:', error)
+        fileSelect.innerHTML = '<option>Error loading files</option>'
+      })
   }
 
-  function loadSelectedFile() {
-    const language = languageSelect.value;
-    const file = fileSelect.value;
+  function loadSelectedFile () {
+    const language = languageSelect.value
+    const file = fileSelect.value
     if (file) {
       fetch(`/api/load?file=${language}/${file}`)
         .then((response) => response.text())
         .then((content) => {
-          editor.setValue(content);
-          isDirty = false;
+          editor.setValue(content)
+          isDirty = false
         })
         .catch((error) => {
-          console.error("Error loading file:", error);
-          editor.setValue("Error loading file content");
-        });
+          console.error('Error loading file:', error)
+          editor.setValue('Error loading file content')
+        })
     }
   }
 
-  function initializeButtons() {
-    document.getElementById("save-btn").addEventListener("click", saveFile);
+  function initializeButtons () {
+    document.getElementById('openMediaGallery').addEventListener('click', () => {
+      openMediaGallery()
+    })
+ 
+    document.getElementById('save-btn').addEventListener('click', saveFile)
     document
-      .getElementById("spell-check-btn")
-      .addEventListener("click", checkSpelling);
+      .getElementById('spell-check-btn')
+      .addEventListener('click', checkSpelling)
     document
-      .getElementById("copy-btn")
-      .addEventListener("click", copyToClipboard);
+      .getElementById('copy-btn')
+      .addEventListener('click', copyToClipboard)
     document
-      .getElementById("paste-btn")
-      .addEventListener("click", pasteFromClipboard);
+      .getElementById('paste-btn')
+      .addEventListener('click', pasteFromClipboard)
     document
-      .getElementById("fullscreen-btn")
-      .addEventListener("click", toggleFullscreen);
+      .getElementById('fullscreen-btn')
+      .addEventListener('click', toggleFullscreen)
     document
-      .getElementById("newPostButton")
-      .addEventListener("click", initializeNewPostWizard);
+      .getElementById('newPostButton')
+      .addEventListener('click', initializeNewPostWizard)
   }
 
-  function addTextToEnd(newText) {
-    var doc = editor.getDoc();
-    var lastLine = doc.lastLine();
-    var lastLineLength = doc.getLine(lastLine).length;
-    doc.replaceRange("\n" + newText, { line: lastLine, ch: lastLineLength });
-    lastLine = doc.lastLine();
-    lastLineLength = doc.getLine(lastLine).length;
-    editor.scrollIntoView({ line: lastLine, ch: lastLineLength });
+  function addTextToEnd (newText) {
+    const doc = editor.getDoc()
+    let lastLine = doc.lastLine()
+    let lastLineLength = doc.getLine(lastLine).length
+    doc.replaceRange('\n' + newText, { line: lastLine, ch: lastLineLength })
+    lastLine = doc.lastLine()
+    lastLineLength = doc.getLine(lastLine).length
+    editor.scrollIntoView({ line: lastLine, ch: lastLineLength })
   }
 
-  function insertShortcode(code, key = "") {
-    const doc = editor.getDoc();
-    const selection = doc.getSelection();
+  function insertShortcode (code, key = '') {
+    const doc = editor.getDoc()
+    const selection = doc.getSelection()
     switch (key) {
-      case "coloredCode":
-        showModal("coloredCodeModal");
-        break;
-      case "blockquoteSelect":
-        showModal("blockquoteModal");
-        break;
-      case "internalLink":
-        showModal("internalLinksModal");
-        break;
-      case "mediaSelect":
-        showModal("mediaSelectModal");
-        break;
+      case 'coloredCode':
+        showModal('coloredCodeModal')
+        break
+      case 'blockquoteSelect':
+        showModal('blockquoteModal')
+        break
+      case 'internalLink':
+        showModal('internalLinksModal')
+        break
+      case 'mediaSelect':
+        showModal('mediaSelectModal')
+        break
       default:
         if (selection) {
-          const text = code.replace("text", selection);
-          doc.replaceSelection(`${text}`);
+          const text = code.replace('text', selection)
+          doc.replaceSelection(`${text}`)
         } else {
-          addEditorText(code);
+          addEditorText(code)
         }
-        break;
+        break
     }
   }
 
-  function addEditorText(code) {
-    const doc = editor.getDoc();
-    const cursor = doc.getCursor();
-    const selection = doc.getSelection();
+  function addEditorText (code) {
+    const doc = editor.getDoc()
+    const cursor = doc.getCursor()
+    const selection = doc.getSelection()
     if (selection) {
-      doc.replaceSelection(`${code}`);
+      doc.replaceSelection(`${code}`)
     } else {
       if (cursor.sticky == null) {
-        addTextToEnd(code);
+        addTextToEnd(code)
       } else {
-        doc.replaceRange(code, cursor);
+        doc.replaceRange(code, cursor)
       }
     }
   }
 
-  function saveFile() {
-    const language = languageSelect.value;
-    const file = fileSelect.value;
-    const content = editor.getValue();
+  function saveFile () {
+    const language = languageSelect.value
+    const file = fileSelect.value
+    const content = editor.getValue()
     fetch(`/api/save?file=${language}/${file}`, {
-      method: "POST",
+      method: 'POST',
       body: content,
     })
       .then(() => {
-        alert("File saved successfully");
-        isDirty = false;
+        alert('File saved successfully')
+        isDirty = false
       })
       .catch((error) => {
-        alert("Error saving file: " + error);
-      });
+        alert('Error saving file: ' + error)
+      })
   }
 
-  function checkSpelling() {
-    const content = editor.getValue();
-    const lang = languageSelect.value;
+  function checkSpelling () {
+    const content = editor.getValue()
+    const lang = languageSelect.value
 
-    fetch(`https://api.languagetool.org/v2/check`, {
-      method: "POST",
+    fetch('https://api.languagetool.org/v2/check', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: `text=${encodeURIComponent(
         content
@@ -238,61 +243,61 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => response.json())
       .then((data) => {
-        const doc = editor.getDoc();
+        const doc = editor.getDoc()
         data.matches.forEach((match) => {
-          const from = doc.posFromIndex(match.offset);
-          const to = doc.posFromIndex(match.offset + match.length);
+          const from = doc.posFromIndex(match.offset)
+          const to = doc.posFromIndex(match.offset + match.length)
           doc.markText(from, to, {
             className:
-              match.rule.category.id === "TYPOS"
-                ? "spelling-error"
-                : "grammar-error",
+              match.rule.category.id === 'TYPOS'
+                ? 'spelling-error'
+                : 'grammar-error',
             title: match.message,
-          });
-        });
-      });
+          })
+        })
+      })
   }
 
   // Function to initialize the new post wizard
-function initializeNewPostWizard() {
-    const wizardContainerId = 'newPostWizard';
-    const wizard = new NewPostWizard(wizardContainerId);
-}
+  function initializeNewPostWizard () {
+    const wizardContainerId = 'newPostWizard'
+    const wizard = new NewPostWizard(wizardContainerId)
+  }
 
-  function copyToClipboard() {
+  function copyToClipboard () {
     navigator.clipboard
       .writeText(editor.getValue())
       .then(() => {
-        alert("Content copied to clipboard");
+        alert('Content copied to clipboard')
       })
       .catch((err) => {
-        alert("Failed to copy: " + err);
-      });
+        alert('Failed to copy: ' + err)
+      })
   }
 
-  function pasteFromClipboard() {
+  function pasteFromClipboard () {
     navigator.clipboard
       .readText()
       .then((text) => {
-        addEditorText(text);
+        addEditorText(text)
       })
       .catch((err) => {
-        alert("Failed to paste: " + err);
-      });
+        alert('Failed to paste: ' + err)
+      })
   }
 
-  function toggleFullscreen() {
+  function toggleFullscreen () {
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
+      document.documentElement.requestFullscreen()
     } else {
       if (document.exitFullscreen) {
-        document.exitFullscreen();
+        document.exitFullscreen()
       }
     }
   }
 
   // Expose necessary functions to the window object
-  window.addEditorText = addEditorText;
-  window.showModal = showModal;
-  window.hideModal = hideModal;
-});
+  window.addEditorText = addEditorText
+  window.showModal = showModal
+  window.hideModal = hideModal
+})

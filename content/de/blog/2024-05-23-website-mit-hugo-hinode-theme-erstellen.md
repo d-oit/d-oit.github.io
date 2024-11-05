@@ -5,15 +5,14 @@ description: Website mit Hugo Hinode Theme erstellen
 slug: statische-website-erstellen
 date: 2024-05-23T14:21:58.426Z
 tags:
-- CMS
 - Hinode Theme
-- Hugo CMS
-- Website
+- Hugo
+- Blog
 thumbnail:
 url: /img/blog/VisualStudioCodeWorkspace.png
 author: Dominik Oswald
-keywords:
-- website
+category:
+- Website
 draft: false
 ---
 
@@ -77,7 +76,7 @@ https://gist.github.com/d-oit/bd3aa6854a13de8c203f9710649e18eb
 
 ### Hugo Module aktualisieren
 
-Hugo verwendet die Datei **go.mod**, um zu ermitteln, welche Version von vom Hugo CMS eine Website verwendet.
+Hugo verwendet die Datei **go.mod**, um zu ermitteln, welche Version von vom Hugo eine Website verwendet.
 
 Alle Module aktualisieren per Terminal / Command Line:
 

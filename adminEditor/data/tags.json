@@ -1,16 +1,20 @@
 {
   "tags": [
     {
-      "name": "Hugo CMS",
-      "count": 1
+      "name": "Hugo",
+      "count": 5
     },
     {
       "name": "Website",
-      "count": 1
+      "count": 5
     },
     {
       "name": "GDPR",
-      "count": 1
+      "count": 2
+    },
+    {
+      "name": "Playwright",
+      "count": 4
     }
   ]
 }

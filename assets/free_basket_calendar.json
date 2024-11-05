@@ -1,174 +1,102 @@
 [
     {
-        "name": "GIESSEN 46ers vs RASTA Vechta II",
-        "begin": "2024-10-27T14:45:00+01:00",
-        "end": "2024-10-27T16:15:00+01:00",
-        "description": "GIESSEN 46ers plays against RASTA Vechta II.",
+        "name": "EPG Guardians Koblenz vs. Uni Baskets M\u00fcnster",
+        "begin": "2024-11-06T19:15:00+01:00",
+        "end": "2024-11-06T20:45:00+01:00",
+        "description": "Basketball match between EPG Guardians Koblenz and Uni Baskets M\u00fcnster.",
         "location": "sportdeutschland.tv",
         "url": "https://sportdeutschland.tv/videos/basketball",
         "league": "ProA"
     },
     {
-        "name": "Bayern M\u00fcnchen vs W\u00fcrzburg Baskets",
-        "begin": "2024-10-27T15:30:00+01:00",
-        "end": "2024-10-27T17:00:00+01:00",
-        "description": "Basketball game between Bayern M\u00fcnchen and W\u00fcrzburg Baskets",
-        "location": "welt.tv",
-        "url": "https://welt.tv",
-        "league": null
-    },
-    {
-        "name": "Philadelphia 76ers vs. Indiana Pacers",
-        "begin": "2024-10-27T20:15:00+01:00",
-        "end": "2024-10-27T21:55:00+01:00",
-        "description": "NBA live stream on ProSieben MAXX, Joyn, ran.de and in the ran-App",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
-        "name": "Zalgiris Kaunas vs Roter Stern Belgrad",
-        "begin": "2024-10-30T18:45:00+01:00",
-        "end": "2024-10-30T20:15:00+01:00",
-        "description": "Basketball game between Zalgiris Kaunas and Roter Stern Belgrad",
-        "location": "magentasport.de",
-        "url": "https://magentasport.de",
-        "league": null
-    },
-    {
-        "name": "ASVEL Villeurbanne vs FC Bayern M\u00fcnchen",
-        "begin": "2024-11-01T19:45:00+01:00",
-        "end": "2024-11-01T21:15:00+01:00",
-        "description": "Basketball game between ASVEL Villeurbanne and FC Bayern M\u00fcnchen",
-        "location": "magentasport.de",
-        "url": "https://magentasport.de",
-        "league": null
-    },
-    {
-        "name": "RASTA Vechta II vs BBC Bayreuth",
-        "begin": "2024-11-02T16:45:00+01:00",
-        "end": "2024-11-02T18:15:00+01:00",
-        "description": "RASTA Vechta II plays against BBC Bayreuth.",
+        "name": "RSV Lahn-Dill vs. Doneck Dolphins Trier",
+        "begin": "2024-11-06T19:30:00+01:00",
+        "end": "2024-11-06T21:00:00+01:00",
+        "description": "Basketball match between RSV Lahn-Dill and Doneck Dolphins Trier.",
         "location": "sportdeutschland.tv",
         "url": "https://sportdeutschland.tv/videos/basketball",
         "league": "ProA"
     },
     {
-        "name": "RheinStars K\u00f6ln vs CATL Basketball L\u00f6wen",
-        "begin": "2024-11-02T17:45:00+01:00",
-        "end": "2024-11-02T19:15:00+01:00",
-        "description": "RheinStars K\u00f6ln plays against CATL Basketball L\u00f6wen.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB S\u00fcd"
-    },
-    {
-        "name": "BBC Coburg vs Ahorn Camp Baskets",
-        "begin": "2024-11-02T18:45:00+01:00",
-        "end": "2024-11-02T20:15:00+01:00",
-        "description": "BBC Coburg plays against Ahorn Camp Baskets.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB S\u00fcd"
-    },
-    {
-        "name": "TKS49ers vs Itzehoe Eagles",
-        "begin": "2024-11-02T19:00:00+01:00",
-        "end": "2024-11-02T20:30:00+01:00",
-        "description": "TKS49ers plays against Itzehoe Eagles.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB Nord 24/25"
-    },
-    {
-        "name": "Uni Baskets M\u00fcnster vs N\u00fcrnberg Falcons BC",
-        "begin": "2024-11-02T19:05:00+01:00",
-        "end": "2024-11-02T20:35:00+01:00",
-        "description": "Uni Baskets M\u00fcnster plays against N\u00fcrnberg Falcons BC.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "PS Karlsruhe LIONS vs ART Giants D\u00fcsseldorf",
-        "begin": "2024-11-02T19:15:00+01:00",
-        "end": "2024-11-02T20:45:00+01:00",
-        "description": "PS Karlsruhe LIONS plays against ART Giants D\u00fcsseldorf.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "ETB Miners vs Bayer Giants Leverkusen",
-        "begin": "2024-11-02T19:15:00+01:00",
-        "end": "2024-11-02T20:45:00+01:00",
-        "description": "ETB Miners plays against Bayer Giants Leverkusen.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB Nord"
-    },
-    {
-        "name": "HAKRO Merlins Crailsheim vs GIESSEN 46ers",
-        "begin": "2024-11-02T19:45:00+01:00",
-        "end": "2024-11-02T21:15:00+01:00",
-        "description": "HAKRO Merlins Crailsheim plays against GIESSEN 46ers.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "Memphis Grizzlies vs. Philadelphia 76ers",
-        "begin": "2024-11-03T00:25:00+01:00",
-        "end": "2024-11-03T01:55:00+01:00",
-        "description": "NBA Regular Season game between Memphis Grizzlies and Philadelphia 76ers",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": null
-    },
-    {
-        "name": "Eisb\u00e4ren Bremerhaven vs EPG GUARDIANS Koblenz",
-        "begin": "2024-11-03T14:45:00+01:00",
-        "end": "2024-11-03T16:15:00+01:00",
-        "description": "Eisb\u00e4ren Bremerhaven plays against EPG GUARDIANS Koblenz.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "Syntainics MBC vs Baskets Oldenburg",
-        "begin": "2024-11-03T15:30:00+01:00",
-        "end": "2024-11-03T17:00:00+01:00",
-        "description": "Basketball game between Syntainics MBC and Baskets Oldenburg",
-        "location": "welt.tv",
-        "url": "https://welt.tv",
-        "league": null
-    },
-    {
-        "name": "SC Rist Wedel vs EN Baskets Schwelm",
-        "begin": "2024-11-03T16:45:00+01:00",
-        "end": "2024-11-03T18:15:00+01:00",
-        "description": "SC Rist Wedel plays against EN Baskets Schwelm.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB Nord"
-    },
-    {
-        "name": "Orlando Magic vs. Dallas Mavericks",
-        "begin": "2024-11-04T01:00:00+01:00",
-        "end": "2024-11-04T02:30:00+01:00",
-        "description": "NBA Regular Season game between Orlando Magic and Dallas Mavericks",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": null
-    },
-    {
-        "name": "Deutschland vs Griechenland",
+        "name": "Deutschland vs Griechenland (FIBA Women's EuroBasket Qualifiers)",
         "begin": "2024-11-07T18:45:00+01:00",
         "end": "2024-11-07T20:15:00+01:00",
-        "description": "Basketball game between Deutschland and Griechenland",
+        "description": "Basketball game between Deutschland and Griechenland\nFIBA Women's EuroBasket Qualifiers",
         "location": "magentasport.de",
         "url": "https://magentasport.de",
         "league": null
+    },
+    {
+        "name": "N\u00fcrnberg Falcons BC vs. VET-CONCEPT Gladiators Trier",
+        "begin": "2024-11-08T18:45:00+01:00",
+        "end": "2024-11-08T20:15:00+01:00",
+        "description": "Basketball match between N\u00fcrnberg Falcons BC and VET-CONCEPT Gladiators Trier.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "BBC Bayreuth vs. Dresden Titans",
+        "begin": "2024-11-08T18:45:00+01:00",
+        "end": "2024-11-08T20:15:00+01:00",
+        "description": "Basketball match between BBC Bayreuth and Dresden Titans.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Phoenix Hagen vs. RASTA Vechta II",
+        "begin": "2024-11-08T19:00:00+01:00",
+        "end": "2024-11-08T20:30:00+01:00",
+        "description": "Basketball match between Phoenix Hagen and RASTA Vechta II.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "VfL SparkassenStars Bochum vs. Artland Dragons",
+        "begin": "2024-11-08T19:15:00+01:00",
+        "end": "2024-11-08T20:45:00+01:00",
+        "description": "Basketball match between VfL SparkassenStars Bochum and Artland Dragons.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Tigers T\u00fcbingen vs. PS Karlsruhe LIONS",
+        "begin": "2024-11-08T19:15:00+01:00",
+        "end": "2024-11-08T20:45:00+01:00",
+        "description": "Basketball match between Tigers T\u00fcbingen and PS Karlsruhe LIONS.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Bozic Estriche Knights Kirchheim vs. Eisb\u00e4ren Bremerhaven",
+        "begin": "2024-11-08T19:45:00+01:00",
+        "end": "2024-11-08T21:15:00+01:00",
+        "description": "Basketball match between Bozic Estriche Knights Kirchheim and Eisb\u00e4ren Bremerhaven.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "GIESSEN 46ers vs. Science City Jena",
+        "begin": "2024-11-08T19:45:00+01:00",
+        "end": "2024-11-08T21:15:00+01:00",
+        "description": "Basketball match between GIESSEN 46ers and Science City Jena.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "ART Giants D\u00fcsseldorf vs. HAKRO Merlins Crailsheim",
+        "begin": "2024-11-08T19:45:00+01:00",
+        "end": "2024-11-08T21:15:00+01:00",
+        "description": "Basketball match between ART Giants D\u00fcsseldorf and HAKRO Merlins Crailsheim.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
     },
     {
         "name": "Panathinaikos AKTOR Athen vs Olympiakos Pir\u00e4us",
@@ -180,6 +108,51 @@
         "league": null
     },
     {
+        "name": "Artland Dragons vs. HAKRO Merlins Crailsheim",
+        "begin": "2024-11-09T18:45:00+01:00",
+        "end": "2024-11-09T20:15:00+01:00",
+        "description": "Basketball match between Artland Dragons and HAKRO Merlins Crailsheim.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "BBC Coburg vs. VR-Bank W\u00fcrzburg Baskets Akademie",
+        "begin": "2024-11-09T18:45:00+01:00",
+        "end": "2024-11-09T20:15:00+01:00",
+        "description": "Basketball match between BBC Coburg and VR-Bank W\u00fcrzburg Baskets Akademie.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "TSV Oberhaching Tropics vs. Porsche BBA Ludwigsburg",
+        "begin": "2024-11-09T18:45:00+01:00",
+        "end": "2024-11-09T20:15:00+01:00",
+        "description": "Basketball match between TSV Oberhaching Tropics and Porsche BBA Ludwigsburg.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "EN Baskets Schwelm vs. Iserlohn Kangaroos",
+        "begin": "2024-11-09T19:15:00+01:00",
+        "end": "2024-11-09T20:45:00+01:00",
+        "description": "ProB Nord: EN Baskets Schwelm vs Iserlohn Kangaroos\nEN Baskets Schwelm\nEN Baskets Schwelm",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB Nord"
+    },
+    {
+        "name": "Gartenzaun24 Baskets Paderborn vs. SC Rist Wedel",
+        "begin": "2024-11-09T19:15:00+01:00",
+        "end": "2024-11-09T20:45:00+01:00",
+        "description": "Basketball\n09.11.24\n19:15\nProB Nord: Gartenzaun24 Baskets Paderborn vs. SC Rist Wedel\nGartenzaun24 Baskets Paderborn\nGartenzaun24 Baskets Paderborn",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB Nord"
+    },
+    {
         "name": "Chicago Bulls vs. Atlanta Hawks",
         "begin": "2024-11-10T01:25:00+01:00",
         "end": "2024-11-10T02:55:00+01:00",
@@ -187,6 +160,24 @@
         "location": "ran.de",
         "url": "https://ran.de",
         "league": null
+    },
+    {
+        "name": "BBC Bayreuth vs. Tigers T\u00fcbingen",
+        "begin": "2024-11-10T14:45:00+01:00",
+        "end": "2024-11-10T16:15:00+01:00",
+        "description": "Basketball\n10.11.24\n14:45\nProA: BBC Bayreuth vs. Tigers T\u00fcbingen\nBBC Bayreuth\nBBC Bayreuth",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Phoenix Hagen vs. HAKRO Merlins Crailsheim",
+        "begin": "2024-11-10T15:30:00+01:00",
+        "end": "2024-11-10T17:00:00+01:00",
+        "description": "Basketball\nBBC Bayreuth\nvs.\nTigers T\u00fcbingen\n10.11.24\n15:30\nProA: Phoenix Hagen vs. HAKRO Merlins Crailsheim\nPhoenix Hagen\nPhoenix Hagen",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
     },
     {
         "name": "Niners Chemnitz vs Baskets Oldenburg",
@@ -198,13 +189,76 @@
         "league": null
     },
     {
-        "name": "Deutschland vs Tschechien",
+        "name": "ETB Miners vs. Seawolves Academy",
+        "begin": "2024-11-10T15:45:00+01:00",
+        "end": "2024-11-10T17:15:00+01:00",
+        "description": "Basketball\nDresden Titans\nvs.\nVET-CONCEPT Gladiators Trier\n10.11.24\n15:45\nProB Nord: ETB Miners vs. Seawolves Academy\nETB Miners\nETB Miners",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB Nord"
+    },
+    {
+        "name": "Dresden Titans vs. VET-CONCEPT Gladiators Trier",
+        "begin": "2024-11-10T15:45:00+01:00",
+        "end": "2024-11-10T17:15:00+01:00",
+        "description": "Basketball\nScience City Jena\nvs.\nBozic Estriche Knights Kirchheim\n10.11.24\n15:45\nProA: Dresden Titans vs. VET-CONCEPT Gladiators Trier\nDresden Titans\nDresden Titans",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Science City Jena vs. Bozic Estriche Knights Kirchheim",
+        "begin": "2024-11-10T15:45:00+01:00",
+        "end": "2024-11-10T17:15:00+01:00",
+        "description": "Basketball\nPhoenix Hagen\nvs.\nHAKRO Merlins Crailsheim\n10.11.24\n15:45\nProA: Science City Jena vs. Bozic Estriche Knights Kirchheim\nScience City Jena\nScience City Jena",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Artland Dragons vs. GIESSEN 46ers",
         "begin": "2024-11-10T16:45:00+01:00",
         "end": "2024-11-10T18:15:00+01:00",
-        "description": "Basketball game between Deutschland and Tschechien",
+        "description": "Basketball\n10.11.24\n16:45\nProA: Artland Dragons vs. GIESSEN 46ers\nArtland Dragons\nArtland Dragons",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "RASTA Vechta II vs. VfL SparkassenStars Bochum",
+        "begin": "2024-11-10T16:45:00+01:00",
+        "end": "2024-11-10T18:15:00+01:00",
+        "description": "Basketball\nArtland Dragons\nvs.\nGIESSEN 46ers\n10.11.24\n16:45\nProA: RASTA Vechta II vs. VfL SparkassenStars Bochum\nRASTA Vechta II\nRASTA Vechta II",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Deutschland vs Tschechien (FIBA Women's EuroBasket Qualifiers)",
+        "begin": "2024-11-10T16:45:00+01:00",
+        "end": "2024-11-10T18:15:00+01:00",
+        "description": "Basketball game between Deutschland and Tschechien\nFIBA Women's EuroBasket Qualifiers",
         "location": "magentasport.de",
         "url": "https://magentasport.de",
         "league": null
+    },
+    {
+        "name": "PS Karlsruhe LIONS vs. Eisb\u00e4ren Bremerhaven",
+        "begin": "2024-11-10T17:15:00+01:00",
+        "end": "2024-11-10T18:45:00+01:00",
+        "description": "Basketball\nRASTA Vechta II\nvs.\nVfL SparkassenStars Bochum\n10.11.24\n17:15\nProA: PS Karlsruhe LIONS vs. Eisb\u00e4ren Bremerhaven\nPS Karlsruhe LIONS\nPS Karlsruhe LIONS",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Uni Baskets M\u00fcnster vs. ART Giants D\u00fcsseldorf",
+        "begin": "2024-11-10T17:35:00+01:00",
+        "end": "2024-11-10T19:05:00+01:00",
+        "description": "Basketball\nPS Karlsruhe LIONS\nvs.\nEisb\u00e4ren Bremerhaven\n10.11.24\n17:35\nProA: Uni Baskets M\u00fcnster vs. ART Giants D\u00fcsseldorf\nUni Baskets M\u00fcnster\nUni Baskets M\u00fcnster",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
     },
     {
         "name": "Boston Celtics vs. Milwaukee Bucks",
@@ -234,6 +288,87 @@
         "league": null
     },
     {
+        "name": "RheinStars K\u00f6ln vs. BBC Coburg",
+        "begin": "2024-11-16T15:45:00+01:00",
+        "end": "2024-11-16T17:15:00+01:00",
+        "description": "Basketball\nUni Baskets M\u00fcnster\nvs.\nART Giants D\u00fcsseldorf\n16.11.24\n15:45\nProB S\u00fcd: RheinStars K\u00f6ln vs. BBC Coburg\nRheinStars K\u00f6ln\nRheinStars K\u00f6ln",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "TEAM EHINGEN URSPRING vs. TSV Oberhaching Tropics",
+        "begin": "2024-11-16T17:45:00+01:00",
+        "end": "2024-11-16T19:15:00+01:00",
+        "description": "Basketball\n16.11.24\n17:45\nProB Nord: TEAM EHINGEN URSPRING vs. TSV Oberhaching Tropics\nTEAM EHINGEN URSPRING\nTEAM EHINGEN URSPRING",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB Nord"
+    },
+    {
+        "name": "N\u00fcrnberg Falcons BC vs. Phoenix Hagen",
+        "begin": "2024-11-16T18:15:00+01:00",
+        "end": "2024-11-16T19:45:00+01:00",
+        "description": "Basketball\n16.11.24\n18:15\nProA: N\u00fcrnberg Falcons BC vs. Phoenix Hagen\nN\u00fcrnberg Falcons BC\nN\u00fcrnberg Falcons BC",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "ART Giants D\u00fcsseldorf vs. EPG Guardians Koblenz",
+        "begin": "2024-11-16T18:45:00+01:00",
+        "end": "2024-11-16T20:15:00+01:00",
+        "description": "Basketball\nGIESSEN 46ers\nvs.\nDresden Titans\n16.11.24\n18:45\nProA: ART Giants D\u00fcsseldorf vs. EPG GUARDIANS Koblenz\nART Giants D\u00fcsseldorf\nART Giants D\u00fcsseldorf",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Bozic Estriche Knights Kirchheim vs. BBC Bayreuth",
+        "begin": "2024-11-16T18:45:00+01:00",
+        "end": "2024-11-16T20:15:00+01:00",
+        "description": "Basketball\nART Giants D\u00fcsseldorf\nvs.\nEPG Guardians Koblenz\n16.11.24\n18:45\nProA: Bozic Estriche Knights Kirchheim vs. BBC Bayreuth\nBozic Estriche Knights Kirchheim\nBozic Estriche Knights Kirchheim",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "GIESSEN 46ers vs. Dresden Titans",
+        "begin": "2024-11-16T18:45:00+01:00",
+        "end": "2024-11-16T20:15:00+01:00",
+        "description": "Basketball\nN\u00fcrnberg Falcons BC\nvs.\nPhoenix Hagen\n16.11.24\n18:45\nProA: GIESSEN 46ers vs. Dresden Titans\nGIESSEN 46ers\nGIESSEN 46ers",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Artland Dragons vs. Eisb\u00e4ren Bremerhaven",
+        "begin": "2024-11-16T19:15:00+01:00",
+        "end": "2024-11-16T20:45:00+01:00",
+        "description": "Basketball\nBozic Estriche Knights Kirchheim\nvs.\nBBC Bayreuth\n16.11.24\n19:15\nProA: Artland Dragons vs. Eisb\u00e4ren Bremerhaven\nArtland Dragons\nArtland Dragons",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "PS Karlsruhe LIONS vs. Science City Jena",
+        "begin": "2024-11-16T19:15:00+01:00",
+        "end": "2024-11-16T20:45:00+01:00",
+        "description": "Basketball\nArtland Dragons\nvs.\nEisb\u00e4ren Bremerhaven\n16.11.24\n19:15\nProA: PS Karlsruhe LIONS vs. Science City Jena\nPS Karlsruhe LIONS\nPS Karlsruhe LIONS",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "HAKRO Merlins Crailsheim vs. VfL SparkassenStars Bochum",
+        "begin": "2024-11-16T19:45:00+01:00",
+        "end": "2024-11-16T21:15:00+01:00",
+        "description": "Basketball\nPS Karlsruhe LIONS\nvs.\nScience City Jena\n16.11.24\n19:45\nProA: HAKRO Merlins Crailsheim vs. VfL SparkassenStars Bochum\nHAKRO Merlins Crailsheim\nHAKRO Merlins Crailsheim",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
         "name": "SC Rasta Vechta vs Alba Berlin",
         "begin": "2024-11-17T14:00:00+01:00",
         "end": "2024-11-17T15:30:00+01:00",
@@ -241,6 +376,42 @@
         "location": "welt.tv",
         "url": "https://welt.tv",
         "league": null
+    },
+    {
+        "name": "TKS49ers vs. ETB Miners",
+        "begin": "2024-11-17T15:30:00+01:00",
+        "end": "2024-11-17T17:00:00+01:00",
+        "description": "Basketball\nHAKRO Merlins Crailsheim\nvs.\nVfL SparkassenStars Bochum\n17.11.24\n15:30\nProB Nord 24/25: TKS49ers vs. ETB Miners\nTKS49ers\nTKS49ers",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB Nord 24/25"
+    },
+    {
+        "name": "VET-CONCEPT Gladiators Trier vs. Uni Baskets M\u00fcnster",
+        "begin": "2024-11-17T16:45:00+01:00",
+        "end": "2024-11-17T18:15:00+01:00",
+        "description": "Basketball\n17.11.24\n16:45\nProA: VET-CONCEPT Gladiators Trier vs. Uni Baskets M\u00fcnster\nVET-CONCEPT Gladiators Trier\nVET-CONCEPT Gladiators Trier",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Dragons Rh\u00f6ndorf vs. SKYLINERS Juniors",
+        "begin": "2024-11-17T16:58:00+01:00",
+        "end": "2024-11-17T18:28:00+01:00",
+        "description": "Basketball\nVET-CONCEPT Gladiators Trier\nvs.\nUni Baskets M\u00fcnster\n17.11.24\n16:58\nProB S\u00fcd: Dragons Rh\u00f6ndorf vs. SKYLINERS Juniors\nDragons Rh\u00f6ndorf\nDragons Rh\u00f6ndorf",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "Tigers T\u00fcbingen vs. RASTA Vechta II",
+        "begin": "2024-11-17T17:45:00+01:00",
+        "end": "2024-11-17T19:15:00+01:00",
+        "description": "Basketball\n17.11.24\n17:45\nProA: Tigers T\u00fcbingen vs. RASTA Vechta II\nTigers T\u00fcbingen\nTigers T\u00fcbingen",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
     },
     {
         "name": "Schweden vs Deutschland",
@@ -270,6 +441,24 @@
         "league": null
     },
     {
+        "name": "HAKRO Merlins Crailsheim vs. VET-CONCEPT Gladiators Trier",
+        "begin": "2024-11-27T20:00:00+01:00",
+        "end": "2024-11-27T21:30:00+01:00",
+        "description": "Basketball\n27.11.24\n20:00\nProA: HAKRO Merlins Crailsheim vs. VET-CONCEPT Gladiators Trier\nHAKRO Merlins Crailsheim\nHAKRO Merlins Crailsheim",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "HAKRO Merlins Crailsheim vs. VET-CONCEPT Gladiators Trier",
+        "begin": "2024-11-27T21:00:00+01:00",
+        "end": "2024-11-27T22:30:00+01:00",
+        "description": "ProA basketball match between HAKRO Merlins Crailsheim and VET-CONCEPT Gladiators Trier.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
         "name": "Roter Stern Belgrad vs FC Bayern M\u00fcnchen",
         "begin": "2024-11-29T19:45:00+01:00",
         "end": "2024-11-29T21:15:00+01:00",
@@ -277,6 +466,51 @@
         "location": "magentasport.de",
         "url": "https://magentasport.de",
         "league": null
+    },
+    {
+        "name": "Eisb\u00e4ren Bremerhaven vs. Phoenix Hagen",
+        "begin": "2024-11-30T18:45:00+01:00",
+        "end": "2024-11-30T20:15:00+01:00",
+        "description": "ProA basketball match between Eisb\u00e4ren Bremerhaven and Phoenix Hagen.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "ART Giants D\u00fcsseldorf vs. Artland Dragons",
+        "begin": "2024-11-30T19:45:00+01:00",
+        "end": "2024-11-30T21:15:00+01:00",
+        "description": "ProA basketball match between ART Giants D\u00fcsseldorf and Artland Dragons.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "VfL SparkassenStars Bochum vs. PS Karlsruhe LIONS",
+        "begin": "2024-11-30T19:45:00+01:00",
+        "end": "2024-11-30T21:15:00+01:00",
+        "description": "ProA basketball match between VfL SparkassenStars Bochum and PS Karlsruhe LIONS.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "Uni Baskets M\u00fcnster vs. Bozic Estriche Knights Kirchheim",
+        "begin": "2024-11-30T20:05:00+01:00",
+        "end": "2024-11-30T21:35:00+01:00",
+        "description": "ProA basketball match between Uni Baskets M\u00fcnster and Bozic Estriche Knights Kirchheim.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProA"
+    },
+    {
+        "name": "ETB Miners vs. Berlin Braves 2000",
+        "begin": "2024-11-30T20:15:00+01:00",
+        "end": "2024-11-30T21:45:00+01:00",
+        "description": "ProB Nord basketball match between ETB Miners and Berlin Braves 2000.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/videos/basketball",
+        "league": "ProB Nord"
     },
     {
         "name": "Virtus Segafredo Bologna vs ALBA BERLIN",

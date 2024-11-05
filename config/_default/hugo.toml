@@ -58,4 +58,3 @@ home = ["HTML", "RSS", "REDIR"]
 
 [[module.imports]]
   path = 'github.com/gethinode/hinode'
-  localize = true

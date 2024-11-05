@@ -1,10 +1,15 @@
 import { test, expect } from '@playwright/test';
 
 test('showCustom404', async ({ page }) => {
+  // Go to a non-existent page
   await page.goto('/en/fdaffa');
-  var element = await page.$('#fa-face-frown');
+  
+  // Check for a custom 404 element
+  const element = await page.$('#fa-face-frown');
   expect(element).not.toBeNull();
+  
+  // Go to the homepage and check the absence of the 404 element
   await page.goto('/');
-  element = await page.$('#fa-face-frown');
-  expect(element).toBeNull();
+  const homeElement = await page.$('#fa-face-frown');
+  expect(homeElement).toBeNull();
 });

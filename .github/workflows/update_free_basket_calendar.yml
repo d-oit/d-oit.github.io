@@ -15,6 +15,12 @@ jobs:
         # Give the default GITHUB_TOKEN write permission to commit and push the
         # added or changed files to the repository.
         contents: write
+        pages: write
+        id-token: write
+
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false    
 
     steps:
       - uses: actions/checkout@v4
@@ -31,13 +37,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests ics pytz 
 
-
       - name: Run script
         run: |
           python update_basket_calendar_json.py
-
     
    # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Apply basket calendar json changes
+          commit_message: Apply basket calendar json changes  
+     
+      - name: Hugo to github pages
+        uses: /.github/workflows/reusable-hugo-workflow.yml
+
+

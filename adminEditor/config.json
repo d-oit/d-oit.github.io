@@ -105,7 +105,7 @@
         "showURLOnStart": true,
         "germanFolder": "../content/de/blog",
         "englishFolder": "../content/en/blog",
-        "mediaFolder": "../media-data",
+        "mediaFolder": "../adminEditor/static/media-data",
         "assetFolder": "../assets/img/blog",
         "imageResize": {
             "method": "fit",

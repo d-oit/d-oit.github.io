@@ -1,6 +1,8 @@
-Personal Blog: https://d-oit.github.io/
+# Personal Blog 
 
-**Status**
+https://d-oit.github.io/
+
+## Status
 
 [![🧪 Playwright End To End (e2e) Tests Workflow](https://github.com/d-oit/d-oit.github.io/actions/workflows/playwright.yml/badge.svg)](https://github.com/d-oit/d-oit.github.io/actions/workflows/playwright.yml)
 
@@ -9,7 +11,7 @@ Personal Blog: https://d-oit.github.io/
 [![Deploy Hugo site to Pages](https://github.com/d-oit/d-oit.github.io/actions/workflows/hugo.yaml/badge.svg)](https://github.com/d-oit/d-oit.github.io/actions/workflows/hugo.yaml)
 
 
-WIP - try new things with Hugo CMS / Hinode Theme / Markdown / GitHub 
+WIP - try new things with Hugo / Hinode Theme / Markdown / GitHub 
 
 
 

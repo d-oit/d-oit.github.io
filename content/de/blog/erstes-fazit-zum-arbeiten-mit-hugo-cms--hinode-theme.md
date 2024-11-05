@@ -4,7 +4,7 @@ title: Fazit zum Arbeiten mit Hugo CMS
 description: Erstes Fazit nach einigen Blogartikel mit Hugo CMS (Hinode Theme)
 date: 2024-07-29T13:38:36.132Z
 tags:
-  - Hugo CMS
+  - Hugo
   - Hinode Theme  
 thumbnail:
   url: /img/blog/1_Fazit_Hugo_CMS_Hinode_Theme_Website.png
@@ -15,14 +15,14 @@ categories:
   - Website
 ---
 
-{{< button icon="fab fa-blogger" href="/de/blog/statische-website-erstellen/" >}}Neustart mit Hugo CMS des Blogs{{< /button >}}
+{{< button icon="fab fa-blogger" href="/de/blog/statische-website-erstellen/" >}}Neustart mit Hugo des Blogs{{< /button >}}
 
-## Hugo CMS und Hinode Theme: Erste Eindrücke
+## Hugo und Hinode Theme: Erste Eindrücke
 
 Die Einrichtung und die ersten Blogartikel waren schnell erstellt. Die Markdown Syntax und Visual Studio Code zum Erstellen der Artikel waren bekannt.
 
-Im Detail ging es dann los mit verschiedenen Konfiguration und speziellen Hinode Markdown Shortcodes. Dazu ist einiges gut in den Hugo CMS und Hinode Docs erklärt. Leider auch vieles historisch oder Hinode verwendet Einrichtungen anders als Hugo CMS. Feedback gibt es aber immer schnell und im Code kann dann github eingesehen werden.
-Die Programmierung der Erweiterung ist in js in Verbindung mit GO / Hugo CMS Variablen ist ein wenig gewöhnungsbedürftig.
+Im Detail ging es dann los mit verschiedenen Konfiguration und speziellen Hinode Markdown Shortcodes. Dazu ist einiges gut in den Hugo und Hinode Docs erklärt. Leider auch vieles historisch oder Hinode verwendet Einrichtungen anders als Hugo. Feedback gibt es aber immer schnell und im Code kann dann github eingesehen werden.
+Die Programmierung der Erweiterung ist in js in Verbindung mit GO / Hugo Variablen ist ein wenig gewöhnungsbedürftig.
 
 Hier ein Beispiel der erstellen [JavaScript Datei](https://github.com/gethinode/hinode/blob/main/assets/js/critical/languageSelector.js) zum Laden und Speichern der ausgewählten Sprache.
 

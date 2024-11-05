@@ -1,84 +1,84 @@
 class NewPostWizard {
-  constructor(containerId) {
-    this.container = document.getElementById(containerId);
-    this.currentStep = 1;
+  constructor (containerId) {
+    this.container = document.getElementById(containerId)
+    this.currentStep = 1
     this.formData = {
-      title: "",
-      description: "",
+      title: '',
+      description: '',
       date: new Date().toISOString().slice(0, 16),
       tags: [],
       categories: [],
       thumbnail: {
-        url: "",
-        localFile: "",
-        author: "",
-        authorUrl: "",
-        origin: "",
+        url: '',
+        localFile: '',
+        author: '',
+        authorUrl: '',
+        origin: '',
       },
-      language: "en",
-      slug: "",
-    };
-    this.existingTags = [];
-    this.existingCategories = [];
+      language: 'en',
+      slug: '',
+    }
+    this.existingTags = []
+    this.existingCategories = []
 
-    this.init();
+    this.init()
   }
 
-  async init() {
+  async init () {
     // Fetch existing tags and categories
     try {
       const [tagsResponse, categoriesResponse] = await Promise.all([
-        fetch("/api/tags"),
-        fetch("/api/categories"),
-      ]);
-      this.existingTags = await tagsResponse.json();
-      this.existingCategories = await categoriesResponse.json();
+        fetch('/api/tags'),
+        fetch('/api/categories'),
+      ])
+      this.existingTags = await tagsResponse.json()
+      this.existingCategories = await categoriesResponse.json()
     } catch (error) {
-      console.error("Error fetching tags and categories:", error);
+      console.error('Error fetching tags and categories:', error)
     }
 
-    this.render();
-    this.attachEventListeners();
+    this.render()
+    this.attachEventListeners()
   }
 
-  createStepIndicator() {
+  createStepIndicator () {
     return `
             <ul class="nav nav-pills mb-4 justify-content-center">
                 <li class="nav-item">
                     <button class="nav-link ${
-                      this.currentStep === 1 ? "active" : ""
+                      this.currentStep === 1 ? 'active' : ''
                     }" data-step="1">
                         Basic Info
                     </button>
                 </li>
                 <li class="nav-item">
                     <button class="nav-link ${
-                      this.currentStep === 2 ? "active" : ""
+                      this.currentStep === 2 ? 'active' : ''
                     }" data-step="2">
                         Thumbnail & Author
                     </button>
                 </li>
                 <li class="nav-item">
                     <button class="nav-link ${
-                      this.currentStep === 3 ? "active" : ""
+                      this.currentStep === 3 ? 'active' : ''
                     }" data-step="3">
                         Categories & Tags
                     </button>
                 </li>
-            </ul>`;
+            </ul>`
   }
 
-  createBasicInfoStep() {
+  createBasicInfoStep () {
     return `
             <div class="step-content">
                 <div class="mb-3">
                     <label class="form-label">Language</label>
                     <select class="form-select" id="language">
                         <option value="en" ${
-                          this.formData.language === "en" ? "selected" : ""
+                          this.formData.language === 'en' ? 'selected' : ''
                         }>English</option>
                         <option value="de" ${
-                          this.formData.language === "de" ? "selected" : ""
+                          this.formData.language === 'de' ? 'selected' : ''
                         }>German</option>
                     </select>
                 </div>
@@ -98,10 +98,10 @@ class NewPostWizard {
                     <input type="datetime-local" class="form-control" id="date" 
                            value="${this.formData.date}" required>
                 </div>
-            </div>`;
+            </div>`
   }
 
-  createThumbnailStep() {
+  createThumbnailStep () {
     return ` 
         <div id="imageSelectorContainer"></div>
             <div class="step-content">
@@ -115,7 +115,7 @@ class NewPostWizard {
                 <label class="form-label">Thumbnail Local Image (select from the media-folder)</label>
                 <input type="file" name="thumbnailLocalImage" accept="image/*" class="form-control" id="thumbnailLocalFile" 
                        value="${this.formData.thumbnail.localFile}"
-                       ${this.formData.thumbnail.url ? "readonly" : ""}>
+                       ${this.formData.thumbnail.url ? 'readonly' : ''}>
             </div>
                 
             <div class="mb-3">
@@ -133,12 +133,12 @@ class NewPostWizard {
                 <input type="text" class="form-control" id="thumbnailOrigin" 
                         value="${this.formData.thumbnail.origin}">
             </div>
-        </div>`;
+        </div>`
   }
 
-  createCategoriesStep() {
-    const selectedTags = new Set(this.formData.tags);
-    const selectedCategories = new Set(this.formData.categories);
+  createCategoriesStep () {
+    const selectedTags = new Set(this.formData.tags)
+    const selectedCategories = new Set(this.formData.categories)
 
     return `
             <div class="step-content">
@@ -155,7 +155,7 @@ class NewPostWizard {
                                 </span>
                             `
                               )
-                              .join("")}
+                              .join('')}
                         </div>
                         <input type="text" class="form-control" id="newTag" placeholder="Add new tag">
                         <div class="existing-tags mt-2">
@@ -165,15 +165,15 @@ class NewPostWizard {
                                 <button type="button" 
                                         class="btn btn-sm ${
                                           selectedTags.has(tag.name)
-                                            ? "btn-primary"
-                                            : "btn-outline-primary"
+                                            ? 'btn-primary'
+                                            : 'btn-outline-primary'
                                         } me-1 mb-1 toggle-tag"
                                         data-tag="${tag.name}">
                                     ${tag.name}
                                 </button>
                             `
                               )
-                              .join("")}
+                              .join('')}
                         </div>
                     </div>
                 </div>
@@ -190,7 +190,7 @@ class NewPostWizard {
                                 </span>
                             `
                               )
-                              .join("")}
+                              .join('')}
                         </div>
                         <input type="text" class="form-control" id="newCategory" placeholder="Add new category">
                         <div class="existing-categories mt-2">
@@ -200,22 +200,22 @@ class NewPostWizard {
                                 <button type="button" 
                                         class="btn btn-sm ${
                                           selectedCategories.has(category.name)
-                                            ? "btn-secondary"
-                                            : "btn-outline-secondary"
+                                            ? 'btn-secondary'
+                                            : 'btn-outline-secondary'
                                         } me-1 mb-1 toggle-category"
                                         data-category="${category.name}">
                                     ${category.name}
                                 </button>
                             `
                               )
-                              .join("")}
+                              .join('')}
                         </div>
                     </div>
                 </div>
-            </div>`;
+            </div>`
   }
 
-  createNavigationButtons() {
+  createNavigationButtons () {
     return `
             <div class="d-flex justify-content-between mt-4">
                 ${
@@ -225,7 +225,7 @@ class NewPostWizard {
                         Previous
                     </button>
                 `
-                    : "<div></div>"
+                    : '<div></div>'
                 }
                 ${
                   this.currentStep < 3
@@ -240,21 +240,21 @@ class NewPostWizard {
                     </button>
                 `
                 }
-            </div>`;
+            </div>`
   }
 
-  render() {
-    let stepContent = "";
+  render () {
+    let stepContent = ''
     switch (this.currentStep) {
       case 1:
-        stepContent = this.createBasicInfoStep();
-        break;
+        stepContent = this.createBasicInfoStep()
+        break
       case 2:
-        stepContent = this.createThumbnailStep();
-        break;
+        stepContent = this.createThumbnailStep()
+        break
       case 3:
-        stepContent = this.createCategoriesStep();
-        break;
+        stepContent = this.createCategoriesStep()
+        break
     }
 
     this.container.innerHTML = `
@@ -262,216 +262,216 @@ class NewPostWizard {
             <form id="newPostForm" class="needs-validation" novalidate>
                 ${stepContent}
                 ${this.createNavigationButtons()}
-            </form>`;
+            </form>`
 
-    this.attachEventListeners();
+    this.attachEventListeners()
   }
 
-  attachEventListeners() {
+  attachEventListeners () {
     // Step navigation
-    this.container.querySelectorAll(".nav-link").forEach((link) => {
-      link.addEventListener("click", (e) => {
-        const step = parseInt(e.target.getAttribute("data-step"), 10);
-        this.setStep(step);
-      });
-    });
+    this.container.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const step = parseInt(e.target.getAttribute('data-step'), 10)
+        this.setStep(step)
+      })
+    })
 
     this.container
-      .querySelector(".next-step")
-      ?.addEventListener("click", () => this.nextStep());
+      .querySelector('.next-step')
+      ?.addEventListener('click', () => this.nextStep())
     this.container
-      .querySelector(".prev-step")
-      ?.addEventListener("click", () => this.previousStep());
+      .querySelector('.prev-step')
+      ?.addEventListener('click', () => this.previousStep())
 
     this.container
-      .querySelector(".submit-post")
-      ?.addEventListener("click", () => this.submit());
+      .querySelector('.submit-post')
+      ?.addEventListener('click', () => this.submit())
 
     // Input fields
-    const titleInput = document.getElementById("title");
-    titleInput?.addEventListener("input", (e) => {
-      this.formData.title = e.target.value;
-    });
+    const titleInput = document.getElementById('title')
+    titleInput?.addEventListener('input', (e) => {
+      this.formData.title = e.target.value
+    })
 
-    const descInput = document.getElementById("description");
+    const descInput = document.getElementById('description')
     descInput?.addEventListener(
-      "input",
+      'input',
       (e) => (this.formData.description = e.target.value)
-    );
+    )
 
-    const dateInput = document.getElementById("date");
+    const dateInput = document.getElementById('date')
     dateInput?.addEventListener(
-      "input",
+      'input',
       (e) => (this.formData.date = e.target.value)
-    );
+    )
 
-    const langSelect = document.getElementById("language");
+    const langSelect = document.getElementById('language')
     langSelect?.addEventListener(
-      "change",
+      'change',
       (e) => (this.formData.language = e.target.value)
-    );
+    )
 
     // Tags and Categories
-    this.container.querySelectorAll(".toggle-tag").forEach((tagButton) => {
-      tagButton.addEventListener("click", (e) => {
-        const tag = e.target.getAttribute("data-tag");
-        this.toggleTag(tag);
-      });
-    });
+    this.container.querySelectorAll('.toggle-tag').forEach((tagButton) => {
+      tagButton.addEventListener('click', (e) => {
+        const tag = e.target.getAttribute('data-tag')
+        this.toggleTag(tag)
+      })
+    })
 
-    this.container.querySelectorAll(".remove-tag").forEach((removeIcon) => {
-      removeIcon.addEventListener("click", (e) => {
-        const tag = e.target.getAttribute("data-tag");
-        this.removeTag(tag);
-      });
-    });
+    this.container.querySelectorAll('.remove-tag').forEach((removeIcon) => {
+      removeIcon.addEventListener('click', (e) => {
+        const tag = e.target.getAttribute('data-tag')
+        this.removeTag(tag)
+      })
+    })
 
-    const newTagInput = document.getElementById("newTag");
-    newTagInput?.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        this.addTag(e.target.value);
-        e.target.value = "";
+    const newTagInput = document.getElementById('newTag')
+    newTagInput?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        this.addTag(e.target.value)
+        e.target.value = ''
       }
-    });
+    })
 
-    this.container.querySelectorAll(".toggle-category").forEach((catButton) => {
-      catButton.addEventListener("click", (e) => {
-        const category = e.target.getAttribute("data-category");
-        this.toggleCategory(category);
-      });
-    });
+    this.container.querySelectorAll('.toggle-category').forEach((catButton) => {
+      catButton.addEventListener('click', (e) => {
+        const category = e.target.getAttribute('data-category')
+        this.toggleCategory(category)
+      })
+    })
 
     this.container
-      .querySelectorAll(".remove-category")
+      .querySelectorAll('.remove-category')
       .forEach((removeIcon) => {
-        removeIcon.addEventListener("click", (e) => {
-          const category = e.target.getAttribute("data-category");
-          this.removeCategory(category);
-        });
-      });
+        removeIcon.addEventListener('click', (e) => {
+          const category = e.target.getAttribute('data-category')
+          this.removeCategory(category)
+        })
+      })
 
-    const newCategoryInput = document.getElementById("newCategory");
-    newCategoryInput?.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        this.addCategory(e.target.value);
-        e.target.value = "";
+    const newCategoryInput = document.getElementById('newCategory')
+    newCategoryInput?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        this.addCategory(e.target.value)
+        e.target.value = ''
       }
-    });
+    })
   }
 
-  setStep(step) {
+  setStep (step) {
     if (step === 1) {
-      this.currentStep = step;
-      this.render();
+      this.currentStep = step
+      this.render()
     }
   }
 
-  nextStep() {
+  nextStep () {
     if (this.currentStep < 3) {
-      this.currentStep++;
-      this.render();
+      this.currentStep++
+      this.render()
     }
   }
 
-  previousStep() {
+  previousStep () {
     if (this.currentStep > 1) {
-      this.currentStep--;
-      this.render();
+      this.currentStep--
+      this.render()
     }
   }
 
-  toggleTag(tag) {
+  toggleTag (tag) {
     if (this.formData.tags.includes(tag)) {
-      this.removeTag(tag);
+      this.removeTag(tag)
     } else {
-      this.addTag(tag);
+      this.addTag(tag)
     }
   }
 
-  toggleCategory(category) {
+  toggleCategory (category) {
     if (this.formData.categories.includes(category)) {
-      this.removeCategory(category);
+      this.removeCategory(category)
     } else {
-      this.addCategory(category);
+      this.addCategory(category)
     }
   }
 
-  addTag(tag) {
+  addTag (tag) {
     if (tag && !this.formData.tags.includes(tag)) {
-      this.formData.tags.push(tag);
-      this.render();
+      this.formData.tags.push(tag)
+      this.render()
     }
   }
 
-  removeTag(tag) {
-    this.formData.tags = this.formData.tags.filter((t) => t !== tag);
-    this.render();
+  removeTag (tag) {
+    this.formData.tags = this.formData.tags.filter((t) => t !== tag)
+    this.render()
   }
 
-  addCategory(category) {
+  addCategory (category) {
     if (category && !this.formData.categories.includes(category)) {
-      this.formData.categories.push(category);
-      this.render();
+      this.formData.categories.push(category)
+      this.render()
     }
   }
 
-  removeCategory(category) {
+  removeCategory (category) {
     this.formData.categories = this.formData.categories.filter(
       (c) => c !== category
-    );
-    this.render();
+    )
+    this.render()
   }
 
-  async submit() {
-    if (this.formData.title.trim() === "") {
-      alert("Title is required");
-      return;
+  async submit () {
+    if (this.formData.title.trim() === '') {
+      window.alert('Title is required')
+      return
     }
     try {
-      const response = await fetch("/api/create-post", {
-        method: "POST",
+      const response = await fetch('/api/create-post', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(this.formData),
-      });
+      })
 
       if (!response.ok) {
-        throw new Error("Failed to create post");
+        throw new Error('Failed to create post')
       }
 
-      const data = await response.json();
-      alert(`Post created successfully: ${data.filename}`);
+      const data = await response.json()
+      window.alert(`Post created successfully: ${data.filename}`)
 
       // Reset form
       this.formData = {
-        title: "",
-        slug: "",
-        description: "",
+        title: '',
+        slug: '',
+        description: '',
         date: new Date().toISOString().slice(0, 16),
         tags: [],
         categories: [],
         thumbnail: {
-          url: "",
-          author: "",
-          authorUrl: "",
-          origin: "",
+          url: '',
+          author: '',
+          authorUrl: '',
+          origin: '',
         },
-        language: "en",
-      };
-      this.currentStep = 1;
-      this.render();
+        language: 'en',
+      }
+      this.currentStep = 1
+      this.render()
 
       // Close modal if using Bootstrap modal
-      const modalElement = document.getElementById("newPostModal");
-      const modalInstance = bootstrap.Modal.getInstance(modalElement);
+      const modalElement = document.getElementById('newPostModal')
+      const modalInstance = bootstrap.Modal.getInstance(modalElement)
       if (modalInstance) {
-        modalInstance.hide();
+        modalInstance.hide()
       }
     } catch (error) {
-      alert("Error creating post: " + error.message);
+      window.altert('Error creating post: ' + error.message)
     }
   }
 }
