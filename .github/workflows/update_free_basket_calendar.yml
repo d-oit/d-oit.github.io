@@ -51,7 +51,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Apply basket calendar json changes  
-     
-
-  deploy-hugo:
-    uses: ./.github/workflows/reusable-hugo-workflow.yml
+# hugo deployment
+      - uses: ./.github/workflows/reusable-hugo-workflow.yml
