@@ -11,14 +11,18 @@ draft: true
 
 
 
-{{< refLink ref="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en" >}}
-
-{{< refLink ref="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en" >}}
-
-|
+-
 
 {{< refLink ref="free-basketball-live-streams.md" text="new text"  >}}
 
-|
+-
 
-{{< refLink ref="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en" text="test"  showButton="true" color="info" >}}
+{{< refLink ref="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en" text="button text" showButton="true" color="info" >}}
+
+
+{{< link "free-basketball-live-streams.md" >}}Internal link with full path only working inside lang folder{{< /link >}}
+
+-
+
+{{< refLink ref="2024-05-21-uninstall-mobile-devices-task-in-windows-11.md" lang="en" text="link text" >}}
+

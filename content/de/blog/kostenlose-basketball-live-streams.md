@@ -9,7 +9,7 @@ thumbnail:
 tags:
     - Basketball
 categories:
-    - Sport
+    - Website
 draft: true
 ---
 

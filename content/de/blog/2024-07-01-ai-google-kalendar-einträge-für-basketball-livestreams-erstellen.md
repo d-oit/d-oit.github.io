@@ -4,15 +4,15 @@ title: Google Kalender Einträge aus AI Prompt
 description: Basketball Livestreams Google Kalendereinträge erstellen und auf Website darstellen.
 date: 2024-07-01T12:21:11.753Z
 thumbnail:
-
     url: /img/blog/BasketGoogleCalendar.png
     author: d.o. (Copilot Designer)
-
 tags:
     - AI Prompt
     - Basketball
-categories:
+    - Hugo
     - Software Development
+categories:
+    - Website
 slug: google-kalender-eintrage-aus-ai-prompt
 includeToc: false
 ---
@@ -119,8 +119,6 @@ Hier hilft aktuell **perplexity** für den Start der notwendigen Prompts.
 
  {{< image src="img/doitPrompt2Cal.png" caption="d.o.it Prompt2GCal" >}}
 
-{{< button href="https://streams2cal.netlify.app/" >}}WebApp{{< /button >}}
-
 {{< button icon="fab github" order="first" href="https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt/" >}}Source Code{{< /button >}}
 
 ## Darstellung im Blog
@@ -128,6 +126,10 @@ Hier hilft aktuell **perplexity** für den Start der notwendigen Prompts.
 Damit iCal Google Calendar Einträge auf der Website angezeigt werden können, wird über eine GitHub Action per Python script die Google Calendar Einträge eine JSON Datei erstellt.
 
 ### Python GitHub Action
+
+{{< file full="true" path="./.github/workflows/update_free_basket_calendar.yml" id="update_free_basket_calendar" show="false"options="linenos=table,hl_lines=37" >}}
+
+Änderungen werden per [git-auto-commit-action](https://github.com/stefanzweifel/git-auto-commit-action) in das github Repository geschrieben. Die Änderungen werden per wiederverwendbarer hugo github action ausgeliefert.
 
 {{< file full="false" path="update_basket_calendar_json.py" id="file-collapse-py-script" show="false" >}}
 

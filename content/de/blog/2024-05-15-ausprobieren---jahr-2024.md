@@ -16,7 +16,7 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 
 - Website / Blog wieder starten {{< fas fa-check-to-slot >}}
 - Hugo / GoLong einarbeiten semi {{< fas fa-check-to-slot >}}
-- Hugo CMS Admin Editor
+- Hugo Admin Editor
 - Coding / Aufgaben durch AI Tools verringern, austesten {{< fas fa-check-to-slot >}}
 - Smartphone Display austauschen
 - yahtzee Block per WebApp zusammenrechnen und Würfelwahrscheinlichkeiten ausrechnen. Aktuell spielen wir fast jeden Abend eine Runde nach dem Abendessen :smile:

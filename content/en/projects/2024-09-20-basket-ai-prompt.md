@@ -4,10 +4,10 @@ description: Basketball live streams prompt google calendar events creator with 
 date: 2024-09-20T08:39:42.419Z
 lastmod: 2024-10-24T08:39:42.419Z
 tags:
-    - WebApp
     - AI Prompt
     - Calendar
     - streams
+    - Software Development
 thumbnail:
     url: img/BasketLiveStreamsPrompt2GCal.jpg
     origin: Copilot Designer
@@ -17,7 +17,7 @@ lang: en-US
 slug: livestream-prompt2gcal
 includeToc: true
 categories:
-    - Software Development
+    - WebApp
     - Sport
 ---
 

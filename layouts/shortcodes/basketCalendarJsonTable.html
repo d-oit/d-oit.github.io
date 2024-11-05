@@ -8,63 +8,65 @@
   <button id="toggleView" class="btn btn-warning">{{ i18n "SwitchCardTableView" }}</button>
 </p>
 <div id="content">
-  
+
   <div id="card-view">
-      <div id="filterGroup">
-        <div class="form-row mb-4">
-          <div class="form-group col-md-6">
-            <label for="inputSearch">{{ T "tablePlaceholder" }}</label>
-            <input type="search" class="form-control datatable-input" name="search" id="searchBoxInlinePage"
-            placeholder="{{ T "basketFilterInputSearch" }}">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputDate">{{ T "filterDate" }}</label>
-            <input title="date filter" type="date" class="form-control" id="basketDateFilterInput">
-          </div>
-          <div class="form-group col-md-6">
-            {{ $labelClearFilter := T "clearFilter" }}
-            {{ partial "assets/button.html" (dict 
-              "title" $labelClearFilter
-              "color" "danger"
-              "icon" "fas eraser"
-              "id" "clearFilterButton"
-              "outline" "true"
-              ) }}
+    <div id="filterGroup">
+      <div class="form-row mb-4">
+        <div class="form-group col-md-6">
+          <label for="inputSearch">{{ T "tablePlaceholder" }}</label>
+          <input type="search" class="form-control datatable-input" name="search" id="searchBoxInlinePage"
+            placeholder="{{ T " basketFilterInputSearch" }}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputDate">{{ T "filterDate" }}</label>
+          <input title="date filter" type="date" class="form-control" id="basketDateFilterInput">
+        </div>
+        <div class="form-group col-md-6">
+          {{ $labelClearFilter := T "clearFilter" }}
+          {{ partial "assets/button.html" (dict
+          "title" $labelClearFilter
+          "color" "danger"
+          "icon" "fas eraser"
+          "id" "clearFilterButton"
+          "outline" "true"
+          ) }}
         </div>
       </div>
     </div>
 
     <div class="row">
       {{ range $index, $item := $data }}
-      <div class="col-sm-4 mb-5 mb-sm-2" data-search-content="{{ time.Format ":date_short" (time.AsTime $item.begin) }}
-        {{ time.Format ":time_short" (time.AsTime $item.begin) }} {{ $item.name }}"
-        data-league="{{ $item.league }}" data-date="{{ $item.begin }}">
+      <div class="col-sm-4 mb-5 mb-sm-2" data-search-content="{{ time.Format " :date_short" (time.AsTime $item.begin) }}
+        {{ time.Format ":time_short" (time.AsTime $item.begin) }} {{ $item.name }}" data-league="{{ $item.league }}"
+        data-date="{{ $item.begin }}">
         <div class="card border-info h-100 card-emphasize">
           <div class="card-header">
             <h4 class="card-title"><span class="team">{{ with $item.league }}
-              {{ if ne . "" }}
+                {{ if ne . "" }}
                 {{ $item.name }} ({{ . }})
-              {{ else }}
+                {{ else }}
                 {{ $item.name }}
-              {{ end }}
-            {{ else }}
-              {{ $item.name }}
-            {{ end }}
-          </span></h4>
+                {{ end }}
+                {{ else }}
+                {{ $item.name }}
+                {{ end }}
+              </span></h4>
           </div>
-          <div class="card-body">           
-            <h5 class="card-text"> <span class="time-info"> 
-              {{ partial "assets/icon.html" (dict "icon" "fas fa-calendar") }}
-              {{ time.Format ":date_medium" (time.AsTime $item.begin) }} {{ partial "assets/icon.html" (dict "icon" "fas fa-clock") }} </i>{{
-              time.Format ":time_short" (time.AsTime $item.begin) }}</span></h5>
+          <div class="card-body">
+            <h5 class="card-text"> <span class="time-info">
+                {{ partial "assets/icon.html" (dict "icon" "fas fa-calendar") }}
+                {{ time.Format ":date_medium" (time.AsTime $item.begin) }} {{ partial "assets/icon.html" (dict "icon"
+                "fas fa-clock") }} </i>{{
+                time.Format ":time_short" (time.AsTime $item.begin) }}</span></h5>
             <p class="card-muted"><small>{{ $item.description }}</small></p>
           </div>
           <div class="card-footer text-break">
             <p class="text-center info-item">
               {{ if $item.url }}
-                <a href="{{ $item.url }}" class="btn btn-info stretched-link" rel="noopener noreferrer">{{ $item.location }}</a>
+              <a href="{{ $item.url }}" class="btn btn-info stretched-link" rel="noopener noreferrer">{{ $item.location
+                }}</a>
               {{ else }}
-                {{ $item.location }}
+              {{ $item.location }}
               {{ end }}
             </p>
           </div>
@@ -74,12 +76,11 @@
     </div>
   </div>
 
-
   <div id="table-view" class="d-none">
-  <div class="table-responsive" >
+    <div class="table-responsive">
       <table id="free-basket-streams-table" class="data-table table table-striped" data-table-sortable="true"
-      data-table-paging="true" data-table-searchable="true" data-table-locale="{{ site.Language.Lang }}"
-      data-table-labels='{
+        data-table-paging="true" data-table-searchable="true" data-table-locale="{{ site.Language.Lang }}"
+        data-table-labels='{
         "placeholder": "{{ T "tablePlaceholder" }}",
         "searchTitle": "{{ T "basketFilterInputSearch" }}",
         "perPage": "{{ T "tablesPerPage" }}",
@@ -87,39 +88,39 @@
         "noResults": "{{ T "tablesNoResults" }}",
         "info": "{{ T "tablesInfo" }}"
       }'>
-      <thead>
-        <tr class="table-warning">
-          <th data-sortable="false">{{ i18n "Date" }}</th>
-          <th data-sortable="false">{{ i18n "Time" }}</th>
-          <th>Teams</th>
-          <th>{{ i18n "League" }}</th>
-          <th><small>{{ i18n "Description" }}</small></th>
-          <th>Channel</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{ range $index, $item := $data }}
-        
-        <tr data-search-content="{{ time.Format ":date_short" (time.AsTime $item.begin) }}
-        {{ time.Format ":time_short" (time.AsTime $item.begin) }} {{ $item.name }}"
-        data-league="{{ $item.league }}" data-date="{{ $item.begin }}">
-          <td data-text="{{ $item.begin }}">{{ time.Format ":date_short" (time.AsTime $item.begin) }}</td>
-          <td data-text="{{ $item.begin }}">{{ time.Format ":time_short" (time.AsTime $item.begin) }}</td>
-          <td>{{ $item.name }}</td>
-          <td>{{ $item.league }}</td>
-          <td><small>{{ $item.description }}</small></td>
-          <td> 
-            {{ if $item.url }}
-                <a href="{{ $item.url }}" rel="noopener noreferrer">{{ $item.location }}</a>
+        <thead>
+          <tr class="table-warning">
+            <th data-sortable="false">{{ i18n "Date" }}</th>
+            <th data-sortable="false">{{ i18n "Time" }}</th>
+            <th>Teams</th>
+            <th>{{ i18n "League" }}</th>
+            <th><small>{{ i18n "Description" }}</small></th>
+            <th>Channel</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $index, $item := $data }}
+
+          <tr data-search-content="{{ time.Format " :date_short" (time.AsTime $item.begin) }} {{
+            time.Format ":time_short" (time.AsTime $item.begin) }} {{ $item.name }}" data-league="{{ $item.league }}"
+            data-date="{{ $item.begin }}">
+            <td data-text="{{ $item.begin }}">{{ time.Format ":date_short" (time.AsTime $item.begin) }}</td>
+            <td data-text="{{ $item.begin }}">{{ time.Format ":time_short" (time.AsTime $item.begin) }}</td>
+            <td>{{ $item.name }}</td>
+            <td>{{ $item.league }}</td>
+            <td><small>{{ $item.description }}</small></td>
+            <td>
+              {{ if $item.url }}
+              <a href="{{ $item.url }}" rel="noopener noreferrer">{{ $item.location }}</a>
               {{ else }}
-                {{ $item.location }}
+              {{ $item.location }}
               {{ end }}
-        </td>
-        </tr>
-        {{ end }}
-      </tbody>
-    </table>
-  </div>
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
   </div>
   {{ else }}
   <p>Error: Unable to parse JSON data.</p>

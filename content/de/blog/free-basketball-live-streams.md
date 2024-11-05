@@ -1,14 +1,15 @@
 ---
 title: Übersicht kostenlose Basketball live streams
 description: "Übersicht für kostenlose Basketball live stream Übertragungen von magentasport, sportschau und anderen"
-date: 2024-09-28T19:34:46.171Z
+date: 2024-11-04T19:34:46.171Z
 thumbnail:
     url: /img/blog/BasketLivestreams.jpg
     author: d.o. (Copilot Designer)
 tags:
     - Basketball
+    - Basketball
 categories:
-    - Sport
+     - Website
 modules: ["simple-datatables"]
 lang: "de"
 slug: free-basketball-live-streams

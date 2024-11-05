@@ -1,18 +1,18 @@
 ---
-title: Use Playwright with Hugo CMS
+title: Use Playwright with Hugo
 slug: use-playwright-with-hugo-cms
-description: Playwright testing with Hugo CMS local and with github action
+description: Playwright testing with Hugo local and with GitHub action
 date: 2024-11-04
-tags: [Hugo CMS,Website,Playwright]
+tags: [Hugo ,Website,Playwright,GitHub]
 categories: [Website]
 thumbnail:
     url: /img/blog/doitHugoPlaywright.jpg
     author: d.o.
 ---
 
-Testing is a crucial part of any website's development process, especially when using a static site generator like Hugo CMS.
+Testing is a crucial part of any website's development process, especially when using a static site generator like Hugo.
 One excellent tool for automating tests on websites is Playwright, which provides a robust framework for end-to-end testing.
-Integrating Playwright with Hugo CMS allows developers to test various aspects of the site across multiple browsers and devices, ensuring that the website behaves as expected.
+Integrating Playwright with Hugo allows developers to test various aspects of the site across multiple browsers and devices, ensuring that the website behaves as expected.
 
 ## Prerequisites
 
@@ -66,7 +66,7 @@ npx playwright test
 
 This command runs all tests in the tests directory.
 
-If you want to run the test with an running Hugo server use:
+If you want to run the test with a running Hugo server use:
 
 `REUSE_SERVER=true`
 
@@ -82,7 +82,7 @@ Ensure for:
 - /blob-report/
 - /playwright/.cache/
 
-## Github action
+## GitHub action
 
 Define under in your github repo under **/settings/variables/actions** the **repository variable**:
 
@@ -92,4 +92,4 @@ Define under in your github repo under **/settings/variables/actions** the **rep
 
 ### Jest
 
-I was trying to use jest with Hugo but was not satisfied with the results. The current setup with Hugo is the easiest way for me at the moment.
+I was trying to use Jest with Hugo but was not satisfied with the results. The current setup with Hugo is the easiest way for me at the moment.
