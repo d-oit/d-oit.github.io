@@ -108,3 +108,26 @@ button.datatable-sorter.th-inner {
     font-weight: inherit;
     font-size: inherit;
 }
+
+
+.tag-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+  }
+  .tag-card:hover {
+    transform: translateY(-4px);
+  }
+  .tag-card .card-body {
+    padding: 1.5rem;
+  }
+  .tag-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .tag-card .card-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
