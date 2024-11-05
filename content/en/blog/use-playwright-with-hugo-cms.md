@@ -1,4 +1,5 @@
 ---
+lang: en
 title: Use Playwright with Hugo
 slug: use-playwright-with-hugo-cms
 description: Playwright testing with Hugo local and with GitHub action

@@ -14,7 +14,8 @@ ignorePatterns: ["assets/js/critical/languageSelector.js"]
 
 extends: [
     "plugin:react/recommended",
-    "plugin:cypress/recommended"
+    "plugin:cypress/recommended",
+    "plugin:yaml/recommended"
   ]
 
 settings:

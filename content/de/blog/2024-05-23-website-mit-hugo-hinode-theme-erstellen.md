@@ -5,12 +5,12 @@ description: Website mit Hugo Hinode Theme erstellen
 slug: statische-website-erstellen
 date: 2024-05-23T14:21:58.426Z
 tags:
-- Hinode Theme
-- Hugo
-- Blog
+  - Hinode Theme
+  - Hugo
+  - Blog
 thumbnail:
-url: /img/blog/VisualStudioCodeWorkspace.png
-author: Dominik Oswald
+  url: /img/blog/VisualStudioCodeWorkspace.png
+  author: Dominik Oswald
 category:
 - Website
 draft: false
