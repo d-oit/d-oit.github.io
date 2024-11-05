@@ -3,9 +3,8 @@ name: Update Google Calendar Basket Calendar as JSON
 on:
   schedule:
      - cron: '* 18 * * *'  # 
-  push:
-    branches:
-      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   update-calendar:
@@ -46,7 +45,8 @@ jobs:
         with:
           commit_message: Apply basket calendar json changes  
      
-      - name: Hugo to github pages
+      # hugo deployment  
+      - name: Build and deploy Hugo site
         uses: ./.github/workflows/reusable-hugo-workflow.yml
 
 

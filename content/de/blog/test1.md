@@ -1,6 +1,6 @@
 ---
 lang: de-DE
-title: Test Statische Website erstellen
+title: Test1
 description: Website mit Hugo Hinode Theme erstellen
 slug: test1
 date: 2024-10-11T14:21:58.426Z

@@ -15,7 +15,6 @@ categories:
     - Website
 slug: ics-file-hugo
 includeToc: false
-draft: true
 ---
 
 > [! NOTE]  

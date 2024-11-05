@@ -1,14 +1,5 @@
 [
     {
-        "name": "Orlando Magic vs. Dallas Mavericks",
-        "begin": "2024-11-04T01:00:00+01:00",
-        "end": "2024-11-04T02:30:00+01:00",
-        "description": "NBA Regular Season game between Orlando Magic and Dallas Mavericks",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": null
-    },
-    {
         "name": "EPG Guardians Koblenz vs. Uni Baskets M\u00fcnster",
         "begin": "2024-11-06T19:15:00+01:00",
         "end": "2024-11-06T20:45:00+01:00",
