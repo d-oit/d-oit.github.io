@@ -17,16 +17,16 @@ defaults:
   run:
     shell: bash
 
+permissions:
+    # Give the default GITHUB_TOKEN write permission to commit and push the
+    # added or changed files to the repository.
+    contents: write
+    pages: write
+    id-token: write
+
 jobs:
   update-calendar:
     runs-on: ubuntu-latest
-
-    permissions:
-        # Give the default GITHUB_TOKEN write permission to commit and push the
-        # added or changed files to the repository.
-        contents: write
-        pages: write
-        id-token: write
 
     steps:
       - uses: actions/checkout@v4
