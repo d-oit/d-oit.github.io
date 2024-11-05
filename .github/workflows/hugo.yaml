@@ -31,4 +31,5 @@ defaults:
 
 jobs:
   deploy-hugo:
-    uses: ./.github/workflows/reusable-hugo-workflow.yml@v1
+    uses: ./.github/workflows/reusable-hugo-workflow.yml
+    

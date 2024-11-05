@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - main
-      
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -49,7 +49,8 @@ jobs:
         with:
           commit_message: Apply basket calendar json changes  
      
-      - name: Hugo to github pages
-        uses: ./.github/workflows/reusable-hugo-workflow.yml@v1
+      # hugo deployment  
+      - name: Build and deploy Hugo site
+        uses: ./.github/workflows/reusable-hugo-workflow.yml
 
 
