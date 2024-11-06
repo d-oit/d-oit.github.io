@@ -19,8 +19,8 @@
                 {{ if eq .Kind "taxonomy" }}
                 <div class="row g-4">
                     {{ range $.Site.Taxonomies.tags.ByCount }}
-                    <div class="col-md-6 col-lg-4">
-                      <div class="card tag-card bg-white">
+                    <div class="col-md-6 col-lg-4 mb-3" >
+                      <div class="card tag-card h-100">
                         <div class="card-body">
                           <h5 class="card-title"><a href="{{ .Page.RelPermalink }}" class="btn btn-primary">{{ .Page.Title | .Page.RenderString }}</a></h5>
                           <p class="card-text">{{ .Count }} {{ if gt .Count 1 }} {{ T "articles" }} {{ else }} {{ T "article" }} {{ end }}</p>
@@ -41,11 +41,11 @@
                         {{ range .Pages }}
                         {{ $year := .Date.Year }}
                         {{ $lastYear := $.Scratch.Get "lastYear"}}
-                        <div class="col-md-6 col-lg-4">
-                          <div class="page-card bg-white">
+                        <div class="col-md-6 col-lg-4 mb-3">
+                          <div class="card page-card h-100 ">
                             <div class="card-body">                                
                               {{ if ne $year $lastYear }}
-                              <p class="text-body-secondary mb-3">{{ $year }}</p>
+                              <h4 class="mb-3">{{ $year }}</h4>
                               {{ $.Scratch.Set "lastYear" $year }}
                               {{ end }}
                               <h5 class="card-title"><a href="{{ .Page.RelPermalink }}" class="btn btn-primary">{{ if .Draft }}{{ T "draft" | upper }}: {{ end }}{{ .Title | .Page.RenderString }}</a></h5>
