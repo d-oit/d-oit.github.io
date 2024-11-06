@@ -357,6 +357,7 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 		newFileName, err := processMediaFile(reqMediaFile)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
+
 			return
 		}
 
@@ -440,7 +441,7 @@ func generateMarkdownContent(post NewPostRequest) string {
 	}
 
 	// Convert date string to time.Time
-	date, err := time.Parse("2006-01-02", post.Date)
+	date, err := time.Parse("2024-11-06T13:53", post.Date)
 	if err != nil {
 		log.Printf("Error parsing date: %v", err)
 		date = time.Now()

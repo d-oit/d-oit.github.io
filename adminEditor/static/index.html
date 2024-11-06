@@ -16,21 +16,22 @@
             <button id="openMediaGallery" type="button" class="btn btn-secondary">
                 <i class="fas fa-images"></i> Media Gallery
             </button>
-            <button id="newPostButton" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#newPostModal">
+            <button id="newPostButton" type="button" class="btn btn-info" data-bs-toggle="modal"
+                data-bs-target="#newPostModal">
                 <i class="fas fa-plus"></i> New Post
             </button>
         </div>
         <div id="main-content">
-            
+
             <div id="toolbar" class="btn-group flex-wrap" role="group"></div>
             <div id="file-selector" class="row mb-3">
                 <div class="col">
                     <div class="form-group">
-                    <select title="select language" id="language-select" class="form-select">
-                        <option value="de">German</option>
-                        <option value="en">English</option>
-                    </select>
-                </div>
+                        <select title="select language" id="language-select" class="form-select">
+                            <option value="de">German</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="col">
                     <select title="select markdown" id="file-select" class="form-select caret"></select>
@@ -176,6 +177,26 @@
         </div>
     </div>
 
+    <!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="searchModalLabel">Search</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="searchQuery" class="form-control" placeholder="Enter search term" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="searchBtn">Find Next</button>
+          <button type="button" class="btn btn-secondary" id="searchPrevBtn">Find Previous</button>
+          <button type="button" class="btn btn-secondary" id="replaceBtn">Replace</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     </div>
     </div>
     </div>
@@ -186,12 +207,9 @@
     <script src="js/blockquoteModal.js" type="module"></script>
     <script src="js/coloredCodeModal.js" type="module"></script>
     <script src="js/internalLinksModal.js" type="module"></script>
+    <script src="js/search-modal.js" type="module"></script>
     <script src="js/newPostWizard.js"></script>
-    <!-- Add these before your main script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/dialog/dialog.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/search/searchcursor.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/search/search.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/dialog/dialog.min.css">
+
 </body>
 
 </html>

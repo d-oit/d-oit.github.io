@@ -2,25 +2,9 @@
 class NewPostWizard {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
-    this.currentStep = 1;
-    this.formData = {
-      title: '',
-      description: '',
-      date: new Date().toISOString().slice(0, 16),
-      tags: [],
-      categories: [],
-      thumbnail: {
-        url: '',
-        localFile: '',
-        author: '',
-        authorUrl: '',
-        origin: '',
-      },
-      language: 'en',
-      slug: '',
-    };
-    this.existingTags = [];
-    this.existingCategories = [];
+    
+    this.resetForm()
+   
 
     this.init();
   }
@@ -115,8 +99,9 @@ class NewPostWizard {
             <div class="mb-3">
                 <label class="form-label">Thumbnail Local Image (select from the media-folder)</label>
                 <input type="file" name="thumbnailLocalImage" accept="image/*" class="form-control" id="thumbnailLocalFile" 
-                       value="${this.formData.thumbnail.localFile}"
-                       ${this.formData.thumbnail.url ? 'readonly' : ''}>
+                       
+                      }>
+                      <p>selected value: ${this.formData.thumbnail.localFile}</p>
             </div>
                 
             <div class="mb-3">
@@ -265,7 +250,7 @@ class NewPostWizard {
                 ${this.createNavigationButtons()}
             </form>`;
 
-   this.attachEventListeners();
+    this.attachEventListeners();
   }
 
   attachEventListeners() {
@@ -294,6 +279,13 @@ class NewPostWizard {
         e.stopPropagation();
         if (this.isNavigating) return;
         this.previousStep();
+      });
+    }
+
+    const submitButton = this.container.querySelector('.submit-post');
+    if (submitButton) {
+      submitButton.addEventListener('click', (e) => {
+        this.submit();
       });
     }
 
@@ -336,6 +328,18 @@ class NewPostWizard {
       });
     });
 
+    const thumbnailLocalFile = document.getElementById('thumbnailLocalFile')
+    if (thumbnailLocalFile) {
+      thumbnailLocalFile.addEventListener('change',
+        function (event) {
+          const file = event.target.files[0]
+          if (file) {
+            this.formData.thumbnail.localFile = file.name
+          }
+        }.bind(this)
+      )
+    }
+
     const newTagInput = document.getElementById('newTag');
     newTagInput?.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
@@ -372,7 +376,7 @@ class NewPostWizard {
   }
 
   setStep(step) {
-    console.log("setStep:", step);
+    console.log('setStep:', step);
     this.isNavigating = true;
     this.currentStep = step;
     this.render();
@@ -383,7 +387,7 @@ class NewPostWizard {
   }
 
   nextStep() {
-    console.log("nextStep, current step:", this.currentStep);
+    console.log('nextStep, current step:', this.currentStep);
     if (this.currentStep < 3) {
       this.setStep(this.currentStep + 1);
     }
@@ -459,21 +463,7 @@ class NewPostWizard {
       window.alert(`Post created successfully: ${data.filename}`);
 
       // Reset form
-      this.formData = {
-        title: '',
-        slug: '',
-        description: '',
-        date: new Date().toISOString().slice(0, 16),
-        tags: [],
-        categories: [],
-        thumbnail: {
-          url: '',
-          author: '',
-          authorUrl: '',
-          origin: '',
-        },
-        language: 'en',
-      };
+      this.resetForm();
       this.currentStep = 1;
       this.render();
 
@@ -487,5 +477,27 @@ class NewPostWizard {
     } catch (error) {
       window.alert('Error creating post: ' + error.message);
     }
+  }
+
+  resetForm() {
+    this.currentStep = 1;
+    this.existingTags = [];
+    this.existingCategories = [];
+    this.formData = {
+      title: '',
+      slug: '',
+      description: '',
+      date: new Date().toISOString().slice(0, 16),
+      tags: [],
+      categories: [],
+      thumbnail: {
+        url: '',
+        localFile: '',
+        author: '',
+        authorUrl: '',
+        origin: '',
+      },
+      language: 'en',
+    };
   }
 }

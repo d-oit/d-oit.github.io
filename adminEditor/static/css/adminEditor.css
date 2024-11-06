@@ -1,12 +1,12 @@
 .CodeMirror {
-    max-height: 70vh; /* Set the maximum height to the viewport height */
+    max-height: 77vh; /* Set the maximum height to the viewport height */
    
 }
 
 html, body {
     height: 100%;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 .main-content {
@@ -19,7 +19,7 @@ html, body {
     display: none;
 }
 
-
+.btn-close { box-sizing: content-box; width: 1em; height: 1em; padding: .25em .25em; color: #000; background: transparent; border: 0; border-radius: .375rem; display: flex; align-items: center; justify-content: center; } .btn-close::before { content: "\f00d"; /* Font Awesome times icon */ font-family: "Font Awesome 5 Free"; font-weight: 900; font-size: 1em;
 
 #editor {
     width: 100%;

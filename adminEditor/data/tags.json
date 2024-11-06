@@ -2,19 +2,19 @@
   "tags": [
     {
       "name": "Hugo",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Website",
-      "count": 5
+      "count": 6
     },
     {
       "name": "GDPR",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Playwright",
-      "count": 4
+      "count": 5
     }
   ]
 }

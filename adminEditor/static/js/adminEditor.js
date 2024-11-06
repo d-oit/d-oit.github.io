@@ -2,6 +2,7 @@
 'use strict';
 
 import { initializeModals, showModal, hideModal } from './modals.js';
+import { searchModalDialog } from './search-modal.js'
 
 const editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
   mode: 'markdown',
@@ -272,15 +273,16 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       selectAll: () => editor.execCommand('selectAll'),
       find: () => {
-        // Use CodeMirror's search command
-        const searchQuery =
-          editor.getSelection() || editor.state.lastQuery || '';
-        CodeMirror.commands.find(editor);
-        // Pre-fill with selected text if any
-        const searchField = document.querySelector('.CodeMirror-search-field');
-        if (searchField) {
-          searchField.value = searchQuery;
-        }
+        searchModalDialog(editor)
+        // // Use CodeMirror's search command
+        // const searchQuery =
+        //   editor.getSelection() || editor.state.lastQuery || '';
+        // CodeMirror.commands.find(editor);
+        // // Pre-fill with selected text if any
+        // const searchField = document.querySelector('.CodeMirror-search-field');
+        // if (searchField) {
+        //   searchField.value = searchQuery;
+        // }
       },
       findNext: () => {
         if (editor.state.lastQuery) {
