@@ -6,14 +6,21 @@ from jsmin import jsmin
 css_urls = [
     "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.css"
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/codemirror.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/addon/dialog/dialog.css"
 ]
 
 js_urls = [
     "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/markdown/markdown.js"
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/codemirror.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/mode/markdown/markdown.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/addon/search/search.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/addon/search/searchcursor.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/addon/search/jump-to-line.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/addon/dialog/dialog.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/addon/scroll/annotatescrollbar.js"
 ]
+
 
 # Function to download and bundle files
 def bundle_files(urls, output_file, minify=False):
