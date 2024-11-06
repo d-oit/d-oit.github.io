@@ -52,6 +52,7 @@
     ],
     "ltex.language": "de",
     "ltex.additionalRules.enablePickyRules": true,
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "prettier.semi": false
     
 }

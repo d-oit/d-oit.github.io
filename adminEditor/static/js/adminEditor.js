@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('openMediaGallery').addEventListener('click', () => {
       openMediaGallery()
     })
- 
+
     document.getElementById('save-btn').addEventListener('click', saveFile)
     document
       .getElementById('spell-check-btn')
@@ -220,11 +220,11 @@ document.addEventListener('DOMContentLoaded', function () {
       body: content,
     })
       .then(() => {
-        alert('File saved successfully')
+        window.alert('File saved successfully')
         isDirty = false
       })
       .catch((error) => {
-        alert('Error saving file: ' + error)
+        window.alert('Error saving file: ' + error)
       })
   }
 
@@ -261,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to initialize the new post wizard
   function initializeNewPostWizard () {
     const wizardContainerId = 'newPostWizard'
+    // eslint-disable-next-line no-undef
     const wizard = new NewPostWizard(wizardContainerId)
   }
 
@@ -268,10 +269,10 @@ document.addEventListener('DOMContentLoaded', function () {
     navigator.clipboard
       .writeText(editor.getValue())
       .then(() => {
-        alert('Content copied to clipboard')
+        window.alert('Content copied to clipboard')
       })
       .catch((err) => {
-        alert('Failed to copy: ' + err)
+        window.alert('Failed to copy: ' + err)
       })
   }
 
@@ -282,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
         addEditorText(text)
       })
       .catch((err) => {
-        alert('Failed to paste: ' + err)
+        window.alert('Failed to paste: ' + err)
       })
   }
 

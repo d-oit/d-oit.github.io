@@ -438,7 +438,16 @@ func generateMarkdownContent(post NewPostRequest) string {
 	if post.Description != "" {
 		sb.WriteString(fmt.Sprintf("description: %s\n", post.Description))
 	}
-	sb.WriteString(fmt.Sprintf("date: %s\n", post.Date))
+
+	// Convert date string to time.Time
+	date, err := time.Parse("2006-01-02", post.Date)
+	if err != nil {
+		log.Printf("Error parsing date: %v", err)
+		date = time.Now()
+	}
+	// Convert date to UTC
+	utcDate := date.UTC()
+	sb.WriteString(fmt.Sprintf("date: %s\n", utcDate.Format(time.RFC3339)))
 
 	if len(post.Tags) > 0 {
 		tags, _ := json.Marshal(post.Tags)

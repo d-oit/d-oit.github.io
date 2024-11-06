@@ -1,7 +1,8 @@
+// eslint-disable-next-line no-unused-vars
 class NewPostWizard {
-  constructor (containerId) {
-    this.container = document.getElementById(containerId)
-    this.currentStep = 1
+  constructor(containerId) {
+    this.container = document.getElementById(containerId);
+    this.currentStep = 1;
     this.formData = {
       title: '',
       description: '',
@@ -17,31 +18,31 @@ class NewPostWizard {
       },
       language: 'en',
       slug: '',
-    }
-    this.existingTags = []
-    this.existingCategories = []
+    };
+    this.existingTags = [];
+    this.existingCategories = [];
 
-    this.init()
+    this.init();
   }
 
-  async init () {
+  async init() {
     // Fetch existing tags and categories
     try {
       const [tagsResponse, categoriesResponse] = await Promise.all([
         fetch('/api/tags'),
         fetch('/api/categories'),
-      ])
-      this.existingTags = await tagsResponse.json()
-      this.existingCategories = await categoriesResponse.json()
+      ]);
+      this.existingTags = await tagsResponse.json();
+      this.existingCategories = await categoriesResponse.json();
     } catch (error) {
-      console.error('Error fetching tags and categories:', error)
+      console.error('Error fetching tags and categories:', error);
     }
 
-    this.render()
-    this.attachEventListeners()
+    this.render();
+    this.attachEventListeners();
   }
 
-  createStepIndicator () {
+  createStepIndicator() {
     return `
             <ul class="nav nav-pills mb-4 justify-content-center">
                 <li class="nav-item">
@@ -65,10 +66,10 @@ class NewPostWizard {
                         Categories & Tags
                     </button>
                 </li>
-            </ul>`
+            </ul>`;
   }
 
-  createBasicInfoStep () {
+  createBasicInfoStep() {
     return `
             <div class="step-content">
                 <div class="mb-3">
@@ -98,10 +99,10 @@ class NewPostWizard {
                     <input type="datetime-local" class="form-control" id="date" 
                            value="${this.formData.date}" required>
                 </div>
-            </div>`
+            </div>`;
   }
 
-  createThumbnailStep () {
+  createThumbnailStep() {
     return ` 
         <div id="imageSelectorContainer"></div>
             <div class="step-content">
@@ -133,12 +134,12 @@ class NewPostWizard {
                 <input type="text" class="form-control" id="thumbnailOrigin" 
                         value="${this.formData.thumbnail.origin}">
             </div>
-        </div>`
+        </div>`;
   }
 
-  createCategoriesStep () {
-    const selectedTags = new Set(this.formData.tags)
-    const selectedCategories = new Set(this.formData.categories)
+  createCategoriesStep() {
+    const selectedTags = new Set(this.formData.tags);
+    const selectedCategories = new Set(this.formData.categories);
 
     return `
             <div class="step-content">
@@ -153,7 +154,7 @@ class NewPostWizard {
                                     ${tag}
                                     <i class="fas fa-times ms-1 remove-tag" data-tag="${tag}"></i>
                                 </span>
-                            `
+                            `,
                               )
                               .join('')}
                         </div>
@@ -171,7 +172,7 @@ class NewPostWizard {
                                         data-tag="${tag.name}">
                                     ${tag.name}
                                 </button>
-                            `
+                            `,
                               )
                               .join('')}
                         </div>
@@ -188,7 +189,7 @@ class NewPostWizard {
                                     ${category}
                                     <i class="fas fa-times ms-1 remove-category" data-category="${category}"></i>
                                 </span>
-                            `
+                            `,
                               )
                               .join('')}
                         </div>
@@ -206,16 +207,16 @@ class NewPostWizard {
                                         data-category="${category.name}">
                                     ${category.name}
                                 </button>
-                            `
+                            `,
                               )
                               .join('')}
                         </div>
                     </div>
                 </div>
-            </div>`
+            </div>`;
   }
 
-  createNavigationButtons () {
+  createNavigationButtons() {
     return `
             <div class="d-flex justify-content-between mt-4">
                 ${
@@ -240,21 +241,21 @@ class NewPostWizard {
                     </button>
                 `
                 }
-            </div>`
+            </div>`;
   }
 
-  render () {
-    let stepContent = ''
+  render() {
+    let stepContent = '';
     switch (this.currentStep) {
       case 1:
-        stepContent = this.createBasicInfoStep()
-        break
+        stepContent = this.createBasicInfoStep();
+        break;
       case 2:
-        stepContent = this.createThumbnailStep()
-        break
+        stepContent = this.createThumbnailStep();
+        break;
       case 3:
-        stepContent = this.createCategoriesStep()
-        break
+        stepContent = this.createCategoriesStep();
+        break;
     }
 
     this.container.innerHTML = `
@@ -262,172 +263,184 @@ class NewPostWizard {
             <form id="newPostForm" class="needs-validation" novalidate>
                 ${stepContent}
                 ${this.createNavigationButtons()}
-            </form>`
+            </form>`;
 
-    this.attachEventListeners()
+   this.attachEventListeners();
   }
 
-  attachEventListeners () {
-    // Step navigation
+  attachEventListeners() {
+    // Step navigation buttons (nav-pills)
     this.container.querySelectorAll('.nav-link').forEach((link) => {
       link.addEventListener('click', (e) => {
-        const step = parseInt(e.target.getAttribute('data-step'), 10)
-        this.setStep(step)
-      })
-    })
+        if (this.isNavigating) return;
+        const step = parseInt(e.target.getAttribute('data-step'));
+        this.setStep(step);
+      });
+    });
 
-    this.container
-      .querySelector('.next-step')
-      ?.addEventListener('click', () => this.nextStep())
-    this.container
-      .querySelector('.prev-step')
-      ?.addEventListener('click', () => this.previousStep())
+    // Next/Previous buttons
+    const nextStepButton = this.container.querySelector('.next-step');
+    if (nextStepButton) {
+      nextStepButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this.isNavigating) return;
+        this.nextStep();
+      });
+    }
 
-    this.container
-      .querySelector('.submit-post')
-      ?.addEventListener('click', () => this.submit())
+    const prevStepButton = this.container.querySelector('.prev-step');
+    if (prevStepButton) {
+      prevStepButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this.isNavigating) return;
+        this.previousStep();
+      });
+    }
 
     // Input fields
-    const titleInput = document.getElementById('title')
+    const titleInput = document.getElementById('title');
     titleInput?.addEventListener('input', (e) => {
-      this.formData.title = e.target.value
-    })
+      this.formData.title = e.target.value;
+    });
 
-    const descInput = document.getElementById('description')
+    const descInput = document.getElementById('description');
     descInput?.addEventListener(
       'input',
-      (e) => (this.formData.description = e.target.value)
-    )
+      (e) => (this.formData.description = e.target.value),
+    );
 
-    const dateInput = document.getElementById('date')
+    const dateInput = document.getElementById('date');
     dateInput?.addEventListener(
       'input',
-      (e) => (this.formData.date = e.target.value)
-    )
+      (e) => (this.formData.date = e.target.value),
+    );
 
-    const langSelect = document.getElementById('language')
+    const langSelect = document.getElementById('language');
     langSelect?.addEventListener(
       'change',
-      (e) => (this.formData.language = e.target.value)
-    )
+      (e) => (this.formData.language = e.target.value),
+    );
 
     // Tags and Categories
     this.container.querySelectorAll('.toggle-tag').forEach((tagButton) => {
       tagButton.addEventListener('click', (e) => {
-        const tag = e.target.getAttribute('data-tag')
-        this.toggleTag(tag)
-      })
-    })
+        const tag = e.target.getAttribute('data-tag');
+        this.toggleTag(tag);
+      });
+    });
 
     this.container.querySelectorAll('.remove-tag').forEach((removeIcon) => {
       removeIcon.addEventListener('click', (e) => {
-        const tag = e.target.getAttribute('data-tag')
-        this.removeTag(tag)
-      })
-    })
+        const tag = e.target.getAttribute('data-tag');
+        this.removeTag(tag);
+      });
+    });
 
-    const newTagInput = document.getElementById('newTag')
+    const newTagInput = document.getElementById('newTag');
     newTagInput?.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
-        e.preventDefault()
-        this.addTag(e.target.value)
-        e.target.value = ''
+        e.preventDefault();
+        this.addTag(e.target.value);
+        e.target.value = '';
       }
-    })
+    });
 
     this.container.querySelectorAll('.toggle-category').forEach((catButton) => {
       catButton.addEventListener('click', (e) => {
-        const category = e.target.getAttribute('data-category')
-        this.toggleCategory(category)
-      })
-    })
+        const category = e.target.getAttribute('data-category');
+        this.toggleCategory(category);
+      });
+    });
 
     this.container
       .querySelectorAll('.remove-category')
       .forEach((removeIcon) => {
         removeIcon.addEventListener('click', (e) => {
-          const category = e.target.getAttribute('data-category')
-          this.removeCategory(category)
-        })
-      })
+          const category = e.target.getAttribute('data-category');
+          this.removeCategory(category);
+        });
+      });
 
-    const newCategoryInput = document.getElementById('newCategory')
+    const newCategoryInput = document.getElementById('newCategory');
     newCategoryInput?.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
-        e.preventDefault()
-        this.addCategory(e.target.value)
-        e.target.value = ''
+        e.preventDefault();
+        this.addCategory(e.target.value);
+        e.target.value = '';
       }
-    })
+    });
   }
 
-  setStep (step) {
-    if (step === 1) {
-      this.currentStep = step
-      this.render()
-    }
+  setStep(step) {
+    console.log("setStep:", step);
+    this.isNavigating = true;
+    this.currentStep = step;
+    this.render();
+    // Reset the flag after a short delay to prevent rapid clicking
+    setTimeout(() => {
+      this.isNavigating = false;
+    }, 100);
   }
 
-  nextStep () {
+  nextStep() {
+    console.log("nextStep, current step:", this.currentStep);
     if (this.currentStep < 3) {
-      this.currentStep++
-      this.render()
+      this.setStep(this.currentStep + 1);
     }
   }
 
-  previousStep () {
+  previousStep() {
     if (this.currentStep > 1) {
-      this.currentStep--
-      this.render()
+      this.setStep(this.currentStep - 1);
     }
   }
 
-  toggleTag (tag) {
+  toggleTag(tag) {
     if (this.formData.tags.includes(tag)) {
-      this.removeTag(tag)
+      this.removeTag(tag);
     } else {
-      this.addTag(tag)
+      this.addTag(tag);
     }
   }
 
-  toggleCategory (category) {
+  toggleCategory(category) {
     if (this.formData.categories.includes(category)) {
-      this.removeCategory(category)
+      this.removeCategory(category);
     } else {
-      this.addCategory(category)
+      this.addCategory(category);
     }
   }
 
-  addTag (tag) {
+  addTag(tag) {
     if (tag && !this.formData.tags.includes(tag)) {
-      this.formData.tags.push(tag)
-      this.render()
+      this.formData.tags.push(tag);
+      this.render();
     }
   }
 
-  removeTag (tag) {
-    this.formData.tags = this.formData.tags.filter((t) => t !== tag)
-    this.render()
+  removeTag(tag) {
+    this.formData.tags = this.formData.tags.filter((t) => t !== tag);
+    this.render();
   }
 
-  addCategory (category) {
+  addCategory(category) {
     if (category && !this.formData.categories.includes(category)) {
-      this.formData.categories.push(category)
-      this.render()
+      this.formData.categories.push(category);
+      this.render();
     }
   }
 
-  removeCategory (category) {
+  removeCategory(category) {
     this.formData.categories = this.formData.categories.filter(
-      (c) => c !== category
-    )
-    this.render()
+      (c) => c !== category,
+    );
+    this.render();
   }
 
-  async submit () {
+  async submit() {
     if (this.formData.title.trim() === '') {
-      window.alert('Title is required')
-      return
+      window.alert('Title is required');
+      return;
     }
     try {
       const response = await fetch('/api/create-post', {
@@ -436,14 +449,14 @@ class NewPostWizard {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(this.formData),
-      })
+      });
 
       if (!response.ok) {
-        throw new Error('Failed to create post')
+        throw new Error('Failed to create post');
       }
 
-      const data = await response.json()
-      window.alert(`Post created successfully: ${data.filename}`)
+      const data = await response.json();
+      window.alert(`Post created successfully: ${data.filename}`);
 
       // Reset form
       this.formData = {
@@ -460,18 +473,19 @@ class NewPostWizard {
           origin: '',
         },
         language: 'en',
-      }
-      this.currentStep = 1
-      this.render()
+      };
+      this.currentStep = 1;
+      this.render();
 
       // Close modal if using Bootstrap modal
-      const modalElement = document.getElementById('newPostModal')
-      const modalInstance = bootstrap.Modal.getInstance(modalElement)
+      const modalElement = document.getElementById('newPostModal');
+      // eslint-disable-next-line no-undef
+      const modalInstance = bootstrap.Modal.getInstance(modalElement);
       if (modalInstance) {
-        modalInstance.hide()
+        modalInstance.hide();
       }
     } catch (error) {
-      window.altert('Error creating post: ' + error.message)
+      window.alert('Error creating post: ' + error.message);
     }
   }
 }
