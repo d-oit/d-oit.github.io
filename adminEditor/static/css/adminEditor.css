@@ -1,9 +1,11 @@
 .CodeMirror {
-    max-height: 77vh; /* Set the maximum height to the viewport height */
-   
+    max-height: 80vh;
+    /* Set the maximum height to the viewport height */
 }
 
-html, body {
+
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 10px;
@@ -19,7 +21,28 @@ html, body {
     display: none;
 }
 
-.btn-close { box-sizing: content-box; width: 1em; height: 1em; padding: .25em .25em; color: #000; background: transparent; border: 0; border-radius: .375rem; display: flex; align-items: center; justify-content: center; } .btn-close::before { content: "\f00d"; /* Font Awesome times icon */ font-family: "Font Awesome 5 Free"; font-weight: 900; font-size: 1em;
+.btn-close {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    padding: .25em .25em;
+    color: #000;
+    background: transparent;
+    border: 0;
+    border-radius: .375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-close::before {
+    content: "\f00d";
+    /* Font Awesome times icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1em;
+}
+
 
 #editor {
     width: 100%;
@@ -49,7 +72,9 @@ html, body {
     right: 0;
     bottom: 0;
     z-index: 9999;
+    inset: 0; /* Replace bottom: 0; with shorthand property "inset" */
 }
+
 
 select {
     -webkit-appearance: none;
@@ -60,20 +85,17 @@ select {
 }
 
 
-  
- 
-  
-  .menu-divider {
+.menu-divider {
     border-top: 1px solid var(--bs-border-color);
     margin: 0.5rem 0;
-  }
-  
-  .dropdown-item .shortcut {
+}
+
+.dropdown-item .shortcut {
     float: right;
     color: var(--bs-gray-600);
     font-size: 0.875em;
-  }
-  
-  .dropdown-item:active .shortcut {
+}
+
+.dropdown-item:active .shortcut {
     color: var(--bs-light);
-  }
+}

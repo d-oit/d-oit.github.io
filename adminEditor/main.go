@@ -366,12 +366,7 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 		// Log the result of the media file processing
 		log.Printf("Processed media file: %s -> %s\n", request.Thumbnail.LocalFile, newFileName)
 
-		assetFolder := config.Server.AssetFolder
-		if !strings.HasSuffix(assetFolder, "/") {
-			assetFolder += "/"
-		}
-
-		request.Thumbnail.URL = assetFolder + newFileName
+		request.Thumbnail.URL = "/img/blog/" + newFileName
 	}
 
 	// Determine the target folder based on language
@@ -438,13 +433,13 @@ func generateMarkdownContent(post NewPostRequest) string {
 	var sb strings.Builder
 
 	sb.WriteString("---\n")
-	sb.WriteString(fmt.Sprintf("title: %s\n", post.Title))
+	sb.WriteString(fmt.Sprintf("title: '%s'\n", post.Title))
 	if post.Slug == "" {
 		post.Slug = slug.Make(post.Title)
 	}
 	sb.WriteString(fmt.Sprintf("slug: %s\n", post.Slug))
 	if post.Description != "" {
-		sb.WriteString(fmt.Sprintf("description: %s\n", post.Description))
+		sb.WriteString(fmt.Sprintf("description: '%s'\n", post.Description))
 	}
 
 	// Convert date string to time.Time
