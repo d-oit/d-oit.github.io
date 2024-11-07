@@ -113,7 +113,7 @@
         },
         "thumbnailResize": {
             "method": "fit",
-            "maxWidth": 1200
+            "maxWidth": 2800
         }
     }
 }

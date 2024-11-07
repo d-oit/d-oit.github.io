@@ -351,6 +351,8 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 			NewName string `json:"newName"`
 		}
 
+		reqMediaFile.File = request.Thumbnail.LocalFile
+		reqMediaFile.NewName = request.Slug
 		// Log the processing of the media file
 		log.Printf("Processing media file: %s\n", request.Thumbnail.LocalFile)
 
@@ -364,7 +366,12 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 		// Log the result of the media file processing
 		log.Printf("Processed media file: %s -> %s\n", request.Thumbnail.LocalFile, newFileName)
 
-		request.Thumbnail.URL = newFileName
+		assetFolder := config.Server.AssetFolder
+		if !strings.HasSuffix(assetFolder, "/") {
+			assetFolder += "/"
+		}
+
+		request.Thumbnail.URL = assetFolder + newFileName
 	}
 
 	// Determine the target folder based on language
@@ -473,6 +480,8 @@ func generateMarkdownContent(post NewPostRequest) string {
 			sb.WriteString(fmt.Sprintf("  origin: %s\n", post.Thumbnail.Origin))
 		}
 	}
+
+	sb.WriteString("draft: true\n")
 
 	sb.WriteString("---\n")
 	return sb.String()
