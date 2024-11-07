@@ -1,23 +1,5 @@
 [
     {
-        "name": "EPG Guardians Koblenz vs. Uni Baskets M\u00fcnster",
-        "begin": "2024-11-06T19:15:00+01:00",
-        "end": "2024-11-06T20:45:00+01:00",
-        "description": "Basketball match between EPG Guardians Koblenz and Uni Baskets M\u00fcnster.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "RSV Lahn-Dill vs. Doneck Dolphins Trier",
-        "begin": "2024-11-06T19:30:00+01:00",
-        "end": "2024-11-06T21:00:00+01:00",
-        "description": "Basketball match between RSV Lahn-Dill and Doneck Dolphins Trier.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
         "name": "Deutschland vs Griechenland (FIBA Women's EuroBasket Qualifiers)",
         "begin": "2024-11-07T18:45:00+01:00",
         "end": "2024-11-07T20:15:00+01:00",
