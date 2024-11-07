@@ -25,3 +25,5 @@ draft: false
 {.small}
 
 {{< basketCalendarJsonTable >}}
+
+Information without guarantee, matches may be postponed or canceled at short notice.
