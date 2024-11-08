@@ -123,10 +123,12 @@
     # twitter = "https://twitter.com/gethinode"
     # linkedIn = "https://www.linkedin.com/in/d-oit"
     github = "https://github.com/d-oit"
+    bluesky = "https://bsky.app/profile/d-oit.bsky.social"
     section = "blog"
     [schema.author]
         name = "Dominik Oswald"
         # twitter = "https://twitter.com/markdumay"
         linkedin = "https://www.linkedin.com/in/d-oit"
         github = "https://github.com/d-oit"
+        bluesky = "https://bsky.app/profile/d-oit.bsky.social"
    
