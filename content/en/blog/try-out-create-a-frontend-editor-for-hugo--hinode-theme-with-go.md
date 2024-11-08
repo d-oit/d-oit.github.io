@@ -33,9 +33,9 @@ Also I would like to learn a few more things with Go, so give it a go...
 ## First impression
 
 {{< carousel ratio="16x9" class="col-sm-12 col-lg-8 mx-auto" >}}
-  {{< img src="img/blog/adminEditor/doitAdminEditorNewPost1.png" caption="Create post title" >}}
-  {{< img src="img/blog/adminEditor//doitAdminEditorNewPost1.png" caption="Thumbnail Url or copy and convert image to Hugo folder" >}}
-  {{< img src="img/blog/adminEditor//doitAdminEditorNewPost1.png" caption="Category and Tags" >}}
+  {{< img src="/img/blog/adminEditor/doitAdminEditorNewPost1.png" caption="Create post title" >}}
+  {{< img src="/img/blog/adminEditor//doitAdminEditorNewPost1.png" caption="Thumbnail Url or copy and convert image to Hugo folder" >}}
+  {{< img src="/img/blog/adminEditor//doitAdminEditorNewPost1.png" caption="Category and Tags" >}}
 {{< /carousel >}}
 
 ## Go Backend
