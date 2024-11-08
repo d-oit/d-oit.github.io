@@ -351,6 +351,8 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 			NewName string `json:"newName"`
 		}
 
+		reqMediaFile.File = request.Thumbnail.LocalFile
+		reqMediaFile.NewName = request.Slug
 		// Log the processing of the media file
 		log.Printf("Processing media file: %s\n", request.Thumbnail.LocalFile)
 
@@ -364,7 +366,7 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 		// Log the result of the media file processing
 		log.Printf("Processed media file: %s -> %s\n", request.Thumbnail.LocalFile, newFileName)
 
-		request.Thumbnail.URL = newFileName
+		request.Thumbnail.URL = "/img/blog/" + newFileName
 	}
 
 	// Determine the target folder based on language
@@ -431,13 +433,13 @@ func generateMarkdownContent(post NewPostRequest) string {
 	var sb strings.Builder
 
 	sb.WriteString("---\n")
-	sb.WriteString(fmt.Sprintf("title: %s\n", post.Title))
+	sb.WriteString(fmt.Sprintf("title: '%s'\n", post.Title))
 	if post.Slug == "" {
 		post.Slug = slug.Make(post.Title)
 	}
 	sb.WriteString(fmt.Sprintf("slug: %s\n", post.Slug))
 	if post.Description != "" {
-		sb.WriteString(fmt.Sprintf("description: %s\n", post.Description))
+		sb.WriteString(fmt.Sprintf("description: '%s'\n", post.Description))
 	}
 
 	// Convert date string to time.Time
@@ -473,6 +475,8 @@ func generateMarkdownContent(post NewPostRequest) string {
 			sb.WriteString(fmt.Sprintf("  origin: %s\n", post.Thumbnail.Origin))
 		}
 	}
+
+	sb.WriteString("draft: true\n")
 
 	sb.WriteString("---\n")
 	return sb.String()

@@ -21,3 +21,5 @@ excludeToc: true
 ## Übersicht
 
 {{< basketCalendarJsonTable  >}}
+
+Angaben ohne Gewähr, es kann zu kurzfristigen Spielverlegungen und -absagen kommen.

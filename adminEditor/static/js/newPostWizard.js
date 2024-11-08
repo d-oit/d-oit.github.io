@@ -2,10 +2,7 @@
 class NewPostWizard {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
-    
     this.resetForm()
-   
-
     this.init();
   }
 
@@ -19,7 +16,7 @@ class NewPostWizard {
       this.existingTags = await tagsResponse.json();
       this.existingCategories = await categoriesResponse.json();
     } catch (error) {
-      console.error('Error fetching tags and categories:', error);
+      console.error('Error fetching tags and categories:', error?.message);
     }
 
     this.render();
@@ -456,7 +453,7 @@ class NewPostWizard {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to create post');
+        throw new Error('Failed to create post:' + response?.message)
       }
 
       const data = await response.json();
@@ -475,7 +472,7 @@ class NewPostWizard {
         modalInstance.hide();
       }
     } catch (error) {
-      window.alert('Error creating post: ' + error.message);
+      window.alert('Error creating post: ' + error?.message);
     }
   }
 

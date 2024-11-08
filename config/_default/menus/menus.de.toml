@@ -17,10 +17,16 @@
   name = "LinkedIn"
   pre = "fab linkedin"
   url = "https://www.linkedin.com/in/d-oit"
-  weight = 10
+  weight = 20
 
 [[social]]
   name = "GitHub"
   pre = "fab fa-github"
   url = "https://github.com/d-oit"
-  weight = 20
+  weight = 10
+
+[[social]]
+  name = "Bluesky"
+  pre = "fab fa-bluesky"
+  url = "https://bsky.app/profile/d-oit.bsky.social"
+  weight = 30  

@@ -1,8 +1,8 @@
 import { hideModal } from './modals.js'
 
-
 // mediaSelectModal.js
 export function initializeMediaSelectModal () {
+  // eslint-disable-next-line no-undef, no-unused-vars
   const modal = new bootstrap.Modal(document.getElementById('mediaSelectModal'))
   const modalBody = document.querySelector('#mediaSelectModal .modal-body')
   const insertBtn = document.getElementById('insert-media-btn')
@@ -30,6 +30,9 @@ export function initializeMediaSelectModal () {
       })
 
       modalBody.appendChild(select)
+    }).catch(function (err) {
+      console.error(err)
+      window.alert('error /api/media-list :' + err?.message)
     })
 
   insertBtn.addEventListener('click', () => {

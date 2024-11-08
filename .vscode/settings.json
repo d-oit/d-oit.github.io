@@ -53,6 +53,10 @@
     "ltex.language": "de",
     "ltex.additionalRules.enablePickyRules": true,
     "editor.formatOnSave": false,
-    "prettier.semi": false
-    
+    "prettier.semi": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    }, 
+        "eslint.alwaysShowStatus": true
+       
 }

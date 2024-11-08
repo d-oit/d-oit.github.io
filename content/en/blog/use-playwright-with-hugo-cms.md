@@ -94,3 +94,8 @@ Define under in your github repo under **/settings/variables/actions** the **rep
 ### Jest
 
 I was trying to use Jest with Hugo but was not satisfied with the results. The current setup with Hugo is the easiest way for me at the moment.
+
+### Other resources
+
+- [Testing my website for visual regressions with Playwright snapshot tests](https://aarol.dev/posts/playwright-snapshot-testing/)
+- [Playwright Test generator](https://playwright.dev/docs/codegen)

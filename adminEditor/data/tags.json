@@ -2,11 +2,11 @@
   "tags": [
     {
       "name": "Hugo",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Website",
-      "count": 6
+      "count": 7
     },
     {
       "name": "GDPR",
@@ -15,6 +15,18 @@
     {
       "name": "Playwright",
       "count": 5
+    },
+    {
+      "name": "Go",
+      "count": 1
+    },
+    {
+      "name": "Web",
+      "count": 1
+    },
+    {
+      "name": "Hinode",
+      "count": 1
     }
   ]
 }

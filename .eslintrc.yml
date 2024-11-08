@@ -34,7 +34,7 @@ rules:
   no-empty-character-class: 2
   no-ex-assign: 2
   no-extra-boolean-cast : 2
-  no-extra-semi: 2
+  no-extra-semi: off
   no-invalid-regexp: 2
   no-irregular-whitespace: 1
   no-proto: 2

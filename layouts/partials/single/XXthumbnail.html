@@ -4,29 +4,31 @@
 {{ $class := "rounded" }}
 {{ with .class }}{{ $class = . }}{{ end }}
 {{- $ratio := .ratio | default "21x9" -}}
+
 {{- $thumbnail := "" -}}
 {{- $credits := "" -}}
 {{ $figclass := .figclass }}
 
 
-
-
 {{- if reflect.IsMap $page.Params.Thumbnail -}}
-
-{{ if $page.Params.au }}
-{{ warnf "th: %s page: %s" $page.Params.Thumbnail $page }}
-    {{- if or (eq $page.Params.Thumbnail "") (eq $page.Params.Thumbnail.url "") -}}
-        {{ errorf "The 'thumbnail' shortcode requires a 'url' argument. Please specify the image URL in your frontmatter: %s." .RelPermalink }}
-    {{- end -}}
-{{ end }}
-
     {{- $thumbnail = $page.Params.Thumbnail.url -}}
+    {{- if and $page.Params.Thumbnail.thumbnailUrl (ne $page.Params.Thumbnail.thumbnailUrl "") -}}
+        {{- $thumbnail = $page.Params.Thumbnail.thumbnailUrl -}}
+    {{- end -}}
+
+    {{- $thumbnailAuthor := "" -}}
+    {{- if $page.Params.Thumbnail.thumbnailAuthor -}}
+        {{- $thumbnailAuthor = $page.Params.Thumbnail.thumbnailAuthor -}}
+    {{- else -}}
+        {{- $thumbnailAuthor = $page.Params.Thumbnail.author -}}
+    {{- end -}}
+
     {{- $author := "" -}}
     {{- if and $page.Params.Thumbnail.authorURL "text" $page.Params.Thumbnail.author }}
-        {{- $author = partial "assets/link.html" (dict "destination" $page.Params.Thumbnail.authorURL "text" $page.Params.Thumbnail.author "page" $page) -}}
+        {{- $author = partial "assets/link.html" (dict "destination" $page.Params.Thumbnail.authorURL "text" $thumbnailAuthor "page" $page) -}}
     {{- else if $page.Params.Thumbnail.author }}
         {{- $author = $page.Params.Thumbnail.author -}}
-    {{- end -}}s
+    {{- end -}}
 
     {{- $origin := "" -}}
     {{- if and $page.Params.Thumbnail.originURL "text" $page.Params.Thumbnail.origin }}
@@ -38,6 +40,7 @@
     {{- if and $author $origin }}
         {{ $credits = printf (T "photoFull") $author $origin }}
     {{ else if $author }}
+        {{ $credits = T "photoShort" $author }}
         {{ $credits = T "photoShort" $author }}
     {{ end }}
 {{ else }}

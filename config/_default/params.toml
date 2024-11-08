@@ -10,11 +10,18 @@
 
     loading = "lazy"
     breakpoint = "md"
-    
+
+[main.internalLinks]
+    validate = true
+
 [main.externalLinks]
     cue = true
     tab = true
-   
+
+[author]
+    email = "d-oit@t-online.de"
+    name = "d.o.it - Dominik Oswald"
+
 [home]
     sections = ["blog", "projects"]
     fullCover = false
@@ -45,6 +52,7 @@
 
 [messages]
     placement = "bottom-right"
+ 
 
 [sharing]
     enabled = false
@@ -91,13 +99,13 @@
 # toml-docs-start theme-colors
 [style]
     primary = "#d43900"
-    secondary = "#6c757d"
-    success = "#198754"
-    info = "#0dcaf0"
-    warning = "#ffc107"
-    danger = "#dc3545"
+    secondary = "#ff6f61"
+    success = "#28a745"
+    info = "#17a2b8"
+    warning = "#ffcc00"
+    danger = "#e83e8c"
     light = "#f8f9fa"
-    dark = "#212529"
+    dark = "#343a40"
     themeOpacity = "10"
     darkModeShade = "20%"
     darkModeTint = "40%"
@@ -115,10 +123,12 @@
     # twitter = "https://twitter.com/gethinode"
     # linkedIn = "https://www.linkedin.com/in/d-oit"
     github = "https://github.com/d-oit"
+    bluesky = "https://bsky.app/profile/d-oit.bsky.social"
     section = "blog"
     [schema.author]
         name = "Dominik Oswald"
         # twitter = "https://twitter.com/markdumay"
         linkedin = "https://www.linkedin.com/in/d-oit"
         github = "https://github.com/d-oit"
+        bluesky = "https://bsky.app/profile/d-oit.bsky.social"
    
