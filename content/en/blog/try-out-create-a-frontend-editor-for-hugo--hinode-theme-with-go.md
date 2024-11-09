@@ -38,7 +38,7 @@ Also I would like to learn a few more things with Go, so give it a go...
   {{< img src="/img/blog/adminEditor/doitAdminEditorNewPost3.png" caption="Category and Tags" >}}
 {{< /carousel >}}
 
-## Go Backend
+### Go Backend
 
 Let's start with the Go backend:
 
