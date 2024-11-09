@@ -28,7 +28,7 @@ For each URL, the script sends a prompt to Mistral AI to generate a Playwright t
 
 As result the script returns the test code with markdown formatting. As an easy way we remove the markdown code formatting and have as result a .js file for using with Playwright.
 
-#### Generated Playwright .js file
+### Generated Playwright .js file
 
 {{< mark color="warning" >}}\```javascript{{< /mark >}}
 const { test, expect } = require('@playwright/test');
