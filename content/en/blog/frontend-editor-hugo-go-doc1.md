@@ -6,8 +6,8 @@ date: 2024-11-08T18:34:04Z
 tags: [Hugo,Website,Go,Web,Hinode]
 categories: [Software Development]
 thumbnail:
-  url: /img/blog/try-out-create-a-frontend-editor-for-hugo-hinode-theme-with-go.png
-draft: true
+  url: /img/blog/frontend-editor-hugo-go-doc1.png
+draft: false
 ---
 
 ## Backend

@@ -1,1 +1,1 @@
-go build main.go && .\main.exe
+go build . && .\markdown-editor.exe

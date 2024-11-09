@@ -29,3 +29,16 @@ go.work.sum
 
 # env file
 .env
+
+
+# adminEditor
+adminEditor/vendor/
+# GO
+# Binaries for programs and plugins
+adminEditor/*.exe
+adminEditor/*.exe~
+adminEditor/*.dll
+adminEditor/*.so
+adminEditor/*.dylib
+adminEditor/go.work
+adminEditor/go.work.sum

@@ -6,7 +6,7 @@ tags: [Hugo,Website,Go,Web,Hinode]
 categories: [Software Development]
 thumbnail:
   url: /img/blog/try-out-create-a-frontend-editor-for-hugo-hinode-theme-with-go.png
-draft: true
+draft: false
 ---
 
 After check out a few frontend editors for Hugo like TinaCMS and others i decided to create one for myself. At the moment I use VS Code with FrontMatter and missing same feature.
@@ -42,4 +42,4 @@ Also I would like to learn a few more things with Go, so give it a go...
 
 Let's start with the Go backend:
 
-{{< refLink ref="frontend-editor-hugo-go-doc1.md.md" lang="en" text="Start - Go Backend" showButton="true" color="info" >}}
+{{< refLink ref="frontend-editor-hugo-go-doc1.md" lang="en" text="Start - Go Backend" showButton="true" color="info" >}}

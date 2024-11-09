@@ -95,6 +95,29 @@ Define under in your github repo under **/settings/variables/actions** the **rep
 
 I was trying to use Jest with Hugo but was not satisfied with the results. The current setup with Hugo is the easiest way for me at the moment.
 
+## Generate a starting point for all websites pages
+
+As a starting point you could automatically generate a few test cases. I was testing this with the Mistral API and use the sitemap.xml to generate a test case for all pages.
+
+**Requirements:** Get the free Mistral API, create a .env in the .py file directory
+
+### .env file
+
+```env
+MISTRAL_API_KEY=your_api_key
+```
+
+### .py file
+
+```python
+# Fetch sitemap from URL
+sitemap_url = "https://d-oit.github.io/en/sitemap.xml"
+```
+
+{{< refLink ref="https://gist.githubusercontent.com/d-oit/faa9c5286be29aae477cb7555c7be6ff/raw/" text="Start - Admin Editor" showButton="true" >}}
+
+[GitHub gist](https://gist.githubusercontent.com/d-oit/faa9c5286be29aae477cb7555c7be6ff/raw/)
+
 ### Other resources
 
 - [Testing my website for visual regressions with Playwright snapshot tests](https://aarol.dev/posts/playwright-snapshot-testing/)

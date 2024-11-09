@@ -14,66 +14,13 @@ import (
 	"strings"
 	"time"
 
+	_ "markdown-editor/docs"
+
 	"github.com/disintegration/imaging"
 	"github.com/gosimple/slug"
+	httpSwagger "github.com/swaggo/http-swagger" // swagger UI handler
+	_ "github.com/swaggo/swag"                   // swagger embed files
 )
-
-type Shortcode struct {
-	ID      string `json:"id"`
-	Code    string `json:"code"`
-	Icon    string `json:"icon"`
-	Order   int    `json:"order"`
-	Tooltip string `json:"tooltip"`
-}
-
-type Tag struct {
-	Name  string `json:"name"`
-	Count int    `json:"count"`
-}
-
-type Category struct {
-	Name  string `json:"name"`
-	Count int    `json:"count"`
-}
-
-type NewPostRequest struct {
-	Title       string   `json:"title"`
-	Slug        string   `json:"slug"`
-	Description string   `json:"description"`
-	Date        string   `json:"date"`
-	Tags        []string `json:"tags"`
-	Categories  []string `json:"categories"`
-	Thumbnail   struct {
-		URL       string `json:"url"`
-		LocalFile string `json:"localFile,omitempty"`
-		Author    string `json:"author,omitempty"`
-		AuthorURL string `json:"authorUrl,omitempty"`
-		Origin    string `json:"origin,omitempty"`
-	} `json:"thumbnail"`
-	Language string `json:"language"`
-}
-
-type ServerConfig struct {
-	Port           int    `json:"port"`
-	ShowURLOnStart bool   `json:"showURLOnStart"`
-	GermanFolder   string `json:"germanFolder"`
-	EnglishFolder  string `json:"englishFolder"`
-	MediaFolder    string `json:"mediaFolder"`
-	AssetFolder    string `json:"assetFolder"`
-	ImageResize    struct {
-		Method   string `json:"method"`
-		MaxWidth int    `json:"maxWidth"`
-	} `json:"imageResize"`
-	ThumbnailResize struct {
-		Method   string `json:"method"`
-		MaxWidth int    `json:"maxWidth"`
-	} `json:"thumbnailResize"`
-}
-
-type Config struct {
-	Shortcodes []Shortcode  `json:"shortcodes"`
-	Server     ServerConfig `json:"server"`
-}
 
 var config Config
 
@@ -98,12 +45,21 @@ func main() {
 	http.HandleFunc("/api/delete-media", handleDeleteMedia)
 	http.HandleFunc("/api/upload-media", handleUploadMediaFolder)
 
+	// Updated Swagger handler
+	http.Handle("/swagger/", httpSwagger.Handler(
+		httpSwagger.URL("/docs/swagger.json"), // The url pointing to API definition
+		httpSwagger.DeepLinking(true),
+		httpSwagger.DocExpansion("none"),
+		httpSwagger.DomID("swagger-ui"),
+	))
+
 	// Determine the address to listen on
 	addr := fmt.Sprintf(":%d", config.Server.Port)
 
 	// Show URL on start if configured
 	if config.Server.ShowURLOnStart {
 		log.Printf("Server starting on http://localhost%s", addr)
+		log.Printf("Swagger UI available at http://localhost%s/swagger/index.html", addr)
 	} else {
 		log.Printf("Server starting on port %d", config.Server.Port)
 	}
@@ -220,6 +176,8 @@ func handleList(w http.ResponseWriter, r *http.Request) {
 	}
 	files["en"] = englishFiles
 
+	files["en"] = englishFiles
+
 	w.Header().Set("Content-Type", "application/json")
 	lang := r.URL.Query().Get("lang")
 	switch lang {
@@ -233,41 +191,6 @@ func handleList(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 
-}
-
-func listFiles(dir string) ([]string, error) {
-	var files []string
-	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
-		if !info.IsDir() && strings.HasSuffix(info.Name(), ".md") {
-			relPath, err := filepath.Rel(dir, path)
-			if err != nil {
-				return err
-			}
-			files = append(files, relPath)
-		}
-		return nil
-	})
-	if err != nil {
-		return nil, err
-	}
-	return files, nil
-}
-
-func getFullPath(filename string) string {
-	parts := strings.SplitN(filename, "/", 2)
-	if len(parts) != 2 {
-		return filename
-	}
-
-	lang, file := parts[0], parts[1]
-	switch lang {
-	case "de":
-		return filepath.Join(config.Server.GermanFolder, file)
-	case "en":
-		return filepath.Join(config.Server.EnglishFolder, file)
-	default:
-		return filename
-	}
 }
 
 func handleMediaList(w http.ResponseWriter, r *http.Request) {
@@ -480,15 +403,6 @@ func generateMarkdownContent(post NewPostRequest) string {
 
 	sb.WriteString("---\n")
 	return sb.String()
-}
-
-// Tag and Category related structures
-type TagsData struct {
-	Tags []Tag `json:"tags"`
-}
-
-type CategoriesData struct {
-	Categories []Category `json:"categories"`
 }
 
 // getAllTags reads and returns all tags from the tags data file
