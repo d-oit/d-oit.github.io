@@ -1,12 +1,12 @@
 ---
-layout: docs
-title: 'Try out: Frontend Editor Hugo - Go Introduction'
+title: 'Frontend Editor Hugo - Go Introduction'
 slug: frontend-editor-hugo-go-doc-introduction
+url: /en/blog/frontend-editor-hugo-go-doc-introduction
 date: 2024-11-08T18:34:04Z
 tags: [Hugo,Website,Go,Web,Hinode]
 categories: [Software Development]
 thumbnail:
-  url: /img/blog/frontend-editor-hugo-go-doc1.png
+  url: /img/blog/frontend-editor-hugo-go-doc.png
 draft: false
 ---
 

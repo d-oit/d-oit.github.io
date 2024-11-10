@@ -1,6 +1,7 @@
 ---
 title: 'Try out: Frontend Editor for Hugo / Hinode Theme with Go'
 slug: try-out-create-a-frontend-editor-for-hugo-hinode-theme-with-go
+url: /en/blog/try-out-create-a-frontend-editor-for-hugo-hinode-theme-with-go
 date: 2024-11-08T08:34:04Z
 tags: [Hugo,Website,Go,Web,Hinode]
 categories: [Software Development]
@@ -33,9 +34,9 @@ Also I would like to learn a few more things with Go, so give it a go...
 ## First impression
 
 {{< carousel ratio="16x9" class="col-sm-12 col-lg-8 mx-auto" >}}
-  {{< img src="/img/blog/adminEditor/doitAdminEditorNewPost1.png" caption="Create post title" >}}
-  {{< img src="/img/blog/adminEditor/doitAdminEditorNewPost2.png" caption="Thumbnail Url or copy and convert image to Hugo folder" >}}
-  {{< img src="/img/blog/adminEditor/doitAdminEditorNewPost3.png" caption="Category and Tags" >}}
+  {{< img src="./img/blog/adminEditor/doitAdminEditorNewPost1.png" caption="Create post title" >}}
+  {{< img src="./img/blog/adminEditor/doitAdminEditorNewPost2.png" caption="Thumbnail Url or copy and convert image to Hugo folder" >}}
+  {{< img src="./img/blog/adminEditor/doitAdminEditorNewPost3.png" caption="Category and Tags" >}}
 {{< /carousel >}}
 
 ### Go Backend
