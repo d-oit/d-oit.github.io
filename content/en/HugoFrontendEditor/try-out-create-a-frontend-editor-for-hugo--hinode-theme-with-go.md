@@ -7,6 +7,7 @@ tags: [Hugo,Website,Go,Web,Hinode]
 categories: [Software Development]
 thumbnail:
   url: /img/blog/try-out-create-a-frontend-editor-for-hugo-hinode-theme-with-go.png
+  author: d.o.it
 draft: false
 ---
 

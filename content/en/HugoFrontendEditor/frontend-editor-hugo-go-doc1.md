@@ -7,6 +7,7 @@ tags: [Hugo,Website,Go,Web,Hinode]
 categories: [Software Development]
 thumbnail:
   url: /img/blog/frontend-editor-hugo-go-doc.png
+  author: d.o.it
 draft: false
 ---
 

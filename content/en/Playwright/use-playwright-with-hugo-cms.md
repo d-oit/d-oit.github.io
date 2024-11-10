@@ -1,18 +1,22 @@
 ---
 lang: en
 title: Use Playwright with Hugo
-slug: use-playwright-with-hugo-cms
+slug: use-playwright-with-hugo
+url: /en/blog/use-playwright-with-hugo
+aliases: /en/playwright/use-playwright-with-hugo
 description: Playwright testing with Hugo local and with GitHub action
 date: 2024-11-04
-tags: [Hugo ,Website,Playwright,GitHub]
-categories: [Website]
+tags: [Hugo ,Website,Playwright,GitHub, Testing, Software Development]
+categories: [Software Development]
 thumbnail:
     url: /img/blog/doitHugoPlaywright.jpg
     author: d.o.
 ---
 
-Testing is a crucial part of any website's development process, especially when using a static site generator like Hugo.
+Testing is a crucial part of any website's development process.
+
 One excellent tool for automating tests on websites is Playwright, which provides a robust framework for end-to-end testing.
+
 Integrating Playwright with Hugo allows developers to test various aspects of the site across multiple browsers and devices, ensuring that the website behaves as expected.
 
 ## Prerequisites
