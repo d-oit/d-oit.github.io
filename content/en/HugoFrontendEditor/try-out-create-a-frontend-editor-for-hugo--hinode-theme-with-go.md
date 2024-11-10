@@ -15,7 +15,7 @@ Especially for other user who are not using VS Code.
 
 Also I would like to learn a few more things with Go, so give it a go...
 
-*The AdminEditor is WIP and not production ready yet.*
+*The Editor is WIP and not production ready yet.*
 
 ## What I need for editing
 
@@ -34,12 +34,12 @@ Also I would like to learn a few more things with Go, so give it a go...
 ## First impression
 
 {{< carousel ratio="16x9" class="col-sm-12 col-lg-8 mx-auto" >}}
-  {{< img src="./img/blog/adminEditor/doitAdminEditorNewPost1.png" caption="Create post title" >}}
-  {{< img src="./img/blog/adminEditor/doitAdminEditorNewPost2.png" caption="Thumbnail Url or copy and convert image to Hugo folder" >}}
-  {{< img src="./img/blog/adminEditor/doitAdminEditorNewPost3.png" caption="Category and Tags" >}}
+  {{< img src="/img/blog/doitFrontendEditorNewPost1.png" caption="Create post title" >}}
+  {{< img src="/img/blog/doitFrontendEditorNewPost2.png" caption="Thumbnail Url or copy and convert image to Hugo folder" >}}
+  {{< img src="/img/blog/doitFrontendEditorNewPost3.png" caption="Category and Tags" >}}
 {{< /carousel >}}
 
-### Go Backend
+### Backend
 
 Let's start with the Go backend:
 

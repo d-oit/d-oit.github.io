@@ -1,5 +1,5 @@
 ---
-title: 'Frontend Editor Hugo - Go Introduction'
+title: 'Frontend Editor Hugo - Go Backend Introduction'
 slug: frontend-editor-hugo-go-doc-introduction
 url: /en/blog/frontend-editor-hugo-go-doc-introduction
 date: 2024-11-08T18:34:04Z
@@ -28,7 +28,7 @@ The backend with the HTTP API is defined for now all in the main.go file in the 
 
    - **ServerConfig**: Represents the configuration for the server, including image resizing options and asset folder paths.
 
-   {{< file full="true" path="./adminEditor/main.go" id="adminEditor-main-go" show="false" >}}
+   {{< file full="true" path="./adminEditor/main.go" lang="golang" id="adminEditor-main-go" show="false" >}}
 
 2. Functions:
 
