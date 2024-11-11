@@ -22,6 +22,9 @@
     email = "d-oit@t-online.de"
     name = "d.o.it - Dominik Oswald"
 
+[thumbnails]
+    ratio = "21x9"
+
 [home]
     sections = ["blog", "projects"]
     fullCover = false
