@@ -118,8 +118,6 @@ MISTRAL_API_KEY=your_api_key
 sitemap_url = "https://d-oit.github.io/en/sitemap.xml"
 ```
 
-{{< refLink ref="https://gist.githubusercontent.com/d-oit/faa9c5286be29aae477cb7555c7be6ff/raw/" text="Start - Admin Editor" showButton="true" >}}
-
 [GitHub gist](https://gist.githubusercontent.com/d-oit/faa9c5286be29aae477cb7555c7be6ff/raw/)
 
 ### Other resources
