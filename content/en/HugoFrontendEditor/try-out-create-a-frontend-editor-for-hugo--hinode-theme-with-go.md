@@ -37,7 +37,7 @@ Also I would like to learn a few more things with Go, so give it a go...
 {{< carousel ratio="16x9" class="col-sm-12 col-lg-8 mx-auto" >}}
   {{< img src="/img/blog/doitFrontendEditorNewPost1.png" caption="Create post title" >}}
   {{< img src="/img/blog/doitFrontendEditorNewPost2.png" caption="Thumbnail Url or copy and convert image to Hugo folder" >}}
-  {{< img src="/img/blog/doitFrontendEditorNewPost3.png" caption="Category and Tags" >}}
+  {{< img src="/img/blog/doitFrontendEditorNewPost3.png" caption="Category and Tags" loading="lazy" >}}
 {{< /carousel >}}
 
 ### Backend

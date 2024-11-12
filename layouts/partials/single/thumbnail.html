@@ -1,0 +1,59 @@
+{{- $page := .page -}}
+{{- $wrapper := printf "img-wrap" -}}
+{{- with .wrapper }}{{ $wrapper = printf "img-wrap %s" . }}{{ end -}}
+{{ $class := default (site.Params.thumbnails.class | default "rounded") }}
+{{ with .class }}{{ $class = . }}{{ end }}
+
+{{- $useRatio := default (site.Params.thumbnails.useRatio | default true) -}}
+
+{{- $ratio := "" -}}
+{{- if $useRatio -}}
+    {{- $ratio = .ratio | default (cond (or (not site.Params.thumbnails.ratio) (eq site.Params.thumbnails.ratio "")) "21x9" site.Params.thumbnails.ratio) -}}
+{{- end -}}
+
+
+{{- $thumbnail := "" -}}
+{{- $credits := "" -}}
+{{ $figclass := .figclass }}
+
+{{- if reflect.IsMap $page.Params.Thumbnail -}}
+    {{- $thumbnail = $page.Params.Thumbnail.url -}}
+    {{- $author := "" -}}
+    {{- if and $page.Params.Thumbnail.authorURL "text" $page.Params.Thumbnail.author }}
+        {{- $author = partial "assets/link.html" (dict "destination" $page.Params.Thumbnail.authorURL "text" $page.Params.Thumbnail.author "page" $page) -}}
+    {{- else if $page.Params.Thumbnail.author }}
+        {{- $author = $page.Params.Thumbnail.author -}}
+    {{- end -}}
+
+    {{- $origin := "" -}}
+    {{- if and $page.Params.Thumbnail.originURL "text" $page.Params.Thumbnail.origin }}
+        {{- $origin = partial "assets/link.html" (dict "destination" $page.Params.Thumbnail.originURL "text" $page.Params.Thumbnail.origin "page" $page) -}}
+    {{- else if $page.Params.Thumbnail.origin }}
+        {{- $origin = $page.Params.Thumbnail.origin -}}
+    {{- end }}
+
+    {{- if and $author $origin }}
+        {{ $credits = printf (T "photoFull") $author $origin }}
+    {{ else if $author }}
+        {{ $credits = T "photoShort" $author }}
+    {{ end }}
+{{ else }}
+    {{- $thumbnail = $page.Params.Thumbnail -}}
+    {{ if or $page.Params.photoCredits $page.Params.photoSource }}
+        {{ warnf "DEPRECATED: frontmatter variables `photoCredits` and `photoSource` have been deprecated in release v0.18: %s" $page.RelPermalink }}
+    {{ end }}
+    {{- if and $page.Params.photoCredits $page.Params.PhotoSource }}{{ $credits = printf (T "photoFull") $page.Params.photoCredits $page.Params.PhotoSource }}{{ end -}}
+{{- end -}}
+
+{{ if $thumbnail -}}
+    <div class="thumbnail-container position-relative">
+        <div class="image-wrapper position-relative">
+            {{- partial "assets/image.html" (dict "url" $thumbnail "ratio" $ratio "wrapper" $wrapper "class" $class "title" $page.Params.title "caption" $credits "figclass" $figclass "priority" "high") -}}
+            <div class="lightbox-icon">
+                <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+            </div>
+        </div>
+    </div>   
+{{ end -}}
