@@ -7,15 +7,15 @@
     const images = document.querySelectorAll('img.lightbox')
 
     // Function to create and show the lightbox
-    function showLightbox (imgSrc) {
-      console.log('dgf')
+    function showLightbox (img) {
       // Create the lightbox element
       const lightbox = document.createElement('div')
       lightbox.classList.add('lightbox-container')
 
       // Create the image element
-      const lightboxImage = document.createElement('img')
-      lightboxImage.src = imgSrc
+      let lightboxImage = document.createElement('img')
+      lightboxImage = img.cloneNode(true)
+      lightboxImage.className = ''
       lightboxImage.classList.add('lightbox-image')
       lightboxImage.classList.add('rounded')
 
@@ -50,7 +50,7 @@
         // Find the image associated with the icon
         const img = icon.closest('.image-wrapper').querySelector('img')
         if (img) {
-          showLightbox(img.src)
+          showLightbox(img)
         }
         event.stopPropagation() // Prevent the click from propagating to other elements
       })
@@ -59,7 +59,7 @@
     // Add click event listener to each image (if needed)
     images.forEach(img => {
       img.addEventListener('click', () => {
-        showLightbox(img.src)
+        showLightbox(img)
       })
     })
   })

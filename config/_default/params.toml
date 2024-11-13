@@ -23,8 +23,8 @@
     name = "d.o.it - Dominik Oswald"
 
 [thumbnails]
-    useRatio = false
-    ratio = "21x9"
+    useRatio = true
+    ratio = "auto"
     class = "rounded lightbox"
 
 [home]

@@ -83,8 +83,12 @@
 
         {{ $widths := partial "assets/helpers/GetDimension.html" (dict "ratio" "auto") }}
         {{ range $w := $widths -}}
-            {{ $height = int (math.Round (mul (div (float $w) $img.Width) $img.Height)) }}
-            {{- $dims = $dims | append (printf "%dx%d" (int $w) $height ) -}}
+            {{ if $height  }}
+                {{ $height = int (math.Round (mul (div (float $w) $img.Width) $img.Height)) }}
+                {{- $dims = $dims | append (printf "%dx%d" (int $w) $height ) -}}
+            {{ else}}    
+                {{- $dims = $dims | append (printf "%dx" (int $w)  ) -}}
+            {{ end }} 
         {{- end -}}
     {{ end }}
 {{ end }}
@@ -110,7 +114,9 @@
         {{ with $dims }}
             {{ range $dim := (. | last 1) }}
                 {{ $width = (int (index (split $dim "x") 0)) }}
-                {{ $height = (int (index (split $dim "x") 1)) }}
+                {{ if $height }}
+                    {{ $height = (int (index (split $dim "x") 1)) }}
+                {{ end}}
             {{ end }}
         {{ end }}
     {{ end }}
