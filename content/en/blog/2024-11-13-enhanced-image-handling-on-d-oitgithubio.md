@@ -28,7 +28,7 @@ The latest update focuses on improving image handling within the d-oit.github.io
 1. **Aspect Ratio Flexibility**:
    - An `auto` option was added in `image.yml` for images, allowing them to retain their native aspect ratio by default. This change adapts better to different screen sizes without requiring specific aspect ratios.
 
-   _Hint_: The `auto` option was already added in `image.yml` but was used in the layout code yet.
+   _Hint_: The `auto` option was already added in `image.yml` but was not used in the layout code.
 
     ```yml
     - ratio: auto
