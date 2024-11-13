@@ -17,12 +17,21 @@
 {{ $figclass := .figclass }}
 
 {{- if reflect.IsMap $page.Params.Thumbnail -}}
+    {{- $thumbnailCreator := "" -}}
+    {{- if $page.Params.thumbnail.author -}}
+        {{- $thumbnailCreator = $page.Params.Thumbnail.author -}}
+    {{- else if $page.Params.Thumbnail.creator -}}
+        {{- $thumbnailCreator = $page.Params.Thumbnail.creator -}}
+    {{- else if site.Params.Thumbnails.creator -}}
+        {{- $thumbnailCreator = site.Params.Thumbnails.creator -}}
+    {{- end -}}
+
     {{- $thumbnail = $page.Params.Thumbnail.url -}}
     {{- $author := "" -}}
-    {{- if and $page.Params.Thumbnail.authorURL "text" $page.Params.Thumbnail.author }}
-        {{- $author = partial "assets/link.html" (dict "destination" $page.Params.Thumbnail.authorURL "text" $page.Params.Thumbnail.author "page" $page) -}}
-    {{- else if $page.Params.Thumbnail.author }}
-        {{- $author = $page.Params.Thumbnail.author -}}
+    {{- if and $page.Params.Thumbnail.authorURL "text" $thumbnailCreator  }}
+        {{- $author = partial "assets/link.html" (dict "destination" $page.Params.Thumbnail.authorURL "text" $thumbnailCreator "page" $page) -}}
+    {{- else if $thumbnailCreator  }}
+        {{- $author = $thumbnailCreator  -}}
     {{- end -}}
 
     {{- $origin := "" -}}

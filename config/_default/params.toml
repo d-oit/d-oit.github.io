@@ -26,6 +26,8 @@
     useRatio = true
     ratio = "auto"
     class = "rounded lightbox"
+    creator = "d.o.it"
+    # not working yet placeHolderSrc = "/img/doitPlaceholder.jpg"
 
 [home]
     sections = ["blog", "projects"]
