@@ -1,9 +1,11 @@
 {{- $page := .page -}}
 {{- $wrapper := printf "img-wrap" -}}
 {{- with .wrapper }}{{ $wrapper = printf "img-wrap %s" . }}{{ end -}}
-{{ $class := default (site.Params.thumbnails.class | default "rounded") }}
+{{- $class := default (site.Params.thumbnails.class | default "rounded") -}}
 {{ with .class }}{{ $class = . }}{{ end }}
-
+{{ if .page.Params.thumbnail.class }}
+    {{- $class = .page.Params.thumbnail.class -}}
+{{ end }}   
 {{- $useRatio := default (site.Params.thumbnails.useRatio | default true) -}}
 
 {{- $ratio := "" -}}
@@ -55,5 +57,7 @@
 {{- end -}}
 
 {{ if $thumbnail -}}
-    {{- partial "assets/image.html" (dict "url" $thumbnail "ratio" $ratio "wrapper" $wrapper "class" $class "title" $page.Params.title "caption" $credits "figclass" $figclass "priority" "high") -}}
+    <div id="thumbnail">
+        {{- partial "assets/image.html" (dict "url" $thumbnail "ratio" $ratio "wrapper" $wrapper "class" $class "title" $page.Params.title "caption" $credits "figclass" $figclass "priority" "high") -}}
+    </div>        
 {{ end -}}
