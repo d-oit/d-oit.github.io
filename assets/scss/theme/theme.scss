@@ -1,19 +1,19 @@
-// Placeholder to quickly add your own styles
-// The file is included last in the build pipeline
+/* Placeholder to quickly add your own styles */
+/* The file is included last in the build pipeline */
 .clipboard-button {
     opacity: initial !important;
 }
 
 .bg-opacity-10 {
     background: linear-gradient(to right, rgba(255, 142, 22, 0.5), rgba(253, 160, 133, 0.5));
-  }
+}
 
 .col.col-sm-12.col-md-9 {
     word-wrap: break-word !important;
     word-break: break-word !important;
-  }   
+}
 
-// begin theme mode switch  
+/* begin theme mode switch */
 .theme-switcher {
     position: relative;
 }
@@ -36,7 +36,6 @@
     border-radius: 8px;
 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
 }
 .theme-option {
     display: flex;
@@ -49,20 +48,17 @@
 
 .save-icon {
     cursor: pointer;
-    margin-left:20px;
-    margin-right:5px;
+    margin-left: 20px;
+    margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-// end theme mode switch
+/* end theme mode switch */
 
-
-.persona
-{
+.persona {
     max-width: 820px;
 }
-
 
 .datatable-search {
     float: left !important;
@@ -97,9 +93,9 @@ button.datatable-sorter.th-inner {
     width: 0;
 }
 
-// for 404
-.text-center { 
-  padding-top: 10px; 
+/* for 404 */
+.text-center {
+    padding-top: 10px;
 }
 
 .datatable-table th button,
@@ -114,27 +110,25 @@ button.datatable-sorter.th-inner {
     font-size: inherit;
 }
 
-
 .tag-card {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     text-align: center;
-  }
-  .tag-card:hover {
+}
+.tag-card:hover {
     transform: translateY(-4px);
-  }
-  .tag-card .card-body {
+}
+.tag-card .card-body {
     padding: 1.5rem;
-  }
-  .tag-card .card-title {
+}
+.tag-card .card-title {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-  }
-  
+}
 
-  .lightbox-container {
+.lightbox-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -145,24 +139,24 @@ button.datatable-sorter.th-inner {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-  }
-  
-  .lightbox-image {
+}
+
+.lightbox-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-  }
-  
-  .close-button {
+}
+
+.close-button {
     position: absolute;
     top: 10px;
     right: 20px;
     font-size: 40px;
     color: white;
     cursor: pointer;
-  }
+}
 
-  .card-img-wrap img {
+.card-img-wrap img {
     transition: transform 0.25s ease;
     width: 100%;
     max-height: 400px;
@@ -177,37 +171,66 @@ button.datatable-sorter.th-inner {
 }
 
 .thumbnail-container .image-wrapper {
-  flex: 1;
-
+    flex: 1;
 }
 
 .lightbox-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .lightbox-icon .icon {
-  width: 2rem;
-  height: 2rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .thumbnail-container:hover .lightbox-icon {
-  opacity: 1;
+    opacity: 1;
 }
 
 .carousel {
-  width: auto;
+    width: auto;
 }
 
 .carousel-caption.gradient {
-  background-color: inherit;
+    background-color: inherit;
+}
+
+/* Styles for zoom-in, zoom-out, rotate-left, and rotate-right icons */
+.zoom-in-button, .zoom-out-button, .rotate-left-button, .rotate-right-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.zoom-in-button:hover, .zoom-out-button:hover, .rotate-left-button:hover, .rotate-right-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style the floating toolbar */
+.floating-toolbar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
 }

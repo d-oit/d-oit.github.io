@@ -29,6 +29,10 @@
     creator = "d.o.it"
     # not working yet placeHolderSrc = "/img/doitPlaceholder.jpg"
 
+[lightbox]
+    enableZoom = true
+    enableRotate = true
+
 [home]
     sections = ["blog", "projects"]
     fullCover = false
