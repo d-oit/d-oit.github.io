@@ -73,7 +73,8 @@
             {{ with $imgset -}}srcset="{{ . }}" sizes="{{ $sizes }}"{{- end }}
             {{ with $height }}height="{{ . }}"{{ end }}
             {{ with $width }}width="{{ . }}"{{ end }}
-            {{ with $alt }}alt="{{ . }}"{{ end }}>
+            {{ with $alt }}alt="{{ . }}"{{ end }}
+            {{ with $caption }}data-caption="{{ . }}"{{ end }}>
 {{ if in $class "lightbox" }}            
         <div class="lightbox-icon">
             <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -1,5 +1,5 @@
-// Placeholder to quickly add your own styles
-// The file is included last in the build pipeline
+/* Placeholder to quickly add your own styles */
+/* The file is included last in the build pipeline */
 .clipboard-button {
   opacity: initial !important;
 }
@@ -13,7 +13,7 @@
   word-break: break-word !important;
 }
 
-// begin theme mode switch  
+/* begin theme mode switch */
 .theme-switcher {
   position: relative;
 }
@@ -39,7 +39,6 @@
   border-radius: 8px;
 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
 }
 
 .theme-option {
@@ -59,13 +58,11 @@
   margin-bottom: 5px;
 }
 
-// end theme mode switch
-
+/* end theme mode switch */
 
 .persona {
   max-width: 820px;
 }
-
 
 .datatable-search {
   float: left !important;
@@ -96,13 +93,13 @@ button.datatable-sorter.th-inner {
 .datatable-sorter:before {
   content: "";
   height: 0;
-  opacity: .2;
+  opacity: 0.2;
   position: absolute;
   right: 4px;
   width: 0;
 }
 
-// for 404
+/* for 404 */
 .text-center {
   padding-top: 10px;
 }
@@ -118,7 +115,6 @@ button.datatable-sorter.th-inner {
   font-weight: inherit;
   font-size: inherit;
 }
-
 
 .tag-card {
   border-radius: 8px;
@@ -141,7 +137,7 @@ button.datatable-sorter.th-inner {
   margin-bottom: 0.5rem;
 }
 
-// Lightbox begin
+/* Lightbox begin */
 .lightbox-container {
   position: fixed;
   top: 0;
@@ -178,12 +174,15 @@ button.datatable-sorter.th-inner {
   border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: #383939;
-  opacity: .8;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-duration: .2s;
+  opacity: 0.8;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.2s;
 }
 
 .thumbnail-container .image-wrapper img {
@@ -195,7 +194,6 @@ button.datatable-sorter.th-inner {
 
 .thumbnail-container .image-wrapper {
   flex: 1;
-
 }
 
 .lightbox-icon {
@@ -221,7 +219,7 @@ button.datatable-sorter.th-inner {
   opacity: 1;
 }
 
-// ---- end lightbox ----
+/* ---- end lightbox ---- */
 
 .carousel {
   width: auto;
@@ -231,10 +229,78 @@ button.datatable-sorter.th-inner {
   background-color: inherit;
 }
 
-
 .card-img-wrap img {
   transition: transform 0.25s ease;
   width: 100%;
   max-height: 400px;
   object-fit: scale-down;
+}
+
+/* Zoom in/out button styles */
+.button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.zoom-in-button,
+.zoom-out-button {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 2.23rem;
+  width: 2.25rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: #383939;
+  opacity: 0.8;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.2s;
+}
+
+.zoom-in-button:hover,
+.zoom-out-button:hover {
+  opacity: 1;
+}
+
+/* Thumbnail strip styles */
+.thumbnail-strip {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.thumbnail-strip img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail-strip img:hover {
+  border-color: #fff;
 }

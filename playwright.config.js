@@ -1,4 +1,3 @@
-// @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 import dotenv from 'dotenv';
 import path from 'path';
@@ -46,5 +45,7 @@ module.exports = defineConfig({
     command: 'npm run start',
     url: baseURL,
     reuseExistingServer: process.env.REUSE_SERVER === 'true',
-  }
+  },
+  // Add Playwright test configuration for the new zoom in/out functionality
+  testMatch: '**/tests/**/zoom*.spec.js',
 });

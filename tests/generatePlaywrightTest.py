@@ -35,4 +35,15 @@ for url in urls:
     with open(filename, 'w') as file:
         file.write(test_code)
 
-print(f"Generated {len(urls)} test files.")
+# Generate Playwright tests for the new zoom in/out functionality
+zoom_prompt = "Generate a Playwright test for the zoom in/out functionality in the lightbox. Ensure the test covers zooming in, zooming out, and the maximum and minimum zoom levels."
+zoom_response = client.chat.complete(model="mistral-large-latest", messages=[{"role": "user", "content": zoom_prompt}])
+zoom_test_code = zoom_response.choices[0].message.content
+
+zoom_test_code = zoom_test_code.replace("```javascript", "").replace("```", "")
+zoom_filename = "test_zoom_functionality.spec.js"
+
+with open(zoom_filename, 'w') as file:
+    file.write(zoom_test_code)
+
+print(f"Generated {len(urls) + 1} test files.")
