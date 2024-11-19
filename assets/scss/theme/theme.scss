@@ -304,3 +304,44 @@ button.datatable-sorter.th-inner {
 .thumbnail-strip img:hover {
   border-color: #fff;
 }
+
+/* Keyboard navigation indicators */
+.keyboard-nav-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 2.23rem;
+  width: 2.25rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: #383939;
+  opacity: 0.8;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.2s;
+}
+
+.keyboard-nav-indicator.left {
+  left: 10px;
+}
+
+.keyboard-nav-indicator.right {
+  right: 10px;
+}
+
+.keyboard-nav-indicator:hover {
+  opacity: 1;
+}
