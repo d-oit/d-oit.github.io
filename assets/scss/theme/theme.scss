@@ -234,3 +234,36 @@ button.datatable-sorter.th-inner {
     padding: 10px;
     border-radius: 10px;
 }
+
+/* Styles for the new close button */
+.close-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.close-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Styles for the new next button */
+.next-button {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.next-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}

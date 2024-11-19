@@ -20,9 +20,14 @@
       lightboxImage.classList.add('rounded')
 
       // Create the close button
-      const closeButton = document.createElement('span')
+      const closeButton = document.createElement('button')
       closeButton.classList.add('close-button')
-      closeButton.innerHTML = '&times;'
+      closeButton.innerHTML = '❌'
+
+      // Create the next button
+      const nextButton = document.createElement('button')
+      nextButton.classList.add('next-button')
+      nextButton.innerHTML = '➡️'
 
       // Create the floating toolbar
       const toolbar = document.createElement('div')
@@ -38,25 +43,14 @@
       zoomOutButton.classList.add('zoom-out-button')
       zoomOutButton.innerHTML = '-'
 
-      // Create rotate left button
-      const rotateLeftButton = document.createElement('button')
-      rotateLeftButton.classList.add('rotate-left-button')
-      rotateLeftButton.innerHTML = '⟲'
-
-      // Create rotate right button
-      const rotateRightButton = document.createElement('button')
-      rotateRightButton.classList.add('rotate-right-button')
-      rotateRightButton.innerHTML = '⟳'
-
       // Append buttons to the toolbar
       toolbar.appendChild(zoomInButton)
       toolbar.appendChild(zoomOutButton)
-      toolbar.appendChild(rotateLeftButton)
-      toolbar.appendChild(rotateRightButton)
 
-      // Append the image, close button, and toolbar to the lightbox
+      // Append the image, close button, next button, and toolbar to the lightbox
       lightbox.appendChild(lightboxImage)
       lightbox.appendChild(closeButton)
+      lightbox.appendChild(nextButton)
       lightbox.appendChild(toolbar)
 
       // Add the lightbox to the body
@@ -74,7 +68,7 @@
         }
       })
 
-      // Add event listeners for zoom and rotate buttons
+      // Add event listeners for zoom buttons
       zoomInButton.addEventListener('click', () => {
         zoomIn(lightboxImage)
       })
@@ -83,12 +77,9 @@
         zoomOut(lightboxImage)
       })
 
-      rotateLeftButton.addEventListener('click', () => {
-        rotateLeft(lightboxImage)
-      })
-
-      rotateRightButton.addEventListener('click', () => {
-        rotateRight(lightboxImage)
+      // Add event listener for next button
+      nextButton.addEventListener('click', () => {
+        showNextImage(lightboxImage)
       })
     }
 
@@ -104,29 +95,13 @@
       img.style.width = currentWidth * 0.8 + 'px'
     }
 
-    // Function to rotate the image left
-    function rotateLeft (img) {
-      const currentRotation = getRotationDegrees(img)
-      img.style.transform = `rotate(${currentRotation - 90}deg)`
-    }
-
-    // Function to rotate the image right
-    function rotateRight (img) {
-      const currentRotation = getRotationDegrees(img)
-      img.style.transform = `rotate(${currentRotation + 90}deg)`
-    }
-
-    // Helper function to get the current rotation degrees of an image
-    function getRotationDegrees (img) {
-      const matrix = window.getComputedStyle(img).getPropertyValue('transform')
-      if (matrix === 'none') {
-        return 0
-      }
-      const values = matrix.split('(')[1].split(')')[0].split(',')
-      const a = values[0]
-      const b = values[1]
-      const angle = Math.round(Math.atan2(b, a) * (180 / Math.PI))
-      return angle < 0 ? angle + 360 : angle
+    // Function to show the next image in the lightbox
+    function showNextImage (currentImg) {
+      const images = document.querySelectorAll('img.lightbox')
+      let currentIndex = Array.from(images).indexOf(currentImg)
+      let nextIndex = (currentIndex + 1) % images.length
+      let nextImg = images[nextIndex]
+      showLightbox(nextImg)
     }
 
     // Add click event listener to each lightbox icon
