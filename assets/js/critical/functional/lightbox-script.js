@@ -10,6 +10,7 @@
     const FA_NAMESPACE = 'http://www.w3.org/2000/svg'
 
     // Helper to create SVG elements for Font Awesome icons
+    // eslint-disable-next-line no-unused-vars
     function createSVGIcon (iconPath) {
       const svg = document.createElementNS(FA_NAMESPACE, 'svg')
       svg.setAttribute('xmlns', FA_NAMESPACE)
@@ -130,12 +131,14 @@
     }
 
     // Function to rotate the image left
+    // eslint-disable-next-line no-unused-vars
     function rotateLeft (img) {
       const currentRotation = getRotationDegrees(img)
       img.style.transform = `rotate(${currentRotation - 90}deg)`
     }
 
     // Function to rotate the image right
+    // eslint-disable-next-line no-unused-vars
     function rotateRight (img) {
       const currentRotation = getRotationDegrees(img)
       img.style.transform = `rotate(${currentRotation + 90}deg)`
