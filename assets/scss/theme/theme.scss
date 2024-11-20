@@ -230,9 +230,14 @@ button.datatable-sorter.th-inner {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(27, 27, 27, 0.5);
+    //background-color: rgba(27, 27, 27, 0.5);
+    background: linear-gradient(rgba(30, 30, 30, .9), #0a0a0a 1810%);
    // padding: 10px;
     border-radius: 10px;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
