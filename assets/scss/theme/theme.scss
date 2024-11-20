@@ -147,14 +147,14 @@ button.datatable-sorter.th-inner {
     object-fit: contain;
 }
 
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
+// .close-button {
+//    // position: absolute;
+//  //   top: 10px;
+//    // right: 20px;
+//    // font-size: 40px;
+//    // color: white;
+//     cursor: pointer;
+// }
 
 .card-img-wrap img {
     transition: transform 0.25s ease;
@@ -206,15 +206,15 @@ button.datatable-sorter.th-inner {
 }
 
 /* Styles for zoom-in, zoom-out, rotate-left, and rotate-right icons */
-.zoom-in-button, .zoom-out-button, .rotate-left-button, .rotate-right-button {
+.zoom-in-button, .zoom-out-button, .rotate-left-button, .rotate-right-button, .close-button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 5px;
     margin: 5px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .zoom-in-button:hover, .zoom-out-button:hover, .rotate-left-button:hover, .rotate-right-button:hover {
@@ -224,13 +224,25 @@ button.datatable-sorter.th-inner {
 /* Style the floating toolbar */
 .floating-toolbar {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0px;
+    right: 0px;
+    //transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    background-color: rgba(27, 27, 27, 0.5);
+   // padding: 10px;
     border-radius: 10px;
 }
+
+
+.fullscreen-image {
+    //position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Maintain aspect ratio */
+    //z-index: 1000;
+    //background: rgba(0, 0, 0, 0.8); /* Optional dark background */
+  }

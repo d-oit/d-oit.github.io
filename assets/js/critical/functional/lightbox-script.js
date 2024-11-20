@@ -6,6 +6,24 @@
     const lightboxIcons = document.querySelectorAll('.lightbox-icon')
     const images = document.querySelectorAll('img.lightbox')
 
+    // Font Awesome SVG namespace
+    const FA_NAMESPACE = 'http://www.w3.org/2000/svg'
+
+    // Helper to create SVG elements for Font Awesome icons
+    function createSVGIcon (iconPath) {
+      const svg = document.createElementNS(FA_NAMESPACE, 'svg')
+      svg.setAttribute('xmlns', FA_NAMESPACE)
+      svg.setAttribute('viewBox', '0 0 512 512') // Standard Font Awesome viewBox
+      svg.setAttribute('width', '24') // Icon width
+      svg.setAttribute('height', '24') // Icon height
+
+      const path = document.createElementNS(FA_NAMESPACE, 'path')
+      path.setAttribute('d', iconPath)
+
+      svg.appendChild(path)
+      return svg
+    }
+
     // Function to create and show the lightbox
     function showLightbox (img) {
       // Create the lightbox element
@@ -19,11 +37,6 @@
       lightboxImage.classList.add('lightbox-image')
       lightboxImage.classList.add('rounded')
 
-      // Create the close button
-      const closeButton = document.createElement('span')
-      closeButton.classList.add('close-button')
-      closeButton.innerHTML = '&times;'
-
       // Create the floating toolbar
       const toolbar = document.createElement('div')
       toolbar.classList.add('floating-toolbar')
@@ -31,32 +44,41 @@
       // Create zoom in button
       const zoomInButton = document.createElement('button')
       zoomInButton.classList.add('zoom-in-button')
+      zoomInButton.type = 'button'
       zoomInButton.innerHTML = '+'
 
       // Create zoom out button
       const zoomOutButton = document.createElement('button')
       zoomOutButton.classList.add('zoom-out-button')
+      zoomOutButton.type = 'button'
       zoomOutButton.innerHTML = '-'
 
-      // Create rotate left button
-      const rotateLeftButton = document.createElement('button')
-      rotateLeftButton.classList.add('rotate-left-button')
-      rotateLeftButton.innerHTML = '⟲'
+      // // Create rotate left button
+      // TODO with setting
+      // const rotateLeftButton = document.createElement('button')
+      // rotateLeftButton.classList.add('rotate-left-button')
+      // rotateLeftButton.innerHTML = '⟲'
 
       // Create rotate right button
-      const rotateRightButton = document.createElement('button')
-      rotateRightButton.classList.add('rotate-right-button')
-      rotateRightButton.innerHTML = '⟳'
+      // const rotateRightButton = document.createElement('button')
+      // rotateRightButton.classList.add('rotate-right-button')
+      // rotateRightButton.innerHTML = '⟳'
+
+      // Create the close button
+      const closeButton = document.createElement('button')
+      closeButton.classList.add('close-button')
+      closeButton.type = 'button'
+      closeButton.innerHTML = '&times;'
 
       // Append buttons to the toolbar
       toolbar.appendChild(zoomInButton)
       toolbar.appendChild(zoomOutButton)
-      toolbar.appendChild(rotateLeftButton)
-      toolbar.appendChild(rotateRightButton)
+      // toolbar.appendChild(rotateLeftButton)
+      // toolbar.appendChild(rotateRightButton)
+      toolbar.appendChild(closeButton)
 
       // Append the image, close button, and toolbar to the lightbox
       lightbox.appendChild(lightboxImage)
-      lightbox.appendChild(closeButton)
       lightbox.appendChild(toolbar)
 
       // Add the lightbox to the body
@@ -83,24 +105,27 @@
         zoomOut(lightboxImage)
       })
 
-      rotateLeftButton.addEventListener('click', () => {
-        rotateLeft(lightboxImage)
-      })
+      // TODO setting
+      // rotateLeftButton.addEventListener('click', () => {
+      //   rotateLeft(lightboxImage)
+      // })
 
-      rotateRightButton.addEventListener('click', () => {
-        rotateRight(lightboxImage)
-      })
+      // rotateRightButton.addEventListener('click', () => {
+      //   rotateRight(lightboxImage)
+      // })
     }
 
     // Function to zoom in the image
     function zoomIn (img) {
       const currentWidth = img.clientWidth
+      img.classList.add('fullscreen-image')
       img.style.width = currentWidth * 1.2 + 'px'
     }
 
     // Function to zoom out the image
     function zoomOut (img) {
       const currentWidth = img.clientWidth
+      img.classList.remove('fullscreen-image')
       img.style.width = currentWidth * 0.8 + 'px'
     }
 
