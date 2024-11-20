@@ -102,3 +102,8 @@ globals:
   process: true
   ENV: true
   module: true
+
+overrides:
+  - files: ["assets/js/critical/functional/lightbox-script.js"]
+    rules:
+      "no-template-curly-in-string": "off"  

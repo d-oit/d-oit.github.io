@@ -1,5 +1,9 @@
+{{- $enableZoom := site.Params.lightbox.enablezoom -}}
+{{- $enableRotate := .Site.Params.lightbox.enableRotate -}}
+
 (() => {
   'use strict'
+
 
   window.addEventListener('DOMContentLoaded', () => {
     // Get all the lightbox-icon elements
@@ -40,7 +44,7 @@
 
       // Create the floating toolbar
       const toolbar = document.createElement('div')
-      toolbar.classList.add('floating-toolbar')
+      toolbar.classList.add('lightbox-toolbar')
 
       // Create zoom in button
       const zoomInButton = document.createElement('button')
@@ -55,15 +59,14 @@
       zoomOutButton.innerHTML = '-'
 
       // // Create rotate left button
-      // TODO with setting
-      // const rotateLeftButton = document.createElement('button')
-      // rotateLeftButton.classList.add('rotate-left-button')
-      // rotateLeftButton.innerHTML = '⟲'
+      const rotateLeftButton = document.createElement('button')
+      rotateLeftButton.classList.add('rotate-left-button')
+      rotateLeftButton.innerHTML = '⟲'
 
       // Create rotate right button
-      // const rotateRightButton = document.createElement('button')
-      // rotateRightButton.classList.add('rotate-right-button')
-      // rotateRightButton.innerHTML = '⟳'
+      const rotateRightButton = document.createElement('button')
+      rotateRightButton.classList.add('rotate-right-button')
+      rotateRightButton.innerHTML = '⟳'
 
       // Create the close button
       const closeButton = document.createElement('button')
@@ -72,10 +75,16 @@
       closeButton.innerHTML = '&times;'
 
       // Append buttons to the toolbar
-      toolbar.appendChild(zoomInButton)
-      toolbar.appendChild(zoomOutButton)
-      // toolbar.appendChild(rotateLeftButton)
-      // toolbar.appendChild(rotateRightButton)
+      {{ if $enableZoom }}
+        toolbar.appendChild(zoomInButton)
+        toolbar.appendChild(zoomOutButton)
+      {{ end }}
+
+      {{ if $enableRotate }}
+        toolbar.appendChild(rotateLeftButton)
+        toolbar.appendChild(rotateRightButton)
+      {{ end }}
+      
       toolbar.appendChild(closeButton)
 
       // Append the image, close button, and toolbar to the lightbox
@@ -106,14 +115,13 @@
         zoomOut(lightboxImage)
       })
 
-      // TODO setting
-      // rotateLeftButton.addEventListener('click', () => {
-      //   rotateLeft(lightboxImage)
-      // })
+      rotateLeftButton.addEventListener('click', () => {
+         rotateLeft(lightboxImage)
+      })
 
-      // rotateRightButton.addEventListener('click', () => {
-      //   rotateRight(lightboxImage)
-      // })
+      rotateRightButton.addEventListener('click', () => {
+         rotateRight(lightboxImage)
+      })
     }
 
     // Function to zoom in the image

@@ -98,3 +98,14 @@ For full technical details, refer to the [commit on GitHub](https://github.com/d
 - [ ] Lightbox: Params for default class "lightbox" for images
 - [ ] Create a new carousel or try to use it with the existing carousel
 - [ ] Create a Hinode PR for the changes (with or without the lightbox, own module?)
+
+### History
+
+- 2024-11-20: Add zoom in and out buttons to the lightbox.js / theme.scss
+- **config/_default/params.toml**:
+
+    ```toml
+    [lightbox]
+      enableZoom = true
+      enableRotate = false  
+    ```

@@ -1,0 +1,11 @@
+{
+    "overrides": [
+      {
+        "files": ["assets/js/critical/functional/lightbox-script.js"],
+        "rules": {
+          "no-template-curly-in-string": "off"
+        }
+      }
+    ]
+  }
+  

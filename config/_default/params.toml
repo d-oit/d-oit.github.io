@@ -18,6 +18,10 @@
     cue = true
     tab = true
 
+[lightbox]
+    enableZoom = true
+    enableRotate = false    
+
 [author]
     email = "d-oit@t-online.de"
     name = "d.o.it - Dominik Oswald"
@@ -28,10 +32,6 @@
     class = "rounded lightbox"
     creator = "d.o.it"
     # not working yet placeHolderSrc = "/img/doitPlaceholder.jpg"
-
-[lightbox]
-    enableZoom = true
-    enableRotate = true
 
 [home]
     sections = ["blog", "projects"]
@@ -64,13 +64,11 @@
 [messages]
     placement = "bottom-right"
  
-
 [sharing]
     enabled = false
     sort = "weight"
     reverse = false
-  
-
+ 
 [sections]
     [sections.blog]
     title = "Blog"
