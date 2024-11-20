@@ -1,19 +1,23 @@
-// Placeholder to quickly add your own styles
-// The file is included last in the build pipeline
+/* Placeholder to quickly add your own styles */
+/* The file is included last in the build pipeline */
 .clipboard-button {
   opacity: initial !important;
 }
 
 .bg-opacity-10 {
-  background: linear-gradient(to right, rgba(255, 142, 22, 0.5), rgba(253, 160, 133, 0.5));
+
+    background: linear-gradient(to right, rgba(255, 142, 22, 0.5), rgba(253, 160, 133, 0.5));
 }
 
 .col.col-sm-12.col-md-9 {
-  word-wrap: break-word !important;
-  word-break: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+
+  background: linear-gradient(to right, rgba(255, 142, 22, 0.5), rgba(253, 160, 133, 0.5));
+
 }
 
-// begin theme mode switch  
+/* begin theme mode switch */
 .theme-switcher {
   position: relative;
 }
@@ -38,7 +42,7 @@
   right: 0;
   border-radius: 8px;
 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -52,20 +56,22 @@
 }
 
 .save-icon {
-  cursor: pointer;
-  margin-left: 20px;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
 }
 
-// end theme mode switch
-
+/* end theme mode switch */
 
 .persona {
-  max-width: 820px;
-}
 
+    max-width: 820px;
+
+}
 
 .datatable-search {
   float: left !important;
@@ -102,9 +108,12 @@ button.datatable-sorter.th-inner {
   width: 0;
 }
 
-// for 404
+
+/* for 404 */
 .text-center {
+
   padding-top: 10px;
+
 }
 
 .datatable-table th button,
@@ -119,12 +128,54 @@ button.datatable-sorter.th-inner {
   font-size: inherit;
 }
 
-
 .tag-card {
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+.tag-card:hover {
+    transform: translateY(-4px);
+}
+.tag-card .card-body {
+    padding: 1.5rem;
+}
+.tag-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.lightbox-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+
+.card-img-wrap img {
+    transition: transform 0.25s ease;
+    width: 100%;
+    max-height: 400px;
+    object-fit: scale-down;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
 }
 
 .tag-card:hover {
@@ -161,30 +212,6 @@ button.datatable-sorter.th-inner {
   object-fit: contain;
 }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 30px;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  height: 2.23rem;
-  width: 2.25rem;
-  flex-shrink: 0;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: #383939;
-  opacity: .8;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-duration: .2s;
-}
 
 .thumbnail-container .image-wrapper img {
   height: 100%;
@@ -194,47 +221,93 @@ button.datatable-sorter.th-inner {
 }
 
 .thumbnail-container .image-wrapper {
-  flex: 1;
-
+    flex: 1;
 }
 
 .lightbox-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .lightbox-icon .icon {
-  width: 2rem;
-  height: 2rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .thumbnail-container:hover .lightbox-icon {
-  opacity: 1;
+    opacity: 1;
 }
 
 // ---- end lightbox ----
 
 .carousel {
-  width: auto;
+    width: auto;
 }
 
 .carousel-caption.gradient {
-  background-color: inherit;
+    background-color: inherit;
+}
+
+/* Styles for zoom-in, zoom-out, rotate-left, and rotate-right icons */
+.zoom-in-button, .zoom-out-button, .rotate-left-button, .rotate-right-button, .close-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.zoom-in-button:hover, .zoom-out-button:hover, .rotate-left-button:hover, .rotate-right-button:hover, .close-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style the floating toolbar */
+.floating-toolbar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    //transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background-color: rgba(27, 27, 27, 0.5);
+    background: linear-gradient(rgba(30, 30, 30, .9), #0a0a0a 1810%);
+   // padding: 10px;
+    border-radius: 10px;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
+
+.fullscreen-image {
+    //position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Maintain aspect ratio */
+    //z-index: 1000;
+    //background: rgba(0, 0, 0, 0.8); /* Optional dark background */
+  }
 .card-img-wrap img {
   transition: transform 0.25s ease;
   width: 100%;
   max-height: 400px;
   object-fit: scale-down;
 }
+
