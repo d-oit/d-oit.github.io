@@ -58,7 +58,7 @@
       zoomOutButton.type = 'button'
       zoomOutButton.innerHTML = '-'
 
-      // // Create rotate left button
+      // Create rotate left button
       const rotateLeftButton = document.createElement('button')
       rotateLeftButton.classList.add('rotate-left-button')
       rotateLeftButton.innerHTML = '⟲'
@@ -74,6 +74,18 @@
       closeButton.type = 'button'
       closeButton.innerHTML = '&times;'
 
+      // Create previous button
+      const prevButton = document.createElement('button')
+      prevButton.classList.add('prev-button')
+      prevButton.type = 'button'
+      prevButton.innerHTML = '&larr;'
+
+      // Create next button
+      const nextButton = document.createElement('button')
+      nextButton.classList.add('next-button')
+      nextButton.type = 'button'
+      nextButton.innerHTML = '&rarr;'
+
       // Append buttons to the toolbar
       {{ if $enableZoom }}
         toolbar.appendChild(zoomInButton)
@@ -85,6 +97,8 @@
         toolbar.appendChild(rotateRightButton)
       {{ end }}
       
+      toolbar.appendChild(prevButton)
+      toolbar.appendChild(nextButton)
       toolbar.appendChild(closeButton)
 
       // Append the image, close button, and toolbar to the lightbox
@@ -122,6 +136,18 @@
       rotateRightButton.addEventListener('click', () => {
          rotateRight(lightboxImage)
       })
+
+      // Add event listeners for previous and next buttons
+      prevButton.addEventListener('click', () => {
+        navigateImage(lightboxImage, -1)
+      })
+
+      nextButton.addEventListener('click', () => {
+        navigateImage(lightboxImage, 1)
+      })
+
+      // Disable buttons if at the first or last image
+      updateNavigationButtons(lightboxImage, prevButton, nextButton)
     }
 
     // Function to zoom in the image
@@ -163,6 +189,44 @@
       const b = values[1]
       const angle = Math.round(Math.atan2(b, a) * (180 / Math.PI))
       return angle < 0 ? angle + 360 : angle
+    }
+
+    // Function to navigate to the previous or next image
+    function navigateImage (img, direction) {
+      const images = document.querySelectorAll('img.lightbox')
+      let currentIndex = Array.from(images).indexOf(img)
+      currentIndex += direction
+
+      if (currentIndex >= 0 && currentIndex < images.length) {
+        const newImage = images[currentIndex]
+        img.src = newImage.src
+        img.alt = newImage.alt
+        img.title = newImage.title
+
+        // Update navigation buttons
+        const lightbox = img.closest('.lightbox-container')
+        const prevButton = lightbox.querySelector('.prev-button')
+        const nextButton = lightbox.querySelector('.next-button')
+        updateNavigationButtons(img, prevButton, nextButton)
+      }
+    }
+
+    // Function to update the state of navigation buttons
+    function updateNavigationButtons (img, prevButton, nextButton) {
+      const images = document.querySelectorAll('img.lightbox')
+      const currentIndex = Array.from(images).indexOf(img)
+
+      if (currentIndex === 0) {
+        prevButton.disabled = true
+      } else {
+        prevButton.disabled = false
+      }
+
+      if (currentIndex === images.length - 1) {
+        nextButton.disabled = true
+      } else {
+        nextButton.disabled = false
+      }
     }
 
     // Add click event listener to each lightbox icon

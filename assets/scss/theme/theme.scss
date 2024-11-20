@@ -265,13 +265,11 @@ button.datatable-sorter.th-inner {
 .zoom-out-button,
 .rotate-left-button,
 .rotate-right-button,
-.close-button {
-//  background-color: rgba(0, 0, 0, 0.5);
+.close-button,
+.prev-button,
+.next-button {
   color: rgba(255, 255, 255, 0.829);
   border: none;
-  // padding: 5px;
-  // margin: 5px;
-  //border-radius: 50%;
   width: 50px;
   height: 100%;
   touch-action: none;
@@ -285,7 +283,9 @@ button.datatable-sorter.th-inner {
 .zoom-out-button:hover,
 .rotate-left-button:hover,
 .rotate-right-button:hover,
-.close-button:hover {
+.close-button:hover,
+.prev-button:hover,
+.next-button:hover {
   color: rgb(255, 255, 255);
 }
 
@@ -306,19 +306,9 @@ button.datatable-sorter.th-inner {
 }
 
 .fullscreen-image {
-  //position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  /* Full viewport width */
   height: 100vh;
-  /* Full viewport height */
   object-fit: cover;
-  /* Maintain aspect ratio */
-  //z-index: 1000;
-  //background: rgba(0, 0, 0, 0.8); /* Optional dark background */
 }
-
-
-
-// ---- end lightbox ----
