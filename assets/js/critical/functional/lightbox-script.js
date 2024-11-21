@@ -7,14 +7,14 @@
   window.addEventListener('DOMContentLoaded', () => {
     // Get all the lightbox-icon elements
     const lightboxIcons = document.querySelectorAll('.lightbox-icon')
-    const images = document.querySelectorAll('img.lightbox')
+    const images = getLightboxImages()
 
     // Font Awesome SVG namespace
     const FA_NAMESPACE = 'http://www.w3.org/2000/svg'
 
     // Helper to create SVG elements for Font Awesome icons
     // eslint-disable-next-line no-unused-vars
-    function createSVGIcon (iconPath) {
+    function createSVGIcon(iconPath) {
       const svg = document.createElementNS(FA_NAMESPACE, 'svg')
       svg.setAttribute('xmlns', FA_NAMESPACE)
       svg.setAttribute('viewBox', '0 0 512 512') // Standard Font Awesome viewBox
@@ -29,7 +29,7 @@
     }
 
     // Function to create and show the lightbox
-    function showLightbox (img) {
+    function showLightbox(img) {
       // Create the lightbox element
       const lightbox = document.createElement('div')
       lightbox.classList.add('lightbox-container')
@@ -72,21 +72,23 @@
       // Create previous button
       const prevButton = document.createElement('button')
       prevButton.classList.add('prev-button')
+      prevButton.classList.add('btn')
       prevButton.type = 'button'
       prevButton.innerHTML = '&larr;'
 
       // Create next button
       const nextButton = document.createElement('button')
       nextButton.classList.add('next-button')
+      nextButton.classList.add('btn')
       nextButton.type = 'button'
       nextButton.innerHTML = '&rarr;'
 
       // Create the slide container
-      const slidePrevious  = document.createElement('div')
+      const slidePrevious = document.createElement('div')
       slidePrevious.classList.add('slide-lightbox-container')
       slidePrevious.classList.add('slide-btn-container-previous')
       slidePrevious.appendChild(prevButton)
-      
+
       const slideNext = document.createElement('div')
       slideNext.classList.add('slide-lightbox-container')
       slideNext.classList.add('slide-btn-container-next')
@@ -102,8 +104,7 @@
         toolbar.appendChild(rotateLeftButton)
         toolbar.appendChild(rotateRightButton)
       {{ end }}
-      
-   
+
       toolbar.appendChild(closeButton)
 
       // Append the image, close button, and toolbar to the lightbox
@@ -111,7 +112,6 @@
       lightbox.appendChild(toolbar)
       lightbox.appendChild(slideNext)
       lightbox.appendChild(slidePrevious)
-
 
       // Add the lightbox to the body
       document.body.appendChild(lightbox)
@@ -138,11 +138,11 @@
       })
 
       rotateLeftButton.addEventListener('click', () => {
-         rotateLeft(lightboxImage)
+        rotateLeft(lightboxImage)
       })
 
       rotateRightButton.addEventListener('click', () => {
-         rotateRight(lightboxImage)
+        rotateRight(lightboxImage)
       })
 
       // Add event listeners for previous and next buttons
@@ -159,14 +159,14 @@
     }
 
     // Function to zoom in the image
-    function zoomIn (img) {
+    function zoomIn(img) {
       const currentWidth = img.clientWidth
       img.classList.add('fullscreen-image')
       img.style.width = currentWidth * 1.2 + 'px'
     }
 
     // Function to zoom out the image
-    function zoomOut (img) {
+    function zoomOut(img) {
       const currentWidth = img.clientWidth
       img.classList.remove('fullscreen-image')
       img.style.width = currentWidth * 0.8 + 'px'
@@ -174,20 +174,20 @@
 
     // Function to rotate the image left
     // eslint-disable-next-line no-unused-vars
-    function rotateLeft (img) {
+    function rotateLeft(img) {
       const currentRotation = getRotationDegrees(img)
       img.style.transform = `rotate(${currentRotation - 90}deg)`
     }
 
     // Function to rotate the image right
     // eslint-disable-next-line no-unused-vars
-    function rotateRight (img) {
+    function rotateRight(img) {
       const currentRotation = getRotationDegrees(img)
       img.style.transform = `rotate(${currentRotation + 90}deg)`
     }
 
     // Helper function to get the current rotation degrees of an image
-    function getRotationDegrees (img) {
+    function getRotationDegrees(img) {
       const matrix = window.getComputedStyle(img).getPropertyValue('transform')
       if (matrix === 'none') {
         return 0
@@ -200,53 +200,101 @@
     }
 
     // Function to navigate to the previous or next image
-    function navigateImage (img, direction) {
-      console.log("direc:" + direction, img)
-      const images = document.querySelectorAll('img.lightbox')
-      let currentIndex = Array.from(images).indexOf(img)
-      currentIndex += direction
-      if (currentIndex >= 0 && currentIndex < images.length) {
-        const newImage = images[currentIndex]
-        img.src = newImage.src
-        img.alt = newImage.alt
-        img.title = newImage.title
+    function navigateImage(currentImg, direction) {
+      const lightboxImages = getLightboxImages()
+
+      // Find current image index
+      const currentIndex = Array.from(lightboxImages).findIndex(
+        img => img.src === currentImg.src
+      )
+
+      const newIndex = currentIndex + direction
+
+      // Check if new index is valid
+      if (newIndex >= 0 && newIndex < lightboxImages.length) {
+        const newImage = lightboxImages[newIndex]
+
+        // Create a new cloned image
+        const newLightboxImage = createLightboxImage(newImage)
+
+        // Replace the existing lightbox image
+        const lightboxContainer = currentImg.closest('.lightbox-container')
+        if(lightboxContainer == null) {
+          return
+        }
+        lightboxContainer.replaceChild(newLightboxImage, currentImg)
+      
+        // Reattach event listeners for zoom, rotate, etc.
+        attachLightboxControls(lightboxContainer, newLightboxImage)
+
+        const prevButton = lightboxContainer.querySelector('.prev-button')
+        const nextButton = lightboxContainer.querySelector('.next-button')
 
         // Update navigation buttons
-        const lightbox = img.closest('.lightbox-container')
-        const prevButton = lightbox.querySelector('.prev-button')
-        const nextButton = lightbox.querySelector('.next-button')
-        updateNavigationButtons(img, prevButton, nextButton)
+        updateNavigationButtons(newLightboxImage, prevButton, nextButton)
+      }
+    }
+
+    function attachLightboxControls(lightboxContainer, lightboxImage) {
+      // Zoom buttons
+      const zoomInButton = lightboxContainer.querySelector('.zoom-in-button')
+      const zoomOutButton = lightboxContainer.querySelector('.zoom-out-button')
+      if (zoomInButton) {
+        zoomInButton.addEventListener('click', () => zoomIn(lightboxImage))
+      }
+      if (zoomOutButton) {
+        zoomOutButton.addEventListener('click', () => zoomOut(lightboxImage))
+      }
+
+      // Rotate buttons
+      const rotateLeftButton = lightboxContainer.querySelector('.rotate-left-button')
+      const rotateRightButton = lightboxContainer.querySelector('.rotate-right-button')
+      if (rotateLeftButton) {
+        rotateLeftButton.addEventListener('click', () => rotateLeft(lightboxImage))
+      }
+      if (rotateRightButton) {
+        rotateRightButton.addEventListener('click', () => rotateRight(lightboxImage))
+      }
+
+      // Previous and next buttons
+      const prevButton = lightboxContainer.querySelector('.prev-button')
+      const nextButton = lightboxContainer.querySelector('.next-button')
+      if (prevButton) {
+        prevButton.addEventListener('click', () => navigateImage(lightboxImage, -1))
+      }
+      if (nextButton) {
+        nextButton.addEventListener('click', () => navigateImage(lightboxImage, 1))
       }
     }
 
     // Function to update the state of navigation buttons
-    function updateNavigationButtons (img, prevButton, nextButton) {
-      const images = document.querySelectorAll('img.lightbox')
-      const currentIndex = Array.from(images).indexOf(img)
+    function updateNavigationButtons(img, prevButton, nextButton) {
+      const lightboxImages = getLightboxImages()
+      // Find current index by matching src with original images
+      const currentIndex = Array.from(lightboxImages).findIndex(
+        originalImg => originalImg.src === img.src
+      )
 
-      console.log(Array.from(images).length)
-
-      prevButton.classList.remove('d-none')
-      nextButton.classList.remove('d-none')
-
-      if(Array.from(images).length == 1) {
+      // Hide/show buttons based on index
+      if (lightboxImages.length <= 1) {
         prevButton.classList.add('d-none')
         nextButton.classList.add('d-none')
-        return
-      }
-
-      if (currentIndex === 0) {
-        prevButton.disabled = true
-        prevButton.classList.add('d-none')
       } else {
-        prevButton.disabled = false
-      }
-
-      if (currentIndex === images.length - 1) {
-        nextButton.disabled = true
-        nextButton.classList.add('d-none')
-      } else {
-        nextButton.disabled = false
+        // First image
+        if (currentIndex === 0) {
+          prevButton.classList.add('d-none')
+          nextButton.classList.remove('d-none')
+        }
+        // Last image
+        else if (currentIndex === lightboxImages.length - 1) {
+          prevButton.classList.remove('d-none')
+          nextButton.classList.add('d-none')
+        }
+        // Middle images
+        else {
+          prevButton.classList.remove('d-none')
+          nextButton.classList.remove('d-none')
+        }
       }
     }
 
@@ -279,4 +327,17 @@
     return lightboxImage
   }
 })()
+function getLightboxImages() {
+  // Select all lightbox images
+  const lightboxImages = document.querySelectorAll('img.lightbox')
+
+  // Filter images with unique `src` attributes
+  const uniqueSrcImages = Array.from(lightboxImages).filter((img, index, arr) => {
+    // Find duplicates by checking if current `src` exists earlier in the array
+    return arr.findIndex(item => item.src === img.src) === index
+  })
+
+  return uniqueSrcImages
+
+}
 

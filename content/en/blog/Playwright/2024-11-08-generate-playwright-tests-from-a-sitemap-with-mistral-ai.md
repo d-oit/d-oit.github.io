@@ -81,3 +81,5 @@ By leveraging AI, you can quickly create comprehensive test scripts for your web
 Most of the tests are not really useful. But it shows the possibility of creating automated tests.
 
 {{< image class="rounded lightbox" src="/img/blog/generate-playwright-tests-sitemap-mistral-ai.webp" caption="Mistral.ai first image from prompt: Generate Playwright tests from a sitemap with Mistral.ai" >}}
+
+{{< image class="rounded lightbox" src="/img/blog/LightDarkModeThumbnail.jpg" caption="Mistral.ai first image from prompt: Generate Playwright tests from a sitemap with Mistral.ai" >}}
