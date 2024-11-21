@@ -1,6 +1,6 @@
 ---
-title: Generate Playwright Tests from a Sitemap with Mistral AI
-description: "Try out: Python Script for generating Playwright Tests from a Sitemap with Mistral AI"
+title: Generate Playwright tests from a sitemap with Mistral.ai
+description: "Try out: Python script for generating Playwright Tests from a sitemap with Mistral.ai"
 date: 2024-11-20T19:06:43.137Z
 tags:
   - Hugo
@@ -9,11 +9,12 @@ tags:
   - Mistral
   - Playwright
   - Website
+  - Python
 categories:
   - Software Development
 thumbnail:
-  url: /img/blog/generate-playwright-tests-sitemap-mistral-ai.jpg
-  author: d.o.it
+  url: /img/blog/generate-playwright-tests-sitemap-mistral-ai1.webp
+  author: d.o.it (Mistral.ai)
 lang: en
 slug: /en/blog/generate-playwright-tests-sitemap-mistral-ai
 aliases: /en/playwright/generate-playwright-tests-sitemap-mistral-ai
@@ -59,6 +60,8 @@ pip install requests python-dotenv mistralai lxml
 As a quick workaround for now we replace the markdown code formatting:
 
 {{< mark color="warning" >}}\```javascript{{< /mark >}}
+
+```js 
 const { test, expect } = require('@playwright/test');
 
 test.describe('Blog Page Tests', () => {
@@ -66,7 +69,7 @@ test.describe('Blog Page Tests', () => {
     await page.goto('https://d-oit.github.io/en/blog/licenses-nuget-packages-net-core-solution/');
   });
 ...
-...
+``` 
 {{< mark color="warning" >}}\```{{< /mark >}}
 
 ## Conclusion
@@ -76,3 +79,5 @@ This script automates the generation of Playwright tests for web pages listed in
 By leveraging AI, you can quickly create comprehensive test scripts for your web applications, ensuring better coverage and reliability.
 
 Most of the tests are not really useful. But it shows the possibility of creating automated tests.
+
+{{< image class="rounded lightbox" src="/img/blog/generate-playwright-tests-sitemap-mistral-ai.webp" caption="Mistral.ai first image from prompt: Generate Playwright tests from a sitemap with Mistral.ai" >}}

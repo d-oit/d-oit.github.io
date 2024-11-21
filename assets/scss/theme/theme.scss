@@ -5,11 +5,9 @@
 }
 
 .bg-opacity-10 {
-  background: linear-gradient(
-    to right,
-    rgba(255, 142, 22, 0.5),
-    rgba(253, 160, 133, 0.5)
-  );
+  background: linear-gradient(to right,
+      rgba(255, 142, 22, 0.5),
+      rgba(253, 160, 133, 0.5));
 }
 
 .col.col-sm-12.col-md-9 {
@@ -303,6 +301,25 @@ button.datatable-sorter.th-inner {
   -webkit-tap-highlight-color: transparent;
   transition: opacity .3s;
   font-size: 28px;
+}
+
+.slide-lightbox-container {
+  display: flex;
+  align-items: center;
+  padding: 12px 12px 12px 6px;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transform: translateY(-50%);
+}
+
+.slide-btn-container-previous {
+  left: 0;
+}
+
+.slide-btn-container-next {
+  right: 0;
 }
 
 .fullscreen-image {

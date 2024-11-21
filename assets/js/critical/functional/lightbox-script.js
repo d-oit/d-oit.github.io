@@ -4,7 +4,6 @@
 (() => {
   'use strict'
 
-
   window.addEventListener('DOMContentLoaded', () => {
     // Get all the lightbox-icon elements
     const lightboxIcons = document.querySelectorAll('.lightbox-icon')
@@ -36,11 +35,7 @@
       lightbox.classList.add('lightbox-container')
 
       // Create the image element
-      let lightboxImage = document.createElement('img')
-      lightboxImage = img.cloneNode(true)
-      lightboxImage.className = ''
-      lightboxImage.classList.add('lightbox-image')
-      lightboxImage.classList.add('rounded')
+      let lightboxImage = createLightboxImage(img)
 
       // Create the floating toolbar
       const toolbar = document.createElement('div')
@@ -86,6 +81,17 @@
       nextButton.type = 'button'
       nextButton.innerHTML = '&rarr;'
 
+      // Create the slide container
+      const slidePrevious  = document.createElement('div')
+      slidePrevious.classList.add('slide-lightbox-container')
+      slidePrevious.classList.add('slide-btn-container-previous')
+      slidePrevious.appendChild(prevButton)
+      
+      const slideNext = document.createElement('div')
+      slideNext.classList.add('slide-lightbox-container')
+      slideNext.classList.add('slide-btn-container-next')
+      slideNext.appendChild(nextButton)
+
       // Append buttons to the toolbar
       {{ if $enableZoom }}
         toolbar.appendChild(zoomInButton)
@@ -97,13 +103,15 @@
         toolbar.appendChild(rotateRightButton)
       {{ end }}
       
-      toolbar.appendChild(prevButton)
-      toolbar.appendChild(nextButton)
+   
       toolbar.appendChild(closeButton)
 
       // Append the image, close button, and toolbar to the lightbox
       lightbox.appendChild(lightboxImage)
       lightbox.appendChild(toolbar)
+      lightbox.appendChild(slideNext)
+      lightbox.appendChild(slidePrevious)
+
 
       // Add the lightbox to the body
       document.body.appendChild(lightbox)
@@ -193,10 +201,10 @@
 
     // Function to navigate to the previous or next image
     function navigateImage (img, direction) {
+      console.log("direc:" + direction, img)
       const images = document.querySelectorAll('img.lightbox')
       let currentIndex = Array.from(images).indexOf(img)
       currentIndex += direction
-
       if (currentIndex >= 0 && currentIndex < images.length) {
         const newImage = images[currentIndex]
         img.src = newImage.src
@@ -216,14 +224,27 @@
       const images = document.querySelectorAll('img.lightbox')
       const currentIndex = Array.from(images).indexOf(img)
 
+      console.log(Array.from(images).length)
+
+      prevButton.classList.remove('d-none')
+      nextButton.classList.remove('d-none')
+
+      if(Array.from(images).length == 1) {
+        prevButton.classList.add('d-none')
+        nextButton.classList.add('d-none')
+        return
+      }
+
       if (currentIndex === 0) {
         prevButton.disabled = true
+        prevButton.classList.add('d-none')
       } else {
         prevButton.disabled = false
       }
 
       if (currentIndex === images.length - 1) {
         nextButton.disabled = true
+        nextButton.classList.add('d-none')
       } else {
         nextButton.disabled = false
       }
@@ -248,4 +269,14 @@
       })
     })
   })
+
+  function createLightboxImage(img) {
+    let lightboxImage = document.createElement('img')
+    lightboxImage = img.cloneNode(true)
+    lightboxImage.className = ''
+    lightboxImage.classList.add('lightbox-image')
+    lightboxImage.classList.add('rounded')
+    return lightboxImage
+  }
 })()
+
