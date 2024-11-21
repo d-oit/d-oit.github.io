@@ -17,6 +17,7 @@ thumbnail:
 lang: en
 slug: /en/blog/generate-playwright-tests-sitemap-mistral-ai
 aliases: /en/playwright/generate-playwright-tests-sitemap-mistral-ai
+draft: true
 ---
 
 ## Automating Playwright Tests from a Sitemap with Mistral AI
