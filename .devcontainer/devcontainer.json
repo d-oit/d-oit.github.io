@@ -1,5 +1,6 @@
 {
   "tasks": {
-    "test": "hugo server"
+    "test": "hugo server",
+    "launch": "npm run start"
   }
 }

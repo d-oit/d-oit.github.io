@@ -5,11 +5,9 @@
 }
 
 .bg-opacity-10 {
-  background: linear-gradient(
-    to right,
-    rgba(255, 142, 22, 0.5),
-    rgba(253, 160, 133, 0.5)
-  );
+  background: linear-gradient(to right,
+      rgba(255, 142, 22, 0.5),
+      rgba(253, 160, 133, 0.5));
 }
 
 .col.col-sm-12.col-md-9 {
@@ -265,13 +263,11 @@ button.datatable-sorter.th-inner {
 .zoom-out-button,
 .rotate-left-button,
 .rotate-right-button,
-.close-button {
-//  background-color: rgba(0, 0, 0, 0.5);
+.close-button,
+.prev-button,
+.next-button {
   color: rgba(255, 255, 255, 0.829);
   border: none;
-  // padding: 5px;
-  // margin: 5px;
-  //border-radius: 50%;
   width: 50px;
   height: 100%;
   touch-action: none;
@@ -285,7 +281,9 @@ button.datatable-sorter.th-inner {
 .zoom-out-button:hover,
 .rotate-left-button:hover,
 .rotate-right-button:hover,
-.close-button:hover {
+.close-button:hover,
+.prev-button:hover,
+.next-button:hover {
   color: rgb(255, 255, 255);
 }
 
@@ -305,20 +303,29 @@ button.datatable-sorter.th-inner {
   font-size: 28px;
 }
 
+.slide-lightbox-container {
+  display: flex;
+  align-items: center;
+  padding: 12px 12px 12px 6px;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transform: translateY(-50%);
+}
+
+.slide-btn-container-previous {
+  left: 0;
+}
+
+.slide-btn-container-next {
+  right: 0;
+}
+
 .fullscreen-image {
-  //position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  /* Full viewport width */
   height: 100vh;
-  /* Full viewport height */
   object-fit: cover;
-  /* Maintain aspect ratio */
-  //z-index: 1000;
-  //background: rgba(0, 0, 0, 0.8); /* Optional dark background */
 }
-
-
-
-// ---- end lightbox ----
