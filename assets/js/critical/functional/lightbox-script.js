@@ -99,12 +99,14 @@
     // Function to zoom in the image
     function zoomIn(img) {
       const currentWidth = img.clientWidth;
+      img.classList.add('fullscreen-image')
       img.style.width = currentWidth * 1.2 + 'px';
     }
 
     // Function to zoom out the image
     function zoomOut(img) {
       const currentWidth = img.clientWidth;
+      img.classList.remove('fullscreen-image')
       img.style.width = currentWidth * 0.8 + 'px';
     }
 
