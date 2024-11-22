@@ -80,6 +80,8 @@ By leveraging AI, you can quickly create comprehensive test scripts for your web
 
 Most of the tests are not really useful. But it shows the possibility of creating automated tests.
 
+### Try out with the new Mistral.ai - Pixtral image creation
+
 {{< image class="rounded lightbox" src="/img/blog/generate-playwright-tests-sitemap-mistral-ai.webp" caption="Mistral.ai first image from prompt: Generate Playwright tests from a sitemap with Mistral.ai" >}}
 
-{{< image class="rounded lightbox" src="/img/blog/LightDarkModeThumbnail.jpg" caption="Mistral.ai first image from prompt: Generate Playwright tests from a sitemap with Mistral.ai" >}}
+{{< image class="rounded lightbox" src="/img/blog/generate-playwright-tests-sitemap-mistral-ai2.webp" caption="In this blog post, we'll explore how to automate the generation of Playwright tests for web pages listed in a sitemap using the free Mistral API. This process involves fetching the sitemap, extracting URLs, and using Mistral AI to generate test scripts for each URL." >}}

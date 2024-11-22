@@ -16,7 +16,7 @@ excludeToc: true
 draft: false
 ---
 
-{{< button icon="fa calendar" order="first" href="https://calendar.google.com/calendar/embed?src=f8a14c4037d9ab411f93f19ee369218f0ed54be7c2d88deaf09d6b76fbe72e7f%40group.calendar.google.com&ctz=Europe%2FBerlin" >}}Google Kalender{{< /button >}}
+{{< button icon="fa calendar" order="first" href="https://calendar.google.com/calendar/embed?src=f8a14c4037d9ab411f93f19ee369218f0ed54be7c2d88deaf09d6b76fbe72e7f%40group.calendar.google.com&ctz=Europe%2FBerlin" >}}Google calender{{< /button >}}
 
 ## Overview
 
