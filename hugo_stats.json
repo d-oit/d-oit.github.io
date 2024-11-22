@@ -427,6 +427,8 @@
       "w-50"
     ],
     "ids": [
+      "2024-11-20-add-zoom-in-and-out-buttons-to-the-lightboxjs--themescss",
+      "2024-11-22-add-previous-next-button",
       "Copyright",
       "TableOfContents",
       "automating-playwright-tests-from-a-sitemap-with-mistral-ai",

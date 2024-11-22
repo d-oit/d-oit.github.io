@@ -98,10 +98,12 @@ For full technical details, refer to the [commit on GitHub](https://github.com/d
 - [ ] Lightbox: Params for default class "lightbox" for images
 - [ ] Create a new carousel or try to use it with the existing carousel
 - [ ] Create a Hinode PR for the changes (with or without the lightbox, own module?)
+- [ ] Keyboard navigation for lightbox, full accessibility
 
 ### History
 
-- 2024-11-20: Add zoom in and out buttons to the lightbox.js / theme.scss
+#### 2024-11-20: Add zoom in and out buttons to the lightbox.js / theme.scss
+
 - **config/_default/params.toml**:
 
     ```toml
@@ -110,6 +112,8 @@ For full technical details, refer to the [commit on GitHub](https://github.com/d
       enableRotate = false  
     ```
 
-- 2024-11-22: Add previous, next button with disable Params: .Site.Params.**lightbox.disableSliderButtons**
+#### 2024-11-22: Add previous, next button
+
+- disable Params: .Site.Params.**lightbox.disableSliderButtons**
 
 {{< button icon="fab fa-blogger" href="/en/playwright/generate-playwright-tests-sitemap-mistral-ai" >}}Showcase image slider with prev,next buttons{{< /button >}}
