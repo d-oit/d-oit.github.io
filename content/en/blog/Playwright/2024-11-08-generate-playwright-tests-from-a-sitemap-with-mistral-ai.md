@@ -61,7 +61,7 @@ As a quick workaround for now we replace the markdown code formatting:
 
 {{< mark color="warning" >}}\```javascript{{< /mark >}}
 
-```js 
+```js
 const { test, expect } = require('@playwright/test');
 
 test.describe('Blog Page Tests', () => {
@@ -69,7 +69,8 @@ test.describe('Blog Page Tests', () => {
     await page.goto('https://d-oit.github.io/en/blog/licenses-nuget-packages-net-core-solution/');
   });
 ...
-``` 
+```
+
 {{< mark color="warning" >}}\```{{< /mark >}}
 
 ## Conclusion
