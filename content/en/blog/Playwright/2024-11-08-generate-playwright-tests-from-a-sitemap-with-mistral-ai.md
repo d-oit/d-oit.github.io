@@ -16,7 +16,7 @@ thumbnail:
   url: /img/blog/generate-playwright-tests-sitemap-mistral-ai1.webp
   author: d.o.it (Mistral.ai)
 lang: en
-slug: /en/blog/generate-playwright-tests-sitemap-mistral-ai
+slug: generate-playwright-tests-sitemap-mistral-ai
 aliases: /en/playwright/generate-playwright-tests-sitemap-mistral-ai
 ---
 

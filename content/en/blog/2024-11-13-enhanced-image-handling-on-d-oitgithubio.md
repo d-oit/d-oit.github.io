@@ -112,4 +112,4 @@ For full technical details, refer to the [commit on GitHub](https://github.com/d
 
 - 2024-11-22: Add previous, next button with disable Params: .Site.Params.**lightbox.disableSliderButtons**
 
-{{< button icon="fab fa-blogger" href="/en/blog/generate-playwright-tests-sitemap-mistral-ai" >}}Showcase image slider with prev,next buttons{{< /button >}}
+{{< button icon="fab fa-blogger" href="/en/playwright/generate-playwright-tests-sitemap-mistral-ai" >}}Showcase image slider with prev,next buttons{{< /button >}}
