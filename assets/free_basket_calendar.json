@@ -1,23 +1,5 @@
 [
     {
-        "name": "TKS49ers vs. EN BASKETS Schwelm",
-        "begin": "2024-12-08T15:30:00+01:00",
-        "end": "2024-12-08T17:00:00+01:00",
-        "description": "Basketball game between TKS49ers and EN BASKETS Schwelm.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB Nord 24/25"
-    },
-    {
-        "name": "Milwaukee Bucks vs. Brooklyn Nets",
-        "begin": "2024-12-08T21:10:00+01:00",
-        "end": "2024-12-09T00:10:00+01:00",
-        "description": "Milwaukee Bucks play against Brooklyn Nets.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
         "name": "FC Barcelona vs EA7 Emporio Armani Mailand",
         "begin": "2024-12-13T20:15:00+01:00",
         "end": "2024-12-13T21:45:00+01:00",
