@@ -2,11 +2,11 @@
   "tags": [
     {
       "name": "Hugo",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Website",
-      "count": 7
+      "count": 8
     },
     {
       "name": "GDPR",
@@ -22,10 +22,18 @@
     },
     {
       "name": "Web",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Hinode",
+      "count": 2
+    },
+    {
+      "name": "Mistral",
+      "count": 1
+    },
+    {
+      "name": "streamlit",
       "count": 1
     }
   ]

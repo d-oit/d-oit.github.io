@@ -1,0 +1,126 @@
+resources:
+  - src: "/img/about_collage/20241113_180042.jpg"
+    title: "Ein weißer Teller mit einem Stück Käse und Nüssen"
+    params:
+      description: "Drei Cashewnüsse werden strategisch auf dem Käse platziert, um ein Gesicht zu formen, wobei zwei als Augen und eine als Nase positioniert werden. Dies verleiht dem Gericht ein verspieltes und skurriles Aussehen. Der Hintergrund ist ein schlichter, weißer Teller, der mit der goldbraunen Farbe des Brotes und dem hellgelben Farbton des Käses kontrastiert.
+
+Die Gesamtpräsentation deutet auf ein kreatives und vielleicht hausgemachtes Gericht hin, das möglicherweise sowohl optisch ansprechend als auch köstlich sein soll. Die Verwendung von Cashews als Gesichtszüge deutet auf Spaß und Experimentierfreude in der Küche hin."
+  - src: "/img/about_collage/20241124_154013.jpg"
+    title: "Ein Blick auf einen bewölkten Himmel und eine Bank"
+    params:
+      description: "Dieses Bild fängt eine heitere und malerische Szene ein. Der Himmel weist einen sanften Farbverlauf von Hellblau und Weiß auf, mit ein paar Wolkenfetzen, die sich über den Horizont erstrecken. Die Sonne geht entweder auf oder unter und wirft einen sanften goldenen Schein auf die Landschaft.
+
+Auf der rechten Seite befindet sich ein gepflegter Rasen mit ein paar grünen Flecken und einigen kahlen Stellen, die möglicherweise auf jahreszeitliche Veränderungen zurückzuführen sind. Ein paar kleine Bäume oder Sträucher sind über den Rasen verstreut und sorgen für ein wenig Grün.
+
+Im Vordergrund befindet sich eine Holzstruktur, möglicherweise ein Zaun oder ein kleiner Schuppen, der teilweise mit Ranken oder Ästen bedeckt ist. Diese Struktur verleiht der Szene einen rustikalen Charme.
+
+Insgesamt strahlt das Bild ein Gefühl von Ruhe und Gelassenheit aus und ist damit ein idealer Ort für Entspannung und Kontemplation. Die sanfte Beleuchtung und die natürlichen Elemente schaffen eine friedliche Atmosphäre, die den Betrachter einlädt, sich einen Moment Zeit zu nehmen und die Schönheit der Natur zu genießen."
+  - src: "/img/about_collage/DSCN2759.JPG"
+    title: "Ein Mann in rotem Hemd und Hut steht auf einem Feld"
+    params:
+      description: "Auf dem Bild steht eine Person in einer trockenen, offenen Landschaft unter einem klaren blauen Himmel. Die Person trägt ein rotes T-Shirt mit weißer Aufschrift, eine weiße Baseballkappe und eine Sonnenbrille, was auf einen sonnigen Tag hindeutet. Sie lächelt, was auf eine positive Stimmung oder Freude an der Umgebung hindeutet. Die Person steht vor einer großen, rötlichen Felsformation, die den Hintergrund dominiert und der Szene einen Hauch von Erhabenheit verleiht. Das Gelände um die Person herum besteht größtenteils aus trockenem Gras und spärlicher Vegetation, mit einigen Bäumen und Büschen in der Ferne. Die Gesamtatmosphäre des Bildes lässt auf eine warme, möglicherweise wüstenähnliche Umgebung schließen, und die Person scheint einen Tag im Freien zu genießen, vielleicht bei einer Wanderung oder einer Besichtigungstour."
+  - src: "/img/about_collage/DSCN3357.JPG"
+    title: "Ein Mann steht neben einem Schild"
+    params:
+      description: "Auf dem Bild steht eine Person selbstbewusst neben einem schwarzen Sandwich-Board-Schild vor einem Gebäude. Die Person trägt eine schwarze Jacke, ein helles Hemd und eine blaue Jeans, dazu weiße Turnschuhe. Sie hat kurzes, helles Haar und lächelt, was eine freundliche und zugängliche Ausstrahlung vermittelt.
+
+Auf der auf zwei Holzbeinen stehenden Sandwich-Tafel steht eine Werbung für das "Old Thameside Inn". Oben auf dem Schild steht der Name des Lokals in einer klassischen, eleganten Schrift. Unter dem Namen ist ein verlockendes Bild eines Tellers mit Speisen abgebildet, bei denen es sich offenbar um britische Würstchen handelt, die mit Kartoffelpüree und einer Gemüsebeilage serviert werden. Der Preis des Gerichts, 5,95 £, ist deutlich unter dem Bild zu sehen. Am unteren Rand des Schildes steht der Name "Nicholson's", was wahrscheinlich auf die mit dem Gasthaus verbundene Marke oder Kette hinweist.
+
+Der Hintergrund zeigt ein Backsteingebäude mit großen Fenstern und einem schwarzen Geländer. In der Nähe des Schildes befinden sich einige Pflanzen in Töpfen, die der Szene einen Hauch von Grün verleihen. Die Gesamtatmosphäre lässt auf eine zwanglose, einladende Umgebung schließen, möglicherweise in einem historischen oder charmanten Teil der Stadt. Die Person scheint stolz oder glücklich zu sein, mit dem Lokal in Verbindung gebracht zu werden, vielleicht als Angestellter oder als Gast."
+  - src: "/img/about_collage/IMAG0268.jpg"
+    title: "Ein Mann steht auf einer Holzbank an einem See"
+    params:
+      description: "Auf dem Bild steht ein Mann selbstbewusst vor einem ruhigen Gewässer, das von üppigem Grün gesäumt ist. Er steht auf einer kleinen, gepflasterten Fläche neben einem malerischen Holzzaun. Der Mann ist mit einer braunen Jacke über einem hellblauen Hemd und einer dunklen Hose bekleidet. Seine Hände stecken lässig in den Taschen, und er hat ein leichtes Lächeln im Gesicht, das auf eine entspannte und zufriedene Haltung schließen lässt.
+
+Im Hintergrund ist eine malerische Umgebung mit verschiedenen Bäumen und Sträuchern zu sehen, die zur Ruhe der Szene beitragen. In der Ferne sind auch einige Gebäude zu sehen, darunter ein weißes Gebäude mit mehreren Fenstern und ein kleineres, möglicherweise historisches Gebäude mit einem markanten Dach. Die Gesamtatmosphäre ist ruhig und friedlich, und der Mann scheint einen Moment der Muße in einer schönen natürlichen Umgebung zu genießen."
+  - src: "/img/about_collage/IMAG0830.jpg"
+    title: "Ein Mann steht vor einer mit Graffiti beschmierten Wand"
+    params:
+      description: "Auf dem Bild steht ein junger Mann selbstbewusst vor einer bunten Graffiti-Wand. Er ist warm mit einer schwarzen Jacke und einer blauen Mütze gekleidet, was auf einen kühlen Tag hindeutet. Seine Hände sind lässig in den Taschen verstaut, und er blickt direkt in die Kamera, wobei er eine entspannte Haltung an den Tag legt.
+
+Die Graffiti-Wand hinter ihm ist ein buntes Durcheinander von Farben und Stilen, wobei sich verschiedene Tags und Designs überlagern. Inmitten dieses bunten Chaos sticht eine große weiße Katze mit einem Dollarzeichen auf der Stirn hervor. Die Augen der Katze sind geschlossen, was ihr inmitten des urbanen Kunstwerks einen ruhigen Ausdruck verleiht.
+
+Über der Katze steht in schwarzer Schrift ein deutscher Satz: Ich bin wieder hier um das, was übrig ist, zu verkaufen. 
+Der Text fügt der Szene ein Element der Intrige hinzu und deutet auf eine Geschichte hinter dem Bild hin.
+
+Insgesamt fängt das Bild einen Moment des städtischen Lebens ein, in dem sich die Energie der Straßenkunst mit dem lässigen Selbstbewusstsein des jungen Mannes verbindet."
+  - src: "/img/about_collage/IMG_20131009_175307.jpg"
+    title: "Ein Blick auf den Sonnenuntergang über den Bergen"
+    params:
+      description: "Dieses Bild fängt eine ruhige und malerische Landschaft in der Morgen- oder Abenddämmerung ein. Der Himmel ist in sanften Rosa- und Violetttönen gehalten, die eine ruhige Atmosphäre schaffen. Die Sonne ist teilweise durch den Horizont verdeckt und wirft einen warmen, goldenen Schein, der die Szene in ein sanftes Licht taucht.
+
+Im Vordergrund befindet sich eine dichte Ansammlung von grünem Laub, möglicherweise ein Wald oder ein Dickicht, das dem Bild Tiefe und Textur verleiht. Die Blätter und Zweige heben sich als Silhouette vom Himmel ab, was den Kontrast verstärkt und die natürliche Schönheit der Szene hervorhebt.
+
+Hinter dem Laub erstrecken sich sanfte Hügel und Berge in der Ferne, deren wellenförmige Formen ein Gefühl von Rhythmus und Harmonie vermitteln. Die Berge sind in einen leichten Nebel gehüllt, der der Szene einen Hauch von Geheimnis und Ruhe verleiht. Der Nebel macht die Ränder der Landschaft weicher, so dass es scheint, als würden die Berge sanft in den Himmel übergehen.
+
+Die Gesamtstimmung des Bildes ist friedlich und kontemplativ und erweckt ein Gefühl der Ruhe und der Verbundenheit mit der Natur. Es ist eine Szene, die den Betrachter einlädt, innezuhalten, durchzuatmen und die Schönheit der natürlichen Welt zu genießen."
+  - src: "/img/about_collage/IMG_20241125_124625.jpg"
+    title: "Ein Stück Kuchen mit einer Gabel darin"
+    params:
+      description: "Das Bild fängt einen köstlichen Moment des Genusses ein. In der Mitte des Bildes befindet sich ein Stück Dessert auf einem weißen Teller. Das Dessert scheint ein Crumble oder Crisp zu sein, mit einem goldbraunen, krümeligen Belag, der darauf schließen lässt, dass es perfekt gebacken wurde. Unter dem Belag sind weiche, zarte Fruchtstücke zu sehen, wahrscheinlich Äpfel, die in einer süßen, sirupartigen Sauce gebadet sind, die dem Ganzen einen glänzenden Anstrich verleiht. Das Dessert sieht aus, als wäre es frisch serviert worden, und die Textur der Streusel steht in schönem Kontrast zur Geschmeidigkeit der Fruchtfüllung.
+
+Ein Löffel ist teilweise im Dessert vergraben, was darauf hindeutet, dass jemand gleich zubeißen wird. Die Vorfreude auf den ersten Bissen ist fast greifbar, und man kann sich die süßen, würzigen Aromen vorstellen, die sich entfalten werden. Die gesamte Szene vermittelt ein Gefühl von Wärme und Behaglichkeit und erinnert an einen gemütlichen Nachmittagstee oder ein Familientreffen, bei dem solche hausgemachten Desserts oft genossen werden. Die Einfachheit des weißen Tellers hebt das Dessert noch mehr hervor und macht es zum Star der Show."
+  - src: "/img/about_collage/IMG_20241130_164757.jpg"
+    title: "Eine Person sitzt auf einem Felsvorsprung und schaut auf eine Stadt"
+    params:
+      description: "Das Bild zeigt einen atemberaubenden Sonnenuntergang, der den Himmel in Orange-, Rosa- und Violetttönen färbt und eine heitere und ruhige Atmosphäre schafft. Am Horizont sind sanfte Hügel zu sehen, die sich von dem leuchtenden Himmel abheben. Am Fuße dieser Hügel liegt ein malerisches Städtchen, dessen Gebäude und Straßen in das weiche, warme Licht der untergehenden Sonne getaucht sind. Die Stadt wirkt friedlich, mit einem Gefühl der Ruhe und Gelassenheit, das die Szene durchdringt.
+
+Auf der rechten Seite steht eine einsame Person mit dem Rücken zum Betrachter und blickt auf die malerische Landschaft. Die Person ist leger gekleidet, was auf einen Moment der Muße oder Kontemplation hindeutet. Ihre Haltung deutet auf ein Gefühl der Ehrfurcht oder Bewunderung für die natürliche Schönheit hin, die sich vor ihr entfaltet. Die Anwesenheit der Person verleiht der ansonsten ruhigen und beschaulichen Szene einen Hauch von Leben und menschlicher Verbundenheit.
+
+Die Gesamtstimmung des Bildes ist von Gelassenheit und Nachdenklichkeit geprägt und fängt einen Moment der Einsamkeit und Wertschätzung für die Schönheit der Natur ein. Das Zusammenspiel von Licht und Schatten, die leuchtenden Farben des Sonnenuntergangs und die friedliche Stadt ergeben zusammen eine Szene, die sowohl visuell beeindruckend als auch emotional bewegend ist."
+  - src: "/img/about_collage/P1000312.JPG"
+    title: "Die Spitze des Tempels"
+    params:
+      description: "0
+
+Ein majestätischer Tempelturm ragt in den wolkenverhangenen Himmel und zeugt mit seinen filigranen Details von der Handwerkskunst einer vergangenen Epoche. Die Spitze, eine Pyramide aus Stein, ist mit einer Symphonie von Farben und Mustern verziert, die im sanften Licht, das durch die Wolken dringt, zu tanzen scheinen.
+
+An der Basis bewacht ein Fries aus mythischen Kreaturen und Gottheiten, deren Formen in Stein gefroren sind, das heilige Bauwerk. Jede Figur ist sorgfältig gemeißelt, ihre Mimik und Haltung erzählen Geschichten aus alten Überlieferungen. Die Farben sind zwar im Laufe der Zeit verblasst, haben aber immer noch eine Lebendigkeit, die von dem reichen kulturellen Erbe zeugt, das sie repräsentieren.
+
+Je höher die Turmspitze steigt, desto kunstvoller werden die Verzierungen, mit komplizierten Mustern und Motiven, die sich wie Ranken an einem Baum emporranken. Das Mauerwerk ist nicht nur ein Bauwerk, sondern eine Leinwand für Kunst, wobei jede Schicht einen Teil einer größeren Geschichte erzählt.
+
+An der Spitze steht die Statue einer Gottheit, die die Welt unter sich überblickt. Die Figur ist gelassen, ihre Haltung ist von ruhiger Stärke und Weisheit geprägt. Sie ist der Höhepunkt der Reise der Turmspitze, ein Leuchtfeuer der Spiritualität inmitten der Wolken.
+
+Der Himmel darüber ist eine Leinwand für sich, mit Wolken, die träge dahintreiben und deren weiße Formen mit den dunkleren Farbtönen des Steins kontrastieren. Die Szene ist von Ruhe und Ehrfurcht geprägt, ein in der Zeit eingefrorener Moment, in dem das Heilige und das Natürliche in Harmonie koexistieren."
+  - src: "/img/about_collage/PANO_20241110_084024.jpg"
+    title: "Eine Straße, die durch eine kleine Stadt in den Bergen führt"
+    params:
+      description: "Dieses Panoramabild fängt eine ruhige und malerische Szene einer in einem Tal gelegenen Stadt ein. Der Aussichtspunkt scheint von einem erhöhten Weg oder einer Straße aus zu sein, die sich sanft nach rechts biegt und den Blick des Betrachters in die Ferne lenkt. Der Weg wird auf der rechten Seite von einer Steinmauer begrenzt, die der Szene einen rustikalen Charme verleiht.
+
+Die darunter liegende Stadt ist eine malerische Ansammlung von Häusern mit roten Ziegeldächern, die von Grünflächen durchsetzt sind. Die Häuser stehen dicht beieinander, was auf eine enge Gemeinschaft schließen lässt. Die Farben der Dächer bilden einen schönen Kontrast zur umgebenden Landschaft, die in herbstlichen Orange-, Gelb- und Brauntönen gehalten ist, was auf die Herbstzeit hindeutet.
+
+Der Himmel ist bedeckt, was ein weiches, diffuses Licht über die Szene wirft und eine ruhige, beschauliche Atmosphäre schafft. Der Nebel im Hintergrund verleiht der Szene eine geheimnisvolle Tiefe. Er verdeckt teilweise die entfernten Hügel und geht nahtlos in die gedämpften Farben des Himmels über.
+
+Insgesamt erweckt das Bild ein Gefühl der Ruhe und Nostalgie und fängt die stille Schönheit einer Kleinstadt inmitten des Herbstes ein. Die Kombination aus natürlichen und von Menschenhand geschaffenen Elementen schafft ein harmonisches Gleichgewicht und macht es zu einer fesselnden und einladenden Szene."
+  - src: "/img/about_collage/SDC10010.JPG"
+    title: "Ein See mit einem Baum im Vordergrund"
+    params:
+      description: "Dieses Bild fängt eine ruhige und heitere Szene an einem See- oder Flussufer während des Sonnenaufgangs oder Sonnenuntergangs ein. Der Himmel ist in sanften Orange- und Blautönen gehalten, was darauf hindeutet, dass die Sonne entweder auf- oder untergeht und ein sanftes Licht auf die gesamte Landschaft wirft. Die Horizontlinie ist deutlich sichtbar und trennt den Himmel von dem ruhigen Wasser unter ihm.
+
+Im Vordergrund steht ein Baum mit kahlen Ästen, was darauf hindeutet, dass es Spätherbst oder Winter sein könnte. Die Zweige erstrecken sich über den oberen Teil des Bildes und bilden einen natürlichen Rahmen, der der Szene Tiefe verleiht. Die Silhouette des Baumes vor dem Himmel vermittelt ein Gefühl von Ruhe und Einsamkeit.
+
+Das Wasser ist ruhig und reflektiert die Farben des Himmels, was die friedliche Atmosphäre noch verstärkt. Am gegenüberliegenden Ufer ragen einige Strukturen, möglicherweise Docks oder Piers, ins Wasser. Diese Strukturen heben sich als Silhouette vom Himmel ab und verleihen der ansonsten natürlichen Landschaft einen Hauch von menschlicher Präsenz.
+
+Die Gesamtstimmung des Bildes ist geprägt von Ruhe und Besinnlichkeit. Die Stille des Wassers, die kahlen Äste und die sanften Farben des Himmels tragen alle zu einem Gefühl der Ruhe und Besinnlichkeit bei. Es ist eine Szene, die dazu einlädt, innezuhalten, durchzuatmen und die Schönheit der Natur zu genießen."
+  - src: "/img/about_collage/SDC10933.JPG"
+    title: "Blick auf die Berge von einem Hügel aus"
+    params:
+      description: "Das Bild fängt eine atemberaubende Aussicht auf eine Berglandschaft ein, die in das weiche, diffuse Licht eines bewölkten Tages getaucht ist. Der Himmel darüber ist eine Leinwand aus Wolken, deren flauschige Formen sich so weit erstrecken, wie das Auge reicht, und die ein Gefühl von Weite und Ruhe vermitteln.
+
+Die Berge selbst haben eine Mischung aus Grün- und Brauntönen, die an einen üppigen Wald erinnern, der ihre Hänge bedeckt. Das Grün ist mit nackten Felsen durchsetzt, was der Szenerie einen rauen Charme verleiht. Die Berge heben und senken sich in sanften Wellen, ihre Gipfel sind in einen leichten Nebel gehüllt, der der Landschaft einen Hauch von Geheimnis verleiht.
+
+In der Ferne sind einige Gebäude zu erkennen, die auf subtile Weise an das menschliche Leben inmitten der natürlichen Schönheit erinnern. Sie werden von der Erhabenheit der Berge in den Schatten gestellt und unterstreichen die Größe und Majestät der Szene.
+
+Das Bild wurde von einem hohen Aussichtspunkt aus aufgenommen und bietet einen Panoramablick auf die Landschaft. Diese Perspektive ermöglicht eine umfassende Betrachtung der Szene, von den einzelnen Bäumen an den Berghängen bis hin zu den entfernten Gebäuden in den Tälern.
+
+Insgesamt ist das Bild ein Zeugnis für die Schönheit der Natur und fängt die ruhige und majestätische Schönheit einer Berglandschaft unter einem bedeckten Himmel ein."
+  - src: "/img/about_collage/SDC11187.JPG"
+    title: "Ein Mann steht neben einer großen Skulptur"
+    params:
+      description: "Auf dem Bild steht ein junger Mann vor einem modernen Gebäude mit weißer Fassade und gewölbten Fenstern. Er trägt ein rotes T-Shirt und khakifarbene Shorts und hat einen grauen Rucksack über die Schultern gehängt. Sein Blick ist nach oben gerichtet, auf eine große, abstrakte Skulptur, die die Szene beherrscht. Bei der Skulptur handelt es sich um ein glattes, geschwungenes Kunstwerk, das in einem gedämpften Grauton gestrichen ist und mit einem blauen Aufsatz einen Farbakzent setzt. Sie scheint aus einem Material wie Beton oder Stein gefertigt zu sein, was ihr eine solide und imposante Präsenz verleiht.
+
+Der Ausdruck des Mannes ist von Neugier und Interesse geprägt, was darauf schließen lässt, dass er die Skulptur bewundert oder betrachtet. Hinter ihm ist das Gebäude mit großen Glastüren und Fenstern versehen, die das Licht reflektieren und die zeitgenössische Ästhetik der Umgebung unterstreichen. Auf der linken Seite sorgt ein Baum mit üppig grünen Blättern für einen Hauch von Natur, der im Kontrast zu den von Menschenhand geschaffenen Strukturen steht.
+
+Der Boden ist mit kleinen Kieselsteinen bedeckt, die der Szene Struktur verleihen und auf einen Außenbereich hinweisen. Die Gesamtatmosphäre ist von ruhiger Kontemplation und Wertschätzung für Kunst und Architektur geprägt. Das Bild fängt einen Moment der Verbindung zwischen dem Menschen und der Kunst vor dem Hintergrund einer modernen, stilvollen Umgebung ein."
+
+
