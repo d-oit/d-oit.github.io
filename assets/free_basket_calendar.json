@@ -72,10 +72,10 @@
         "league": "ProB Nord"
     },
     {
-        "name": "NBA-Cup Halbfinale",
+        "name": "NBA-Cup Halbfinale: Houston Rockets at Oklahoma City Thunder",
         "begin": "2024-12-15T02:15:00+01:00",
         "end": "2024-12-15T03:45:00+01:00",
-        "description": "NBA-Cup Halbfinale live on ProSieben MAXX, Joyn, ran.de and in the ran app.",
+        "description": "NBA-Cup Halbfinale live on ProSieben MAXX, Joyn, ran.de and in the ran app.\n\nHouston Rockets at Oklahoma City Thunder",
         "location": "ran.de",
         "url": "https://ran.de",
         "league": "NBA-Cup"
