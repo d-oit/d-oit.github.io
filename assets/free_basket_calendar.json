@@ -1,15 +1,6 @@
 [
     {
-        "name": "EPG Guardians Koblenz vs. HAKRO Merlins Crailsheim",
-        "begin": "2024-12-16T19:15:00+01:00",
-        "end": "2024-12-16T20:45:00+01:00",
-        "description": "Basketball game between EPG Guardians Koblenz and HAKRO Merlins Crailsheim.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "NBA-Cup Finale",
+        "name": "NBA-Cup Finale: Oklahoma City Thunder vs. Milwaukee Bucks",
         "begin": "2024-12-18T02:00:00+01:00",
         "end": "2024-12-18T03:30:00+01:00",
         "description": "NBA-Cup Finale live on ProSieben MAXX, Joyn, ran.de and in the ran app.",
