@@ -22,7 +22,7 @@ This was also the perfect project to try out Streamlit for me.
 
 This approach enables generating beautiful collage galleries with descriptive lightbox captions, enhancing user experience and accessibility. You can explore more about the project and contribute to its development on GitHub.
 
-{{< button color="secondary" cue=false order="last" icon="fab GitHub" tooltip="GitHub Repository" href="https://github.com/d-oit/blip_mistral_image_description_output" >}}
+{{< button color="secondary" cue=false order="last" icon="fab github" tooltip="GitHub Repository" href="https://github.com/d-oit/blip_mistral_image_description_output" >}}
     GitHub Repository
 {{< /button >}}
 
