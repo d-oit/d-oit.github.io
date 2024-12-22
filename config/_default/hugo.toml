@@ -18,7 +18,7 @@ summaryLength = 20
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ["error-remote-getjson"]
 
-timeout = "180s"
+timeout = "190s"
 
 languageCode = "en-us"
 defaultContentLanguage = "en"
@@ -83,3 +83,6 @@ home = ["HTML", "RSS", "REDIR", "netlify", "server"]
 
 [[module.imports]]
   path = 'github.com/gethinode/hinode'
+
+[[module.imports]]
+  path = 'github.com/d-oit/hinode-mod-image-lightbox-gallery'

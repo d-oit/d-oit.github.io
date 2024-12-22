@@ -15,7 +15,7 @@
     {{ with index . 0 }}
       {{ with .GetPage $ref }}
         {{ $.Scratch.Set "url" .RelPermalink }}
-        {{ if not $text }}
+        {{ if eq $text "" }}
           {{ $text = .Title }}
         {{ end }}
       {{ else }}

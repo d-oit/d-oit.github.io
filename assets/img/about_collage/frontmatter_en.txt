@@ -1,3 +1,8 @@
+- src: "{image_file}"
+    title: "{output_title}"
+    params:
+      description:  "{output_description}"
+
 resources:
   - src: "IMG_20241105_174257.jpg"
     title: "A city at night"
