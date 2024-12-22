@@ -1,23 +1,5 @@
 [
     {
-        "name": "Gartenzaun24 Baskets Paderborn vs. Seawolves Academy",
-        "begin": "2024-12-20T19:15:00+01:00",
-        "end": "2024-12-20T20:45:00+01:00",
-        "description": "Basketball game between Gartenzaun24 Baskets Paderborn and Seawolves Academy.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB Nord"
-    },
-    {
-        "name": "Olympiakos Pir\u00e4us vs. Alba Berlin",
-        "begin": "2024-12-20T20:00:00+01:00",
-        "end": "2024-12-20T21:30:00+01:00",
-        "description": "EuroLeague basketball game between Olympiakos Pir\u00e4us and Alba Berlin.",
-        "location": "www.magentasport.de",
-        "url": "https://www.magentasport.de/",
-        "league": null
-    },
-    {
         "name": "TKS49ers vs. Berlin Braves 2000",
         "begin": "2024-12-21T15:30:00+01:00",
         "end": "2024-12-21T17:00:00+01:00",
