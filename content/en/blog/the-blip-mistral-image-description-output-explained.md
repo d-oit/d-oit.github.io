@@ -30,9 +30,10 @@ This approach enables generating beautiful collage galleries with descriptive li
 
 ```yaml
 - src: "{image_file}"
-    title: "{output_title}"
-    params:
-      description:  "{output_description}"
+  title: "{output_title}"
+  params:
+    description: >  
+      {output_description}
 ```
 
 #### Example front matter output
@@ -42,7 +43,8 @@ resources:
   - src: "IMG_20241105_174257.jpg"
     title: "A city at night"
     params:
-      description: "This image captures a nighttime view of a town or city. The sky is shifting from dusk to night, with a touch of twilight. Numerous buildings are illuminated, suggesting they are occupied or in use. The town is framed by a dark outline of trees or a hill in the background."
+      description: >
+        This image captures a nighttime view of a town or city. The sky is shifting from dusk to night, with a touch of twilight. Numerous buildings are illuminated, suggesting they are occupied or in use. The town is framed by a dark outline of trees or a hill in the background.
   - src: "IMG_20241117_154927.jpg"
     title: "A plastic container with food in it"
     params:
