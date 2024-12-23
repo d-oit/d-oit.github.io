@@ -101,27 +101,7 @@ resources:
     params:
       description: >  
         "In the image, I am standing outdoors in front of a white building with a red-tiled roof. I am wearing a red t-shirt and carrying a gray backpack. My attention is directed towards a large, gray, curved sculpture with a blue top, which I appear to be examining closely. Behind me, there are several tall, abstract sculptures, and a tree with green leaves partially obscures the left side of the frame. The setting suggests an art park or sculpture garden."
-  - src: "img/about_collage/1.JPG"
-    title: "A man in a red shirt and hat standing in a field"
-    params:
-      description: >  
-        "In the image, I am standing in a vast, arid landscape under a clear blue sky. I'm wearing a red t-shirt with the word "CHILENSEE" on it, a white cap, and sunglasses. Behind me, there's a striking red rock formation that dominates the scene, surrounded by sparse vegetation including small trees and shrubs. The ground is covered with dry grass and scattered rocks. This photo was likely taken in the Australian Outback, known for its unique and rugged terrain."
-  - src: "img/about_collage/2.JPG"
-    title: "The top of the temple"
-    params:
-      description: >  
-        "The image captures the grandeur of a majestic temple, its towering spire reaching towards the cloudy sky. The structure is adorned with intricate carvings and vibrant mosaics, depicting mythical creatures and elaborate patterns. The temple's facade is a testament to skilled craftsmanship, with each detail meticulously carved and painted. The perspective of the image is from below, emphasizing the towering height and imposing presence of the temple. This architectural marvel is likely located in Thailand, possibly within the historic complex of Ayutthaya."
-  - src: "img/about_collage/3.JPG"
-    title: "The sun sets over the mountains in the distance"
-    params:
-      description: >  
-        "The image captures a breathtaking sunset over a mountain range. The sky, awash with hues of pink and orange, serves as a dramatic backdrop to the silhouetted peaks. The mountains, shrouded in a light mist, rise majestically above a lush expanse of trees and foliage. The scene is serene and tranquil, with the vibrant colors of the sunset casting a warm glow over the landscape. This stunning view was captured from a vantage point in the mountains of Khao Yai National Park, Thailand."
-  - src: "img/about_collage/4.JPG"
-    title: "A lake with a tree in the fore"
-    params:
-      description: >  
-        "The image captures a tranquil scene at sunset. I'm standing under a leafless tree, its bare branches framing the view. The sky, painted in soft hues of orange and blue, meets the calm water at the horizon. A wooden pier extends into the lake, leading to a small structure. The silhouettes of trees and possibly a few buildings are visible in the distance. The overall atmosphere is serene and peaceful, a perfect moment of reflection."
-        
+   
 ---
 {{< persona thumbnail="/img/favicon.png" title="let's try things out." color="primary" >}}
 Hands-On, Discover.
