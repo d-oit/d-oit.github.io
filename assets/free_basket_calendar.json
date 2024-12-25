@@ -1,50 +1,5 @@
 [
     {
-        "name": "SC Rist Wedel vs. Bayer Giants Leverkusen",
-        "begin": "2024-12-22T15:45:00+01:00",
-        "end": "2024-12-22T17:15:00+01:00",
-        "description": "Basketball game between SC Rist Wedel and Bayer Giants Leverkusen.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProB Nord"
-    },
-    {
-        "name": "ART Giants D\u00fcsseldorf vs. N\u00fcrnberg Falcons BC",
-        "begin": "2024-12-22T15:45:00+01:00",
-        "end": "2024-12-22T17:15:00+01:00",
-        "description": "Basketball game between ART Giants D\u00fcsseldorf and N\u00fcrnberg Falcons BC.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
-        "name": "Bayern vs. Baskets Oldenburg",
-        "begin": "2024-12-22T16:00:00+01:00",
-        "end": "2024-12-22T17:30:00+01:00",
-        "description": "Basketball game between Bayern and Baskets Oldenburg.",
-        "location": "www.youtube.com",
-        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
-        "league": "BBL"
-    },
-    {
-        "name": "Indiana Pacers vs. Sacramento Kings",
-        "begin": "2024-12-22T23:40:00+01:00",
-        "end": "2024-12-23T01:10:00+01:00",
-        "description": "Indiana Pacers play against Sacramento Kings.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
-        "name": "HAKRO Merlins Crailsheim vs. Dresden Titans",
-        "begin": "2024-12-23T19:15:00+01:00",
-        "end": "2024-12-23T20:45:00+01:00",
-        "description": "Basketball game between HAKRO Merlins Crailsheim and Dresden Titans.",
-        "location": "sportdeutschland.tv",
-        "url": "https://sportdeutschland.tv/videos/basketball",
-        "league": "ProA"
-    },
-    {
         "name": "Minnesota Timberwolves vs. Dallas Mavericks",
         "begin": "2024-12-25T20:15:00+01:00",
         "end": "2024-12-25T21:45:00+01:00",
