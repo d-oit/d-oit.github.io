@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/airbnb/lottie-web v5.12.2+incompatible // indirect
-	github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.1 // indirect
+	github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.4 // indirect
 	github.com/gethinode/hinode v0.27.17 // indirect
 	github.com/gethinode/mod-bootstrap v1.3.1 // indirect
 	github.com/gethinode/mod-csp v1.0.5 // indirect
