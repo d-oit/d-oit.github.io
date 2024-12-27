@@ -1,14 +1,5 @@
 [
     {
-        "name": "Minnesota Timberwolves vs. Dallas Mavericks",
-        "begin": "2024-12-25T20:15:00+01:00",
-        "end": "2024-12-25T21:45:00+01:00",
-        "description": "Minnesota Timberwolves play against Dallas Mavericks.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
         "name": "FC Bayern M\u00fcnchen vs Panathinaikos AKTOR Athen",
         "begin": "2024-12-27T20:15:00+01:00",
         "end": "2024-12-27T21:45:00+01:00",
