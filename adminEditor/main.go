@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"image"
@@ -18,9 +20,115 @@ import (
 
 	"github.com/disintegration/imaging"
 	"github.com/gosimple/slug"
+	"github.com/joho/godotenv"
 	httpSwagger "github.com/swaggo/http-swagger" // swagger UI handler
 	_ "github.com/swaggo/swag"                   // swagger embed files
 )
+
+// FluxRequest represents the request structure for the FLUX API
+type FluxRequest struct {
+	Prompt      string `json:"prompt"`
+	Proportion  string `json:"proportion,omitempty"`
+	Language    string `json:"language,omitempty"`
+	Format      string `json:"format,omitempty"`
+	Seed        int64  `json:"seed,omitempty"`
+	StorageDays int    `json:"storage_days,omitempty"`
+}
+
+// FluxResponse represents the response structure from the FLUX API
+type FluxResponse struct {
+	ImageData    string    `json:"image_data"`
+	ImageURL     string    `json:"image_url,omitempty"`
+	MimeType     string    `json:"mime_type"`
+	Seed         int64     `json:"seed"`
+	StartedAt    time.Time `json:"started_at"`
+	CompletedAt  time.Time `json:"completed_at"`
+	ErrorMessage string    `json:"error,omitempty"`
+}
+
+// FluxClient handles API communication
+type FluxClient struct {
+	apiKey     string
+	baseURL    string
+	httpClient *http.Client
+}
+
+// NewFluxClient creates a new instance of FluxClient
+func NewFluxClient(apiKey string) *FluxClient {
+	return &FluxClient{
+		apiKey:     apiKey,
+		baseURL:    "https://api.imagepig.com/flux",
+		httpClient: &http.Client{Timeout: 30 * time.Second},
+	}
+}
+
+// GenerateLandscapeImage generates a landscape image using the FLUX API
+func (c *FluxClient) GenerateLandscapeImage(prompt string, outputFile string) error {
+	// Prepare the request
+	request := FluxRequest{
+		Prompt:     prompt,
+		Proportion: "landscape", // 1216×832 px
+		Format:     "JPEG",
+	}
+
+	// Convert request to JSON
+	requestBody, err := json.Marshal(request)
+	if err != nil {
+		return fmt.Errorf("error marshaling request: %w", err)
+	}
+
+	// Create HTTP request
+	req, err := http.NewRequest("POST", c.baseURL, bytes.NewBuffer(requestBody))
+	if err != nil {
+		return fmt.Errorf("error creating request: %w", err)
+	}
+
+	// Set headers
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Api-Key", c.apiKey)
+
+	// Send request
+	resp, err := c.httpClient.Do(req)
+	if err != nil {
+		return fmt.Errorf("error sending request: %w", err)
+	}
+	defer resp.Body.Close()
+
+	// Read response body
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return fmt.Errorf("error reading response: %w", err)
+	}
+
+	// Check for successful status code
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("API request failed with status %d: %s", resp.StatusCode, string(body))
+	}
+
+	// Parse response
+	var fluxResponse FluxResponse
+	if err := json.Unmarshal(body, &fluxResponse); err != nil {
+		return fmt.Errorf("error parsing response: %w", err)
+	}
+
+	// Check for API error
+	if fluxResponse.ErrorMessage != "" {
+		return fmt.Errorf("API error: %s", fluxResponse.ErrorMessage)
+	}
+
+	// Decode base64 image
+	imageData, err := base64.StdEncoding.DecodeString(fluxResponse.ImageData)
+	if err != nil {
+		return fmt.Errorf("error decoding image data: %w", err)
+	}
+
+	// Save image to file
+	if err := os.WriteFile(outputFile, imageData, 0644); err != nil {
+		return fmt.Errorf("error saving image: %w", err)
+	}
+
+	return nil
+}
 
 var config Config
 
@@ -262,11 +370,21 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 
 	// Create filename from title
 	filename := createSlug(request.Title) + ".md"
+	if request.Slug == "" {
+		request.Slug = slug.Make(request.Title)
+	}
+
+	if request.Thumbnail.LocalFile == "" && request.Thumbnail.URL == "" {
+		destFile := filepath.Join(config.Server.AssetFolder, request.Slug+".jpg")
+		err := createImageWithImagePig(request.Title, destFile)
+		if err != nil {
+			http.Error(w, "Error creating thumbnail: "+err.Error(), http.StatusInternalServerError)
+			return
+		}
+		request.Thumbnail.LocalFile = destFile
+	}
 
 	if request.Thumbnail.LocalFile != "" && request.Thumbnail.URL == "" {
-		if request.Slug == "" {
-			request.Slug = slug.Make(request.Title)
-		}
 
 		// Create a variable of the struct type
 		var reqMediaFile struct {
@@ -366,7 +484,7 @@ func generateMarkdownContent(post NewPostRequest) string {
 	}
 
 	// Convert date string to time.Time
-	date, err := time.Parse("2024-11-06T13:53", post.Date)
+	date, err := time.Parse("2006-01-02T15:04", post.Date)
 	if err != nil {
 		log.Printf("Error parsing date: %v", err)
 		date = time.Now()
@@ -741,4 +859,27 @@ func handleDeleteMedia(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(map[string]string{"status": "success"})
+}
+
+func createImageWithImagePig(prompt string, outputFile string) error {
+	// Load environment variables from .env file
+	if err := godotenv.Load(); err != nil {
+		return fmt.Errorf("Error loading .env file: %v", err)
+	}
+
+	// Get API key from environment
+	apiKey := os.Getenv("IMAGEPIG_API_KEY")
+	if apiKey == "" {
+		return fmt.Errorf("IMAGEPIG_API_KEY not found in environment")
+	}
+
+	// Create client
+	client := NewFluxClient(apiKey)
+
+	// Generate landscape image
+	if err := client.GenerateLandscapeImage(prompt, outputFile); err != nil {
+		return fmt.Errorf("Error generating image: %v", err)
+	}
+
+	return nil
 }
