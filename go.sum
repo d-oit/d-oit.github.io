@@ -18,6 +18,8 @@ github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.1 h1:SWOmyHDmVmQz2lPg2N4
 github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.1/go.mod h1:7BnE4rpTiwjjJ5ArMkv0+MjNSxkX7kPDOhQPswUC0wU=
 github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.4 h1:w47DtyS7XBPBur3zhuj9WTLCsaRocz+8kiDQdgxTQNk=
 github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.4/go.mod h1:7BnE4rpTiwjjJ5ArMkv0+MjNSxkX7kPDOhQPswUC0wU=
+github.com/d-oit/hinode-mod-slideshow-gallery v0.0.0-20241228201640-d312abdf7323 h1:ndLLfugw/4hty7+83xmPCrrjvbaGX5otpld9VMli26I=
+github.com/d-oit/hinode-mod-slideshow-gallery v0.0.0-20241228201640-d312abdf7323/go.mod h1:yMUMkNk7wMZNHDORCR1qfgtrKMrLMPBvGKD4pMHKtsg=
 github.com/gethinode/hinode v0.23.18 h1:mmlJP+A7MW0C/1ebZv6vDuPGKTrsgdP14wYWXMXAGRU=
 github.com/gethinode/hinode v0.23.18/go.mod h1:ZeVZDRjvPMosmTVG3RWBvaHvWaNbjYf7/3fF/LxXOVw=
 github.com/gethinode/hinode v0.23.19 h1:61QbBRwxp+iajrCkbyw2JrvyCWq819kOYwQjkgZez08=
