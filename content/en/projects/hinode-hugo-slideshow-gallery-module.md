@@ -30,6 +30,8 @@ resources:
     title: "Definition of the slideshow gallery"
     params:
       description: "Definition of the slideshow gallery with the image filename, title and description."     
+draft: false
+
 ---
 
 ## Hinode module: A slideshow gallery shortcode for Hugo compatible with Hinode
