@@ -4,7 +4,8 @@ go 1.23.1
 
 require (
 	github.com/disintegration/imaging v1.6.2
-	github.com/gosimple/slug v1.14.0
+	github.com/gosimple/slug v1.15.0
+	github.com/joho/godotenv v1.5.1
 	github.com/swaggo/http-swagger v1.3.4
 	github.com/swaggo/swag v1.16.4
 )
@@ -16,7 +17,6 @@ require (
 	github.com/go-openapi/spec v0.21.0 // indirect
 	github.com/go-openapi/swag v0.23.0 // indirect
 	github.com/gosimple/unidecode v1.0.1 // indirect
-	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/swaggo/files v1.0.1 // indirect
