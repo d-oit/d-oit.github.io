@@ -4,10 +4,10 @@ public/
 _vendor/
 .DS_store
 .hugo_build.lock
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
 .venv
 # GO
 # Binaries for programs and plugins

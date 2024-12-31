@@ -1,0 +1,94 @@
+- src: "{image_file}"
+    title: "{output_title}"
+    params:
+      description:  "{output_description}"
+
+resources:
+  - src: "IMG_20241105_174257.jpg"
+    title: "A city at night"
+    params:
+      description: "A serene nighttime view of a town with closely packed houses and buildings illuminated by warm lights. The sky transitions from dusk to night, and silhouettes of trees and hills add to the peaceful atmosphere."
+  - src: "IMG_20241117_154927.jpg"
+    title: "A plastic container with food in it"
+    params:
+      description: "A clear plastic container filled with an assortment of cookies, including golden-brown biscotti and chocolate-covered treats, placed on a dark surface."
+  - src: "20241113_180042.jpg"
+    title: "A white plate with a piece of cheese and nuts"
+    params:
+      description: "A sweet treat on a white plate, topped with banana slices and cashew nuts, resembling a banana and cashew-topped tart or cake."
+  - src: "20241124_154013.jpg"
+    title: "A view of a cloudy sky and a bench"
+    params:
+      description: "A tranquil landscape with a calm body of water reflecting the sky, a road lined with trees, and distant houses. The soft lighting suggests early morning or late afternoon."
+  - src: "CollageAbout.png"
+    title: "A col of pictures of a mountain, a rock, a sign, a sign, and a"
+    params:
+      description: "A collage featuring a mix of natural landscapes, cultural artifacts, and digital content, including a lush hillside, rock formations, ancient structures, and informative signs."
+  - src: "DSCN2759.JPG"
+    title: "Me in a red shirt and hat standing in a field"
+    params:
+      description: "Myself in a red 'CHILEMSEE' T-shirt and cap standing in front of a large, reddish rock formation, surrounded by sparse vegetation and a clear blue sky."
+  - src: "DSCN3357.JPG"
+    title: "Me standing next to a sign"
+    params:
+      description: "Myself in a black jacket standing next to a sandwich board sign advertising 'The Best in British Sausages' from 'Nicholson's' outside the 'Old Thameside Inn'."
+  - src: "IMAG0268.jpg"
+    title: "Me standing on a wooden bench by a lake"
+    params:
+      description: "Myself in a brown jacket and blue shirt standing by a wooden fence near a serene body of water, with lush greenery and a distant tall building."
+  - src: "IMAG0830.jpg"
+    title: "Me standing in front of a wall covered with graffiti"
+    params:
+      description: "Myself in a black jacket and beanie standing in front of a graffiti-covered wall with various designs and German text."
+  - src: "IMG_20131009_175307.jpg"
+    title: "A view of the sun setting over the mountains"
+    params:
+      description: "A peaceful sunrise or sunset scene with soft hues of orange and pink, rolling hills and mountains, and a light mist adding a mystical quality."
+  - src: "IMG_20241125_124625.jpg"
+    title: "A piece of cake with a fork in it"
+    params:
+      description: "A close-up of a crumble dessert with a golden-brown topping and visible chunks of fruit, served on a white plate."
+  - src: "IMG_20241130_164757.jpg"
+    title: "A person sitting on a ledge looking at a city"
+    params:
+      description: "A scenic sunset view of a town nestled in a valley, with buildings and a prominent tower, and two people observing the tranquil scene."
+  - src: "P1000312.JPG"
+    title: "The top of the temple"
+    params:
+      description: "An intricately designed temple or pagoda with detailed carvings, colorful decorations, and multiple tiers, set against a partly cloudy sky."
+  - src: "SDC10010.JPG"
+    title: "A lake with a tree in the fore"
+    params:
+      description: "A serene landscape at sunrise or sunset, with calm water reflecting soft hues of orange and blue, and bare tree branches in the foreground."
+  - src: "SDC10933.JPG"
+    title: "A view of the mountains from a hill"
+    params:
+      description: "A scenic view of rolling hills and mountains, with dense forests and scattered buildings, under an overcast sky."
+  - src: "SDC11187.JPG"
+    title: "Me is standing next to a large sculpture"
+    params:
+      description: "Myself in a red T-shirt standing near a large, curved sculpture with a blue object on top, surrounded by other sculptures and a white building."
+  - src: "PANO_20241110_084024.jpg"
+    title: "A road going through a small town in the mountains"
+    params:
+      description: "A panoramic view of a picturesque town nestled in a valley, with a winding road, dense clusters of houses, and an overcast sky creating a tranquil atmosphere."
+  - src: "IMG_20231226_093721.jpg"
+    title: "A white coffee cup with a crown on it"
+    params:
+      description: "A festive white ceramic mug with the phrase 'KEEP CALM AT CHRISTMAS' and a golden crown, placed on a reflective dark surface."
+  - src: "IMG_20231227_164849.jpg"
+    title: "A red sky with a few clouds"
+    params:
+      description: "A serene sunset scene with a stunning gradient of warm colors, silhouetted trees, and a dark, shadowy foreground."
+  - src: "P1000091.JPG"
+    title: "A view of a city from a hill"
+    params:
+      description: "A picturesque urban landscape with a sprawling cityscape stretching towards a body of water, framed by lush green trees in the foreground."
+  - src: "P1000253.JPG"
+    title: "A view of the city from a rooftop"
+    params:
+      description: "A panoramic view of a city skyline blending tradition and modernity, with red-tiled roofs, tall buildings, and a clear blue sky."
+  - src: "P1000844.JPG"
+    title: "The sun sets over the mountains in the distance"
+    params:
+      description: "A serene sunset scene with pastel hues of pinks and purples, majestic mountains, and lush green trees in the foreground."
