@@ -12,14 +12,22 @@ thumbnail:
   origin: 'd.o.it Admin Editor: imagepig api - FLUX.1-schnell'
 ---
 
-{{< table >}}
-| Name                                     | Description                                                                                                                                                                                                                                                       | URL                                                                       |
-|------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| hinode-mod-slideshow-gallery             | Hugo Hinode Module - Slideshow Gallery                                                                                                                                                                                                                            | [Link](https://github.com/d-oit/hinode-mod-slideshow-gallery)             |
-| hinode-mod-image-lightbox-gallery        | Hugo Hinode Lightbox Gallery                                                                                                                                                                                                                                      | [Link](https://github.com/d-oit/hinode-mod-image-lightbox-gallery)        |
-| blip_mistral_image_description_output    | This project is a Streamlit application that generates image descriptions using the BLIP model and Mistral Vision API. It allows users to input a folder of images, generate descriptions, translate them into different languages, and approve the descriptions. | [Link](https://github.com/d-oit/blip_mistral_image_description_output)    |
-| basketball-streams-to-calendar-ai-prompt | React WebApp: Basketball live streams prompt Google Calendar events creator with Google API                                                                                                                                                                       | [Link](https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt) |
-{.table-striped}
-{{< /table >}}
 
-{{< button icon="fab github" order="first" href="https://github.com/d-oit/github-repo-summary/" >}}GitHub Source Code - Script{{< /button >}}
+- Hugo Hinode Module: Image lightbox with Gallery shortcode  
+  [GitHub Repository](https://github.com/d-oit/hinode-mod-image-lightbox-gallery)
+
+- Hugo Hinode Module: Slideshow Gallery shortcode 
+  [GitHub Repository](https://github.com/d-oit/hinode-mod-slideshow-gallery)
+
+- This project is a Streamlit application that generates image descriptions using the BLIP model and Mistral Vision API. It allows users to input a folder of images, generate descriptions, translate them into different languages, and approve the descriptions. 
+Output format for the Hugo content front matter for the Hugo Hinode Module: slide gallery.
+  [GitHub Repository](https://github.com/d-oit/blip_mistral_image_description_output)
+
+- React WebApp: Basketball live streams prompt Google Calendar events creator with Google API  
+  [GitHub Repository](https://github.com/d-oit/basketball-streams-to-calendar-ai-prompt)
+
+- Hugo / Hinode Admin Editor (WIP): Golang Backend with javascript frontend as Frontend Editor for the Blog  
+  [GitHub Repository](https://github.com/d-oit/d-oit.github.io/tree/main/adminEditor)
+
+
+{{< button icon="fab github" order="first" href="https://github.com/d-oit/github-repo-summary/" >}}GitHub Summary Generator Source Code{{< /button >}}
