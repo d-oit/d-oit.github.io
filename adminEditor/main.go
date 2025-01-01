@@ -375,13 +375,19 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if request.Thumbnail.LocalFile == "" && request.Thumbnail.URL == "" {
-		destFile := filepath.Join(config.Server.AssetFolder, request.Slug+".jpg")
-		err := createImageWithImagePig(request.Title, destFile)
-		if err != nil {
-			http.Error(w, "Error creating thumbnail: "+err.Error(), http.StatusInternalServerError)
-			return
+		newFileName := request.Slug + ".jpg"
+		destFile := filepath.Join(config.Server.AssetFolder, newFileName)
+		// Check if file exists
+		if _, err := os.Stat(destFile); err == nil {
+			fmt.Printf("File exists already: %s\n", destFile)
+		} else {
+			err := createImageWithImagePig(request.Title, destFile)
+			if err != nil {
+				http.Error(w, "Error creating thumbnail: "+err.Error(), http.StatusInternalServerError)
+				return
+			}
 		}
-		request.Thumbnail.LocalFile = destFile
+		request.Thumbnail.URL = "/img/blog/" + newFileName
 	}
 
 	if request.Thumbnail.LocalFile != "" && request.Thumbnail.URL == "" {
@@ -408,6 +414,7 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 		log.Printf("Processed media file: %s -> %s\n", request.Thumbnail.LocalFile, newFileName)
 
 		request.Thumbnail.URL = "/img/blog/" + newFileName
+
 	}
 
 	// Determine the target folder based on language
@@ -418,7 +425,9 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 	case "en":
 		targetFolder = config.Server.EnglishFolder
 	default:
-		http.Error(w, "Invalid language", http.StatusBadRequest)
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Invalid language"})
 		return
 	}
 

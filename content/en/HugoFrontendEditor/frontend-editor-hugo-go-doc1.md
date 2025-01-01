@@ -58,6 +58,8 @@ The backend with the HTTP API is defined for now all in the main.go file in the 
 
    - **resizeImage**: Resizes an image using the provided dimensions and resampling method.
 
+   - **createImageWithImagePig**: Create a new image based on the slug title with imagepig api option FLUX.1-schnell
+
 ### d.o.it Hugo / Hinode Theme Admin Editor
 
 {{< refLink ref="try-out-create-a-frontend-editor-for-hugo--hinode-theme-with-go.md" lang="en" text="Start - Admin Editor" showButton="true" color="info" >}}

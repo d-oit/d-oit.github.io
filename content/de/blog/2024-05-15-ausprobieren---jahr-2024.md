@@ -18,7 +18,7 @@ Dinge die ich im Jahr **2024** ausprobieren (wieder neu beginnen) möchte:
 - Hugo / GoLong einarbeiten semi {{< fas fa-check-to-slot >}}
 - Hugo Admin Editor {{< fas fa-check-to-slot >}} Einiges ausgetestet mit Golang, vanilla js und Co. Ganz zufrieden bin ich nicht; einige Bereiche sind gelungen, andere gefallen mir weniger. Mal sehen was daraus wird. Auf jeden Fall einiges gelernt.
 - Coding / Aufgaben durch AI Tools verringern, austesten {{< fas fa-check-to-slot >}}
-- Smartphone Display austauschen. Update 12/2024: Nachdem ich das Smartphone nur zum Musikhören und zum Telefonieren via Headset verwende und es dafür noch gut ist, habe ich mich bisher nicht durchringen können das Display zu tauschen. 
+- Smartphone Display austauschen. Update 12/2024: Nachdem ich das Smartphone nur zum Musikhören und zum Telefonieren via Headset verwende und es dafür noch gut ist, habe ich mich bisher nicht durchringen können das Display zu tauschen.
 - yahtzee Block per WebApp zusammenrechnen und Würfelwahrscheinlichkeiten ausrechnen. Aktuell spielen wir fast jeden Abend eine Runde nach dem Abendessen :smile:
 - Lenovo Notebook Speicher aufrüsten, ohne clips abzubrechen {{< fas fa-check-to-slot>}}
 

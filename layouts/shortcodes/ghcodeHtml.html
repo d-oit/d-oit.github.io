@@ -1,0 +1,11 @@
+{{ $file := .Get 0 }}
+{{ with resources.GetRemote $file }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+  {{- $fileContents :=.Content | safeHTML -}}
+  {{- highlight $fileContents "auto" "" -}}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource." }}
+{{ end }}
