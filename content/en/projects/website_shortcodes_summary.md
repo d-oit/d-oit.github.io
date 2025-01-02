@@ -12,7 +12,6 @@ tags:
   - Hugo
 categories:
   - Website
-draft: true
 ---
 
 ## basketCalendar.html
