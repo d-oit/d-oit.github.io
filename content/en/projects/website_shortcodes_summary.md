@@ -2,7 +2,7 @@
 lang: en-US
 title: Used Hugo Shortcodes Summary
 description: "Overview created Hugo shortcodes for this website"
-date: 2025-01-01T14:56:31.284Z
+date: 2025-02-01T14:56:31.284Z
 layout: docs
 thumbnail:
   url: img/doitplaceholder.jpg
