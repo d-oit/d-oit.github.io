@@ -1,14 +1,5 @@
 [
     {
-        "name": "Fenerbahce Beko Istanbul vs Anadolu Efes Istanbul",
-        "begin": "2025-01-03T18:30:00+01:00",
-        "end": "2025-01-03T20:00:00+01:00",
-        "description": "EuroLeague game between Fenerbahce Beko Istanbul and Anadolu Efes Istanbul.",
-        "location": "magentasport.de",
-        "url": "https://magentasport.de",
-        "league": "EuroLeague"
-    },
-    {
         "name": "Philadelphia 76ers vs. Brooklyn Nets",
         "begin": "2025-01-04T23:45:00+01:00",
         "end": "2025-01-05T01:15:00+01:00",
@@ -16,6 +7,15 @@
         "location": "ran.de",
         "url": "https://ran.de",
         "league": "NBA"
+    },
+    {
+        "name": "Braunschweig vs. Bonn",
+        "begin": "2025-01-05T16:30:00+01:00",
+        "end": "2025-01-05T18:00:00+01:00",
+        "description": "Basketball game between Braunschweig and Bonn. This is a match from the 15th matchday of the BBL.",
+        "location": "www.youtube.com",
+        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
+        "league": "BBL"
     },
     {
         "name": "Boston Celtics vs. Oklahoma City Thunder",
@@ -43,6 +43,15 @@
         "location": "ran.de",
         "url": "https://ran.de",
         "league": "NBA"
+    },
+    {
+        "name": "MLP Academics Heidelberg vs. FC Bayern M\u00fcnchen Basketball",
+        "begin": "2025-01-12T16:30:00+01:00",
+        "end": "2025-01-12T18:00:00+01:00",
+        "description": "Basketball game between MLP Academics Heidelberg and FC Bayern M\u00fcnchen.",
+        "location": "www.youtube.com",
+        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
+        "league": "BBL"
     },
     {
         "name": "Denver Nuggets vs. Dallas Mavericks",
