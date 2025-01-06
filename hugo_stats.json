@@ -165,6 +165,7 @@
       "d-none",
       "d-none-dark",
       "d-none-light",
+      "d-sm-block",
       "d-sm-none",
       "data-table",
       "datatable-input",
