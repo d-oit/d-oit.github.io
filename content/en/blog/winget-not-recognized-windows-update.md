@@ -3,7 +3,6 @@ title: "Winget Not Recognized After Windows Update"
 date: 2025-01-01T10:54:33.643Z
 thumbnail:
   url: img/blog/windows-winget-not-recognized.png
-  origin: Copilot Designer
 tags:
   - WinGet
   - Windows
