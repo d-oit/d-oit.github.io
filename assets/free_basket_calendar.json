@@ -1,23 +1,5 @@
 [
     {
-        "name": "MLP Academics Heidelberg vs. FC Bayern M\u00fcnchen Basketball",
-        "begin": "2025-01-12T16:30:00+01:00",
-        "end": "2025-01-12T18:00:00+01:00",
-        "description": "Basketball game between MLP Academics Heidelberg and FC Bayern M\u00fcnchen.",
-        "location": "www.youtube.com",
-        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
-        "league": "BBL"
-    },
-    {
-        "name": "Denver Nuggets vs. Dallas Mavericks",
-        "begin": "2025-01-12T20:40:00+01:00",
-        "end": "2025-01-13T02:10:00+01:00",
-        "description": "Live basketball game between Denver Nuggets and Dallas Mavericks.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
         "name": "FC Barcelona vs. Panathinaikos AKTOR Athen",
         "begin": "2025-01-15T20:15:00+01:00",
         "end": "2025-01-15T21:45:00+01:00",
@@ -58,6 +40,15 @@
         "begin": "2025-01-19T23:40:00+01:00",
         "end": "2025-01-20T01:10:00+01:00",
         "description": "Denver Nuggets playing against Orlando Magic.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
+        "name": "San Antonio Spurs vs. Indiana Pacers",
+        "begin": "2025-01-23T19:15:00+01:00",
+        "end": "2025-01-23T21:00:00+01:00",
+        "description": "Watch the San Antonio Spurs play against the Indiana Pacers live on ProSieben MAXX, Joyn, ran.de and the ran app.",
         "location": "ran.de",
         "url": "https://ran.de",
         "league": "NBA"
