@@ -11,7 +11,7 @@ tags:
 categories:
   - AI Tool
 thumbnail:
-  url: images/blog/cline_codestral.png
+  url: "/img/blog/cline_codestral.png"
 lang: de
 slug: cline-testen-mistral-ai-api-kostenlos-nutzen
 ---
@@ -33,6 +33,7 @@ Wenn Sie Cline kostenlos ausprobieren möchten, ist die kostenlose Mistral API m
 ## Schritt 2: Zugriff auf die Cline-Provider-Einstellungen
 
 - Navigieren Sie zum Abschnitt **Provider-Einstellungen** in Cline, wie im Konfigurationsbild gezeigt.
+- Auswahl: **API Provider** - **OpenAI Compatible**
 - Verwenden Sie das Bild als Leitfaden, um das Einstellungsmenü zu finden.
 
 ## Schritt 3: Geben Sie den API-Schlüssel ein

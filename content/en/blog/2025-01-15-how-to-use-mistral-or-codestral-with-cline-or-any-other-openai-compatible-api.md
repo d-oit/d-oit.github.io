@@ -3,15 +3,15 @@ title: Use mistral or codestral API with cline
 description: Learn to integrate Mistral or Codestral API with Cline and other OpenAI-compatible APIs for seamless AI functionality - completely free.
 date: 2025-01-15T16:12:04.290Z
 tags:
-- Cline
-- Codestral
-- Mistral
-- Roo Cline
-- braintrust
+  - Cline
+  - Codestral
+  - Mistral
+  - Roo Cline
+  - braintrust
 categories:
-- AI Tool
+  - AI Tool
 thumbnail:
-url: images/blog/cline_codestral.png
+  url: /img/blog/cline_codestral.png
 lang: en
 slug: mistral-codestral-api-cline
 ---
@@ -33,6 +33,7 @@ If you want to try out Cline for free, it is a good starting point to use the fr
 ## Step 2: Access Cline Provider Settings
 
 - Navigate to the **Provider Settings** section in Cline, as shown in the configuration image.
+- Select **API Provider** - **OpenAI Compatible**
 - Use the image as a guide to locate the settings panel.
 
 ## Step 3: Enter the API Key
