@@ -13,6 +13,7 @@ categories:
 thumbnail:
   url: images/blog/cline_codestral.png
 lang: de
+slug: cline-testen-mistral-ai-api-kostenlos-nutzen
 ---
 
 ## Erklärung: Was ist Cline und Roo Cline für Visual Studio Code?
