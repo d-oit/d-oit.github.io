@@ -1,59 +1,5 @@
 [
     {
-        "name": "Braunschweig vs. Bonn",
-        "begin": "2025-01-05T16:30:00+01:00",
-        "end": "2025-01-05T18:00:00+01:00",
-        "description": "Basketball game between Braunschweig and Bonn. This is a match from the 15th matchday of the BBL.",
-        "location": "www.youtube.com",
-        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
-        "league": "BBL"
-    },
-    {
-        "name": "Boston Celtics vs. Oklahoma City Thunder",
-        "begin": "2025-01-05T21:10:00+01:00",
-        "end": "2025-01-06T00:40:00+01:00",
-        "description": "Live basketball game between Boston Celtics and Oklahoma City Thunder.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
-        "name": "Olympiakos Pir\u00e4us vs. FC Bayern M\u00fcnchen",
-        "begin": "2025-01-10T20:00:00+01:00",
-        "end": "2025-01-10T21:30:00+01:00",
-        "description": "Basketball game between Olympiakos Pir\u00e4us and FC Bayern M\u00fcnchen.",
-        "location": "www.magentasport.de",
-        "url": "https://www.magentasport.de/basketball",
-        "league": "EuroLeague"
-    },
-    {
-        "name": "Toronto Raptors vs. Detroit Pistons",
-        "begin": "2025-01-12T00:55:00+01:00",
-        "end": "2025-01-12T02:25:00+01:00",
-        "description": "Live basketball game between Toronto Raptors and Detroit Pistons.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
-        "name": "MLP Academics Heidelberg vs. FC Bayern M\u00fcnchen Basketball",
-        "begin": "2025-01-12T16:30:00+01:00",
-        "end": "2025-01-12T18:00:00+01:00",
-        "description": "Basketball game between MLP Academics Heidelberg and FC Bayern M\u00fcnchen.",
-        "location": "www.youtube.com",
-        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
-        "league": "BBL"
-    },
-    {
-        "name": "Denver Nuggets vs. Dallas Mavericks",
-        "begin": "2025-01-12T20:40:00+01:00",
-        "end": "2025-01-13T02:10:00+01:00",
-        "description": "Live basketball game between Denver Nuggets and Dallas Mavericks.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
         "name": "FC Barcelona vs. Panathinaikos AKTOR Athen",
         "begin": "2025-01-15T20:15:00+01:00",
         "end": "2025-01-15T21:45:00+01:00",
@@ -72,6 +18,42 @@
         "league": "EuroLeague"
     },
     {
+        "name": "Atlanta Hawks vs. Boston Celtics",
+        "begin": "2025-01-19T00:55:00+01:00",
+        "end": "2025-01-19T02:25:00+01:00",
+        "description": "Atlanta Hawks playing against Boston Celtics.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
+        "name": "Basketball L\u00f6wen Braunschweig vs. ratiopharm ulm",
+        "begin": "2025-01-19T16:30:00+01:00",
+        "end": "2025-01-19T18:00:00+01:00",
+        "description": "Basketball game between Basketball L\u00f6wen Braunschweig and ratiopharm ulm.",
+        "location": "Welt.tv",
+        "url": "https://Welt.tv",
+        "league": "BBL"
+    },
+    {
+        "name": "Denver Nuggets vs. Orlando Magic",
+        "begin": "2025-01-19T23:40:00+01:00",
+        "end": "2025-01-20T01:10:00+01:00",
+        "description": "Denver Nuggets playing against Orlando Magic.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
+        "name": "San Antonio Spurs vs. Indiana Pacers",
+        "begin": "2025-01-23T19:15:00+01:00",
+        "end": "2025-01-23T21:00:00+01:00",
+        "description": "Watch the San Antonio Spurs play against the Indiana Pacers live on ProSieben MAXX, Joyn, ran.de and the ran app.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
         "name": "ALBA BERLIN vs. FC Bayern M\u00fcnchen",
         "begin": "2025-01-24T19:45:00+01:00",
         "end": "2025-01-24T21:15:00+01:00",
@@ -81,10 +63,127 @@
         "league": "EuroLeague"
     },
     {
+        "name": "Detroit Pistons vs. Orlando Magic",
+        "begin": "2025-01-26T00:55:00+01:00",
+        "end": "2025-01-26T02:25:00+01:00",
+        "description": "Detroit Pistons playing against Orlando Magic.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
+        "name": "Veolia Towers Hamburg vs. FIT/One W\u00fcrzburg Baskets",
+        "begin": "2025-01-26T16:30:00+01:00",
+        "end": "2025-01-26T18:00:00+01:00",
+        "description": "Basketball game between Veolia Towers Hamburg and FIT/One W\u00fcrzburg Baskets.",
+        "location": "welt.tv",
+        "url": "https://welt.tv",
+        "league": "BBL"
+    },
+    {
+        "name": "Oklahoma City Thunder vs. Portland Trail Blazers",
+        "begin": "2025-01-27T00:00:00+01:00",
+        "end": "2025-01-27T01:30:00+01:00",
+        "description": "Oklahoma City Thunder playing against Portland Trail Blazers.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
         "name": "Partizan Mozzart Bet Belgrad vs. Roter Stern Belgrad",
         "begin": "2025-01-31T20:15:00+01:00",
         "end": "2025-01-31T21:45:00+01:00",
         "description": "Basketball game between Partizan Mozzart Bet Belgrad and Roter Stern Belgrad.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "FC Barcelona vs. Maccabi Playtika Tel Aviv",
+        "begin": "2025-02-05T20:15:00+01:00",
+        "end": "2025-02-05T21:45:00+01:00",
+        "description": "EuroLeague game between FC Barcelona and Maccabi Playtika Tel Aviv.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "FC Barcelona vs. Olympiakos Pir\u00e4us",
+        "begin": "2025-02-07T20:15:00+01:00",
+        "end": "2025-02-07T21:45:00+01:00",
+        "description": "EuroLeague game between FC Barcelona and Olympiakos Pir\u00e4us.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "Anadolu Efes Istanbul vs. ALBA BERLIN",
+        "begin": "2025-02-28T18:15:00+01:00",
+        "end": "2025-02-28T19:45:00+01:00",
+        "description": "EuroLeague game between Anadolu Efes Istanbul and ALBA BERLIN.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "ALBA BERLIN vs. FC Barcelona",
+        "begin": "2025-03-07T20:00:00+01:00",
+        "end": "2025-03-07T21:30:00+01:00",
+        "description": "EuroLeague game between ALBA BERLIN and FC Barcelona.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "FC Bayern M\u00fcnchen vs. Anadolu Efes Istanbul",
+        "begin": "2025-03-14T20:15:00+01:00",
+        "end": "2025-03-14T21:45:00+01:00",
+        "description": "EuroLeague game between FC Bayern M\u00fcnchen and Anadolu Efes Istanbul.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "Panathinaikos AKTOR Athen vs. ALBA BERLIN",
+        "begin": "2025-03-21T20:00:00+01:00",
+        "end": "2025-03-21T21:30:00+01:00",
+        "description": "EuroLeague game between Panathinaikos AKTOR Athen and ALBA BERLIN.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "Roter Stern Belgrad vs. Virtus Segafredo Bologna",
+        "begin": "2025-03-26T19:45:00+01:00",
+        "end": "2025-03-26T21:15:00+01:00",
+        "description": "EuroLeague game between Roter Stern Belgrad and Virtus Segafredo Bologna.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "Roter Stern Belgrad vs. Real Madrid",
+        "begin": "2025-03-28T19:45:00+01:00",
+        "end": "2025-03-28T21:15:00+01:00",
+        "description": "EuroLeague game between Roter Stern Belgrad and Real Madrid.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "ALBA BERLIN vs. Olympiakos Pir\u00e4us",
+        "begin": "2025-04-04T19:45:00+02:00",
+        "end": "2025-04-04T21:15:00+02:00",
+        "description": "EuroLeague game between ALBA BERLIN and Olympiakos Pir\u00e4us.",
+        "location": "www.magentasport.de",
+        "url": "https://www.magentasport.de/basketball",
+        "league": "EuroLeague"
+    },
+    {
+        "name": "Anadolu Efes Istanbul vs. Zalgiris Kaunas",
+        "begin": "2025-04-11T19:15:00+02:00",
+        "end": "2025-04-11T20:45:00+02:00",
+        "description": "EuroLeague game between Anadolu Efes Istanbul and Zalgiris Kaunas.",
         "location": "www.magentasport.de",
         "url": "https://www.magentasport.de/basketball",
         "league": "EuroLeague"
