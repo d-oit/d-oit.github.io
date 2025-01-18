@@ -32,9 +32,14 @@ Wenn Sie Cline kostenlos ausprobieren möchten, ist die kostenlose Mistral API m
 
 ## Schritt 2: Zugriff auf die Cline-Provider-Einstellungen
 
-- Navigieren Sie zum Abschnitt **Provider-Einstellungen** in Cline, wie im Konfigurationsbild gezeigt.
+- Navigieren Sie zum Abschnitt **Settings** in Cline, wie im Konfigurationsbild gezeigt.
 - Auswahl: **API Provider** - **OpenAI Compatible**
 - Verwenden Sie das Bild als Leitfaden, um das Einstellungsmenü zu finden.
+
+### Cline Version > v3.1.11
+
+- Direkte Auswahl von API Provider **Mistral**
+  > Die [Provider Konfiguration](https://github.com/cline/cline/blob/main/src/api/providers/mistral.ts) verwendet direkt den Mistral Typescript Client und serverURL: "https://codestral.mistral.ai".
 
 ## Schritt 3: Geben Sie den API-Schlüssel ein
 

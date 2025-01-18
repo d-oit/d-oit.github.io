@@ -30,11 +30,17 @@ If you want to try out Cline for free, it is a good starting point to use the fr
 
 - **Source**: Acquire your free Mistral API key from the [Mistral AI console](https://console.mistral.ai/).
 
-## Step 2: Access Cline Provider Settings
+## Step 2: Access Cline Settings
 
 - Navigate to the **Provider Settings** section in Cline, as shown in the configuration image.
 - Select **API Provider** - **OpenAI Compatible**
 - Use the image as a guide to locate the settings panel.
+
+### Cline Version > v3.1.11
+
+- API Provider: **Mistral**
+  
+  The [Provider configuration](https://github.com/cline/cline/blob/main/src/api/providers/mistral.ts) could now directly used with the Mistral Typescript Client and serverURL: "https://codestral.mistral.ai".
 
 ## Step 3: Enter the API Key
 
