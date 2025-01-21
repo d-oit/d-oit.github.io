@@ -1,23 +1,5 @@
 [
     {
-        "name": "Basketball L\u00f6wen Braunschweig vs. ratiopharm ulm",
-        "begin": "2025-01-19T16:30:00+01:00",
-        "end": "2025-01-19T18:00:00+01:00",
-        "description": "Basketball game between Basketball L\u00f6wen Braunschweig and ratiopharm ulm.",
-        "location": "Welt.tv",
-        "url": "https://Welt.tv",
-        "league": "BBL"
-    },
-    {
-        "name": "Denver Nuggets vs. Orlando Magic",
-        "begin": "2025-01-19T23:40:00+01:00",
-        "end": "2025-01-20T01:10:00+01:00",
-        "description": "Denver Nuggets playing against Orlando Magic.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
         "name": "San Antonio Spurs vs. Indiana Pacers",
         "begin": "2025-01-23T19:15:00+01:00",
         "end": "2025-01-23T21:00:00+01:00",
@@ -70,6 +52,33 @@
         "location": "www.magentasport.de",
         "url": "https://www.magentasport.de/basketball",
         "league": "EuroLeague"
+    },
+    {
+        "name": "Denver Nuggets vs. Charlotte Hornets",
+        "begin": "2025-02-02T00:55:00+01:00",
+        "end": "2025-02-02T02:25:00+01:00",
+        "description": "Denver Nuggets plays against Charlotte Hornets.\nlive on ProSieben MAXX, Joyn, ran.de and in the ran app",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": null
+    },
+    {
+        "name": "FC Bayern M\u00fcnchen Basketball vs. ALBA BERLIN",
+        "begin": "2025-02-02T16:30:00+01:00",
+        "end": "2025-02-02T18:00:00+01:00",
+        "description": "FC Bayern M\u00fcnchen Basketball plays against ALBA BERLIN.",
+        "location": "www.youtube.com",
+        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
+        "league": "easyCredit BBL"
+    },
+    {
+        "name": "Dallas Mavericks vs. Cleveland Cavaliers",
+        "begin": "2025-02-02T21:10:00+01:00",
+        "end": "2025-02-02T22:40:00+01:00",
+        "description": "Dallas Mavericks plays against Cleveland Cavaliers.\nlive on ProSieben MAXX, Joyn, ran.de and in the ran app",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": null
     },
     {
         "name": "FC Barcelona vs. Maccabi Playtika Tel Aviv",
