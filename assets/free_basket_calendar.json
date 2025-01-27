@@ -1,14 +1,5 @@
 [
     {
-        "name": "Detroit Pistons vs. Orlando Magic",
-        "begin": "2025-01-26T00:55:00+01:00",
-        "end": "2025-01-26T02:25:00+01:00",
-        "description": "Detroit Pistons playing against Orlando Magic.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
         "name": "Veolia Towers Hamburg vs. FIT/One W\u00fcrzburg Baskets",
         "begin": "2025-01-26T16:30:00+01:00",
         "end": "2025-01-26T18:00:00+01:00",
@@ -36,6 +27,123 @@
         "league": "EuroLeague"
     },
     {
+        "name": "TEAM EHINGEN URSPRING vs. Skyliners Juniors",
+        "begin": "2025-02-01T17:45:00+01:00",
+        "end": "2025-02-01T19:15:00+01:00",
+        "description": "ProB S\u00fcd basketball game between TEAM EHINGEN URSPRING and Skyliners Juniors.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "Eisb\u00e4ren Bremerhaven vs. VET-CONCEPT Gladiators Trier",
+        "begin": "2025-02-01T17:45:00+01:00",
+        "end": "2025-02-01T19:15:00+01:00",
+        "description": "Basketball game between Eisb\u00e4ren Bremerhaven and VET-CONCEPT Gladiators Trier.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Eisb\u00e4ren Bremerhaven vs. VET-CONCEPT Gladiators Trier",
+        "begin": "2025-02-01T17:45:00+01:00",
+        "end": "2025-02-01T19:15:00+01:00",
+        "description": "ProA basketball game between Eisb\u00e4ren Bremerhaven and VET-CONCEPT Gladiators Trier.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "TEAM EHINGEN URSPRING vs. Skyliners Juniors",
+        "begin": "2025-02-01T17:45:00+01:00",
+        "end": "2025-02-01T19:15:00+01:00",
+        "description": "Basketball game between TEAM EHINGEN URSPRING and Skyliners Juniors.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "Science City Jena vs. PS Karlsruhe LIONS",
+        "begin": "2025-02-01T18:15:00+01:00",
+        "end": "2025-02-01T19:45:00+01:00",
+        "description": "ProA basketball game between Science City Jena and PS Karlsruhe LIONS.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Science City Jena vs. PS Karlsruhe LIONS",
+        "begin": "2025-02-01T18:15:00+01:00",
+        "end": "2025-02-01T19:45:00+01:00",
+        "description": "Basketball game between Science City Jena and PS Karlsruhe LIONS.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "BBC Bayreuth vs. Artland Dragons",
+        "begin": "2025-02-01T18:45:00+01:00",
+        "end": "2025-02-01T20:15:00+01:00",
+        "description": "ProA basketball game between BBC Bayreuth and Artland Dragons.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "BBC Bayreuth vs. Artland Dragons",
+        "begin": "2025-02-01T18:45:00+01:00",
+        "end": "2025-02-01T20:15:00+01:00",
+        "description": "Basketball game between BBC Bayreuth and Artland Dragons.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Bozic Estriche Knights Kirchheim vs. EPG Guardians Koblenz",
+        "begin": "2025-02-01T18:45:00+01:00",
+        "end": "2025-02-01T20:15:00+01:00",
+        "description": "ProA basketball game between Bozic Estriche Knights Kirchheim and EPG Guardians Koblenz.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Bozic Estriche Knights Kirchheim vs. EPG Guardians Koblenz",
+        "begin": "2025-02-01T18:45:00+01:00",
+        "end": "2025-02-01T20:15:00+01:00",
+        "description": "Basketball game between Bozic Estriche Knights Kirchheim and EPG Guardians Koblenz.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Uni Baskets M\u00fcnster vs. Phoenix Hagen",
+        "begin": "2025-02-01T19:10:00+01:00",
+        "end": "2025-02-01T20:40:00+01:00",
+        "description": "ProA basketball game between Uni Baskets M\u00fcnster and Phoenix Hagen.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "HAKRO Merlins Crailsheim vs. Tigers T\u00fcbingen",
+        "begin": "2025-02-01T19:45:00+01:00",
+        "end": "2025-02-01T21:15:00+01:00",
+        "description": "ProA basketball game between HAKRO Merlins Crailsheim and Tigers T\u00fcbingen.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "HAKRO Merlins Crailsheim vs. Tigers T\u00fcbingen",
+        "begin": "2025-02-01T19:45:00+01:00",
+        "end": "2025-02-01T21:15:00+01:00",
+        "description": "Basketball game between HAKRO Merlins Crailsheim and Tigers T\u00fcbingen.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
         "name": "Denver Nuggets vs. Charlotte Hornets",
         "begin": "2025-02-02T00:55:00+01:00",
         "end": "2025-02-02T02:25:00+01:00",
@@ -43,6 +151,33 @@
         "location": "ran.de",
         "url": "https://ran.de",
         "league": null
+    },
+    {
+        "name": "N\u00fcrnberg Falcons BC vs. ART Giants D\u00fcsseldorf",
+        "begin": "2025-02-02T14:45:00+01:00",
+        "end": "2025-02-02T16:15:00+01:00",
+        "description": "Basketball game between N\u00fcrnberg Falcons BC and ART Giants D\u00fcsseldorf.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Dresden Titans vs. RASTA Vechta II",
+        "begin": "2025-02-02T15:45:00+01:00",
+        "end": "2025-02-02T17:15:00+01:00",
+        "description": "ProA basketball game between Dresden Titans and RASTA Vechta II.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Dresden Titans vs. RASTA Vechta II",
+        "begin": "2025-02-02T15:45:00+01:00",
+        "end": "2025-02-02T17:15:00+01:00",
+        "description": "Basketball game between Dresden Titans and RASTA Vechta II.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
     },
     {
         "name": "FC Bayern M\u00fcnchen Basketball vs. ALBA BERLIN",
@@ -72,6 +207,87 @@
         "league": "EuroLeague"
     },
     {
+        "name": "N\u00fcrnberg Falcons BC vs. Bozic Estriche Knights Kirchheim",
+        "begin": "2025-02-07T18:45:00+01:00",
+        "end": "2025-02-07T20:15:00+01:00",
+        "description": "Basketball game between N\u00fcrnberg Falcons BC and Bozic Estriche Knights Kirchheim.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Phoenix Hagen vs. BBC Bayreuth",
+        "begin": "2025-02-07T19:00:00+01:00",
+        "end": "2025-02-07T20:30:00+01:00",
+        "description": "Basketball game between Phoenix Hagen and BBC Bayreuth.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "VfL SparkassenStars Bochum vs. Dresden Titans",
+        "begin": "2025-02-07T19:15:00+01:00",
+        "end": "2025-02-07T20:45:00+01:00",
+        "description": "Basketball game between VfL SparkassenStars Bochum and Dresden Titans.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "RASTA Vechta II vs. ART Giants D\u00fcsseldorf",
+        "begin": "2025-02-07T19:15:00+01:00",
+        "end": "2025-02-07T20:45:00+01:00",
+        "description": "ProA basketball game between RASTA Vechta II and ART Giants D\u00fcsseldorf.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "RASTA Vechta II vs. ART Giants D\u00fcsseldorf",
+        "begin": "2025-02-07T19:15:00+01:00",
+        "end": "2025-02-07T20:45:00+01:00",
+        "description": "Basketball game between RASTA Vechta II and ART Giants D\u00fcsseldorf.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "HAKRO Merlins Crailsheim vs. Science City Jena",
+        "begin": "2025-02-07T19:45:00+01:00",
+        "end": "2025-02-07T21:15:00+01:00",
+        "description": "ProA basketball game between HAKRO Merlins Crailsheim and Science City Jena.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "HAKRO Merlins Crailsheim vs. Science City Jena",
+        "begin": "2025-02-07T19:45:00+01:00",
+        "end": "2025-02-07T21:15:00+01:00",
+        "description": "Basketball game between HAKRO Merlins Crailsheim and Science City Jena.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Tigers T\u00fcbingen vs. Eisb\u00e4ren Bremerhaven",
+        "begin": "2025-02-07T19:45:00+01:00",
+        "end": "2025-02-07T21:15:00+01:00",
+        "description": "ProA basketball game between Tigers T\u00fcbingen and Eisb\u00e4ren Bremerhaven.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "EPG Guardians Koblenz vs. GIESSEN 46ers",
+        "begin": "2025-02-07T19:45:00+01:00",
+        "end": "2025-02-07T21:15:00+01:00",
+        "description": "ProA basketball game between EPG Guardians Koblenz and GIESSEN 46ers.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
         "name": "FC Barcelona vs. Olympiakos Pir\u00e4us",
         "begin": "2025-02-07T20:15:00+01:00",
         "end": "2025-02-07T21:45:00+01:00",
@@ -81,6 +297,60 @@
         "league": "EuroLeague"
     },
     {
+        "name": "RheinStars K\u00f6ln vs. Ahorn Camp Baskets",
+        "begin": "2025-02-08T17:45:00+01:00",
+        "end": "2025-02-08T19:15:00+01:00",
+        "description": "Basketball game between RheinStars K\u00f6ln and Ahorn Camp Baskets.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "RheinStars K\u00f6ln vs. Ahorn Camp Baskets",
+        "begin": "2025-02-08T17:45:00+01:00",
+        "end": "2025-02-08T19:15:00+01:00",
+        "description": "ProB S\u00fcd basketball game between RheinStars K\u00f6ln and Ahorn Camp Baskets.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProB S\u00fcd"
+    },
+    {
+        "name": "HAKRO Merlins Crailsheim vs. Eisb\u00e4ren Bremerhaven",
+        "begin": "2025-02-09T14:45:00+01:00",
+        "end": "2025-02-09T16:15:00+01:00",
+        "description": "ProA basketball game between HAKRO Merlins Crailsheim and Eisb\u00e4ren Bremerhaven.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Phoenix Hagen vs. VET-CONCEPT Gladiators Trier",
+        "begin": "2025-02-09T15:30:00+01:00",
+        "end": "2025-02-09T17:00:00+01:00",
+        "description": "ProA basketball game between Phoenix Hagen and VET-CONCEPT Gladiators Trier.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Phoenix Hagen vs. VET-CONCEPT Gladiators Trier",
+        "begin": "2025-02-09T15:30:00+01:00",
+        "end": "2025-02-09T17:00:00+01:00",
+        "description": "Basketball game between Phoenix Hagen and VET-CONCEPT Gladiators Trier.",
+        "location": "sportdeutschland.tv",
+        "url": "https://sportdeutschland.tv/barmer-2-basketball-bundesliga",
+        "league": "ProA"
+    },
+    {
+        "name": "Bamberg Baskets vs. EWE Baskets Oldenburg",
+        "begin": "2025-02-09T16:30:00+01:00",
+        "end": "2025-02-09T18:00:00+01:00",
+        "description": "Basketball game between Bamberg Baskets and EWE Baskets Oldenburg.",
+        "location": "www.youtube.com",
+        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
+        "league": "Basketball Bundesliga"
+    },
+    {
         "name": "Anadolu Efes Istanbul vs. ALBA BERLIN",
         "begin": "2025-02-28T18:15:00+01:00",
         "end": "2025-02-28T19:45:00+01:00",
@@ -88,6 +358,15 @@
         "location": "www.magentasport.de",
         "url": "https://www.magentasport.de/basketball",
         "league": "EuroLeague"
+    },
+    {
+        "name": "NINERS Chemnitz vs. FC Bayern M\u00fcnchen",
+        "begin": "2025-03-02T16:30:00+01:00",
+        "end": "2025-03-02T18:00:00+01:00",
+        "description": "Basketball game between NINERS Chemnitz and FC Bayern M\u00fcnchen.",
+        "location": "www.youtube.com",
+        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
+        "league": "Basketball Bundesliga"
     },
     {
         "name": "ALBA BERLIN vs. FC Barcelona",
