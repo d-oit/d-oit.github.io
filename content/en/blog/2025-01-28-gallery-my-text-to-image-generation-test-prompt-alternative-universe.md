@@ -39,6 +39,7 @@ resources:
   - src: img/UniverseMathscapePrompt/Qwen2_5_Plus.png
     title: Qwen2.5 Plus 
 slug: text-image-generation-test-prompt-alternative-universe
+excludeTOC: true
 ---
 
 ## My Text-Image Generation for different models
