@@ -1,9 +1,9 @@
 {{ $file := .Get 0 }}
-{{ with resources.GetRemote $file }}
+{{ with try (resources.GetRemote $file) }}
   {{ with .Err }}
     {{ errorf "%s" . }}
   {{ else }}
-  {{ .Content | markdownify }}
+    {{ .Value | markdownify }}
   {{ end }}
 {{ else }}
   {{ errorf "Unable to get remote resource." }}
