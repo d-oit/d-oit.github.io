@@ -55,6 +55,7 @@
     - 2800x1200
 - ratio: auto
   dimensions:
+    - 80
     - 150
     - 300
     - 450
