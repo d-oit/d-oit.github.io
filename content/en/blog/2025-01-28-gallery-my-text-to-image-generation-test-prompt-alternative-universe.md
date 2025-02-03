@@ -10,7 +10,7 @@ tags:
 categories:
   - Artificial Intelligence
 thumbnail:
-  url: /img/blog/UniverseMathscapePrompt/JanusPro7Bds4.webp
+  url: /img/blog/UniverseMathscapePrompt/Bing_Image_Creator.png
   author: Janus Pro 7B - created by d.o.it on HF
 lang: en
 modules:
