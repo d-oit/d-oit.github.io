@@ -3,7 +3,7 @@ title: "Text-to-image generation test prompt: Alternative universe"
 description: |
   Image gallery for Text-to-Image generation enhanced prompt for generation an image for an alternative universe
 date: 2025-01-27T11:08:26.847Z
-draft: true
+draft: false
 tags:
   - AI Art
   - Text-to-Image

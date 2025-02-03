@@ -1,10 +1,10 @@
 {{ $data := dict }}
 {{ $icsURL := .Get "url" }}
-{{ with resources.GetRemote $icsURL }}
+{{ with try (resources.GetRemote $icsURL) }}
   {{ with .Err }}
     {{ errorf "%s" . }}
   {{ else }}
-  {{ .Content | transform.Unmarshal }}
+    {{ .Value | transform.Unmarshal }}
 
 {{ $icsContent := $icsURL }}
 {{ $events := split $icsContent "\nBEGIN:VEVENT" }}
@@ -36,7 +36,7 @@
   </table>
   {{ end }}
 {{ else }}
-  {{ errorf "Unable to get remote resource." }}
+  {{ errorf "Unable to get remote resource %q" $icsURL }}
 {{ end }}
 
 {{/*  {{ range $index, $event := $events }}

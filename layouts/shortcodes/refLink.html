@@ -1,10 +1,10 @@
 {{ $ref := .Get "ref" }}
-{{ $lang := .Get "lang" }}
+{{ $lang := .Get "lang" | default "en" }}
 {{ $color := .Get "color" }}
 {{ $class := .Get "class" }}
 {{ $icon := .Get "icon" }}
 {{ $text := .Get "text" }}
-{{ $showButton := .Get "showButton" | partial "utilities/CastBool.html" }}
+{{ $showButton := .Get "showButton" | default "false" | partial "utilities/CastBool.html"  }}
 {{ $.Scratch.Set "url" $ref }}
 
 {{ if or (hasPrefix $ref "http://") (hasPrefix $ref "https://") }}
@@ -19,13 +19,14 @@
           {{ $text = .Title }}
         {{ end }}
       {{ else }}
-        {{ errorf "Page not found: %s\nPage: " $ref }}
+        {{ errorf "Page not found: %s" .Page.RelPermalink }}
       {{ end }}
     {{ else }}
-      {{ errorf "Language not found: %s\nPage: " $lang  }}
+    {{ errorf "Language not found: %s\nPage: %s" $lang .Page.RelPermalink }}
+
     {{ end }}
   {{ else }}
-    {{ errorf "Language not found: %s\nPage:" $lang  }}
+  {{ errorf "Language not found: %s\nPage: %s" $lang .Page.RelPermalink }}
   {{ end }}
 {{ end }}
 
