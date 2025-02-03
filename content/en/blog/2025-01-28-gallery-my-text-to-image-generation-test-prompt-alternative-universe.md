@@ -13,8 +13,7 @@ thumbnail:
   url: /img/blog/UniverseMathscapePrompt/Bing_Image_Creator.png
   author: Janus Pro 7B - created by d.o.it on HF
 lang: en
-modules:
-  - slideshow-gallery
+modules: ["slideshow-gallery"]  
 resources:
   - src: /img/blog/UniverseMathscapePrompt/Bing_Image_Creator.png
     title: Bing Image Creator
