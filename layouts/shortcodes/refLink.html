@@ -9,7 +9,7 @@
 
 {{ if or (hasPrefix $ref "http://") (hasPrefix $ref "https://") }}
   {{ $.Scratch.Set "url" $ref }}
-  {{ warnf "Setting URL to external link: %s\n" $ref }}
+  {{ warnf "Setting URL to external link: %s - Page: %s" $ref .Page.RelPermalink }}
 {{ else }}
   {{ with where .Site.Sites "Language.Lang" "eq" $lang }}
     {{ with index . 0 }}
@@ -22,11 +22,11 @@
         {{ errorf "Page not found: %s" .Page.RelPermalink }}
       {{ end }}
     {{ else }}
-    {{ errorf "Language not found: %s\nPage: %s" $lang .Page.RelPermalink }}
+    {{ errorf "Language not found: %s - Page: %s" $lang .Page.RelPermalink }}
 
     {{ end }}
   {{ else }}
-  {{ errorf "Language not found: %s\nPage: %s" $lang .Page.RelPermalink }}
+  {{ errorf "Language not found: %s - Page: %s" $lang .Page.RelPermalink }}
   {{ end }}
 {{ end }}
 
