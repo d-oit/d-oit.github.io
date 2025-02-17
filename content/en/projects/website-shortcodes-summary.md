@@ -1,7 +1,7 @@
 ---
 lang: en-US
-title: Used Hugo Shortcodes Summary
-description: "Overview created Hugo shortcodes for this website"
+title: Created Hinode Hugo Shortcodes Summary
+description: Overview created Hugo shortcodes for this website
 date: 2025-02-01T14:56:31.284Z
 layout: docs
 thumbnail:
@@ -10,9 +10,12 @@ thumbnail:
   author: d.o.
 tags:
   - Hugo
+  - Hinode
 categories:
   - Website
+slug: hugo-shortcodes-summary
 ---
+
 
 ## basketCalendar.html
 
@@ -21,7 +24,7 @@ categories:
 - **Usage**:
 
   ```hugo
-  {{< basketCalendar >}}
+  basketCalendar 
   ```
 
 ## basketCalendarJsonTable.html
@@ -31,7 +34,7 @@ categories:
 - **Usage**:
 
   ```hugo
-  {{< basketCalendarJsonTable >}}
+  basketCalendarJsonTable 
   ```
 
 ## fullscreenAndPrintButton.html
@@ -40,9 +43,9 @@ categories:
 - **Details**: The fullscreen button is currently commented out, but the print button is active and triggers the browser's print functionality when clicked.
 - **Usage**:
 
-  ```hugo
-  {{< fullscreenAndPrintButton >}}
-  ```
+  {{< example lang="hugo" >}}
+    {{</* fullscreenAndPrintButton */>}}
+  {{< /example >}}
 
 ## ghcode.html
 
@@ -51,7 +54,7 @@ categories:
 - **Usage**:
 
   ```hugo
-  {{< ghcode "https://example.com/file.md" >}}
+  ghcode "https://example.com/file.md"
   ```
 
 ## ghcodeHtml.html
@@ -60,9 +63,9 @@ categories:
 - **Details**: Fetches the content from the specified URL and renders it as HTML with syntax highlighting.
 - **Usage**:
 
-  ```hugo
-  {{< ghcodeHtml "https://example.com/file.html" >}}
-  ```
+```hugo
+ghcodeHtml "https://example.com/file.html"
+```
 
 ## ics-table.html
 
@@ -71,17 +74,17 @@ categories:
 - **Usage**:
 
   ```hugo
-  {{< ics-table url="https://example.com/calendar.ics" >}}
+  ics-table url="https://example.com/calendar.ics"
   ```
-
+  
 ## include.html
 
 - **Description**: Includes the contents of another file within the current page.
 - **Details**: Reads the specified file, removes any front matter, and renders the content as safe HTML.
 - **Usage**:
 
-  ```hugo
-  {{< include "path/to/file.md" >}}
+ ```hugo
+  include "path/to/file.md"
   ```
 
 ## languageCode.html
@@ -90,9 +93,9 @@ categories:
 - **Details**: Outputs the language code of the site.
 - **Usage**:
 
-  ```hugo
-  {{< languageCode >}}
-  ```
+  {{< example lang="hugo" >}}
+    {{</* languageCode */>}}
+  {{< /example >}}
 
 ## redirectToProject.html
 
@@ -101,17 +104,16 @@ categories:
 - **Usage**:
 
   ```hugo
-  {{< redirectToProject >}}
+  redirectToProject
   ```
 
 ## refLink.html
 
 - **Description**: Creates a reference link or button.
 - **Details**: Supports both internal and external links, and can display the link as a button or a regular link based on the provided parameters.
-- **Usage**:
 
-  ```hugo
-  {{< refLink ref="https://example.com" text="Example Link" >}}
+ ```hugo
+  refLink ref="https://example.com" text="Example Link"
   ```
 
 ## removeDefaultLanguage.html
@@ -120,9 +122,9 @@ categories:
 - **Details**: Useful for resetting the language preference.
 - **Usage**:
 
-  ```hugo
-  {{< removeDefaultLanguage >}}
-  ```
+  {{< example lang="hugo" >}}
+    {{</* removeDefaultLanguage */>}}
+  {{< /example >}}
 
 ## sitemap.html
 
@@ -130,5 +132,6 @@ categories:
 - **Details**: Provides both list and card views for the pages, with a search input to filter the results.
 - **Usage**:
 
-  ```hugo
-  {{< sitemap >}}
+  {{< example lang="hugo" >}}
+    {{</* sitemap */>}}
+  {{< /example >}}

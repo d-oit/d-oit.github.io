@@ -6,6 +6,8 @@ github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.7 h1:DzhyEgGd11tHgs3oC31
 github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.7/go.mod h1:UX4LqzzIlnWf/94yIx2A/Xs4+D/PPpAC8iBfiwjlrNg=
 github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.10 h1:29Mq06GVVkVvMTIBWhbaR6v0TEVyIlN6URw5wkjlmBE=
 github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.10/go.mod h1:TD3l1tQooAfi+2lJnNCDL003aPK23NXw7C0nTqkjwnA=
+github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.12 h1:GV5luRkHvzKxb9z6z07YKqiro4whN0d3+yKPUbZo65k=
+github.com/d-oit/hinode-mod-image-lightbox-gallery v1.0.12/go.mod h1:Vf9kKC7eqmWlJ9JfRIfDmvZsYf5+B4BHQySgRxNWiU8=
 github.com/d-oit/hinode-mod-slideshow-gallery v1.2.2 h1:htq/I6+qQIp99y4n8KVwIBKhhdhEVKoI0IG60gmry/Y=
 github.com/d-oit/hinode-mod-slideshow-gallery v1.2.2/go.mod h1:yMUMkNk7wMZNHDORCR1qfgtrKMrLMPBvGKD4pMHKtsg=
 github.com/d-oit/hinode-mod-slideshow-gallery v1.2.5 h1:tfRhfB/5cgtN+dbWUCGlW3XpVB179J+Pwitiwsk2kaA=
@@ -48,5 +50,7 @@ github.com/gethinode/mod-utils/v2 v2.10.0 h1:2GN6f3wcu/TlbzPD6DFlWyx+KomXz6LnBv7
 github.com/gethinode/mod-utils/v2 v2.10.0/go.mod h1:GTYeknoLujNjfDxI+V9Dcug26CYJSTJ0B/U2dagw9oY=
 github.com/nextapps-de/flexsearch v0.0.0-20240501124520-961c3ae84a87 h1:6PNbL0/LxO8Xl8MZSe5uvCidYNpFTz9nlWTqj2qdlzA=
 github.com/nextapps-de/flexsearch v0.0.0-20240501124520-961c3ae84a87/go.mod h1:5GdMfPAXzbA2gXBqTjC6l27kioSYzHlqDMh0+wyx7sU=
+github.com/nextapps-de/flexsearch v0.0.0-20250210141409-f78ebb388862 h1:+kGQ+34t7Bv0mbwTGUxwQU2ruuac8jsHEvcleSRUI3M=
+github.com/nextapps-de/flexsearch v0.0.0-20250210141409-f78ebb388862/go.mod h1:5GdMfPAXzbA2gXBqTjC6l27kioSYzHlqDMh0+wyx7sU=
 github.com/twbs/bootstrap v5.3.3+incompatible h1:goFoqinzdHfkeegpFP7pvhbd0g+A3O2hbU3XCjuNrEQ=
 github.com/twbs/bootstrap v5.3.3+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
