@@ -37,6 +37,8 @@ resources:
     title: PicLumen Realistic V2
   - src: /img/blog/Qwen2_5_Plus.png
     title: Qwen2.5 Plus 
+  - src: /img/blog/grok3.jpg
+    title: Grok 
 slug: text-image-generation-test-prompt-alternative-universe
 excludeTOC: true
 ---
