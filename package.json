@@ -78,15 +78,15 @@
     "cssnano": "^7.0.6",
     "cssnano-preset-advanced": "^7.0.6",
     "dotenv": "^16.4.7",
-    "hugo-bin": "0.140.1",
+    "hugo-bin": "0.141.2",
     "purgecss-whitelister": "^2.4.0"
   },
   "devDependencies": {
     "@gethinode/netlify-plugin-dartsass": "^0.3.0",
     "@playwright/test": "^1.50.1",
-    "@types/node": "^22.13.4",
+    "@types/node": "^22.13.5",
     "cpy-cli": "^5.0.0",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-yaml": "^1.0.3",
     "markdownlint-cli2": "^0.17.2",
