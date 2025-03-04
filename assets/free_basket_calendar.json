@@ -1,23 +1,5 @@
 [
     {
-        "name": "NINERS Chemnitz vs. FC Bayern M\u00fcnchen",
-        "begin": "2025-03-02T16:30:00+01:00",
-        "end": "2025-03-02T18:00:00+01:00",
-        "description": "Basketball game between NINERS Chemnitz and FC Bayern M\u00fcnchen.",
-        "location": "www.youtube.com",
-        "url": "https://www.youtube.com/channel/UCZMsvbAhhRblVGXmEXW8TSA",
-        "league": "Basketball Bundesliga"
-    },
-    {
-        "name": "Denver Nuggets vs. Boston Celtics",
-        "begin": "2025-03-02T18:35:00+01:00",
-        "end": "2025-03-02T20:05:00+01:00",
-        "description": "Live basketball match between Denver Nuggets and Boston Celtics.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
         "name": "ALBA BERLIN vs. FC Barcelona",
         "begin": "2025-03-07T20:00:00+01:00",
         "end": "2025-03-07T21:30:00+01:00",
