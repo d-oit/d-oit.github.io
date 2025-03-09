@@ -1,12 +1,12 @@
 [
     {
-        "name": "ALBA BERLIN vs. FC Barcelona",
-        "begin": "2025-03-07T20:00:00+01:00",
-        "end": "2025-03-07T21:30:00+01:00",
-        "description": "EuroLeague game between ALBA BERLIN and FC Barcelona.",
-        "location": "www.magentasport.de",
-        "url": "https://www.magentasport.de/basketball",
-        "league": "EuroLeague"
+        "name": "Orlando Magic vs. Milwaukee Bucks",
+        "begin": "2025-03-09T01:55:00+01:00",
+        "end": "2025-03-09T03:25:00+01:00",
+        "description": "Watch the Orlando Magic play against the Milwaukee Bucks.  This game will be broadcast on ProSieben MAXX, Joyn, ran.de, and the ran app.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
     },
     {
         "name": "ratiopharm ulm vs. ALBA BERLIN",
@@ -16,6 +16,15 @@
         "location": "www.youtube.com",
         "url": "https://www.youtube.com/@WELTVideoTV/streams",
         "league": "easyCredit BBL"
+    },
+    {
+        "name": "Denver Nuggets vs. Oklahoma City Thunder",
+        "begin": "2025-03-09T17:45:00+01:00",
+        "end": "2025-03-09T19:15:00+01:00",
+        "description": "Watch the Denver Nuggets play against the Oklahoma City Thunder. This game will be broadcast on ProSieben MAXX, Joyn, ran.de, and the ran app.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
     },
     {
         "name": "FC Bayern M\u00fcnchen vs. Anadolu Efes Istanbul",
