@@ -1,12 +1,21 @@
 [
     {
-        "name": "Panathinaikos AKTOR Athen vs. ALBA BERLIN",
-        "begin": "2025-03-21T20:00:00+01:00",
-        "end": "2025-03-21T21:30:00+01:00",
-        "description": "EuroLeague game between Panathinaikos AKTOR Athen and ALBA BERLIN.",
-        "location": "www.magentasport.de",
-        "url": "https://www.magentasport.de/basketball",
-        "league": "EuroLeague"
+        "name": "Washington Wizards vs. New York Knicks",
+        "begin": "2025-03-23T00:50:00+01:00",
+        "end": "2025-03-23T02:20:00+01:00",
+        "description": "Live basketball game between Washington Wizards and New York Knicks.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
+        "name": "New Orleans Pelicans vs. Detroit Pistons",
+        "begin": "2025-03-23T19:45:00+01:00",
+        "end": "2025-03-23T21:15:00+01:00",
+        "description": "Live basketball game between New Orleans Pelicans and Detroit Pistons.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
     },
     {
         "name": "Roter Stern Belgrad vs. Virtus Segafredo Bologna",
