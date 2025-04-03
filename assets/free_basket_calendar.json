@@ -9,10 +9,28 @@
         "league": "EuroLeague"
     },
     {
-        "name": "Anadolu Efes Istanbul vs. Zalgiris Kaunas",
-        "begin": "2025-04-11T19:15:00+02:00",
-        "end": "2025-04-11T20:45:00+02:00",
-        "description": "EuroLeague game between Anadolu Efes Istanbul and Zalgiris Kaunas.",
+        "name": "Minnesota Timberwolves vs. Philadelphia 76ers",
+        "begin": "2025-04-06T00:50:00+02:00",
+        "end": "2025-04-06T02:20:00+02:00",
+        "description": "Live basketball game between Minnesota Timberwolves and Philadelphia 76ers.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
+        "name": "Los Angeles Lakers vs. Oklahoma City Thunder",
+        "begin": "2025-04-06T21:10:00+02:00",
+        "end": "2025-04-06T22:40:00+02:00",
+        "description": "Live basketball game between Los Angeles Lakers and Oklahoma City Thunder.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
+        "name": "Panathinaikos AKTOR Athen vs. Roter Stern Belgrad",
+        "begin": "2025-04-11T20:00:00+02:00",
+        "end": "2025-04-11T21:30:00+02:00",
+        "description": "EuroLeague game between Panathinaikos AKTOR Athen vs. Roter Stern Belgrad.",
         "location": "www.magentasport.de",
         "url": "https://www.magentasport.de/basketball",
         "league": "EuroLeague"
