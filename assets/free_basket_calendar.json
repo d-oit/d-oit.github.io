@@ -1,14 +1,5 @@
 [
     {
-        "name": "Minnesota Timberwolves vs. Philadelphia 76ers",
-        "begin": "2025-04-06T00:50:00+02:00",
-        "end": "2025-04-06T02:20:00+02:00",
-        "description": "Live basketball game between Minnesota Timberwolves and Philadelphia 76ers.",
-        "location": "ran.de",
-        "url": "https://ran.de",
-        "league": "NBA"
-    },
-    {
         "name": "Los Angeles Lakers vs. Oklahoma City Thunder",
         "begin": "2025-04-06T21:10:00+02:00",
         "end": "2025-04-06T22:40:00+02:00",
