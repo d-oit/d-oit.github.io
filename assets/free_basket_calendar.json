@@ -7,5 +7,23 @@
         "location": "www.magentasport.de",
         "url": "https://www.magentasport.de/basketball",
         "league": "EuroLeague"
+    },
+    {
+        "name": "Orlando Magic vs. Atlanta Hawks",
+        "begin": "2025-04-13T18:45:00+02:00",
+        "end": "2025-04-13T20:15:00+02:00",
+        "description": "Orlando Magic plays against Atlanta Hawks. This game will be broadcasted on ProSieben MAXX, Joyn, ran.de and the ran app.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
+    },
+    {
+        "name": "Los Angeles Clippers vs. Golden State Warriors",
+        "begin": "2025-04-13T21:25:00+02:00",
+        "end": "2025-04-14T00:55:00+02:00",
+        "description": "Los Angeles Clippers plays against Golden State Warriors. This game will be broadcasted on ProSieben MAXX, Joyn, ran.de and the ran app.",
+        "location": "ran.de",
+        "url": "https://ran.de",
+        "league": "NBA"
     }
 ]
