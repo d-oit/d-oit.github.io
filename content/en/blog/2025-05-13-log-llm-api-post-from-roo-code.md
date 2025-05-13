@@ -52,11 +52,13 @@ If you already run a corporate or custom proxy (e.g. Fiddler, Charles, mitmproxy
 When you need more power—filter rules, scripting, advanced TLS features—mitmproxy is the go-to:
 
 - **Install:**
+
   ```bash
   pip install mitmproxy
   ```
 
 - **Launch:**
+
   ```bash
   mitmproxy --mode regular --listen-port 8987
   ```
