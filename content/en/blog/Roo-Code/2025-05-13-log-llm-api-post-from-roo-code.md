@@ -5,6 +5,8 @@ date: 2025-05-13T20:14:30.871Z
 preview: ""
 draft: false
 tags:
+  - AI
+  - Roo Code
   - VSCode
   - API
 categories:
@@ -13,6 +15,8 @@ thumbnail:
   url: /img/blog/rooCodeProxyVScodeHTTPpost.png
   author: d.o.it
 lang: en
+slug: log-llm-api-post-roo-code
+aliases: /en/roo-code/log-llm-api-post-roo-code
 keywords:
   - Postman
   - Proxy

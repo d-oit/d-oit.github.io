@@ -1,17 +1,20 @@
 ---
 title: "Trace API POST Requests: Roo Code + Braintrust AI Guide"
-slug: how-to-trace-and-log-roo-code-api-post-requests-with-braintrust-ai-proxy
 description: Learn how to configure Roo Code with Braintrust AI Proxy for enhanced API request tracing, caching, and OpenTelemetry monitoring - a step-by-step implementation guide.
 date: 2025-05-19T09:55:00Z
 tags:
    - AI
    - Roo Code
+   - VSCode
+   - API
 categories:
    - Software Development
 thumbnail:
    url: /img/blog/how-to-trace-and-log-roo-code-api-post-requests-with-braintrust-ai-proxy.jpg
    author: d.o. (flux)
-draft: false
+lang: en
+slug: trace-api-post-requests-roo-code-braintrust-ai-guide
+aliases: /en/roo-code/trace-api-post-requests-roo-code-braintrust-ai-guide
 ---
 
 Here’s how to configure **Roo Code**’s UI to route all your OpenAI–compatible requests through the Braintrust AI Proxy—complete with transparent caching, built-in tracing, and full OpenTelemetry support—without writing a single line of code. By simply adjusting the **API Provider**, **Base URL**, and **Custom Headers** fields in your Roo Code settings panel (as shown in your screenshots), you unlock:
