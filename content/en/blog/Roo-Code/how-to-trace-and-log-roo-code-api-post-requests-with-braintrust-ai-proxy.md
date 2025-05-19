@@ -82,7 +82,6 @@ Every request that includes `x-bt-parent` will emit a root span into Braintrustâ
 
 This gives you full visibility into prompt inputs, response tokens, timings, and cache hitsâ€”all without modifying any application code.
 
-
 {{< image class="rounded lightbox" src="./img/blog/BraintrustRooCodeChatTrace.png" caption="Braintrust chat trace" >}}
 
 ## Further Reading
