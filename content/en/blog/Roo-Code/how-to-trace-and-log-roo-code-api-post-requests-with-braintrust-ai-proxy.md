@@ -38,7 +38,7 @@ Here’s how to configure **Roo Code**’s UI to route all your OpenAI–compati
    * Paste your **Braintrust** API key here.
    * Whenever you include tracing headers, Braintrust uses this key to authenticate and associate spans with your project.
 
-   {{< image class="rounded lightbox" src="/img/blog/RooCodeBraintrustTraceCacheConfiguration.png" caption="Click the image to enlarge and view the full configuration: Insert the Braintrust proxy endpoint into Roo Code's Base URL field. Add the Braintrust-specific headers to enable tracing and caching." >}}
+   {{< image class="rounded lightbox" src="./img/blog/RooCodeBraintrustTraceCacheConfiguration.png" caption="Click the image to enlarge and view the full configuration: Insert the Braintrust proxy endpoint into Roo Code's Base URL field. Add the Braintrust-specific headers to enable tracing and caching." >}}
 
 4. **Custom Headers**
 
@@ -48,7 +48,7 @@ Here’s how to configure **Roo Code**’s UI to route all your OpenAI–compati
      * `x-bt-parent` = `project_id:<YOUR_PROJECT_ID>`
    * These instruct the proxy to cache deterministic calls and to start a new trace under your Braintrust project.
 
-   {{< image class="rounded lightbox" src="/img/blog/BraintrustProjectId.png" caption="Get project id in braintrust web ui." >}}
+   {{< image class="rounded lightbox" src="./img/blog/BraintrustProjectId.png" caption="Get project id in braintrust web ui." >}}
 
 5. **Enable Streaming** (optional)
 
@@ -83,7 +83,7 @@ Every request that includes `x-bt-parent` will emit a root span into Braintrust�
 This gives you full visibility into prompt inputs, response tokens, timings, and cache hits—all without modifying any application code.
 
 
-{{< image class="rounded lightbox" src="/img/blog/BraintrustRooCodeChatTrace.png" caption="Braintrust chat trace" >}}
+{{< image class="rounded lightbox" src="./img/blog/BraintrustRooCodeChatTrace.png" caption="Braintrust chat trace" >}}
 
 ## Further Reading
 
