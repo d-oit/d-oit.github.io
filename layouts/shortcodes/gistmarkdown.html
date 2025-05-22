@@ -1,0 +1,14 @@
+{{- $url := .Get "url" -}}
+{{- $type := .Get "type" | default "bash" -}}
+{{- if not $url -}}
+    {{- errorf "The gist_markdown shortcode requires a 'url' parameter" -}}
+{{- else -}}
+    {{- $resource := resources.GetRemote $url -}}
+    {{- if not $resource -}}
+        {{- errorf "Failed to fetch remote resource from %s" $url -}}
+    {{- else -}}
+        {{- $content := $resource.Content -}}
+        {{- /* Use specified type in markdown code block */ -}}
+        {{ (printf "```%s\n%s\n```" $type $content) | markdownify }}
+    {{- end -}}
+{{- end -}}

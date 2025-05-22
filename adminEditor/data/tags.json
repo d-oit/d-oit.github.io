@@ -30,7 +30,7 @@
     },
     {
       "name": "Mistral",
-      "count": 1
+      "count": 2
     },
     {
       "name": "streamlit",
@@ -46,10 +46,14 @@
     },
     {
       "name": "AI",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Roo Code",
+      "count": 1
+    },
+    {
+      "name": "Git",
       "count": 1
     }
   ]
