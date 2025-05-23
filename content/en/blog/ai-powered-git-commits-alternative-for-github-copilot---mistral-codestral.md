@@ -39,8 +39,8 @@ By using an external AI backend via a simple `curl` call, you sidestep GitHub’
 **Hint**: You could replace the codestral api with any other OpenAI-compatible API and model. Only replace:
 
 * CODESTRAL_API_KEY -> FOO_API_KEY
-* DEFAULT_MODEL="foo-latest"
-* API_URL="https://my.foo.ai/v1/chat/completions"
+* DEFAULT_MODEL=foo-latest
+* API_URL=https://my.foo.ai/v1/chat/completions
 
 ## 2. Grab Your Free Codestral Key
 
@@ -56,6 +56,8 @@ Below is an alternative to GitHub Copilot AI commit message generator. Save this
 
 {{< gistmarkdown url="https://gist.githubusercontent.com/d-oit/c184cc30804f1d79474782a991a47f4e/raw/94b202f3587e76aee604f134da79d8fc42b44859/ai-git-commit.sh" >}}
 
+[Gist with Revisions](https://gist.github.com/d-oit/c184cc30804f1d79474782a991a47f4e)
+
 **How it works**:
 
 * **Staging**: Automatically stages tracked changes, with an optional prompt for untracked files.
@@ -65,7 +67,7 @@ Below is an alternative to GitHub Copilot AI commit message generator. Save this
 * **Cleanup**: Strips Markdown fences and polish quotes.
 * **Confirmation**: Shows you the AI’s message before committing.
 
-{{< image class="rounded lightbox" src="./img/blog/ai-git-commit-windsurf.png" caption="Windsurf: AI commit" >}}
+{{< image class="rounded lightbox" src="./img/blog/ai-git-commit-windsurf.png" caption="Windsurf: AI commit alternative" >}}
 
 ## Putting It All Together
 
