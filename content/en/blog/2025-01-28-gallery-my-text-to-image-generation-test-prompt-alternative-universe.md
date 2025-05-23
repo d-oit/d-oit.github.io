@@ -37,8 +37,14 @@ resources:
     title: PicLumen Realistic V2
   - src: /img/blog/Qwen2_5_Plus.png
     title: Qwen2.5 Plus 
+  - src: "img/blog/UniverseMathscapePrompt/Qwen3.png"
+    title: "Qwen3"  
   - src: /img/blog/grok3.jpg
     title: Grok 
+  - src: "img/blog/UniverseMathscapePrompt/LeChat-Mistral-05-2025.jpg"
+    title: "LeChat-Mistral-05-2025"  
+  - src: "img/blog/UniverseMathscapePrompt/ChatGPT-5-2025.png"
+    title: "ChatGPT Image May 23, 2025, 07_56_29 PM"  
 slug: text-image-generation-test-prompt-alternative-universe
 excludeTOC: true
 ---

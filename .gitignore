@@ -42,3 +42,4 @@ adminEditor/*.so
 adminEditor/*.dylib
 adminEditor/go.work
 adminEditor/go.work.sum
+assets/img/blog/UniverseMathscapePrompt/output.md
