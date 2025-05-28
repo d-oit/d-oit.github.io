@@ -18,14 +18,14 @@ lang: en-US
 slug: do-vscode-lm-explorer
 categories:
   - Software Development
-draft: false  
+draft: true
 ---
 
 {{< button color="dark" cue=false order="last" icon="fab github" tooltip="Source Code on github" href="https://github.com/d-oit/do-vscode-lm-api-explorer" >}}
     Source Code
 {{< /button >}}
 
-More infos about the project: [Blog article](/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution)
+More infos about the project: [Blog article](/blog/get-licenses-from-used-nTODO)
 
 ## Github readme
 
