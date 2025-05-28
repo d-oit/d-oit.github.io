@@ -2,7 +2,7 @@
 title: Developing a VS Code Extension with GitHub Copilot Agent Mode and Claude 4 Sonnet (May 2025)
 slug: developing-code-extension-github-copilot-agent-mode-claude-4-sonnet-2025
 description: This guide outlines the development of my tryout with a Visual Studio Code extension leveraging GitHub Copilot’s Agent Mode and Claude 4 Sonnet (May 2025). It covers the integration process, common challenges like branch naming and managing AI-generated files, and practical advice on handling large diffs. Additionally, it details how I use Roo Code’s chat interface with a custom judge role to validate AI-generated code changes. The guide also notes current limitations around context window visibility in Copilot and shares considerations for maintaining a stable CI pipeline.
-date: 2025-05-27
+date: 2025-05-28
 tags:
   - GitHub Copilot
   - GitHub
@@ -111,6 +111,8 @@ The existing CI pipeline may encounter issues due to:
 
 * **Branch Naming**: Ensure your CI configuration references the correct branch (`main` instead of `master`).
 * **Copilot Chat Dependency**: End-to-end (E2E) tests that depend on GitHub Copilot Chat integration are challenging to automate and remain on my TODO list for implementation.
+
+Hint: I use this repo for try out coderabbitai.
 
 ## Conclusion
 
