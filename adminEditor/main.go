@@ -40,7 +40,7 @@ type FluxResponse struct {
 	ImageData    string    `json:"image_data"`
 	ImageURL     string    `json:"image_url,omitempty"`
 	MimeType     string    `json:"mime_type"`
-	Seed         int64     `json:"seed"`
+	Seed         json.Number `json:"seed"`
 	StartedAt    time.Time `json:"started_at"`
 	CompletedAt  time.Time `json:"completed_at"`
 	ErrorMessage string    `json:"error,omitempty"`

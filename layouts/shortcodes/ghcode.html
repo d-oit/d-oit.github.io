@@ -1,9 +1,29 @@
-{{ $url  := .Get 0 }}
-{{ with try (resources.GetRemote $url ) }}
+{{ $url := .Get 0 }}
+{{ with try (resources.GetRemote $url) }}
   {{ with .Err }}
-    {{ errorf "%s" . }}
+    {{ errorf "Failed to fetch remote resource from %s: %s" $url . }}
   {{ else }}
-    {{ .Value | markdownify }}
+    {{ $content := .Value.Content }}
+    {{- /* Extract repository base URL from the raw GitHub URL */ -}}
+    {{ $repoBaseURL := "" }}
+    {{ if strings.Contains $url "raw.githubusercontent.com" }}
+      {{ $parts := split $url "/" }}
+      {{ if ge (len $parts) 5 }}
+        {{ $owner := index $parts 3 }}
+        {{ $repo := index $parts 4 }}
+        {{ $repoBaseURL = printf "https://github.com/%s/%s/blob/main" $owner $repo }}
+      {{ end }}
+    {{ end }}
+    {{- /* Convert relative GitHub links to absolute GitHub blob URLs */ -}}
+    {{ if $repoBaseURL }}
+      {{- /* First, handle .github/ specific links */ -}}
+      {{ $content = replaceRE `\[([^\]]+)\]\(\.github/([^)]+)\)` (printf `[$1](%s/.github/$2)` $repoBaseURL) $content }}
+      {{- /* Then handle other relative .md file links that don't start with http */ -}}
+      {{ $content = replaceRE `\[([^\]]+)\]\(([^h][^)]*\.md)\)` (printf `[$1](%s/$2)` $repoBaseURL) $content }}
+    {{ end }}
+    {{- /* Convert GitHub user-attachments images to HTML img tags */ -}}
+    {{ $content = replaceRE `!\[([^\]]*)\]\(https://github\.com/user-attachments/assets/([^)]+)\)` `<img src="https://github.com/user-attachments/assets/$2" alt="$1" />` $content }}
+    {{ $content | markdownify }}
   {{ end }}
 {{ else }}
   {{ errorf "Unable to get remote resource %q" $url }}
