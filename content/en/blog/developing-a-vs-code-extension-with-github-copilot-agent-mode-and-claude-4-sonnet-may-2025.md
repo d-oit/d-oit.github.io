@@ -66,7 +66,7 @@ To enable Claude 4 Sonnet:
 
 ### 1. Git Branch Naming
 
-By default, the cloned repository uses `master` as the main branch. To align with modern conventions:
+By default (claude sonnet-4 prompt without details about the branch name), the cloned repository uses `master` as the main branch. To align with modern conventions:
 
 ```bash
 git branch -m master main
@@ -81,15 +81,7 @@ Claude 4 Sonnet tends to generate `.md` files for various outputs, which can clu
 * Implement a cleanup script that removes outdated `.md` files not matching the current codebase.
 * Run this script as part of your build or deployment process to maintain a clean workspace.
 
-### 3. Managing Large Diffs
-
-When applying diffs suggested by AI models:
-
-* **Reliable Diff Application**: Writing changes to files and applying diffs works reliably with minimal issues in this setup. Performance is generally stable and fast, especially when files are properly split into smaller modules rather than large monolithic ones.
-* **Split Large Files**: Break down large files into smaller modules to prevent timeouts or memory issues.
-* **Incremental Application**: Apply diffs incrementally across modules to ensure stability and reduce errors.
-
-## AI as a Judge (Diff Validation)
+## AI as a Judge / Additional AI usage
 
 To assess the quality of AI-generated changes:
 
@@ -97,11 +89,13 @@ To assess the quality of AI-generated changes:
 
 This enables high-level, context-aware evaluation of your implementation without needing to paste diffs or use any CLI tools. For more, see [Roo Code Chat usage](https://docs.roocode.com/basic-usage/the-chat-interface).
 
+And important: Test the **visx** in codespace or on other system.
+
 ## Limitations and Known Issues
 
-### 1. Context Window Visibility
+### 1. Context Window Visibility / Agent mode
 
-GitHub Copilot does not currently expose information about the context window size or token usage during interactions. This lack of transparency makes it difficult to manage prompt size, debug unexpected truncations, or optimize for longer code generation tasks.
+GitHub Copilot does not currently expose information about the context window size or token usage during interactions. This lack of transparency makes it difficult to manage prompt size, debug unexpected truncations, or optimize for longer code generation tasks. You have to press "Continue" for the next step in Agent Mode - not a complete agent mode without interactions.
 
 ### 2. Rate Limits and High Load Conditions
 
@@ -109,19 +103,20 @@ Claude 4 Sonnet on GitHub Copilot may become temporarily unavailable under high 
 
 ### 3. System Prompt Design (Hint)
 
-Although GitHub does not publicly document the system prompt structure, those interested in how GitHub Copilot might structure its system prompts can refer to this Postman trace capture: [example gist](https://gist.github.com/d-oit/231f6f949cad9ea8d1804ee047581ca6).
+Although GitHub does not publicly document the system prompt structure, those interested in how GitHub Copilot might structure its system prompts can refer to this Postman trace capture: [example gist](https://gist.github.com/d-oit/231f6f949cad9ea8d1804ee047581ca6). You could not customize the system prompt or set another temperature like e.g. in Roo Code
 
 ## Continuous Integration (CI) Considerations
 
 The existing CI pipeline may encounter issues due to:
 
 * **Branch Naming**: Ensure your CI configuration references the correct branch (`main` instead of `master`).
-* **Copilot Chat Dependency**: End-to-end (E2E) tests that depend on GitHub Copilot Chat integration are challenging to automate and remain on the TODO list for future implementation.
+* **Copilot Chat Dependency**: End-to-end (E2E) tests that depend on GitHub Copilot Chat integration are challenging to automate and remain on my TODO list for implementation.
 
 ## Conclusion
 
-I'm genuinely impressed by the current state of GitHub Copilot's agent mode, especially when paired with Claude Sonnet 4. The improvements in functionalities like "apply diff" and codebase search are substantial compared to earlier versions this year. However, it's important to note that this enhanced experience is available without limitations only until June 4, 2025.
+I'm genuinely impressed by the current state of GitHub Copilot's agent mode, especially when paired with Claude Sonnet 4. The improvements in functionalities like "apply diff" and codebase search are substantial compared to earlier versions this year. However, it's important to note that this enhanced experience is available without [limitations only until June 4, 2025](https://docs.github.com/en/copilot/managing-copilot/monitoring-usage-and-entitlements/about-premium-requests#premium-requests).
 
 Previously, using Claude Sonnet 3.7 within GitHub Copilot presented challenges, including frequent rate limiting and inconsistent performance. These issues often hindered productivity and made the development process less efficient.
 
 With the introduction of Claude Sonnet 4, many of these problems have been addressed. The model offers a more reliable and efficient coding assistant experience, making it a valuable tool for developers.
+I was particularly impressed by the speed and error-free writing of file changes compared to before.

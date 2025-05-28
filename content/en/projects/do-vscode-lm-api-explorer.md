@@ -25,7 +25,7 @@ draft: false
     Source Code
 {{< /button >}}
 
-More infos about the project: [Blog article](/blog/get-licenses-from-used-nuget-packages-for-your-.net-core-solution)
+More infos about the project: [Blog article](/blog/developing-a-vs-code-extension-with-github-copilot-agent-mode-and-claude-4-sonnet-may-2025)
 
 ## Github readme
 
