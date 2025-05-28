@@ -15,7 +15,7 @@ categories:
 thumbnail:
   url: /img/blog/do-vscode-lm-api-explorer-banner.png
   author: d.o.
-draft: false
+draft: true
 ---
 
 ## Overview
