@@ -2,7 +2,7 @@
 
 {{ $json := resources.Get $jsonURL }}
 {{ if $json }}
-{{ $data := transform.Unmarshal $json.Content }}
+{{ $data := $json | transform.Unmarshal }}
 {{ if $data }}
 <p class="text-end">
   <button id="toggleView" class="btn btn-warning">{{ i18n "SwitchCardTableView" }}</button>
