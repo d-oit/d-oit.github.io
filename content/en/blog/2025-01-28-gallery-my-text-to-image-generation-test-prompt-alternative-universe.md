@@ -45,6 +45,8 @@ resources:
     title: "LeChat-Mistral-05-2025"  
   - src: "img/blog/ChatGPT-5-2025.png"
     title: "ChatGPT Image May 23, 2025, 07_56_29 PM"  
+  - src: "img/blog/google-imagen-4.jpg"
+    title: "Google Imagen 4"    
 slug: text-image-generation-test-prompt-alternative-universe
 excludeTOC: true
 ---
