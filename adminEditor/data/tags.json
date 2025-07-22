@@ -46,7 +46,7 @@
     },
     {
       "name": "AI",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Roo Code",
@@ -58,6 +58,10 @@
     },
     {
       "name": "GitHub Copilot",
+      "count": 1
+    },
+    {
+      "name": "Digitale Ethik",
       "count": 1
     }
   ]
