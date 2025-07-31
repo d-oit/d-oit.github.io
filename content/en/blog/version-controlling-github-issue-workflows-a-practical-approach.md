@@ -1,7 +1,7 @@
 ---
 title: "Version-Controlling GitHub Issue Workflows: A Practical Approach"
 slug: version-controlling-github-issue-workflows-a-practical-approach
-description: "GitHub issues lack inherent structure. I built do-gh-sub-issues to bring hierarchy and better workflow control across multiple projects."
+description: "GitHub issues lack inherent structure. I built gh-sub-issues to bring hierarchy and better workflow control across multiple projects."
 date: 2025-07-24
 tags:
   - GitHub
@@ -11,12 +11,13 @@ categories:
   - Software Development
 thumbnail:
   url: /img/blog/github-issues-overview.png
-draft: true
+draft: false
 ---
-
 ## Building GitHub Issue Hierarchies: A Practical Approach
 
-After struggling with GitHub's flat issue structure across multiple projects, I created a solution that brings hierarchical organization to issue tracking. Here's how I built do-gh-sub-issues as a simple yet powerful workflow tool.
+This repository serves as a template for use in my AI workflow. Additionally, it can be used manually without any LLM API provider. This serves as a temporary workaround until the GitHub CLI or GitHub MCP includes a proper workflow.
+
+Hint: This is a work in progress, with updates applied to my workflow.
 
 ## The Core Problem
 
@@ -34,18 +35,49 @@ This led to several incidents where completed features had unresolved dependenci
 
 I chose Bash scripting for the initial implementation because:
 
-**Universal Availability**: Every Unix-like system has a shell interpreter
-**Minimal Dependencies**: No package managers or runtime environments needed
-**Rapid Prototyping**: Immediate feedback during development
-**Educational Value**: Clear, readable code for learning purposes
-The script handles:
+**Universal Availability**: Every Unix-like system has a shell interpreter  
+**Minimal Dependencies**: No package managers or runtime environments needed  
+**Rapid Prototyping**: Immediate feedback during development  
+**Educational Value**: Clear, readable code for learning purposes  
 
-```bash
+The script handles these core functionalities through the GitHub CLI:
+
+1. **Configuration Parsing**  
+   Reads `.github/issue-workflow.yml` to understand:
+   - Parent/child issue prefixes (e.g., `Epic:`/`Task:`)
+   - Status mapping rules (blocking vs non-blocking relationships)
+   - Validation requirements
+
+2. **Hierarchy Validation**  
+   For each issue:
+   - Verifies required child issues exist
+   - Checks parent/child status consistency
+   - Validates cross-repository references
+
+3. **Status Synchronization**  
+   Automatically cascades status changes:
+
+   ```bash
+   # Example: When parent status changes
+   if [ "$parent_status" == "In Progress" ]; then
+     gh issue edit $child_issue --add-label "Active" 
+   fi
+   ```
+
+4. **CI/CD Integration**  
+   Runs validation during GitHub Actions workflows:
+   - Blocks PRs with invalid issue dependencies
+   - Generates visual issue graphs via Mermaid
+
+5. **Audit Logging**  
+   Maintains timestamped records of:
+   - Workflow configuration changes
+   - Issue relationship modifications
+   - Status transition histories
+
 - Issue relationship validation
 - Status cascade logic
 - Cross-reference checking
-- CI/CD integration
-```
 
 ## Technical Implementation
 
@@ -75,7 +107,7 @@ workflows:
     status_cascade: true
 ```
 
-### CI Validation
+## CI Validation
 
 The GitHub Action enforces these rules on every PR:
 
@@ -102,7 +134,7 @@ Key validation features:
 - Verifies correct issue type prefixes
 - Generates visual dependency graphs
 
-### Workflow Visualization
+## Workflow Visualization
 
 ```mermaid
 graph TD
@@ -128,13 +160,13 @@ Through regular use, I've observed:
 ### Installation
 
 ```bash
-gh repo clone d-oit/do-gh-sub-issues
-cp -r do-gh-sub-issues/.github your-project/
+gh repo clone https://github.com/d-oit/gh-sub-issues
+cp -r gh-sub-issues/.github your-project/
 ```
 
 ### Customization
 
-Modify `issue-workflow.yml` using the [configuration reference](https://github.com/d-oit/do-gh-sub-issues/wiki/Configuration-Guide)
+Modify `issue-workflow.yml` using the [configuration documentation](https://github.com/d-oit/gh-sub-issues#configuration) in the README
 
 ### Integration
 
@@ -161,8 +193,6 @@ For new adopters, I recommend:
 2. Gradually add status mapping rules
 3. Use the `--dry-run` flag during initial setup
 4. Review validation reports before enabling strict mode
-
-The template includes [example configurations](https://github.com/d-oit/do-gh-sub-issues/tree/main/examples) for different project scales.
 
 ## Future Considerations
 
