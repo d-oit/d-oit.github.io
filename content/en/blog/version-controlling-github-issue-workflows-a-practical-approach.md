@@ -29,8 +29,6 @@ During a recent project, I discovered three critical pain points in GitHub's nat
 
 This led to several incidents where completed features had unresolved dependencies, prompting me to create a code-based solution.
 
-{{< image src="/img/blog/github-issue-with-sub-issue.png" mode="true" caption="demonstrating parent-child relationships" >}}
-
 ## Why Start with .sh?
 
 I chose Bash scripting for the initial implementation because:
