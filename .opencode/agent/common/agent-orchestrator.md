@@ -161,6 +161,9 @@ agent_inventory:
     - api-designer: RESTful and GraphQL API development
     - database-specialist: Database schema and query optimization
     - ui-ux-designer: User interface and experience design
+    - frontend-bundler: Frontend asset management, CDN management, asset optimization, and bundling
+    - go-web-developer: Go web development specializing in HTTP servers, REST APIs, middleware, and frameworks
+    - media-processor: Media processing specialist for image resizing, format conversion, storage optimization, thumbnail generation, and media upload security
 
   general_agents:
     - code-architect: System design and architecture patterns
@@ -172,10 +175,17 @@ agent_inventory:
     - opencode-help: OpenCode framework documentation and help
     - clean-code-developer: Code refactoring and clean code implementation
     - command-creator: OpenCode command creation and best practices
+    - general: General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks
+    - readme-standards: Agent for creating, reviewing, or optimizing README.md files
+    - ai-integration-specialist: AI Integration Specialist for external API integration, image generation APIs, error handling, and rate limiting
 
   platform_agents:
     - codeberg-specialist: Codeberg repository management
     - codeberg-workflow-manager: Codeberg CI/CD workflows
+    - github-actions-specialist: GitHub Actions specialist for custom actions development, workflow optimization, and advanced automation
+    - github-issue-manager: GitHub Issue Manager for advanced issue management including automation, triage, and community engagement
+    - github-pr-manager: GitHub PR manager for reviews, automation, and quality assurance
+    - codeberg-specialist-enhanced: Enhanced Codeberg platform specialist for repository management, issues, pull requests, and CI/CD integration
 ```
 
 ### Agent Selection Criteria
@@ -393,11 +403,31 @@ output_validation:
 @agent-orchestrator "Update project documentation:
 - @common/documentation-maintainer: Lead documentation strategy
 - @general/opencode-help: Update framework documentation
+- @general/readme-standards: Optimize README files
 - @domains/api/api-designer: Update API documentation
 - @domains/ui/ui-ux-designer: Update UI component docs
 - @common/test-engineer: Document testing procedures
 - @general/deployment-specialist: Update deployment guides
 - @general/validation-specialist: Validate documentation quality"
+```
+
+### Full-Stack Application Development
+
+```bash
+# Coordinate full-stack application development
+@agent-orchestrator "Develop a comprehensive web application:
+- @general/general: Overall project coordination and planning
+- @general/code-architect: Design system architecture
+- @domains/frontend/frontend-bundler: Manage frontend assets and bundling
+- @domains/go/go-web-developer: Develop backend with Go
+- @domains/media/media-processor: Handle media processing and optimization
+- @domains/api/database-specialist: Design and implement database schema
+- @domains/ai/ai-integration-specialist: Integrate AI features and APIs
+- @common/security-auditor: Ensure security best practices
+- @common/test-engineer: Develop comprehensive test suites
+- @common/code-reviewer: Review code quality
+- @common/documentation-maintainer: Create documentation
+- @general/validation-specialist: Validate complete solution"
 ```
 
 ## ACTIVATION CRITERIA
@@ -451,3 +481,4 @@ quality_framework:
 ```
 
 This agent serves as the central nervous system for complex multi-agent operations, ensuring efficient coordination, optimal resource utilization, and high-quality results across all OpenCode project domains.
+
