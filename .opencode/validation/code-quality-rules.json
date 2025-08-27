@@ -1,0 +1,51 @@
+{
+  "$schema": "https://opencode.ai/validation-schema.json",
+  "code_quality_validation": {
+    "complexity_thresholds": {
+      "cyclomatic_complexity": {
+        "critical": 20,
+        "warning": 10,
+        "info": 6
+      },
+      "cognitive_complexity": {
+        "critical": 25,
+        "warning": 15,
+        "info": 8
+      },
+      "nesting_depth": {
+        "critical": 6,
+        "warning": 4,
+        "info": 3
+      }
+    },
+    "false_positive_patterns": [
+      {
+        "pattern": "generated_code",
+        "description": "Auto-generated code with expected patterns",
+        "file_patterns": ["*.generated.*", "*.g.*", "generated/**/*"],
+        "auto_dismiss": true
+      },
+      {
+        "pattern": "third_party_code",
+        "description": "Third-party library code",
+        "file_patterns": ["node_modules/**/*", "vendor/**/*", "lib/**/*"],
+        "auto_dismiss": true
+      },
+      {
+        "pattern": "legacy_code",
+        "description": "Legacy code with different standards",
+        "file_patterns": ["legacy/**/*", "deprecated/**/*"],
+        "confidence_reduction": 0.5
+      },
+      {
+        "pattern": "test_code",
+        "description": "Test code with relaxed quality requirements",
+        "file_patterns": ["test/**/*", "spec/**/*", "**/*.test.*", "**/*.spec.*"],
+        "confidence_reduction": 0.3
+      }
+    ],
+    "project_specific_rules": {
+      "allow_legacy_patterns": true
+    }
+  }
+}

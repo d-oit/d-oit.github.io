@@ -1,0 +1,14 @@
+{
+  "name": "eslint-plugin-file-organization",
+  "version": "1.0.0",
+  "description": "ESLint plugin for enforcing file organization rules",
+  "main": "index.js",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "file-organization",
+    "opencode"
+  ],
+  "author": "OpenCode Team",
+  "license": "MIT"
+}

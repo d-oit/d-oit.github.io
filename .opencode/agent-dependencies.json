@@ -1,0 +1,128 @@
+{
+  "@common/agent-orchestrator": {
+    "description": "Coordinates complex multi-step tasks across multiple agents",
+    "requires": [],
+    "conflicts": [],
+    "always_active": true
+  },
+  "@common/code-reviewer": {
+    "description": "Analyzes code quality, security, and adherence to best practices",
+    "requires": [],
+    "conflicts": [],
+    "always_active": true
+  },
+  "@common/test-engineer": {
+    "description": "Develops comprehensive test suites and testing strategies",
+    "requires": [],
+    "conflicts": [],
+    "always_active": true
+  },
+  "@common/security-auditor": {
+    "description": "Conducts security assessments and implements security best practices",
+    "requires": [],
+    "conflicts": [],
+    "always_active": true
+  },
+  "@common/performance-optimizer": {
+    "description": "Analyzes and optimizes application performance and resource usage",
+    "requires": [],
+    "conflicts": [],
+    "always_active": true
+  },
+  "@common/documentation-maintainer": {
+    "description": "Creates and maintains comprehensive project documentation",
+    "requires": [],
+    "conflicts": [],
+    "always_active": true
+  },
+  "@platforms/codeberg/codeberg-specialist": {
+    "description": "Codeberg platform specialist for repository management, issues, pull requests, and CI/CD integration",
+    "requires": ["@common/agent-orchestrator"],
+    "conflicts": ["@platforms/github/github-specialist", "@platforms/gitlab/gitlab-specialist", "@platforms/gitea/gitea-specialist"],
+    "platform": "codeberg"
+  },
+  "@platforms/codeberg/codeberg-workflow-manager": {
+    "description": "Manages Codeberg Actions workflows and Woodpecker CI/CD pipelines",
+    "requires": ["@platforms/codeberg/codeberg-specialist"],
+    "conflicts": ["@platforms/github/github-workflow-manager", "@platforms/gitlab/gitlab-ci-manager"],
+    "platform": "codeberg"
+  },
+  "@platforms/github/github-specialist": {
+    "description": "GitHub platform specialist for repository management, issues, pull requests, and CI/CD integration",
+    "requires": ["@common/agent-orchestrator"],
+    "conflicts": ["@platforms/codeberg/codeberg-specialist", "@platforms/gitlab/gitlab-specialist", "@platforms/gitea/gitea-specialist"],
+    "platform": "github"
+  },
+  "@platforms/github/github-workflow-manager": {
+    "description": "Manages GitHub Actions workflows and CI/CD pipelines",
+    "requires": ["@platforms/github/github-specialist"],
+    "conflicts": ["@platforms/codeberg/codeberg-workflow-manager", "@platforms/gitlab/gitlab-ci-manager"],
+    "platform": "github"
+  },
+  "@domains/api/api-designer": {
+    "description": "Creates RESTful and GraphQL APIs with proper design patterns",
+    "requires": [],
+    "conflicts": [],
+    "domain": "api"
+  },
+  "@domains/api/database-specialist": {
+    "description": "Designs database schemas, optimizes queries, and manages data relationships",
+    "requires": [],
+    "conflicts": [],
+    "domain": "api"
+  },
+  "@domains/ui/ui-ux-designer": {
+    "description": "Creates exceptional user interfaces with focus on component design, accessibility, styling, and user experience optimization",
+    "requires": [],
+    "conflicts": [],
+    "domain": "ui"
+  },
+  "@general/agent-creator": {
+    "description": "Designs, creates, and manages OpenCode agents with proper validation and integration",
+    "requires": [],
+    "conflicts": [],
+    "category": "general"
+  },
+  "@general/command-creator": {
+    "description": "Creates OpenCode commands following best practices",
+    "requires": [],
+    "conflicts": [],
+    "category": "general"
+  },
+  "@general/code-architect": {
+    "description": "Designs system architecture, component relationships, and data flow patterns",
+    "requires": [],
+    "conflicts": [],
+    "category": "general"
+  },
+  "@general/ci-cd-manager": {
+    "description": "Manages continuous integration and deployment workflows",
+    "requires": [],
+    "conflicts": [],
+    "category": "general"
+  },
+  "@general/deployment-specialist": {
+    "description": "Manages deployment processes, CI/CD pipelines, and environment configuration",
+    "requires": [],
+    "conflicts": [],
+    "category": "general"
+  },
+  "@general/git-commit-specialist": {
+    "description": "Git commit management specialist for conventional commits and repository operations",
+    "requires": [],
+    "conflicts": [],
+    "category": "general"
+  },
+  "@general/opencode-help": {
+    "description": "Provides assistance and guidance for using the OpenCode framework",
+    "requires": [],
+    "conflicts": [],
+    "category": "general"
+  },
+  "@general/validation-specialist": {
+    "description": "Ensures code meets quality standards and validation rules",
+    "requires": [],
+    "conflicts": [],
+    "category": "general"
+  }
+}
