@@ -5,6 +5,7 @@ description: Alternative for VSCode / Windsurf IDE git commit with GitHub Copilo
 date: 2025-05-21T19:17:00Z
 tags:
   - Mistral
+  - Codestral
   - AI
   - Git
 categories:

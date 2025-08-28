@@ -15,10 +15,6 @@ category:
 lang: "en"
 ---
 
-**Date**: November 13, 2024  
-**Commit**: [5b685f8](https://github.com/d-oit/d-oit.github.io/commit/5b685f8306eda43043d1e10ada8cf72d952a5321)  
-**Contributor**: d-oit  
-
 ## Overview
 
 The latest update focuses on improving image handling within the d-oit.github.io site, offering increased flexibility in image scaling and optimizing page load times. The addition of an `auto` aspect ratio option and conditional image resizing brings new efficiency and responsiveness to site visuals.
