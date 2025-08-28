@@ -6,9 +6,9 @@ import (
 	"strings"
 )
 
-func listFiles(dir string) ([]string, error) {
+func listFiles(dir string, fs FileSystem) ([]string, error) {
 	var files []string
-	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
+	err := fs.Walk(dir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
@@ -27,7 +27,7 @@ func listFiles(dir string) ([]string, error) {
 	return files, nil
 }
 
-func getFullPath(filename string) string {
+func getFullPath(filename string, config Config) string {
 	parts := strings.SplitN(filename, "/", 2)
 	if len(parts) != 2 {
 		return filename

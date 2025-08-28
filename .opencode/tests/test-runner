@@ -1,0 +1,411 @@
+#!/bin/bash
+
+# Universal OpenCode Framework Test Runner
+# Works with any project type - JavaScript, Python, Go, Rust, Java, etc.
+
+set -e
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m' # No Color
+
+# Function to print colored output
+print_status() {
+    local color=$1
+    local message=$2
+    echo -e "${color}${message}${NC}"
+}
+
+print_header() {
+    local message=$1
+    echo -e "${PURPLE}=======================================${NC}"
+    echo -e "${PURPLE}$message${NC}"
+    echo -e "${PURPLE}=======================================${NC}"
+}
+
+# Function to check if command exists
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Function to detect project type and available runtimes
+detect_environment() {
+    local has_node=false
+    local has_docker=false
+    local has_shell=true  # bash is usually available
+    local project_type="unknown"
+
+    # Check available runtimes
+    if command_exists node && command_exists npm; then
+        has_node=true
+    fi
+
+    if command_exists docker; then
+        has_docker=true
+    fi
+
+    # Detect project type
+    if [ -f "package.json" ]; then
+        project_type="javascript"
+    elif [ -f "Cargo.toml" ]; then
+        project_type="rust"
+    elif [ -f "go.mod" ]; then
+        project_type="go"
+    elif [ -f "requirements.txt" ] || [ -f "setup.py" ] || [ -f "Pipfile" ]; then
+        project_type="python"
+    elif [ -f "pom.xml" ]; then
+        project_type="java"
+    elif [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+        project_type="gradle"
+    elif [ -f "Makefile" ] || [ -f "makefile" ]; then
+        project_type="make"
+    else
+        project_type="generic"
+    fi
+
+    echo "$has_node:$has_docker:$has_shell:$project_type"
+}
+
+# Function to run tests with Node.js
+run_with_node() {
+    print_status $BLUE "🟢 Using Node.js runtime..."
+    
+    # Run individual test files directly
+    local test_files=(
+        ".opencode/tests/comprehensive-validation-test.js"
+        ".opencode/tests/validation-test.js"
+        ".opencode/tests/framework-integration-test.js"
+        ".opencode/tests/performance-test.js"
+        ".opencode/tests/link-validation-test.js"
+        ".opencode/tests/enhanced-link-updater.js"
+        ".opencode/tests/plugin-test.js"
+        ".opencode/tests/validation-rules-test.js"
+        ".opencode/tests/file-organization-validation.js"
+    )
+
+    local total_tests=0
+    local passed_tests=0
+    local failed_tests=0
+
+    for test_file in "${test_files[@]}"; do
+        if [ -f "$test_file" ]; then
+            ((total_tests++))
+            local test_name=$(basename "$test_file" .js)
+            echo "----------------------------------------"
+            print_status $BLUE "🧪 Running $test_name..."
+            echo "----------------------------------------"
+            
+            if node "$test_file"; then
+                ((passed_tests++))
+                print_status $GREEN "✅ $test_name passed"
+            else
+                ((failed_tests++))
+                print_status $RED "❌ $test_name failed"
+            fi
+            echo ""
+        else
+            print_status $YELLOW "⚠️  Test file not found: $test_file"
+        fi
+    done
+
+    echo "========================================"
+    print_status $BLUE "📊 NODE.JS TEST RESULTS"
+    echo "========================================"
+    echo "  Total Tests: $total_tests"
+    echo "  Passed: $passed_tests"
+    echo "  Failed: $failed_tests"
+
+    if [ $failed_tests -eq 0 ]; then
+        print_status $GREEN "🎉 All Node.js tests passed!"
+        return 0
+    else
+        print_status $RED "❌ Some Node.js tests failed"
+        return 1
+    fi
+}
+
+# Function to run tests with Docker
+run_with_docker() {
+    print_status $BLUE "🐳 Using Docker runtime..."
+    
+    if [ -f ".opencode/tests/docker-compose.yml" ]; then
+        docker-compose -f .opencode/tests/docker-compose.yml up --abort-on-container-exit
+    elif [ -f ".opencode/tests/Dockerfile" ]; then
+        # Build and run with docker directly
+        docker build -f .opencode/tests/Dockerfile -t opencode-test .
+        docker run --rm -v "$(pwd)":/app opencode-test
+        docker rmi opencode-test
+    else
+        print_status $RED "❌ Docker configuration not found"
+        return 1
+    fi
+}
+
+# Function to run basic validation tests (shell-based)
+run_basic_validation() {
+    print_status $BLUE "🔧 Running basic validation tests..."
+    
+    echo ""
+    print_status $YELLOW "📋 BASIC FRAMEWORK VALIDATION"
+    print_status $YELLOW "=============================="
+    
+    # Check if .opencode directory exists
+    if [ -d ".opencode" ]; then
+        print_status $GREEN "✅ .opencode directory found"
+    else
+        print_status $RED "❌ .opencode directory missing"
+        return 1
+    fi
+
+    # Check for required subdirectories
+    local required_dirs=("agent" "command" "plugin" "validation" "tests")
+    for dir in "${required_dirs[@]}"; do
+        if [ -d ".opencode/$dir" ]; then
+            print_status $GREEN "✅ .opencode/$dir directory found"
+        else
+            print_status $RED "❌ .opencode/$dir directory missing"
+        fi
+    done
+
+    # Check for validation rules
+    local validation_files=("code-quality-rules.json" "performance-thresholds.json" "security-rules.json")
+    for file in "${validation_files[@]}"; do
+        if [ -f ".opencode/validation/$file" ]; then
+            print_status $GREEN "✅ Validation rule found: $file"
+        else
+            print_status $RED "❌ Validation rule missing: $file"
+        fi
+    done
+
+    # Check for agents
+    local agent_count=$(find .opencode/agent -name "*.md" 2>/dev/null | wc -l)
+    print_status $GREEN "✅ Agents found: $agent_count"
+    
+    # Check for plugins
+    local plugin_count=$(find .opencode/plugin -name "*.js" 2>/dev/null | wc -l)
+    print_status $GREEN "✅ Plugins found: $plugin_count"
+    
+    # Check for commands
+    local command_count=$(find .opencode/command -type f 2>/dev/null | wc -l)
+    print_status $GREEN "✅ Commands found: $command_count"
+    
+    # Check for temporary files
+    if command_exists node; then
+        echo ""
+        print_status $YELLOW "🧹 TEMPORARY FILE VALIDATION"
+        print_status $YELLOW "=============================="
+        
+        # Run temporary file validation
+        if node .opencode/tests/file-organization-validation.js; then
+            print_status $GREEN "✅ No temporary files found"
+    else
+            local temp_file_count=$?
+            print_status $RED "❌ Found $temp_file_count temporary files"
+            print_status $YELLOW "💡 Run: node .opencode/tests/file-organization-validation.js --auto-remove"
+            return 1
+        fi
+    else
+        print_status $YELLOW "⚠️  Node.js not available, skipping temporary file validation"
+    fi
+    
+    # Check for link validation
+    if command_exists node; then
+        echo ""
+        print_status $YELLOW "🔗 COMPREHENSIVE LINK VALIDATION"
+        print_status $YELLOW "================================="
+        
+        # Run comprehensive link validation
+        if node .opencode/tests/link-validation-test.js; then
+            print_status $GREEN "✅ All links are valid"
+        else
+            local link_issue_count=$?
+            print_status $RED "❌ Found $link_issue_count link issues"
+            print_status $YELLOW "💡 Run: node .opencode/tests/link-validation-test.js"
+            return 1
+        fi
+    else
+        print_status $YELLOW "⚠️  Node.js not available, skipping link validation"
+    fi
+    print_status $GREEN "✅ Commands found: $command_count"
+    
+    echo ""
+    print_status $YELLOW "🎯 BASIC VALIDATION COMPLETE"
+}
+
+# Function to run enhanced link updater
+run_link_updater() {
+    print_status $BLUE "🔗 Running enhanced repository link updater..."
+    
+    if command_exists node; then
+        node .opencode/tests/enhanced-link-updater.js
+        return $?
+    else
+        print_status $RED "❌ Node.js required for link updates but not available"
+        return 1
+    fi
+}
+
+# Function to show usage
+show_usage() {
+    print_header "OpenCode Framework Test Runner"
+    echo ""
+    echo "This universal test runner works with any project type:"
+    echo "JavaScript, Python, Go, Rust, Java, C++, etc."
+    echo ""
+    echo "Usage: $0 [OPTIONS]"
+    echo ""
+    echo "Options:"
+    echo "  --help, -h          Show this help message"
+    echo "  --node              Force Node.js runtime"
+    echo "  --docker            Force Docker runtime"
+    echo "  --basic             Run basic validation only"
+    echo "  --update-links      Update repository links automatically"
+    echo "  --auto              Auto-detect best runtime (default)"
+    echo ""
+    echo "Examples:"
+    echo "  $0                  # Auto-detect and run best available"
+    echo "  $0 --docker         # Force Docker runtime"
+    echo "  $0 --basic          # Quick validation without full tests"
+    echo "  $0 --update-links   # Update repository links automatically"
+    echo ""
+    echo "Supported project types:"
+    echo "  - JavaScript/TypeScript (Node.js preferred)"
+    echo "  - Python, Go, Rust, Java (Docker fallback)"
+    echo "  - Any project with Docker available"
+    echo ""
+}
+
+# Main execution
+main() {
+    local force_node=false
+    local force_docker=false
+    local basic_only=false
+    local update_links=false
+
+    # Parse command line arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            --help|-h)
+                show_usage
+                exit 0
+                ;;
+            --node)
+                force_node=true
+                shift
+                ;;
+            --docker)
+                force_docker=true
+                shift
+                ;;
+            --basic)
+                basic_only=true
+                shift
+                ;;
+            --update-links)
+                update_links=true
+                shift
+                ;;
+            --auto)
+                # Default behavior
+                shift
+                ;;
+            *)
+                print_status $RED "❌ Unknown option: $1"
+                show_usage
+                exit 1
+                ;;
+        esac
+    done
+
+    print_header "🧪 OpenCode Framework Test Runner"
+    
+    # Detect environment
+    local env_info=$(detect_environment)
+    IFS=':' read -r has_node has_docker has_shell project_type <<< "$env_info"
+    
+    echo ""
+    print_status $BLUE "🔍 Environment Detection:"
+    echo "  Project Type: $project_type"
+    echo "  Node.js: $( [ "$has_node" = true ] && echo '✅ Available' || echo '❌ Not available' )"
+    echo "  Docker: $( [ "$has_docker" = true ] && echo '✅ Available' || echo '❌ Not available' )"
+    echo "  Shell: $( [ "$has_shell" = true ] && echo '✅ Available' || echo '❌ Not available' )"
+    echo ""
+
+    # Run basic validation first
+    if ! run_basic_validation; then
+        print_status $RED "❌ Basic validation failed"
+        exit 1
+    fi
+
+    if [ "$basic_only" = true ]; then
+        print_status $GREEN "✅ Basic validation complete"
+        exit 0
+    fi
+
+    # Handle update links option
+    if [ "$update_links" = true ]; then
+        if run_link_updater; then
+            print_status $GREEN "✅ Repository links updated successfully!"
+            exit 0
+        else
+            print_status $RED "❌ Repository link update failed"
+            exit 1
+        fi
+    fi
+
+    # Determine which runtime to use
+    local use_node=false
+    local use_docker=false
+
+    if [ "$force_node" = true ]; then
+        if [ "$has_node" = true ]; then
+            use_node=true
+        else
+            print_status $RED "❌ Node.js forced but not available"
+            exit 1
+        fi
+    elif [ "$force_docker" = true ]; then
+        if [ "$has_docker" = true ]; then
+            use_docker=true
+        else
+            print_status $RED "❌ Docker forced but not available"
+            exit 1
+        fi
+    else
+        # Auto-detect best option
+        if [ "$has_node" = true ]; then
+            use_node=true
+        elif [ "$has_docker" = true ]; then
+            use_docker=true
+        else
+            print_status $YELLOW "⚠️  No Node.js or Docker available, running basic validation only"
+            exit 0
+        fi
+    fi
+
+    # Execute tests with chosen runtime
+    echo ""
+    if [ "$use_node" = true ]; then
+        if run_with_node; then
+            print_status $GREEN "🎉 All tests completed successfully!"
+            exit 0
+        else
+            print_status $RED "❌ Tests failed with Node.js runtime"
+            exit 1
+        fi
+    elif [ "$use_docker" = true ]; then
+        if run_with_docker; then
+            print_status $GREEN "🎉 All tests completed successfully!"
+            exit 0
+        else
+            print_status $RED "❌ Tests failed with Docker runtime"
+            exit 1
+        fi
+    fi
+}
+
+# Run main function
+main "$@"

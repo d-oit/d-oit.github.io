@@ -1,0 +1,64 @@
+{
+  "$schema": "https://opencode.ai/validation-schema.json",
+  "performance_validation": {
+    "thresholds": {
+      "response_time": {
+        "api_endpoints": {
+          "critical": 200,
+          "warning": 500,
+          "info": 1000
+        },
+        "database_queries": {
+          "critical": 50,
+          "warning": 200,
+          "info": 500
+        },
+        "page_load": {
+          "critical": 1000,
+          "warning": 2000,
+          "info": 3000
+        }
+      },
+      "resource_usage": {
+        "memory": {
+          "critical": 0.9,
+          "warning": 0.7,
+          "info": 0.5
+        },
+        "cpu": {
+          "critical": 0.8,
+          "warning": 0.6,
+          "info": 0.4
+        }
+      }
+    },
+    "false_positive_indicators": [
+      {
+        "type": "synthetic_benchmark",
+        "description": "Performance test not reflecting real usage",
+        "confidence_reduction": 0.8
+      },
+      {
+        "type": "development_environment",
+        "description": "Performance measured in development environment",
+        "confidence_reduction": 0.6
+      },
+      {
+        "type": "cold_start",
+        "description": "Cold start performance not representative",
+        "confidence_reduction": 0.5
+      },
+      {
+        "type": "network_latency",
+        "description": "Performance affected by network conditions",
+        "confidence_reduction": 0.4
+      }
+    ],
+    "measurement_reliability": {
+      "min_samples": 10,
+      "statistical_significance": 0.95,
+      "acceptable_variance": 0.2,
+      "environment_consistency_required": true
+    }
+  }
+}

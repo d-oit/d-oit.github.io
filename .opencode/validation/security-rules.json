@@ -1,0 +1,48 @@
+{
+  "$schema": "https://opencode.ai/validation-schema.json",
+  "security_validation": {
+    "vulnerability_thresholds": {
+      "critical": {
+        "cvss_min": 9.0,
+        "exploit_probability_min": 0.8,
+        "context_relevance_required": true
+      },
+      "high": {
+        "cvss_min": 7.0,
+        "exploit_probability_min": 0.5,
+        "context_relevance_required": true
+      },
+      "medium": {
+        "cvss_min": 4.0,
+        "exploit_probability_min": 0.3,
+        "context_relevance_required": false
+      }
+    },
+    "false_positive_patterns": [
+      {
+        "pattern": "dev-dependency-only",
+        "description": "Vulnerability only affects dev dependencies",
+        "auto_dismiss": true,
+        "confidence_reduction": 0.9
+      },
+      {
+        "pattern": "test-file-vulnerability",
+        "description": "Vulnerability in test files only",
+        "auto_dismiss": false,
+        "confidence_reduction": 0.7
+      },
+      {
+        "pattern": "outdated-scanner-rule",
+        "description": "Scanner rule is outdated or deprecated",
+        "auto_dismiss": true,
+        "confidence_reduction": 0.95
+      }
+    ],
+    "context_filters": {
+      "production_only": true,
+      "exclude_paths": ["test/", "spec/", "__tests__/", "*.test.*", "*.spec.*"],
+      "exclude_dependencies": ["@types/*", "jest", "mocha", "chai"],
+      "environment_specific": ["development", "staging"]
+    }
+  }
+}

@@ -41,26 +41,36 @@ type NewPostRequest struct {
 
 // ServerConfig represents server-specific configuration
 type ServerConfig struct {
-	Port           int    `json:"port"`
-	ShowURLOnStart bool   `json:"showURLOnStart"`
-	GermanFolder   string `json:"germanFolder"`
-	EnglishFolder  string `json:"englishFolder"`
-	MediaFolder    string `json:"mediaFolder"`
-	AssetFolder    string `json:"assetFolder"`
-	ImageResize    struct {
-		Method   string `json:"method"`
-		MaxWidth int    `json:"maxWidth"`
-	} `json:"imageResize"`
+	Port                int    `json:"port" mapstructure:"port"`
+	HTTPSPort           int    `json:"httpsPort" mapstructure:"httpsPort"`
+	ShowURLOnStart      bool   `json:"showURLOnStart" mapstructure:"showURLOnStart"`
+	GermanFolder        string `json:"germanFolder" mapstructure:"germanFolder"`
+	EnglishFolder       string `json:"englishFolder" mapstructure:"englishFolder"`
+	MediaFolder         string `json:"mediaFolder" mapstructure:"mediaFolder"`
+	AssetFolder         string `json:"assetFolder" mapstructure:"assetFolder"`
+	CertFile            string `json:"certFile" mapstructure:"certFile"`
+	KeyFile             string `json:"keyFile" mapstructure:"keyFile"`
+	RedirectHTTPToHTTPS bool   `json:"redirectHTTPToHTTPS" mapstructure:"redirectHTTPToHTTPS"`
+	ImageResize         struct {
+		Method   string `json:"method" mapstructure:"method"`
+		MaxWidth int    `json:"maxWidth" mapstructure:"maxWidth"`
+	} `json:"imageResize" mapstructure:"imageResize"`
 	ThumbnailResize struct {
-		Method   string `json:"method"`
-		MaxWidth int    `json:"maxWidth"`
-	} `json:"thumbnailResize"`
+		Method   string `json:"method" mapstructure:"method"`
+		MaxWidth int    `json:"maxWidth" mapstructure:"maxWidth"`
+	} `json:"thumbnailResize" mapstructure:"thumbnailResize"`
+}
+
+// SecretsConfig holds secret configuration values
+type SecretsConfig struct {
+	ImagePigAPIKey string `json:"imagePigAPIKey" mapstructure:"imagePigAPIKey"`
 }
 
 // Config represents the main application configuration
 type Config struct {
-	Shortcodes []Shortcode  `json:"shortcodes"`
-	Server     ServerConfig `json:"server"`
+	Shortcodes []Shortcode   `json:"shortcodes" mapstructure:"shortcodes"`
+	Server     ServerConfig  `json:"server" mapstructure:"server"`
+	Secrets    SecretsConfig `json:"secrets" mapstructure:"secrets"`
 }
 
 // TagsData represents the structure for storing tags

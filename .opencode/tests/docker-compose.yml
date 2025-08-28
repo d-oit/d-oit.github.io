@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  opencode-tests:
+    build:
+      context: ..
+      dockerfile: .opencode/tests/Dockerfile
+    volumes:
+      - ..:/app
+    working_dir: /app
+    command: bash .opencode/tests/run-tests.sh
+    environment:
+      - NODE_ENV=test
