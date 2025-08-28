@@ -49,6 +49,7 @@ The relationship between OpenCode and this template is straightforward:
 2. **This Template**: Provides configuration files and structure that optimize how OpenCode works in your project
 
 When you use this template:
+
 - You still need to install OpenCode separately
 - The template's configuration files tell OpenCode's agents how to behave
 - The template's structure provides a best-practice organization for your code
@@ -62,7 +63,7 @@ This separation means you can use OpenCode with any project structure, but this 
 
 This template provides an optimized structure for projects using the OpenCode framework. The `.opencode` directory contains configurations that work with the OpenCode framework:
 
-```
+```text
 📦 Your Project/
 ├── ⚙️ .opencode/            # OpenCode Template Configuration
 │   ├── 📂 agent/           # AI agent configurations
@@ -103,7 +104,7 @@ This separation ensures that you can use the OpenCode framework with any project
 
 This template implements **Domain-Driven Design (DDD)** principles and provides configurations for OpenCode agents that help organize code by business domains rather than technical layers:
 
-```
+```text
 📦 Your Application (Recommended Structure)/
 ├── 📂 src/                    # Your application code
 │   ├── 📂 domains/           # Business domains (recommended)

@@ -164,7 +164,7 @@ Der Beitrag entstand im Zusammenspiel aus folgenden Komponenten und Arbeitsschri
         ├── Automatisierte RFC 3986-Validierung
         └── Tavily-Search-Integration
     `roo-german-grammar-check`
-    
+
         ├── Grammatikprüfung nach Duden-Richtlinien
         └── Stilistische Harmonisierung   
 - **Menschliche Kuratierung** und Lektorat durch [Silke Buchta](https://sibu2.gitlab.io/lektorat/).
