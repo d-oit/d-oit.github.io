@@ -2,13 +2,21 @@ package main
 
 import (
 	"bytes"
+	"crypto/ecdsa"
+	"crypto/elliptic"
+	"crypto/rand"
+	"crypto/tls"
+	"crypto/x509"
+	"crypto/x509/pkix"
 	"encoding/base64"
 	"encoding/json"
+	"encoding/pem"
 	"fmt"
 	"image"
 	"io"
 	"io/ioutil"
 	"log"
+	"math/big"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -23,6 +31,7 @@ import (
 	"github.com/joho/godotenv"
 	httpSwagger "github.com/swaggo/http-swagger" // swagger UI handler
 	_ "github.com/swaggo/swag"                   // swagger embed files
+	"go.uber.org/zap"
 )
 
 // FluxRequest represents the request structure for the FLUX API
@@ -37,34 +46,37 @@ type FluxRequest struct {
 
 // FluxResponse represents the response structure from the FLUX API
 type FluxResponse struct {
-	ImageData    string    `json:"image_data"`
-	ImageURL     string    `json:"image_url,omitempty"`
-	MimeType     string    `json:"mime_type"`
-	Seed         int64     `json:"seed"`
-	StartedAt    time.Time `json:"started_at"`
-	CompletedAt  time.Time `json:"completed_at"`
-	ErrorMessage string    `json:"error,omitempty"`
+	ImageData    string      `json:"image_data"`
+	ImageURL     string      `json:"image_url,omitempty"`
+	MimeType     string      `json:"mime_type"`
+	Seed         json.Number `json:"seed"`
+	StartedAt    time.Time   `json:"started_at"`
+	CompletedAt  time.Time   `json:"completed_at"`
+	ErrorMessage string      `json:"error,omitempty"`
 }
 
-// FluxClient handles API communication
+// FluxClient handles API communication and implements ImageGenerator interface
 type FluxClient struct {
 	apiKey     string
 	baseURL    string
-	httpClient *http.Client
+	httpClient HTTPClient
+	logger     *Logger
 }
 
 // NewFluxClient creates a new instance of FluxClient
-func NewFluxClient(apiKey string) *FluxClient {
+func NewFluxClient(apiKey string, logger *Logger) *FluxClient {
 	return &FluxClient{
 		apiKey:     apiKey,
 		baseURL:    "https://api.imagepig.com/flux",
-		httpClient: &http.Client{Timeout: 30 * time.Second},
+		httpClient: NewHTTPClient(30 * time.Second),
+		logger:     logger,
 	}
 }
 
 // GenerateLandscapeImage generates a landscape image using the FLUX API
 func (c *FluxClient) GenerateLandscapeImage(prompt string, outputFile string) error {
-	log.Println("GenerateLandscapeImage: Preparing request")
+	c.logger.Info("GenerateLandscapeImage: Preparing request")
+
 	// Prepare the request
 	request := FluxRequest{
 		Prompt:     prompt,
@@ -75,15 +87,15 @@ func (c *FluxClient) GenerateLandscapeImage(prompt string, outputFile string) er
 	// Convert request to JSON
 	requestBody, err := json.Marshal(request)
 	if err != nil {
-		log.Printf("GenerateLandscapeImage: Error marshaling request: %v", err)
-		return fmt.Errorf("error marshaling request: %w", err)
+		c.logger.Error("GenerateLandscapeImage: Error marshaling request", zap.Error(err))
+		return NewAPIError("ImagePig", c.baseURL, "Error marshaling request", 0, err)
 	}
 
 	// Create HTTP request
 	req, err := http.NewRequest("POST", c.baseURL, bytes.NewBuffer(requestBody))
 	if err != nil {
-		log.Printf("GenerateLandscapeImage: Error creating request: %v", err)
-		return fmt.Errorf("error creating request: %w", err)
+		c.logger.Error("GenerateLandscapeImage: Error creating request", zap.Error(err))
+		return NewAPIError("ImagePig", c.baseURL, "Error creating request", 0, err)
 	}
 
 	// Set headers
@@ -91,230 +103,511 @@ func (c *FluxClient) GenerateLandscapeImage(prompt string, outputFile string) er
 	req.Header.Set("Api-Key", c.apiKey)
 
 	// Send request
-	log.Println("GenerateLandscapeImage: Sending request to FLUX API")
+	c.logger.Info("GenerateLandscapeImage: Sending request to FLUX API")
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
-		log.Printf("GenerateLandscapeImage: Error sending request: %v", err)
-		return fmt.Errorf("error sending request: %w", err)
+		c.logger.Error("GenerateLandscapeImage: Error sending request", zap.Error(err))
+		return NewAPIError("ImagePig", c.baseURL, "Error sending request", 0, err)
 	}
 	defer resp.Body.Close()
 
 	// Read response body
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		log.Printf("GenerateLandscapeImage: Error reading response: %v", err)
-		return fmt.Errorf("error reading response: %w", err)
+		c.logger.Error("GenerateLandscapeImage: Error reading response", zap.Error(err))
+		return NewAPIError("ImagePig", c.baseURL, "Error reading response", 0, err)
 	}
 
 	// Check for successful status code
 	if resp.StatusCode != http.StatusOK {
-		log.Printf("GenerateLandscapeImage: API request failed with status %d: %s", resp.StatusCode, string(body))
-		return fmt.Errorf("API request failed with status %d: %s", resp.StatusCode, string(body))
+		c.logger.Error("GenerateLandscapeImage: API request failed",
+			zap.Int("status_code", resp.StatusCode),
+			zap.String("response", string(body)),
+		)
+		return NewAPIError("ImagePig", c.baseURL, fmt.Sprintf("API request failed with status %d", resp.StatusCode), resp.StatusCode, nil)
 	}
 
 	// Parse response
 	var fluxResponse FluxResponse
 	if err := json.Unmarshal(body, &fluxResponse); err != nil {
-		log.Printf("GenerateLandscapeImage: Error parsing response: %v", err)
-		return fmt.Errorf("error parsing response: %w", err)
+		c.logger.Error("GenerateLandscapeImage: Error parsing response", zap.Error(err))
+		return NewAPIError("ImagePig", c.baseURL, "Error parsing response", 0, err)
 	}
 
 	// Check for API error
 	if fluxResponse.ErrorMessage != "" {
-		log.Printf("GenerateLandscapeImage: API error: %s", fluxResponse.ErrorMessage)
-		return fmt.Errorf("API error: %s", fluxResponse.ErrorMessage)
+		c.logger.Error("GenerateLandscapeImage: API error", zap.String("error_message", fluxResponse.ErrorMessage))
+		return NewAPIError("ImagePig", c.baseURL, fluxResponse.ErrorMessage, 0, nil)
 	}
 
 	// Decode base64 image
 	imageData, err := base64.StdEncoding.DecodeString(fluxResponse.ImageData)
 	if err != nil {
-		log.Printf("GenerateLandscapeImage: Error decoding image data: %v", err)
-		return fmt.Errorf("error decoding image data: %w", err)
+		c.logger.Error("GenerateLandscapeImage: Error decoding image data", zap.Error(err))
+		return NewAPIError("ImagePig", c.baseURL, "Error decoding image data", 0, err)
 	}
 
 	// Save image to file
 	if err := os.WriteFile(outputFile, imageData, 0644); err != nil {
-		log.Printf("GenerateLandscapeImage: Error saving image: %v", err)
-		return fmt.Errorf("error saving image: %w", err)
+		c.logger.Error("GenerateLandscapeImage: Error saving image",
+			zap.String("output_file", outputFile),
+			zap.Error(err),
+		)
+		return NewFileSystemError("WriteFile", outputFile, "Error saving image", err)
 	}
 
-	log.Printf("GenerateLandscapeImage: Image successfully saved to %s", outputFile)
+	c.logger.Info("GenerateLandscapeImage: Image successfully saved", zap.String("output_file", outputFile))
 	return nil
 }
 
-var config Config
+// AppConfig implements ConfigProvider interface
+type AppConfig struct {
+	config *Config
+	logger *Logger
+}
+
+// NewAppConfig creates a new instance of AppConfig
+func NewAppConfig(config *Config, logger *Logger) *AppConfig {
+	return &AppConfig{
+		config: config,
+		logger: logger,
+	}
+}
+
+// GetConfig returns the current configuration
+func (p *AppConfig) GetConfig() Config {
+	return *p.config
+}
+
+// LoadConfig is a no-op implementation since configuration is loaded via Viper
+func (p *AppConfig) LoadConfig() error {
+	// Configuration is already loaded via Viper, so this is a no-op
+	p.logger.Info("LoadConfig: Configuration already loaded via Viper")
+	return nil
+}
+
+// OSFileSystem implements FileSystem interface using os package
+type OSFileSystem struct {
+	logger *Logger
+}
+
+// NewOSFileSystem creates a new instance of OSFileSystem
+func NewOSFileSystem(logger *Logger) *OSFileSystem {
+	return &OSFileSystem{
+		logger: logger,
+	}
+}
+
+// ReadFile reads a file
+func (fs *OSFileSystem) ReadFile(filename string) ([]byte, error) {
+	data, err := ioutil.ReadFile(filename)
+	if err != nil {
+		fs.logger.Error("ReadFile: Error reading file",
+			zap.String("filename", filename),
+			zap.Error(err),
+		)
+		return nil, NewFileSystemError("ReadFile", filename, "Error reading file", err)
+	}
+	return data, nil
+}
+
+// WriteFile writes data to a file
+func (fs *OSFileSystem) WriteFile(filename string, data []byte, perm os.FileMode) error {
+	err := ioutil.WriteFile(filename, data, perm)
+	if err != nil {
+		fs.logger.Error("WriteFile: Error writing file",
+			zap.String("filename", filename),
+			zap.Error(err),
+		)
+		return NewFileSystemError("WriteFile", filename, "Error writing file", err)
+	}
+	return nil
+}
+
+// ReadDir reads a directory
+func (fs *OSFileSystem) ReadDir(dirname string) ([]os.FileInfo, error) {
+	files, err := ioutil.ReadDir(dirname)
+	if err != nil {
+		fs.logger.Error("ReadDir: Error reading directory",
+			zap.String("dirname", dirname),
+			zap.Error(err),
+		)
+		return nil, NewFileSystemError("ReadDir", dirname, "Error reading directory", err)
+	}
+	return files, nil
+}
+
+// MkdirAll creates all directories in the path
+func (fs *OSFileSystem) MkdirAll(path string, perm os.FileMode) error {
+	err := os.MkdirAll(path, perm)
+	if err != nil {
+		fs.logger.Error("MkdirAll: Error creating directory",
+			zap.String("path", path),
+			zap.Error(err),
+		)
+		return NewFileSystemError("MkdirAll", path, "Error creating directory", err)
+	}
+	return nil
+}
+
+// Remove removes a file or directory
+func (fs *OSFileSystem) Remove(name string) error {
+	err := os.Remove(name)
+	if err != nil {
+		fs.logger.Error("Remove: Error removing file",
+			zap.String("name", name),
+			zap.Error(err),
+		)
+		return NewFileSystemError("Remove", name, "Error removing file", err)
+	}
+	return nil
+}
+
+// Stat returns file info
+func (fs *OSFileSystem) Stat(name string) (os.FileInfo, error) {
+	info, err := os.Stat(name)
+	if err != nil {
+		fs.logger.Error("Stat: Error getting file info",
+			zap.String("name", name),
+			zap.Error(err),
+		)
+		return nil, NewFileSystemError("Stat", name, "Error getting file info", err)
+	}
+	return info, nil
+}
+
+// Create creates a file
+func (fs *OSFileSystem) Create(name string) (*os.File, error) {
+	file, err := os.Create(name)
+	if err != nil {
+		fs.logger.Error("Create: Error creating file",
+			zap.String("name", name),
+			zap.Error(err),
+		)
+		return nil, NewFileSystemError("Create", name, "Error creating file", err)
+	}
+	return file, nil
+}
+
+// Walk walks the file tree
+func (fs *OSFileSystem) Walk(root string, walkFn filepath.WalkFunc) error {
+	err := filepath.Walk(root, walkFn)
+	if err != nil {
+		fs.logger.Error("Walk: Error walking file tree",
+			zap.String("root", root),
+			zap.Error(err),
+		)
+		return NewFileSystemError("Walk", root, "Error walking file tree", err)
+	}
+	return nil
+}
+
+// HTTPClientImpl implements HTTPClient interface using http.Client
+type HTTPClientImpl struct {
+	client *http.Client
+	logger *Logger
+}
+
+// NewHTTPClient creates a new instance of HTTPClientImpl
+func NewHTTPClient(timeout time.Duration) *HTTPClientImpl {
+	return &HTTPClientImpl{
+		client: &http.Client{Timeout: timeout},
+	}
+}
+
+// Do performs an HTTP request
+func (c *HTTPClientImpl) Do(req *http.Request) (*http.Response, error) {
+	resp, err := c.client.Do(req)
+	if err != nil {
+		return nil, NewAPIError("HTTPClient", req.URL.String(), "Error performing HTTP request", 0, err)
+	}
+	return resp, nil
+}
+
+// Application holds the dependencies for the application
+type Application struct {
+	configProvider ConfigProvider
+	fileSystem     FileSystem
+	httpClient     HTTPClient
+	imageGenerator ImageGenerator
+	imageProcessor ImageProcessingService
+	logger         *Logger
+	config         *Config
+}
+
+// NewApplication creates a new instance of Application with all dependencies
+func NewApplication(logger *Logger) (*Application, error) {
+	// Load configuration using Viper
+	config, err := LoadConfig(logger.Logger)
+	if err != nil {
+		logger.Fatal("Failed to load configuration", zap.Error(err))
+		return nil, err
+	}
+
+	// Create concrete implementations
+	configProvider := NewAppConfig(config, logger)
+	fileSystem := NewOSFileSystem(logger)
+	httpClient := NewHTTPClient(30 * time.Second)
+
+	// Create FluxClient with the HTTPClient interface
+	apiKey := config.Secrets.ImagePigAPIKey
+	if apiKey == "" {
+		logger.Warn("IMAGEPIG_API_KEY not found in configuration")
+	}
+
+	imageGenerator := NewFluxClient(apiKey, logger)
+	imageProcessor := NewImageProcessingServiceImpl(configProvider, fileSystem, logger)
+
+	return &Application{
+		configProvider: configProvider,
+		fileSystem:     fileSystem,
+		httpClient:     httpClient,
+		imageGenerator: imageGenerator,
+		imageProcessor: imageProcessor,
+		logger:         logger,
+		config:         config,
+	}, nil
+}
 
 func main() {
-	// Load configuration
-	log.Println("main: Loading configuration")
-	loadConfig()
+	// Initialize structured logger
+	logger, err := NewLogger()
+	if err != nil {
+		log.Fatalf("Failed to initialize logger: %v", err)
+	}
+	defer logger.Sync()
+
+	// Initialize application with dependency injection
+	app, err := NewApplication(logger)
+	if err != nil {
+		logger.Fatal("Failed to initialize application", zap.Error(err))
+	}
+
+	// Set up middleware chain
+	mux := http.NewServeMux()
 
 	// Serve static files from the "static" directory
 	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/", fs)
-	log.Println("main: Serving static files from /static")
+	mux.Handle("/", fs)
+	logger.Info("main: Serving static files from /static")
 
-	// API endpoints
-	http.HandleFunc("/api/config", handleConfig)
-	http.HandleFunc("/api/save", handleSave)
-	http.HandleFunc("/api/load", handleLoad)
-	http.HandleFunc("/api/list", handleList)
-	http.HandleFunc("/api/media-list", handleMediaList)
-	http.HandleFunc("/api/process-media", handleProcessMedia)
-	http.HandleFunc("/api/create-post", handleCreatePost)
-	http.HandleFunc("/api/tags", handleGetTags)
-	http.HandleFunc("/api/categories", handleGetCategories)
-	http.HandleFunc("/api/delete-media", handleDeleteMedia)
-	http.HandleFunc("/api/upload-media", handleUploadMediaFolder)
+	// API endpoints with error handling
+	mux.HandleFunc("/api/config", WithErrorHandling(app.handleConfig))
+	mux.HandleFunc("/api/save", WithErrorHandling(app.handleSave))
+	mux.HandleFunc("/api/load", WithErrorHandling(app.handleLoad))
+	mux.HandleFunc("/api/list", WithErrorHandling(app.handleList))
+	mux.HandleFunc("/api/media-list", WithErrorHandling(app.handleMediaList))
+	mux.HandleFunc("/api/process-media", WithErrorHandling(app.handleProcessMedia))
+	mux.HandleFunc("/api/create-post", WithErrorHandling(app.handleCreatePost))
+	mux.HandleFunc("/api/tags", WithErrorHandling(app.handleGetTags))
+	mux.HandleFunc("/api/categories", WithErrorHandling(app.handleGetCategories))
+	mux.HandleFunc("/api/delete-media", WithErrorHandling(app.handleDeleteMedia))
+	mux.HandleFunc("/api/upload-media", WithErrorHandling(app.handleUploadMediaFolder))
 
 	// Updated Swagger handler
-	http.Handle("/swagger/", httpSwagger.Handler(
+	mux.Handle("/swagger/", httpSwagger.Handler(
 		httpSwagger.URL("/docs/swagger.json"), // The url pointing to API definition
 		httpSwagger.DeepLinking(true),
 		httpSwagger.DocExpansion("none"),
 		httpSwagger.DomID("swagger-ui"),
 	))
-	log.Println("main: Swagger UI configured")
+	logger.Info("main: Swagger UI configured")
 
 	// Determine the address to listen on
-	addr := fmt.Sprintf(":%d", config.Server.Port)
+	config := app.configProvider.GetConfig()
+	httpAddr := fmt.Sprintf(":%d", config.Server.Port)
+	httpsAddr := fmt.Sprintf(":%d", config.Server.HTTPSPort)
+
+	// Check if certificates exist, if not, generate them for development
+	env := os.Getenv("APP_ENV")
+	if env == "" {
+		env = "development"
+	}
+	if (config.Server.CertFile == "" || config.Server.KeyFile == "") && env == "development" {
+		logger.Info("Certificates not found and in development mode. Generating self-signed certificates.")
+		config.Server.CertFile = "cert.pem"
+		config.Server.KeyFile = "key.pem"
+		if err := generateSelfSignedCert(config.Server.CertFile, config.Server.KeyFile, logger); err != nil {
+			logger.Fatal("Failed to generate self-signed certificates", zap.Error(err))
+		}
+		logger.Info("Self-signed certificates generated successfully for development.")
+	} else if config.Server.CertFile == "" || config.Server.KeyFile == "" {
+		logger.Warn("HTTPS server not started: certFile or keyFile not configured. Set SERVER_CERTFILE and SERVER_KEYFILE environment variables or in config file.")
+	}
 
 	// Show URL on start if configured
 	if config.Server.ShowURLOnStart {
-		log.Printf("Server starting on http://localhost%s", addr)
-		log.Printf("Swagger UI available at http://localhost%s/swagger/index.html", addr)
+		logger.Info("Server starting",
+			zap.String("url", fmt.Sprintf("http://localhost%s", httpAddr)),
+			zap.String("swagger_url", fmt.Sprintf("http://localhost%s/swagger/index.html", httpAddr)),
+		)
+		if config.Server.CertFile != "" && config.Server.KeyFile != "" {
+			logger.Info("HTTPS server starting",
+				zap.String("url", fmt.Sprintf("https://localhost%s", httpsAddr)),
+			)
+		}
 	} else {
-		log.Printf("Server starting on port %d", config.Server.Port)
+		logger.Info("Server starting", zap.Int("port", config.Server.Port))
+		if config.Server.CertFile != "" && config.Server.KeyFile != "" {
+			logger.Info("HTTPS server starting", zap.Int("port", config.Server.HTTPSPort))
+		}
 	}
 
-	// Start the server
-	log.Println("main: Starting the server")
-	log.Fatal(http.ListenAndServe(addr, nil))
+	// Create the handler chain
+	handlerChain := RequestIDMiddleware(
+		LoggingMiddleware(logger)(
+			ErrorHandlerMiddleware(logger)(
+				SecurityHeadersMiddleware(logger)(
+					mux,
+				),
+			),
+		),
+	)
+
+	// DEBUG: Add logging to verify server startup logic
+	logger.Info("DEBUG: Server startup logic check",
+		zap.Bool("redirectHTTPToHTTPS", config.Server.RedirectHTTPToHTTPS),
+		zap.String("certFile", config.Server.CertFile),
+		zap.String("keyFile", config.Server.KeyFile),
+		zap.String("env", env),
+	)
+
+	// Start HTTP server for redirect if enabled
+	if config.Server.RedirectHTTPToHTTPS && config.Server.CertFile != "" && config.Server.KeyFile != "" {
+		go func() {
+			logger.Info("Starting HTTP to HTTPS redirect server", zap.String("address", httpAddr))
+			redirectServer := &http.Server{
+				Addr: httpAddr,
+				Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+					http.Redirect(w, r, fmt.Sprintf("https://%s%s", r.Host, r.RequestURI), http.StatusMovedPermanently)
+				}),
+			}
+			if err := redirectServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+				logger.Fatal("HTTP redirect server failed to start", zap.Error(err))
+			}
+		}()
+	}
+
+	// Start HTTPS server if certificates are available
+	if config.Server.CertFile != "" && config.Server.KeyFile != "" {
+		go func() {
+			logger.Info("Starting HTTPS server", zap.String("address", httpsAddr))
+			httpsServer := &http.Server{
+				Addr:    httpsAddr,
+				Handler: handlerChain,
+				TLSConfig: &tls.Config{
+					MinVersion: tls.VersionTLS12,
+				},
+			}
+			if err := httpsServer.ListenAndServeTLS(config.Server.CertFile, config.Server.KeyFile); err != nil && err != http.ErrServerClosed {
+				logger.Fatal("HTTPS server failed to start", zap.Error(err))
+			}
+		}()
+		
+		// In development mode, also start HTTP server alongside HTTPS
+		if env == "development" {
+			go func() {
+				logger.Info("Starting HTTP server in development mode", zap.String("address", httpAddr))
+				httpServer := &http.Server{
+					Addr:    httpAddr,
+					Handler: handlerChain,
+				}
+				if err := httpServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+					logger.Fatal("HTTP server failed to start", zap.Error(err))
+				}
+			}()
+		}
+	} else {
+		logger.Warn("HTTPS server not started: certFile or keyFile not configured. Consider generating self-signed certificates for development.")
+		// If HTTPS is not configured, start HTTP server on the main port
+		go func() {
+			logger.Info("Starting HTTP server", zap.String("address", httpAddr))
+			if err := http.ListenAndServe(httpAddr, handlerChain); err != nil && err != http.ErrServerClosed {
+				logger.Fatal("HTTP server failed to start", zap.Error(err))
+			}
+		}()
+	}
+
+	// Block main thread indefinitely
+	select {}
 }
 
-func loadConfig() {
-	file, err := ioutil.ReadFile("config.json")
-	if err != nil {
-		log.Fatalf("loadConfig: Error reading config file: %v", err)
-	}
+func (app *Application) handleConfig(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+	logger.Info("handleConfig: Handling config request")
 
-	err = json.Unmarshal(file, &config)
-	if err != nil {
-		log.Fatalf("loadConfig: Error parsing config file: %v", err)
-	}
-
-	// Set default values if not specified
-	if config.Server.Port == 0 {
-		config.Server.Port = 8080
-		log.Println("loadConfig: Server Port not set, defaulting to 8080")
-	}
-	if config.Server.GermanFolder == "" {
-		config.Server.GermanFolder = "../content/de/blog"
-		log.Println("loadConfig: GermanFolder not set, defaulting to ../content/de/blog")
-	}
-	if config.Server.EnglishFolder == "" {
-		config.Server.EnglishFolder = "../content/en/blog"
-		log.Println("loadConfig: EnglishFolder not set, defaulting to ../content/en/blog")
-	}
-
-	// Convert relative paths to absolute paths
-	absGermanFolder, err := filepath.Abs(config.Server.GermanFolder)
-	if err != nil {
-		log.Fatalf("loadConfig: Error converting GermanFolder to absolute path: %v", err)
-	}
-	config.Server.GermanFolder = absGermanFolder
-	log.Printf("loadConfig: GermanFolder set to %s", absGermanFolder)
-
-	absEnglishFolder, err := filepath.Abs(config.Server.EnglishFolder)
-	if err != nil {
-		log.Fatalf("loadConfig: Error converting EnglishFolder to absolute path: %v", err)
-	}
-	config.Server.EnglishFolder = absEnglishFolder
-	log.Printf("loadConfig: EnglishFolder set to %s", absEnglishFolder)
-}
-
-func handleConfig(w http.ResponseWriter, r *http.Request) {
-	log.Println("handleConfig: Handling config request")
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(config)
+	return json.NewEncoder(w).Encode(app.configProvider.GetConfig())
 }
 
-func handleSave(w http.ResponseWriter, r *http.Request) {
+func (app *Application) handleSave(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+
 	if r.Method != http.MethodPost {
-		log.Printf("handleSave: Method not allowed - %s", r.Method)
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
+		logger.Warn("handleSave: Method not allowed", zap.String("method", r.Method))
+		return NewValidationError("method", "Method not allowed", nil)
 	}
 
 	filename := r.URL.Query().Get("file")
 	if filename == "" {
-		log.Println("handleSave: Filename is required")
-		http.Error(w, "Filename is required", http.StatusBadRequest)
-		return
+		logger.Warn("handleSave: Filename is required")
+		return NewValidationError("filename", "Filename is required", nil)
 	}
 
 	content, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		log.Printf("handleSave: Error reading request body: %v", err)
-		http.Error(w, "Error reading request body", http.StatusInternalServerError)
-		return
+		logger.Error("handleSave: Error reading request body", zap.Error(err))
+		return NewValidationError("request_body", "Error reading request body", err)
 	}
 
-	fullPath := getFullPath(filename)
-	err = ioutil.WriteFile(fullPath, content, 0644)
+	fullPath := getFullPath(filename, app.configProvider.GetConfig())
+	err = app.fileSystem.WriteFile(fullPath, content, 0644)
 	if err != nil {
-		log.Printf("handleSave: Error saving file %s: %v", fullPath, err)
-		http.Error(w, "Error saving file", http.StatusInternalServerError)
-		return
+		return err
 	}
 
-	log.Printf("handleSave: Successfully saved file %s", fullPath)
+	logger.Info("handleSave: Successfully saved file", zap.String("path", fullPath))
 	w.WriteHeader(http.StatusOK)
+	return nil
 }
 
-func handleLoad(w http.ResponseWriter, r *http.Request) {
+func (app *Application) handleLoad(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+
 	filename := r.URL.Query().Get("file")
 	if filename == "" {
-		log.Println("handleLoad: Filename is required")
-		http.Error(w, "Filename is required", http.StatusBadRequest)
-		return
+		logger.Warn("handleLoad: Filename is required")
+		return NewValidationError("filename", "Filename is required", nil)
 	}
 
-	fullPath := getFullPath(filename)
-	content, err := ioutil.ReadFile(fullPath)
+	fullPath := getFullPath(filename, app.configProvider.GetConfig())
+	content, err := app.fileSystem.ReadFile(fullPath)
 	if err != nil {
-		if os.IsNotExist(err) {
-			log.Printf("handleLoad: File not found: %s", fullPath)
-			http.Error(w, "File not found", http.StatusNotFound)
-		} else {
-			log.Printf("handleLoad: Error reading file %s: %v", fullPath, err)
-			http.Error(w, "Error reading file", http.StatusInternalServerError)
-		}
-		return
+		return err
 	}
 
-	log.Printf("handleLoad: Successfully loaded file %s", fullPath)
+	logger.Info("handleLoad: Successfully loaded file", zap.String("path", fullPath))
 	w.Header().Set("Content-Type", "text/plain")
-	w.Write(content)
+	_, err = w.Write(content)
+	return err
 }
 
-func handleList(w http.ResponseWriter, r *http.Request) {
-	log.Println("handleList: Handling list request")
-	files := make(map[string][]string)
+func (app *Application) handleList(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+	logger.Info("handleList: Handling list request")
 
-	germanFiles, err := listFiles(config.Server.GermanFolder)
+	files := make(map[string][]string)
+	config := app.configProvider.GetConfig()
+
+	germanFiles, err := listFiles(config.Server.GermanFolder, app.fileSystem)
 	if err != nil {
-		log.Printf("handleList: Error reading German directory: %v", err)
-		http.Error(w, "Error reading German directory", http.StatusInternalServerError)
-		return
+		return err
 	}
 	files["de"] = germanFiles
 
-	englishFiles, err := listFiles(config.Server.EnglishFolder)
+	englishFiles, err := listFiles(config.Server.EnglishFolder, app.fileSystem)
 	if err != nil {
-		log.Printf("handleList: Error reading English directory: %v", err)
-		http.Error(w, "Error reading English directory", http.StatusInternalServerError)
-		return
+		return err
 	}
 	files["en"] = englishFiles
 
@@ -322,24 +615,25 @@ func handleList(w http.ResponseWriter, r *http.Request) {
 	lang := r.URL.Query().Get("lang")
 	switch lang {
 	case "de":
-		log.Println("handleList: Responding with German files")
-		json.NewEncoder(w).Encode(germanFiles)
+		logger.Info("handleList: Responding with German files")
+		return json.NewEncoder(w).Encode(germanFiles)
 	case "en":
-		log.Println("handleList: Responding with English files")
-		json.NewEncoder(w).Encode(englishFiles)
+		logger.Info("handleList: Responding with English files")
+		return json.NewEncoder(w).Encode(englishFiles)
 	default:
-		log.Println("handleList: Responding with all files")
-		json.NewEncoder(w).Encode(files)
+		logger.Info("handleList: Responding with all files")
+		return json.NewEncoder(w).Encode(files)
 	}
 }
 
-func handleMediaList(w http.ResponseWriter, r *http.Request) {
-	log.Println("handleMediaList: Handling media list request")
-	files, err := ioutil.ReadDir(config.Server.MediaFolder)
+func (app *Application) handleMediaList(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+	logger.Info("handleMediaList: Handling media list request")
+
+	config := app.configProvider.GetConfig()
+	files, err := app.fileSystem.ReadDir(config.Server.MediaFolder)
 	if err != nil {
-		log.Printf("handleMediaList: Error reading media directory: %v", err)
-		http.Error(w, "Error reading media directory", http.StatusInternalServerError)
-		return
+		return err
 	}
 
 	var mediaFiles []string
@@ -349,16 +643,17 @@ func handleMediaList(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	log.Printf("handleMediaList: Found %d media files", len(mediaFiles))
+	logger.Info("handleMediaList: Found media files", zap.Int("count", len(mediaFiles)))
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(mediaFiles)
+	return json.NewEncoder(w).Encode(mediaFiles)
 }
 
-func handleProcessMedia(w http.ResponseWriter, r *http.Request) {
+func (app *Application) handleProcessMedia(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+
 	if r.Method != http.MethodPost {
-		log.Printf("handleProcessMedia: Method not allowed - %s", r.Method)
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
+		logger.Warn("handleProcessMedia: Method not allowed", zap.String("method", r.Method))
+		return NewValidationError("method", "Method not allowed", nil)
 	}
 
 	var request struct {
@@ -366,17 +661,23 @@ func handleProcessMedia(w http.ResponseWriter, r *http.Request) {
 		NewName string `json:"newName"`
 	}
 	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
-		log.Printf("handleProcessMedia: Invalid request body: %v", err)
-		http.Error(w, "Invalid request body", http.StatusBadRequest)
-		return
+		logger.Error("handleProcessMedia: Invalid request body", zap.Error(err))
+		return NewValidationError("request_body", "Invalid request body", err)
 	}
 
-	log.Printf("handleProcessMedia: Processing media file: %s with new name: %s", request.File, request.NewName)
-	newFileName, err := processMediaFile(request)
+	logger.Info("handleProcessMedia: Processing media file",
+		zap.String("file", request.File),
+		zap.String("new_name", request.NewName),
+	)
+
+	mediaRequest := MediaProcessRequest{
+		File:    request.File,
+		NewName: request.NewName,
+	}
+
+	newFileName, err := app.imageProcessor.ProcessMediaFile(mediaRequest)
 	if err != nil {
-		log.Printf("handleProcessMedia: Error processing media file: %v", err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		return err
 	}
 
 	response := struct {
@@ -385,173 +686,243 @@ func handleProcessMedia(w http.ResponseWriter, r *http.Request) {
 		Filename: newFileName,
 	}
 
-	log.Printf("handleProcessMedia: Successfully processed media file: %s", newFileName)
+	logger.Info("handleProcessMedia: Successfully processed media file", zap.String("filename", newFileName))
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	return json.NewEncoder(w).Encode(response)
 }
 
-func handleCreatePost(w http.ResponseWriter, r *http.Request) {
+// validatePostRequest validates the incoming post request data
+func (app *Application) validatePostRequest(r *http.Request) (*NewPostRequest, []byte, error) {
+	logger := GetLoggerFromContext(r.Context())
+
 	if r.Method != http.MethodPost {
-		log.Printf("handleCreatePost: Method not allowed - %s", r.Method)
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
+		logger.Warn("validatePostRequest: Method not allowed", zap.String("method", r.Method))
+		return nil, nil, NewValidationError("method", "Method not allowed", nil)
 	}
 
-	log.Println("handleCreatePost: Received request to create a new post")
+	logger.Info("validatePostRequest: Received request to create a new post")
 
 	// Read the raw request body first for debugging
-	bodyBytes, err := io.ReadAll(r.Body)
+	bodyBytes, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		log.Printf("handleCreatePost: Error reading request body: %v", err)
-		http.Error(w, "Error reading request body", http.StatusBadRequest)
-		return
+		logger.Error("validatePostRequest: Error reading request body", zap.Error(err))
+		return nil, nil, NewValidationError("request_body", "Error reading request body", err)
 	}
 	r.Body = io.NopCloser(bytes.NewBuffer(bodyBytes)) // Restore the body for later use
 
 	// Log raw request for debugging
-	log.Printf("handleCreatePost: Raw request body: %s", string(bodyBytes))
+	logger.Debug("validatePostRequest: Raw request body", zap.String("body", string(bodyBytes)))
 
 	var request NewPostRequest
 	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
-		log.Printf("handleCreatePost: Invalid request body: %v, Raw body: %s", err, string(bodyBytes))
-		http.Error(w, fmt.Sprintf("Invalid request body: %v", err), http.StatusBadRequest)
-		return
+		logger.Error("validatePostRequest: Invalid request body",
+			zap.Error(err),
+			zap.String("raw_body", string(bodyBytes)),
+		)
+		return nil, nil, NewValidationError("request_body", fmt.Sprintf("Invalid request body: %v", err), err)
 	}
 
-	log.Printf("handleCreatePost: Decoded request: %+v", request)
+	logger.Debug("validatePostRequest: Decoded request", zap.Any("request", request))
 
 	// Validate required fields with more specific logging
 	if request.Title == "" {
-		log.Println("handleCreatePost: Title is missing")
-		http.Error(w, "Title is required", http.StatusBadRequest)
-		return
+		logger.Warn("validatePostRequest: Title is missing")
+		return nil, nil, NewValidationError("title", "Title is required", nil)
 	}
 	if request.Date == "" {
-		log.Println("handleCreatePost: Date is missing")
-		http.Error(w, "Date is required", http.StatusBadRequest)
-		return
+		logger.Warn("validatePostRequest: Date is missing")
+		return nil, nil, NewValidationError("date", "Date is required", nil)
 	}
-	log.Printf("handleCreatePost: Validation passed - Title: %s, Date: %s", request.Title, request.Date)
+	logger.Info("validatePostRequest: Validation passed",
+		zap.String("title", request.Title),
+		zap.String("date", request.Date),
+	)
 
-	// Create filename from title
-	filename := createSlug(request.Title) + ".md"
-	log.Printf("handleCreatePost: Generated filename: %s from title: %s", filename, request.Title)
+	return &request, bodyBytes, nil
+}
 
-	if request.Slug == "" {
-		request.Slug = slug.Make(request.Title)
-		log.Printf("handleCreatePost: Generated slug: %s from title: %s", request.Slug, request.Title)
-	}
+// processThumbnail handles thumbnail generation and processing
+func (app *Application) processThumbnail(request *NewPostRequest) error {
+	logger := app.logger
 
 	// Handle Thumbnail Creation with more detailed logging
-	log.Printf("handleCreatePost: Starting thumbnail handling - LocalFile: %s, URL: %s",
-		request.Thumbnail.LocalFile, request.Thumbnail.URL)
+	logger.Info("processThumbnail: Starting thumbnail handling",
+		zap.String("local_file", request.Thumbnail.LocalFile),
+		zap.String("url", request.Thumbnail.URL),
+	)
 
+	config := app.configProvider.GetConfig()
 	if request.Thumbnail.LocalFile == "" && request.Thumbnail.URL == "" {
 		newFileName := request.Slug + ".jpg"
 		destFile := filepath.Join(config.Server.AssetFolder, newFileName)
-		log.Printf("handleCreatePost: Thumbnail destination file: %s (AssetFolder: %s)",
-			destFile, config.Server.AssetFolder)
+		logger.Info("processThumbnail: Thumbnail destination file",
+			zap.String("dest_file", destFile),
+			zap.String("asset_folder", config.Server.AssetFolder),
+		)
 
 		// Check if AssetFolder exists
-		if _, err := os.Stat(config.Server.AssetFolder); os.IsNotExist(err) {
-			log.Printf("handleCreatePost: AssetFolder does not exist: %s", config.Server.AssetFolder)
-			if err := os.MkdirAll(config.Server.AssetFolder, 0755); err != nil {
-				log.Printf("handleCreatePost: Error creating AssetFolder: %v", err)
-				http.Error(w, "Error creating asset folder: "+err.Error(), http.StatusInternalServerError)
-				return
+		if _, err := app.fileSystem.Stat(config.Server.AssetFolder); os.IsNotExist(err) {
+			logger.Info("processThumbnail: AssetFolder does not exist", zap.String("path", config.Server.AssetFolder))
+			if err := app.fileSystem.MkdirAll(config.Server.AssetFolder, 0755); err != nil {
+				return err
 			}
-			log.Printf("handleCreatePost: Created AssetFolder: %s", config.Server.AssetFolder)
+			logger.Info("processThumbnail: Created AssetFolder", zap.String("path", config.Server.AssetFolder))
 		}
 
 		// Check if thumbnail file exists
-		if _, err := os.Stat(destFile); err == nil {
-			log.Printf("handleCreatePost: Thumbnail file already exists: %s", destFile)
+		if _, err := app.fileSystem.Stat(destFile); err == nil {
+			logger.Info("processThumbnail: Thumbnail file already exists", zap.String("path", destFile))
 		} else {
-			log.Printf("handleCreatePost: Creating thumbnail using ImagePig with title: %s", request.Title)
-			err := createImageWithImagePig(request.Title, destFile)
+			logger.Info("processThumbnail: Creating thumbnail using ImagePig", zap.String("title", request.Title))
+			err := app.createImageWithImagePig(request.Title, destFile)
 			if err != nil {
-				log.Printf("handleCreatePost: Error creating thumbnail: %v", err)
-				http.Error(w, fmt.Sprintf("Error creating thumbnail: %v", err), http.StatusInternalServerError)
-				return
+				return err
 			}
-			log.Printf("handleCreatePost: Successfully created thumbnail: %s", destFile)
+			logger.Info("processThumbnail: Successfully created thumbnail", zap.String("path", destFile))
 		}
 		request.Thumbnail.URL = "/img/blog/" + newFileName
-		log.Printf("handleCreatePost: Set Thumbnail URL: %s", request.Thumbnail.URL)
+		logger.Info("processThumbnail: Set Thumbnail URL", zap.String("url", request.Thumbnail.URL))
 	}
 
 	// Process Local Thumbnail File
 	if request.Thumbnail.LocalFile != "" && request.Thumbnail.URL == "" {
-		log.Printf("handleCreatePost: Processing local thumbnail file: %s", request.Thumbnail.LocalFile)
+		logger.Info("processThumbnail: Processing local thumbnail file", zap.String("file", request.Thumbnail.LocalFile))
 
-		var reqMediaFile struct {
-			File    string `json:"file"`
-			NewName string `json:"newName"`
+		reqMediaFile := MediaProcessRequest{
+			File:    request.Thumbnail.LocalFile,
+			NewName: request.Slug,
 		}
 
-		reqMediaFile.File = request.Thumbnail.LocalFile
-		reqMediaFile.NewName = request.Slug
-
-		newFileName, err := processMediaFile(reqMediaFile)
+		newFileName, err := app.imageProcessor.ProcessMediaFile(reqMediaFile)
 		if err != nil {
-			log.Printf("handleCreatePost: Error processing media file: %v", err)
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
+			return err
 		}
 
-		log.Printf("handleCreatePost: Processed media file from %s to %s", request.Thumbnail.LocalFile, newFileName)
+		logger.Info("processThumbnail: Processed media file",
+			zap.String("from", request.Thumbnail.LocalFile),
+			zap.String("to", newFileName),
+		)
 		request.Thumbnail.URL = "/img/blog/" + newFileName
 	}
 
+	return nil
+}
+
+// generatePostContent generates the post content from the request data
+func (app *Application) generatePostContent(request *NewPostRequest) string {
+	logger := app.logger
+	logger.Info("generatePostContent: Generating markdown content", zap.String("title", request.Title))
+
+	content := generateMarkdownContent(*request)
+
+	logger.Info("generatePostContent: Generated markdown content", zap.Int("length", len(content)))
+	return content
+}
+
+// savePostToFile saves the post content to the file system
+func (app *Application) savePostToFile(request *NewPostRequest, content string) (string, string, error) {
+	logger := app.logger
+
+	// Create filename from title
+	filename := createSlug(request.Title) + ".md"
+	logger.Info("savePostToFile: Generated filename",
+		zap.String("filename", filename),
+		zap.String("title", request.Title),
+	)
+
 	// Determine the target folder based on language
 	var targetFolder string
+	config := app.configProvider.GetConfig()
 	switch request.Language {
 	case "de":
 		targetFolder = config.Server.GermanFolder
 	case "en":
 		targetFolder = config.Server.EnglishFolder
 	default:
-		log.Printf("handleCreatePost: Invalid language specified: %s", request.Language)
-		http.Error(w, "Invalid language", http.StatusBadRequest)
-		return
+		logger.Warn("savePostToFile: Invalid language specified", zap.String("language", request.Language))
+		return "", "", NewValidationError("language", "Invalid language", nil)
 	}
-	log.Printf("handleCreatePost: Target folder set to: %s", targetFolder)
-
-	// Generate markdown content with logging
-	log.Printf("handleCreatePost: Generating markdown content for post: %s", request.Title)
-	content := generateMarkdownContent(request)
-	log.Printf("handleCreatePost: Generated markdown content length: %d bytes", len(content))
+	logger.Info("savePostToFile: Target folder set", zap.String("folder", targetFolder))
 
 	// Ensure target folder exists
-	if _, err := os.Stat(targetFolder); os.IsNotExist(err) {
-		log.Printf("handleCreatePost: Target folder does not exist: %s", targetFolder)
-		if err := os.MkdirAll(targetFolder, 0755); err != nil {
-			log.Printf("handleCreatePost: Error creating target folder: %v", err)
-			http.Error(w, fmt.Sprintf("Error creating target folder: %v", err), http.StatusInternalServerError)
-			return
+	if _, err := app.fileSystem.Stat(targetFolder); os.IsNotExist(err) {
+		logger.Info("savePostToFile: Target folder does not exist", zap.String("path", targetFolder))
+		if err := app.fileSystem.MkdirAll(targetFolder, 0755); err != nil {
+			return "", "", err
 		}
-		log.Printf("handleCreatePost: Created target folder: %s", targetFolder)
+		logger.Info("savePostToFile: Created target folder", zap.String("path", targetFolder))
 	}
 
 	// Save the file with detailed error logging
 	fullPath := filepath.Join(targetFolder, filename)
-	log.Printf("handleCreatePost: Attempting to save file to: %s", fullPath)
-	if err := ioutil.WriteFile(fullPath, []byte(content), 0644); err != nil {
-		log.Printf("handleCreatePost: Error saving file %s: %v (Content length: %d)", fullPath, err, len(content))
-		http.Error(w, fmt.Sprintf("Error saving file: %v", err), http.StatusInternalServerError)
-		return
+	logger.Info("savePostToFile: Attempting to save file", zap.String("path", fullPath))
+	if err := app.fileSystem.WriteFile(fullPath, []byte(content), 0644); err != nil {
+		return "", "", err
 	}
-	log.Printf("handleCreatePost: Successfully saved post to %s (Content length: %d)", fullPath, len(content))
+	logger.Info("savePostToFile: Successfully saved post",
+		zap.String("path", fullPath),
+		zap.Int("content_length", len(content)),
+	)
+
+	return filename, fullPath, nil
+}
+
+// updatePostMetadata updates any metadata related to the post
+func (app *Application) updatePostMetadata(request *NewPostRequest) error {
+	logger := app.logger
 
 	// Update tags and categories in config with detailed logging
-	log.Printf("handleCreatePost: Updating tags (%d) and categories (%d)", len(request.Tags), len(request.Categories))
-	if err := updateTagsAndCategories(request.Tags, request.Categories); err != nil {
-		log.Printf("handleCreatePost: Error updating tags and categories: %v (Tags: %v, Categories: %v)",
-			err, request.Tags, request.Categories)
-		http.Error(w, fmt.Sprintf("Error updating tags and categories: %v", err), http.StatusInternalServerError)
-		return
+	logger.Info("updatePostMetadata: Updating tags and categories",
+		zap.Int("tags_count", len(request.Tags)),
+		zap.Int("categories_count", len(request.Categories)),
+	)
+	if err := app.updateTagsAndCategories(request.Tags, request.Categories); err != nil {
+		return err
 	}
-	log.Printf("handleCreatePost: Successfully updated %d tags and %d categories", len(request.Tags), len(request.Categories))
+	logger.Info("updatePostMetadata: Successfully updated tags and categories",
+		zap.Int("tags_count", len(request.Tags)),
+		zap.Int("categories_count", len(request.Categories)),
+	)
+
+	return nil
+}
+
+func (app *Application) handleCreatePost(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+
+	// Validate the request
+	request, _, err := app.validatePostRequest(r)
+	if err != nil {
+		return err
+	}
+
+	// Generate slug if not provided
+	if request.Slug == "" {
+		request.Slug = slug.Make(request.Title)
+		logger.Info("handleCreatePost: Generated slug",
+			zap.String("slug", request.Slug),
+			zap.String("title", request.Title),
+		)
+	}
+
+	// Process thumbnail
+	if err := app.processThumbnail(request); err != nil {
+		return err
+	}
+
+	// Generate post content
+	content := app.generatePostContent(request)
+
+	// Save post to file
+	filename, fullPath, err := app.savePostToFile(request, content)
+	if err != nil {
+		return err
+	}
+
+	// Update post metadata
+	if err := app.updatePostMetadata(request); err != nil {
+		return err
+	}
 
 	// Prepare and send response with proper error handling
 	w.Header().Set("Content-Type", "application/json")
@@ -559,42 +930,41 @@ func handleCreatePost(w http.ResponseWriter, r *http.Request) {
 		"filename": filename,
 		"path":     fullPath,
 	}
-	log.Printf("handleCreatePost: Preparing response: %+v", response)
+	logger.Debug("handleCreatePost: Preparing response", zap.Any("response", response))
 
 	if err := json.NewEncoder(w).Encode(response); err != nil {
-		log.Printf("handleCreatePost: Error encoding response: %v", err)
-		http.Error(w, fmt.Sprintf("Error encoding response: %v", err), http.StatusInternalServerError)
-		return
+		return err
 	}
-	log.Printf("handleCreatePost: Successfully completed post creation: %s", filename)
+	logger.Info("handleCreatePost: Successfully completed post creation", zap.String("filename", filename))
+	return nil
 }
 
-func handleGetTags(w http.ResponseWriter, r *http.Request) {
-	log.Println("handleGetTags: Handling get tags request")
-	tags, err := getAllTags()
+func (app *Application) handleGetTags(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+	logger.Info("handleGetTags: Handling get tags request")
+
+	tags, err := app.getAllTags()
 	if err != nil {
-		log.Printf("handleGetTags: Error reading tags: %v", err)
-		http.Error(w, "Error reading tags", http.StatusInternalServerError)
-		return
+		return err
 	}
 
-	log.Printf("handleGetTags: Retrieved %d tags", len(tags))
+	logger.Info("handleGetTags: Retrieved tags", zap.Int("count", len(tags)))
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(tags)
+	return json.NewEncoder(w).Encode(tags)
 }
 
-func handleGetCategories(w http.ResponseWriter, r *http.Request) {
-	log.Println("handleGetCategories: Handling get categories request")
-	categories, err := getAllCategories()
+func (app *Application) handleGetCategories(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+	logger.Info("handleGetCategories: Handling get categories request")
+
+	categories, err := app.getAllCategories()
 	if err != nil {
-		log.Printf("handleGetCategories: Error reading categories: %v", err)
-		http.Error(w, "Error reading categories", http.StatusInternalServerError)
-		return
+		return err
 	}
 
-	log.Printf("handleGetCategories: Retrieved %d categories", len(categories))
+	logger.Info("handleGetCategories: Retrieved categories", zap.Int("count", len(categories)))
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(categories)
+	return json.NewEncoder(w).Encode(categories)
 }
 
 func createSlug(title string) string {
@@ -620,7 +990,6 @@ func generateMarkdownContent(post NewPostRequest) string {
 	// Convert date string to time.Time
 	date, err := time.Parse("2006-01-02T15:04", post.Date)
 	if err != nil {
-		log.Printf("generateMarkdownContent: Error parsing date: %v", err)
 		date = time.Now()
 	}
 	// Convert date to UTC
@@ -658,76 +1027,78 @@ func generateMarkdownContent(post NewPostRequest) string {
 }
 
 // getAllTags reads and returns all tags from the tags data file
-func getAllTags() ([]Tag, error) {
-	log.Println("getAllTags: Reading tags from data/tags.json")
-	file, err := ioutil.ReadFile("data/tags.json")
+func (app *Application) getAllTags() ([]Tag, error) {
+	logger := app.logger
+	logger.Info("getAllTags: Reading tags from data/tags.json")
+
+	file, err := app.fileSystem.ReadFile("data/tags.json")
 	if err != nil {
 		if os.IsNotExist(err) {
-			log.Println("getAllTags: tags.json does not exist, returning empty slice")
+			logger.Info("getAllTags: tags.json does not exist, returning empty slice")
 			return []Tag{}, nil
 		}
-		log.Printf("getAllTags: Error reading tags.json: %v", err)
 		return nil, err
 	}
 
 	var tagsData TagsData
 	err = json.Unmarshal(file, &tagsData)
 	if err != nil {
-		log.Printf("getAllTags: Error unmarshaling tags.json: %v", err)
 		return nil, err
 	}
 
-	log.Printf("getAllTags: Retrieved %d tags", len(tagsData.Tags))
+	logger.Info("getAllTags: Retrieved tags", zap.Int("count", len(tagsData.Tags)))
 	return tagsData.Tags, nil
 }
 
 // getAllCategories reads and returns all categories from the categories data file
-func getAllCategories() ([]Category, error) {
-	log.Println("getAllCategories: Reading categories from data/categories.json")
-	file, err := ioutil.ReadFile("data/categories.json")
+func (app *Application) getAllCategories() ([]Category, error) {
+	logger := app.logger
+	logger.Info("getAllCategories: Reading categories from data/categories.json")
+
+	file, err := app.fileSystem.ReadFile("data/categories.json")
 	if err != nil {
 		if os.IsNotExist(err) {
-			log.Println("getAllCategories: categories.json does not exist, returning empty slice")
+			logger.Info("getAllCategories: categories.json does not exist, returning empty slice")
 			return []Category{}, nil
 		}
-		log.Printf("getAllCategories: Error reading categories.json: %v", err)
 		return nil, err
 	}
 
 	var categoriesData CategoriesData
 	err = json.Unmarshal(file, &categoriesData)
 	if err != nil {
-		log.Printf("getAllCategories: Error unmarshaling categories.json: %v", err)
 		return nil, err
 	}
 
-	log.Printf("getAllCategories: Retrieved %d categories", len(categoriesData.Categories))
+	logger.Info("getAllCategories: Retrieved categories", zap.Int("count", len(categoriesData.Categories)))
 	return categoriesData.Categories, nil
 }
 
 // updateTagsAndCategories updates the tags and categories data files with new entries
-func updateTagsAndCategories(newTags []string, newCategories []string) error {
-	log.Println("updateTagsAndCategories: Updating tags and categories")
+func (app *Application) updateTagsAndCategories(newTags []string, newCategories []string) error {
+	logger := app.logger
+	logger.Info("updateTagsAndCategories: Updating tags and categories")
+
 	// Update tags
-	if err := updateTags(newTags); err != nil {
-		log.Printf("updateTagsAndCategories: Error updating tags: %v", err)
+	if err := app.updateTags(newTags); err != nil {
 		return err
 	}
 
 	// Update categories
-	if err := updateCategories(newCategories); err != nil {
-		log.Printf("updateTagsAndCategories: Error updating categories: %v", err)
+	if err := app.updateCategories(newCategories); err != nil {
 		return err
 	}
 
-	log.Println("updateTagsAndCategories: Successfully updated tags and categories")
+	logger.Info("updateTagsAndCategories: Successfully updated tags and categories")
 	return nil
 }
 
 // updateTags updates the tags data file with new tags
-func updateTags(newTags []string) error {
-	log.Println("updateTags: Updating tags")
-	existingTags, err := getAllTags()
+func (app *Application) updateTags(newTags []string) error {
+	logger := app.logger
+	logger.Info("updateTags: Updating tags")
+
+	existingTags, err := app.getAllTags()
 	if err != nil {
 		return err
 	}
@@ -742,19 +1113,21 @@ func updateTags(newTags []string) error {
 	for _, newTag := range newTags {
 		if tag, exists := tagMap[newTag]; exists {
 			tag.Count++
-			log.Printf("updateTags: Incremented count for existing tag: %s (New count: %d)", newTag, tag.Count)
+			logger.Info("updateTags: Incremented count for existing tag",
+				zap.String("tag", newTag),
+				zap.Int("count", tag.Count),
+			)
 		} else {
 			existingTags = append(existingTags, Tag{
 				Name:  newTag,
 				Count: 1,
 			})
-			log.Printf("updateTags: Added new tag: %s", newTag)
+			logger.Info("updateTags: Added new tag", zap.String("tag", newTag))
 		}
 	}
 
 	// Create data directory if it doesn't exist
-	if err := os.MkdirAll("data", 0755); err != nil {
-		log.Printf("updateTags: Error creating data directory: %v", err)
+	if err := app.fileSystem.MkdirAll("data", 0755); err != nil {
 		return err
 	}
 
@@ -762,24 +1135,24 @@ func updateTags(newTags []string) error {
 	tagsData := TagsData{Tags: existingTags}
 	jsonData, err := json.MarshalIndent(tagsData, "", "  ")
 	if err != nil {
-		log.Printf("updateTags: Error marshaling tags data: %v", err)
 		return err
 	}
 
-	err = ioutil.WriteFile("data/tags.json", jsonData, 0644)
+	err = app.fileSystem.WriteFile("data/tags.json", jsonData, 0644)
 	if err != nil {
-		log.Printf("updateTags: Error writing tags.json: %v", err)
 		return err
 	}
 
-	log.Println("updateTags: Successfully updated tags.json")
+	logger.Info("updateTags: Successfully updated tags.json")
 	return nil
 }
 
 // updateCategories updates the categories data file with new categories
-func updateCategories(newCategories []string) error {
-	log.Println("updateCategories: Updating categories")
-	existingCategories, err := getAllCategories()
+func (app *Application) updateCategories(newCategories []string) error {
+	logger := app.logger
+	logger.Info("updateCategories: Updating categories")
+
+	existingCategories, err := app.getAllCategories()
 	if err != nil {
 		return err
 	}
@@ -794,19 +1167,21 @@ func updateCategories(newCategories []string) error {
 	for _, newCategory := range newCategories {
 		if category, exists := categoryMap[newCategory]; exists {
 			category.Count++
-			log.Printf("updateCategories: Incremented count for existing category: %s (New count: %d)", newCategory, category.Count)
+			logger.Info("updateCategories: Incremented count for existing category",
+				zap.String("category", newCategory),
+				zap.Int("count", category.Count),
+			)
 		} else {
 			existingCategories = append(existingCategories, Category{
 				Name:  newCategory,
 				Count: 1,
 			})
-			log.Printf("updateCategories: Added new category: %s", newCategory)
+			logger.Info("updateCategories: Added new category", zap.String("category", newCategory))
 		}
 	}
 
 	// Create data directory if it doesn't exist
-	if err := os.MkdirAll("data", 0755); err != nil {
-		log.Printf("updateCategories: Error creating data directory: %v", err)
+	if err := app.fileSystem.MkdirAll("data", 0755); err != nil {
 		return err
 	}
 
@@ -814,133 +1189,162 @@ func updateCategories(newCategories []string) error {
 	categoriesData := CategoriesData{Categories: existingCategories}
 	jsonData, err := json.MarshalIndent(categoriesData, "", "  ")
 	if err != nil {
-		log.Printf("updateCategories: Error marshaling categories data: %v", err)
 		return err
 	}
 
-	err = ioutil.WriteFile("data/categories.json", jsonData, 0644)
+	err = app.fileSystem.WriteFile("data/categories.json", jsonData, 0644)
 	if err != nil {
-		log.Printf("updateCategories: Error writing categories.json: %v", err)
 		return err
 	}
 
-	log.Println("updateCategories: Successfully updated categories.json")
+	logger.Info("updateCategories: Successfully updated categories.json")
 	return nil
 }
 
-// processMediaFile processes the media file and returns the new filename
-func processMediaFile(request struct {
-	File    string `json:"file"`
-	NewName string `json:"newName"`
-}) (string, error) {
-	log.Printf("processMediaFile: Processing file %s with new name %s", request.File, request.NewName)
+// ImageProcessingServiceImpl implements ImageProcessingService interface
+type ImageProcessingServiceImpl struct {
+	configProvider ConfigProvider
+	fileSystem     FileSystem
+	logger         *Logger
+}
+
+// NewImageProcessingServiceImpl creates a new instance of ImageProcessingServiceImpl
+func NewImageProcessingServiceImpl(configProvider ConfigProvider, fileSystem FileSystem, logger *Logger) *ImageProcessingServiceImpl {
+	return &ImageProcessingServiceImpl{
+		configProvider: configProvider,
+		fileSystem:     fileSystem,
+		logger:         logger,
+	}
+}
+
+// ProcessMediaFile processes the media file and returns the new filename
+func (s *ImageProcessingServiceImpl) ProcessMediaFile(request MediaProcessRequest) (string, error) {
+	logger := s.logger
+	logger.Info("ProcessMediaFile: Processing file",
+		zap.String("file", request.File),
+		zap.String("new_name", request.NewName),
+	)
+
+	config := s.configProvider.GetConfig()
 	sourceFile := filepath.Join(config.Server.MediaFolder, request.File)
 	ext := filepath.Ext(request.File)
 	newFileName := request.NewName + ext
 	destFile := filepath.Join(config.Server.AssetFolder, newFileName)
 
-	log.Printf("processMediaFile: Source file: %s, Destination file: %s", sourceFile, destFile)
+	logger.Info("ProcessMediaFile: File paths",
+		zap.String("source", sourceFile),
+		zap.String("destination", destFile),
+	)
 
 	// Open the source image
 	src, err := imaging.Open(sourceFile)
 	if err != nil {
-		log.Printf("processMediaFile: Error opening source image: %v", err)
-		return "", fmt.Errorf("error opening source image: %w", err)
+		return "", NewFileSystemError("Open", sourceFile, "Error opening source image", err)
 	}
-	log.Println("processMediaFile: Source image opened successfully")
+	logger.Info("ProcessMediaFile: Source image opened successfully")
 
 	// Get the dimensions of the source image
 	srcWidth := src.Bounds().Dx()
 	srcHeight := src.Bounds().Dy()
-	log.Printf("processMediaFile: Source image dimensions: %dx%d", srcWidth, srcHeight)
+	logger.Info("ProcessMediaFile: Source image dimensions",
+		zap.Int("width", srcWidth),
+		zap.Int("height", srcHeight),
+	)
 
 	// Calculate the new height to maintain the aspect ratio
 	newHeight := (config.Server.ImageResize.MaxWidth * srcHeight) / srcWidth
-	log.Printf("processMediaFile: Calculated new height: %d", newHeight)
+	logger.Info("ProcessMediaFile: Calculated new height", zap.Int("height", newHeight))
 
 	// Resize the image
 	var resized image.Image
 	if config.Server.ImageResize.Method == "fit" {
 		resized = imaging.Fit(src, config.Server.ImageResize.MaxWidth, newHeight, imaging.Lanczos)
-		log.Println("processMediaFile: Image resized using 'fit' method")
+		logger.Info("ProcessMediaFile: Image resized using 'fit' method")
 	} else {
 		resized = imaging.Fill(src, config.Server.ImageResize.MaxWidth, newHeight, imaging.Center, imaging.Lanczos)
-		log.Println("processMediaFile: Image resized using 'fill' method")
+		logger.Info("ProcessMediaFile: Image resized using 'fill' method")
 	}
 
 	// Save the resized image
 	err = imaging.Save(resized, destFile)
 	if err != nil {
-		log.Printf("processMediaFile: Error saving resized image: %v", err)
-		return "", fmt.Errorf("error saving resized image: %w", err)
+		return "", NewFileSystemError("Save", destFile, "Error saving resized image", err)
 	}
-	log.Printf("processMediaFile: Resized image saved to %s", destFile)
+	logger.Info("ProcessMediaFile: Resized image saved", zap.String("path", destFile))
 
 	// Create and save thumbnail
 	var thumbnail image.Image
 	if config.Server.ThumbnailResize.Method == "fit" {
 		thumbnail = imaging.Fit(src, config.Server.ThumbnailResize.MaxWidth, newHeight, imaging.Lanczos)
-		log.Println("processMediaFile: Thumbnail resized using 'fit' method")
+		logger.Info("ProcessMediaFile: Thumbnail resized using 'fit' method")
 	} else {
 		thumbnail = imaging.Fill(src, config.Server.ThumbnailResize.MaxWidth, newHeight, imaging.Center, imaging.Lanczos)
-		log.Println("processMediaFile: Thumbnail resized using 'fill' method")
+		logger.Info("ProcessMediaFile: Thumbnail resized using 'fill' method")
 	}
 
 	thumbnailFile := filepath.Join(config.Server.AssetFolder, "thumb_"+newFileName)
 	err = imaging.Save(thumbnail, thumbnailFile)
 	if err != nil {
-		log.Printf("processMediaFile: Error saving thumbnail: %v", err)
-		return "", fmt.Errorf("error saving thumbnail: %w", err)
+		return "", NewFileSystemError("Save", thumbnailFile, "Error saving thumbnail", err)
 	}
-	log.Printf("processMediaFile: Thumbnail saved to %s", thumbnailFile)
+	logger.Info("ProcessMediaFile: Thumbnail saved", zap.String("path", thumbnailFile))
 
 	return newFileName, nil
 }
 
-func handleUploadMediaFolder(w http.ResponseWriter, r *http.Request) {
+// processMediaFile processes the media file and returns the new filename
+// This function is kept for backward compatibility but now delegates to the ImageProcessingService
+func (app *Application) processMediaFile(request struct {
+	File    string `json:"file"`
+	NewName string `json:"newName"`
+}) (string, error) {
+	mediaRequest := MediaProcessRequest{
+		File:    request.File,
+		NewName: request.NewName,
+	}
+	return app.imageProcessor.ProcessMediaFile(mediaRequest)
+}
+
+func (app *Application) handleUploadMediaFolder(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
+
 	if r.Method != http.MethodPost {
-		log.Printf("handleUploadMediaFolder: Method not allowed - %s", r.Method)
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
+		logger.Warn("handleUploadMediaFolder: Method not allowed", zap.String("method", r.Method))
+		return NewValidationError("method", "Method not allowed", nil)
 	}
 
 	// Parse the multipart form data with a 32MB limit
 	err := r.ParseMultipartForm(32 << 20)
 	if err != nil {
-		log.Printf("handleUploadMediaFolder: Error parsing form data: %v", err)
-		http.Error(w, "Error parsing form data", http.StatusBadRequest)
-		return
+		logger.Error("handleUploadMediaFolder: Error parsing form data", zap.Error(err))
+		return NewValidationError("form_data", "Error parsing form data", err)
 	}
 
 	file, header, err := r.FormFile("file")
 	if err != nil {
-		log.Printf("handleUploadMediaFolder: Error retrieving file: %v", err)
-		http.Error(w, "Error retrieving file", http.StatusBadRequest)
-		return
+		logger.Error("handleUploadMediaFolder: Error retrieving file", zap.Error(err))
+		return NewValidationError("file", "Error retrieving file", err)
 	}
 	defer file.Close()
 
 	// Generate a unique filename
 	ext := filepath.Ext(header.Filename)
 	filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), ext)
+	config := app.configProvider.GetConfig()
 	fullPath := filepath.Join(config.Server.MediaFolder, filename)
-	log.Printf("handleUploadMediaFolder: Saving uploaded file as %s", fullPath)
+	logger.Info("handleUploadMediaFolder: Saving uploaded file", zap.String("path", fullPath))
 
 	// Create a new file in the media folder
-	dst, err := os.Create(fullPath)
+	dst, err := app.fileSystem.Create(fullPath)
 	if err != nil {
-		log.Printf("handleUploadMediaFolder: Error creating file %s: %v", fullPath, err)
-		http.Error(w, "Error creating file", http.StatusInternalServerError)
-		return
+		return err
 	}
 	defer dst.Close()
 
 	// Copy the uploaded file to the destination
 	_, err = io.Copy(dst, file)
 	if err != nil {
-		log.Printf("handleUploadMediaFolder: Error saving file %s: %v", fullPath, err)
-		http.Error(w, "Error saving file", http.StatusInternalServerError)
-		return
+		return err
 	}
 
 	// Return the filename in the response
@@ -950,152 +1354,171 @@ func handleUploadMediaFolder(w http.ResponseWriter, r *http.Request) {
 		Filename: filename,
 	}
 
-	log.Printf("handleUploadMediaFolder: Successfully uploaded file %s", filename)
+	logger.Info("handleUploadMediaFolder: Successfully uploaded file", zap.String("filename", filename))
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	return json.NewEncoder(w).Encode(response)
 }
 
-func handleUploadMedia(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		log.Printf("handleUploadMedia: Method not allowed - %s", r.Method)
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
-	}
+func (app *Application) handleDeleteMedia(w http.ResponseWriter, r *http.Request) error {
+	logger := GetLoggerFromContext(r.Context())
 
-	// Parse the multipart form data with a 32MB limit
-	err := r.ParseMultipartForm(32 << 20)
-	if err != nil {
-		log.Printf("handleUploadMedia: Error parsing form data: %v", err)
-		http.Error(w, "Error parsing form data", http.StatusBadRequest)
-		return
-	}
-
-	file, header, err := r.FormFile("file")
-	if err != nil {
-		log.Printf("handleUploadMedia: Error retrieving file: %v", err)
-		http.Error(w, "Error retrieving file", http.StatusBadRequest)
-		return
-	}
-	defer file.Close()
-
-	// Generate a unique filename
-	ext := filepath.Ext(header.Filename)
-	filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), ext)
-	fullPath := filepath.Join(config.Server.MediaFolder, filename)
-	log.Printf("handleUploadMedia: Saving uploaded file as %s", fullPath)
-
-	// Create a new file in the media folder
-	dst, err := os.Create(fullPath)
-	if err != nil {
-		log.Printf("handleUploadMedia: Error creating file %s: %v", fullPath, err)
-		http.Error(w, "Error creating file", http.StatusInternalServerError)
-		return
-	}
-	defer dst.Close()
-
-	// Copy the uploaded file to the destination
-	_, err = io.Copy(dst, file)
-	if err != nil {
-		log.Printf("handleUploadMedia: Error saving file %s: %v", fullPath, err)
-		http.Error(w, "Error saving file", http.StatusInternalServerError)
-		return
-	}
-
-	// Return the filename in the response
-	response := struct {
-		Filename string `json:"filename"`
-	}{
-		Filename: filename,
-	}
-
-	log.Printf("handleUploadMedia: Successfully uploaded file %s", filename)
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
-}
-
-func handleDeleteMedia(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodDelete {
-		log.Printf("handleDeleteMedia: Method not allowed - %s", r.Method)
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
+		logger.Warn("handleDeleteMedia: Method not allowed", zap.String("method", r.Method))
+		return NewValidationError("method", "Method not allowed", nil)
 	}
 
 	filename := r.URL.Query().Get("file")
 	if filename == "" {
-		log.Println("handleDeleteMedia: Filename is required")
-		http.Error(w, "Filename is required", http.StatusBadRequest)
-		return
+		logger.Warn("handleDeleteMedia: Filename is required")
+		return NewValidationError("filename", "Filename is required", nil)
 	}
 
 	// Ensure the filename is safe
 	if strings.Contains(filename, "..") {
-		log.Printf("handleDeleteMedia: Invalid filename attempted: %s", filename)
-		http.Error(w, "Invalid filename", http.StatusBadRequest)
-		return
+		logger.Warn("handleDeleteMedia: Invalid filename attempted", zap.String("filename", filename))
+		return NewValidationError("filename", "Invalid filename", nil)
 	}
 
 	// Create the full path for the file
+	config := app.configProvider.GetConfig()
 	fullPath := filepath.Join(config.Server.MediaFolder, filename)
 
 	// Check if file exists
-	if _, err := os.Stat(fullPath); os.IsNotExist(err) {
-		log.Printf("handleDeleteMedia: File not found: %s", fullPath)
-		http.Error(w, "File not found", http.StatusNotFound)
-		return
+	if _, err := app.fileSystem.Stat(fullPath); os.IsNotExist(err) {
+		logger.Warn("handleDeleteMedia: File not found", zap.String("path", fullPath))
+		return NewFileSystemError("Stat", fullPath, "File not found", err)
 	}
 
 	// Delete the file
-	err := os.Remove(fullPath)
+	err := app.fileSystem.Remove(fullPath)
 	if err != nil {
-		log.Printf("handleDeleteMedia: Error deleting file %s: %v", fullPath, err)
-		http.Error(w, "Error deleting file", http.StatusInternalServerError)
-		return
+		return err
 	}
-	log.Printf("handleDeleteMedia: Successfully deleted file %s", fullPath)
+	logger.Info("handleDeleteMedia: Successfully deleted file", zap.String("path", fullPath))
 
 	// Also delete thumbnail if it exists
 	thumbPath := filepath.Join(config.Server.MediaFolder, "thumb_"+filename)
-	err = os.Remove(thumbPath)
+	err = app.fileSystem.Remove(thumbPath)
 	if err != nil {
-		log.Printf("handleDeleteMedia: Thumbnail not found or error deleting thumbnail %s: %v", thumbPath, err)
+		logger.Info("handleDeleteMedia: Thumbnail not found or error deleting thumbnail",
+			zap.String("path", thumbPath),
+			zap.Error(err),
+		)
 	} else {
-		log.Printf("handleDeleteMedia: Successfully deleted thumbnail %s", thumbPath)
+		logger.Info("handleDeleteMedia: Successfully deleted thumbnail", zap.String("path", thumbPath))
 	}
 
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(map[string]string{"status": "success"})
+	return json.NewEncoder(w).Encode(map[string]string{"status": "success"})
 }
 
-func createImageWithImagePig(prompt string, outputFile string) error {
-	log.Println("createImageWithImagePig: Loading environment variables")
-	// Load environment variables from .env file
-	if err := godotenv.Load(); err != nil {
-		log.Printf("createImageWithImagePig: Error loading .env file: %v", err)
-		return fmt.Errorf("Error loading .env file: %v", err)
-	}
+func (app *Application) createImageWithImagePig(prompt string, outputFile string) error {
+	logger := app.logger
+	logger.Info("createImageWithImagePig: Getting API key from configuration")
 
-	// Get API key from environment
-	apiKey := os.Getenv("IMAGEPIG_API_KEY")
+	// Get API key from configuration
+	apiKey := app.config.Secrets.ImagePigAPIKey
 	if apiKey == "" {
-		log.Println("createImageWithImagePig: IMAGEPIG_API_KEY not found in environment")
-		return fmt.Errorf("IMAGEPIG_API_KEY not found in environment")
+		// Fallback to environment variable for backward compatibility
+		logger.Warn("createImageWithImagePig: API key not found in configuration, trying environment variable")
+
+		// Load environment variables from .env file for backward compatibility
+		if err := godotenv.Load(); err != nil {
+			logger.Error("createImageWithImagePig: Error loading .env file", zap.Error(err))
+			return NewFileSystemError("Load", ".env", "Error loading .env file", err)
+		}
+
+		// Get API key from environment
+		apiKey = os.Getenv("IMAGEPIG_API_KEY")
+		if apiKey == "" {
+			logger.Warn("createImageWithImagePig: IMAGEPIG_API_KEY not found in environment")
+			return NewValidationError("api_key", "IMAGEPIG_API_KEY not found in environment", nil)
+		}
+		logger.Info("createImageWithImagePig: IMAGEPIG_API_KEY loaded from environment")
+	} else {
+		logger.Info("createImageWithImagePig: API key loaded from configuration")
 	}
-	log.Println("createImageWithImagePig: IMAGEPIG_API_KEY loaded successfully")
 
 	// Create client
-	client := NewFluxClient(apiKey)
-	log.Println("createImageWithImagePig: FluxClient created")
+	client := NewFluxClient(apiKey, logger)
+	logger.Info("createImageWithImagePig: FluxClient created")
 
 	// Generate landscape image
-	log.Printf("createImageWithImagePig: Generating landscape image with prompt: %s", prompt)
+	logger.Info("createImageWithImagePig: Generating landscape image", zap.String("prompt", prompt))
 	if err := client.GenerateLandscapeImage(prompt, outputFile); err != nil {
-		log.Printf("createImageWithImagePig: Error generating image: %v", err)
-		return fmt.Errorf("Error generating image: %v", err)
+		return err
 	}
-	log.Printf("createImageWithImagePig: Image generated and saved to %s", outputFile)
+	logger.Info("createImageWithImagePig: Image generated and saved", zap.String("path", outputFile))
 
 	return nil
 }
 
 // Helper functions are moved to utils.go
 // Types are moved to types.go
+
+// generateSelfSignedCert generates a self-signed certificate and key for development
+func generateSelfSignedCert(certFile, keyFile string, logger *Logger) error {
+	logger.Info("generateSelfSignedCert: Generating self-signed certificate", zap.String("certFile", certFile), zap.String("keyFile", keyFile))
+
+	priv, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
+	if err != nil {
+		return fmt.Errorf("failed to generate private key: %w", err)
+	}
+
+	notBefore := time.Now()
+	notAfter := notBefore.Add(365 * 24 * time.Hour) // 1 year
+
+	serialNumberLimit := new(big.Int).Lsh(big.NewInt(1), 128)
+	serialNumber, err := rand.Int(rand.Reader, serialNumberLimit)
+	if err != nil {
+		return fmt.Errorf("failed to generate serial number: %w", err)
+	}
+
+	template := x509.Certificate{
+		SerialNumber: serialNumber,
+		Subject: pkix.Name{
+			Organization: []string{"AdminEditor Dev"},
+			CommonName:   "localhost",
+		},
+		NotBefore:             notBefore,
+		NotAfter:              notAfter,
+		KeyUsage:              x509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature,
+		ExtKeyUsage:           []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},
+		BasicConstraintsValid: true,
+		DNSNames:              []string{"localhost"},
+	}
+
+	derBytes, err := x509.CreateCertificate(rand.Reader, &template, &template, &priv.PublicKey, priv)
+	if err != nil {
+		return fmt.Errorf("failed to create certificate: %w", err)
+	}
+
+	certOut, err := os.Create(certFile)
+	if err != nil {
+		return fmt.Errorf("failed to open %s for writing: %w", certFile, err)
+	}
+	if err := pem.Encode(certOut, &pem.Block{Type: "CERTIFICATE", Bytes: derBytes}); err != nil {
+		return fmt.Errorf("failed to write data to %s: %w", certFile, err)
+	}
+	if err := certOut.Close(); err != nil {
+		return fmt.Errorf("error closing %s: %w", certFile, err)
+	}
+
+	keyOut, err := os.OpenFile(keyFile, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
+	if err != nil {
+		return fmt.Errorf("failed to open %s for writing: %w", keyFile, err)
+	}
+	privBytes, err := x509.MarshalPKCS8PrivateKey(priv)
+	if err != nil {
+		return fmt.Errorf("unable to marshal private key: %w", err)
+	}
+	if err := pem.Encode(keyOut, &pem.Block{Type: "PRIVATE KEY", Bytes: privBytes}); err != nil {
+		return fmt.Errorf("failed to write data to %s: %w", keyFile, err)
+	}
+	if err := keyOut.Close(); err != nil {
+		return fmt.Errorf("error closing %s: %w", keyFile, err)
+	}
+
+	logger.Info("generateSelfSignedCert: Successfully generated self-signed certificate and key")
+	return nil
+}

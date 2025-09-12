@@ -12,6 +12,7 @@ categories:
   - AI Tool
 thumbnail:
   url: /img/blog/cline_codestral.png
+  author: d.o.
 lang: en
 slug: mistral-codestral-api-cline
 ---

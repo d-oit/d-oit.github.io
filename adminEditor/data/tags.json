@@ -30,7 +30,7 @@
     },
     {
       "name": "Mistral",
-      "count": 1
+      "count": 2
     },
     {
       "name": "streamlit",
@@ -42,6 +42,30 @@
     },
     {
       "name": "GitHub",
+      "count": 3
+    },
+    {
+      "name": "AI",
+      "count": 5
+    },
+    {
+      "name": "Roo Code",
+      "count": 2
+    },
+    {
+      "name": "Git",
+      "count": 3
+    },
+    {
+      "name": "GitHub Copilot",
+      "count": 1
+    },
+    {
+      "name": "Digitale Ethik",
+      "count": 1
+    },
+    {
+      "name": "Digitale Ethik",
       "count": 1
     }
   ]

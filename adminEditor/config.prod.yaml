@@ -1,0 +1,89 @@
+server:
+  port: 8081
+  showURLOnStart: false
+  germanFolder: "../content/de/blog"
+  englishFolder: "../content/en/blog"
+  mediaFolder: "../adminEditor/static/media-data"
+  assetFolder: "../assets/img/blog"
+  imageResize:
+    method: "fit"
+    maxWidth: 1920
+  thumbnailResize:
+    method: "fit"
+    maxWidth: 400
+
+shortcodes:
+  - id: "bold"
+    code: "**text**"
+    icon: "bold"
+    order: 1
+    tooltip: "Make text bold"
+  - id: "italic"
+    code: "_text_"
+    icon: "italic"
+    order: 2
+    tooltip: "Make text italic"
+  - id: "numberedList"
+    code: "1. Item"
+    icon: "list-ol"
+    order: 3
+    tooltip: "Create a numbered list"
+  - id: "checkboxList"
+    code: "- [ ] Task"
+    icon: "tasks"
+    order: 4
+    tooltip: "Create a checkbox list"
+  - id: "standardList"
+    code: "- Item"
+    icon: "list"
+    order: 5
+    tooltip: "Create a bullet list"
+  - id: "blockquoteSelect"
+    code: "Github \n Blockquote content"
+    icon: "quote-right"
+    order: 6
+    tooltip: "Insert a blockquote"
+  - id: "code"
+    code: "`text`"
+    icon: "code"
+    order: 7
+    tooltip: "Insert inline code"
+  - id: "link"
+    code: "[link text](url)"
+    icon: "link"
+    order: 8
+    tooltip: "Insert a link"
+  - id: "image"
+    code: "![alt text](image_url)"
+    icon: "image"
+    order: 9
+    tooltip: "Insert an image"
+  - id: "coloredCode"
+    code: "```language\ncode\n```"
+    icon: "code"
+    order: 10
+    tooltip: "Insert colored code block"
+  - id: "horizontalLine"
+    code: "---"
+    icon: "minus"
+    order: 11
+    tooltip: "Insert horizontal line"
+  - id: "internalLink"
+    code: "custom code with refLink"
+    icon: "file-alt"
+    order: 12
+    tooltip: "Insert internal link"
+  - id: "mediaSelect"
+    code: "custom code"
+    icon: "photo-video"
+    order: 13
+    tooltip: "Select and insert media"
+  - id: "fileContent"
+    code: "{{< file full=\"false\" show=\"false\" path=\"./config/_default/languages.toml\" id=\"file-collapse-1\" >}}"
+    icon: "file-lines"
+    order: 14
+    tooltip: "insert file contents as Hinode markdown"
+
+# Secrets should be provided via environment variables in production
+secrets:
+  imagePigAPIKey: "" # Must be set via SECRETS_IMAGEPIG_API_KEY environment variable
