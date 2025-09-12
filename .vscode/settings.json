@@ -57,6 +57,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     }, 
-        "eslint.alwaysShowStatus": true
+        "eslint.alwaysShowStatus": true,
+        "python-envs.defaultEnvManager": "ms-python.python:system"
        
 }
