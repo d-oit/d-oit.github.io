@@ -13,7 +13,6 @@ layout: docs
 thumbnail:
   url: img/project-ebook-roo-code-creator.png
   origin: Gemini 2.5 Flash Image (Nano Banana)
-  author: d.o.
 excludeToc: false
 lang: en-US
 slug: do-ebook-roo-code-creator
@@ -151,5 +150,17 @@ For recovery: Auto-resume enabled; checkpoint every 30 min.
 ## Feasibility & Extensions
 
 High feasibility for solo creators: Automates 70% of editing/QA, reducing time from weeks to days. Cost-benefit: ROI via reusable workflows; extend to English/non-fiction by adjusting config.language. Future: Integrate more MCP tools for multimedia.
+
+### Used LLM API
+
+The project supports various LLM API for agent operations, but was developed using the following specific models:
+
+| Model | Provider | Purpose |
+|-------|----------|---------|
+| openrouter/sonoma-dusk-alpha | OpenRouter | Advanced reasoning and analysis tasks |
+| openrouter/sonoma-sky-alpha | OpenRouter | Creative writing and content generation |
+| zai-org/GLM-4.5-Air | Zai.org | General-purpose AI tasks and code analysis |
+| openrouter/R1 | openrouter| Thinking / AI code / swarm analysis |
+
 
 *Article genesis: This post was created using .roomodes, rode-digitaler-co-autor, rode-blog-generator, and human copy-editing by Silke Buchta. AI assisted with research, codebase analysis, and structure; editorial fine-tuning was handled manually.*
