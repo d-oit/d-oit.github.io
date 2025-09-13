@@ -1,7 +1,7 @@
 ---
 title: "d.o. Ebook-Creator: AI-Powered Ebook Creation Toolkit"
 description: "Multi-agent AI toolkit for ebook creation using Roo Code"
-date: 2025-09-12T10:06:00.000Z
+date: 2025-09-12T10:06:00Z
 tags:
   - Hugo
   - AI
@@ -29,15 +29,15 @@ categories:
 
 ## Project Overview
 
-The d.o. Ebook-Creator with AI is a demonstration toolkit showcasing multi-agent AI for ebook development. It builds "Der Lärm der Gier" from original content by Dominik Oswald, expanded via LLM APIs into a full novel. Core tools: Roo Code (VS Code extension for agent modes) and OpenCode CLI (terminal automation). The system ensures narrative consistency, quality gates (error rate <5%), and traceability through logs.
+The d.o. Ebook-Creator with AI is a demonstration toolkit that showcases multi-agent AI for ebook development. It builds "Der Lärm der Gier" from original content by Dominik Oswald, expanded via LLM APIs into a full novel. Core tools include Roo Code (VS Code extension for agent modes) and OpenCode CLI (terminal automation). The system ensures narrative consistency, quality gates (error rate <5%), and traceability through logs.
 
-Feasibility: Ideal for authors with VS Code; setup costs low (API ~$0.01-0.05 per page - or use free models), benefits high (3-5x faster QA via automation). Limitations: LLM hallucinations require human review; scalable to non-fiction with custom modes.
+Feasibility: Ideal for authors using VS Code; setup costs are low (API ~$0.01-0.05 per page—or use free models), with high benefits (3-5x faster QA via automation). Limitations: LLM hallucinations require human review; scalable to non-fiction with custom modes.
 
 ## Key Features
 
-- **Modular Agent Workflows**: Specialized modes for drafting (ebook-writer, max 2,000 words/session), rewriting (ebook-rewriter for flow/clarity), expansion (ebook-expander to 40,000 words), and review (ebook-reviewer with multi-pass checks).
+- **Modular Agent Workflows**: Specialized modes for drafting (ebook-writer, with a maximum of 2,000 words per session), rewriting (ebook-rewriter for flow and clarity), expansion (ebook-expander to 40,000 words), and review (ebook-reviewer with multi-pass checks).
 - **Quality Assurance**: ebook-spellchecker, ebook-grammar-checker, ebook-logic-checker; ebook-analysis-swarm uses RYAN/FLASH/SOCRATES personas for multi-perspective evaluation. Chapters pass 95% quality gates before finalization.
-- **Research Integration**: MCP tools (Tavily for web search, Context7 for docs) via /research commands; caches SDG/medical/technical data (e.g., 30-day retention for SDG queries).
+- **Research Integration**: MCP tools (Tavily for web search, Context7 for documentation) via /research commands; caches SDG/medical/technical data (e.g., 30-day retention for SDG queries).
 - **Logging & Metrics**: Detailed logs in subfolders (grammar/, logic/, workflow/); tracks word count, reading level, error rates. Auto-archive after 30 days.
 - **Automation Scripts**: Python utilities for batch processing, performance monitoring, and log consolidation (see Quickstart).
 - **Security**: Path sanitization, safe YAML loading, JSON schema validation in configs/scripts.
@@ -64,19 +64,19 @@ Feasibility: Ideal for authors with VS Code; setup costs low (API ~$0.01-0.05 pe
   .roo/                 # Agent rules and modes
   ```
 
-Sample from Kapitel 1 ("Der Lärm der Gier"): Lukas, a hacker with muscle weakness, battles construction noise from greedy developers, leading to cyber-revenge. Themes: Greed vs. resilience, AI ethics in health.
+Sample from Kapitel 1 ("Der Lärm der Gier"): Lukas, a hacker with muscle weakness, battles construction noise from greedy developers, leading to cyber revenge. Themes: Greed vs. resilience, AI ethics in health.
 
 ## Quickstart
 
 ### Prerequisites
 - VS Code (or Cursor/VSCodium)
 - LLM API key (Anthropic Claude recommended; OpenRouter for cost-free options)
-- Python 3.8+ (pip install PyYAML psutil for scripts)
+- Python 3.8+ (install PyYAML and psutil via pip for scripts)
 
 ### Roo Code Setup (Primary)
 1. Install Roo Code: VS Code Extensions → Search "Roo Code" ([Marketplace](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline)).
 2. Configure: Add API key/model in settings (OpenRouter or other).
-3. Load Project: Clone repo, open in VS Code; run /init for auto-analysis (generates AGENTS.md).
+3. Load Project: Clone repo, open in VS Code; run /init for auto-analysis (which generates AGENTS.md).
 
 ### OpenCode CLI Install (Optional)
 ```
@@ -87,7 +87,7 @@ opencode /init
 ```
 
 ### Configuration & Validation
-Edit `config/ebook-config.yaml` for custom settings (e.g., target_word_count: 40000, quality.metrics.track_error_rate: true).
+Edit `config/ebook-config.yaml` to configure custom settings (e.g., target_word_count: 40000, quality.metrics.track_error_rate: true).
 ```
 python scripts/config-validator.py config/ebook-config.yaml --verbose
 python scripts/config-validator.py --save-schema config/schema.json
@@ -122,18 +122,18 @@ Follow phases from HOW-TO-CREATE-BOOKS.md:
    - ebook-publication-formatter: Format finals, generate TOC.
    - Move to book/final/; validate with quality gates.
 
-Parallel agents limited to 10; use ebook-workflow-coordinator for handoffs.
+Parallel agents are limited to 10; use ebook-workflow-coordinator for handoffs.
 
 ## Agent Workflows & Best Practices
 
-Agents per phase:
+Agents by phase:
 - **Core**: ebook-writer (creative flow), ebook-rewriter (style improvements).
 - **QA**: Multi-pass (automated + swarm); holistic review before final/.
 - **Coordination**: /handoff, /log, /review commands; ebook-research-coordinator for MCP.
 
 Best Practices:
 - Single-chapter focus to maintain quality.
-- Integrate research with [SDG-Goal] placeholders.
+- Integrate research using [SDG-Goal] placeholders.
 - Weekly log reviews; quarterly process improvements.
 - Custom modes via create-mode agent.
 
@@ -149,18 +149,19 @@ For recovery: Auto-resume enabled; checkpoint every 30 min.
 
 ## Feasibility & Extensions
 
-High feasibility for solo creators: Automates 70% of editing/QA, reducing time from weeks to days. Cost-benefit: ROI via reusable workflows; extend to English/non-fiction by adjusting config.language. Future: Integrate more MCP tools for multimedia.
+High feasibility for solo creators: The system automates 70% of editing and QA, reducing production time from weeks to days. Cost-benefit: ROI via reusable workflows; extend to English/non-fiction by adjusting config.language. Future: Integrate more MCP tools for multimedia.
 
 ### Used LLM API
 
-The project supports various LLM API for agent operations, but was developed using the following specific models:
+The project supports various LLM APIs for agent operations, but was developed using the following specific models:
 
 | Model | Provider | Purpose |
 |-------|----------|---------|
-| openrouter/sonoma-dusk-alpha | OpenRouter | Advanced reasoning and analysis tasks |
-| openrouter/sonoma-sky-alpha | OpenRouter | Creative writing and content generation |
+| openrouter/sonoma-dusk-alpha * | OpenRouter | Advanced reasoning and analysis tasks |
+| openrouter/sonoma-sky-alpha * | OpenRouter | Creative writing and content generation |
 | zai-org/GLM-4.5-Air | Zai.org | General-purpose AI tasks and code analysis |
-| openrouter/R1 | openrouter| Thinking / AI code / swarm analysis |
+| openrouter/R1 | OpenRouter | Thinking / AI code / swarm analysis |
 
+* Free test models with 2 million context window. The whole project was initially a test for these models and evolved into this project.
 
 *Article genesis: This post was created using .roomodes, rode-digitaler-co-autor, rode-blog-generator, and human copy-editing by Silke Buchta. AI assisted with research, codebase analysis, and structure; editorial fine-tuning was handled manually.*
