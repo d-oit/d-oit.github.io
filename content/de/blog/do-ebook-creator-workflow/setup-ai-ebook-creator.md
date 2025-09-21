@@ -30,7 +30,7 @@ aliases: /de/do-ebook-creator-workflow/setup-ai-ebook-creator
 
 ## Projekt-Überblick
 
-Der d.o. Ebook-Creator mit AI ist ein Demonstrations-Toolkit, das Multi-Agenten-KI für die Ebook-Entwicklung zeigt. Es erstellt "Der Lärm der Gier" aus Originalinhalten von Dominik Oswald, erweitert durch LLM-APIs zu einem vollständigen Roman. Kernwerkzeuge sind Roo Code (VS Code-Erweiterung für Agenten-Modi) und OpenCode CLI (Terminal-Automatisierung). Das System gewährleistet narrative Konsistenz, Qualitätskontrollen (Fehlerrate <5%) und Nachverfolgbare durch Logs.
+Der d.o. Ebook-Creator mit AI ist ein Demonstrations-Toolkit, das Multi-Agenten-KI für die Ebook-Entwicklung zeigt. Es erstellt "Der Grüne Hort: Hackerin gegen Konzern-Gier" aus Originalinhalten von Dominik Oswald, erweitert durch LLM-APIs zu einem vollständigen Roman. Kernwerkzeuge sind Roo Code (VS Code-Erweiterung für Agenten-Modi) und OpenCode CLI (Terminal-Automatisierung). Das System gewährleistet narrative Konsistenz, Qualitätskontrollen (Fehlerrate <5%) und Nachverfolgbare durch Logs.
 
 **Machbarkeit:** Ideal für Autoren, die VS Code verwenden; Einrichtungskosten sind niedrig (API ~$0,01-0,05 pro Seite – oder kostenlose Modelle nutzen), mit hohem Nutzen (3-5x schnellere QA durch Automatisierung). **Einschränkungen:** LLM-Halluzinationen erfordern menschliche Überprüfung; skalierbar für Sachbücher mit benutzerdefinierten Modi.
 

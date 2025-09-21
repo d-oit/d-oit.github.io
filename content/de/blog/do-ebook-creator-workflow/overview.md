@@ -23,7 +23,7 @@ slug: ubersicht-ai-gestutzter-ebook-creator-workflow
 **Repository:** [ebook-roo-code-creator @ Codeberg](https://codeberg.org/d-oit/ebook-roo-code-creator)  
 **Wiki:** [Projekt-Wiki & Dokumentation](https://codeberg.org/d-oit/ebook-roo-code-creator/wiki)  
 **Lizenz:** MIT  
-**Demo-Buch:** "Der Lärm der Gier" – Ein 40.000 Wörter umfassender deutscher Roman
+**Demo-Buch:** "Der Grüne Hort: Hackerin gegen Konzern-Gier" – Ein 40.000 Wörter umfassender deutscher Roman
 {{< /alert >}}
 
 ## Über diese Serie

@@ -24,12 +24,12 @@ categories:
 **Repository:** [ebook-roo-code-creator @ Codeberg](https://codeberg.org/d-oit/ebook-roo-code-creator)  
 **Wiki:** [Project Wiki & Docs](https://codeberg.org/d-oit/ebook-roo-code-creator/wiki)  
 **License:** MIT  
-**Demo Book:** "Der Lärm der Gier" – A 40,000-word German novel exploring corporate greed, hacking, and personal health struggles.
+**Demo Book:** "Der Grüne Hort: Hackerin gegen Konzern-Gier" – A 40,000-word German novel exploring corporate greed, hacking, and personal health struggles.
 {{< /alert >}}
 
 ## Project Overview
 
-The d.o. Ebook-Creator with AI is a demonstration toolkit that showcases multi-agent AI for ebook development. It builds "Der Lärm der Gier" from original content by Dominik Oswald, expanded via LLM APIs into a full novel. Core tools include Roo Code (VS Code extension for agent modes) and OpenCode CLI (terminal automation). The system ensures narrative consistency, quality gates (error rate <5%), and traceability through logs.
+The d.o. Ebook-Creator with AI is a demonstration toolkit that showcases multi-agent AI for ebook development. It builds "Der Grüne Hort: Hackerin gegen Konzern-Gier" from original content by Dominik Oswald, expanded via LLM APIs into a full novel. Core tools include Roo Code (VS Code extension for agent modes) and OpenCode CLI (terminal automation). The system ensures narrative consistency, quality gates (error rate <5%), and traceability through logs.
 
 Feasibility: Ideal for authors using VS Code; setup costs are low (API ~$0.01-0.05 per page—or use free models), with high benefits (3-5x faster QA via automation). Limitations: LLM hallucinations require human review; scalable to non-fiction with custom modes.
 
@@ -64,7 +64,7 @@ Feasibility: Ideal for authors using VS Code; setup costs are low (API ~$0.01-0.
   .roo/                 # Agent rules and modes
   ```
 
-Sample from Kapitel 1 ("Der Lärm der Gier"): Lukas, a hacker with muscle weakness, battles construction noise from greedy developers, leading to cyber revenge. Themes: Greed vs. resilience, AI ethics in health.
+Sample from Kapitel 1 ("Der Grüne Hort: Hackerin gegen Konzern-Gier"): Lukas, a hacker with muscle weakness, battles construction noise from greedy developers, leading to cyber revenge. Themes: Greed vs. resilience, AI ethics in health.
 
 ## Quickstart
 

@@ -73,7 +73,7 @@ Bevor das Schreiben beginnt, wird die Grundlage gelegt:
 /switch-mode ebook-architect
 
 # Erstelle SPARC-Outline für das Buch
-/create-sparc-outline title:"Der Lärm der Gier" theme:"Gier vs. Resilienz, AI-Ethik in Gesundheit"
+/create-sparc-outline title:"Der Grüne Hort: Hackerin gegen Konzern-Gier" theme:"Gier vs. Resilienz, AI-Ethik in Gesundheit"
 
 # Recherchiere themenrelevante Inhalte
 /research type:medical query:"Muskelschwäche Therapien" tools:tavily depth:advanced output:file
@@ -91,7 +91,7 @@ Die eigentliche Erstellung der Kapitel:
 /switch-mode ebook-writer
 
 # Generiere das erste Kapitel (max. 2000 Wörter pro Session)
-/generate-chapter number:1 title:"Der Lärm der Gier" outline:assets/sparc-outline.md
+/generate-chapter number:1 title:"Der Grüne Hort: Hackerin gegen Konzern-Gier" outline:assets/sparc-outline.md
 
 # Protokolliere den Fortschritt
 /log activity:draft agent:ebook-writer file:kapitel-1.md status:completed word_count:1850
@@ -145,7 +145,7 @@ Lukas kämpfte mit seiner Muskelschwäche [SDG-Goal: Gesundheit und Wohlergehen]
 
 ### Beispiel aus Kapitel 1
 
-Aus "Der Lärm der Gier" - Lukas, ein Hacker mit Muskelschwäche, kämpft gegen Baulärm von gierigen Entwicklern, was zu Cyber-Rache führt. Themen: Gier vs. Resilienz, AI-Ethik in Gesundheit.
+Aus "Der Grüne Hort: Hackerin gegen Konzern-Gier" - Lukas, ein Hacker mit Muskelschwäche, kämpft gegen Baulärm von gierigen Entwicklern, was zu Cyber-Rache führt. Themen: Gier vs. Resilienz, AI-Ethik in Gesundheit.
 
 ## Nächste Schritte
 
