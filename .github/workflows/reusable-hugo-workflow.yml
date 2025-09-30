@@ -24,12 +24,11 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-       - name: Install pnpm
-         uses: pnpm/action-setup@v4
-         with:
-           version: latest
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
 
-       - name: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -41,12 +40,12 @@ jobs:
         run: pnpm install
 
       - name: Lint the source files
-        run: pnpm run lint 
+        run: pnpm run lint
 
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
       - name: Install Dart Sass
         run: sudo snap install dart-sass
@@ -60,7 +59,7 @@ jobs:
           HUGO_ENV: production
           TZ: America/Los_Angeles
         run: |
-          hugo --gc --minify --baseURL "${{ inputs.base_url }}" && cd public/en && cp 404.html ../404.html    
+          hugo --gc --minify --baseURL "${{ inputs.base_url }}" && cd public/en && cp 404.html ../404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -91,6 +90,6 @@ jobs:
             ${{ inputs.base_url }}/en/blog/
             ${{ inputs.base_url }}/de/
             ${{ inputs.base_url }}/de/blog/
-            ${{ inputs.base_url }}/en/projects/            
+            ${{ inputs.base_url }}/en/projects/
           uploadArtifacts: true
           temporaryPublicStorage: true
