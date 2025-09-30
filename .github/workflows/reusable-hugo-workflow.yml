@@ -28,14 +28,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          cache: 'pnpm'
+          cache-dependency-path: 'pnpm-lock.yaml'
 
-      - name: Install npm
-        run: npm i
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Lint the source files
-        run: npm run lint 
+        run: pnpm run lint 
 
       - name: Install Hugo CLI
         run: |
@@ -46,7 +46,7 @@ jobs:
         run: sudo snap install dart-sass
 
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: "[[ -f pnpm-lock.yaml ]] && pnpm install --frozen-lockfile || true"
 
       - name: Build with Hugo
         env:
