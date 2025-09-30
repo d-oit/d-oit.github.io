@@ -5,7 +5,7 @@ on:
     inputs:
       hugo_version:
         type: string
-        default: '0.143.0'
+        default: '0.143.7'
         required: false
       base_url:
         type: string

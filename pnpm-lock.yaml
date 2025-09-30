@@ -24,8 +24,8 @@ importers:
         specifier: 16.6.1
         version: 16.6.1
       hugo-bin:
-        specifier: 0.141.2
-        version: 0.141.2
+        specifier: 0.143.7
+        version: 0.143.7
       purgecss-whitelister:
         specifier: ^2.4.0
         version: 2.4.0
@@ -1513,8 +1513,8 @@ packages:
     resolution: {integrity: sha512-V5nVw1PAOgfI3Lmeaj2Exmeg7fenjhRUgz1lPSezy1CuhPYbgQtbQj4jZfEAEMlaL+vupsvhjqCyjzob0yxsmQ==}
     engines: {node: '>=10.19.0'}
 
-  hugo-bin@0.141.2:
-    resolution: {integrity: sha512-VHWJ2siOR8dKA/D9gUGXJTWyHQJq7t2ARE0Nz83b1WijdihUk+zXinpGTLiuwhgEoeprK8icfch1PbwWt0jA1w==}
+  hugo-bin@0.143.7:
+    resolution: {integrity: sha512-OV9CkGLjHdRBt8rpLzuk2qF7DWVCwqK5Zxv69c2QzcKNmurokb+g/CXY1Yl8wcKHu+MZ8+bZ/Ft8feyGrZAEKQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4910,7 +4910,7 @@ snapshots:
       quick-lru: 5.1.1
       resolve-alpn: 1.2.1
 
-  hugo-bin@0.141.2:
+  hugo-bin@0.143.7:
     dependencies:
       '@xhmikosr/bin-wrapper': 13.2.0
       package-config: 5.0.0
