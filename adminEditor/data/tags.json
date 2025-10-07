@@ -22,7 +22,7 @@
     },
     {
       "name": "Web",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Hinode",
@@ -42,11 +42,11 @@
     },
     {
       "name": "GitHub",
-      "count": 3
+      "count": 4
     },
     {
       "name": "AI",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Roo Code",
@@ -66,6 +66,10 @@
     },
     {
       "name": "Digitale Ethik",
+      "count": 1
+    },
+    {
+      "name": "perplexity.ai",
       "count": 1
     }
   ]
