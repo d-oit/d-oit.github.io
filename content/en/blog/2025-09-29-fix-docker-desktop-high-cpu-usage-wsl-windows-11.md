@@ -2,6 +2,7 @@
 title: "Fix Docker Desktop High CPU on Windows 11 (WSL 2)"
 description: "A comprehensive guide to resolving high CPU usage in Docker Desktop when using WSL 2 on Windows 11, based on a GitHub gist and community research."
 date: 2025-09-29T14:00:00+02:00
+expiryDate: 2025-10-10T14:00:00+02:00
 draft: false
 tags: ["docker", "wsl", "windows-11", "performance", "cpu-usage"]
 categories: ["Development", "Troubleshooting"]
@@ -133,3 +134,4 @@ If you're experiencing this issue, try disabling WSL integration first - it's th
 - Docker Desktop WSL 2 Documentation: [docs.docker.com/desktop/features/wsl](https://docs.docker.com/desktop/features/wsl/)
 - Microsoft WSL Configuration: [learn.microsoft.com/en-us/windows/wsl/wsl-config](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
 - Community Issue Thread: [github.com/docker/for-win/issues/12266](https://github.com/docker/for-win/issues/12266)
+
