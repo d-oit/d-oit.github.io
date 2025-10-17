@@ -5,7 +5,7 @@ on:
     inputs:
       hugo_version:
         type: string
-        default: '0.143.0'
+        default: '0.149.0'
         required: false
       base_url:
         type: string
@@ -26,9 +26,7 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: '10.17.1'
-
+        
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
