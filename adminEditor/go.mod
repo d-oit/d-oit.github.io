@@ -4,7 +4,7 @@ go 1.23.1
 
 require (
 	github.com/disintegration/imaging v1.6.2
-	github.com/fsnotify/fsnotify v1.9.0
+	github.com/fsnotify/fsnotify v1.10.1
 	github.com/gosimple/slug v1.15.0
 	github.com/joho/godotenv v1.5.1
 	github.com/spf13/viper v1.21.0
